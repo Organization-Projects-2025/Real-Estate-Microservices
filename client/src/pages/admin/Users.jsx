@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { toast } from 'react-toastify';
 import { getAllUsers, deactivateUser, updateUser, reactivateUser } from '../../services/adminService';
 import { FaEdit, FaUserSlash, FaUser, FaPhone, FaWhatsapp, FaEnvelope, FaCalendarAlt, FaUserCheck } from 'react-icons/fa';
 
@@ -62,9 +61,8 @@ function Users() {
         setUsers(users.map(user => 
           user._id === userId ? { ...user, active: false } : user
         ));
-        toast.success('User deactivated successfully!');
       } catch (error) {
-        toast.error('Failed to deactivate user');
+        setError('Failed to deactivate user');
         console.error('Error deactivating user:', error);
       }
     }
@@ -74,19 +72,18 @@ function Users() {
     if (window.confirm('Are you sure you want to reactivate this user?')) {
       try {
         const response = await reactivateUser(userId);
-        console.log('Reactivate response:', response);
+        console.log('Reactivate response:', response); // Debug log
         if (response && response.data && response.data.user) {
           setUsers(users.map(user => 
             user._id === userId ? response.data.user : user
           ));
-          toast.success('User reactivated successfully!');
         } else {
           console.error('Unexpected reactivation response:', response);
-          toast.error('Failed to reactivate user: Invalid response format');
+          setError('Failed to reactivate user: Invalid response format');
         }
       } catch (error) {
         console.error('Error reactivating user:', error);
-        toast.error(error.response?.data?.message || 'Failed to reactivate user');
+        setError(error.response?.data?.message || 'Failed to reactivate user');
       }
     }
   };
@@ -99,9 +96,8 @@ function Users() {
         user._id === editingUser._id ? response.data.user : user
       ));
       setEditingUser(null);
-      toast.success('User updated successfully!');
     } catch (error) {
-      toast.error('Failed to update user');
+      setError('Failed to update user');
       console.error('Error updating user:', error);
     }
   };
@@ -216,7 +212,6 @@ function Users() {
                   >
                     <option value="user">User</option>
                     <option value="agent">Agent</option>
-                    <option value="developer">Developer</option>
                     <option value="admin">Admin</option>
                   </select>
                 </div>
