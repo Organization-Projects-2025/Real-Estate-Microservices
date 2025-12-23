@@ -42,9 +42,25 @@ export class AuthController {
     return this.authService.resetPassword(data.token, data.password);
   }
 
+  @MessagePattern({ cmd: 'verifyEmail' })
+  async verifyEmail(@Payload() data: { token: string; email: string }) {
+    return this.authService.verifyEmail(data.token, data.email);
+  }
+
   @MessagePattern({ cmd: 'updatePassword' })
-  async updatePassword(@Payload() data: { userId: string; currentPassword: string; newPassword: string }) {
-    return this.authService.updatePassword(data.userId, data.currentPassword, data.newPassword);
+  async updatePassword(
+    @Payload()
+    data: {
+      userId: string;
+      currentPassword: string;
+      newPassword: string;
+    }
+  ) {
+    return this.authService.updatePassword(
+      data.userId,
+      data.currentPassword,
+      data.newPassword
+    );
   }
 
   @MessagePattern({ cmd: 'getAllUsers' })
