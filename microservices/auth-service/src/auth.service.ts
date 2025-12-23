@@ -1,44 +1,28 @@
 /* eslint-disable prettier/prettier */
-import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus, Inject } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { JwtService } from '@nestjs/jwt';
+import { ClientProxy } from '@nestjs/microservices';
+import { firstValueFrom } from 'rxjs';
 import * as bcrypt from 'bcrypt';
 import * as crypto from 'crypto';
-<<<<<<< HEAD
-=======
-import axios from 'axios';
->>>>>>> 85450adc2cba424453ea307ba36854b0ad74ccbb
 import { User, UserDocument } from './user.model';
 
 @Injectable()
 export class AuthService {
   constructor(
     @InjectModel(User.name) private userModel: Model<UserDocument>,
-<<<<<<< HEAD
     private jwtService: JwtService,
-=======
-    private jwtService: JwtService
->>>>>>> 85450adc2cba424453ea307ba36854b0ad74ccbb
-  ) {}
+    @Inject('EMAIL_SERVICE') private emailClient: ClientProxy,
+  ) { }
 
   async register(userData: any): Promise<any> {
     try {
       // Check if user already exists
-<<<<<<< HEAD
       const existingUser = await this.userModel.findOne({ email: userData.email });
       if (existingUser) {
         throw new HttpException('User already exists with this email', HttpStatus.BAD_REQUEST);
-=======
-      const existingUser = await this.userModel.findOne({
-        email: userData.email,
-      });
-      if (existingUser) {
-        throw new HttpException(
-          'User already exists with this email',
-          HttpStatus.BAD_REQUEST
-        );
->>>>>>> 85450adc2cba424453ea307ba36854b0ad74ccbb
       }
 
       // Hash password
@@ -48,157 +32,63 @@ export class AuthService {
       const user = await this.userModel.create({
         ...userData,
         password: hashedPassword,
+        isEmailVerified: true, // No email verification required
       });
 
-<<<<<<< HEAD
       // Generate token
       const token = this.jwtService.sign({ id: user._id, email: user.email, role: user.role });
-=======
-      // Do not require email confirmation on register — mark verified by default
-      user.isEmailVerified = true;
-      await user.save();
+
       // Remove password from response
       const userObj = user.toObject();
       delete userObj.password;
 
-      const responseData: any = { user: userObj };
+      // Send welcome/verification email
+      const clientUrl = (process.env.CLIENT_URL || 'http://localhost:5173').replace(/\/$/, '');
+      const verificationUrl = `${clientUrl}/verify-email?token=dummy`;
+
+      try {
+        await firstValueFrom(this.emailClient.send({ cmd: 'send-verification' }, {
+          user: { email: user.email, firstName: user.firstName, fullName: `${user.firstName} ${user.lastName}` },
+          verificationUrl,
+        }));
+      } catch (error) {
+        console.error('Failed to send verification email on register:', error.message);
+        // Continue registration even if email fails
+      }
 
       return {
         status: 'success',
         message: 'Registration successful.',
-        data: responseData,
+        data: { user: userObj, token },
       };
     } catch (error) {
-      throw new HttpException(
-        error.message || 'Registration failed',
-        HttpStatus.BAD_REQUEST
-      );
-    }
-  }
-
-  async login(email: string, password: string): Promise<any> {
-    try {
-      const user = await this.userModel.findOne({ email }).select('+password');
-      if (!user) {
-        throw new HttpException(
-          'Invalid email or password',
-          HttpStatus.UNAUTHORIZED
-        );
-      }
-
-      const isPasswordValid = await bcrypt.compare(password, user.password);
-      if (!isPasswordValid) {
-        throw new HttpException(
-          'Invalid email or password',
-          HttpStatus.UNAUTHORIZED
-        );
-      }
-
-      // No email verification requirement for login (users can register and login immediately)
-
-      const token = this.jwtService.sign({
-        id: user._id,
-        email: user.email,
-        role: user.role,
-      });
->>>>>>> 85450adc2cba424453ea307ba36854b0ad74ccbb
-
-      const userObj = user.toObject();
-      delete userObj.password;
-
-      return { status: 'success', data: { user: userObj, token } };
-    } catch (error) {
-<<<<<<< HEAD
       throw new HttpException(error.message || 'Registration failed', HttpStatus.BAD_REQUEST);
     }
   }
 
   async login(email: string, password: string): Promise<any> {
     try {
-      // Find user
       const user = await this.userModel.findOne({ email }).select('+password');
       if (!user) {
         throw new HttpException('Invalid email or password', HttpStatus.UNAUTHORIZED);
       }
 
-      // Check password
       const isPasswordValid = await bcrypt.compare(password, user.password);
       if (!isPasswordValid) {
         throw new HttpException('Invalid email or password', HttpStatus.UNAUTHORIZED);
       }
 
-      // Generate token
       const token = this.jwtService.sign({ id: user._id, email: user.email, role: user.role });
 
-      // Remove password from response
-=======
-      throw new HttpException(
-        error.message || 'Login failed',
-        HttpStatus.UNAUTHORIZED
-      );
-    }
-  }
-
-  async verifyEmail(token: string, email: string): Promise<any> {
-    try {
-      const hashedToken = crypto
-        .createHash('sha256')
-        .update(token)
-        .digest('hex');
-
-      const user = await this.userModel.findOne({
-        email,
-        emailVerificationToken: hashedToken,
-      });
-      if (!user) {
-        throw new HttpException(
-          'Invalid or expired verification token',
-          HttpStatus.BAD_REQUEST
-        );
-      }
-
-      if (
-        !user.emailVerificationTokenExpiry ||
-        user.emailVerificationTokenExpiry.getTime() < Date.now()
-      ) {
-        throw new HttpException(
-          'Verification token has expired',
-          HttpStatus.BAD_REQUEST
-        );
-      }
-
-      user.isEmailVerified = true;
-      user.emailVerificationToken = undefined;
-      user.emailVerificationTokenExpiry = undefined;
-      await user.save();
-
-      const tokenJwt = this.jwtService.sign({
-        id: user._id,
-        email: user.email,
-        role: user.role,
-      });
-
->>>>>>> 85450adc2cba424453ea307ba36854b0ad74ccbb
       const userObj = user.toObject();
       delete userObj.password;
 
       return {
         status: 'success',
-<<<<<<< HEAD
         data: { user: userObj, token },
       };
     } catch (error) {
       throw new HttpException(error.message || 'Login failed', HttpStatus.UNAUTHORIZED);
-=======
-        message: 'Email verified',
-        data: { user: userObj, token: tokenJwt },
-      };
-    } catch (error) {
-      throw new HttpException(
-        error.message || 'Email verification failed',
-        HttpStatus.BAD_REQUEST
-      );
->>>>>>> 85450adc2cba424453ea307ba36854b0ad74ccbb
     }
   }
 
@@ -226,23 +116,11 @@ export class AuthService {
   async updateUser(userId: string, userData: any): Promise<any> {
     try {
       delete userData.password;
-
-<<<<<<< HEAD
-      console.log('updateUser called with userId:', userId, 'userData:', userData);
-
       const user = await this.userModel.findByIdAndUpdate(userId, userData, {
         new: true,
         runValidators: true,
       }).select('-password');
 
-=======
-      const user = await this.userModel
-        .findByIdAndUpdate(userId, userData, {
-          new: true,
-          runValidators: true,
-        })
-        .select('-password');
->>>>>>> 85450adc2cba424453ea307ba36854b0ad74ccbb
       if (!user) {
         throw new HttpException('User not found', HttpStatus.NOT_FOUND);
       }
@@ -255,62 +133,28 @@ export class AuthService {
   async forgotPassword(email: string): Promise<any> {
     const user = await this.userModel.findOne({ email });
     if (!user) {
-<<<<<<< HEAD
       throw new HttpException('No user found with this email', HttpStatus.NOT_FOUND);
-=======
-      throw new HttpException(
-        'No user found with this email',
-        HttpStatus.NOT_FOUND
-      );
->>>>>>> 85450adc2cba424453ea307ba36854b0ad74ccbb
     }
+
     const resetToken = crypto.randomBytes(32).toString('hex');
-<<<<<<< HEAD
     const hashedToken = crypto.createHash('sha256').update(resetToken).digest('hex');
-=======
-    const hashedToken = crypto
-      .createHash('sha256')
-      .update(resetToken)
-      .digest('hex');
->>>>>>> 85450adc2cba424453ea307ba36854b0ad74ccbb
 
     user.resetPasswordToken = hashedToken;
-    user.resetPasswordTokenExpiry = new Date(Date.now() + 10 * 60 * 1000);
+    user.resetPasswordTokenExpiry = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes
     await user.save();
 
-    // Build reset URL for client (client uses /reset-password/:token)
-    const resetUrl = `${
-      process.env.CLIENT_URL || 'http://localhost:5173'
-    }/reset-password/${resetToken}`;
+    const clientUrl = (process.env.CLIENT_URL || 'http://localhost:5173').replace(/\/$/, '');
+    const resetUrl = `${clientUrl}/reset-password/${resetToken}`;
 
-    // Send reset email via email microservice
-    try {
-      const emailServiceUrl =
-        process.env.EMAIL_SERVICE_URL || 'http://localhost:3002';
-      await axios.post(
-        `${emailServiceUrl}/send-reset`,
-        {
-          user: {
-            email: user.email,
-            firstName: user.firstName,
-            fullName: `${user.firstName || ''} ${user.lastName || ''}`.trim(),
-          },
-          resetUrl,
-        },
-        { timeout: 5000 }
-      );
-    } catch (e) {
-      console.error('Failed to call email service for reset:', e?.message || e);
-    }
-
-    const exposeLink =
-      (process.env.EXPOSE_RESET_LINK || 'false').toLowerCase() === 'true';
+    // Send reset email via Microservice
+    await firstValueFrom(this.emailClient.send({ cmd: 'send-reset' }, {
+      user: { email: user.email, firstName: user.firstName, fullName: `${user.firstName} ${user.lastName}` },
+      resetUrl,
+    }));
 
     return {
       status: 'success',
-      message:
-        'Password reset token generated. Check your email for the reset link.',
-      ...(exposeLink ? { resetUrl } : {}),
+      message: 'Password reset token generated and email sent',
     };
   }
 
@@ -321,15 +165,9 @@ export class AuthService {
       resetPasswordToken: hashedToken,
       resetPasswordTokenExpiry: { $gt: Date.now() },
     });
+
     if (!user) {
-<<<<<<< HEAD
       throw new HttpException('Token is invalid or has expired', HttpStatus.BAD_REQUEST);
-=======
-      throw new HttpException(
-        'Token is invalid or has expired',
-        HttpStatus.BAD_REQUEST
-      );
->>>>>>> 85450adc2cba424453ea307ba36854b0ad74ccbb
     }
 
     user.password = await bcrypt.hash(newPassword, 12);
@@ -340,35 +178,15 @@ export class AuthService {
     return { status: 'success', message: 'Password reset successful' };
   }
 
-<<<<<<< HEAD
   async updatePassword(userId: string, currentPassword: string, newPassword: string): Promise<any> {
-=======
-  async updatePassword(
-    userId: string,
-    currentPassword: string,
-    newPassword: string
-  ): Promise<any> {
->>>>>>> 85450adc2cba424453ea307ba36854b0ad74ccbb
     const user = await this.userModel.findById(userId).select('+password');
     if (!user) {
       throw new HttpException('User not found', HttpStatus.NOT_FOUND);
     }
 
-<<<<<<< HEAD
     const isPasswordValid = await bcrypt.compare(currentPassword, user.password);
     if (!isPasswordValid) {
       throw new HttpException('Current password is incorrect', HttpStatus.UNAUTHORIZED);
-=======
-    const isPasswordValid = await bcrypt.compare(
-      currentPassword,
-      user.password
-    );
-    if (!isPasswordValid) {
-      throw new HttpException(
-        'Current password is incorrect',
-        HttpStatus.UNAUTHORIZED
-      );
->>>>>>> 85450adc2cba424453ea307ba36854b0ad74ccbb
     }
 
     user.password = await bcrypt.hash(newPassword, 12);

@@ -1,8 +1,8 @@
 export class SendVerificationDto {
-  user: {
+  user!: {
     email: string;
     firstName?: string;
     fullName?: string;
   };
-  verificationUrl: string;
+  verificationUrl!: string;
 }
