@@ -32,7 +32,7 @@ const ResetPassword = () => {
     }
 
     try {
-      const response = await axios.patch(
+      const response = await axios.post(
         `http://localhost:3000/api/auth/reset-password/${token}`,
         {
           password: formData.password,
