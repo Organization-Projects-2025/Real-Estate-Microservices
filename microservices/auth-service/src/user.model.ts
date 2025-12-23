@@ -47,18 +47,6 @@ export class User {
 
   @Prop()
   resetPasswordTokenExpiry: Date;
-<<<<<<< HEAD
-
-  @Prop({ default: false })
-  isEmailVerified: boolean;
-
-  @Prop()
-  emailVerificationToken: string;
-
-  @Prop()
-  emailVerificationTokenExpiry: Date;
-=======
->>>>>>> 4a011638a5499d29c0bde0da73918d5cf0dc5a53
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
