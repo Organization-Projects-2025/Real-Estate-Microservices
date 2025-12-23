@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { getAllProperties, deleteProperty, updateProperty } from '../../services/adminService';
 import { FaEdit, FaTrash, FaHome, FaBed, FaBath, FaCar, FaSwimmingPool, FaWifi, FaSnowflake, FaShieldAlt } from 'react-icons/fa';
 

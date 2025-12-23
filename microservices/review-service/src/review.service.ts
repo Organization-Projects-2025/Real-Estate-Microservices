@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
 import { Review, ReviewDocument } from './review.model';
 
 @Injectable()
@@ -23,7 +23,22 @@ export class ReviewService {
   }
 
   async findAll(): Promise<any> {
-    const reviews = await this.reviewModel.find().populate('agent');
+    const reviews = await this.reviewModel.aggregate([
+      {
+        $lookup: {
+          from: 'agents',
+          localField: 'agent',
+          foreignField: '_id',
+          as: 'agent',
+        },
+      },
+      {
+        $unwind: {
+          path: '$agent',
+          preserveNullAndEmptyArrays: true,
+        },
+      },
+    ]);
     return {
       status: 'success',
       results: reviews.length,
@@ -32,13 +47,30 @@ export class ReviewService {
   }
 
   async findById(id: string): Promise<any> {
-    const review = await this.reviewModel.findById(id).populate('agent');
-    if (!review) {
+    const reviews = await this.reviewModel.aggregate([
+      { $match: { _id: new Types.ObjectId(id) } },
+      {
+        $lookup: {
+          from: 'agents',
+          localField: 'agent',
+          foreignField: '_id',
+          as: 'agent',
+        },
+      },
+      {
+        $unwind: {
+          path: '$agent',
+          preserveNullAndEmptyArrays: true,
+        },
+      },
+    ]);
+    
+    if (!reviews || reviews.length === 0) {
       throw new HttpException('Review not found', HttpStatus.NOT_FOUND);
     }
     return {
       status: 'success',
-      data: { review },
+      data: { review: reviews[0] },
     };
   }
 
@@ -81,6 +113,20 @@ export class ReviewService {
     const reviews = await this.reviewModel.aggregate([
       { $match: { status: 'active' } },
       { $sample: { size: numLimit } },
+      {
+        $lookup: {
+          from: 'agents',
+          localField: 'agent',
+          foreignField: '_id',
+          as: 'agent',
+        },
+      },
+      {
+        $unwind: {
+          path: '$agent',
+          preserveNullAndEmptyArrays: true,
+        },
+      },
     ]);
     return {
       status: 'success',

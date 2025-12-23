@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { getAllUsers, deactivateUser, updateUser, reactivateUser } from '../../services/adminService';
 import { FaEdit, FaUserSlash, FaUser, FaPhone, FaWhatsapp, FaEnvelope, FaCalendarAlt, FaUserCheck } from 'react-icons/fa';
 

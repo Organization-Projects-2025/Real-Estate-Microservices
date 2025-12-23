@@ -195,7 +195,7 @@ const HomePage = () => {
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold text-[#703BF7]">
-                          {review.agent.firstName} {review.agent.lastName}
+                          {review.agent ? `${review.agent.firstName} ${review.agent.lastName}` : 'Unknown Agent'}
                         </h3>
                         <p className="text-sm text-gray-400">Real Estate Agent</p>
                       </div>

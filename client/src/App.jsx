@@ -1,11 +1,13 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './context/AuthContext';
 import AdminLayout from './components/admin/Layout';
-import Dashboard from './pages/admin/Dashboard';
 import Users from './pages/admin/Users';
 import Properties from './pages/admin/Properties';
 import Settings from './pages/admin/Settings';
+import Filters from './components/admin/Filters';
 import Home from './pages/Home';
 import Register from './components/Register';
 import Login from './components/Login';
@@ -37,49 +39,64 @@ import PublicProjectProperties from './pages/PublicProjectProperties';
 
 const App = () => {
   return (
-    <Routes>
-      {/* Public routes */}
-      <Route path="/" element={<Home />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/forget-password" element={<ForgetPassword />} />
-      <Route path="/reset-password/:token" element={<ResetPassword />} />
-      <Route path="/rent" element={<Rent />} />
-      <Route path="/buy" element={<Buy />} />
-      <Route path="/sell" element={<Sell />} />
-      <Route path="/agent" element={<Agent />} />
-      <Route path="/become-agent" element={<BecomeAgent />} />
-      <Route path="/create-agent" element={<CreateAgent />} />
-      <Route path="/manage-agents" element={<ManageAgents />} />
-      <Route path="/property/:id" element={<PropertyDetail />} />
-      <Route path="/profile" element={<Profile />} />
-      <Route path="/notifications" element={<Notifications />} />
-      <Route path="/reviews" element={<Reviews />} />
-      <Route path="/write-review" element={<ReviewForm />} />
-      <Route path="/developer-properties" element={<DeveloperProperties />} />
-      <Route path="/developer-properties/:developerId" element={<DeveloperPropertiesDetail />} />
-      <Route path="/manage-developer-properties" element={<ManageDeveloperProperties />} />
-      <Route path="/my-developer-properties" element={<MyDeveloperProperties />} />
-      <Route path="/my-projects" element={<MyProjects />} />
-      <Route path="/developer-property/:id" element={<DeveloperPropertyDetail />} />
-      <Route path="/project/:projectId/properties" element={<ProjectProperties />} />
-      <Route path="/projects/:projectId" element={<PublicProjectProperties />} />
+    <>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+      <Routes>
+        {/* Public routes */}
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forget-password" element={<ForgetPassword />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
+        <Route path="/rent" element={<Rent />} />
+        <Route path="/buy" element={<Buy />} />
+        <Route path="/sell" element={<Sell />} />
+        <Route path="/agent" element={<Agent />} />
+        <Route path="/become-agent" element={<BecomeAgent />} />
+        <Route path="/create-agent" element={<CreateAgent />} />
+        <Route path="/manage-agents" element={<ManageAgents />} />
+        <Route path="/property/:id" element={<PropertyDetail />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/notifications" element={<Notifications />} />
+        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/write-review" element={<ReviewForm />} />
+        <Route path="/developer-properties" element={<DeveloperProperties />} />
+        <Route path="/developer-properties/:developerId" element={<DeveloperPropertiesDetail />} />
+        <Route path="/manage-developer-properties" element={<ManageDeveloperProperties />} />
+        <Route path="/my-developer-properties" element={<MyDeveloperProperties />} />
+        <Route path="/my-projects" element={<MyProjects />} />
+        <Route path="/developer-property/:id" element={<DeveloperPropertyDetail />} />
+        <Route path="/project/:projectId/properties" element={<ProjectProperties />} />
+        <Route path="/projects/:projectId" element={<PublicProjectProperties />} />
 
-      {/* Protected admin routes */}
-      <Route element={<ProtectedAdminRoute />}>
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="users" element={<Users />} />
-          <Route path="properties" element={<Properties />} />
-          <Route path="reviews" element={<AdminReviews />} />
-          <Route path="settings" element={<Settings />} />
+        {/* Protected admin routes */}
+        <Route element={<ProtectedAdminRoute />}>
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<Navigate to="/admin/filters" replace />} />
+            <Route path="users" element={<Users />} />
+            <Route path="properties" element={<Properties />} />
+            <Route path="reviews" element={<AdminReviews />} />
+            <Route path="filters" element={<Filters />} />
+            <Route path="settings" element={<Settings />} />
+          </Route>
         </Route>
-      </Route>
 
-      {/* 404 route */}
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+        {/* 404 route */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 };
 
