@@ -42,4 +42,27 @@ export class EmailService {
       text: html.replace(/<[^>]+>/g, ''),
     });
   }
+
+  async sendResetPasswordEmail(user: any, resetUrl: string) {
+    if (!user || !user.email || !resetUrl) {
+      throw new BadRequestException('Missing required fields');
+    }
+
+    const transport = this.createTransport();
+
+    const html = `
+      <p>Hi ${user.firstName || user.fullName || ''},</p>
+      <p>We received a request to reset your password. Click the link below to reset it:</p>
+      <p><a href="${resetUrl}">${resetUrl}</a></p>
+      <p>If you did not request a password reset, you can safely ignore this message.</p>
+    `;
+
+    await transport.sendMail({
+      from: process.env.EMAIL_FROM || 'no-reply@example.com',
+      to: user.email,
+      subject: 'Reset your password',
+      html,
+      text: html.replace(/<[^>]+>/g, ''),
+    });
+  }
 }

@@ -42,7 +42,6 @@ export class AuthController {
     return this.authService.resetPassword(data.token, data.password);
   }
 
-<<<<<<< HEAD
   @MessagePattern({ cmd: 'verifyEmail' })
   async verifyEmail(@Payload() data: { token: string; email: string }) {
     return this.authService.verifyEmail(data.token, data.email);
@@ -62,11 +61,6 @@ export class AuthController {
       data.currentPassword,
       data.newPassword
     );
-=======
-  @MessagePattern({ cmd: 'updatePassword' })
-  async updatePassword(@Payload() data: { userId: string; currentPassword: string; newPassword: string }) {
-    return this.authService.updatePassword(data.userId, data.currentPassword, data.newPassword);
->>>>>>> 4a011638a5499d29c0bde0da73918d5cf0dc5a53
   }
 
   @MessagePattern({ cmd: 'getAllUsers' })
@@ -79,24 +73,18 @@ export class AuthController {
     return this.authService.getUserById(userId);
   }
 
-<<<<<<< HEAD
   @MessagePattern({ cmd: 'updateUser' })
   async updateUser(@Payload() data: { userId: string; userData: any }) {
     return this.authService.updateUser(data.userId, data.userData);
   }
 
-=======
->>>>>>> 4a011638a5499d29c0bde0da73918d5cf0dc5a53
   @MessagePattern({ cmd: 'deleteUser' })
   async deleteUser(@Payload() userId: string) {
     return this.authService.deleteUser(userId);
   }
-<<<<<<< HEAD
-=======
 
   @MessagePattern({ cmd: 'getUsersByRole' })
   async getUsersByRole(@Payload() role: string) {
     return this.authService.getUsersByRole(role);
   }
->>>>>>> 4a011638a5499d29c0bde0da73918d5cf0dc5a53
 }
