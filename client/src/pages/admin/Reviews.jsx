@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { FaTrash, FaStar } from 'react-icons/fa';
-import { toast } from 'react-toastify';
 import { getAllReviews, deleteReview } from '../../services/adminService';
 
 function Reviews() {
@@ -32,12 +31,9 @@ function Reviews() {
         await deleteReview(reviewId);
         setReviews(reviews.filter(review => review._id !== reviewId));
         setError(null);
-        toast.success('Review deleted successfully!');
       } catch (err) {
         console.error('Delete review error:', err);
-        const errorMsg = err.response?.data?.message || 'Failed to delete review. Please try again.';
-        setError(errorMsg);
-        toast.error(errorMsg);
+        setError(err.response?.data?.message || 'Failed to delete review. Please try again.');
       }
     }
   };

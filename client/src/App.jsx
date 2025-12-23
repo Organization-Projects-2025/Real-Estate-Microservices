@@ -1,7 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 import React from 'react';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './context/AuthContext';
 import AdminLayout from './components/admin/Layout';
 import Dashboard from './pages/admin/Dashboard';
@@ -31,22 +29,12 @@ import NotFound from './pages/NotFound';
 import DeveloperProperties from './pages/DeveloperProperties';
 import DeveloperPropertiesDetail from './pages/DeveloperPropertiesDetail';
 import ManageDeveloperProperties from './pages/ManageDeveloperProperties';
+import MyDeveloperProperties from './pages/MyDeveloperProperties';
+import MyProjects from './pages/MyProjects';
+import ProjectProperties from './pages/ProjectProperties';
 
 const App = () => {
   return (
-    <>
-      <ToastContainer
-        position="bottom-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={true}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
       <Routes>
         {/* Public routes */}
         <Route path="/" element={<Home />} />
@@ -70,6 +58,9 @@ const App = () => {
         <Route path="/developer-properties" element={<DeveloperProperties />} />
         <Route path="/developer-properties/:developerId" element={<DeveloperPropertiesDetail />} />
         <Route path="/manage-developer-properties" element={<ManageDeveloperProperties />} />
+        <Route path="/my-developer-properties" element={<MyDeveloperProperties />} />
+        <Route path="/my-projects" element={<MyProjects />} />
+        <Route path="/project/:projectId/properties" element={<ProjectProperties />} />
 
         {/* Protected admin routes */}
         <Route element={<ProtectedAdminRoute />}>
@@ -85,7 +76,6 @@ const App = () => {
         {/* 404 route */}
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </>
   );
 };
 
