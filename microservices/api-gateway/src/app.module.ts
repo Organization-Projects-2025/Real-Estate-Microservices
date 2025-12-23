@@ -63,4 +63,4 @@ dotenv.config();
   controllers: [AuthController, PropertyController, ReviewController, AgentController, DeveloperPropertiesController],
   providers: [AuthService, PropertyService, ReviewService, AgentService, DeveloperPropertiesService],
 })
-export class AppModule {}
+export class AppModule { }

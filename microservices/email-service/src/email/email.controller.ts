@@ -1,24 +1,26 @@
-import { Controller, Post, Body } from '@nestjs/common';
+/* eslint-disable prettier/prettier */
+import { Controller } from '@nestjs/common';
+import { MessagePattern, Payload } from '@nestjs/microservices';
 import { EmailService } from './email.service';
 import { SendVerificationDto } from './dto/send-verification.dto';
 import { SendResetDto } from './dto/send-reset.dto';
 
 @Controller()
 export class EmailController {
-  constructor(private readonly emailService: EmailService) {}
+  constructor(private readonly emailService: EmailService) { }
 
-  @Post('send-verification')
-  async sendVerification(@Body() body: SendVerificationDto) {
+  @MessagePattern({ cmd: 'send-verification' })
+  async sendVerification(@Payload() payload: SendVerificationDto) {
     await this.emailService.sendVerificationEmail(
-      body.user,
-      body.verificationUrl
+      payload.user,
+      payload.verificationUrl
     );
     return { status: 'success', message: 'Verification email sent' };
   }
 
-  @Post('send-reset')
-  async sendReset(@Body() body: SendResetDto) {
-    await this.emailService.sendResetPasswordEmail(body.user, body.resetUrl);
+  @MessagePattern({ cmd: 'send-reset' })
+  async sendReset(@Payload() payload: SendResetDto) {
+    await this.emailService.sendResetPasswordEmail(payload.user, payload.resetUrl);
     return { status: 'success', message: 'Reset email sent' };
   }
 }

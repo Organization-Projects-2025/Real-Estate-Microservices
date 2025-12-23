@@ -7,7 +7,7 @@ import { firstValueFrom } from 'rxjs';
 export class AuthService {
   constructor(
     @Inject('AUTH_SERVICE') private readonly authClient: ClientProxy,
-  ) {}
+  ) { }
 
   async register(userData: any): Promise<any> {
     return firstValueFrom(this.authClient.send({ cmd: 'register' }, userData));

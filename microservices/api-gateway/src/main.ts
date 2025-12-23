@@ -9,14 +9,14 @@ dotenv.config();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  
+
   // Increase body size limit for image uploads (50MB)
   app.use(json({ limit: '50mb' }));
   app.use(urlencoded({ limit: '50mb', extended: true }));
-  
+
   // Use cookie parser middleware
   app.use(cookieParser());
-  
+
   // Enable CORS for frontend
   app.enableCors({
     origin: ['http://localhost:5173', 'http://localhost:3000', 'http://127.0.0.1:5173'],

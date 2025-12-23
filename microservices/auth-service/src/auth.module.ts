@@ -2,6 +2,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { JwtModule } from '@nestjs/jwt';
+import { ClientsModule, Transport } from '@nestjs/microservices';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { User, UserSchema } from './user.model';
@@ -17,8 +18,18 @@ dotenv.config();
       secret: process.env.JWT_SECRET || 'your-secret-key',
       signOptions: { expiresIn: (process.env.JWT_EXPIRES_IN as any) || '7d' },
     }),
+    ClientsModule.register([
+      {
+        name: 'EMAIL_SERVICE',
+        transport: Transport.TCP,
+        options: {
+          host: process.env.EMAIL_SERVICE_HOST || '127.0.0.1',
+          port: parseInt(process.env.EMAIL_SERVICE_PORT) || 3007,
+        },
+      },
+    ]),
   ],
   controllers: [AuthController],
   providers: [AuthService],
 })
-export class AuthModule {}
+export class AuthModule { }

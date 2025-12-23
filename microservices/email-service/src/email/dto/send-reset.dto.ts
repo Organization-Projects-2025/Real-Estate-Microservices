@@ -1,8 +1,8 @@
 export class SendResetDto {
-  user: {
+  user!: {
     email: string;
     firstName?: string;
     fullName?: string;
   };
-  resetUrl: string;
+  resetUrl!: string;
 }

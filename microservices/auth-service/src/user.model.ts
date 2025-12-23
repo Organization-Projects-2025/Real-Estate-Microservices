@@ -47,7 +47,8 @@ export class User {
 
   @Prop()
   resetPasswordTokenExpiry: Date;
-  @Prop({ default: false })
+
+  @Prop({ default: true })
   isEmailVerified: boolean;
 
   @Prop()

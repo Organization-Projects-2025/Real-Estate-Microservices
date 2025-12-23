@@ -5,13 +5,13 @@ import { AuthService } from './auth.service';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(private readonly authService: AuthService) { }
 
   private extractUserIdFromToken(req: Request): string | null {
     try {
       const token = req.cookies?.jwt || req.headers.authorization?.replace('Bearer ', '');
       if (!token) return null;
-      
+
       // Basic JWT decode (in production, use proper verification)
       const payload = JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString());
       return payload.id || payload.sub;
@@ -24,7 +24,7 @@ export class AuthController {
   async register(@Body() userData: any, @Res() res: Response) {
     try {
       const result = await this.authService.register(userData);
-      
+
       // Set JWT cookie
       if (result.data?.token) {
         res.cookie('jwt', result.data.token, {
@@ -35,7 +35,7 @@ export class AuthController {
           path: '/',
         });
       }
-      
+
       return res.status(HttpStatus.CREATED).json(result);
     } catch (error) {
       return res.status(HttpStatus.BAD_REQUEST).json({
@@ -49,7 +49,7 @@ export class AuthController {
   async login(@Body() credentials: { email: string; password: string }, @Res() res: Response) {
     try {
       const result = await this.authService.login(credentials.email, credentials.password);
-      
+
       // Set JWT cookie
       if (result.data?.token) {
         res.cookie('jwt', result.data.token, {
@@ -60,7 +60,7 @@ export class AuthController {
           path: '/',
         });
       }
-      
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
       return res.status(HttpStatus.UNAUTHORIZED).json({
@@ -116,11 +116,9 @@ export class AuthController {
           message: 'Unauthorized - no token provided',
         });
       }
-      console.log('API Gateway - updateMe called with userId:', userId, 'body:', body);
       const result = await this.authService.updateMe(userId, body);
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      console.error('API Gateway - Error in updateMe:', error);
       return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
         status: 'error',
         message: error.message || 'Failed to update user',
