@@ -94,7 +94,7 @@ const HomePage = () => {
       <Navbar />
 
       <section
-        className="relative flex flex-col md:flex-row items-center justify-start px-6 md:px-16 py-20 bg-[#121212] bg-cover bg-center"
+        className="relative flex flex-col md:flex-row items-center justify-start px-6 md:px-16 pt-32 pb-20 bg-[#121212] bg-cover bg-center"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c')`,
           backgroundAttachment: 'fixed',
@@ -195,7 +195,7 @@ const HomePage = () => {
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold text-[#703BF7]">
-                          {review.agent.firstName} {review.agent.lastName}
+                          {review.agent ? `${review.agent.firstName} ${review.agent.lastName}` : 'Unknown Agent'}
                         </h3>
                         <p className="text-sm text-gray-400">Real Estate Agent</p>
                       </div>

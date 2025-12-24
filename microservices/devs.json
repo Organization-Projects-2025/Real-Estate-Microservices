@@ -1,0 +1,489 @@
+{
+  "developers": [
+    {
+      "name": "Al Ahly Sabbour",
+      "country": "Egypt",
+      "description": "A leading Egyptian real estate developer delivering integrated residential and coastal communities.",
+      "projects": [
+        {
+          "name": "Green Square",
+          "location": "Mostakbal City, Cairo",
+          "properties": [
+            {
+              "title": "Green Square Modern Apartment",
+              "type": "Apartment",
+              "price": 6500000,
+              "beds": 3,
+              "baths": 2,
+              "size_sqm": 175,
+              "images": [
+                "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
+                "https://images.unsplash.com/photo-1570129477492-45c003edd2be"
+              ]
+            },
+            {
+              "title": "Green Square Townhouse",
+              "type": "Townhouse",
+              "price": 11800000,
+              "beds": 4,
+              "baths": 3,
+              "size_sqm": 240,
+              "images": [
+                "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+                "https://images.unsplash.com/photo-1599423300746-b62533397364"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "L'Avenir",
+          "location": "Mostakbal City, Cairo",
+          "properties": [
+            {
+              "title": "L'Avenir Family Apartment",
+              "type": "Apartment",
+              "price": 7200000,
+              "beds": 3,
+              "baths": 2,
+              "size_sqm": 165,
+              "images": [
+                "https://images.unsplash.com/photo-1523217582562-09d0def993a6",
+                "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6"
+              ]
+            },
+            {
+              "title": "L'Avenir Standalone Villa",
+              "type": "Villa",
+              "price": 17500000,
+              "beds": 5,
+              "baths": 4,
+              "size_sqm": 410,
+              "images": [
+                "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+                "https://images.unsplash.com/photo-1600585152915-d208bec867a1"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Amwaj North Coast",
+          "location": "Sidi Abdel Rahman",
+          "properties": [
+            {
+              "title": "Amwaj Beachfront Chalet",
+              "type": "Chalet",
+              "price": 8900000,
+              "beds": 2,
+              "baths": 2,
+              "size_sqm": 135,
+              "images": [
+                "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+                "https://images.unsplash.com/photo-1494526585095-c41746248156"
+              ]
+            },
+            {
+              "title": "Amwaj Luxury Villa",
+              "type": "Villa",
+              "price": 22000000,
+              "beds": 6,
+              "baths": 5,
+              "size_sqm": 480,
+              "images": [
+                "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6",
+                "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Talaat Moustafa Group",
+      "country": "Egypt",
+      "description": "Egypt's largest community developer known for fully integrated residential cities.",
+      "projects": [
+        {
+          "name": "Madinaty",
+          "location": "New Cairo",
+          "properties": [
+            {
+              "title": "Madinaty Garden Apartment",
+              "type": "Apartment",
+              "price": 7600000,
+              "beds": 3,
+              "baths": 2,
+              "size_sqm": 160,
+              "images": [
+                "https://images.unsplash.com/photo-1493809842364-78817add7ffb",
+                "https://images.unsplash.com/photo-1484154218962-a197022b5858"
+              ]
+            },
+            {
+              "title": "Madinaty Family Villa",
+              "type": "Villa",
+              "price": 13500000,
+              "beds": 4,
+              "baths": 3,
+              "size_sqm": 310,
+              "images": [
+                "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+                "https://images.unsplash.com/photo-1600585152220-90363fe7e115"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Al Rehab City",
+          "location": "New Cairo",
+          "properties": [
+            {
+              "title": "Al Rehab Classic Apartment",
+              "type": "Apartment",
+              "price": 5900000,
+              "beds": 2,
+              "baths": 2,
+              "size_sqm": 120,
+              "images": [
+                "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+                "https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
+              ]
+            },
+            {
+              "title": "Al Rehab Premium Villa",
+              "type": "Villa",
+              "price": 14800000,
+              "beds": 5,
+              "baths": 4,
+              "size_sqm": 360,
+              "images": [
+                "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea",
+                "https://images.unsplash.com/photo-1600585154084-4e5fe7c39198"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Noor City",
+          "location": "New Administrative Capital",
+          "properties": [
+            {
+              "title": "Noor City Smart Apartment",
+              "type": "Apartment",
+              "price": 8200000,
+              "beds": 3,
+              "baths": 2,
+              "size_sqm": 170,
+              "images": [
+                "https://images.unsplash.com/photo-1527030280862-64139fba04ca",
+                "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"
+              ]
+            },
+            {
+              "title": "Noor City Standalone Villa",
+              "type": "Villa",
+              "price": 19000000,
+              "beds": 5,
+              "baths": 4,
+              "size_sqm": 430,
+              "images": [
+                "https://images.unsplash.com/photo-1600607688969-a5bfcd646154",
+                "https://images.unsplash.com/photo-1600047508788-7867b6b8c6e1"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Palm Hills Developments",
+      "country": "Egypt",
+      "description": "Premium developer with residential, commercial, and resort communities.",
+      "projects": [
+        {
+          "name": "Palm Hills Katameya",
+          "location": "East Cairo",
+          "properties": [
+            {
+              "title": "Katameya Apartment",
+              "type": "Apartment",
+              "price": 7200000,
+              "beds": 3,
+              "baths": 2,
+              "size_sqm": 155,
+              "images": [
+                "https://images.unsplash.com/photo-1529408632839-a54952c491e5",
+                "https://images.unsplash.com/photo-1521783593447-5702b9bfd267"
+              ]
+            },
+            {
+              "title": "Katameya Villa",
+              "type": "Villa",
+              "price": 16500000,
+              "beds": 5,
+              "baths": 4,
+              "size_sqm": 390,
+              "images": [
+                "https://images.unsplash.com/photo-1600566752355-35792bedcfea",
+                "https://images.unsplash.com/photo-1600585152926-b0c3b8c5d1b4"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hacienda Bay",
+          "location": "North Coast",
+          "properties": [
+            {
+              "title": "Hacienda Bay Chalet",
+              "type": "Chalet",
+              "price": 9400000,
+              "beds": 2,
+              "baths": 2,
+              "size_sqm": 145,
+              "images": [
+                "https://images.unsplash.com/photo-1497366216548-37526070297c",
+                "https://images.unsplash.com/photo-1475856033578-76b4a228f5c3"
+              ]
+            },
+            {
+              "title": "Hacienda Bay Beach Villa",
+              "type": "Villa",
+              "price": 23000000,
+              "beds": 6,
+              "baths": 5,
+              "size_sqm": 470,
+              "images": [
+                "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6",
+                "https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Palm Hills New Cairo",
+          "location": "New Cairo",
+          "properties": [
+            {
+              "title": "New Cairo Apartment",
+              "type": "Apartment",
+              "price": 6900000,
+              "beds": 3,
+              "baths": 2,
+              "size_sqm": 160,
+              "images": [
+                "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
+                "https://images.unsplash.com/photo-1481277542470-605612bd2d61"
+              ]
+            },
+            {
+              "title": "New Cairo Villa",
+              "type": "Villa",
+              "price": 15000000,
+              "beds": 4,
+              "baths": 3,
+              "size_sqm": 340,
+              "images": [
+                "https://images.unsplash.com/photo-1600047508788-7867b6b8c6e1",
+                "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IMKAN Misr",
+      "country": "Egypt",
+      "description": "Luxury lifestyle developer focused on soulful communities.",
+      "projects": [
+        {
+          "name": "Alburouj",
+          "location": "El Shorouk City",
+          "properties": [
+            {
+              "title": "Alburouj Apartment",
+              "type": "Apartment",
+              "price": 8400000,
+              "beds": 3,
+              "baths": 2,
+              "size_sqm": 165,
+              "images": [
+                "https://images.unsplash.com/photo-1527030280862-64139fba04ca",
+                "https://images.unsplash.com/photo-1505691723518-36a5ac3b2b8f"
+              ]
+            },
+            {
+              "title": "Alburouj Villa",
+              "type": "Villa",
+              "price": 17800000,
+              "beds": 5,
+              "baths": 4,
+              "size_sqm": 420,
+              "images": [
+                "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+                "https://images.unsplash.com/photo-1600585154084-4e5fe7c39198"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Alburouj East",
+          "location": "East Cairo",
+          "properties": [
+            {
+              "title": "Alburouj East Apartment",
+              "type": "Apartment",
+              "price": 8600000,
+              "beds": 3,
+              "baths": 2,
+              "size_sqm": 170,
+              "images": [
+                "https://images.unsplash.com/photo-1523217582562-09d0def993a6",
+                "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"
+              ]
+            },
+            {
+              "title": "Alburouj East Villa",
+              "type": "Villa",
+              "price": 18500000,
+              "beds": 6,
+              "baths": 5,
+              "size_sqm": 460,
+              "images": [
+                "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4",
+                "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Alburouj Business Park",
+          "location": "El Shorouk City",
+          "properties": [
+            {
+              "title": "Business Park Office",
+              "type": "Commercial",
+              "price": 11200000,
+              "beds": 0,
+              "baths": 1,
+              "size_sqm": 220,
+              "images": [
+                "https://images.unsplash.com/photo-1497366216548-37526070297c",
+                "https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+              ]
+            },
+            {
+              "title": "Business Park Townhouse",
+              "type": "Townhouse",
+              "price": 9900000,
+              "beds": 4,
+              "baths": 3,
+              "size_sqm": 280,
+              "images": [
+                "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+                "https://images.unsplash.com/photo-1599423300746-b62533397364"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hassan Allam Properties",
+      "country": "Egypt",
+      "description": "Developer delivering mixed residential and resort communities including Swan Lake developments.",
+      "projects": [
+        {
+          "name": "Swan Lake Residences",
+          "location": "New Cairo",
+          "properties": [
+            {
+              "title": "Swan Lake Apartment",
+              "type": "Apartment",
+              "price": 7800000,
+              "beds": 3,
+              "baths": 2,
+              "size_sqm": 155,
+              "images": [
+                "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+                "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688"
+              ]
+            },
+            {
+              "title": "Swan Lake Villa",
+              "type": "Villa",
+              "price": 15500000,
+              "beds": 5,
+              "baths": 4,
+              "size_sqm": 380,
+              "images": [
+                "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+                "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Swan Lake North Coast",
+          "location": "North Coast",
+          "properties": [
+            {
+              "title": "North Coast Chalet",
+              "type": "Chalet",
+              "price": 9200000,
+              "beds": 2,
+              "baths": 2,
+              "size_sqm": 140,
+              "images": [
+                "https://images.unsplash.com/photo-1494526585095-c41746248156",
+                "https://images.unsplash.com/photo-1475856033578-76b4a228f5c3"
+              ]
+            },
+            {
+              "title": "North Coast Beach Villa",
+              "type": "Villa",
+              "price": 21000000,
+              "beds": 5,
+              "baths": 4,
+              "size_sqm": 420,
+              "images": [
+                "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6",
+                "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Park View",
+          "location": "New Administrative Capital",
+          "properties": [
+            {
+              "title": "Park View Apartment",
+              "type": "Apartment",
+              "price": 8500000,
+              "beds": 3,
+              "baths": 2,
+              "size_sqm": 175,
+              "images": [
+                "https://images.unsplash.com/photo-1527030280862-64139fba04ca",
+                "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"
+              ]
+            },
+            {
+              "title": "Park View Duplex",
+              "type": "Duplex",
+              "price": 12500000,
+              "beds": 4,
+              "baths": 3,
+              "size_sqm": 290,
+              "images": [
+                "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+                "https://images.unsplash.com/photo-1600585152220-90363fe7e115"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

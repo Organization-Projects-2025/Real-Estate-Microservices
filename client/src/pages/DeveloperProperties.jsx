@@ -25,7 +25,7 @@ function DeveloperProperties() {
 
   if (loading) {
     return (
-      <div className="bg-[#121212] text-[#fff] min-h-screen">
+      <div className="bg-[#121212] text-[#fff] min-h-screen pt-20">
         <Navbar />
         <div className="px-6 md:px-16 py-20">
           <div className="animate-pulse">
@@ -49,7 +49,7 @@ function DeveloperProperties() {
     <div className="bg-[#121212] text-[#fff] min-h-screen">
       <Navbar />
       <section
-        className="relative flex flex-col items-center justify-center px-6 md:px-16 py-24 bg-[#121212] bg-cover bg-center overflow-hidden"
+        className="relative flex flex-col items-center justify-center px-6 md:px-16 pt-32 pb-24 bg-[#121212] bg-cover bg-center overflow-hidden"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab')`,
           backgroundAttachment: 'fixed',
@@ -74,11 +74,6 @@ function DeveloperProperties() {
       </section>
 
       <section className="px-6 md:px-16 py-20">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-5xl font-black uppercase tracking-tighter">Elite Developers</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">Connect with the most prestigious real estate developers shaping the skyline of tomorrow.</p>
-        </div>
-
         {developers.length === 0 ? (
           <p className="text-center text-gray-500 italic py-20">No developers found. Please check back later.</p>
         ) : (

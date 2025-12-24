@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import PropertyCard from '../components/PropertyCard';
 import Navbar from '../components/Navbar';
 import SearchBar from '../components/SearchBar';
+import PropertyFilters, { FilterButton } from '../components/PropertyFilters';
 import PropertyDetail from './PropertyDetail';
 
 function Buy() {
@@ -9,9 +10,11 @@ function Buy() {
   const [filteredProperties, setFilteredProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-  const [error, setError] = useState(null);
+  const [activeFilters, setActiveFilters] = useState({});
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [showFilters, setShowFilters] = useState(false);
+  const [activeFiltersCount, setActiveFiltersCount] = useState(0);
   const propertiesPerPage = 6;
 
   useEffect(() => {
@@ -37,42 +40,108 @@ function Buy() {
       })
       .catch((err) => {
         console.error('Error fetching properties:', err);
-        // Don't show error - just show empty state
         setProperties([]);
         setFilteredProperties([]);
         setLoading(false);
       });
   }, []);
 
+  // Combined search and filter effect
   useEffect(() => {
-    if (searchTerm.trim() === '') {
-      setFilteredProperties(properties);
-      return;
+    let result = [...properties];
+
+    // Apply search term
+    if (searchTerm.trim() !== '') {
+      const lowerSearch = searchTerm.toLowerCase();
+      result = result.filter((property) =>
+        [
+          property.title || '',
+          property.description || '',
+          property.propertyType || '',
+          property.subType || '',
+          property.address?.city || '',
+          property.address?.state || '',
+          property.address?.country || '',
+        ].some((field) => field.toLowerCase().includes(lowerSearch))
+      );
     }
-    const lowerSearch = searchTerm.toLowerCase();
-    const filtered = properties.filter((property) =>
-      [
-        property.title || '',
-        property.description || '',
-        property.propertyType || '',
-        property.address?.city || '',
-        property.price?.toString() || '',
-      ].some((field) => field.toLowerCase().includes(lowerSearch))
-    );
-    setFilteredProperties(filtered);
-  }, [searchTerm, properties]);
+
+    // Apply filters
+    if (activeFilters.priceMin) {
+      result = result.filter((p) => p.price >= Number(activeFilters.priceMin));
+    }
+    if (activeFilters.priceMax) {
+      result = result.filter((p) => p.price <= Number(activeFilters.priceMax));
+    }
+    if (activeFilters.bedrooms) {
+      result = result.filter(
+        (p) => p.features?.bedrooms >= Number(activeFilters.bedrooms)
+      );
+    }
+    if (activeFilters.bathrooms) {
+      result = result.filter(
+        (p) => p.features?.bathrooms >= Number(activeFilters.bathrooms)
+      );
+    }
+    if (activeFilters.propertyType) {
+      result = result.filter(
+        (p) => p.subType?.toLowerCase() === activeFilters.propertyType.toLowerCase()
+      );
+    }
+    if (activeFilters.furnished) {
+      result = result.filter(
+        (p) => p.features?.furnished === activeFilters.furnished
+      );
+    }
+    if (activeFilters.pool) {
+      result = result.filter((p) => p.features?.pool === true);
+    }
+    if (activeFilters.pets) {
+      result = result.filter((p) => p.features?.pets === true);
+    }
+    if (activeFilters.parking) {
+      result = result.filter((p) => p.features?.garage > 0);
+    }
+    if (activeFilters.areaMin) {
+      result = result.filter(
+        (p) => p.area?.sqft >= Number(activeFilters.areaMin)
+      );
+    }
+    if (activeFilters.areaMax) {
+      result = result.filter(
+        (p) => p.area?.sqft <= Number(activeFilters.areaMax)
+      );
+    }
+
+    setFilteredProperties(result);
+  }, [searchTerm, properties, activeFilters]);
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchTerm]);
+  }, [searchTerm, activeFilters]);
 
   const handleSearch = (term) => {
     setSearchTerm(term);
   };
 
+  const handleFilterChange = (filters) => {
+    setActiveFilters(filters);
+    // Count active filters
+    let count = 0;
+    if (filters.priceMin || filters.priceMax) count++;
+    if (filters.bedrooms) count++;
+    if (filters.bathrooms) count++;
+    if (filters.propertyType) count++;
+    if (filters.furnished) count++;
+    if (filters.pool) count++;
+    if (filters.pets) count++;
+    if (filters.parking) count++;
+    setActiveFiltersCount(count);
+  };
+
   if (loading) {
     return (
-      <div className="bg-[#121212] text-[#fff] min-h-screen">
+      <div className="bg-[#121212] text-[#fff] min-h-screen pt-20">
         <Navbar />
         <div className="px-6 md:px-16 py-20">
           <div className="animate-pulse">
@@ -91,17 +160,6 @@ function Buy() {
     );
   }
 
-  if (error) {
-    return (
-      <div className="bg-[#121212] text-[#fff] min-h-screen">
-        <Navbar />
-        <div className="px-6 md:px-16 py-20 text-center">
-          <p className="text-red-400">{error}</p>
-        </div>
-      </div>
-    );
-  }
-
   const indexOfLastProperty = currentPage * propertiesPerPage;
   const indexOfFirstProperty = indexOfLastProperty - propertiesPerPage;
   const currentProperties = filteredProperties.slice(
@@ -113,30 +171,59 @@ function Buy() {
   return (
     <div className="bg-[#121212] text-[#fff] min-h-screen">
       <Navbar />
+      {/* Hero Section */}
       <section
-        className="relative flex flex-col items-center justify-center px-6 md:px-16 py-24 bg-[#121212] bg-cover bg-center overflow-hidden"
+        className="relative flex flex-col items-center justify-center px-6 md:px-16 pt-32 pb-20 bg-[#121212] bg-cover bg-center"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c')`,
           backgroundAttachment: 'fixed',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#121212] via-[#703BF7] to-[#121212] opacity-70"></div>
-        <div className="relative max-w-3xl space-y-8 z-10 text-center">
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight">
+        <div className="relative max-w-3xl z-10 text-center">
+          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-8">
             Own Your{' '}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#703BF7] to-[#fff]">
               Forever Home
             </span>
           </h1>
-          <div className="flex items-center justify-center mt-6">
+          {/* Search Bar + Filter Button */}
+          <div className="flex items-center gap-3 justify-center">
             <SearchBar onSearch={handleSearch} />
-            <button className="ml-2 bg-gradient-to-r from-[#703BF7] to-[#5f2cc6] px-8 py-4 rounded-full font-semibold text-white hover:from-[#5f2cc6] hover:to-[#703BF7] transition-all duration-300 transform hover:scale-105">
-              Search
-            </button>
+            <FilterButton
+              onClick={() => setShowFilters(!showFilters)}
+              isOpen={showFilters}
+              activeCount={activeFiltersCount}
+            />
           </div>
         </div>
       </section>
-      <section className="px-6 md:px-16 py-20">
+
+      {/* Filter Panel - Expands below hero */}
+      {showFilters && (
+        <section className="px-6 md:px-16 py-6 bg-[#121212]">
+          <div className="max-w-6xl mx-auto">
+            <PropertyFilters
+              onFilterChange={handleFilterChange}
+              listingType="sale"
+              isControlled={true}
+              showPanel={true}
+            />
+          </div>
+        </section>
+      )}
+
+      {/* Results indicator */}
+      {filteredProperties.length !== properties.length && (
+        <div className="px-6 md:px-16 py-4 bg-[#121212]">
+          <p className="text-sm text-gray-400 text-center">
+            Showing {filteredProperties.length} of {properties.length} properties
+          </p>
+        </div>
+      )}
+
+      {/* Properties Section */}
+      <section className="px-6 md:px-16 py-12">
         <h2 className="text-3xl font-bold text-center mb-10">
           Browse Properties for Sale
         </h2>

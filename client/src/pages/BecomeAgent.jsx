@@ -1,19 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
-
-const formVariants = {
-  initial: { opacity: 0, x: 100, scale: 0.95 },
-  animate: {
-    opacity: 1,
-    x: 0,
-    scale: 1,
-    transition: { duration: 0.5, ease: [0.25, 0.8, 0.25, 1] },
-  },
-};
 
 export default function BecomeAgent() {
   const navigate = useNavigate();
@@ -136,13 +125,8 @@ export default function BecomeAgent() {
   return (
     <div className="bg-[#121212] text-white min-h-screen">
       <Navbar />
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <motion.div
-          variants={formVariants}
-          initial="initial"
-          animate="animate"
-          className="bg-[#1a1a1a] rounded-xl p-8 shadow-lg transform transition-all duration-500 hover:shadow-2xl hover:shadow-[#703BF7]/20"
-        >
+      <div className="max-w-4xl mx-auto px-4 pt-28 pb-12">
+        <div className="bg-[#1a1a1a] rounded-xl p-8 shadow-lg">
           <h1 className="text-4xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-[#703BF7] to-white mb-8">
             Become an Agent
           </h1>
@@ -345,7 +329,7 @@ export default function BecomeAgent() {
               Back to Agents
             </button>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
