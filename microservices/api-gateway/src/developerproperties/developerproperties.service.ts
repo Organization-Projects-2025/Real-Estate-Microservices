@@ -117,4 +117,8 @@ export class DeveloperPropertiesService {
   async getProjectsWithPropertiesByDeveloper(developerId: string) {
     return firstValueFrom(this.client.send({ cmd: 'getProjectsWithPropertiesByDeveloper' }, developerId));
   }
+
+  async getFullHierarchy() {
+    return firstValueFrom(this.client.send({ cmd: 'getFullHierarchy' }, {}));
+  }
 }

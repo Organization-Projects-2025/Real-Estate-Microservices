@@ -143,4 +143,9 @@ export class DeveloperPropertiesController {
   async getProjectsWithPropertiesByDeveloper(@Param('developerId') developerId: string) {
     return this.service.getProjectsWithPropertiesByDeveloper(developerId);
   }
+
+  @Get('projects-hierarchy')
+  async getFullHierarchy() {
+    return this.service.getFullHierarchy();
+  }
 }

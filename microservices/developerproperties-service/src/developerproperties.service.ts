@@ -183,7 +183,7 @@ export class DeveloperPropertiesService {
   }
 
   async getAllProperties(): Promise<any> {
-    const properties = await this.developerPropertyModel.find().populate('developerId');
+    const properties = await this.developerPropertyModel.find();
     return {
       status: 'success',
       results: properties.length,
@@ -192,14 +192,21 @@ export class DeveloperPropertiesService {
   }
 
   async getPropertyById(id: string): Promise<any> {
-    const property = await this.developerPropertyModel.findById(id).populate('developerId');
-    if (!property) {
-      throw new HttpException('Property not found', HttpStatus.NOT_FOUND);
+    console.log('Fetching developer property by ID:', id);
+    try {
+      const property = await this.developerPropertyModel.findById(id);
+      console.log('Found property:', property ? 'Yes' : 'No');
+      if (!property) {
+        throw new HttpException('Property not found', HttpStatus.NOT_FOUND);
+      }
+      return {
+        status: 'success',
+        data: { property },
+      };
+    } catch (error) {
+      console.error('Error in getPropertyById:', error);
+      throw error;
     }
-    return {
-      status: 'success',
-      data: { property },
-    };
   }
 
   async updateProperty(id: string, data: any): Promise<any> {
@@ -307,11 +314,14 @@ export class DeveloperPropertiesService {
     };
   }
   async getProjectsWithPropertiesByDeveloper(developerId: string): Promise<any> {
+    console.log('Fetching projects for developerId:', developerId);
     // Fetch all projects for the developer
     const projects = await this.projectModel.find({ developerId }).lean().exec();
+    console.log(`Found ${projects.length} projects`);
 
     // Fetch all properties for the developer
     const properties = await this.developerPropertyModel.find({ developerId }).lean().exec();
+    console.log(`Found ${properties.length} properties total for developer`);
 
     // Map properties to projects
     const projectsWithProperties = projects.map((project) => {
@@ -329,6 +339,21 @@ export class DeveloperPropertiesService {
       status: 'success',
       results: projectsWithProperties.length,
       data: { projects: projectsWithProperties },
+    };
+  }
+
+  async getFullHierarchy(): Promise<any> {
+    const projects = await this.projectModel.find().lean().exec();
+    const properties = await this.developerPropertyModel.find().lean().exec();
+
+    const hierarchy = projects.map((project) => ({
+      ...project,
+      properties: properties.filter((prop) => String(prop.projectId) === String(project._id)),
+    }));
+
+    return {
+      status: 'success',
+      data: { projects: hierarchy },
     };
   }
 }

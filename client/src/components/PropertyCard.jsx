@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaBed, FaBath, FaRulerCombined, FaMapMarkerAlt, FaEdit, FaSave, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const PropertyCard = ({ property, onUpdate, isEditable = false }) => {
+const PropertyCard = ({ property, onUpdate, isEditable = false, to }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedProperty, setEditedProperty] = useState(property);
 
@@ -16,9 +16,16 @@ const PropertyCard = ({ property, onUpdate, isEditable = false }) => {
     area = {},
     features = {},
     media = [],
+    images = [],
+    projectId
   } = editedProperty;
 
-  const image = media && media.length > 0 ? media[0] : '';
+  // Developer properties often use 'images' while standard ones use 'media'
+  const displayImages = media.length > 0 ? media : images;
+  const image = displayImages.length > 0 ? displayImages[0] : '';
+
+  // Determine the detail link
+  const detailLink = to || (projectId || images.length > 0 ? `/developer-property/${_id}` : `/property/${_id}`);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -125,7 +132,7 @@ const PropertyCard = ({ property, onUpdate, isEditable = false }) => {
             </div>
             <div className="flex gap-2">
               <Link
-                to={`/property/${_id}`}
+                to={detailLink}
                 className="mt-4 block w-full bg-[#703BF7] hover:bg-[#5f2cc6] text-white py-2 text-center rounded-lg transition-colors"
                 style={{ flex: isEditable ? 1 : 'none', width: isEditable ? 'auto' : '100%' }}
               >
