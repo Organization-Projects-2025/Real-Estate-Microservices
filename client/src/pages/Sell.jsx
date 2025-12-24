@@ -1,17 +1,121 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { v4 } from "uuid";
+import { v4 } from 'uuid';
 import { storage, ID } from '../../appwrite';
 import { useAuth } from '../context/AuthContext';
 
 const steps = ['Basic Info', 'Address & Area', 'Media & Price', 'Features'];
 
+// Default static values as fallback
+const defaultPropertyTypes = [
+  { name: 'residential', label: 'Residential', order: 0 },
+  { name: 'commercial', label: 'Commercial', order: 1 },
+];
+
+const defaultAmenities = [
+  { name: 'pool', label: 'Pool', order: 0 },
+  { name: 'yard', label: 'Yard', order: 1 },
+  { name: 'pets', label: 'Pets', order: 2 },
+];
+
+const defaultFeatures = [
+  { name: 'airConditioning', label: 'Air Conditioning', order: 3 },
+  { name: 'internet', label: 'Internet', order: 4 },
+  { name: 'electricity', label: 'Electricity', order: 5 },
+  { name: 'water', label: 'Water', order: 6 },
+  { name: 'gas', label: 'Gas', order: 7 },
+  { name: 'wifi', label: 'Wifi', order: 8 },
+  { name: 'security', label: 'Security', order: 9 },
+];
+
 export default function Sell() {
   const navigate = useNavigate();
   const { user, isAuthenticated } = useAuth();
   const [currentStep, setCurrentStep] = useState(0);
+
+  // Dynamic filter options from database
+  const [propertyTypes, setPropertyTypes] = useState(defaultPropertyTypes);
+  const [amenities, setAmenities] = useState(defaultAmenities);
+  const [features, setFeatures] = useState(defaultFeatures);
+  const [filtersLoading, setFiltersLoading] = useState(true);
+
+  // Fetch dynamic filters from database
+  useEffect(() => {
+    const fetchFilters = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/api/filters');
+        const filters = Array.isArray(response.data) ? response.data : [];
+
+        // Filter only active filters
+        const activeFilters = filters.filter((f) => f.isActive);
+
+        // Group filters by category
+        const propertyTypeFilters = activeFilters
+          .filter((f) => f.category === 'property-type')
+          .sort((a, b) => a.order - b.order)
+          .map((f) => ({
+            name: f.name.toLowerCase().replace(/\s+/g, '-'),
+            label: f.name,
+            order: f.order || 0,
+          }));
+
+        const amenityFilters = activeFilters
+          .filter((f) => f.category === 'amenities')
+          .sort((a, b) => a.order - b.order)
+          .map((f) => ({
+            name: f.name.toLowerCase().replace(/\s+/g, ''),
+            label: f.name,
+            order: f.order || 0,
+          }));
+
+        const featureFilters = activeFilters
+          .filter((f) => f.category === 'features')
+          .sort((a, b) => a.order - b.order)
+          .map((f) => ({
+            name: f.name.toLowerCase().replace(/\s+/g, ''),
+            label: f.name,
+            order: f.order || 0,
+          }));
+
+        // Update state with fetched filters (use defaults if empty)
+        if (propertyTypeFilters.length > 0) {
+          setPropertyTypes(propertyTypeFilters);
+        }
+        if (amenityFilters.length > 0) {
+          setAmenities(amenityFilters);
+          // Initialize form features for amenities
+          setFormData((prev) => ({
+            ...prev,
+            features: {
+              ...prev.features,
+              ...Object.fromEntries(amenityFilters.map((a) => [a.name, false])),
+            },
+          }));
+        }
+        if (featureFilters.length > 0) {
+          setFeatures(featureFilters);
+          // Initialize form features for features
+          setFormData((prev) => ({
+            ...prev,
+            features: {
+              ...prev.features,
+              ...Object.fromEntries(featureFilters.map((f) => [f.name, false])),
+            },
+          }));
+        }
+      } catch (error) {
+        console.error('Error fetching filters:', error);
+        // Keep default values on error
+      } finally {
+        setFiltersLoading(false);
+      }
+    };
+
+    fetchFilters();
+  }, []);
+
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -40,7 +144,7 @@ export default function Sell() {
       pool: false,
       yard: false,
       pets: false,
-      furnished: 'none',
+      furnished: '',
       airConditioning: false,
       internet: false,
       electricity: false,
@@ -304,8 +408,11 @@ export default function Sell() {
                 value={formData.propertyType}
                 onChange={handleChange}
               >
-                <option value="residential">Residential</option>
-                <option value="commercial">Commercial</option>
+                {propertyTypes.map((type) => (
+                  <option key={type.name} value={type.name}>
+                    {type.label}
+                  </option>
+                ))}
               </select>
               <input
                 className={inputClass}
@@ -495,9 +602,14 @@ export default function Sell() {
           </div>
         );
       case 3:
+        // Combine amenities and features, then sort by order
+        const allCheckboxItems = [...amenities, ...features].sort(
+          (a, b) => (a.order || 0) - (b.order || 0)
+        );
+
         return (
           <div className="space-y-6">
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-4 gap-4">
               {['bedrooms', 'bathrooms', 'garage'].map((key) => (
                 <input
                   key={key}
@@ -510,63 +622,35 @@ export default function Sell() {
                   placeholder={key.charAt(0).toUpperCase() + key.slice(1)}
                 />
               ))}
-            </div>
-            <div className="grid md:grid-cols-4 gap-4">
-              {['pool', 'yard', 'pets'].map((key) => (
-                <label
-                  key={key}
-                  className="flex items-center p-4 bg-[#1a1a1a] rounded-2xl shadow-md cursor-pointer"
-                >
-                  <input
-                    className={checkboxClass}
-                    name={key}
-                    type="checkbox"
-                    checked={formData.features[key]}
-                    onChange={handleChange}
-                  />
-                  <span className="ml-2 capitalize">
-                    {key.charAt(0).toUpperCase() + key.slice(1)}
-                  </span>
-                </label>
-              ))}
               <select
-                className={selectClass}
+                className={`${selectClass} ${!formData.features.furnished ? '!text-gray-400' : ''}`}
                 name="furnished"
                 value={formData.features.furnished}
                 onChange={handleChange}
+                required
               >
+                <option value="" disabled>
+                  Furnished Status
+                </option>
                 <option value="fully">Fully Furnished</option>
                 <option value="partly">Partly Furnished</option>
                 <option value="none">Unfurnished</option>
               </select>
             </div>
             <div className="grid md:grid-cols-4 gap-4">
-              {[
-                'airConditioning',
-                'internet',
-                'electricity',
-                'water',
-                'gas',
-                'wifi',
-                'security',
-              ].map((key) => (
+              {allCheckboxItems.map((item) => (
                 <label
-                  key={key}
+                  key={item.name}
                   className="flex items-center p-4 bg-[#1a1a1a] rounded-2xl shadow-md cursor-pointer"
                 >
                   <input
                     className={checkboxClass}
-                    name={key}
+                    name={item.name}
                     type="checkbox"
-                    checked={formData.features[key]}
+                    checked={formData.features[item.name] || false}
                     onChange={handleChange}
                   />
-                  <span className="ml-2">
-                    {key
-                      .replace(/([A-Z])/g, ' $1')
-                      .charAt(0)
-                      .toUpperCase() + key.replace(/([A-Z])/g, ' $1').slice(1)}
-                  </span>
+                  <span className="ml-2">{item.label}</span>
                 </label>
               ))}
             </div>
