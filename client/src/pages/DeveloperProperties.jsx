@@ -9,12 +9,11 @@ function DeveloperProperties() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch users with developer role instead of separate developers
-    fetch('http://localhost:3000/api/auth/users/role/developer')
-      .then((res) => res.json())
-      .then((data) => {
-        if (data?.data?.users) {
-          setDevelopers(data.data.users);
+    fetch('http://127.0.0.1:3000/api/auth/users/role/developer')
+      .then(res => res.json())
+      .then(userData => {
+        if (userData?.data?.users) {
+          setDevelopers(userData.data.users);
         }
         setLoading(false);
       })
@@ -75,38 +74,54 @@ function DeveloperProperties() {
       </section>
 
       <section className="px-6 md:px-16 py-20">
-        <h2 className="text-3xl font-bold text-center mb-10">
-          Browse Developers
-        </h2>
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-5xl font-black uppercase tracking-tighter">Elite Developers</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">Connect with the most prestigious real estate developers shaping the skyline of tomorrow.</p>
+        </div>
+
         {developers.length === 0 ? (
-          <p className="text-center text-gray-400">
-            No developers found.
-          </p>
+          <p className="text-center text-gray-500 italic py-20">No developers found. Please check back later.</p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {developers.map((developer) => (
               <div
                 key={developer._id}
                 onClick={() => navigate(`/developer-properties/${developer._id}`)}
-                className="bg-[#1a1a1a] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#252525] cursor-pointer group hover:border-[#703BF7]"
+                className="group relative bg-[#1a1a1a] rounded-[2.5rem] overflow-hidden cursor-pointer border border-white/5 hover:border-[#703BF7]/40 transition-all duration-500 hover:-translate-y-2 shadow-2xl"
               >
-                <div className="p-6 space-y-4">
-                  <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-r from-[#703BF7] to-[#5f2cc6] rounded-full mx-auto group-hover:scale-110 transition-transform duration-300">
-                    <FaBuilding className="text-4xl text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white text-center group-hover:text-[#703BF7] transition-colors">
-                    {developer.firstName} {developer.lastName}
-                  </h3>
-                  <div className="text-gray-500 text-sm text-center space-y-1">
-                    <p>{developer.email}</p>
-                    {developer.phoneNumber && (
-                      <p>{developer.phoneNumber}</p>
+                <div className="p-10 flex flex-col items-center text-center space-y-6">
+                  {/* Developer Image */}
+                  <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#703BF7] shadow-2xl group-hover:scale-110 transition-transform duration-500 bg-[#252525]">
+                    {developer.profilePicture ? (
+                      <img src={developer.profilePicture} alt={developer.firstName} className="w-full h-full object-cover" />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#703BF7] to-[#1a1a1a]">
+                        <FaBuilding className="text-5xl text-white opacity-80" />
+                      </div>
                     )}
                   </div>
-                  <div className="flex items-center justify-center gap-2 text-[#703BF7] font-semibold group-hover:gap-4 transition-all">
-                    View Properties <FaArrowRight />
+
+                  {/* Developer Info */}
+                  <div className="space-y-2">
+                    <h3 className="text-3xl font-black text-white group-hover:text-[#703BF7] transition-colors uppercase tracking-tight">
+                      {developer.firstName} {developer.lastName}
+                    </h3>
+                    <p className="text-[#703BF7] text-[10px] font-black uppercase tracking-[0.2em]">Authorized Developer</p>
+                  </div>
+
+                  <p className="text-gray-500 text-sm line-clamp-2 leading-relaxed opacity-80">
+                    {developer.about || "Distinguished real estate development firm committed to architectural excellence and urban innovation."}
+                  </p>
+
+                  <div className="pt-6 w-full flex items-center justify-center border-t border-white/5">
+                    <div className="text-[#703BF7] font-black text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">
+                      Explore Projects <FaArrowRight />
+                    </div>
                   </div>
                 </div>
+
+                {/* Decorative background element */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#703BF7]/5 blur-3xl -mr-16 -mt-16 group-hover:bg-[#703BF7]/10 transition-all"></div>
               </div>
             ))}
           </div>
