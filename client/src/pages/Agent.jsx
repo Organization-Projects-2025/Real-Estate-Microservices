@@ -84,7 +84,7 @@ const Agent = () => {
 
   if (loading) {
     return (
-      <div className="bg-[#121212] min-h-screen">
+      <div className="bg-[#121212] min-h-screen pt-20">
         <Navbar />
         <div className="flex items-center justify-center h-screen">
           <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-[#703BF7]"></div>
@@ -98,7 +98,7 @@ const Agent = () => {
       <Navbar />
       
       {/* Hero Section with Search */}
-      <section className="relative py-16 bg-[#121212]">
+      <section className="relative pt-28 pb-16 bg-[#121212]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -132,9 +132,14 @@ const Agent = () => {
                     className="w-full pl-10 pr-4 py-3 bg-[#252525] text-white rounded-lg focus:ring-2 focus:ring-[#703BF7] outline-none"
                   >
                     <option value="">Minimum Experience</option>
-                    <option value="5">5+ Years</option>
-                    <option value="3">3+ Years</option>
                     <option value="1">1+ Year</option>
+                    <option value="2">2+ Years</option>
+                    <option value="3">3+ Years</option>
+                    <option value="5">5+ Years</option>
+                    <option value="7">7+ Years</option>
+                    <option value="10">10+ Years</option>
+                    <option value="15">15+ Years</option>
+                    <option value="20">20+ Years</option>
                   </select>
                 </div>
               </div>
@@ -148,9 +153,14 @@ const Agent = () => {
                     className="w-full pl-10 pr-4 py-3 bg-[#252525] text-white rounded-lg focus:ring-2 focus:ring-[#703BF7] outline-none"
                   >
                     <option value="">Minimum Sales</option>
-                    <option value="10">10+ Sales</option>
-                    <option value="5">5+ Sales</option>
                     <option value="1">1+ Sale</option>
+                    <option value="5">5+ Sales</option>
+                    <option value="10">10+ Sales</option>
+                    <option value="25">25+ Sales</option>
+                    <option value="50">50+ Sales</option>
+                    <option value="100">100+ Sales</option>
+                    <option value="200">200+ Sales</option>
+                    <option value="500">500+ Sales</option>
                   </select>
                 </div>
               </div>
@@ -170,6 +180,11 @@ const Agent = () => {
       {/* Agents List */}
       <section className="py-12 bg-[#121212]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Results indicator */}
+          <p className="text-sm text-gray-400 text-center mb-6">
+            Showing {filteredAgents.length} of {agents.length} agents
+          </p>
+          
           {filteredAgents.length === 0 ? (
             <p className="text-center text-gray-400 text-lg">
               No agents found matching your criteria. Try adjusting your search.

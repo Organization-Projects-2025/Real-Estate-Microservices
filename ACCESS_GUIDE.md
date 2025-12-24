@@ -2,9 +2,11 @@
 
 ## 🔐 User Credentials
 
+> **Note**: All seeded accounts use the same password: `Password123!`
+
 ### Admin User
 - **Email**: `admin@realestate.com`
-- **Password**: `Admin@123456`
+- **Password**: `Password123!`
 - **Role**: Admin
 - **Permissions**: 
   - Access admin dashboard
@@ -12,9 +14,9 @@
   - Manage all users
   - Manage properties and reviews
 
-### Test Developer User
-- **Email**: `developer@realestate.com`
-- **Password**: `Developer@123456`
+### Test Developer Users
+- **Email**: `developer1@realestate.com` or `developer2@realestate.com`
+- **Password**: `Password123!`
 - **Role**: Developer
 - **Permissions**:
   - View all projects/developers
@@ -22,14 +24,24 @@
   - Edit only own properties
   - Delete only own properties
 
-### Test Regular User
-- **Email**: `user@realestate.com`
-- **Password**: `User@123456`
+### Test Agent Users
+- **Email**: `agent1@realestate.com` through `agent5@realestate.com`
+- **Password**: `Password123!`
+- **Role**: Agent
+- **Permissions**:
+  - List properties for sale/rent
+  - Manage own listings
+  - Receive reviews from clients
+
+### Test Regular Users
+- **Email**: `user1@realestate.com` through `user12@realestate.com`
+- **Password**: `Password123!`
 - **Role**: User
 - **Permissions**:
   - Browse properties
   - View developer projects
   - Save properties
+  - Write reviews
 
 ---
 
@@ -40,7 +52,7 @@
 2. Click **Login**
 3. Enter admin credentials:
    - Email: `admin@realestate.com`
-   - Password: `Admin@123456`
+   - Password: `Password123!`
 4. After login, click **Admin Dashboard** button in top navbar
 5. Or navigate directly to: **http://localhost:5173/admin**
 
@@ -310,5 +322,5 @@ Database Update/Response
 
 ---
 
-**Last Updated**: December 20, 2025
-**Version**: 1.0.0
+**Last Updated**: December 24, 2025
+**Version**: 1.1.0

@@ -43,5 +43,10 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^9.2.1"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "mongodb": "^7.0.0",
+    "mongoose": "^9.0.2"
   }
 }

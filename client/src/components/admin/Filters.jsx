@@ -178,12 +178,19 @@ const Filters = () => {
       {/* Toast Notification */}
       {toast && (
         <div
-          className={`fixed top-20 right-4 z-[100] flex items-center gap-3 px-5 py-4 rounded-xl shadow-2xl border backdrop-blur-sm animate-in slide-in-from-right duration-300 ${
+          className={`fixed top-20 right-4 z-[9999] flex items-center gap-3 px-5 py-4 rounded-xl shadow-2xl border backdrop-blur-sm transition-all duration-300 transform ${
             toast.type === 'success'
               ? 'bg-green-900/95 border-green-600 text-green-100'
               : 'bg-red-900/95 border-red-600 text-red-100'
           }`}
+          style={{ animation: 'slideIn 0.3s ease-out' }}
         >
+          <style>{`
+            @keyframes slideIn {
+              from { transform: translateX(100%); opacity: 0; }
+              to { transform: translateX(0); opacity: 1; }
+            }
+          `}</style>
           <div
             className={`p-1 rounded-full ${toast.type === 'success' ? 'bg-green-500/20' : 'bg-red-500/20'}`}
           >

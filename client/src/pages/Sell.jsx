@@ -8,10 +8,19 @@ import { useAuth } from '../context/AuthContext';
 
 const steps = ['Basic Info', 'Address & Area', 'Media & Price', 'Features'];
 
-// Default static values as fallback
-const defaultPropertyTypes = [
-  { name: 'residential', label: 'Residential', order: 0 },
-  { name: 'commercial', label: 'Commercial', order: 1 },
+// Static property types (not from database)
+const propertyTypes = [
+  { name: 'residential', label: 'Residential' },
+  { name: 'commercial', label: 'Commercial' },
+];
+
+// Default dynamic values as fallback
+const defaultSubTypes = [
+  { name: 'apartment', label: 'Apartment', order: 0 },
+  { name: 'condo', label: 'Condo', order: 1 },
+  { name: 'villa', label: 'Villa', order: 2 },
+  { name: 'house', label: 'House', order: 3 },
+  { name: 'townhouse', label: 'Townhouse', order: 4 },
 ];
 
 const defaultAmenities = [
@@ -36,7 +45,7 @@ export default function Sell() {
   const [currentStep, setCurrentStep] = useState(0);
 
   // Dynamic filter options from database
-  const [propertyTypes, setPropertyTypes] = useState(defaultPropertyTypes);
+  const [subTypes, setSubTypes] = useState(defaultSubTypes);
   const [amenities, setAmenities] = useState(defaultAmenities);
   const [features, setFeatures] = useState(defaultFeatures);
   const [filtersLoading, setFiltersLoading] = useState(true);
@@ -52,7 +61,7 @@ export default function Sell() {
         const activeFilters = filters.filter((f) => f.isActive);
 
         // Group filters by category
-        const propertyTypeFilters = activeFilters
+        const subTypeFilters = activeFilters
           .filter((f) => f.category === 'property-type')
           .sort((a, b) => a.order - b.order)
           .map((f) => ({
@@ -80,8 +89,8 @@ export default function Sell() {
           }));
 
         // Update state with fetched filters (use defaults if empty)
-        if (propertyTypeFilters.length > 0) {
-          setPropertyTypes(propertyTypeFilters);
+        if (subTypeFilters.length > 0) {
+          setSubTypes(subTypeFilters);
         }
         if (amenityFilters.length > 0) {
           setAmenities(amenityFilters);
@@ -414,13 +423,22 @@ export default function Sell() {
                   </option>
                 ))}
               </select>
-              <input
-                className={inputClass}
+              <select
+                className={`${selectClass} ${!formData.subType ? '!text-gray-400' : ''}`}
                 name="subType"
                 value={formData.subType}
                 onChange={handleChange}
-                placeholder="Sub-Type (e.g. Apartment)"
-              />
+                required
+              >
+                <option value="" disabled>
+                  Property Sub-Type
+                </option>
+                {subTypes.map((type) => (
+                  <option key={type.name} value={type.name}>
+                    {type.label}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
         );
@@ -663,7 +681,8 @@ export default function Sell() {
 
   if (!isAuthenticated) {
     return (
-      <div className="bg-[#121212] text-white w-full min-h-screen flex items-center justify-center">
+      <div className="bg-[#121212] text-white w-full min-h-screen flex items-center justify-center pt-20">
+        <Navbar />
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">Please Log In</h2>
           <p className="text-gray-400">You must be logged in to list a property.</p>
@@ -681,7 +700,7 @@ export default function Sell() {
   return (
     <div className="bg-[#121212] text-white w-full min-h-screen">
       <Navbar />
-      <div className="max-w-5xl mx-auto p-8">
+      <div className="max-w-5xl mx-auto p-8 pt-28">
         <h2 className="text-5xl font-extrabold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-white leading-[2]">
           List Your Property
         </h2>
