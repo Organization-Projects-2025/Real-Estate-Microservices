@@ -6,7 +6,7 @@ import axios from 'axios';
 
 export default function BecomeAgent() {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login, setUser } = useAuth();
   const [step, setStep] = useState(1); // 1 for login, 2 for agent form
   const [loginData, setLoginData] = useState({
     email: '',
@@ -111,6 +111,20 @@ export default function BecomeAgent() {
 
       if (response.status === 201) {
         setMessage('Successfully became an agent!');
+        
+        // Refresh user data to get updated role
+        try {
+          const userResponse = await axios.get('http://localhost:3000/api/auth/me', {
+            withCredentials: true
+          });
+          if (userResponse.data?.data?.user) {
+            // Update the auth context with the new user data (including role: 'agent')
+            setUser(userResponse.data.data.user);
+          }
+        } catch (refreshError) {
+          console.error('Failed to refresh user data:', refreshError);
+        }
+        
         setTimeout(() => {
           navigate('/agent');
         }, 2000);
@@ -204,10 +218,10 @@ export default function BecomeAgent() {
                     type="text"
                     name="firstName"
                     value={agentData.firstName}
-                    onChange={handleAgentChange}
                     placeholder="Enter your first name"
-                    className={inputClass}
+                    className={`${inputClass} bg-[#1f1f1f] cursor-not-allowed`}
                     required
+                    readOnly
                   />
                 </div>
                 <div className="space-y-2">
@@ -216,10 +230,10 @@ export default function BecomeAgent() {
                     type="text"
                     name="lastName"
                     value={agentData.lastName}
-                    onChange={handleAgentChange}
                     placeholder="Enter your last name"
-                    className={inputClass}
+                    className={`${inputClass} bg-[#1f1f1f] cursor-not-allowed`}
                     required
+                    readOnly
                   />
                 </div>
               </div>

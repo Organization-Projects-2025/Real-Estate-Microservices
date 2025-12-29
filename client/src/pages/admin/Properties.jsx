@@ -6,7 +6,6 @@ import { FaEdit, FaTrash, FaHome, FaBed, FaBath, FaCar, FaSwimmingPool, FaWifi, 
 function Properties() {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [editingProperty, setEditingProperty] = useState(null);
   const [formData, setFormData] = useState({
     title: '',
@@ -54,9 +53,8 @@ function Properties() {
       setLoading(true);
       const response = await getAllProperties();
       setProperties(response.data.properties);
-      setError(null);
     } catch {
-      setError('Failed to fetch properties');
+      toast.error('Failed to fetch properties');
     } finally {
       setLoading(false);
     }
@@ -85,13 +83,13 @@ function Properties() {
         const response = await deleteProperty(propertyId);
         if (response.status === 'success') {
         setProperties(properties.filter(property => property._id !== propertyId));
-          setError(null);
+          toast.success('Property deleted successfully');
         } else {
-          setError(response.message || 'Failed to delete property');
+          toast.error(response.message || 'Failed to delete property');
         }
       } catch (err) {
         console.error('Delete property error:', err);
-        setError(err.response?.data?.message || 'Failed to delete property. Please try again.');
+        toast.error(err.response?.data?.message || 'Failed to delete property');
       }
     }
   };
@@ -104,8 +102,9 @@ function Properties() {
         property._id === editingProperty._id ? response.data.property : property
       ));
       setEditingProperty(null);
-    } catch {
-      setError('Failed to update property');
+      toast.success('Property updated successfully');
+    } catch (err) {
+      toast.error(err.response?.data?.message || 'Failed to update property');
     }
   };
 
@@ -142,335 +141,287 @@ function Properties() {
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold text-white mb-8">Property Management</h1>
 
-        {error && (
-          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4 mb-6">
-            <p className="text-red-500">{error}</p>
-          </div>
-        )}
-
         {editingProperty && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 overflow-y-auto">
-            <div className="bg-[#1a1a1a] rounded-lg p-6 w-full max-w-2xl">
-              <h2 className="text-2xl font-bold text-white mb-4">Edit Property</h2>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-gray-300 mb-2">Title</label>
-                  <input
-                    type="text"
-                    name="title"
-                    value={formData.title}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
-                    required
-                  />
-                </div>
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-[60]">
+            <div className="bg-[#1a1a1a] rounded-xl w-full max-w-3xl max-h-[85vh] overflow-hidden border border-gray-800 shadow-2xl flex flex-col">
+              <div className="flex items-center justify-between p-5 border-b border-gray-800">
+                <h2 className="text-xl font-bold text-white">Edit Property</h2>
+                <button
+                  type="button"
+                  onClick={() => setEditingProperty(null)}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              
+              <form onSubmit={handleSubmit} className="flex-1 overflow-y-auto p-5">
+                <div className="space-y-5">
+                  {/* Basic Info */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-gray-400 text-sm mb-1.5">Title</label>
+                      <input
+                        type="text"
+                        name="title"
+                        value={formData.title}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-400 text-sm mb-1.5">Price</label>
+                      <input
+                        type="number"
+                        name="price"
+                        value={formData.price}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
+                  </div>
+
                   <div>
-                    <label className="block text-gray-300 mb-2">Price</label>
-                    <input
-                      type="number"
-                      name="price"
-                      value={formData.price}
+                    <label className="block text-gray-400 text-sm mb-1.5">Description</label>
+                    <textarea
+                      name="description"
+                      value={formData.description}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
+                      className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors resize-none"
+                      rows="2"
                       required
                     />
                   </div>
-                </div>
 
-                <div>
-                  <label className="block text-gray-300 mb-2">Description</label>
-                  <textarea
-                    name="description"
-                    value={formData.description}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
-                    rows="3"
-                    required
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div>
-                    <label className="block text-gray-300 mb-2">Listing Type</label>
-                    <select
-                      name="listingType"
-                      value={formData.listingType}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
-                    required
-                    >
-                      <option value="sale">Sale</option>
-                      <option value="rent">Rent</option>
-                    </select>
-                </div>
-                <div>
-                    <label className="block text-gray-300 mb-2">Property Type</label>
-                  <select
-                      name="propertyType"
-                      value={formData.propertyType}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
-                    required
-                  >
-                      <option value="residential">Residential</option>
-                      <option value="commercial">Commercial</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-gray-300 mb-2">Status</label>
-                  <select
-                    name="status"
-                    value={formData.status}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
-                    required
-                  >
-                      <option value="active">Active</option>
-                    <option value="sold">Sold</option>
-                  </select>
-                </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-gray-300 mb-2">Street Address</label>
-                    <input
-                      type="text"
-                      name="address.street"
-                      value={formData.address.street}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
-                      required
-                    />
+                  {/* Type & Status */}
+                  <div className="grid grid-cols-3 gap-4">
+                    <div>
+                      <label className="block text-gray-400 text-sm mb-1.5">Listing Type</label>
+                      <select
+                        name="listingType"
+                        value={formData.listingType}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                      >
+                        <option value="sale">Sale</option>
+                        <option value="rent">Rent</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-gray-400 text-sm mb-1.5">Property Type</label>
+                      <select
+                        name="propertyType"
+                        value={formData.propertyType}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                      >
+                        <option value="residential">Residential</option>
+                        <option value="commercial">Commercial</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-gray-400 text-sm mb-1.5">Status</label>
+                      <select
+                        name="status"
+                        value={formData.status}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                      >
+                        <option value="active">Active</option>
+                        <option value="sold">Sold</option>
+                      </select>
+                    </div>
                   </div>
-                  <div>
-                    <label className="block text-gray-300 mb-2">City</label>
-                    <input
-                      type="text"
-                      name="address.city"
-                      value={formData.address.city}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
-                      required
-                    />
-                  </div>
-                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-gray-300 mb-2">State</label>
-                    <input
-                      type="text"
-                      name="address.state"
-                      value={formData.address.state}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
-                      required
-                    />
+                  {/* Address */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div>
+                      <label className="block text-gray-400 text-sm mb-1.5">Street</label>
+                      <input
+                        type="text"
+                        name="address.street"
+                        value={formData.address.street}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-400 text-sm mb-1.5">City</label>
+                      <input
+                        type="text"
+                        name="address.city"
+                        value={formData.address.city}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-400 text-sm mb-1.5">State</label>
+                      <input
+                        type="text"
+                        name="address.state"
+                        value={formData.address.state}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-400 text-sm mb-1.5">Country</label>
+                      <input
+                        type="text"
+                        name="address.country"
+                        value={formData.address.country}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
                   </div>
-                <div>
-                    <label className="block text-gray-300 mb-2">Country</label>
-                  <input
-                    type="text"
-                      name="address.country"
-                      value={formData.address.country}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
-                      required
-                    />
-                  </div>
-                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div>
-                    <label className="block text-gray-300 mb-2">Area (sqft)</label>
-                    <input
-                      type="number"
-                      name="area.sqft"
-                      value={formData.area.sqft}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
-                      required
-                    />
+                  {/* Area & Date */}
+                  <div className="grid grid-cols-3 gap-4">
+                    <div>
+                      <label className="block text-gray-400 text-sm mb-1.5">Area (sqft)</label>
+                      <input
+                        type="number"
+                        name="area.sqft"
+                        value={formData.area.sqft}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-400 text-sm mb-1.5">Area (sqm)</label>
+                      <input
+                        type="number"
+                        name="area.sqm"
+                        value={formData.area.sqm}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-400 text-sm mb-1.5">Build Date</label>
+                      <input
+                        type="date"
+                        name="buildDate"
+                        value={formData.buildDate}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
                   </div>
-                  <div>
-                    <label className="block text-gray-300 mb-2">Area (sqm)</label>
-                    <input
-                      type="number"
-                      name="area.sqm"
-                      value={formData.area.sqm}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
-                      required
-                    />
+
+                  {/* Room Details */}
+                  <div className="grid grid-cols-4 gap-4">
+                    <div>
+                      <label className="block text-gray-400 text-sm mb-1.5">Bedrooms</label>
+                      <input
+                        type="number"
+                        name="features.bedrooms"
+                        value={formData.features.bedrooms}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-400 text-sm mb-1.5">Bathrooms</label>
+                      <input
+                        type="number"
+                        name="features.bathrooms"
+                        value={formData.features.bathrooms}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-400 text-sm mb-1.5">Garage</label>
+                      <input
+                        type="number"
+                        name="features.garage"
+                        value={formData.features.garage}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-400 text-sm mb-1.5">Furnishing</label>
+                      <select
+                        name="features.furnished"
+                        value={formData.features.furnished}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                      >
+                        <option value="fully">Fully</option>
+                        <option value="partly">Partly</option>
+                        <option value="none">None</option>
+                      </select>
+                    </div>
                   </div>
-                  <div>
-                    <label className="block text-gray-300 mb-2">Build Date</label>
-                    <input
-                      type="date"
-                      name="buildDate"
-                      value={formData.buildDate}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
-                    required
-                  />
-                </div>
-                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {/* Amenities */}
                   <div>
-                    <label className="block text-gray-300 mb-2">Bedrooms</label>
-                    <input
-                      type="number"
-                      name="features.bedrooms"
-                      value={formData.features.bedrooms}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
-                      required
-                    />
+                    <label className="block text-gray-400 text-sm mb-2">Amenities</label>
+                    <div className="grid grid-cols-4 gap-3">
+                      {[
+                        { name: 'features.pool', label: 'Pool' },
+                        { name: 'features.yard', label: 'Yard' },
+                        { name: 'features.pets', label: 'Pets' },
+                        { name: 'features.airConditioning', label: 'A/C' },
+                        { name: 'features.internet', label: 'Internet' },
+                        { name: 'features.electricity', label: 'Electricity' },
+                        { name: 'features.water', label: 'Water' },
+                        { name: 'features.gas', label: 'Gas' },
+                      ].map((item) => (
+                        <label key={item.name} className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#252525] border border-gray-700 cursor-pointer hover:border-gray-600 transition-colors">
+                          <input
+                            type="checkbox"
+                            name={item.name}
+                            checked={formData.features[item.name.split('.')[1]]}
+                            onChange={handleChange}
+                            className="rounded bg-gray-700 border-gray-600 text-purple-600 focus:ring-purple-500"
+                          />
+                          <span className="text-gray-300 text-sm">{item.label}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
-                  <div>
-                    <label className="block text-gray-300 mb-2">Bathrooms</label>
-                    <input
-                      type="number"
-                      name="features.bathrooms"
-                      value={formData.features.bathrooms}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-300 mb-2">Garage Spaces</label>
-                    <input
-                      type="number"
-                      name="features.garage"
-                      value={formData.features.garage}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-gray-300 mb-2">Furnishing</label>
-                  <select
-                    name="features.furnished"
-                    value={formData.features.furnished}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white"
-                    required
-                  >
-                    <option value="fully">Fully Furnished</option>
-                    <option value="partly">Partly Furnished</option>
-                    <option value="none">Unfurnished</option>
-                  </select>
-                </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <label className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      name="features.pool"
-                      checked={formData.features.pool}
-                      onChange={handleChange}
-                      className="rounded bg-[#2a2a2a] text-purple-600"
-                    />
-                    <span className="text-gray-300">Pool</span>
-                  </label>
-                  <label className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      name="features.yard"
-                      checked={formData.features.yard}
-                      onChange={handleChange}
-                      className="rounded bg-[#2a2a2a] text-purple-600"
-                    />
-                    <span className="text-gray-300">Yard</span>
-                  </label>
-                  <label className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      name="features.pets"
-                      checked={formData.features.pets}
-                      onChange={handleChange}
-                      className="rounded bg-[#2a2a2a] text-purple-600"
-                    />
-                    <span className="text-gray-300">Pets Allowed</span>
-                  </label>
-                  <label className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      name="features.airConditioning"
-                      checked={formData.features.airConditioning}
-                      onChange={handleChange}
-                      className="rounded bg-[#2a2a2a] text-purple-600"
-                    />
-                    <span className="text-gray-300">Air Conditioning</span>
-                  </label>
-                </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <label className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      name="features.internet"
-                      checked={formData.features.internet}
-                      onChange={handleChange}
-                      className="rounded bg-[#2a2a2a] text-purple-600"
-                    />
-                    <span className="text-gray-300">Internet</span>
-                  </label>
-                  <label className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      name="features.electricity"
-                      checked={formData.features.electricity}
-                      onChange={handleChange}
-                      className="rounded bg-[#2a2a2a] text-purple-600"
-                    />
-                    <span className="text-gray-300">Electricity</span>
-                  </label>
-                  <label className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      name="features.water"
-                      checked={formData.features.water}
-                      onChange={handleChange}
-                      className="rounded bg-[#2a2a2a] text-purple-600"
-                    />
-                    <span className="text-gray-300">Water</span>
-                  </label>
-                  <label className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      name="features.gas"
-                      checked={formData.features.gas}
-                      onChange={handleChange}
-                      className="rounded bg-[#2a2a2a] text-purple-600"
-                    />
-                    <span className="text-gray-300">Gas</span>
-                  </label>
-                </div>
-
-                <div className="flex justify-end space-x-4">
-                  <button
-                    type="button"
-                    onClick={() => setEditingProperty(null)}
-                    className="px-4 py-2 rounded bg-gray-600 text-white hover:bg-gray-700"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    className="px-4 py-2 rounded bg-purple-600 text-white hover:bg-purple-700"
-                  >
-                    Save Changes
-                  </button>
                 </div>
               </form>
+
+              <div className="flex justify-end gap-3 p-5 border-t border-gray-800">
+                <button
+                  type="button"
+                  onClick={() => setEditingProperty(null)}
+                  className="px-4 py-2.5 rounded-lg bg-gray-700 text-white hover:bg-gray-600 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  onClick={handleSubmit}
+                  className="px-4 py-2.5 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors"
+                >
+                  Save Changes
+                </button>
+              </div>
             </div>
           </div>
         )}

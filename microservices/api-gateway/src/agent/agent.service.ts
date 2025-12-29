@@ -36,4 +36,12 @@ export class AgentService {
   async findByEmail(email: string): Promise<any> {
     return firstValueFrom(this.agentClient.send({ cmd: 'getAgentByEmail' }, email));
   }
+
+  async deactivateByEmail(email: string): Promise<any> {
+    return firstValueFrom(this.agentClient.send({ cmd: 'deactivateAgentByEmail' }, email));
+  }
+
+  async reactivateByEmail(email: string): Promise<any> {
+    return firstValueFrom(this.agentClient.send({ cmd: 'reactivateAgentByEmail' }, email));
+  }
 }

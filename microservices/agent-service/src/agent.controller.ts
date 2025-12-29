@@ -41,4 +41,14 @@ export class AgentController {
   async findByEmail(@Payload() email: string) {
     return this.agentService.findByEmail(email);
   }
+
+  @MessagePattern({ cmd: 'deactivateAgentByEmail' })
+  async deactivateByEmail(@Payload() email: string) {
+    return this.agentService.deactivateByEmail(email);
+  }
+
+  @MessagePattern({ cmd: 'reactivateAgentByEmail' })
+  async reactivateByEmail(@Payload() email: string) {
+    return this.agentService.reactivateByEmail(email);
+  }
 }
