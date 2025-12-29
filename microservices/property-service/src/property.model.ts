@@ -102,8 +102,8 @@ export class Property {
   @Prop({ type: [String], required: true })
   media: string[];
 
-  @Prop({ required: true })
-  buildDate: Date;
+    @Prop({ required: false })
+    buildDate: Date;
 
   @Prop({ required: true })
   user: string;

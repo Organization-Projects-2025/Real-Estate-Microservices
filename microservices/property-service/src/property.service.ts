@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
+import { RpcException } from '@nestjs/microservices';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Property, PropertyDocument } from './property.model';
@@ -12,13 +13,24 @@ export class PropertyService {
 
   async create(propertyData: any): Promise<any> {
     try {
+      // Normalize optional date fields
+      if (propertyData?.buildDate === '') {
+        delete propertyData.buildDate;
+      } else if (typeof propertyData?.buildDate === 'string') {
+        const d = new Date(propertyData.buildDate);
+        if (!isNaN(d.getTime())) {
+          propertyData.buildDate = d;
+        } else {
+          delete propertyData.buildDate;
+        }
+      }
       const property = await this.propertyModel.create(propertyData);
       return {
         status: 'success',
         data: { property },
       };
-    } catch (error) {
-      throw new HttpException(error.message || 'Failed to create property', HttpStatus.BAD_REQUEST);
+    } catch (error: any) {
+      throw new RpcException(error?.message || 'Failed to create property');
     }
   }
 
@@ -34,7 +46,7 @@ export class PropertyService {
   async findById(id: string): Promise<any> {
     const property = await this.propertyModel.findById(id);
     if (!property) {
-      throw new HttpException('Property not found', HttpStatus.NOT_FOUND);
+      throw new RpcException('Property not found');
     }
     return {
       status: 'success',
@@ -43,12 +55,23 @@ export class PropertyService {
   }
 
   async update(id: string, updateData: any): Promise<any> {
+    // Normalize optional date fields on update
+    if (updateData?.buildDate === '') {
+      delete updateData.buildDate;
+    } else if (typeof updateData?.buildDate === 'string') {
+      const d = new Date(updateData.buildDate);
+      if (!isNaN(d.getTime())) {
+        updateData.buildDate = d;
+      } else {
+        delete updateData.buildDate;
+      }
+    }
     const property = await this.propertyModel.findByIdAndUpdate(id, updateData, {
       new: true,
       runValidators: true,
     });
     if (!property) {
-      throw new HttpException('Property not found', HttpStatus.NOT_FOUND);
+      throw new RpcException('Property not found');
     }
     return {
       status: 'success',
@@ -59,7 +82,7 @@ export class PropertyService {
   async delete(id: string): Promise<any> {
     const property = await this.propertyModel.findByIdAndDelete(id);
     if (!property) {
-      throw new HttpException('Property not found', HttpStatus.NOT_FOUND);
+      throw new RpcException('Property not found');
     }
     return {
       status: 'success',
