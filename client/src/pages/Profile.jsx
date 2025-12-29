@@ -31,6 +31,7 @@ const Profile = () => {
     contactEmail: '',
   });
   const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   useEffect(() => {
     // Redirect if not authenticated
@@ -64,13 +65,8 @@ const Profile = () => {
         });
       } catch (err) {
         console.error('Error:', err);
-        if (err.response?.data?.message) {
-          setError(err.response.data.message);
-        } else if (err.response?.data?.error) {
-          setError(err.response.data.error);
-        } else {
-          setError('Failed to load profile data. Please try again.');
-        }
+        // Don't block the page, just log the error
+        setError('Some data may not be available');
       } finally {
         setLoading(false);
       }
@@ -90,6 +86,7 @@ const Profile = () => {
     e.preventDefault();
     setLoading(true);
     setError('');
+    setSuccessMessage('');
 
     try {
       const response = await api.put('/auth/me', formData);
@@ -106,24 +103,19 @@ const Profile = () => {
           contactEmail: updatedUser.contactEmail || '',
         });
         setEditMode(false);
-        // Show success message without redirect
-        const successDiv = document.createElement('div');
-        successDiv.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg z-50';
-        successDiv.textContent = 'Profile updated successfully!';
-        document.body.appendChild(successDiv);
-        setTimeout(() => successDiv.remove(), 3000);
+        setSuccessMessage('Profile updated successfully!');
+        // Clear success message after 5 seconds
+        setTimeout(() => setSuccessMessage(''), 5000);
       } else {
         throw new Error(response.data.message || 'Failed to update profile');
       }
     } catch (err) {
       console.error('Error:', err);
-      if (err.response?.data?.message) {
-        setError(err.response.data.message);
-      } else if (err.response?.data?.error) {
-        setError(err.response.data.error);
-      } else {
-        setError('Failed to update profile. Please try again.');
-      }
+      const errorMessage =
+        err.response?.data?.message ||
+        err.message ||
+        'Failed to update profile. Please try again.';
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -183,26 +175,6 @@ const Profile = () => {
     );
   }
 
-  if (error) {
-    return (
-      <div className="bg-[#121212] text-[#fff] min-h-screen">
-        <Navbar />
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-red-500 mb-4">Error</h2>
-            <p className="text-gray-400 mb-4">{error}</p>
-            <button
-              onClick={() => window.location.reload()}
-              className="bg-[#703BF7] text-white px-6 py-2 rounded-lg hover:bg-[#5f2cc6] transition-colors"
-            >
-              Try Again
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="bg-[#121212] text-[#fff] min-h-screen">
       <Navbar />
@@ -230,6 +202,80 @@ const Profile = () => {
 
           {editMode ? (
             <form onSubmit={handleUpdateUser} className="space-y-6">
+              {/* Error Message */}
+              {error && (
+                <div className="bg-red-900/30 border border-red-500 text-red-400 px-4 py-3 rounded-lg flex items-start gap-3">
+                  <svg
+                    className="w-5 h-5 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <div className="flex-1">
+                    <p className="font-medium">{error}</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setError('')}
+                    className="text-red-400 hover:text-red-300"
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              )}
+
+              {/* Success Message */}
+              {successMessage && (
+                <div className="bg-green-900/30 border border-green-500 text-green-400 px-4 py-3 rounded-lg flex items-start gap-3">
+                  <svg
+                    className="w-5 h-5 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <div className="flex-1">
+                    <p className="font-medium">{successMessage}</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setSuccessMessage('')}
+                    className="text-green-400 hover:text-green-300"
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              )}
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium mb-2 text-gray-400">

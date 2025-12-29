@@ -9,10 +9,34 @@ export class AuthController {
 
   // Helper to return error in RPC-compatible format
   private handleError(error: any, defaultMessage: string) {
+    let message = error.response || error.message || defaultMessage;
+    let statusCode = error.status || 500;
+
+    // Handle MongoDB duplicate key errors
+    if (error.code === 11000 || message.includes('E11000 duplicate key')) {
+      statusCode = 400;
+
+      // Extract the field name from the error message
+      const fieldMatch = message.match(/index: (\w+)_/);
+      const field = fieldMatch ? fieldMatch[1] : 'field';
+
+      // Extract the duplicate value if possible
+      const valueMatch = message.match(/dup key: \{ (\w+): "([^"]+)" \}/);
+      const duplicateValue = valueMatch ? valueMatch[2] : '';
+
+      if (field === 'email') {
+        message = duplicateValue
+          ? `An account with the email "${duplicateValue}" already exists`
+          : 'This email address is already registered';
+      } else {
+        message = `This ${field} is already in use`;
+      }
+    }
+
     return {
       status: 'error',
-      message: error.response || error.message || defaultMessage,
-      statusCode: error.status || 500,
+      message,
+      statusCode,
       isError: true,
     };
   }
