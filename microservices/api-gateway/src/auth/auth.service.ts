@@ -56,4 +56,16 @@ export class AuthService {
   async getUsersByRole(role: string): Promise<any> {
     return firstValueFrom(this.authClient.send({ cmd: 'getUsersByRole' }, role));
   }
+
+  async updateUser(userId: string, userData: any): Promise<any> {
+    return firstValueFrom(this.authClient.send({ cmd: 'updateUser' }, { userId, userData }));
+  }
+
+  async deactivateUser(userId: string): Promise<any> {
+    return firstValueFrom(this.authClient.send({ cmd: 'deactivateUser' }, userId));
+  }
+
+  async reactivateUser(userId: string): Promise<any> {
+    return firstValueFrom(this.authClient.send({ cmd: 'reactivateUser' }, userId));
+  }
 }

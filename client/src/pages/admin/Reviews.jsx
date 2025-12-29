@@ -6,7 +6,6 @@ import { getAllReviews, deleteReview } from '../../services/adminService';
 function Reviews() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetchReviews();
@@ -17,9 +16,8 @@ function Reviews() {
       setLoading(true);
       const response = await getAllReviews();
       setReviews(response.data.reviews);
-      setError(null);
     } catch (err) {
-      setError('Failed to fetch reviews');
+      toast.error('Failed to fetch reviews');
       console.error('Error fetching reviews:', err);
     } finally {
       setLoading(false);
@@ -31,10 +29,10 @@ function Reviews() {
       try {
         await deleteReview(reviewId);
         setReviews(reviews.filter(review => review._id !== reviewId));
-        setError(null);
+        toast.success('Review deleted successfully');
       } catch (err) {
         console.error('Delete review error:', err);
-        setError(err.response?.data?.message || 'Failed to delete review. Please try again.');
+        toast.error(err.response?.data?.message || 'Failed to delete review');
       }
     }
   };
@@ -62,12 +60,6 @@ function Reviews() {
             </div>
           </div>
         </div>
-
-        {error && (
-          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4 mb-6">
-            <p className="text-red-500">{error}</p>
-          </div>
-        )}
 
         <div className="bg-[#1a1a1a] rounded-lg shadow-lg overflow-hidden">
           <div className="overflow-x-auto">

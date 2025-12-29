@@ -67,6 +67,16 @@ export class AuthController {
     return this.authService.deleteUser(userId);
   }
 
+  @MessagePattern({ cmd: 'deactivateUser' })
+  async deactivateUser(@Payload() userId: string) {
+    return this.authService.deactivateUser(userId);
+  }
+
+  @MessagePattern({ cmd: 'reactivateUser' })
+  async reactivateUser(@Payload() userId: string) {
+    return this.authService.reactivateUser(userId);
+  }
+
   @MessagePattern({ cmd: 'getUsersByRole' })
   async getUsersByRole(@Payload() role: string) {
     return this.authService.getUsersByRole(role);

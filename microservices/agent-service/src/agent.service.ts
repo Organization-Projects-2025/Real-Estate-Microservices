@@ -110,4 +110,30 @@ export class AgentService {
       data: { agent },
     };
   }
+
+  async deactivateByEmail(email: string): Promise<any> {
+    const agent = await this.agentModel.findOneAndUpdate(
+      { email },
+      { status: 'inactive' },
+      { new: true }
+    ).select('-password');
+    
+    if (!agent) {
+      return { status: 'not_found', message: 'No agent found with this email' };
+    }
+    return { status: 'success', message: 'Agent deactivated successfully', data: { agent } };
+  }
+
+  async reactivateByEmail(email: string): Promise<any> {
+    const agent = await this.agentModel.findOneAndUpdate(
+      { email },
+      { status: 'active' },
+      { new: true }
+    ).select('-password');
+    
+    if (!agent) {
+      return { status: 'not_found', message: 'No agent found with this email' };
+    }
+    return { status: 'success', message: 'Agent reactivated successfully', data: { agent } };
+  }
 }

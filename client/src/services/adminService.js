@@ -29,7 +29,7 @@ export const updateUser = async (userId, userData) => {
 };
 
 export const deactivateUser = async (userId) => {
-  const response = await axios.delete(`${API_URL}/auth/users/${userId}`);
+  const response = await axios.patch(`${API_URL}/auth/users/${userId}/deactivate`);
   return response.data;
 };
 
