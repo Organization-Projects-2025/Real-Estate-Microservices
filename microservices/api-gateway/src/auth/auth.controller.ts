@@ -1,5 +1,18 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Post, Get, Put, Patch, Delete, Body, Param, Res, HttpStatus, Req, UseFilters } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Get,
+  Put,
+  Patch,
+  Delete,
+  Body,
+  Param,
+  Res,
+  HttpStatus,
+  Req,
+  UseFilters,
+} from '@nestjs/common';
 import { Request, Response } from 'express';
 import { AuthService } from './auth.service';
 import { AgentService } from '../agent/agent.service';
@@ -8,26 +21,74 @@ import { AgentService } from '../agent/agent.service';
 export class AuthController {
   constructor(
     private readonly authService: AuthService,
-    private readonly agentService: AgentService,
-  ) { }
+    private readonly agentService: AgentService
+  ) {}
 
   private extractUserIdFromToken(req: Request): string | null {
     try {
-      const token = req.cookies?.jwt || req.headers.authorization?.replace('Bearer ', '');
+      const token =
+        req.cookies?.jwt || req.headers.authorization?.replace('Bearer ', '');
       if (!token) return null;
 
       // Basic JWT decode (in production, use proper verification)
-      const payload = JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString());
+      const payload = JSON.parse(
+        Buffer.from(token.split('.')[1], 'base64').toString()
+      );
       return payload.id || payload.sub;
     } catch (error) {
       return null;
     }
   }
 
+  private extractErrorMessage(error: any): {
+    message: string;
+    statusCode: number;
+  } {
+    // Handle RPC errors where response is a string directly
+    // Error format from microservice: { response: 'Invalid email or password', status: 401 }
+    let message = 'An error occurred';
+
+    if (typeof error?.response === 'string') {
+      // RPC error with string response
+      message = error.response;
+    } else if (typeof error?.message === 'string') {
+      // Standard Error object
+      message = error.message;
+    } else if (error?.response?.message) {
+      // HttpException with object response
+      message = error.response.message;
+    } else if (error?.data?.message) {
+      // Axios-style error
+      message = error.data.message;
+    }
+
+    const statusCode =
+      error?.status ||
+      error?.statusCode ||
+      error?.response?.statusCode ||
+      HttpStatus.INTERNAL_SERVER_ERROR;
+
+    return {
+      message: String(message),
+      statusCode:
+        typeof statusCode === 'number'
+          ? statusCode
+          : HttpStatus.INTERNAL_SERVER_ERROR,
+    };
+  }
+
   @Post('register')
   async register(@Body() userData: any, @Res() res: Response) {
     try {
       const result = await this.authService.register(userData);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
 
       // Set JWT cookie
       if (result.data?.token) {
@@ -42,17 +103,33 @@ export class AuthController {
 
       return res.status(HttpStatus.CREATED).json(result);
     } catch (error) {
-      return res.status(HttpStatus.BAD_REQUEST).json({
+      const { message, statusCode } = this.extractErrorMessage(error);
+      console.error('[Auth Register Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Registration failed',
+        message,
       });
     }
   }
 
   @Post('login')
-  async login(@Body() credentials: { email: string; password: string }, @Res() res: Response) {
+  async login(
+    @Body() credentials: { email: string; password: string },
+    @Res() res: Response
+  ) {
     try {
-      const result = await this.authService.login(credentials.email, credentials.password);
+      const result = await this.authService.login(
+        credentials.email,
+        credentials.password
+      );
+
+      // Check if microservice returned an error response (not an exception)
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.UNAUTHORIZED).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
 
       // Set JWT cookie
       if (result.data?.token) {
@@ -67,9 +144,24 @@ export class AuthController {
 
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.UNAUTHORIZED).json({
+      console.log(
+        '[Auth Login Error - RAW ERROR]:',
+        JSON.stringify(error, null, 2)
+      );
+      console.log('[Auth Login Error - error.response]:', error?.response);
+      console.log(
+        '[Auth Login Error - typeof error.response]:',
+        typeof error?.response
+      );
+      const { message, statusCode } = this.extractErrorMessage(error);
+      console.error('[Auth Login Error]', {
         status: 'error',
-        message: error.message || 'Login failed',
+        message,
+        statusCode,
+      });
+      return res.status(statusCode).json({
+        status: 'error',
+        message,
       });
     }
   }
@@ -103,9 +195,11 @@ export class AuthController {
       const result = await this.authService.getMe(userId);
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      const { message, statusCode } = this.extractErrorMessage(error);
+      console.error('[Auth GetMe Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to fetch user',
+        message,
       });
     }
   }
@@ -123,9 +217,11 @@ export class AuthController {
       const result = await this.authService.updateMe(userId, body);
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      const { message, statusCode } = this.extractErrorMessage(error);
+      console.error('[Auth UpdateMe Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to update user',
+        message,
       });
     }
   }
@@ -134,30 +230,60 @@ export class AuthController {
   async forgotPassword(@Body() body: { email: string }, @Res() res: Response) {
     try {
       const result = await this.authService.forgotPassword(body.email);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.BAD_REQUEST).json({
+      const { message, statusCode } = this.extractErrorMessage(error);
+      console.error('[Auth ForgotPassword Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to process forgot password',
+        message,
       });
     }
   }
 
   @Post('reset-password/:token')
-  async resetPassword(@Param('token') token: string, @Body() body: { password: string }, @Res() res: Response) {
+  async resetPassword(
+    @Param('token') token: string,
+    @Body() body: { password: string },
+    @Res() res: Response
+  ) {
     try {
       const result = await this.authService.resetPassword(token, body.password);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.BAD_REQUEST).json({
+      const { message, statusCode } = this.extractErrorMessage(error);
+      console.error('[Auth ResetPassword Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to reset password',
+        message,
       });
     }
   }
 
   @Put('update-password')
-  async updatePassword(@Req() req: Request, @Body() body: { currentPassword: string; newPassword: string }, @Res() res: Response) {
+  async updatePassword(
+    @Req() req: Request,
+    @Body() body: { currentPassword: string; newPassword: string },
+    @Res() res: Response
+  ) {
     try {
       const userId = this.extractUserIdFromToken(req);
       if (!userId) {
@@ -166,12 +292,18 @@ export class AuthController {
           message: 'Unauthorized - no token provided',
         });
       }
-      const result = await this.authService.updatePassword(userId, body.currentPassword, body.newPassword);
+      const result = await this.authService.updatePassword(
+        userId,
+        body.currentPassword,
+        body.newPassword
+      );
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.BAD_REQUEST).json({
+      const { message, statusCode } = this.extractErrorMessage(error);
+      console.error('[Auth UpdatePassword Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to update password',
+        message,
       });
     }
   }
@@ -183,9 +315,11 @@ export class AuthController {
       const result = await this.authService.getAllUsers();
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      const { message, statusCode } = this.extractErrorMessage(error);
+      console.error('[Auth GetAllUsers Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to fetch users',
+        message,
       });
     }
   }
@@ -196,9 +330,11 @@ export class AuthController {
       const result = await this.authService.getUsersByRole(role);
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      const { message, statusCode } = this.extractErrorMessage(error);
+      console.error('[Auth GetUsersByRole Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to fetch users by role',
+        message,
       });
     }
   }
@@ -209,9 +345,11 @@ export class AuthController {
       const result = await this.authService.getUserById(id);
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      const { message, statusCode } = this.extractErrorMessage(error);
+      console.error('[Auth GetUserById Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to fetch user',
+        message,
       });
     }
   }
@@ -222,22 +360,30 @@ export class AuthController {
       const result = await this.authService.deleteUser(id);
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      const { message, statusCode } = this.extractErrorMessage(error);
+      console.error('[Auth DeleteUser Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to delete user',
+        message,
       });
     }
   }
 
   @Patch('users/:id')
-  async updateUser(@Param('id') id: string, @Body() userData: any, @Res() res: Response) {
+  async updateUser(
+    @Param('id') id: string,
+    @Body() userData: any,
+    @Res() res: Response
+  ) {
     try {
       const result = await this.authService.updateUser(id, userData);
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      const { message, statusCode } = this.extractErrorMessage(error);
+      console.error('[Auth UpdateUser Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to update user',
+        message,
       });
     }
   }
@@ -246,7 +392,7 @@ export class AuthController {
   async deactivateUser(@Param('id') id: string, @Res() res: Response) {
     try {
       const result = await this.authService.deactivateUser(id);
-      
+
       // If user was deactivated and has role 'agent', also deactivate their agent profile
       if (result.status === 'success' && result.data?.user) {
         const user = result.data.user;
@@ -254,17 +400,22 @@ export class AuthController {
           try {
             await this.agentService.deactivateByEmail(user.email);
           } catch (agentError) {
-            console.error('Failed to deactivate agent profile:', agentError.message);
+            console.error(
+              'Failed to deactivate agent profile:',
+              agentError.message
+            );
             // Don't fail the request, user was already deactivated
           }
         }
       }
-      
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      const { message, statusCode } = this.extractErrorMessage(error);
+      console.error('[Auth DeactivateUser Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to deactivate user',
+        message,
       });
     }
   }
@@ -273,7 +424,7 @@ export class AuthController {
   async reactivateUser(@Param('id') id: string, @Res() res: Response) {
     try {
       const result = await this.authService.reactivateUser(id);
-      
+
       // If user was reactivated and has role 'agent', also reactivate their agent profile
       if (result.status === 'success' && result.data?.user) {
         const user = result.data.user;
@@ -281,17 +432,22 @@ export class AuthController {
           try {
             await this.agentService.reactivateByEmail(user.email);
           } catch (agentError) {
-            console.error('Failed to reactivate agent profile:', agentError.message);
+            console.error(
+              'Failed to reactivate agent profile:',
+              agentError.message
+            );
             // Don't fail the request, user was already reactivated
           }
         }
       }
-      
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      const { message, statusCode } = this.extractErrorMessage(error);
+      console.error('[Auth ReactivateUser Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to reactivate user',
+        message,
       });
     }
   }

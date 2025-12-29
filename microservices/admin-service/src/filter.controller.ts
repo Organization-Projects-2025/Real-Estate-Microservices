@@ -10,36 +10,73 @@ export class FilterController {
 
   @MessagePattern({ cmd: 'createFilter' })
   async create(@Payload() createFilterDto: CreateFilterDto) {
-    return this.filterService.create(createFilterDto);
+    try {
+      return await this.filterService.create(createFilterDto);
+    } catch (error) {
+      console.error('[Filter Microservice CreateFilter Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'getAllFilters' })
   async findAll(@Payload() payload?: { category?: string }) {
-    return this.filterService.findAll(payload?.category);
+    try {
+      return await this.filterService.findAll(payload?.category);
+    } catch (error) {
+      console.error('[Filter Microservice GetAllFilters Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'getFilterById' })
   async findOne(@Payload() id: string) {
-    return this.filterService.findById(id);
+    try {
+      return await this.filterService.findById(id);
+    } catch (error) {
+      console.error('[Filter Microservice GetFilterById Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'updateFilter' })
-  async update(@Payload() data: { id: string; updateFilterDto: UpdateFilterDto }) {
-    return this.filterService.update(data.id, data.updateFilterDto);
+  async update(
+    @Payload() data: { id: string; updateFilterDto: UpdateFilterDto }
+  ) {
+    try {
+      return await this.filterService.update(data.id, data.updateFilterDto);
+    } catch (error) {
+      console.error('[Filter Microservice UpdateFilter Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'deleteFilter' })
   async remove(@Payload() id: string) {
-    return this.filterService.delete(id);
+    try {
+      return await this.filterService.delete(id);
+    } catch (error) {
+      console.error('[Filter Microservice DeleteFilter Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'getFiltersByCategory' })
   async findByCategory(@Payload() category: string) {
-    return this.filterService.findByCategory(category);
+    try {
+      return await this.filterService.findByCategory(category);
+    } catch (error) {
+      console.error('[Filter Microservice GetFiltersByCategory Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'deleteCategoryFilters' })
   async deleteByCategory(@Payload() category: string) {
-    return this.filterService.deleteByCategory(category);
+    try {
+      return await this.filterService.deleteByCategory(category);
+    } catch (error) {
+      console.error('[Filter Microservice DeleteCategoryFilters Error]', error);
+      throw error;
+    }
   }
 }

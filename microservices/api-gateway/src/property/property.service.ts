@@ -6,42 +6,50 @@ import { firstValueFrom } from 'rxjs';
 @Injectable()
 export class PropertyService {
   constructor(
-    @Inject('PROPERTY_SERVICE') private readonly propertyClient: ClientProxy,
+    @Inject('PROPERTY_SERVICE') private readonly propertyClient: ClientProxy
   ) {}
 
+  private async sendCommand(cmd: string, data: any = {}): Promise<any> {
+    try {
+      return await firstValueFrom(this.propertyClient.send({ cmd }, data));
+    } catch (error) {
+      throw error;
+    }
+  }
+
   async create(propertyData: any): Promise<any> {
-    return firstValueFrom(this.propertyClient.send({ cmd: 'createProperty' }, propertyData));
+    return this.sendCommand('createProperty', propertyData);
   }
 
   async findAll(): Promise<any> {
-    return firstValueFrom(this.propertyClient.send({ cmd: 'getAllProperties' }, {}));
+    return this.sendCommand('getAllProperties', {});
   }
 
   async findById(id: string): Promise<any> {
-    return firstValueFrom(this.propertyClient.send({ cmd: 'getPropertyById' }, id));
+    return this.sendCommand('getPropertyById', id);
   }
 
   async update(id: string, updateData: any): Promise<any> {
-    return firstValueFrom(this.propertyClient.send({ cmd: 'updateProperty' }, { id, updateData }));
+    return this.sendCommand('updateProperty', { id, updateData });
   }
 
   async delete(id: string): Promise<any> {
-    return firstValueFrom(this.propertyClient.send({ cmd: 'deleteProperty' }, id));
+    return this.sendCommand('deleteProperty', id);
   }
 
   async findByUser(userId: string): Promise<any> {
-    return firstValueFrom(this.propertyClient.send({ cmd: 'getPropertiesByUser' }, userId));
+    return this.sendCommand('getPropertiesByUser', userId);
   }
 
   async findByListingType(listingType: string): Promise<any> {
-    return firstValueFrom(this.propertyClient.send({ cmd: 'getPropertiesByListingType' }, listingType));
+    return this.sendCommand('getPropertiesByListingType', listingType);
   }
 
   async search(filters: any): Promise<any> {
-    return firstValueFrom(this.propertyClient.send({ cmd: 'searchProperties' }, filters));
+    return this.sendCommand('searchProperties', filters);
   }
 
   async getFeatured(limit: number): Promise<any> {
-    return firstValueFrom(this.propertyClient.send({ cmd: 'getFeaturedProperties' }, limit));
+    return this.sendCommand('getFeaturedProperties', limit);
   }
 }

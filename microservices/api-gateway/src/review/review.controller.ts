@@ -1,7 +1,19 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Get, Post, Put, Delete, Body, Param, Query, Res, HttpStatus } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Put,
+  Delete,
+  Body,
+  Param,
+  Query,
+  Res,
+  HttpStatus,
+} from '@nestjs/common';
 import { Response } from 'express';
 import { ReviewService } from './review.service';
+import { extractErrorMessage } from '../common/error.utils';
 
 @Controller('reviews')
 export class ReviewController {
@@ -13,9 +25,11 @@ export class ReviewController {
       const result = await this.reviewService.create(reviewData);
       return res.status(HttpStatus.CREATED).json(result);
     } catch (error) {
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      const { message, statusCode } = extractErrorMessage(error);
+      console.error('[Review Create Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to create review',
+        message,
       });
     }
   }
@@ -26,9 +40,11 @@ export class ReviewController {
       const result = await this.reviewService.findAll();
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      const { message, statusCode } = extractErrorMessage(error);
+      console.error('[Review GetAll Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to fetch reviews',
+        message,
       });
     }
   }
@@ -39,9 +55,11 @@ export class ReviewController {
       const result = await this.reviewService.getRandom(limit);
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      const { message, statusCode } = extractErrorMessage(error);
+      console.error('[Review GetRandom Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to fetch random reviews',
+        message,
       });
     }
   }
@@ -52,9 +70,11 @@ export class ReviewController {
       const result = await this.reviewService.findByAgent(agentId);
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      const { message, statusCode } = extractErrorMessage(error);
+      console.error('[Review GetByAgent Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to fetch reviews by agent',
+        message,
       });
     }
   }
@@ -65,22 +85,30 @@ export class ReviewController {
       const result = await this.reviewService.findById(id);
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      const { message, statusCode } = extractErrorMessage(error);
+      console.error('[Review GetById Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to fetch review',
+        message,
       });
     }
   }
 
   @Put(':id')
-  async update(@Param('id') id: string, @Body() updateData: any, @Res() res: Response) {
+  async update(
+    @Param('id') id: string,
+    @Body() updateData: any,
+    @Res() res: Response
+  ) {
     try {
       const result = await this.reviewService.update(id, updateData);
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      const { message, statusCode } = extractErrorMessage(error);
+      console.error('[Review Update Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to update review',
+        message,
       });
     }
   }
@@ -91,9 +119,11 @@ export class ReviewController {
       const result = await this.reviewService.delete(id);
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+      const { message, statusCode } = extractErrorMessage(error);
+      console.error('[Review Delete Error]', error);
+      return res.status(statusCode).json({
         status: 'error',
-        message: error.message || 'Failed to delete review',
+        message,
       });
     }
   }

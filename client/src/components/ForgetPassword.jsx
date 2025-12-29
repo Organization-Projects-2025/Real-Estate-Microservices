@@ -32,7 +32,10 @@ const ForgetPassword = () => {
         }, 3000);
       }
     } catch (error) {
-      setMessage(error.response?.data?.message || 'Failed to send reset link. Please try again.');
+      setMessage(
+        error.response?.data?.message ||
+          'Failed to send reset link. Please try again.'
+      );
     } finally {
       setLoading(false);
     }
@@ -43,10 +46,8 @@ const ForgetPassword = () => {
       <Navbar />
       <div className="relative min-h-screen">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-        />
-        
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" />
+
         {/* Content */}
         <section className="relative flex items-center justify-center py-24 px-6 md:px-16">
           <div className="w-full max-w-md bg-[#1a1a1a] rounded-xl p-8 shadow-lg transform transition-all duration-500 hover:shadow-2xl hover:shadow-[#703BF7]/20">
@@ -55,12 +56,18 @@ const ForgetPassword = () => {
             </h2>
 
             {message && (
-              <div className={`p-4 rounded-lg mb-6 ${
-                message.includes('sent') ? 'bg-green-500/10 border border-green-500/20' : 'bg-red-500/10 border border-red-500/20'
-              }`}>
-                <p className={`text-center ${
-                  message.includes('sent') ? 'text-green-500' : 'text-red-500'
-                }`}>
+              <div
+                className={`p-4 rounded-lg mb-6 ${
+                  message.includes('sent')
+                    ? 'bg-green-500/10 border border-green-500/20'
+                    : 'bg-red-500/10 border border-red-500/20'
+                }`}
+              >
+                <p
+                  className={`text-center ${
+                    message.includes('sent') ? 'text-green-500' : 'text-red-500'
+                  }`}
+                >
                   {message}
                 </p>
               </div>
@@ -68,7 +75,9 @@ const ForgetPassword = () => {
 
             <form onSubmit={handleEmailSubmit} className="space-y-6">
               <div className="space-y-2">
-                <label className="block text-sm font-medium text-gray-300">Email</label>
+                <label className="block text-sm font-medium text-gray-300">
+                  Email
+                </label>
                 <input
                   type="email"
                   value={email}

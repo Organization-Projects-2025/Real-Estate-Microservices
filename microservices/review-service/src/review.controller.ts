@@ -9,36 +9,71 @@ export class ReviewController {
 
   @MessagePattern({ cmd: 'createReview' })
   async create(@Payload() reviewData: any) {
-    return this.reviewService.create(reviewData);
+    try {
+      return await this.reviewService.create(reviewData);
+    } catch (error) {
+      console.error('[Review Microservice CreateReview Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'getAllReviews' })
   async findAll() {
-    return this.reviewService.findAll();
+    try {
+      return await this.reviewService.findAll();
+    } catch (error) {
+      console.error('[Review Microservice GetAllReviews Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'getReviewById' })
   async findOne(@Payload() id: string) {
-    return this.reviewService.findById(id);
+    try {
+      return await this.reviewService.findById(id);
+    } catch (error) {
+      console.error('[Review Microservice GetReviewById Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'updateReview' })
   async update(@Payload() data: { id: string; updateData: any }) {
-    return this.reviewService.update(data.id, data.updateData);
+    try {
+      return await this.reviewService.update(data.id, data.updateData);
+    } catch (error) {
+      console.error('[Review Microservice UpdateReview Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'deleteReview' })
   async remove(@Payload() id: string) {
-    return this.reviewService.delete(id);
+    try {
+      return await this.reviewService.delete(id);
+    } catch (error) {
+      console.error('[Review Microservice DeleteReview Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'getReviewsByAgent' })
   async findByAgent(@Payload() agentId: string) {
-    return this.reviewService.findByAgent(agentId);
+    try {
+      return await this.reviewService.findByAgent(agentId);
+    } catch (error) {
+      console.error('[Review Microservice GetReviewsByAgent Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'getRandomReviews' })
   async getRandom(@Payload() limit: number) {
-    return this.reviewService.getRandom(limit);
+    try {
+      return await this.reviewService.getRandom(limit);
+    } catch (error) {
+      console.error('[Review Microservice GetRandomReviews Error]', error);
+      throw error;
+    }
   }
 }

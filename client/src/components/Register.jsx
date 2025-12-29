@@ -30,7 +30,7 @@ function Register() {
 
     try {
       const response = await registerService(formData);
-      
+
       if (response.data && response.data.user) {
         // Set user in context immediately
         setUser(response.data.user);
@@ -41,7 +41,11 @@ function Register() {
       }
     } catch (error) {
       setSuccess(false);
-      setMessage(error.response?.data?.message || error.message || 'Something went wrong.');
+      setMessage(
+        error.response?.data?.message ||
+          error.message ||
+          'Something went wrong.'
+      );
     } finally {
       setLoading(false);
     }
@@ -52,7 +56,9 @@ function Register() {
       <Navbar />
       <section className="flex items-center justify-center py-24 px-6 md:px-16">
         <div className="w-full max-w-md bg-[#1a1a1a] rounded-xl p-8 shadow-lg">
-          <h2 className="text-3xl font-bold mb-6 text-center">Create an Account</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center">
+            Create an Account
+          </h2>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <input
@@ -92,7 +98,9 @@ function Register() {
               required
             />
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-gray-300">Account Type</label>
+              <label className="block text-sm font-medium text-gray-300">
+                Account Type
+              </label>
               <select
                 name="role"
                 value={formData.role}
@@ -104,8 +112,8 @@ function Register() {
                 <option value="developer">Property Developer</option>
               </select>
               <p className="text-xs text-gray-400">
-                {formData.role === 'developer' 
-                  ? 'As a developer, you can list and manage your own properties' 
+                {formData.role === 'developer'
+                  ? 'As a developer, you can list and manage your own properties'
                   : 'As a user, you can browse and inquire about properties'}
               </p>
             </div>
