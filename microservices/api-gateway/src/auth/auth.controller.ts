@@ -82,6 +82,14 @@ export class AuthController {
     try {
       const result = await this.authService.register(userData);
 
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       // Set JWT cookie
       if (result.data?.token) {
         res.cookie('jwt', result.data.token, {
@@ -222,6 +230,15 @@ export class AuthController {
   async forgotPassword(@Body() body: { email: string }, @Res() res: Response) {
     try {
       const result = await this.authService.forgotPassword(body.email);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
       const { message, statusCode } = this.extractErrorMessage(error);
@@ -241,6 +258,15 @@ export class AuthController {
   ) {
     try {
       const result = await this.authService.resetPassword(token, body.password);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
       const { message, statusCode } = this.extractErrorMessage(error);
