@@ -9,46 +9,97 @@ export class PropertyController {
 
   @MessagePattern({ cmd: 'createProperty' })
   async create(@Payload() propertyData: any) {
-    return this.propertyService.create(propertyData);
+    try {
+      return await this.propertyService.create(propertyData);
+    } catch (error) {
+      console.error('[Property Microservice CreateProperty Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'getAllProperties' })
   async findAll() {
-    return this.propertyService.findAll();
+    try {
+      return await this.propertyService.findAll();
+    } catch (error) {
+      console.error('[Property Microservice GetAllProperties Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'getPropertyById' })
   async findOne(@Payload() id: string) {
-    return this.propertyService.findById(id);
+    try {
+      return await this.propertyService.findById(id);
+    } catch (error) {
+      console.error('[Property Microservice GetPropertyById Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'updateProperty' })
   async update(@Payload() data: { id: string; updateData: any }) {
-    return this.propertyService.update(data.id, data.updateData);
+    try {
+      return await this.propertyService.update(data.id, data.updateData);
+    } catch (error) {
+      console.error('[Property Microservice UpdateProperty Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'deleteProperty' })
   async remove(@Payload() id: string) {
-    return this.propertyService.delete(id);
+    try {
+      return await this.propertyService.delete(id);
+    } catch (error) {
+      console.error('[Property Microservice DeleteProperty Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'getPropertiesByUser' })
   async findByUser(@Payload() userId: string) {
-    return this.propertyService.findByUser(userId);
+    try {
+      return await this.propertyService.findByUser(userId);
+    } catch (error) {
+      console.error('[Property Microservice GetPropertiesByUser Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'getPropertiesByListingType' })
   async findByListingType(@Payload() listingType: string) {
-    return this.propertyService.findByListingType(listingType);
+    try {
+      return await this.propertyService.findByListingType(listingType);
+    } catch (error) {
+      console.error(
+        '[Property Microservice GetPropertiesByListingType Error]',
+        error
+      );
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'searchProperties' })
   async search(@Payload() filters: any) {
-    return this.propertyService.search(filters);
+    try {
+      return await this.propertyService.search(filters);
+    } catch (error) {
+      console.error('[Property Microservice SearchProperties Error]', error);
+      throw error;
+    }
   }
 
   @MessagePattern({ cmd: 'getFeaturedProperties' })
   async getFeatured(@Payload() limit: number) {
-    return this.propertyService.getFeatured(limit);
+    try {
+      return await this.propertyService.getFeatured(limit);
+    } catch (error) {
+      console.error(
+        '[Property Microservice GetFeaturedProperties Error]',
+        error
+      );
+      throw error;
+    }
   }
 }

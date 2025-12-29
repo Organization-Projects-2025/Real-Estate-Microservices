@@ -32,7 +32,13 @@ function Login() {
       navigate('/', { replace: true });
     } catch (err) {
       console.error('Login error:', err);
-      setError(err.response?.data?.message || 'An error occurred during login. Please try again.');
+      console.log('Error response data:', err.response?.data);
+      console.log('Error message path:', err.response?.data?.message);
+      setError(
+        err.response?.data?.message ||
+          err.message ||
+          'An error occurred during login. Please try again.'
+      );
     } finally {
       setLoading(false);
     }
@@ -43,11 +49,8 @@ function Login() {
       <Navbar />
       <div className="relative min-h-screen">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" />
 
-        />
-        
         {/* Content */}
         <section className="relative flex items-center justify-center py-24 px-6 md:px-16">
           <div className="w-full max-w-md bg-[#1a1a1a] rounded-xl p-8 shadow-lg transform transition-all duration-500 hover:shadow-2xl hover:shadow-[#703BF7]/20">
@@ -63,7 +66,9 @@ function Login() {
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <label className="block text-sm font-medium text-gray-300">Email</label>
+                <label className="block text-sm font-medium text-gray-300">
+                  Email
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -76,7 +81,9 @@ function Login() {
               </div>
 
               <div className="space-y-2">
-                <label className="block text-sm font-medium text-gray-300">Password</label>
+                <label className="block text-sm font-medium text-gray-300">
+                  Password
+                </label>
                 <input
                   type="password"
                   name="password"

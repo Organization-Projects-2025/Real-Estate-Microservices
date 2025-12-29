@@ -1,5 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { login as loginService, logout as logoutService, getCurrentUser } from '../services/authService';
+import {
+  login as loginService,
+  logout as logoutService,
+  getCurrentUser,
+} from '../services/authService';
 
 const AuthContext = createContext(null);
 
@@ -41,7 +45,14 @@ export const AuthProvider = ({ children }) => {
     try {
       setError(null);
       const response = await loginService(email, password);
-      
+
+      // Check if backend returned an error response
+      if (response.status === 'error') {
+        const errorMessage = response.message || 'Login failed';
+        setError(errorMessage);
+        throw new Error(errorMessage);
+      }
+
       if (response.data && response.data.user) {
         setUser(response.data.user);
         return response;
@@ -50,7 +61,8 @@ export const AuthProvider = ({ children }) => {
       }
     } catch (err) {
       console.log('Login error:', err);
-      const errorMessage = err.response?.data?.message || 'Login failed';
+      const errorMessage =
+        err.response?.data?.message || err.message || 'Login failed';
       setError(errorMessage);
       throw err; // Re-throw to let the component handle the error
     }
@@ -77,9 +89,5 @@ export const AuthProvider = ({ children }) => {
     isAuthenticated: !!user,
   };
 
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  );
-}; 
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+};

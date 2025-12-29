@@ -6,42 +6,50 @@ import { firstValueFrom } from 'rxjs';
 @Injectable()
 export class AgentService {
   constructor(
-    @Inject('AGENT_SERVICE') private readonly agentClient: ClientProxy,
+    @Inject('AGENT_SERVICE') private readonly agentClient: ClientProxy
   ) {}
 
+  private async sendCommand(cmd: string, data: any = {}): Promise<any> {
+    try {
+      return await firstValueFrom(this.agentClient.send({ cmd }, data));
+    } catch (error) {
+      throw error;
+    }
+  }
+
   async create(agentData: any): Promise<any> {
-    return firstValueFrom(this.agentClient.send({ cmd: 'createAgent' }, agentData));
+    return this.sendCommand('createAgent', agentData);
   }
 
   async findAll(): Promise<any> {
-    return firstValueFrom(this.agentClient.send({ cmd: 'getAllAgents' }, {}));
+    return this.sendCommand('getAllAgents', {});
   }
 
   async findById(id: string): Promise<any> {
-    return firstValueFrom(this.agentClient.send({ cmd: 'getAgentById' }, id));
+    return this.sendCommand('getAgentById', id);
   }
 
   async update(id: string, updateData: any): Promise<any> {
-    return firstValueFrom(this.agentClient.send({ cmd: 'updateAgent' }, { id, updateData }));
+    return this.sendCommand('updateAgent', { id, updateData });
   }
 
   async delete(id: string): Promise<any> {
-    return firstValueFrom(this.agentClient.send({ cmd: 'deleteAgent' }, id));
+    return this.sendCommand('deleteAgent', id);
   }
 
   async getPhoneNumber(id: string): Promise<any> {
-    return firstValueFrom(this.agentClient.send({ cmd: 'getAgentPhoneNumber' }, id));
+    return this.sendCommand('getAgentPhoneNumber', id);
   }
 
   async findByEmail(email: string): Promise<any> {
-    return firstValueFrom(this.agentClient.send({ cmd: 'getAgentByEmail' }, email));
+    return this.sendCommand('getAgentByEmail', email);
   }
 
   async deactivateByEmail(email: string): Promise<any> {
-    return firstValueFrom(this.agentClient.send({ cmd: 'deactivateAgentByEmail' }, email));
+    return this.sendCommand('deactivateAgentByEmail', email);
   }
 
   async reactivateByEmail(email: string): Promise<any> {
-    return firstValueFrom(this.agentClient.send({ cmd: 'reactivateAgentByEmail' }, email));
+    return this.sendCommand('reactivateAgentByEmail', email);
   }
 }
