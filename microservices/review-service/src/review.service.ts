@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
+import { RpcException } from '@nestjs/microservices';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
 import { Review, ReviewDocument } from './review.model';
@@ -17,8 +18,8 @@ export class ReviewService {
         status: 'success',
         data: { review },
       };
-    } catch (error) {
-      throw new HttpException(error.message || 'Failed to create review', HttpStatus.BAD_REQUEST);
+    } catch (error: any) {
+      throw new RpcException(error?.message || 'Failed to create review');
     }
   }
 
@@ -66,7 +67,7 @@ export class ReviewService {
     ]);
     
     if (!reviews || reviews.length === 0) {
-      throw new HttpException('Review not found', HttpStatus.NOT_FOUND);
+      throw new RpcException('Review not found');
     }
     return {
       status: 'success',
@@ -80,7 +81,7 @@ export class ReviewService {
       runValidators: true,
     });
     if (!review) {
-      throw new HttpException('Review not found', HttpStatus.NOT_FOUND);
+      throw new RpcException('Review not found');
     }
     return {
       status: 'success',
@@ -91,7 +92,7 @@ export class ReviewService {
   async delete(id: string): Promise<any> {
     const review = await this.reviewModel.findByIdAndDelete(id);
     if (!review) {
-      throw new HttpException('Review not found', HttpStatus.NOT_FOUND);
+      throw new RpcException('Review not found');
     }
     return {
       status: 'success',

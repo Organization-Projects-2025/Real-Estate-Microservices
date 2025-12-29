@@ -173,18 +173,26 @@ const ReviewForm = () => {
 
           <div>
             <label className="block text-gray-300 mb-2">Rating</label>
-            <div className="flex gap-2">
+            <div className="flex gap-2" data-testid="rating-container">
               {[...Array(5)].map((_, index) => {
                 const ratingValue = index + 1;
                 return (
-                  <FaStar
+                  <div
                     key={index}
-                    className="text-2xl cursor-pointer"
-                    color={ratingValue <= (hover || rating) ? '#FFD700' : '#4B5563'}
+                    data-star={ratingValue}
+                    className="cursor-pointer"
                     onClick={() => setRating(ratingValue)}
                     onMouseEnter={() => setHover(ratingValue)}
                     onMouseLeave={() => setHover(0)}
-                  />
+                    role="button"
+                    tabIndex="0"
+                    aria-label={`${ratingValue} star${ratingValue > 1 ? 's' : ''}`}
+                  >
+                    <FaStar
+                      className="text-2xl"
+                      color={ratingValue <= (hover || rating) ? '#FFD700' : '#4B5563'}
+                    />
+                  </div>
                 );
               })}
             </div>
