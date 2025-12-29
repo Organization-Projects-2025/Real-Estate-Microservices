@@ -23,6 +23,15 @@ export class PropertyController {
   async create(@Body() propertyData: any, @Res() res: Response) {
     try {
       const result = await this.propertyService.create(propertyData);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.CREATED).json(result);
     } catch (error) {
       const { message, statusCode } = extractErrorMessage(error);
@@ -35,6 +44,15 @@ export class PropertyController {
   async findAll(@Res() res: Response) {
     try {
       const result = await this.propertyService.findAll();
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
       const { message, statusCode } = extractErrorMessage(error);
@@ -47,6 +65,15 @@ export class PropertyController {
   async getFeatured(@Query('limit') limit: number = 6, @Res() res: Response) {
     try {
       const result = await this.propertyService.getFeatured(limit);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
       const { message, statusCode } = extractErrorMessage(error);
@@ -59,6 +86,15 @@ export class PropertyController {
   async search(@Query() filters: any, @Res() res: Response) {
     try {
       const result = await this.propertyService.search(filters);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
       const { message, statusCode } = extractErrorMessage(error);
@@ -71,6 +107,15 @@ export class PropertyController {
   async findByUser(@Param('userId') userId: string, @Res() res: Response) {
     try {
       const result = await this.propertyService.findByUser(userId);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
       const { message, statusCode } = extractErrorMessage(error);
@@ -86,6 +131,15 @@ export class PropertyController {
   ) {
     try {
       const result = await this.propertyService.findByListingType(listingType);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
       const { message, statusCode } = extractErrorMessage(error);
@@ -98,6 +152,15 @@ export class PropertyController {
   async findOne(@Param('id') id: string, @Res() res: Response) {
     try {
       const result = await this.propertyService.findById(id);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
       const { message, statusCode } = extractErrorMessage(error);
@@ -114,6 +177,15 @@ export class PropertyController {
   ) {
     try {
       const result = await this.propertyService.update(id, updateData);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
       const { message, statusCode } = extractErrorMessage(error);
@@ -126,6 +198,15 @@ export class PropertyController {
   async remove(@Param('id') id: string, @Res() res: Response) {
     try {
       const result = await this.propertyService.delete(id);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
       const { message, statusCode } = extractErrorMessage(error);
