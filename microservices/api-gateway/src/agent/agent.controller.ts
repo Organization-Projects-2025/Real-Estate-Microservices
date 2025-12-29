@@ -30,6 +30,14 @@ export class AgentController {
       // First create the agent record
       const result = await this.agentService.create(agentData);
 
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       // If agent was created successfully, update the user's role to 'agent'
       if (result.status === 'success' && agentData.email) {
         try {
@@ -72,6 +80,16 @@ export class AgentController {
     try {
       // Get all agents
       const agentsResult = await this.agentService.findAll();
+
+      // Check if microservice returned an error
+      if (agentsResult?.isError) {
+        return res
+          .status(agentsResult.statusCode || HttpStatus.BAD_REQUEST)
+          .json({
+            status: 'error',
+            message: agentsResult.message,
+          });
+      }
 
       if (agentsResult.status !== 'success' || !agentsResult.data?.agents) {
         return res.status(HttpStatus.OK).json(agentsResult);
@@ -126,6 +144,15 @@ export class AgentController {
   async findOne(@Param('id') id: string, @Res() res: Response) {
     try {
       const result = await this.agentService.findById(id);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
       const { message, statusCode } = extractErrorMessage(error);
@@ -138,6 +165,15 @@ export class AgentController {
   async getPhoneNumber(@Param('id') id: string, @Res() res: Response) {
     try {
       const result = await this.agentService.getPhoneNumber(id);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
       const { message, statusCode } = extractErrorMessage(error);
@@ -150,6 +186,15 @@ export class AgentController {
   async findByEmail(@Param('email') email: string, @Res() res: Response) {
     try {
       const result = await this.agentService.findByEmail(email);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
       const { message, statusCode } = extractErrorMessage(error);
@@ -166,6 +211,15 @@ export class AgentController {
   ) {
     try {
       const result = await this.agentService.update(id, updateData);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
       const { message, statusCode } = extractErrorMessage(error);
@@ -178,6 +232,15 @@ export class AgentController {
   async remove(@Param('id') id: string, @Res() res: Response) {
     try {
       const result = await this.agentService.delete(id);
+
+      // Check if microservice returned an error
+      if (result?.isError) {
+        return res.status(result.statusCode || HttpStatus.BAD_REQUEST).json({
+          status: 'error',
+          message: result.message,
+        });
+      }
+
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
       const { message, statusCode } = extractErrorMessage(error);
