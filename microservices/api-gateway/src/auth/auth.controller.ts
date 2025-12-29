@@ -1,11 +1,15 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Post, Get, Put, Delete, Body, Param, Res, HttpStatus, Req, UseFilters } from '@nestjs/common';
+import { Controller, Post, Get, Put, Patch, Delete, Body, Param, Res, HttpStatus, Req, UseFilters } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { AuthService } from './auth.service';
+import { AgentService } from '../agent/agent.service';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) { }
+  constructor(
+    private readonly authService: AuthService,
+    private readonly agentService: AgentService,
+  ) { }
 
   private extractUserIdFromToken(req: Request): string | null {
     try {
@@ -221,6 +225,73 @@ export class AuthController {
       return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
         status: 'error',
         message: error.message || 'Failed to delete user',
+      });
+    }
+  }
+
+  @Patch('users/:id')
+  async updateUser(@Param('id') id: string, @Body() userData: any, @Res() res: Response) {
+    try {
+      const result = await this.authService.updateUser(id, userData);
+      return res.status(HttpStatus.OK).json(result);
+    } catch (error) {
+      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+        status: 'error',
+        message: error.message || 'Failed to update user',
+      });
+    }
+  }
+
+  @Patch('users/:id/deactivate')
+  async deactivateUser(@Param('id') id: string, @Res() res: Response) {
+    try {
+      const result = await this.authService.deactivateUser(id);
+      
+      // If user was deactivated and has role 'agent', also deactivate their agent profile
+      if (result.status === 'success' && result.data?.user) {
+        const user = result.data.user;
+        if (user.role === 'agent' && user.email) {
+          try {
+            await this.agentService.deactivateByEmail(user.email);
+          } catch (agentError) {
+            console.error('Failed to deactivate agent profile:', agentError.message);
+            // Don't fail the request, user was already deactivated
+          }
+        }
+      }
+      
+      return res.status(HttpStatus.OK).json(result);
+    } catch (error) {
+      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+        status: 'error',
+        message: error.message || 'Failed to deactivate user',
+      });
+    }
+  }
+
+  @Patch('users/:id/reactivate')
+  async reactivateUser(@Param('id') id: string, @Res() res: Response) {
+    try {
+      const result = await this.authService.reactivateUser(id);
+      
+      // If user was reactivated and has role 'agent', also reactivate their agent profile
+      if (result.status === 'success' && result.data?.user) {
+        const user = result.data.user;
+        if (user.role === 'agent' && user.email) {
+          try {
+            await this.agentService.reactivateByEmail(user.email);
+          } catch (agentError) {
+            console.error('Failed to reactivate agent profile:', agentError.message);
+            // Don't fail the request, user was already reactivated
+          }
+        }
+      }
+      
+      return res.status(HttpStatus.OK).json(result);
+    } catch (error) {
+      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+        status: 'error',
+        message: error.message || 'Failed to reactivate user',
       });
     }
   }

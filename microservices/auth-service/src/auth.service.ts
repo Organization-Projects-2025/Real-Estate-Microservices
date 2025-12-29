@@ -212,6 +212,32 @@ export class AuthService {
     return { status: 'success', message: 'User deleted successfully' };
   }
 
+  async deactivateUser(userId: string): Promise<any> {
+    const user = await this.userModel.findByIdAndUpdate(
+      userId,
+      { active: false },
+      { new: true }
+    ).select('-password');
+    
+    if (!user) {
+      throw new HttpException('User not found', HttpStatus.NOT_FOUND);
+    }
+    return { status: 'success', message: 'User deactivated successfully', data: { user } };
+  }
+
+  async reactivateUser(userId: string): Promise<any> {
+    const user = await this.userModel.findByIdAndUpdate(
+      userId,
+      { active: true },
+      { new: true }
+    ).select('-password');
+    
+    if (!user) {
+      throw new HttpException('User not found', HttpStatus.NOT_FOUND);
+    }
+    return { status: 'success', message: 'User reactivated successfully', data: { user } };
+  }
+
   async getUsersByRole(role: string): Promise<any> {
     const users = await this.userModel.find({ role }).select('-password');
     return {
