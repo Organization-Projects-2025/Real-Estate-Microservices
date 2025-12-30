@@ -149,6 +149,7 @@ function Reviews() {
                       <div className="flex items-center space-x-3">
                         <button
                           onClick={() => handleDelete(review._id)}
+                          data-testid={`delete-review-${review._id}`}
                           className="text-red-600 hover:text-red-900 transition-colors"
                           title="Delete Review"
                         >

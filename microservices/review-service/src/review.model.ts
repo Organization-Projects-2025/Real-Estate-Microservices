@@ -4,9 +4,9 @@ import { Document, Types } from 'mongoose';
 
 export type ReviewDocument = Review & Document;
 
-@Schema({ timestamps: true })
+@Schema({ timestamps: true, collection: 'reviews' })
 export class Review {
-  @Prop({ type: Types.ObjectId, ref: 'Agent' })
+  @Prop({ type: Types.ObjectId, required: true })
   agent: Types.ObjectId;
 
   @Prop({ required: true })

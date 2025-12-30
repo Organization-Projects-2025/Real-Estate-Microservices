@@ -50,20 +50,24 @@ const ReviewForm = () => {
     }
 
     try {
+      const payload = {
+        agent: selectedAgent,
+        reviewerName,
+        rating,
+        reviewText,
+      };
+      console.log('Submitting review with payload:', payload);
+      
       const response = await fetch('http://localhost:3000/api/reviews', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          agent: selectedAgent,
-          reviewerName,
-          rating,
-          reviewText,
-        }),
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
+      console.log('Review response:', data);
 
       if (response.ok && data.status === 'success') {
         setSuccess('Review submitted successfully!');

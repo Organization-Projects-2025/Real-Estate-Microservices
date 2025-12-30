@@ -13,33 +13,47 @@ export class ReviewService {
 
   async create(reviewData: any): Promise<any> {
     try {
-      const review = await this.reviewModel.create(reviewData);
+      console.log('=== CREATE REVIEW DEBUG ===');
+      console.log('Raw reviewData:', JSON.stringify(reviewData));
+      console.log('Agent value:', reviewData.agent);
+      console.log('Agent type:', typeof reviewData.agent);
+      
+      // Validate agent is provided and is a valid ObjectId
+      if (!reviewData.agent) {
+        console.error('Agent is missing!');
+        throw new RpcException('Agent ID is required');
+      }
+      
+      // Convert agent to ObjectId for storage
+      const agentId = new Types.ObjectId(reviewData.agent);
+      
+      console.log('Converted agentId:', agentId);
+      
+      const reviewToCreate = {
+        ...reviewData,
+        agent: agentId,
+      };
+      
+      console.log('Final review object to create:', JSON.stringify(reviewToCreate));
+      
+      const review = await this.reviewModel.create(reviewToCreate);
+      
+      console.log('Created review:', JSON.stringify(review));
+      console.log('Review agent field:', review.agent);
+      console.log('=== END DEBUG ===');
+      
       return {
         status: 'success',
         data: { review },
       };
     } catch (error: any) {
+      console.error('Review creation error:', error);
       throw new RpcException(error?.message || 'Failed to create review');
     }
   }
 
   async findAll(): Promise<any> {
-    const reviews = await this.reviewModel.aggregate([
-      {
-        $lookup: {
-          from: 'agents',
-          localField: 'agent',
-          foreignField: '_id',
-          as: 'agent',
-        },
-      },
-      {
-        $unwind: {
-          path: '$agent',
-          preserveNullAndEmptyArrays: true,
-        },
-      },
-    ]);
+    const reviews = await this.reviewModel.find().lean();
     return {
       status: 'success',
       results: reviews.length,
@@ -48,30 +62,13 @@ export class ReviewService {
   }
 
   async findById(id: string): Promise<any> {
-    const reviews = await this.reviewModel.aggregate([
-      { $match: { _id: new Types.ObjectId(id) } },
-      {
-        $lookup: {
-          from: 'agents',
-          localField: 'agent',
-          foreignField: '_id',
-          as: 'agent',
-        },
-      },
-      {
-        $unwind: {
-          path: '$agent',
-          preserveNullAndEmptyArrays: true,
-        },
-      },
-    ]);
-    
-    if (!reviews || reviews.length === 0) {
+    const review = await this.reviewModel.findById(id).lean();
+    if (!review) {
       throw new RpcException('Review not found');
     }
     return {
       status: 'success',
-      data: { review: reviews[0] },
+      data: { review },
     };
   }
 
@@ -111,24 +108,10 @@ export class ReviewService {
 
   async getRandom(limit: number = 3): Promise<any> {
     const numLimit = Number(limit) || 3;
-    const reviews = await this.reviewModel.aggregate([
-      { $match: { status: 'active' } },
-      { $sample: { size: numLimit } },
-      {
-        $lookup: {
-          from: 'agents',
-          localField: 'agent',
-          foreignField: '_id',
-          as: 'agent',
-        },
-      },
-      {
-        $unwind: {
-          path: '$agent',
-          preserveNullAndEmptyArrays: true,
-        },
-      },
-    ]);
+    const reviews = await this.reviewModel
+      .find({ status: 'active' })
+      .limit(numLimit)
+      .lean();
     return {
       status: 'success',
       results: reviews.length,
