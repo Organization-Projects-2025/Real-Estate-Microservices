@@ -20,7 +20,7 @@ try {
     loginHelper.login('admin@realestate.com', 'WrongPassword123!')
     
     // Assert: Verify error message
-    loginHelper.verifyLoginError('Invalid credentials')
+    loginHelper.verifyLoginError('Invalid email or password')
     
     WebUI.comment('✅ TC_AUTH_003 PASSED: Login correctly failed with incorrect password')
     
