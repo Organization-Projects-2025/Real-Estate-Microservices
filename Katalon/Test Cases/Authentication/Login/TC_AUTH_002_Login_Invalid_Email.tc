@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify login fails with invalid email</description>
+   <name>TC_AUTH_002_Login_Invalid_Email</name>
+   <tag>negative,login,authentication</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-auth-002</testCaseGuid>
+</TestCaseEntity>

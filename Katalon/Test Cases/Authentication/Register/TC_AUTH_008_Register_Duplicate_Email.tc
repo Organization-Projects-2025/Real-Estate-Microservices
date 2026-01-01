@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify registration fails with duplicate email</description>
+   <name>TC_AUTH_008_Register_Duplicate_Email</name>
+   <tag>authentication, register, negative, validation</tag>
+   <comment></comment>
+   <testCaseGuid>tc-auth-008</testCaseGuid>
+</TestCaseEntity>

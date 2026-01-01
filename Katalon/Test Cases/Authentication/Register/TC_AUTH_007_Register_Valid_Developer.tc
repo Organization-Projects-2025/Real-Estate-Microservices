@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify successful developer registration with valid data</description>
+   <name>TC_AUTH_007_Register_Valid_Developer</name>
+   <tag>authentication, register, positive, developer</tag>
+   <comment></comment>
+   <testCaseGuid>tc-auth-007</testCaseGuid>
+</TestCaseEntity>
