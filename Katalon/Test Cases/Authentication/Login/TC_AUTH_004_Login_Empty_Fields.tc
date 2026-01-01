@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify login fails with empty fields</description>
+   <name>TC_AUTH_004_Login_Empty_Fields</name>
+   <tag>authentication, login, negative, validation</tag>
+   <comment></comment>
+   <testCaseGuid>tc-auth-004</testCaseGuid>
+</TestCaseEntity>
