@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that combining multiple filters works correctly</description>
+   <name>TC_PROP_011_Combined_Filters</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>prop-combined-filters-011</testCaseGuid>
+</TestCaseEntity>

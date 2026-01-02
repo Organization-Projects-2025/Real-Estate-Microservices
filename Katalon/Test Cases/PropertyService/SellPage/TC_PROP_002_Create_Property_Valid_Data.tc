@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that a logged-in user can create a property with valid data</description>
+   <name>TC_PROP_002_Create_Property_Valid_Data</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>prop-sell-002</testCaseGuid>
+</TestCaseEntity>
