@@ -7,11 +7,11 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@name='pets' and @type='checkbox']</value>
+         <value>//label[contains(., 'Pets')]//input[@type='checkbox'] | //input[@type='checkbox' and @name='pets']</value>
       </entry>
       <entry>
          <key>CSS</key>
-         <value>input[name='pets'][type='checkbox']</value>
+         <value>input[type='checkbox']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
