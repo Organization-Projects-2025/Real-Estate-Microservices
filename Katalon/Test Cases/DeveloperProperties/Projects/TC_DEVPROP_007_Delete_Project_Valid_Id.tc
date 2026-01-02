@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify successful deletion of a project with valid ID</description>
+   <name>TC_DEVPROP_007_Delete_Project_Valid_Id</name>
+   <tag>developer-properties,projects,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-devprop-007</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId></variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'507f1f77bcf86cd799439011'</defaultValue>
+      <description>Project ID to delete</description>
+      <id>project_id</id>
+      <masked>false</masked>
+      <name>project_id</name>
+   </variable>
+</TestCaseEntity>

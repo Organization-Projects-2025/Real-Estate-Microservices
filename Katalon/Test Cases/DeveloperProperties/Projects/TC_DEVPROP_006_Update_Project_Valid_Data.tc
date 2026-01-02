@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify successful update of a project with valid data</description>
+   <name>TC_DEVPROP_006_Update_Project_Valid_Data</name>
+   <tag>developer-properties, projects, positive</tag>
+   <comment></comment>
+   <testCaseGuid>tc-devprop-006</testCaseGuid>
+   <variableLinks>
+   </variableLinks>
+   <variable>
+      <defaultValue>'507f1f77bcf86cd799439011'</defaultValue>
+      <description>Project ID to update</description>
+      <id>project_id</id>
+      <masked>false</masked>
+      <name>project_id</name>
+   </variable>
+   <variable>
+      <defaultValue>'Updated Project Name'</defaultValue>
+      <description>Updated project name</description>
+      <id>updated_name</id>
+      <masked>false</masked>
+      <name>updated_name</name>
+   </variable>
+   <variable>
+      <defaultValue>'Updated project description'</defaultValue>
+      <description>Updated project description</description>
+      <id>updated_description</id>
+      <masked>false</masked>
+      <name>updated_description</name>
+   </variable>
+</TestCaseEntity>

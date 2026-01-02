@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify retrieval of a project by valid ID</description>
+   <name>TC_DEVPROP_004_Get_Project_By_Valid_Id</name>
+   <tag>developer-properties, projects, positive</tag>
+   <comment></comment>
+   <testCaseGuid>tc-devprop-004</testCaseGuid>
+   <variableLinks>
+   </variableLinks>
+   <variable>
+      <defaultValue>'507f1f77bcf86cd799439011'</defaultValue>
+      <description>Valid project ID for testing</description>
+      <id>project_id</id>
+      <masked>false</masked>
+      <name>project_id</name>
+   </variable>
+</TestCaseEntity>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify error handling when retrieving project by invalid ID</description>
+   <name>TC_DEVPROP_005_Get_Project_By_Invalid_Id</name>
+   <tag>developer-properties, projects, negative</tag>
+   <comment></comment>
+   <testCaseGuid>tc-devprop-005</testCaseGuid>
+   <variableLinks>
+   </variableLinks>
+   <variable>
+      <defaultValue>'invalid_project_id'</defaultValue>
+      <description>Invalid project ID for negative testing</description>
+      <id>project_id</id>
+      <masked>false</masked>
+      <name>project_id</name>
+   </variable>
+</TestCaseEntity>

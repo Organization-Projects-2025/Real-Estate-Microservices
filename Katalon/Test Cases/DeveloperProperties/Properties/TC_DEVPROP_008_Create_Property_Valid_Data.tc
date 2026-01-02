@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify successful creation of a developer property with valid data</description>
+   <name>TC_DEVPROP_008_Create_Property_Valid_Data</name>
+   <tag>developer-properties,positive,properties</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-devprop-008</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>developer_id</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>project_id</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>property_title</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>property_price</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>listing_type</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'507f1f77bcf86cd799439011'</defaultValue>
+      <description>Developer ID for testing</description>
+      <id>developer_id</id>
+      <masked>false</masked>
+      <name>developer_id</name>
+   </variable>
+   <variable>
+      <defaultValue>'507f1f77bcf86cd799439012'</defaultValue>
+      <description>Project ID for testing</description>
+      <id>project_id</id>
+      <masked>false</masked>
+      <name>project_id</name>
+   </variable>
+   <variable>
+      <defaultValue>'Luxury Test Apartment'</defaultValue>
+      <description>Property title for testing</description>
+      <id>property_title</id>
+      <masked>false</masked>
+      <name>property_title</name>
+   </variable>
+   <variable>
+      <defaultValue>750000</defaultValue>
+      <description>Property price for testing</description>
+      <id>property_price</id>
+      <masked>false</masked>
+      <name>property_price</name>
+   </variable>
+   <variable>
+      <defaultValue>'sale'</defaultValue>
+      <description>Listing type for testing</description>
+      <id>listing_type</id>
+      <masked>false</masked>
+      <name>listing_type</name>
+   </variable>
+</TestCaseEntity>

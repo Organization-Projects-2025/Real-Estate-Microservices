@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify retrieval of all developers</description>
+   <name>TC_DEVPROP_014_Get_All_Developers</name>
+   <tag>developer-properties, developers, positive</tag>
+   <comment></comment>
+   <testCaseGuid>tc-devprop-014</testCaseGuid>
+   <variableLinks>
+   </variableLinks>
+</TestCaseEntity>

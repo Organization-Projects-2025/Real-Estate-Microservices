@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify retrieval of all projects</description>
+   <name>TC_DEVPROP_003_Get_All_Projects</name>
+   <tag>developer-properties, projects, positive</tag>
+   <comment></comment>
+   <testCaseGuid>tc-devprop-003</testCaseGuid>
+   <variableLinks>
+   </variableLinks>
+</TestCaseEntity>

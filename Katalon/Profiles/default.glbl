@@ -4,4 +4,34 @@
    <name>default</name>
    <tag></tag>
    <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description>Base URL for the API Gateway</description>
+      <initValue>'http://localhost:3000'</initValue>
+      <name>BASE_URL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Authentication token for API requests</description>
+      <initValue>''</initValue>
+      <name>AUTH_TOKEN</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Created project ID for cleanup</description>
+      <initValue>''</initValue>
+      <name>CREATED_PROJECT_ID</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Created property ID for cleanup</description>
+      <initValue>''</initValue>
+      <name>CREATED_PROPERTY_ID</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Integration test project ID</description>
+      <initValue>''</initValue>
+      <name>INTEGRATION_TEST_PROJECT_ID</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Integration test property ID</description>
+      <initValue>''</initValue>
+      <name>INTEGRATION_TEST_PROPERTY_ID</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
