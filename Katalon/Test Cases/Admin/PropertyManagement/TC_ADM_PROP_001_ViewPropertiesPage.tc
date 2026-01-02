@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: View Properties Management Page - Verifies that admin can access and view the Properties Management page</description>
+   <name>TC_ADM_PROP_001_ViewPropertiesPage</name>
+   <tag>admin,properties,view,positive</tag>
+   <comment></comment>
+   <testCaseGuid>tc-adm-prop-001</testCaseGuid>
+</TestCaseEntity>

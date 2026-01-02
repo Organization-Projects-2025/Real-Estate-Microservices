@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: Edit Property with Valid Data - Verifies that admin can edit an existing property</description>
+   <name>TC_ADM_PROP_002_EditPropertyValid</name>
+   <tag>edit,admin,positive,properties</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-adm-prop-002</testCaseGuid>
+</TestCaseEntity>

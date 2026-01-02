@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that admin can cancel review deletion when prompted</description>
+   <name>TC_ADM_REV_003_CancelDeleteReview</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>rev-003-cancel-delete-review</testCaseGuid>
+</TestCaseEntity>

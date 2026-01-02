@@ -4,6 +4,13 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.model.FailureHandling
+import com.kms.katalon.core.testobject.RequestObject
+import com.kms.katalon.core.testobject.TestObjectProperty
+import com.kms.katalon.core.testobject.ConditionType
+import com.kms.katalon.core.testobject.impl.HttpTextBodyContent
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
 
 /**
  * Filter Keywords for Admin Microservice
@@ -15,6 +22,7 @@ import com.kms.katalon.core.model.FailureHandling
 class Filter_Keywords {
     
     private static final String BASE_URL = 'http://localhost:5173'
+    private static final String API_GATEWAY_URL = 'http://localhost:3000/api'
     private static final String FILTERS_URL = "${BASE_URL}/admin/filters"
     
     /**
@@ -252,5 +260,73 @@ class Filter_Keywords {
             FailureHandling.OPTIONAL
         )
         WebUI.delay(1)
+    }
+    
+    /**
+     * Create a test filter via API
+     * @param name - Filter name (optional, will generate unique if not provided)
+     * @return Map containing filter data including _id
+     */
+    @Keyword
+    def createTestFilterViaAPI(String name = null) {
+        String filterName = name ?: generateUniqueFilterName()
+        
+        def requestBody = [
+            name: filterName,
+            category: 'features',
+            description: 'Automated test filter',
+            order: 0,
+            isActive: true
+        ]
+        
+        RequestObject request = new RequestObject()
+        request.setRestUrl("${API_GATEWAY_URL}/admin")
+        request.setRestRequestMethod('POST')
+        
+        ArrayList<TestObjectProperty> headers = new ArrayList<>()
+        headers.add(new TestObjectProperty('Content-Type', ConditionType.EQUALS, 'application/json'))
+        headers.add(new TestObjectProperty('Accept', ConditionType.EQUALS, 'application/json'))
+        request.setHttpHeaderProperties(headers)
+        
+        request.setBodyContent(new HttpTextBodyContent(JsonOutput.toJson(requestBody), 'UTF-8', 'application/json'))
+        
+        def response = WS.sendRequest(request)
+        int statusCode = response.getStatusCode()
+        
+        if (statusCode != 201 && statusCode != 200) {
+            WebUI.comment("API Error: Failed to create test filter. Status: ${statusCode}")
+            throw new Exception("Failed to create test filter via API. Status: ${statusCode}")
+        }
+        
+        def jsonSlurper = new JsonSlurper()
+        def responseData = jsonSlurper.parseText(response.getResponseText())
+        
+        String filterId = responseData?.data?.filter?._id ?: responseData?.filter?._id
+        WebUI.comment("Test filter created via API: ${filterName} (ID: ${filterId})")
+        
+        return [
+            success: true,
+            name: filterName,
+            filterId: filterId
+        ]
+    }
+    
+    /**
+     * Delete a filter via API (cleanup)
+     */
+    @Keyword
+    def deleteFilterViaAPI(String filterId) {
+        RequestObject request = new RequestObject()
+        request.setRestUrl("${API_GATEWAY_URL}/admin/${filterId}")
+        request.setRestRequestMethod('DELETE')
+        
+        ArrayList<TestObjectProperty> headers = new ArrayList<>()
+        headers.add(new TestObjectProperty('Content-Type', ConditionType.EQUALS, 'application/json'))
+        request.setHttpHeaderProperties(headers)
+        
+        def response = WS.sendRequest(request)
+        WebUI.comment("Filter deleted via API: ${filterId}, Status: ${response.getStatusCode()}")
+        
+        return response.getStatusCode() == 200
     }
 }

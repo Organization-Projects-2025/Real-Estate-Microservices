@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: Edit Property with Empty Title - Verifies validation for empty property title</description>
+   <name>TC_ADM_PROP_003_EditPropertyEmptyTitle</name>
+   <tag>negative,edit,admin,properties,validation</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-adm-prop-003</testCaseGuid>
+</TestCaseEntity>

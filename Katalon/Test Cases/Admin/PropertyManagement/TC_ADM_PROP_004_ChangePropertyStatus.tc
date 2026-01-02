@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: Change Property Status - Verifies that admin can change a property's status</description>
+   <name>TC_ADM_PROP_004_ChangePropertyStatus</name>
+   <tag>admin,properties,status,edit</tag>
+   <comment></comment>
+   <testCaseGuid>tc-adm-prop-004</testCaseGuid>
+</TestCaseEntity>
