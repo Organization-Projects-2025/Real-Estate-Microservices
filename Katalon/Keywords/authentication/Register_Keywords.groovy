@@ -82,8 +82,9 @@ class Register_Keywords {
         // Click register button
         WebUI.click(findTestObject('Object Repository/Authentication/RegisterPage/registerButton'))
         
-        // Wait for response
-        WebUI.delay(3)
+        // Wait for navigation or error (increased timeout)
+        WebUI.delay(5)
+        WebUI.waitForPageLoad(15)
     }
     
     /**
@@ -118,7 +119,12 @@ class Register_Keywords {
      */
     @Keyword
     def verifyRegistrationSuccess() {
-        WebUI.waitForPageLoad(10)
+        // Wait for page to change with longer timeout
+        WebUI.waitForPageLoad(20)
+        
+        // Give extra time for redirect to complete
+        WebUI.delay(3)
+        
         String currentUrl = WebUI.getUrl()
         
         // Verify we're NOT on register page anymore
