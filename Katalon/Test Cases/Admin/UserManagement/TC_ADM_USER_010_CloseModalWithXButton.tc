@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: Close Modal with X Button - Verifies that the X button closes the modal without saving</description>
+   <name>TC_ADM_USER_010_CloseModalWithXButton</name>
+   <tag>ui,admin,users,modal</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-adm-user-010</testCaseGuid>
+</TestCaseEntity>

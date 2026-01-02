@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: Create Filter with Empty Name (Negative) - Verifies that form validation prevents creating filter without name</description>
+   <name>TC_ADM_FILTER_003_CreateFilterEmptyName</name>
+   <tag>admin,filters,create,negative,validation</tag>
+   <comment></comment>
+   <testCaseGuid>tc-adm-filter-003</testCaseGuid>
+</TestCaseEntity>

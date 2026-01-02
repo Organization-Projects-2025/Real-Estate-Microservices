@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: Edit User with Empty Name - Verifies validation for empty user name</description>
+   <name>TC_ADM_USER_003_EditUserEmptyName</name>
+   <tag>negative,edit,admin,users,validation</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-adm-user-003</testCaseGuid>
+</TestCaseEntity>

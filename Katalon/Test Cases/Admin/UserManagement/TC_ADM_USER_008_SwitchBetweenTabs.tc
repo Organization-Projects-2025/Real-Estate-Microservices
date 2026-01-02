@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: Switch Between Active and Inactive Tabs - Verifies tab switching functionality</description>
+   <name>TC_ADM_USER_008_SwitchBetweenTabs</name>
+   <tag>admin,users,tabs,ui</tag>
+   <comment></comment>
+   <testCaseGuid>tc-adm-user-008</testCaseGuid>
+</TestCaseEntity>

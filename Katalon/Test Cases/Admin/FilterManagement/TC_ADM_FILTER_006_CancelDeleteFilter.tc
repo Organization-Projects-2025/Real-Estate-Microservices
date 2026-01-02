@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: Cancel Delete Filter - Verifies that canceling deletion keeps the filter</description>
+   <name>TC_ADM_FILTER_006_CancelDeleteFilter</name>
+   <tag>admin,filters,delete,cancel</tag>
+   <comment></comment>
+   <testCaseGuid>tc-adm-filter-006</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: Cancel Add Filter Modal - Verifies that canceling the add modal doesn't create a filter</description>
+   <name>TC_ADM_FILTER_009_CancelAddFilter</name>
+   <tag>cancel,admin,filters,modal</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-adm-filter-010</testCaseGuid>
+</TestCaseEntity>

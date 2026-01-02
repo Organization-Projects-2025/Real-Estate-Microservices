@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: Cancel Edit User - Verifies that canceling edit doesn't save changes</description>
+   <name>TC_ADM_USER_009_CancelEditUser</name>
+   <tag>admin,users,edit,cancel</tag>
+   <comment></comment>
+   <testCaseGuid>tc-adm-user-009</testCaseGuid>
+   <testCaseSteps>
+      <TestCaseStep>
+         <description>Click Cancel button to close modal</description>
+         <name>Click - Cancel Button</name>
+         <testStepType>WebUI</testStepType>
+         <keyword>click</keyword>
+         <arguments>
+            <argument>
+               <name>to</name>
+               <value>findTestObject(&quot;Object Repository/Admin/UsersPage/Modal/btn_Cancel&quot;)</value>
+            </argument>
+         </arguments>
+      </TestCaseStep>
+   </testCaseSteps>
+</TestCaseEntity>

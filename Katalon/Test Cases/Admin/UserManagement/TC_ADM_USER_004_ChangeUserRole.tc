@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: Change User Role - Verifies that admin can change a user's role</description>
+   <name>TC_ADM_USER_004_ChangeUserRole</name>
+   <tag>role,edit,admin,users</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-adm-user-004</testCaseGuid>
+</TestCaseEntity>
