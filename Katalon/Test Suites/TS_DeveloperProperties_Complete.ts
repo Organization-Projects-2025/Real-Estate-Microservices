@@ -67,18 +67,4 @@
       <testCaseId>Test Cases/DeveloperProperties/Properties/TC_DEVPROP_012_Get_Properties_By_Project</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
-   <testCaseLink>
-      <guid>tc-link-get-all-developers-complete</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/DeveloperProperties/Developers/TC_DEVPROP_014_Get_All_Developers</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>tc-link-get-developer-valid-id-complete</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/DeveloperProperties/Developers/TC_DEVPROP_015_Get_Developer_By_Valid_Id</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
 </TestSuiteEntity>

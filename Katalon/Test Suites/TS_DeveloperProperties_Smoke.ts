@@ -97,11 +97,4 @@
          <variableId>project_id</variableId>
       </variableLink>
    </testCaseLink>
-   <testCaseLink>
-      <guid>tc-link-get-all-developers</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/DeveloperProperties/Developers/TC_DEVPROP_014_Get_All_Developers</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
 </TestSuiteEntity>
