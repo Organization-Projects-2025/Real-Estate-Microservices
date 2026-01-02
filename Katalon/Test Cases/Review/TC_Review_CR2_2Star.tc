@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Create Review with 2 Star Rating</description>
+   <name>TC_Review_CR2_2Star</name>
+   <tag>2star,review,create</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>rev-cr2-2star-001</testCaseGuid>
+</TestCaseEntity>

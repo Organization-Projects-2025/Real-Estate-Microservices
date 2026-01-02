@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>select_Select an agentFatima KarimAhmed Mah_be6479</name>
+   <tag></tag>
+   <elementGuidId>a88b8437-d58a-41f2-aef7-e5d06615b7a8</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//select[@name='agent']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>select[name=&quot;agent&quot;]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:role=combobox</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>select</value>
+      <webElementGuid>2d7ccefb-eab9-47d4-b202-2a324ee2a967</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors</value>
+      <webElementGuid>c7bc3e1f-9c3c-46f2-a7c7-76486f7607ab</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Select an agentFatima KarimAhmed MahmoudHassan Al-RashidNeil HaydenLeilani HatfieldWhitney HowellXantha Hill</value>
+      <webElementGuid>85afe6f2-bc49-4f3f-9139-7ea21e0f0a56</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/div[@class=&quot;min-h-screen bg-[#0f0f0f]&quot;]/div[@class=&quot;lg:pl-64 pt-20&quot;]/main[@class=&quot;p-4 md:p-6&quot;]/div[@class=&quot;p-6 bg-[#121212] min-h-screen&quot;]/div[@class=&quot;fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-[60]&quot;]/div[@class=&quot;bg-[#1a1a1a] rounded-xl p-6 w-full max-w-lg max-h-[85vh] overflow-y-auto border border-gray-800 shadow-2xl&quot;]/form[@class=&quot;space-y-4&quot;]/div[2]/select[@class=&quot;w-full px-3 py-2.5 rounded-lg bg-[#252525] border border-gray-700 text-white focus:border-purple-500 focus:outline-none transition-colors&quot;]</value>
+      <webElementGuid>0dd814dc-a623-4236-aa83-f62ee1427df1</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>agent</value>
+      <webElementGuid>4f5d8c6b-b65a-40c5-831b-cadc4486c78a</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//select[@name='agent']</value>
+      <webElementGuid>ce8cbdc5-83f1-42e4-8e56-3d9df7357ea8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/div/div[2]/main/div/div[2]/div/form/div[2]/select</value>
+      <webElementGuid>bff5b669-5d7b-4ed9-848d-688adacbedba</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Agent *'])[1]/following::select[1]</value>
+      <webElementGuid>717c564d-e336-4d9c-8a53-e3ef635c51a1</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Reviewer Name *'])[1]/following::select[1]</value>
+      <webElementGuid>3dd48816-f6cb-4990-b556-2c3786a1abc6</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Rating *'])[1]/preceding::select[1]</value>
+      <webElementGuid>e2d58067-54c1-4480-8501-d92597639bd2</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='★'])[1]/preceding::select[1]</value>
+      <webElementGuid>10e87b5c-166a-4801-8c37-4e6c5ede9bb0</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//select</value>
+      <webElementGuid>13df51db-627e-4f20-b0e9-7f09cb07db89</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//select[@name = 'agent' and (text() = 'Select an agentFatima KarimAhmed MahmoudHassan Al-RashidNeil HaydenLeilani HatfieldWhitney HowellXantha Hill' or . = 'Select an agentFatima KarimAhmed MahmoudHassan Al-RashidNeil HaydenLeilani HatfieldWhitney HowellXantha Hill')]</value>
+      <webElementGuid>916318ba-09ce-4c71-8818-ee93cc23a8ca</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/div/div/form/div[2]/select</value>
+      <webElementGuid>639f1fe5-44fa-4231-b303-a08bbd6850b6</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Select Agent'])[1]/following::select[1]</value>
+      <webElementGuid>cdf31616-e71b-4aaf-ad92-13f18699de95</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Your Name'])[1]/following::select[1]</value>
+      <webElementGuid>560e4f5d-dd4d-401c-8705-6d6771b207d8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Rating'])[1]/preceding::select[1]</value>
+      <webElementGuid>f433172f-886f-4b01-8f94-64bcf5e469dd</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Your Review'])[1]/preceding::select[1]</value>
+      <webElementGuid>2d6d8d9c-e756-404d-a317-c0080e434280</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//select[(text() = 'Select an agentFatima KarimAhmed MahmoudHassan Al-RashidNeil HaydenLeilani HatfieldWhitney HowellXantha Hill' or . = 'Select an agentFatima KarimAhmed MahmoudHassan Al-RashidNeil HaydenLeilani HatfieldWhitney HowellXantha Hill')]</value>
+      <webElementGuid>d4e8f7d0-aa98-4338-b316-ced79b1822c6</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Create Review with 5 Star Rating</description>
+   <name>TC_Review_CR5_5Star</name>
+   <tag>review, create, 5star</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>rev-cr5-5star-001</testCaseGuid>
+</TestCaseEntity>

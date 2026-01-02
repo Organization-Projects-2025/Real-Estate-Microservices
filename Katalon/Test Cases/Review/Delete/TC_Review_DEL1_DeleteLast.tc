@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Delete Last Review (Admin Only)</description>
+   <name>TC_Review_DEL1_DeleteLast</name>
+   <tag>review, delete, admin</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>rev-del1-001</testCaseGuid>
+</TestCaseEntity>

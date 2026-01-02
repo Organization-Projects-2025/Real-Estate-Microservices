@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>div_Get Started_absolute inset-0 bg-000000 _339f52</name>
+   <tag></tag>
+   <elementGuidId>367c7628-e7a2-4485-bffa-454002747710</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='root']/div/section/div</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>section >> internal:has-text=&quot;Agents. Tours. Loans. Homes.Enter your preferred area and discover your dream pr&quot;i >> div >> nth=0</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>b3101456-c981-42fe-b47d-e3afe78790df</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>absolute inset-0 bg-[#000000] opacity-50</value>
+      <webElementGuid>f59fe0f5-3171-4d4d-b575-273756e98e4c</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/div[@class=&quot;bg-[#121212] text-[#fff] min-h-screen&quot;]/section[@class=&quot;relative flex flex-col md:flex-row items-center justify-start px-6 md:px-16 pt-32 pb-20 bg-[#121212] bg-cover bg-center&quot;]/div[@class=&quot;absolute inset-0 bg-[#000000] opacity-50&quot;]</value>
+      <webElementGuid>aa30b824-855f-43e6-a39e-702e0d66871d</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/div/section/div</value>
+      <webElementGuid>b7fa585b-40f3-4557-92de-87903d561650</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//section/div</value>
+      <webElementGuid>a1a8a052-dcc3-429b-865a-788a9c635ab4</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
