@@ -5,6 +5,7 @@ import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.model.FailureHandling
 import org.openqa.selenium.Keys
+import authentication.Login_Keywords as LoginKeywords
 
 /**
  * Review Keywords for Review Microservice
@@ -19,12 +20,11 @@ class Review_Keywords {
     private static final String USER_EMAIL = 'a7med3li@gmail.com'
     private static final String USER_PASSWORD_ENCRYPTED = 't8wp1gy9IWfOCKxwWlfTFQ=='
     
-    // Admin credentials
-    private static final String ADMIN_EMAIL = 'admin@realestate.com'
-    private static final String ADMIN_PASSWORD_ENCRYPTED = 'p4y+y39Ir5O++RH4jAhtiA=='
-    
     // Default agent ID
     private static final String DEFAULT_AGENT_ID = '694b6474061ba8a480628253'
+    
+    // Initialize Login Keywords
+    private LoginKeywords loginKW = new LoginKeywords()
     
     /**
      * Navigate to home page and login as regular user
@@ -44,7 +44,7 @@ class Review_Keywords {
     }
     
     /**
-     * Navigate to home page and login as admin
+     * Navigate to home page and login as admin (uses Authentication Keywords)
      */
     @Keyword
     def loginAsAdmin() {
@@ -54,21 +54,8 @@ class Review_Keywords {
         // Wait for page to load
         WebUI.delay(2)
         
-        // Click Sign In
-        WebUI.waitForElementClickable(findTestObject('Object Repository/Review/signInLink'), 10)
-        WebUI.click(findTestObject('Object Repository/Review/signInLink'))
-        
-        // Wait for login form
-        WebUI.waitForElementPresent(findTestObject('Object Repository/Review/emailInput'), 10)
-        
-        // Enter credentials
-        WebUI.setText(findTestObject('Object Repository/Review/emailInput'), ADMIN_EMAIL)
-        WebUI.setEncryptedText(findTestObject('Object Repository/Review/passwordInput'), ADMIN_PASSWORD_ENCRYPTED)
-        
-        // Click login button
-        WebUI.click(findTestObject('Object Repository/Review/loginButton'))
-        
-        WebUI.delay(2)
+        // Use Authentication Login Keywords for admin login
+        loginKW.loginAsAdmin()
     }
     
     /**

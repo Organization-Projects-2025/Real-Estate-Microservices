@@ -28,7 +28,7 @@ Provides reusable functions for review operations:
 
 #### Login Functions
 - `loginAsUser()` - Login as regular user (a7med3li@gmail.com)
-- `loginAsAdmin()` - Login as admin user
+- `loginAsAdmin()` - Login as admin user **using Authentication Login Keywords** (consistent with authentication tests)
 
 #### Review Creation Functions
 - `navigateToWriteReview()` - Navigate to write review page
@@ -40,7 +40,7 @@ Provides reusable functions for review operations:
 #### Admin Functions
 - `navigateToAdminReviews()` - Navigate to admin reviews page
 - `deleteLastReview()` - Delete the last review in the list
-- `adminDeleteLastReview()` - Complete admin delete flow
+- `adminDeleteLastReview()` - Complete admin delete flow (uses global admin login from Authentication Keywords)
 
 ## Object Repository
 
@@ -77,12 +77,18 @@ All review-related page objects are organized in this folder:
 ## Test Data
 
 ### User Credentials
-- **Regular User:** a7med3li@gmail.com (encrypted password in keywords)
-- **Admin User:** admin@realestate.com (encrypted password in keywords)
+- **Regular User:** a7med3li@gmail.com (encrypted password in Review Keywords)
+- **Admin User:** Uses global admin login from `authentication.Login_Keywords` (admin@realestate.com / Password123!)
 
 ### Default Values
 - **Agent ID:** 694b6474061ba8a480628253
 - **Base URL:** http://localhost:5173
+
+## Dependencies
+
+### Keywords Dependencies
+- **Review_Keywords** depends on **authentication.Login_Keywords** for admin login
+- This ensures consistent admin credentials across all test suites
 
 ## Usage Example
 
