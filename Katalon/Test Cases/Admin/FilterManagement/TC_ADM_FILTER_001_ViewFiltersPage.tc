@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: View Filters Management Page - Verifies that admin can access and view the Filters Management page with proper UI elements</description>
+   <name>TC_ADM_FILTER_001_ViewFiltersPage</name>
+   <tag>admin,filters,smoke,view</tag>
+   <comment></comment>
+   <testCaseGuid>tc-adm-filter-001</testCaseGuid>
+</TestCaseEntity>

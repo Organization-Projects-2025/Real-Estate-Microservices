@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: Create Inactive Filter - Verifies that a filter can be created with inactive status</description>
+   <name>TC_ADM_FILTER_007_CreateInactiveFilter</name>
+   <tag>inactive,admin,create,filters</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-adm-filter-008</testCaseGuid>
+</TestCaseEntity>

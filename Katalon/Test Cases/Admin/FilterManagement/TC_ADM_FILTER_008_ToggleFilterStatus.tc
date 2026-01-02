@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: Toggle Filter Status - Verifies that filter status can be toggled between Active and Inactive</description>
+   <name>TC_ADM_FILTER_008_ToggleFilterStatus</name>
+   <tag>edit,admin,filters,status</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-adm-filter-009</testCaseGuid>
+</TestCaseEntity>

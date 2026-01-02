@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: Admin Access Required - Verifies that only admin users can access the Users Management page</description>
+   <name>TC_ADM_AdminAccessRequired</name>
+   <tag>security,access,admin,users</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-adm-user-011</testCaseGuid>
+</TestCaseEntity>

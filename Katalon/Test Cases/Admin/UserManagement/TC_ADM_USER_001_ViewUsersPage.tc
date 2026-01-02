@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: View Users Management Page - Verifies that admin can access and view the Users Management page</description>
+   <name>TC_ADM_USER_001_ViewUsersPage</name>
+   <tag>admin,users,view,positive</tag>
+   <comment></comment>
+   <testCaseGuid>tc-adm-user-001</testCaseGuid>
+</TestCaseEntity>
