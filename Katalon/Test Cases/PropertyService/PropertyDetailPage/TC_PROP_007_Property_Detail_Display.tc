@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that property detail page displays all property information</description>
+   <name>TC_PROP_007_Property_Detail_Display</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>prop-detail-007</testCaseGuid>
+</TestCaseEntity>

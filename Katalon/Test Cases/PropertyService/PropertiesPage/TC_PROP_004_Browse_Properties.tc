@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that Buy page loads and displays property cards for sale</description>
+   <name>TC_PROP_004_Browse_Properties</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>prop-browse-004</testCaseGuid>
+</TestCaseEntity>

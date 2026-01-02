@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that creating property with missing required fields shows validation error</description>
+   <name>TC_PROP_003_Create_Property_Missing_Fields</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>prop-sell-003</testCaseGuid>
+</TestCaseEntity>

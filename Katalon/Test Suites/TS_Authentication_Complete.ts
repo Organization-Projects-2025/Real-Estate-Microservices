@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
-   <description>Complete Authentication Microservice Test Suite - All Login, Register, Forgot Password, and Reset Password Tests</description>
+   <description>Complete Authentication Microservice Test Suite - All Login, Register, Forgot Password Tests</description>
    <name>TS_Authentication_Complete</name>
    <tag>authentication, smoke, regression</tag>
    <isRerun>false</isRerun>

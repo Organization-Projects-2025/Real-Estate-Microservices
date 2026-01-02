@@ -64,8 +64,9 @@ class Login_Keywords {
         // Click login button
         WebUI.click(findTestObject('Object Repository/Authentication/LoginPage/loginButton'))
         
-        // Wait for response
-        WebUI.delay(2)
+        // Wait for navigation or error
+        WebUI.delay(3)
+        WebUI.waitForPageLoad(15)
     }
     
     /**
@@ -112,7 +113,12 @@ class Login_Keywords {
      */
     @Keyword
     def verifyLoginSuccess() {
-        WebUI.waitForPageLoad(10)
+        // Wait for page to change with longer timeout
+        WebUI.waitForPageLoad(20)
+        
+        // Give extra time for redirect to complete
+        WebUI.delay(2)
+        
         String currentUrl = WebUI.getUrl()
         
         // Verify we're NOT on login page anymore

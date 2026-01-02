@@ -19,21 +19,14 @@ try {
     // Act: Submit with non-existent email
     forgotPasswordHelper.submitForgotPassword('nonexistent@test.com')
     
-    // Assert: Verify error or generic message
-    // Some systems show error, others show generic message for security
+    // Assert: Verify error
     boolean hasError = WebUI.verifyElementPresent(
         findTestObject('Object Repository/Authentication/ForgotPasswordPage/errorMessage'),
         5,
         com.kms.katalon.core.model.FailureHandling.OPTIONAL
     )
     
-    boolean hasSuccess = WebUI.verifyElementPresent(
-        findTestObject('Object Repository/Authentication/ForgotPasswordPage/successMessage'),
-        5,
-        com.kms.katalon.core.model.FailureHandling.OPTIONAL
-    )
-    
-    assert hasError || hasSuccess,
+    assert hasError,
         "Should display either error or generic success message"
     
     WebUI.comment('✅ TC_AUTH_012 PASSED: Appropriate message shown for non-existent email')

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that Back button navigates back to properties list</description>
+   <name>TC_PROP_010_Back_Button_Navigation</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>prop-detail-010</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that searching with non-matching term shows no results message</description>
+   <name>TC_PROP_006_Search_No_Results</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>prop-browse-006</testCaseGuid>
+</TestCaseEntity>
