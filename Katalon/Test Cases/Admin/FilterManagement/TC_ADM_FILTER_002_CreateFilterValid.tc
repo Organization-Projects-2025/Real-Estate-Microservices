@@ -2,7 +2,8 @@
 <TestCaseEntity>
    <description>Test Case: Create Filter with Valid Data - Verifies that admin can create a new filter with valid data</description>
    <name>TC_ADM_FILTER_002_CreateFilterValid</name>
-   <tag>admin,filters,create,positive</tag>
+   <tag>admin,create,filters,positive</tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>tc-adm-filter-002</testCaseGuid>
 </TestCaseEntity>

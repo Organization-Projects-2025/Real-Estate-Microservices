@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that admin can access and view the Reviews Management page</description>
+   <name>TC_ADM_REV_001_ViewReviewsPage</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>rev-001-view-reviews-page</testCaseGuid>
+</TestCaseEntity>

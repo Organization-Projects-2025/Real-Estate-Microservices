@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test Case: Delete Property - Verifies that admin can delete a property with confirmation</description>
+   <name>TC_ADM_PROP_005_DeleteProperty</name>
+   <tag>admin,properties,delete</tag>
+   <comment></comment>
+   <testCaseGuid>tc-adm-prop-005</testCaseGuid>
+   <testCaseSteps>
+      <TestCaseStep>
+         <description>Click Delete button for first property</description>
+         <name>Click - Delete Property Button</name>
+         <testStepType>WebUI</testStepType>
+         <keyword>click</keyword>
+         <arguments>
+            <argument>
+               <name>to</name>
+               <value>findTestObject(&quot;Object Repository/Admin/PropertiesPage/btn_FirstDelete&quot;)</value>
+            </argument>
+         </arguments>
+      </TestCaseStep>
+      <TestCaseStep>
+         <description>Wait for alert to appear</description>
+         <name>Wait For Alert</name>
+         <testStepType>WebUI</testStepType>
+         <keyword>waitForAlert</keyword>
+         <arguments>
+            <argument>
+               <name>timeout</name>
+               <value>5</value>
+            </argument>
+         </arguments>
+      </TestCaseStep>
+      <TestCaseStep>
+         <description>Accept the deletion alert</description>
+         <name>Accept Alert</name>
+         <testStepType>WebUI</testStepType>
+         <keyword>acceptAlert</keyword>
+      </TestCaseStep>
+   </testCaseSteps>
+</TestCaseEntity>

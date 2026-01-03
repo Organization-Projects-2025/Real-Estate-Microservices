@@ -6,73 +6,52 @@ import admin.User_Keywords as UserKeywords
 
 /**
  * Test Case: TC_ADM_USER_006 - Cancel Deactivate User
- * Module: Admin Service - User Management
- * Priority: Medium
- * 
- * Description: Verify that canceling deactivation keeps the user active
- * Flow: 1. Create test user via API
- *       2. Login as admin via UI
- *       3. Click deactivate but cancel
- *       4. Verify user remains active
  */
 
-// Initialize
 WebUI.openBrowser('')
 LoginKeywords loginHelper = new LoginKeywords()
 UserKeywords userHelper = new UserKeywords()
 
-// Generate unique test user data
 String testUserEmail = userHelper.generateUniqueEmail('canceldeact')
 String testPassword = 'Password123!'
+String testUserId = null
 
 try {
-    // Step 1: Create test user via API
-    WebUI.comment("Step 1: Creating test user via API: ${testUserEmail}")
-    userHelper.createTestUserViaAPI('CancelDeact', 'User', testUserEmail, testPassword, 'user')
-    WebUI.comment("Test user created successfully via API")
+    // Create test user via API
+    def createResult = userHelper.createTestUserViaAPI('CancelDeact', 'User', testUserEmail, testPassword, 'user')
+    testUserId = createResult.userId
+    WebUI.comment("Test user created: ${testUserEmail} (ID: ${testUserId})")
     
-    // Step 2: Login as admin via UI
-    WebUI.comment("Step 2: Logging in as admin")
+    // Login as admin
     loginHelper.loginAsAdmin()
-    
-    // Step 3: Navigate to Users Management page
     userHelper.navigateToUsers()
     userHelper.waitForLoadingComplete()
     
-    // Ensure we're on Active tab
-    userHelper.clickActiveTab()
-    
-    // Assert: Verify user exists in active table
-    userHelper.verifyUserExistsInTable(testUserEmail)
-    
-    // Get user count before attempting deactivation
+    // Get count before
     int countBefore = userHelper.getUserCount()
-    WebUI.comment("Active user count before cancel: ${countBefore}")
     
-    // Step 4: Click Deactivate button
+    // Click deactivate button
     WebUI.click(findTestObject('Object Repository/Admin/UsersPage/btn_DeactivateUser', [('userEmail'): testUserEmail]))
     WebUI.delay(1)
     
-    // Step 5: Cancel deactivation in alert
+    // CANCEL deactivation
     WebUI.waitForAlert(5)
     WebUI.dismissAlert()
     WebUI.delay(1)
     
-    // Assert: Verify user still exists in active table
+    // Verify user still in active tab
+    int countAfter = userHelper.getUserCount()
+    assert countAfter == countBefore, "User count should remain unchanged"
     userHelper.verifyUserExistsInTable(testUserEmail)
     
-    // Assert: Verify user count unchanged
-    int countAfter = userHelper.getUserCount()
-    WebUI.comment("Active user count after cancel: ${countAfter}")
-    assert countAfter == countBefore, "User count should remain unchanged"
-    
-    WebUI.comment('✅ TC_ADM_USER_006 PASSED: Deactivation canceled successfully, user remains active')
+    WebUI.comment('✅ TC_ADM_USER_006 PASSED')
     
 } catch (Exception e) {
     WebUI.comment('❌ TC_ADM_USER_006 FAILED: ' + e.getMessage())
     throw e
-    
 } finally {
-    // Cleanup
+    if (testUserId) {
+        try { userHelper.deleteUserViaAPI(testUserId) } catch (Exception ex) {}
+    }
     WebUI.closeBrowser()
 }

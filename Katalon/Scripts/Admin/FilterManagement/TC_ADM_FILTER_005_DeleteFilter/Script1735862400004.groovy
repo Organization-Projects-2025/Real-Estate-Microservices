@@ -6,75 +6,55 @@ import admin.Filter_Keywords as FilterKeywords
 
 /**
  * Test Case: TC_ADM_FILTER_005 - Delete Filter
- * Module: Admin Service - Filter Management
- * Priority: High
- * 
- * Description: Verify that admin can delete a filter with confirmation
- * Prerequisites: Admin user is logged in, Application is running on localhost:5173
- * Test Data: Creates a test filter, then deletes it
  */
 
-// Initialize
 WebUI.openBrowser('')
 LoginKeywords loginHelper = new LoginKeywords()
 FilterKeywords filterHelper = new FilterKeywords()
 
-// Generate unique filter name
-String filterToDelete = filterHelper.generateUniqueFilterName('DeleteTest')
+String testFilterId = null
+String filterName = null
+boolean deletedViaUI = false
 
 try {
-    // Arrange: Login as admin and navigate to Filters page
+    // Create test filter via API
+    def createResult = filterHelper.createTestFilterViaAPI()
+    filterName = createResult.name
+    testFilterId = createResult.filterId
+    WebUI.comment("Test filter created: ${filterName} (ID: ${testFilterId})")
+    
+    // Login and navigate
     loginHelper.loginAsAdmin()
     filterHelper.navigateToFilters()
     filterHelper.waitForLoadingComplete()
     
-    // Arrange: Create a test filter to delete
-    filterHelper.createFilter(
-        filterToDelete,
-        'location',
-        'Filter to be deleted',
-        99,
-        true
-    )
-    filterHelper.waitForLoadingComplete()
+    int countBefore = filterHelper.getFilterCount()
     
-    // Assert: Verify filter was created
-    filterHelper.verifyFilterExistsInTable(filterToDelete)
-    
-    // Get filter count before deletion
-    int countBeforeDelete = filterHelper.getFilterCount()
-    WebUI.comment("Filter count before deletion: ${countBeforeDelete}")
-    
-    // Act: Click Delete button for the filter
-    WebUI.click(findTestObject('Object Repository/Admin/FiltersPage/btn_DeleteFilter', [('filterName'): filterToDelete]))
+    // Delete filter via UI
+    WebUI.click(findTestObject('Object Repository/Admin/FiltersPage/btn_DeleteFilter', [('filterName'): filterName]))
     WebUI.delay(1)
-    
-    // Act: Confirm deletion in alert
     WebUI.waitForAlert(5)
     WebUI.acceptAlert()
     WebUI.delay(2)
     
-    // Wait for table to refresh
+    deletedViaUI = true
+    
+    // Verify
     filterHelper.waitForLoadingComplete()
-    
-    // Assert: Verify success toast
     filterHelper.verifySuccessToast('deleted')
+    filterHelper.verifyFilterNotInTable(filterName)
     
-    // Assert: Verify filter is removed from table
-    filterHelper.verifyFilterNotInTable(filterToDelete)
+    int countAfter = filterHelper.getFilterCount()
+    assert countAfter == countBefore - 1, "Filter count should decrease by 1"
     
-    // Assert: Verify filter count decreased
-    int countAfterDelete = filterHelper.getFilterCount()
-    WebUI.comment("Filter count after deletion: ${countAfterDelete}")
-    assert countAfterDelete == countBeforeDelete - 1, "Filter count should decrease by 1"
-    
-    WebUI.comment('✅ TC_ADM_FILTER_005 PASSED: Filter deleted successfully')
+    WebUI.comment('✅ TC_ADM_FILTER_005 PASSED')
     
 } catch (Exception e) {
     WebUI.comment('❌ TC_ADM_FILTER_005 FAILED: ' + e.getMessage())
     throw e
-    
 } finally {
-    // Cleanup
+    if (testFilterId && !deletedViaUI) {
+        try { filterHelper.deleteFilterViaAPI(testFilterId) } catch (Exception ex) {}
+    }
     WebUI.closeBrowser()
 }

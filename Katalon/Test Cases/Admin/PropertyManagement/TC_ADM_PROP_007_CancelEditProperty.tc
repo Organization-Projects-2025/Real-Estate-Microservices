@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that admin can cancel property edit using Cancel button</description>
+   <name>TC_ADM_PROP_007_CancelEditProperty</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>prop-007-cancel-edit-property</testCaseGuid>
+   <testCaseSteps>
+      <step>
+         <index>1</index>
+         <description>Open browser and login as admin</description>
+         <testStepType>CALL_TEST_CASE</testStepType>
+      </step>
+      <step>
+         <index>2</index>
+         <description>Navigate to Properties Management page</description>
+         <testStepType>CALL_TEST_CASE</testStepType>
+      </step>
+      <step>
+         <index>3</index>
+         <description>Click Edit button for first property</description>
+         <testStepType>CALL_TEST_CASE</testStepType>
+      </step>
+      <step>
+         <index>4</index>
+         <description>Verify Edit Property modal is displayed</description>
+         <testStepType>CALL_TEST_CASE</testStepType>
+      </step>
+      <step>
+         <index>5</index>
+         <description>Modify property title (but don't save)</description>
+         <testStepType>CALL_TEST_CASE</testStepType>
+      </step>
+      <step>
+         <index>6</index>
+         <description>Click Cancel button</description>
+         <testStepType>CALL_TEST_CASE</testStepType>
+      </step>
+      <step>
+         <index>7</index>
+         <description>Verify modal is closed</description>
+         <testStepType>CALL_TEST_CASE</testStepType>
+      </step>
+      <step>
+         <index>8</index>
+         <description>Close browser</description>
+         <testStepType>CALL_TEST_CASE</testStepType>
+      </step>
+   </testCaseSteps>
+</TestCaseEntity>

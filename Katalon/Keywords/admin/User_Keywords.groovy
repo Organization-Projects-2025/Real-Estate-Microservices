@@ -333,4 +333,24 @@ class User_Keywords {
             FailureHandling.STOP_ON_FAILURE
         )
     }
+    
+    /**
+     * Delete a user via API (cleanup)
+     * @param userId - ID of the user to delete
+     */
+    @Keyword
+    def deleteUserViaAPI(String userId) {
+        RequestObject request = new RequestObject()
+        request.setRestUrl("${API_GATEWAY_URL}/auth/users/${userId}")
+        request.setRestRequestMethod('DELETE')
+        
+        ArrayList<TestObjectProperty> headers = new ArrayList<>()
+        headers.add(new TestObjectProperty('Content-Type', ConditionType.EQUALS, 'application/json'))
+        request.setHttpHeaderProperties(headers)
+        
+        def response = WS.sendRequest(request)
+        WebUI.comment("User deleted via API: ${userId}, Status: ${response.getStatusCode()}")
+        
+        return response.getStatusCode() == 200
+    }
 }

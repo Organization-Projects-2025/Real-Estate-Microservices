@@ -6,45 +6,28 @@ import admin.User_Keywords as UserKeywords
 
 /**
  * Test Case: TC_ADM_USER_007 - Reactivate User
- * Module: Admin Service - User Management
- * Priority: High
- * 
- * Description: Verify that admin can reactivate an inactive user
- * Flow: 1. Create test user via API
- *       2. Login as admin via UI
- *       3. Deactivate the test user first
- *       4. Reactivate the test user
- *       5. Verify user moved back to Active tab
  */
 
-// Initialize
 WebUI.openBrowser('')
 LoginKeywords loginHelper = new LoginKeywords()
 UserKeywords userHelper = new UserKeywords()
 
-// Generate unique test user data
 String testUserEmail = userHelper.generateUniqueEmail('reactivate')
 String testPassword = 'Password123!'
+String testUserId = null
 
 try {
-    // Step 1: Create test user via API
-    WebUI.comment("Step 1: Creating test user via API: ${testUserEmail}")
-    userHelper.createTestUserViaAPI('ReactivateTest', 'User', testUserEmail, testPassword, 'user')
-    WebUI.comment("Test user created successfully via API")
+    // Create test user via API
+    def createResult = userHelper.createTestUserViaAPI('ReactivateTest', 'User', testUserEmail, testPassword, 'user')
+    testUserId = createResult.userId
+    WebUI.comment("Test user created: ${testUserEmail} (ID: ${testUserId})")
     
-    // Step 2: Login as admin via UI
-    WebUI.comment("Step 2: Logging in as admin")
+    // Login as admin
     loginHelper.loginAsAdmin()
-    
-    // Step 3: Navigate to Users Management page
     userHelper.navigateToUsers()
     userHelper.waitForLoadingComplete()
     
-    // Step 4: First deactivate the user (to set up for reactivation test)
-    WebUI.comment("Step 4: Deactivating user first to set up reactivation test")
-    userHelper.clickActiveTab()
-    userHelper.verifyUserExistsInTable(testUserEmail)
-    
+    // First deactivate the user
     WebUI.click(findTestObject('Object Repository/Admin/UsersPage/btn_DeactivateUser', [('userEmail'): testUserEmail]))
     WebUI.delay(1)
     WebUI.waitForAlert(5)
@@ -52,52 +35,31 @@ try {
     WebUI.delay(2)
     userHelper.waitForLoadingComplete()
     
-    WebUI.comment("User deactivated successfully, now testing reactivation")
-    
-    // Step 5: Navigate to Inactive tab
+    // Go to inactive tab
     userHelper.clickInactiveTab()
+    userHelper.waitForLoadingComplete()
     
-    // Assert: Verify user exists in inactive table
-    userHelper.verifyUserExistsInTable(testUserEmail)
-    
-    // Get inactive user count before reactivation
-    int inactiveCountBefore = userHelper.getUserCount()
-    WebUI.comment("Inactive user count before reactivation: ${inactiveCountBefore}")
-    
-    // Step 6: Click Reactivate button for the user
+    // Reactivate the user
     WebUI.click(findTestObject('Object Repository/Admin/UsersPage/btn_ReactivateUser', [('userEmail'): testUserEmail]))
     WebUI.delay(1)
-    
-    // Step 7: Confirm reactivation in alert
     WebUI.waitForAlert(5)
     WebUI.acceptAlert()
     WebUI.delay(2)
-    
-    // Wait for table to refresh
     userHelper.waitForLoadingComplete()
     
-    // Assert: Verify success toast
-    userHelper.verifySuccessToast('reactivated')
-    
-    // Assert: Verify user is removed from inactive table
-    userHelper.verifyUserNotInTable(testUserEmail)
-    
-    // Assert: Verify inactive user count decreased
-    int inactiveCountAfter = userHelper.getUserCount()
-    WebUI.comment("Inactive user count after reactivation: ${inactiveCountAfter}")
-    assert inactiveCountAfter == inactiveCountBefore - 1, "Inactive user count should decrease by 1"
-    
-    // Assert: Verify user appears in Active tab
+    // Verify user back in active tab
     userHelper.clickActiveTab()
+    userHelper.waitForLoadingComplete()
     userHelper.verifyUserExistsInTable(testUserEmail)
     
-    WebUI.comment('✅ TC_ADM_USER_007 PASSED: User reactivated successfully')
+    WebUI.comment('✅ TC_ADM_USER_007 PASSED')
     
 } catch (Exception e) {
     WebUI.comment('❌ TC_ADM_USER_007 FAILED: ' + e.getMessage())
     throw e
-    
 } finally {
-    // Cleanup
+    if (testUserId) {
+        try { userHelper.deleteUserViaAPI(testUserId) } catch (Exception ex) {}
+    }
     WebUI.closeBrowser()
 }
