@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that agent details are displayed correctly on agent cards</description>
+   <name>TC_AGENT_007_View_Agent_Details</name>
+   <tag></tag>
+   <testCaseGuidId>agent-read-details-001</testCaseGuidId>
+   <testCaseType>WEB</testCaseType>
+   <scriptPath>Scripts/Agent/Read/TC_AGENT_007_View_Agent_Details/Script.groovy</scriptPath>
+</TestCaseEntity>
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that updating an agent with empty name returns an error</description>
+   <name>TC_AGENT_009_Update_Agent_Empty_Name</name>
+   <tag></tag>
+   <testCaseGuidId>agent-update-empty-name-001</testCaseGuidId>
+   <testCaseType>WEB</testCaseType>
+   <scriptPath>Scripts/Agent/Update/TC_AGENT_009_Update_Agent_Empty_Name/Script.groovy</scriptPath>
+</TestCaseEntity>
+

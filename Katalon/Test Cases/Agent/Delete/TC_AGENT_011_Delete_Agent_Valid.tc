@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that an agent can be deleted successfully</description>
+   <name>TC_AGENT_011_Delete_Agent_Valid</name>
+   <tag></tag>
+   <testCaseGuidId>agent-delete-valid-001</testCaseGuidId>
+   <testCaseType>WEB</testCaseType>
+   <scriptPath>Scripts/Agent/Delete/TC_AGENT_011_Delete_Agent_Valid/Script.groovy</scriptPath>
+</TestCaseEntity>
+

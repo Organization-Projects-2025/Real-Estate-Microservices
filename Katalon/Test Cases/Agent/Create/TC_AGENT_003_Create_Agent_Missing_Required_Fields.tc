@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that creating an agent with missing required fields returns an error</description>
+   <name>TC_AGENT_003_Create_Agent_Missing_Required_Fields</name>
+   <tag></tag>
+   <testCaseGuidId>agent-create-missing-fields-001</testCaseGuidId>
+   <testCaseType>WEB</testCaseType>
+   <scriptPath>Scripts/Agent/Create/TC_AGENT_003_Create_Agent_Missing_Required_Fields/Script.groovy</scriptPath>
+</TestCaseEntity>
+

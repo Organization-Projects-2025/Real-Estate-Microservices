@@ -42,8 +42,8 @@ const ManageAgents = () => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: name === 'yearsOfExperience' || name === 'age' || name === 'totalSales' 
-        ? Number(value) 
+      [name]: name === 'yearsOfExperience' || name === 'age' || name === 'totalSales'
+        ? Number(value)
         : value
     }));
   };
@@ -67,7 +67,8 @@ const ManageAgents = () => {
         about: ''
       });
     } catch (err) {
-      setError('Failed to create agent');
+      const errorMessage = err.response?.data?.message || err.response?.data?.error || 'Failed to create agent';
+      setError(errorMessage);
     }
   };
 
@@ -79,7 +80,7 @@ const ManageAgents = () => {
         `http://localhost:3000/api/agents/${selectedAgent._id}`,
         formData
       );
-      setAgents(prev => prev.map(agent => 
+      setAgents(prev => prev.map(agent =>
         agent._id === selectedAgent._id ? response.data.data.agent : agent
       ));
       setIsModalOpen(false);

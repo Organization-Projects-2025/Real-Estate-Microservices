@@ -28,6 +28,14 @@ const Sidebar = () => {
             Manage Users
           </Link>
         </li>
+        <li>
+          <Link
+            to="/manage-agents"
+            className="block px-3 py-2 rounded-lg text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition duration-200"
+          >
+            Manage Agents
+          </Link>
+        </li>
       </ul>
     </div>
   );

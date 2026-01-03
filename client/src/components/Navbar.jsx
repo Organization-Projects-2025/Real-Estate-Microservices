@@ -76,6 +76,7 @@ const Navbar = () => {
       case 'admin':
         return [
           { name: 'Admin Dashboard', path: '/admin', icon: <HiOutlineViewGrid /> },
+          { name: 'Manage Agents', path: '/manage-agents', icon: <FaUserTie /> },
           { name: 'My Profile', path: '/profile', icon: <FaUser /> },
         ];
       case 'agent':

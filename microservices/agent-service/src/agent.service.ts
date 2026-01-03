@@ -9,7 +9,7 @@ import { Agent, AgentDocument } from './agent.model';
 export class AgentService {
   constructor(
     @InjectModel(Agent.name) private agentModel: Model<AgentDocument>,
-  ) {}
+  ) { }
 
   async create(agentData: any): Promise<any> {
     try {
@@ -19,13 +19,14 @@ export class AgentService {
         throw new HttpException('Agent already exists with this email', HttpStatus.BAD_REQUEST);
       }
 
-      // Hash password
-      if (agentData.password) {
-        agentData.password = await bcrypt.hash(agentData.password, 12);
+      // Hash password (or default)
+      if (!agentData.password) {
+        agentData.password = 'Agent@123';
       }
+      agentData.password = await bcrypt.hash(agentData.password, 12);
 
       const agent = await this.agentModel.create(agentData);
-      
+
       // Remove password from response
       const agentObj = agent.toObject();
       delete agentObj.password;
@@ -117,7 +118,7 @@ export class AgentService {
       { status: 'inactive' },
       { new: true }
     ).select('-password');
-    
+
     if (!agent) {
       return { status: 'not_found', message: 'No agent found with this email' };
     }
@@ -130,7 +131,7 @@ export class AgentService {
       { status: 'active' },
       { new: true }
     ).select('-password');
-    
+
     if (!agent) {
       return { status: 'not_found', message: 'No agent found with this email' };
     }
