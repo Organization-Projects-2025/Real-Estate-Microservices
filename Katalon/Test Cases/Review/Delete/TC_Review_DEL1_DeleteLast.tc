@@ -2,7 +2,7 @@
 <TestCaseEntity>
    <description>Delete Last Review (Admin Only)</description>
    <name>TC_Review_DEL1_DeleteLast</name>
-   <tag>review, delete, admin</tag>
+   <tag>review,admin,delete</tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
    <testCaseGuid>rev-del1-001</testCaseGuid>

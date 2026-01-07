@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validation: Attempt to save with empty last name</description>
+   <name>TC_PROF_VAL2_EmptyLastName</name>
+   <tag>profile,validation,negative</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>prof-val-002</testCaseGuid>
+</TestCaseEntity>

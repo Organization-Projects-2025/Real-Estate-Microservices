@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validation Test - Submit review without star rating</description>
+   <name>TC_Review_VAL3_MissingStarRating</name>
+   <tag>negative,review,validation</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>rev-val3-missing-rating-001</testCaseGuid>
+</TestCaseEntity>

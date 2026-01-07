@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validation: Attempt to save with invalid phone number format</description>
+   <name>TC_PROF_VAL3_InvalidPhoneNumber</name>
+   <tag>profile,validation,negative</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>prof-val-003</testCaseGuid>
+</TestCaseEntity>

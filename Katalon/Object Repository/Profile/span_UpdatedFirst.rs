@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>span_UpdatedFirst</name>
+   <tag></tag>
+   <elementGuidId>7f156a53-f94e-4ce2-a9ab-686c91147861</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='root']/div/nav/div/div/div[2]/div/button/span</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:role=button[name=&quot;UU UpdatedFirst&quot;i]</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>span</value>
+      <webElementGuid>6b44a025-fcd6-49f7-bb54-45a534e40048</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>text-white font-medium hidden md:block max-w-[100px] truncate</value>
+      <webElementGuid>47d5f28a-cf76-4e00-88ab-089457287488</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>UpdatedFirst</value>
+      <webElementGuid>71baec25-2f96-4350-b9fd-6e4ff9401a72</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/div[@class=&quot;bg-[#121212] text-[#fff] min-h-screen&quot;]/nav[@class=&quot;fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0d0d0d]/70 backdrop-blur-sm&quot;]/div[@class=&quot;max-w-7xl mx-auto px-4 sm:px-6 lg:px-8&quot;]/div[@class=&quot;flex items-center justify-between h-16 lg:h-20&quot;]/div[@class=&quot;flex items-center gap-3&quot;]/div[@class=&quot;relative&quot;]/button[@class=&quot;flex items-center gap-2 px-2 py-1.5 rounded-full transition-all duration-200 bg-[#703BF7]/20 ring-2 ring-[#703BF7]&quot;]/span[@class=&quot;text-white font-medium hidden md:block max-w-[100px] truncate&quot;]</value>
+      <webElementGuid>afeba433-a294-4045-af19-a37ccea82088</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/div/nav/div/div/div[2]/div/button/span</value>
+      <webElementGuid>b0fe3853-ba04-4ac0-b0bb-aa914f4e862f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='UU'])[1]/following::span[2]</value>
+      <webElementGuid>6a6e22b5-2aa1-42e0-b8fc-94256641923d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='New Projects'])[1]/following::span[2]</value>
+      <webElementGuid>f4642d31-905a-444d-8dd7-73519eebc95a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='User'])[1]/preceding::span[1]</value>
+      <webElementGuid>4bfd85c7-25de-4e98-9b36-4a6f96422eac</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='My Profile'])[1]/preceding::span[2]</value>
+      <webElementGuid>1f057aa2-666f-422c-9739-f14c282f230d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='UpdatedFirst']/parent::*</value>
+      <webElementGuid>5368ca7f-61b7-464e-aba2-20c8af2fea6d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//button/span</value>
+      <webElementGuid>563cae48-7bfa-4573-b588-d93d05cb71aa</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//span[(text() = 'UpdatedFirst' or . = 'UpdatedFirst')]</value>
+      <webElementGuid>722feeaf-7ccc-42e0-97e8-0ddfa48c1b12</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

@@ -2,7 +2,7 @@
 <TestCaseEntity>
    <description>Create Review with 4 Star Rating</description>
    <name>TC_Review_CR4_4Star</name>
-   <tag>review, create, 4star</tag>
+   <tag>4star,review,create</tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
    <testCaseGuid>rev-cr4-4star-001</testCaseGuid>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Update phone number with valid format</description>
+   <name>TC_PROF_004_UpdatePhoneNumber</name>
+   <tag>profile,edit,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>prof-edit-004</testCaseGuid>
+</TestCaseEntity>

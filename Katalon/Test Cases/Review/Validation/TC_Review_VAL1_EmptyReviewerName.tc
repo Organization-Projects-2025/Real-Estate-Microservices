@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validation Test - Submit review with empty reviewer name</description>
+   <name>TC_Review_VAL1_EmptyReviewerName</name>
+   <tag>negative,review,validation</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>rev-val1-empty-name-001</testCaseGuid>
+</TestCaseEntity>

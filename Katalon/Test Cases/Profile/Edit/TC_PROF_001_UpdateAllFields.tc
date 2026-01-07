@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Update all personal information fields with valid data</description>
+   <name>TC_PROF_001_UpdateAllFields</name>
+   <tag>edit,profile,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>prof-edit-001</testCaseGuid>
+</TestCaseEntity>

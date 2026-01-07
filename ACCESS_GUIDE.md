@@ -4,6 +4,19 @@
 
 > **Note**: All seeded accounts use the same password: `Password123!`
 
+### 🌱 Seeding Users
+
+**IMPORTANT:** Before running tests, you must seed the test users into the database.
+
+```bash
+cd microservices/auth-service
+node seed-users.js
+```
+
+This creates 21 test users (1 admin, 2 developers, 5 agents, 12 regular users).
+
+See [SEED_USERS_GUIDE.md](SEED_USERS_GUIDE.md) for detailed instructions.
+
 ### Admin User
 - **Email**: `admin@realestate.com`
 - **Password**: `Password123!`

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Update only first name field</description>
+   <name>TC_PROF_002_UpdateFirstName</name>
+   <tag>edit,profile,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>prof-edit-002</testCaseGuid>
+</TestCaseEntity>

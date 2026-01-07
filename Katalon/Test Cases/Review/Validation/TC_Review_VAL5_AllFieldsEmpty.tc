@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Validation Test - Submit review with all fields empty</description>
+   <name>TC_Review_VAL5_AllFieldsEmpty</name>
+   <tag>negative,review,validation</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>rev-val5-all-empty-001</testCaseGuid>
+</TestCaseEntity>

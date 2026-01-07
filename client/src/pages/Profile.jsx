@@ -18,7 +18,7 @@ const api = axios.create({
 
 const Profile = () => {
   const navigate = useNavigate();
-  const { user, isAuthenticated } = useAuth();
+  const { user, isAuthenticated, setUser } = useAuth();
   const [userProperties, setUserProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [editMode, setEditMode] = useState(false);
@@ -93,6 +93,10 @@ const Profile = () => {
 
       if (response.data.status === 'success') {
         const updatedUser = response.data.data.user;
+        
+        // Update the AuthContext with the new user data
+        setUser(updatedUser);
+        
         // Update the form data with the new user data
         setFormData({
           firstName: updatedUser.firstName || '',
@@ -193,7 +197,20 @@ const Profile = () => {
               Personal Information
             </h2>
             <button
-              onClick={() => setEditMode(!editMode)}
+              onClick={() => {
+                if (editMode) {
+                  // Reset form data to original user values when canceling
+                  setFormData({
+                    firstName: user.firstName || '',
+                    lastName: user.lastName || '',
+                    email: user.email || '',
+                    phoneNumber: user.phoneNumber || '',
+                    whatsapp: user.whatsapp || '',
+                    contactEmail: user.contactEmail || '',
+                  });
+                }
+                setEditMode(!editMode);
+              }}
               className="bg-gradient-to-r from-[#703BF7] to-purple-500 text-white px-6 py-2 rounded-full hover:from-purple-600 hover:to-purple-400 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               {editMode ? 'Cancel' : 'Edit Profile'}

@@ -206,4 +206,115 @@ class Review_Keywords {
         deleteLastReview()
         WebUI.closeBrowser()
     }
+    
+    /**
+     * Verify validation error message is displayed
+     * @param expectedMessage - Expected error message text
+     */
+    @Keyword
+    def verifyValidationError(String expectedMessage) {
+        WebUI.waitForElementPresent(findTestObject('Object Repository/Review/validationErrorMessage'), 5)
+        String actualMessage = WebUI.getText(findTestObject('Object Repository/Review/validationErrorMessage'))
+        WebUI.verifyMatch(actualMessage, expectedMessage, false, FailureHandling.STOP_ON_FAILURE)
+    }
+    
+    /**
+     * Verify submit button is disabled
+     */
+    @Keyword
+    def verifySubmitButtonDisabled() {
+        boolean isDisabled = WebUI.verifyElementAttributeValue(
+            findTestObject('Object Repository/Review/submitReviewButton'), 
+            'disabled', 
+            'true', 
+            5, 
+            FailureHandling.OPTIONAL
+        )
+        return isDisabled
+    }
+    
+    /**
+     * Clear all form fields
+     */
+    @Keyword
+    def clearReviewForm() {
+        WebUI.clearText(findTestObject('Object Repository/Review/reviewerNameInput'), FailureHandling.OPTIONAL)
+        WebUI.clearText(findTestObject('Object Repository/Review/reviewTextarea'), FailureHandling.OPTIONAL)
+    }
+    
+    /**
+     * Attempt to submit review with empty reviewer name
+     */
+    @Keyword
+    def submitReviewWithEmptyName(int starRating, String reviewText) {
+        loginAsUser()
+        navigateToWriteReview()
+        
+        // Leave name empty, fill other fields
+        WebUI.selectOptionByValue(findTestObject('Object Repository/Review/agentSelect'), DEFAULT_AGENT_ID, false)
+        clickStarRating(starRating)
+        WebUI.sendKeys(findTestObject('Object Repository/Review/reviewTextarea'), reviewText)
+        
+        submitReview()
+    }
+    
+    /**
+     * Attempt to submit review without selecting agent
+     */
+    @Keyword
+    def submitReviewWithoutAgent(String reviewerName, int starRating, String reviewText) {
+        loginAsUser()
+        navigateToWriteReview()
+        
+        // Fill all fields except agent
+        WebUI.sendKeys(findTestObject('Object Repository/Review/reviewerNameInput'), reviewerName)
+        clickStarRating(starRating)
+        WebUI.sendKeys(findTestObject('Object Repository/Review/reviewTextarea'), reviewText)
+        
+        submitReview()
+    }
+    
+    /**
+     * Attempt to submit review without star rating
+     */
+    @Keyword
+    def submitReviewWithoutRating(String reviewerName, String reviewText) {
+        loginAsUser()
+        navigateToWriteReview()
+        
+        // Fill all fields except star rating
+        WebUI.sendKeys(findTestObject('Object Repository/Review/reviewerNameInput'), reviewerName)
+        WebUI.selectOptionByValue(findTestObject('Object Repository/Review/agentSelect'), DEFAULT_AGENT_ID, false)
+        WebUI.sendKeys(findTestObject('Object Repository/Review/reviewTextarea'), reviewText)
+        
+        submitReview()
+    }
+    
+    /**
+     * Attempt to submit review with empty review text
+     */
+    @Keyword
+    def submitReviewWithEmptyText(String reviewerName, int starRating) {
+        loginAsUser()
+        navigateToWriteReview()
+        
+        // Fill all fields except review text
+        WebUI.sendKeys(findTestObject('Object Repository/Review/reviewerNameInput'), reviewerName)
+        WebUI.selectOptionByValue(findTestObject('Object Repository/Review/agentSelect'), DEFAULT_AGENT_ID, false)
+        clickStarRating(starRating)
+        
+        submitReview()
+    }
+    
+    /**
+     * Attempt to submit review with all fields empty
+     */
+    @Keyword
+    def submitReviewWithAllFieldsEmpty() {
+        loginAsUser()
+        navigateToWriteReview()
+        
+        // Don't fill any fields, just try to submit
+        submitReview()
+    }
 }
