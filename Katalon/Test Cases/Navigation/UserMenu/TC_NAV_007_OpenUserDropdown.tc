@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Open user dropdown menu when logged in</description>
+   <name>TC_NAV_007_OpenUserDropdown</name>
+   <tag>navigation,user-menu,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>nav-user-007</testCaseGuid>
+</TestCaseEntity>

@@ -451,4 +451,49 @@ export class AuthController {
       });
     }
   }
+
+  // Notification routes
+  @Get('notifications')
+  async getNotifications(@Req() req: Request, @Res() res: Response) {
+    try {
+      const result = await this.authService.getNotifications(req);
+      return res.status(HttpStatus.OK).json(result);
+    } catch (error) {
+      const { message, statusCode } = this.extractErrorMessage(error);
+      return res.status(statusCode).json({ status: 'error', message });
+    }
+  }
+
+  @Post('notifications')
+  async createNotification(@Req() req: Request, @Res() res: Response, @Body() body: any) {
+    try {
+      const result = await this.authService.createNotification(req, body);
+      return res.status(HttpStatus.CREATED).json(result);
+    } catch (error) {
+      const { message, statusCode } = this.extractErrorMessage(error);
+      return res.status(statusCode).json({ status: 'error', message });
+    }
+  }
+
+  @Patch('notifications/:id/read')
+  async markNotificationAsRead(@Req() req: Request, @Res() res: Response, @Param('id') id: string) {
+    try {
+      const result = await this.authService.markNotificationAsRead(req, id);
+      return res.status(HttpStatus.OK).json(result);
+    } catch (error) {
+      const { message, statusCode } = this.extractErrorMessage(error);
+      return res.status(statusCode).json({ status: 'error', message });
+    }
+  }
+
+  @Delete('notifications/:id')
+  async deleteNotification(@Req() req: Request, @Res() res: Response, @Param('id') id: string) {
+    try {
+      const result = await this.authService.deleteNotification(req, id);
+      return res.status(HttpStatus.NO_CONTENT).send();
+    } catch (error) {
+      const { message, statusCode } = this.extractErrorMessage(error);
+      return res.status(statusCode).json({ status: 'error', message });
+    }
+  }
 }

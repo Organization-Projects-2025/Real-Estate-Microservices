@@ -26,6 +26,10 @@ export const AuthProvider = ({ children }) => {
       try {
         const userData = await getCurrentUser();
         setUser(userData);
+        // Store user ID in localStorage for notifications
+        if (userData && userData._id) {
+          localStorage.setItem('userId', userData._id);
+        }
         setError(null);
       } catch (err) {
         setUser(null);
@@ -55,6 +59,8 @@ export const AuthProvider = ({ children }) => {
 
       if (response.data && response.data.user) {
         setUser(response.data.user);
+        // Store user ID in localStorage for notifications
+        localStorage.setItem('userId', response.data.user._id);
         return response;
       } else {
         throw new Error('Invalid response format from server');

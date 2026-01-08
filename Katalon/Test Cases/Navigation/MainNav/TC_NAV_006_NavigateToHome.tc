@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Navigate back to Home page by clicking logo</description>
+   <name>TC_NAV_006_NavigateToHome</name>
+   <tag>navigation,main-nav,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>nav-main-006</testCaseGuid>
+</TestCaseEntity>

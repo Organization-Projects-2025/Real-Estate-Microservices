@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Navigate to Sell page from home using main navigation</description>
+   <name>TC_NAV_003_NavigateToSell</name>
+   <tag>navigation,main-nav,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>nav-main-003</testCaseGuid>
+</TestCaseEntity>

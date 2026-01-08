@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Navigate to Profile page from user dropdown menu</description>
+   <name>TC_NAV_008_NavigateToProfile</name>
+   <tag>navigation,user-menu,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>nav-user-008</testCaseGuid>
+</TestCaseEntity>

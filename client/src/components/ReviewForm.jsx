@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaStar, FaUser, FaBuilding } from 'react-icons/fa';
 import Navbar from './Navbar';
+import * as notificationService from '../services/notificationService';
 const ReviewForm = () => {
   const navigate = useNavigate();
   const [agents, setAgents] = useState([]);
@@ -71,6 +72,20 @@ const ReviewForm = () => {
 
       if (response.ok && data.status === 'success') {
         setSuccess('Review submitted successfully!');
+        
+        // Create notification via API
+        try {
+          await notificationService.createNotification(
+            'Review Posted',
+            `Your review for ${selectedAgentDetails?.name || 'an agent'} has been posted successfully.`,
+            'success'
+          );
+          console.log('Notification created successfully');
+        } catch (notifError) {
+          console.error('Failed to create notification:', notifError);
+          // Don't fail the whole operation if notification fails
+        }
+        
         setRating(0);
         setReviewText('');
         setReviewerName('');

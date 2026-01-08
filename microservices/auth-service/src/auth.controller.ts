@@ -2,10 +2,14 @@
 import { Controller } from '@nestjs/common';
 import { MessagePattern, Payload } from '@nestjs/microservices';
 import { AuthService } from './auth.service';
+import { NotificationService } from './notifications/notification.service';
 
 @Controller()
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(
+    private readonly authService: AuthService,
+    private readonly notificationService: NotificationService,
+  ) {}
 
   // Helper to return error in RPC-compatible format
   private handleError(error: any, defaultMessage: string) {
@@ -202,6 +206,51 @@ export class AuthController {
     } catch (error) {
       console.error('[Auth Microservice GetUsersByRole Error]', error);
       throw error;
+    }
+  }
+
+  // Notification message handlers
+  @MessagePattern({ cmd: 'getNotifications' })
+  async getNotifications(@Payload() data: { userId: string }) {
+    try {
+      return await this.notificationService.getUserNotifications(data.userId);
+    } catch (error) {
+      console.error('[Auth Microservice GetNotifications Error]', error);
+      return this.handleError(error, 'Failed to get notifications');
+    }
+  }
+
+  @MessagePattern({ cmd: 'createNotification' })
+  async createNotification(@Payload() data: { userId: string; title: string; message: string; type?: string }) {
+    try {
+      return await this.notificationService.createNotification(data.userId, {
+        title: data.title,
+        message: data.message,
+        type: data.type,
+      });
+    } catch (error) {
+      console.error('[Auth Microservice CreateNotification Error]', error);
+      return this.handleError(error, 'Failed to create notification');
+    }
+  }
+
+  @MessagePattern({ cmd: 'markNotificationAsRead' })
+  async markNotificationAsRead(@Payload() data: { userId: string; notificationId: string }) {
+    try {
+      return await this.notificationService.markAsRead(data.userId, data.notificationId);
+    } catch (error) {
+      console.error('[Auth Microservice MarkNotificationAsRead Error]', error);
+      return this.handleError(error, 'Failed to mark notification as read');
+    }
+  }
+
+  @MessagePattern({ cmd: 'deleteNotification' })
+  async deleteNotification(@Payload() data: { userId: string; notificationId: string }) {
+    try {
+      return await this.notificationService.deleteNotification(data.userId, data.notificationId);
+    } catch (error) {
+      console.error('[Auth Microservice DeleteNotification Error]', error);
+      return this.handleError(error, 'Failed to delete notification');
     }
   }
 }

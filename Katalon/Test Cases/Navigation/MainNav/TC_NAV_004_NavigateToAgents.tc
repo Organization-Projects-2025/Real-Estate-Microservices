@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Navigate to Agents page from home using main navigation</description>
+   <name>TC_NAV_004_NavigateToAgents</name>
+   <tag>navigation,main-nav,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>nav-main-004</testCaseGuid>
+</TestCaseEntity>

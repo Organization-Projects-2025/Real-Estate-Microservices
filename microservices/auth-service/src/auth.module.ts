@@ -6,6 +6,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { User, UserSchema } from './user.model';
+import { NotificationModule } from './notifications/notification.module';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
@@ -28,6 +29,7 @@ dotenv.config();
         },
       },
     ]),
+    NotificationModule,
   ],
   controllers: [AuthController],
   providers: [AuthService],

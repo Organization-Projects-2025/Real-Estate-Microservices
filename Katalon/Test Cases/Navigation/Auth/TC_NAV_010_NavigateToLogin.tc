@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Navigate to Login page when not authenticated</description>
+   <name>TC_NAV_010_NavigateToLogin</name>
+   <tag>navigation,auth,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>nav-auth-010</testCaseGuid>
+</TestCaseEntity>

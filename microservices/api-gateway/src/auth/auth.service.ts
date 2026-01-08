@@ -93,4 +93,33 @@ export class AuthService {
   async reactivateUser(userId: string): Promise<any> {
     return this.sendCommand('reactivateUser', userId);
   }
+
+  // Notification methods
+  async getNotifications(req: any): Promise<any> {
+    const userId = this.extractUserIdFromRequest(req);
+    return this.sendCommand('getNotifications', { userId });
+  }
+
+  async createNotification(req: any, data: any): Promise<any> {
+    const userId = this.extractUserIdFromRequest(req);
+    return this.sendCommand('createNotification', { userId, ...data });
+  }
+
+  async markNotificationAsRead(req: any, notificationId: string): Promise<any> {
+    const userId = this.extractUserIdFromRequest(req);
+    return this.sendCommand('markNotificationAsRead', { userId, notificationId });
+  }
+
+  async deleteNotification(req: any, notificationId: string): Promise<any> {
+    const userId = this.extractUserIdFromRequest(req);
+    return this.sendCommand('deleteNotification', { userId, notificationId });
+  }
+
+  private extractUserIdFromRequest(req: any): string {
+    const token = req.cookies?.jwt || req.headers.authorization?.replace('Bearer ', '');
+    if (!token) throw new Error('No token provided');
+    
+    const payload = JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString());
+    return payload.id || payload.sub;
+  }
 }

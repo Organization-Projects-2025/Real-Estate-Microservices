@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Mark an unread notification as read</description>
+   <name>TC_NOTIF_002_MarkAsRead</name>
+   <tag>notification,mark-read,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>notif-002</testCaseGuid>
+</TestCaseEntity>

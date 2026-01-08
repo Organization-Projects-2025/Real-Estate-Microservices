@@ -12,6 +12,7 @@ import {
   FaUserTie,
   FaPlus,
   FaClipboardList,
+  FaBell,
 } from 'react-icons/fa';
 import { HiOutlineViewGrid } from 'react-icons/hi';
 
@@ -165,8 +166,20 @@ const Navbar = () => {
           {/* Right Section */}
           <div className="flex items-center gap-3">
             {isAuthenticated ? (
-              /* User Menu */
-              <div className="relative" ref={userMenuRef}>
+              <>
+                {/* Notification Bell */}
+                <Link
+                  to="/notifications"
+                  className="relative p-2 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                  title="Notifications"
+                >
+                  <FaBell className="text-xl" />
+                  {/* Notification badge - shows when there are unread notifications */}
+                  <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                </Link>
+
+                {/* User Menu */}
+                <div className="relative" ref={userMenuRef}>
                 <button
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                   className={`flex items-center gap-2 px-2 py-1.5 rounded-full transition-all duration-200 ${
@@ -247,6 +260,7 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
+              </>
             ) : (
               /* Auth Buttons */
               <div className="flex items-center gap-2">

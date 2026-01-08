@@ -1,72 +1,63 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
+import { useAuth } from '../context/AuthContext';
+import * as notificationService from '../services/notificationService';
 
 function Notifications() {
+  const { user } = useAuth();
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
-  useEffect(() => {
-    // Simulate loading notifications
-    setTimeout(() => {
-      setNotifications([
-        {
-          id: 1,
-          title: 'Property Listed',
-          message: 'Your property "Modern Apartment" has been successfully listed.',
-          timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000),
-          read: false,
-          type: 'success'
-        },
-        {
-          id: 2,
-          title: 'New Inquiry',
-          message: 'Someone is interested in your property "Downtown Studio".',
-          timestamp: new Date(Date.now() - 5 * 60 * 60 * 1000),
-          read: false,
-          type: 'info'
-        },
-        {
-          id: 3,
-          title: 'Profile Updated',
-          message: 'Your profile information has been successfully updated.',
-          timestamp: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
-          read: true,
-          type: 'success'
-        },
-        {
-          id: 4,
-          title: 'Promotion',
-          message: 'New properties matching your search criteria have been added.',
-          timestamp: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
-          read: true,
-          type: 'info'
-        },
-        {
-          id: 5,
-          title: 'Review Posted',
-          message: 'A new review has been posted for your property.',
-          timestamp: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
-          read: true,
-          type: 'warning'
-        }
-      ]);
+  // Load notifications from API
+  const loadNotifications = async () => {
+    try {
+      setLoading(true);
+      const data = await notificationService.getNotifications();
+      setNotifications(data.data.notifications || []);
+    } catch (err) {
+      console.error('Error loading notifications:', err);
+      setError('Failed to load notifications');
+      setNotifications([]);
+    } finally {
       setLoading(false);
-    }, 500);
-  }, []);
-
-  const markAsRead = (id) => {
-    setNotifications(notifications.map(n =>
-      n.id === id ? { ...n, read: true } : n
-    ));
+    }
   };
 
-  const deleteNotification = (id) => {
-    setNotifications(notifications.filter(n => n.id !== id));
+  useEffect(() => {
+    if (user) {
+      loadNotifications();
+    } else {
+      setLoading(false);
+    }
+  }, [user]);
+
+  const markAsRead = async (id) => {
+    try {
+      await notificationService.markNotificationAsRead(id);
+      setNotifications(notifications.map(n =>
+        n._id === id ? { ...n, read: true } : n
+      ));
+    } catch (err) {
+      console.error('Error marking as read:', err);
+      setError('Failed to mark notification as read');
+    }
+  };
+
+  const deleteNotification = async (id) => {
+    try {
+      await notificationService.deleteNotification(id);
+      setNotifications(notifications.filter(n => n._id !== id));
+    } catch (err) {
+      console.error('Error deleting notification:', err);
+      setError('Failed to delete notification');
+    }
   };
 
   const formatTime = (timestamp) => {
     const now = new Date();
-    const diff = now - timestamp;
+    const notifTime = new Date(timestamp);
+    const diff = now - notifTime;
     const minutes = Math.floor(diff / 60000);
     const hours = Math.floor(diff / 3600000);
     const days = Math.floor(diff / 86400000);
@@ -74,7 +65,7 @@ function Notifications() {
     if (minutes < 60) return `${minutes}m ago`;
     if (hours < 24) return `${hours}h ago`;
     if (days < 7) return `${days}d ago`;
-    return timestamp.toLocaleDateString();
+    return notifTime.toLocaleDateString();
   };
 
   return (
@@ -104,7 +95,7 @@ function Notifications() {
             <div className="space-y-4">
               {notifications.map((notification) => (
                 <div
-                  key={notification.id}
+                  key={notification._id}
                   className={`p-4 rounded-lg border transition-all ${
                     notification.read
                       ? 'bg-[#1a1a1a] border-[#252525]'
@@ -127,12 +118,12 @@ function Notifications() {
                         </span>
                       </div>
                       <p className="text-gray-300 mb-2">{notification.message}</p>
-                      <p className="text-xs text-gray-500">{formatTime(notification.timestamp)}</p>
+                      <p className="text-xs text-gray-500">{formatTime(notification.createdAt)}</p>
                     </div>
                     <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                       {!notification.read && (
                         <button
-                          onClick={() => markAsRead(notification.id)}
+                          onClick={() => markAsRead(notification._id)}
                           className="p-2 hover:bg-[#252525] rounded transition-colors"
                           title="Mark as read"
                         >
@@ -142,7 +133,7 @@ function Notifications() {
                         </button>
                       )}
                       <button
-                        onClick={() => deleteNotification(notification.id)}
+                        onClick={() => deleteNotification(notification._id)}
                         className="p-2 hover:bg-red-900/30 rounded transition-colors"
                         title="Delete notification"
                       >

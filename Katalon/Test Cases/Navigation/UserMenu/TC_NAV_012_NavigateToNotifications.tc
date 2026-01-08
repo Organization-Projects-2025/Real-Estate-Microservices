@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Navigate to Notifications page via bell icon</description>
+   <name>TC_NAV_012_NavigateToNotifications</name>
+   <tag>navigation,notifications,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>nav-user-012</testCaseGuid>
+</TestCaseEntity>

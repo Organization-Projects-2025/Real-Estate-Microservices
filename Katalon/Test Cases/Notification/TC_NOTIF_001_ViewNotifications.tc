@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>View notifications page and verify notifications are displayed</description>
+   <name>TC_NOTIF_001_ViewNotifications</name>
+   <tag>notification,view,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>notif-001</testCaseGuid>
+</TestCaseEntity>

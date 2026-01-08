@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Navigate to Become Agent page from user dropdown (regular user)</description>
+   <name>TC_NAV_009_NavigateToBecomeAgent</name>
+   <tag>navigation,user-menu,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>nav-user-009</testCaseGuid>
+</TestCaseEntity>
