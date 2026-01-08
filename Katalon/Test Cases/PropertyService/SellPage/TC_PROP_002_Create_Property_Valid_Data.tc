@@ -4,5 +4,6 @@
    <name>TC_PROP_002_Create_Property_Valid_Data</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>prop-sell-002</testCaseGuid>
 </TestCaseEntity>

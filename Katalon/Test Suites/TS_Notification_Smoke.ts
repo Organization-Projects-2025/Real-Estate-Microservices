@@ -25,4 +25,11 @@
       <testCaseId>Test Cases/Navigation/UserMenu/TC_NAV_012_NavigateToNotifications</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
+   <testCaseLink>
+      <guid>notif-smoke-003</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Notification/Triggers/TC_NOTIF_TRIG_001_ReviewPosted</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
 </TestSuiteEntity>

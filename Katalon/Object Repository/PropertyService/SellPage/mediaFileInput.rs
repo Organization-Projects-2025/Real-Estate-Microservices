@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@name='media' and @type='file']</value>
+         <value>//*[@id='root']/div/div/div[2]/div/label/input[@type='file']</value>
       </entry>
       <entry>
          <key>CSS</key>

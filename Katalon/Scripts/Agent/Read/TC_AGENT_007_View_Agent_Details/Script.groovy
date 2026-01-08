@@ -6,7 +6,7 @@ import agent.Agent_Keywords as AgentKeywords
 /**
  * Test Case: TC_AGENT_007 - View Agent Details
  * 
- * Description: Verify that agent details are displayed correctly on agent cards
+ * Description: Verify that clicking on an agent button navigates to agent details page
  * Prerequisites: Agents must exist in the system
  * Test Data: None
  */
@@ -22,26 +22,42 @@ try {
     // Wait for agents list to load
     agentHelper.waitForAgentsList()
     
-    // Assert: Verify agent cards contain expected information
+    // Assert: Verify agent cards are present
     def agentsCount = agentHelper.getAgentsCount()
     assert agentsCount > 0, "At least one agent should be displayed"
     
-    // Verify agent card elements are present
-    // Check that agent cards have name, email, phone, experience, etc.
-    WebUI.verifyElementPresent(
-        findTestObject('Object Repository/Agent/AgentPage/agentCards'),
-        5,
-        FailureHandling.STOP_ON_FAILURE
-    )
+    // Get current URL before clicking
+    String urlBeforeClick = WebUI.getUrl()
+    WebUI.comment("URL before click: ${urlBeforeClick}")
     
-    // Verify contact agent buttons are present
-    def contactButtons = WebUI.findWebElements(
+    // Click on first agent's "View Details" or "Contact Agent" button
+    WebUI.waitForElementClickable(
         findTestObject('Object Repository/Agent/AgentPage/contactAgentButton'),
-        5
+        10
     )
-    assert contactButtons.size() > 0, "Contact Agent buttons should be present"
+    WebUI.click(findTestObject('Object Repository/Agent/AgentPage/contactAgentButton'))
     
-    WebUI.comment("✅ TC_AGENT_007 PASSED: Agent details displayed correctly")
+    // Wait for page to change
+    WebUI.delay(2)
+    
+    // Get URL after clicking
+    String urlAfterClick = WebUI.getUrl()
+    WebUI.comment("URL after click: ${urlAfterClick}")
+    
+    // Verify URL changed (navigated to agent details or contact page)
+    assert urlBeforeClick != urlAfterClick, "URL should change after clicking agent button"
+    
+    // Verify we're on a different page (agent detail page or modal appeared)
+    boolean pageChanged = (urlBeforeClick != urlAfterClick) || 
+                         WebUI.verifyElementPresent(
+                             findTestObject('Object Repository/Agent/AgentPage/agentDetailModal'),
+                             5,
+                             FailureHandling.OPTIONAL
+                         )
+    
+    assert pageChanged, "Page should change or modal should appear after clicking agent button"
+    
+    WebUI.comment("✅ TC_AGENT_007 PASSED: Agent button click navigates correctly")
     
 } catch (Exception e) {
     WebUI.comment("❌ TC_AGENT_007 FAILED: " + e.getMessage())
@@ -51,4 +67,5 @@ try {
     // Cleanup
     WebUI.closeBrowser()
 }
+
 

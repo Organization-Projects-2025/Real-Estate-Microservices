@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify notification is created when a review is posted</description>
+   <name>TC_NOTIF_TRIG_001_ReviewPosted</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>notif-trig-001</testCaseGuid>
+</TestCaseEntity>

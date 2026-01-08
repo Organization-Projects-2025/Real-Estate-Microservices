@@ -4,6 +4,7 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.model.FailureHandling
+import java.io.File
 
 /**
  * Sell Page Keywords for Property Service
@@ -72,8 +73,20 @@ class Sell_Keywords {
     def fillMediaAndPrice(String filePath, String price, String buildDate, String status) {
         // Upload media file
         if (filePath != null && filePath.length() > 0) {
+            WebUI.comment("Attempting to upload file: ${filePath}")
+            
+            // Verify file exists
+            File file = new File(filePath)
+            if (!file.exists()) {
+                WebUI.comment("ERROR: File does not exist at path: ${filePath}")
+                throw new Exception("File not found: ${filePath}")
+            }
+            WebUI.comment("File exists, size: ${file.length()} bytes")
+            
+            // Upload the file
             WebUI.uploadFile(findTestObject('Object Repository/PropertyService/SellPage/mediaFileInput'), filePath)
-            WebUI.delay(2)
+            WebUI.comment("File upload command executed")
+            WebUI.delay(3)
         }
         // Fill price info
         WebUI.setText(findTestObject('Object Repository/PropertyService/SellPage/priceInput'), price)

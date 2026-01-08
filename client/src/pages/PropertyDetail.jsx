@@ -19,6 +19,7 @@ import {
   FaSnowflake,
 } from 'react-icons/fa';
 import FeaturedProperties from '../components/FeaturedProperties';
+import * as notificationService from '../services/notificationService';
 
 const PropertyDetail = () => {
   const { id } = useParams();
@@ -29,6 +30,12 @@ const PropertyDetail = () => {
   const [activeImage, setActiveImage] = useState(0);
   const [showContactForm, setShowContactForm] = useState(false);
   const [properties, setProperties] = useState([]);
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [contactStatus, setContactStatus] = useState('');
 
   useEffect(() => {
     fetch('http://localhost:3000/api/properties')
@@ -95,6 +102,46 @@ const PropertyDetail = () => {
       return `${price.toLocaleString()}$/month`;
     } else {
       return `${price.toLocaleString()}$`;
+    }
+  };
+
+  const handleContactFormChange = (e) => {
+    const { name, value } = e.target;
+    setContactForm(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSendMessage = async () => {
+    if (!contactForm.name || !contactForm.email || !contactForm.message) {
+      setContactStatus('Please fill in all fields');
+      setTimeout(() => setContactStatus(''), 3000);
+      return;
+    }
+
+    try {
+      // In a real app, you'd send this to your backend
+      console.log('Sending message:', contactForm);
+      
+      // Create notification for contacting seller
+      const listingTypeText = property.listingType === 'rent' ? 'Rent' : 'Buy';
+      await notificationService.createNotification(
+        `Property Inquiry - ${listingTypeText}`,
+        `You contacted the seller about "${property.title}". They will respond to ${contactForm.email}.`,
+        'info'
+      );
+      
+      setContactStatus('Message sent successfully!');
+      setContactForm({ name: '', email: '', message: '' });
+      setTimeout(() => {
+        setContactStatus('');
+        setShowContactForm(false);
+      }, 2000);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setContactStatus('Failed to send message');
+      setTimeout(() => setContactStatus(''), 3000);
     }
   };
 
@@ -459,22 +506,45 @@ const PropertyDetail = () => {
                   <h4 className="font-semibold text-white mb-2">
                     Send a Message
                   </h4>
+                  {contactStatus && (
+                    <div className={`p-3 rounded-lg ${
+                      contactStatus.includes('success') 
+                        ? 'bg-green-500/20 text-green-300' 
+                        : contactStatus.includes('Failed') || contactStatus.includes('fill')
+                        ? 'bg-red-500/20 text-red-300'
+                        : 'bg-blue-500/20 text-blue-300'
+                    }`}>
+                      {contactStatus}
+                    </div>
+                  )}
                   <input
                     type="text"
+                    name="name"
+                    value={contactForm.name}
+                    onChange={handleContactFormChange}
                     placeholder="Your Name"
-                    className="w-full p-3 bg-white/10 border border-white/10 rounded-lg focus:outline-none focus:border-[#B983FF]"
+                    className="w-full p-3 bg-white/10 border border-white/10 rounded-lg focus:outline-none focus:border-[#B983FF] text-white"
                   />
                   <input
                     type="email"
+                    name="email"
+                    value={contactForm.email}
+                    onChange={handleContactFormChange}
                     placeholder="Your Email"
-                    className="w-full p-3 bg-white/10 border border-white/10 rounded-lg focus:outline-none focus:border-[#B983FF]"
+                    className="w-full p-3 bg-white/10 border border-white/10 rounded-lg focus:outline-none focus:border-[#B983FF] text-white"
                   />
                   <textarea
+                    name="message"
+                    value={contactForm.message}
+                    onChange={handleContactFormChange}
                     placeholder="Your Message"
                     rows="4"
-                    className="w-full p-3 bg-white/10 border border-white/10 rounded-lg focus:outline-none focus:border-[#B983FF]"
+                    className="w-full p-3 bg-white/10 border border-white/10 rounded-lg focus:outline-none focus:border-[#B983FF] text-white"
                   />
-                  <button className="w-full py-3 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300 text-white font-medium">
+                  <button 
+                    onClick={handleSendMessage}
+                    className="w-full py-3 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300 text-white font-medium"
+                  >
                     Send Message
                   </button>
                 </div>

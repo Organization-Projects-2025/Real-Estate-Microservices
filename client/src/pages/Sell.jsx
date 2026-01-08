@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { v4 } from 'uuid';
 import { storage, ID } from '../../appwrite';
 import { useAuth } from '../context/AuthContext';
+import * as notificationService from '../services/notificationService';
 
 const steps = ['Basic Info', 'Address & Area', 'Media & Price', 'Features'];
 
@@ -386,6 +387,21 @@ export default function Sell() {
         payload
       );
       setUploadStatus({ success: 'Property successfully listed!' });
+      
+      // Create notification for property listing
+      try {
+        const listingTypeText = formData.listingType === 'sale' ? 'Sale' : 'Rent';
+        await notificationService.createNotification(
+          'Property Listed',
+          `Your property "${formData.title}" has been successfully listed for ${listingTypeText}.`,
+          'success'
+        );
+        console.log('Notification created for property listing');
+      } catch (notifError) {
+        console.error('Failed to create notification:', notifError);
+        // Don't fail the whole operation if notification fails
+      }
+      
       setPendingFiles([]);
       setTimeout(() => {
         navigate(`/property/${response.data.data.property._id}`);

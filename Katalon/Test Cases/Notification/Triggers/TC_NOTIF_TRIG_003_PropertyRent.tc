@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify notification is created when user contacts seller about rental property</description>
+   <name>TC_NOTIF_TRIG_003_PropertyRent</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>notif-trig-003</testCaseGuid>
+</TestCaseEntity>

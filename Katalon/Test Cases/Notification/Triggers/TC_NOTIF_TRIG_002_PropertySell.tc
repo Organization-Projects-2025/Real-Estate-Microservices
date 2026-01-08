@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify notification is created when a property is listed for sale</description>
+   <name>TC_NOTIF_TRIG_002_PropertySell</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>notif-trig-002</testCaseGuid>
+</TestCaseEntity>
