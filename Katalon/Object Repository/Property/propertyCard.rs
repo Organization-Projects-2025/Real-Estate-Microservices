@@ -7,6 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
+         <value>//*[@id="root"]/div/section[2]/div[1]/div[1]/div/div/div[2]/a</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
          <value>(//a[contains(text(), 'View Details')])[1]</value>
       </entry>
    </selectorCollection>
