@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that user role (Developer/Agent/User) persists correctly after logout and re-login</description>
+   <name>TC_AUTH_027_Register_Role_Persistence</name>
+   <tag>workflow,role-based,authentication</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-auth-040-role-persistence</testCaseGuid>
+</TestCaseEntity>

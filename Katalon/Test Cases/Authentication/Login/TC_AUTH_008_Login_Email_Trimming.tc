@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that leading and trailing spaces are automatically trimmed from email input</description>
+   <name>TC_AUTH_008_Login_Email_Trimming</name>
+   <tag>input-validation,login,authentication</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-auth-020-email-trimming</testCaseGuid>
+</TestCaseEntity>

@@ -6,14 +6,15 @@
    <elementGuidId>register-login-link-001</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//a[contains(text(), 'Login') or contains(text(), 'Sign in')]</value>
+         <key>CSS</key>
+         <value>button.underline.text-purple-400</value>
       </entry>
       <entry>
-         <key>CSS</key>
-         <value>a[href*='login']</value>
+         <key>XPATH</key>
+         <value>//button[contains(text(), 'Log In')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>

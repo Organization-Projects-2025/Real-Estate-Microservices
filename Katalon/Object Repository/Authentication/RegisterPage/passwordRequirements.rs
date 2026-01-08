@@ -7,11 +7,11 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(text(), '8 characters') or contains(text(), 'uppercase')]</value>
+         <value>//p[contains(text(), 'Password must be at least')]</value>
       </entry>
       <entry>
          <key>CSS</key>
-         <value>.password-requirements, .password-hint</value>
+         <value>div.text-sm.text-gray-400</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

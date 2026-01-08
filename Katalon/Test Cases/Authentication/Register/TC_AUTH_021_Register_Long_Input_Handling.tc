@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that extremely long email and password inputs are handled gracefully without crashes</description>
+   <name>TC_AUTH_021_Register_Long_Input_Handling</name>
+   <tag>boundary,input-validation,login,authentication</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-auth-019-long-input</testCaseGuid>
+</TestCaseEntity>
