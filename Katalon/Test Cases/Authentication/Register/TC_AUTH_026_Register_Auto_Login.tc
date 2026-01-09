@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that successful registration automatically logs in the user</description>
+   <name>TC_AUTH_026_Register_Auto_Login</name>
+   <tag>workflow,authentication,register</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-auth-036-auto-login</testCaseGuid>
+</TestCaseEntity>

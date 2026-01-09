@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that clicking browser back button after login does not log out user or expose security issues</description>
+   <name>TC_AUTH_015_Login_Back_Button_After_Login</name>
+   <tag>security,workflow,authentication</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-auth-037-back-button</testCaseGuid>
+</TestCaseEntity>

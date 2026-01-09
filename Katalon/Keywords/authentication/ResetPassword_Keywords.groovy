@@ -56,10 +56,23 @@ class ResetPassword_Keywords {
         WebUI.setText(findTestObject('Object Repository/Authentication/ResetPasswordPage/confirmPasswordInput'), confirmPassword)
         
         // Click submit
-        WebUI.click(findTestObject('Object Repository/Authentication/ResetPasswordPage/submitButton'))
+        WebUI.click(findTestObject('Object Repository/Authentication/ResetPasswordPage/resetButton'))
         
         // Wait for response
         WebUI.delay(3)
+    }
+    
+    /**
+     * Complete reset password process with token
+     * @param token - Reset token
+     * @param password - New password
+     * @param confirmPassword - Confirm password
+     */
+    @Keyword
+    def resetPassword(String token, String password, String confirmPassword) {
+        navigateToResetPassword(token)
+        WebUI.delay(2)
+        submitResetPassword(password, confirmPassword)
     }
     
     /**

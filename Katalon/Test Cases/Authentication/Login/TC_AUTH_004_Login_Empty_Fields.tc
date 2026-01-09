@@ -2,7 +2,8 @@
 <TestCaseEntity>
    <description>Verify login fails with empty fields</description>
    <name>TC_AUTH_004_Login_Empty_Fields</name>
-   <tag>authentication, login, negative, validation</tag>
+   <tag>negative,login,validation,authentication</tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>tc-auth-004</testCaseGuid>
 </TestCaseEntity>

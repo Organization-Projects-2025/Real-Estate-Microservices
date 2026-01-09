@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that all required UI elements are present on the Register page</description>
+   <name>TC_AUTH_024_Register_Page_Elements</name>
+   <tag>ui-validation,authentication,register</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-auth-025-register-elements</testCaseGuid>
+</TestCaseEntity>

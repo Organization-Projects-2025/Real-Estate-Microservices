@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that email with special characters (+ symbol) is accepted as valid format</description>
+   <name>TC_AUTH_007_Login_Email_Special_Characters</name>
+   <tag>input-validation,login,authentication</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-auth-018-email-special-chars</testCaseGuid>
+</TestCaseEntity>

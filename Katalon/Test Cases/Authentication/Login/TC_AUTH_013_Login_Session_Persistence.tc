@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that user session persists after page refresh and navigation (cookies/localStorage working)</description>
+   <name>TC_AUTH_013_Login_Session_Persistence</name>
+   <tag>security,session,authentication</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-auth-034-session-persistence</testCaseGuid>
+</TestCaseEntity>

@@ -192,4 +192,42 @@ class Login_Keywords {
         WebUI.click(findTestObject('Object Repository/Authentication/LoginPage/signUpLink'))
         WebUI.waitForPageLoad(10)
     }
+    
+    /**
+     * Perform logout by clicking Sign Out button in user menu
+     */
+    @Keyword
+    def logout() {
+        // Click user menu to open dropdown
+        WebUI.click(findTestObject('Object Repository/Common/Navbar/userMenuButton'))
+        WebUI.delay(1)
+        
+        // Click Sign Out button
+        WebUI.click(findTestObject('Object Repository/Common/Navbar/signOutButton'))
+        WebUI.delay(2)
+        WebUI.waitForPageLoad(10)
+        
+        // Verify redirected to login page
+        String currentUrl = WebUI.getUrl()
+        assert currentUrl.contains('/login'),
+            "Logout failed: Not redirected to login page. Current URL: ${currentUrl}"
+    }
+    
+    /**
+     * Verify HTML5 validation message appears on email input
+     * @param expectedMessage - Expected validation message (partial match)
+     */
+    @Keyword
+    def verifyEmailValidationMessage(String expectedMessage) {
+        String validationMessage = WebUI.executeJavaScript(
+            "return document.querySelector('input[type=\"email\"]').validationMessage;",
+            null
+        )
+        
+        assert validationMessage != null && validationMessage != '',
+            "No HTML5 validation message found on email input"
+        
+        assert validationMessage.toLowerCase().contains(expectedMessage.toLowerCase()),
+            "Expected validation message to contain '${expectedMessage}', but got: '${validationMessage}'"
+    }
 }

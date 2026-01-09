@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify that XSS (Cross-Site Scripting) attacks are prevented in login input fields</description>
+   <name>TC_AUTH_011_Login_XSS_Prevention</name>
+   <tag>security,critical,authentication</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-auth-030-xss-prevention</testCaseGuid>
+</TestCaseEntity>

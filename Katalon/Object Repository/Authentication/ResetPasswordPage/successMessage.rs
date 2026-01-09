@@ -7,11 +7,11 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@class, 'bg-green-500') or contains(@class, 'text-green') or contains(@class, 'success')]</value>
+         <value>//p[contains(@class, 'text-green-500')]</value>
       </entry>
       <entry>
          <key>CSS</key>
-         <value>.bg-green-500, .text-green-500, .success-message</value>
+         <value>p.text-green-500</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

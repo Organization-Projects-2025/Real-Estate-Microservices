@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify successful user registration with valid data</description>
+   <name>TC_AUTH_016_Register_Valid_User</name>
+   <tag>positive,authentication,register</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-auth-006</testCaseGuid>
+</TestCaseEntity>

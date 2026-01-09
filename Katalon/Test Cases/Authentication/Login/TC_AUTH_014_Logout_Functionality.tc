@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify logout functionality clears session and redirects to login page</description>
+   <name>TC_AUTH_014_Logout_Functionality</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-auth-035-logout-functionality</testCaseGuid>
+</TestCaseEntity>
