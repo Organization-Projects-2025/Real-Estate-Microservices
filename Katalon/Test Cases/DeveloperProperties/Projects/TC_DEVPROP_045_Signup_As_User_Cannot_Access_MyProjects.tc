@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify user signup (not developer) cannot access My Projects page - negative test</description>
+   <name>TC_DEVPROP_045_Signup_As_User_Cannot_Access_MyProjects</name>
+   <tag>myprojects,negative,signup,user,should-fail</tag>
+   <comment>This test should fail - users should not have access to My Projects (developer-only feature)</comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-devprop-045</testCaseGuid>
+</TestCaseEntity>

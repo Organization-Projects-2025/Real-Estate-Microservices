@@ -5,7 +5,7 @@ import authentication.Register_Keywords as RegisterKeywords
 import developerproperties.DeveloperProperties_Keywords as DevPropHelper
 
 /**
- * Test Case: TC_DEVPROP_045 - Signup As User and Try to Access My Projects
+ * Test Case: TC_DEVPROP_013 - Signup As User and Try to Access My Projects
  * 
  * Description: Verify regular user signup cannot access My Projects page (developer-only feature)
  * This is a NEGATIVE test case - it SHOULD FAIL when trying to access /my-projects as a regular user
