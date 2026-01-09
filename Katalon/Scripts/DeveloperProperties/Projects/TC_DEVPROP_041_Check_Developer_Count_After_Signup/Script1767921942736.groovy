@@ -5,7 +5,7 @@ import authentication.Login_Keywords as LoginKeywords
 import authentication.Register_Keywords as RegisterKeywords
 
 /**
- * Test Case: TC_DEVPROP_041 - Check Developer Count After Signup
+ * Test Case: TC_DEVPROP_010 - Check Developer Count After Signup
  * 
  * Description: Verify that developer count increases after a new developer signs up
  * Prerequisites: System must have developer management functionality
@@ -20,7 +20,7 @@ RegisterKeywords registerHelper = new RegisterKeywords()
 try {
 	// Arrange: Login as admin or get initial developer count
 	loginHelper.navigateToLogin()
-	loginHelper.loginAsDeveloper(1) // Login as existing developer first
+	loginHelper.loginAsDeveloper(2) // Login as existing developer first
 	loginHelper.verifyLoginSuccess()
 
 	// Navigate to developers list/page if available

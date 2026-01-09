@@ -2,7 +2,8 @@
 <TestCaseEntity>
    <description>Verify new developer can signup and access My Projects page</description>
    <name>TC_DEVPROP_044_Signup_As_Developer_Access_MyProjects</name>
-   <tag>signup, developer, myprojects, positive</tag>
+   <tag>myprojects,developer,positive,signup</tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>tc-devprop-044</testCaseGuid>
 </TestCaseEntity>

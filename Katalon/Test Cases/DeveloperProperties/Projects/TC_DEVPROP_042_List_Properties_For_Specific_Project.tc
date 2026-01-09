@@ -2,7 +2,7 @@
 <TestCaseEntity>
    <description>Verify listing properties for a specific project</description>
    <name>TC_DEVPROP_042_List_Properties_For_Specific_Project</name>
-   <tag>developer-properties,properties,positive</tag>
+   <tag>developer-properties,positive,properties</tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
    <testCaseGuid>tc-devprop-042</testCaseGuid>

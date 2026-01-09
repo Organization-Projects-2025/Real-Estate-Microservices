@@ -4,7 +4,7 @@ import developerproperties.DeveloperProperties_Keywords as DevPropKeywords
 import authentication.Login_Keywords as LoginKeywords
 
 /**
- * Test Case: TC_DEVPROP_039 - Notification On Project Creation
+ * Test Case: TC_DEVPROP_008 - Notification On Project Creation
  * 
  * Description: Verify that a notification is generated when a developer creates a new project
  * Prerequisites: User must be logged in as a developer
@@ -54,7 +54,7 @@ try {
 	WebUI.comment("✅ TC_DEVPROP_039 PASSED: Notification found for project '${projectName}'")
 
 } catch (Exception e) {
-	WebUI.comment("❌ TC_DEVPROP_039 FAILED: " + e.getMessage())
+	WebUI.comment("❌ TC_DEVPROP_008 FAILED: " + e.getMessage())
 	throw e
 } finally {
 	WebUI.closeBrowser()

@@ -2,7 +2,7 @@
 <TestCaseEntity>
    <description>Verify successful deletion of a developer property</description>
    <name>TC_DEVPROP_037_Delete_DeveloperProperty_Valid_Id</name>
-   <tag>developer-properties,properties,positive</tag>
+   <tag>developer-properties,positive,properties</tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
    <testCaseGuid>tc-devprop-037</testCaseGuid>

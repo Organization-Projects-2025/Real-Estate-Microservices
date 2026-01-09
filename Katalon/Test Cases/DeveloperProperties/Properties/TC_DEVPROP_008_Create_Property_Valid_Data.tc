@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Create Property with Valid Data - Login, open existing project, add property, verify visible</description>
+   <name>TC_DEVPROP_008_Create_Property_Valid_Data</name>
+   <tag>properties, create, positive</tag>
+   <comment></comment>
+   <testCaseGuid>tc-devprop-008-properties</testCaseGuid>
+</TestCaseEntity>

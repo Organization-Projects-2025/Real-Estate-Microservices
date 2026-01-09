@@ -5,7 +5,7 @@ import authentication.Register_Keywords as RegisterKeywords
 import developerproperties.DeveloperProperties_Keywords as DevPropKeywords
 
 /**
- * Test Case: TC_DEVPROP_044 - Signup As Developer and Access My Projects
+ * Test Case: TC_DEVPROP_012 - Signup As Developer and Access My Projects
  * 
  * Description: Verify new developer can successfully signup with valid data and access My Projects page
  * Prerequisites: None - This is a signup test
