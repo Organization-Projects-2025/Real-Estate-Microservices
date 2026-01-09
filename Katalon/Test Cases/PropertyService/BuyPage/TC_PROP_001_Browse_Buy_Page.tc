@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify user can browse properties on Buy page</description>
+   <name>TC_PROP_001_Browse_Buy_Page</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-001</testCaseGuid>
+</TestCaseEntity>

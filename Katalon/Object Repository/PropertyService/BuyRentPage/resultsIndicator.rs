@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//p[contains(text(), 'Showing') and contains(text(), 'properties')]</value>
+         <value>//p[contains(@class, 'text-gray-400') and contains(text(), 'Showing')]|//p[contains(text(), 'of') and contains(text(), 'properties')]</value>
       </entry>
       <entry>
          <key>CSS</key>

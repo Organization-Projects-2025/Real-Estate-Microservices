@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify Sell page requires user to be logged in</description>
+   <name>TC_PROP_016_Sell_Requires_Login</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-016</testCaseGuid>
+</TestCaseEntity>

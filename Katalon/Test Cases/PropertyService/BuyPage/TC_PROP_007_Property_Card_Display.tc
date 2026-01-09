@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify property cards display correctly</description>
+   <name>TC_PROP_007_Property_Card_Display</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-007</testCaseGuid>
+</TestCaseEntity>

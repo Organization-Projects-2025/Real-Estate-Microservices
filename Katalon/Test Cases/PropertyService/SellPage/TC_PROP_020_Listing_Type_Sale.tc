@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify selecting Sale listing type</description>
+   <name>TC_PROP_020_Listing_Type_Sale</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-020</testCaseGuid>
+</TestCaseEntity>

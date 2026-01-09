@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify no results message when search has no matches</description>
+   <name>TC_PROP_003_Search_No_Results</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-003</testCaseGuid>
+</TestCaseEntity>

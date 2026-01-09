@@ -12,21 +12,27 @@
    <rerunImmediately>false</rerunImmediately>
    <testSuiteGuid>ts-propertyservice-smoke-001</testSuiteGuid>
    <testCaseLink>
-      <guid>prop-browse-004</guid>
+      <guid>tc-prop-001-smoke</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/PropertyService/PropertiesPage/TC_PROP_004_Browse_Properties</testCaseId>
+      <testCaseId>Test Cases/PropertyService/BuyPage/TC_PROP_001_Browse_Buy_Page</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>prop-detail-007</guid>
+      <guid>tc-prop-011-smoke</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/PropertyService/PropertyDetailPage/TC_PROP_007_Property_Detail_Display</testCaseId>
+      <testCaseId>Test Cases/PropertyService/RentPage/TC_PROP_011_Browse_Rent_Page</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>prop-sell-001</guid>
+      <guid>tc-prop-016-smoke</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/PropertyService/SellPage/TC_PROP_001_Sell_Page_Requires_Login</testCaseId>
+      <testCaseId>Test Cases/PropertyService/SellPage/TC_PROP_016_Sell_Requires_Login</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>tc-prop-024-smoke</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/PropertyService/PropertyDetailPage/TC_PROP_024_Detail_Display</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

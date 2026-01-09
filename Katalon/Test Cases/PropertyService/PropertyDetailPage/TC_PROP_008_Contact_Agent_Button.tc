@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Verify that Contact Agent button works on property detail page</description>
-   <name>TC_PROP_008_Contact_Agent_Button</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>prop-detail-008</testCaseGuid>
-</TestCaseEntity>

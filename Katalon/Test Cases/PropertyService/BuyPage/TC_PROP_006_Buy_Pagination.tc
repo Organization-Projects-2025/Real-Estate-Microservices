@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify pagination works on Buy page</description>
+   <name>TC_PROP_006_Buy_Pagination</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-006</testCaseGuid>
+</TestCaseEntity>

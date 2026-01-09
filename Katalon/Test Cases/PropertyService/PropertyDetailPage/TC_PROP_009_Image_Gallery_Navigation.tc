@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Verify that image gallery thumbnails work on property detail page</description>
-   <name>TC_PROP_009_Image_Gallery_Navigation</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>prop-detail-009</testCaseGuid>
-</TestCaseEntity>

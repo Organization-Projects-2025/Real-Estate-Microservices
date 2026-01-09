@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify clear filters resets property list</description>
+   <name>TC_PROP_005_Clear_Filters</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-005</testCaseGuid>
+</TestCaseEntity>

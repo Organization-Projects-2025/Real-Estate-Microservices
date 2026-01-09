@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify filters work on Rent page</description>
+   <name>TC_PROP_013_Rent_Filters</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-013</testCaseGuid>
+</TestCaseEntity>
