@@ -3,7 +3,7 @@ import developerproperties.DeveloperProperties_Keywords as DevPropKeywords
 import authentication.Login_Keywords as LoginKeywords
 
 /**
- * Test Case: TC_DEVPROP_007 - Delete Project with Valid Id (UI)
+ * Test Case: TC_DEVPROP_006 - Delete Project with Valid ID
  * Flow: login as developer -> go to My Projects -> create project -> open its properties -> add a property -> return -> delete the project -> verify removed.
  */
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify listing properties for a specific project</description>
+   <name>TC_DEVPROP_042_List_Properties_For_Specific_Project</name>
+   <tag>developer-properties,properties,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-devprop-042</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>project_id</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'507f1f77bcf86cd799439012'</defaultValue>
+      <description>Project ID to list properties for</description>
+      <id>project_id</id>
+      <masked>false</masked>
+      <name>project_id</name>
+   </variable>
+</TestCaseEntity>

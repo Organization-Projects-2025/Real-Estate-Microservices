@@ -4,7 +4,7 @@ import developerproperties.DeveloperProperties_Keywords as DevPropKeywords
 import authentication.Login_Keywords as LoginKeywords
 
 /**
- * Test Case: TC_DEVPROP_008 - Create Property with Valid Data (UI)
+ * Test Case: TC_DEVPROP_014 - Create Property with Valid Data (UI)
  *
  * Description: Login, open existing project "Test Project 1767315782170", add a new property, and verify it is visible.
  */
@@ -35,9 +35,9 @@ try {
     devPropHelper.fillAndSubmitPropertyForm(propertyData)
     devPropHelper.verifyPropertyVisible(propertyData.title)
 
-    WebUI.comment("✅ TC_DEVPROP_008 PASSED: Added property '${propertyData.title}' to project 'Test Project 1767315782170'")
+    WebUI.comment("✅ TC_DEVPROP_014 PASSED: Added property '${propertyData.title}' to project 'Test Project 1767315782170'")
 } catch (Exception e) {
-    WebUI.comment("❌ TC_DEVPROP_008 FAILED: " + e.getMessage())
+    WebUI.comment("❌ TC_DEVPROP_014 FAILED: " + e.getMessage())
     throw e
 } finally {
     WebUI.closeBrowser()

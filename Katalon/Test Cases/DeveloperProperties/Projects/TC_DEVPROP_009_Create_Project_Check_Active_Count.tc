@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify active project count after creating new project</description>
+   <name>TC_DEVPROP_040_Create_Project_Check_Active_Count</name>
+   <tag>developer-properties,projects,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-devprop-040</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>project_name</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'Active Count Test Project'</defaultValue>
+      <description>Project name for active count test</description>
+      <id>project_name</id>
+      <masked>false</masked>
+      <name>project_name</name>
+   </variable>
+</TestCaseEntity>

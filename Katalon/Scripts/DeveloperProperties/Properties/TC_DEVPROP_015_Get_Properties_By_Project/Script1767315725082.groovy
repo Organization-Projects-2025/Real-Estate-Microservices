@@ -4,7 +4,7 @@ import developerproperties.DeveloperProperties_Keywords as DevPropKeywords
 import authentication.Login_Keywords as LoginKeywords
 
 /**
- * Test Case: TC_DEVPROP_008 - Navigate to developer projects and open a specific property
+ * Test Case: TC_DEVPROP_015 - Navigate to developer projects and open a specific property
  *
  * Description: From navbar -> New Projects, open project "Jocelyn Fisher" then open property "Doloribus et minima".
  */
@@ -28,9 +28,9 @@ try {
     devPropHelper.openPropertyCardByTitle('Doloribus et minima')
 
     WebUI.verifyTextPresent('Doloribus et minima', false, FailureHandling.OPTIONAL)
-    WebUI.comment("✅ TC_DEVPROP_008 PASSED: Opened project 'Jocelyn Fisher' and property 'Doloribus et minima'")
+    WebUI.comment("✅ TC_DEVPROP_015 PASSED: Opened project 'Jocelyn Fisher' and property 'Doloribus et minima'")
 } catch (Exception e) {
-    WebUI.comment("❌ TC_DEVPROP_008 FAILED: " + e.getMessage())
+    WebUI.comment("❌ TC_DEVPROP_015 FAILED: " + e.getMessage())
     throw e
 } finally {
     WebUI.closeBrowser()

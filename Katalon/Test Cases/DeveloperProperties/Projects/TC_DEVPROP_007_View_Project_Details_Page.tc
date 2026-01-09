@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify viewing project details page with complete information</description>
+   <name>TC_DEVPROP_043_View_Project_Details_Page</name>
+   <tag>developer-properties,projects,positive</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>tc-devprop-043</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>project_id</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'507f1f77bcf86cd799439012'</defaultValue>
+      <description>Project ID to view details for</description>
+      <id>project_id</id>
+      <masked>false</masked>
+      <name>project_id</name>
+   </variable>
+</TestCaseEntity>

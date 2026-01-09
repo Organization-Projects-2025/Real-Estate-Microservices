@@ -32,11 +32,4 @@
       <testCaseId>Test Cases/DeveloperProperties/Projects/TC_DEVPROP_004_Get_Project_By_Valid_Id</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
-   <testCaseLink>
-      <guid>devprop-smoke-004</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/DeveloperProperties/Properties/TC_DEVPROP_008_Create_Property_Valid_Data</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
 </TestSuiteEntity>

@@ -427,4 +427,62 @@ public class DeveloperProperties_Keywords {
         )
         return developerElements.size()
     }
+
+    /**
+     * Navigate to notifications page
+     */
+    @Keyword
+    def navigateToNotifications() {
+        WebUI.navigateToUrl("${BASE_URL}/notifications")
+        WebUI.waitForPageLoad(10)
+    }
+
+    /**
+     * Delete property by title
+     * @param propertyTitle - Title of the property to delete
+     */
+    @Keyword
+    def deleteProperty(String propertyTitle) {
+        def deleteBtn = xpath(
+            'Delete property button',
+            "//h3[normalize-space()='${propertyTitle}']//ancestor::*[contains(@class,'card') or contains(@class,'property')]//button[contains(normalize-space(.), 'Delete')]"
+        )
+        clickWithFallback(deleteBtn)
+
+        if (WebUI.waitForAlert(3, FailureHandling.OPTIONAL)) {
+            WebUI.acceptAlert()
+        }
+
+        WebUI.delay(2)
+    }
+
+    /**
+     * Get count of properties currently visible on the page
+     * @return Integer count of properties
+     */
+    @Keyword
+    def getPropertyCount() {
+        def propertyElements = WebUI.findWebElements(
+            xpath('Property cards', "//h3[contains(@class,'title') or contains(@class,'property-title')]"),
+            10
+        )
+        return propertyElements.size()
+    }
+
+    /**
+     * Logout current user
+     */
+    @Keyword
+    def logout() {
+        // Try to click user menu
+        TestObject userMenuToggle = xpath('User menu toggle', "//button[.//div[contains(@class,'rounded-full')]]")
+        if (WebUI.waitForElementPresent(userMenuToggle, 5, FailureHandling.OPTIONAL)) {
+            WebUI.click(userMenuToggle)
+            TestObject logoutLink = xpath('Logout link', "//button[normalize-space(.)='Logout'] | //a[normalize-space(.)='Logout']")
+            if (WebUI.waitForElementClickable(logoutLink, 5, FailureHandling.OPTIONAL)) {
+                WebUI.click(logoutLink)
+                WebUI.delay(2)
+            }
+        }
+    }
 }
