@@ -200,11 +200,35 @@ public class DeveloperProperties_Keywords {
      */
     @Keyword
     def getProjectsCount() {
-        def projectElements = WebUI.findWebElements(
-            xpath('Project cards', "//div[contains(@class,'rounded-lg') and .//button[contains(normalize-space(.), 'Properties')]]"),
-            10
-        )
-        return projectElements.size()
+        WebUI.delay(1)
+        
+        // Try multiple strategies to count projects
+        def strategies = [
+            // Strategy 1: Find by h3 title elements (most reliable)
+            "//div[contains(@class,'rounded-lg')]//h3",
+            // Strategy 2: Find cards with Properties button
+            "//div[contains(@class,'rounded-lg') and .//button[contains(normalize-space(.), 'Properties')]]",
+            // Strategy 3: Find any card-like div with project content
+            "//div[contains(@class,'card') or contains(@class,'project-card')]//h3",
+            // Strategy 4: Count Properties buttons
+            "//button[contains(normalize-space(.), 'Properties')]"
+        ]
+        
+        for (xpathStr in strategies) {
+            try {
+                def elements = WebUI.findWebElements(xpath('Project cards', xpathStr), 3)
+                if (elements != null && elements.size() > 0) {
+                    return elements.size()
+                }
+            } catch (Exception e) {
+                // Try next strategy
+                continue
+            }
+        }
+        
+        // If all strategies fail, return 0
+        WebUI.comment("⚠️ Warning: Could not count projects using any strategy")
+        return 0
     }
 
     /**
@@ -443,10 +467,35 @@ public class DeveloperProperties_Keywords {
      */
     @Keyword
     def deleteProperty(String propertyTitle) {
-        def deleteBtn = xpath(
-            'Delete property button',
-            "//h3[normalize-space()='${propertyTitle}']//ancestor::*[contains(@class,'card') or contains(@class,'property')]//button[contains(normalize-space(.), 'Delete')]"
-        )
+        // Try multiple XPath strategies to locate the delete button
+        def xpaths = [
+            // Strategy 1: Find h3 title, go up to card, find delete button
+            "//h3[normalize-space()='${propertyTitle}']//ancestor::*[contains(@class,'card') or contains(@class,'property')]//button[contains(normalize-space(.), 'Delete')]",
+            // Strategy 2: Find any element with the title text, go up to card, find delete button
+            "//*[normalize-space()='${propertyTitle}']//ancestor::*[contains(@class,'card') or contains(@class,'property')]//button[contains(normalize-space(.), 'Delete')]",
+            // Strategy 3: Find title, go up to parent div, find delete button
+            "//*[contains(text(),'${propertyTitle}')]//ancestor::div[contains(@class,'card') or contains(@class,'property') or contains(@class,'item')]//button[contains(., 'Delete') or contains(@class,'delete')]",
+            // Strategy 4: Simple approach - find any delete button near the title
+            "//*[contains(text(),'${propertyTitle}')]/following::button[contains(., 'Delete')][1]"
+        ]
+        
+        def deleteBtn = null
+        for (xpath in xpaths) {
+            try {
+                deleteBtn = xpath('Delete property button', xpath)
+                if (WebUI.verifyElementPresent(deleteBtn, 2, FailureHandling.OPTIONAL)) {
+                    break
+                }
+            } catch (Exception e) {
+                // Try next strategy
+                continue
+            }
+        }
+        
+        if (deleteBtn == null) {
+            throw new Exception("Could not locate delete button for property: ${propertyTitle}")
+        }
+        
         clickWithFallback(deleteBtn)
 
         if (WebUI.waitForAlert(3, FailureHandling.OPTIONAL)) {
@@ -462,11 +511,35 @@ public class DeveloperProperties_Keywords {
      */
     @Keyword
     def getPropertyCount() {
-        def propertyElements = WebUI.findWebElements(
-            xpath('Property cards', "//h3[contains(@class,'title') or contains(@class,'property-title')]"),
-            10
-        )
-        return propertyElements.size()
+        WebUI.delay(1)
+        
+        // Try multiple strategies to count properties
+        def strategies = [
+            // Strategy 1: Count all h3 elements (property titles)
+            "//h3",
+            // Strategy 2: Count h3 with specific classes
+            "//h3[contains(@class,'title') or contains(@class,'property-title') or contains(@class,'text')]",
+            // Strategy 3: Count property cards by structure
+            "//div[contains(@class,'card') or contains(@class,'property')]//h3",
+            // Strategy 4: Count delete buttons (each property should have one)
+            "//button[contains(normalize-space(.), 'Delete')]"
+        ]
+        
+        for (xpathStr in strategies) {
+            try {
+                def elements = WebUI.findWebElements(xpath('Property cards', xpathStr), 3)
+                if (elements != null && elements.size() > 0) {
+                    return elements.size()
+                }
+            } catch (Exception e) {
+                // Try next strategy
+                continue
+            }
+        }
+        
+        // If all strategies fail, return 0
+        WebUI.comment("⚠️ Warning: Could not count properties using any strategy")
+        return 0
     }
 
     /**

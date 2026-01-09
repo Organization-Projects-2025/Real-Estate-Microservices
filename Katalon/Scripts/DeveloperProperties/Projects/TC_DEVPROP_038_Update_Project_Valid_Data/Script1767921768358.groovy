@@ -58,7 +58,7 @@ try {
 	WebUI.comment("✅ TC_DEVPROP_038 PASSED: Project updated from '${originalProjectName}' to '${updatedName}'")
 
 } catch (Exception e) {
-	WebUI.comment("❌ TC_DEVPROP_038 FAILED: " + e.getMessage())
+	WebUI.comment("❌ TC_DEVPROP_002 FAILED: " + e.getMessage())
 	throw e
 } finally {
 	WebUI.closeBrowser()

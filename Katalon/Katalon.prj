@@ -11,11 +11,20 @@
    <modifiedEdition>ENTERPRISE</modifiedEdition>
    <modifiedVersion>10.4.3</modifiedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
-   <projectFileLocation>C:\Personal Files\Eduction 4th year\Service\Project\Real-Estate-Microservices\Katalon\Katalon.prj</projectFileLocation>
+   <projectFileLocation>C:\Users\user\Real-Estate\Real-Estate-Microservices\Katalon\Katalon.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
             <url>Include/scripts/groovy</url>
+         </sourceFolderConfiguration>
+         <sourceFolderConfiguration>
+            <url>Keywords</url>
+         </sourceFolderConfiguration>
+         <sourceFolderConfiguration>
+            <url>Test Cases</url>
+         </sourceFolderConfiguration>
+         <sourceFolderConfiguration>
+            <url>Scripts</url>
          </sourceFolderConfiguration>
       </sourceFolderList>
       <systemFolderList>
