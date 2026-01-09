@@ -104,4 +104,25 @@ class PropertyDetail_Keywords {
             10, FailureHandling.STOP_ON_FAILURE
         )
     }
+    
+    @Keyword
+    def verifyPropertyFeaturesDisplayed() {
+        WebUI.verifyElementPresent(
+            findTestObject('Object Repository/PropertyService/PropertyDetailPage/propertyFeatures'),
+            10, FailureHandling.STOP_ON_FAILURE
+        )
+    }
+    
+    @Keyword
+    def verifyPropertyAddressDisplayed() {
+        WebUI.verifyElementPresent(
+            findTestObject('Object Repository/PropertyService/PropertyDetailPage/propertyAddress'),
+            10, FailureHandling.STOP_ON_FAILURE
+        )
+    }
+    
+    @Keyword
+    def getPropertyAddress() {
+        return WebUI.getText(findTestObject('Object Repository/PropertyService/PropertyDetailPage/propertyAddress'))
+    }
 }

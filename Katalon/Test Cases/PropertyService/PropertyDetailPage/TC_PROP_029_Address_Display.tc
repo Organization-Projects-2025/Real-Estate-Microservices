@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify property address is displayed</description>
+   <name>TC_PROP_029_Address_Display</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-029</testCaseGuid>
+</TestCaseEntity>

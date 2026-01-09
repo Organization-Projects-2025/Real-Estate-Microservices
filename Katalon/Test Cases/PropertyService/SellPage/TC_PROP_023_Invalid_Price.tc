@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify error when entering invalid price</description>
+   <name>TC_PROP_023_Invalid_Price</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-023</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify property detail page displays correctly</description>
+   <name>TC_PROP_024_Detail_Display</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-024</testCaseGuid>
+</TestCaseEntity>

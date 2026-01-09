@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify selecting different property types</description>
+   <name>TC_PROP_022_Property_Types</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-022</testCaseGuid>
+</TestCaseEntity>

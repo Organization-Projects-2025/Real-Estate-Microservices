@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify clicking View Details navigates to property detail</description>
+   <name>TC_PROP_009_View_Details_Navigation</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-009</testCaseGuid>
+</TestCaseEntity>

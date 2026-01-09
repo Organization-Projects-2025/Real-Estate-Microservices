@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify creating property with valid data</description>
+   <name>TC_PROP_017_Create_Property_Valid</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-017</testCaseGuid>
+</TestCaseEntity>

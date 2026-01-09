@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify search by city works</description>
+   <name>TC_PROP_008_Search_By_City</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-008</testCaseGuid>
+</TestCaseEntity>

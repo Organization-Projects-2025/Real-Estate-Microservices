@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify filter by property type works</description>
+   <name>TC_PROP_010_Filter_By_Property_Type</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-010</testCaseGuid>
+</TestCaseEntity>

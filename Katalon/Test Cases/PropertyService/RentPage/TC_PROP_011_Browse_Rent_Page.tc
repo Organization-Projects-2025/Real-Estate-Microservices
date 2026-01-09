@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify user can browse properties on Rent page</description>
+   <name>TC_PROP_011_Browse_Rent_Page</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-011</testCaseGuid>
+</TestCaseEntity>

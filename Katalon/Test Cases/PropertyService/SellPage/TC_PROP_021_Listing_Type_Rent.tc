@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify selecting Rent listing type</description>
+   <name>TC_PROP_021_Listing_Type_Rent</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>tc-prop-021</testCaseGuid>
+</TestCaseEntity>
