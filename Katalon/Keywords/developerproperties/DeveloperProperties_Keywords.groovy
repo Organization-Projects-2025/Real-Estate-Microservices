@@ -467,8 +467,6 @@ public class DeveloperProperties_Keywords {
      */
     @Keyword
     def deleteProperty(String propertyTitle) {
-        WebUI.delay(2) // Wait for UI to stabilize
-        
         // Try multiple XPath strategies to locate the delete button
         def xpaths = [
             // Strategy 1: Find h3 title, go up to card, find delete button
@@ -478,26 +476,14 @@ public class DeveloperProperties_Keywords {
             // Strategy 3: Find title, go up to parent div, find delete button
             "//*[contains(text(),'${propertyTitle}')]//ancestor::div[contains(@class,'card') or contains(@class,'property') or contains(@class,'item')]//button[contains(., 'Delete') or contains(@class,'delete')]",
             // Strategy 4: Simple approach - find any delete button near the title
-            "//*[contains(text(),'${propertyTitle}')]/following::button[contains(., 'Delete')][1]",
-            // Strategy 5: Find by exact text match then following button
-            "//*[text()='${propertyTitle}']/following::button[contains(., 'Delete')][1]",
-            // Strategy 6: Find h3, go to parent, then find delete button
-            "//h3[contains(text(),'${propertyTitle}')]//parent::*//button[contains(., 'Delete')]",
-            // Strategy 7: Find in any container div
-            "//div[.//h3[contains(text(),'${propertyTitle}')]]//button[contains(., 'Delete')]",
-            // Strategy 8: Broader search - any button with Delete near the title
-            "//h3[contains(text(),'${propertyTitle}')]//following-sibling::*//button[contains(., 'Delete')]"
+            "//*[contains(text(),'${propertyTitle}')]/following::button[contains(., 'Delete')][1]"
         ]
         
         def deleteBtn = null
-        def workingStrategy = -1
-        
-        for (int i = 0; i < xpaths.size(); i++) {
+        for (xpath in xpaths) {
             try {
-                deleteBtn = xpath('Delete property button', xpaths[i])
+                deleteBtn = xpath('Delete property button', xpath)
                 if (WebUI.verifyElementPresent(deleteBtn, 2, FailureHandling.OPTIONAL)) {
-                    workingStrategy = i + 1
-                    WebUI.comment("✓ Found delete button using strategy ${workingStrategy}")
                     break
                 }
             } catch (Exception e) {
@@ -507,11 +493,6 @@ public class DeveloperProperties_Keywords {
         }
         
         if (deleteBtn == null) {
-            // Debug: Show what's actually on the page
-            WebUI.comment("⚠️ DEBUG: Could not find delete button. Checking if property title exists...")
-            def titleExists = WebUI.verifyTextPresent(propertyTitle, false, FailureHandling.OPTIONAL)
-            WebUI.comment("⚠️ DEBUG: Property title '${propertyTitle}' present on page: ${titleExists}")
-            
             throw new Exception("Could not locate delete button for property: ${propertyTitle}")
         }
         

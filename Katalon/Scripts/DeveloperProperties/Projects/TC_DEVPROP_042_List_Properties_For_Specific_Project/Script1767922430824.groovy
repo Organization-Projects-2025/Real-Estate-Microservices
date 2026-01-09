@@ -89,11 +89,12 @@ try {
 	// Verify second project still exists
 	WebUI.verifyTextPresent(project2Name, false, FailureHandling.OPTIONAL)
 
-	WebUI.comment("✅ TC_DEVPROP_042 PASSED: Created 2 projects, navigated to New Projects, verified in My Projects, then deleted 1")
+	WebUI.comment("✅ TC_DEVPROP_011 PASSED: Created 2 projects, navigated to New Projects, verified in My Projects, then deleted 1")
 
 } catch (Exception e) {
-	WebUI.comment("❌ TC_DEVPROP_042 FAILED: " + e.getMessage())
+	WebUI.comment("❌ TC_DEVPROP_011 FAILED: " + e.getMessage())
 	throw e
 } finally {
 	WebUI.closeBrowser()
 }
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
