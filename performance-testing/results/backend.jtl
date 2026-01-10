@@ -1,0 +1,21 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1768028062609,321,GET Properties,200,OK,API Load Test 1-1,text,true,,191291,131,1,1,http://localhost:3000/api/properties,318,0,10
+1768028062932,285,GET Agents,200,OK,API Load Test 1-1,text,true,,8158,127,1,1,http://localhost:3000/api/agents,285,0,0
+1768028065563,315,GET Properties,200,OK,API Load Test 1-2,text,true,,191291,131,1,1,http://localhost:3000/api/properties,314,0,0
+1768028065878,273,GET Agents,200,OK,API Load Test 1-2,text,true,,8158,127,1,1,http://localhost:3000/api/agents,273,0,0
+1768028068563,281,GET Properties,200,OK,API Load Test 1-3,text,true,,191291,131,1,1,http://localhost:3000/api/properties,281,0,1
+1768028068845,258,GET Agents,200,OK,API Load Test 1-3,text,true,,8158,127,1,1,http://localhost:3000/api/agents,258,0,0
+1768028071568,274,GET Properties,200,OK,API Load Test 1-4,text,true,,191291,131,1,1,http://localhost:3000/api/properties,274,0,1
+1768028071843,289,GET Agents,200,OK,API Load Test 1-4,text,true,,8158,127,1,1,http://localhost:3000/api/agents,289,0,0
+1768028074562,283,GET Properties,200,OK,API Load Test 1-5,text,true,,191291,131,1,1,http://localhost:3000/api/properties,282,0,0
+1768028074845,263,GET Agents,200,OK,API Load Test 1-5,text,true,,8158,127,1,1,http://localhost:3000/api/agents,263,0,0
+1768028077561,282,GET Properties,200,OK,API Load Test 1-6,text,true,,191291,131,1,1,http://localhost:3000/api/properties,282,0,1
+1768028077843,273,GET Agents,200,OK,API Load Test 1-6,text,true,,8158,127,1,1,http://localhost:3000/api/agents,273,0,0
+1768028080561,269,GET Properties,200,OK,API Load Test 1-7,text,true,,191291,131,1,1,http://localhost:3000/api/properties,269,0,1
+1768028080831,268,GET Agents,200,OK,API Load Test 1-7,text,true,,8158,127,1,1,http://localhost:3000/api/agents,268,0,0
+1768028083566,285,GET Properties,200,OK,API Load Test 1-8,text,true,,191291,131,1,1,http://localhost:3000/api/properties,284,0,1
+1768028083851,264,GET Agents,200,OK,API Load Test 1-8,text,true,,8158,127,1,1,http://localhost:3000/api/agents,264,0,0
+1768028086561,293,GET Properties,200,OK,API Load Test 1-9,text,true,,191291,131,1,1,http://localhost:3000/api/properties,292,0,1
+1768028086854,252,GET Agents,200,OK,API Load Test 1-9,text,true,,8158,127,1,1,http://localhost:3000/api/agents,251,0,0
+1768028089568,295,GET Properties,200,OK,API Load Test 1-10,text,true,,191291,131,1,1,http://localhost:3000/api/properties,294,0,3
+1768028089863,327,GET Agents,200,OK,API Load Test 1-10,text,true,,8158,127,1,1,http://localhost:3000/api/agents,327,0,0
