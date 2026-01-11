@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description>Verify that login rejects invalid email format (no @ symbol)</description>
-   <name>TC_AUTH_017_Invalid_Email_Format</name>
+   <name>TC_AUTH_006_Login_Invalid_Email_Format</name>
    <tag>input-validation,login,authentication</tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>

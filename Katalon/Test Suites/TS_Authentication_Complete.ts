@@ -180,6 +180,13 @@
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
+      <guid>c7b3b3ea-42b0-4535-9146-829ca313f863-1</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Authentication/Login/TC_AUTH_006_Login_Invalid_Email_Format</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
       <guid>82f1025e-1f30-4a22-81f1-0d4b98c4e19c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
