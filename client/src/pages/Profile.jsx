@@ -163,7 +163,7 @@ const Profile = () => {
     return (
       <div className="bg-[#121212] text-[#fff] min-h-screen">
         <Navbar />
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 pt-24 pb-8">
           <div className="animate-pulse">
             <div className="h-8 bg-gray-700 rounded w-1/4 mb-8"></div>
             <div className="h-64 bg-gray-700 rounded mb-8"></div>
@@ -182,7 +182,7 @@ const Profile = () => {
   return (
     <div className="bg-[#121212] text-[#fff] min-h-screen">
       <Navbar />
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 pt-24 pb-8">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#703BF7] via-purple-500 to-[#fff] inline-block">
             Profile Settings

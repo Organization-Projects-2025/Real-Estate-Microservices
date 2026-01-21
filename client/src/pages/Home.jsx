@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import FeaturedProperties from '../components/FeaturedProperties';
 import { FaStar, FaUser } from 'react-icons/fa';
@@ -7,13 +8,16 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { getAllProperties } from '../services/propertyService';
 import { getRandomReviews } from '../services/reviewService';
+import { formatDate } from '../utils/dateUtils';
 
 const HomePage = () => {
   const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [reviews, setReviews] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,6 +42,18 @@ const HomePage = () => {
 
     fetchData();
   }, []);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchTerm.trim()) {
+      // Navigate to buy page with search query
+      navigate(`/buy?search=${encodeURIComponent(searchTerm.trim())}`);
+    }
+  };
+
+  const handleSearchInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
   const customerSuccessData = [
     { label: 'Properties Sold', value: '200+' },
@@ -109,19 +125,24 @@ const HomePage = () => {
           <p className="text-gray-400 text-lg">
             Enter your preferred area and discover your dream property today.
           </p>
-          <div className="flex items-center mt-4">
+          <form onSubmit={handleSearch} className="flex items-center mt-4">
             <div className="relative w-full max-w-md">
               <input
                 type="text"
+                value={searchTerm}
+                onChange={handleSearchInputChange}
                 placeholder="Enter an address, neighborhood, city, or ZIP code"
                 className="w-full px-4 py-3 pl-12 pr-4 rounded-l-full text-black outline-none border-none focus:ring-2 focus:ring-[#703BF7]"
               />
               <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 text-xl" />
             </div>
-            <button className="bg-[#703BF7] px-6 py-3 rounded-r-full hover:bg-[#5f2cc6] transition-colors">
+            <button 
+              type="submit"
+              className="bg-[#703BF7] px-6 py-3 rounded-r-full hover:bg-[#5f2cc6] transition-colors"
+            >
               Search
             </button>
-          </div>
+          </form>
         </div>
       </section>
 
@@ -221,7 +242,7 @@ const HomePage = () => {
                     </div>
                     <p className="text-gray-300 text-center italic mb-4">"{review.reviewText}"</p>
                     <div className="text-sm text-gray-400 text-right">
-                      {new Date(review.createdAt).toLocaleDateString()}
+                      {formatDate(review.createdAt)}
                     </div>
                   </div>
                 </div>

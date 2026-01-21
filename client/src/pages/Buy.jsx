@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import PropertyCard from '../components/PropertyCard';
 import Navbar from '../components/Navbar';
 import SearchBar from '../components/SearchBar';
@@ -6,6 +7,7 @@ import PropertyFilters, { FilterButton } from '../components/PropertyFilters';
 import PropertyDetail from './PropertyDetail';
 
 function Buy() {
+  const location = useLocation();
   const [properties, setProperties] = useState([]);
   const [filteredProperties, setFilteredProperties] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -16,6 +18,15 @@ function Buy() {
   const [showFilters, setShowFilters] = useState(false);
   const [activeFiltersCount, setActiveFiltersCount] = useState(0);
   const propertiesPerPage = 6;
+
+  // Extract search query from URL parameters
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const searchQuery = urlParams.get('search');
+    if (searchQuery) {
+      setSearchTerm(searchQuery);
+    }
+  }, [location.search]);
 
   useEffect(() => {
     fetch('http://localhost:3000/api/properties')
@@ -189,7 +200,7 @@ function Buy() {
           </h1>
           {/* Search Bar + Filter Button */}
           <div className="flex items-center gap-3 justify-center">
-            <SearchBar onSearch={handleSearch} />
+            <SearchBar onSearch={handleSearch} value={searchTerm} />
             <FilterButton
               onClick={() => setShowFilters(!showFilters)}
               isOpen={showFilters}

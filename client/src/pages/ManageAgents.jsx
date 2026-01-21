@@ -125,7 +125,7 @@ const ManageAgents = () => {
   return (
     <div className="bg-[#121212] text-white min-h-screen">
       <Navbar />
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 pt-24 pb-8">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold">Manage Agents</h1>
           <button

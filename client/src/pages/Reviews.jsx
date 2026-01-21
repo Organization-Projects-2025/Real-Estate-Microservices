@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaStar, FaUser, FaBuilding } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
+import { formatDate } from '../utils/dateUtils';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -122,7 +123,7 @@ const Reviews = () => {
                   </div>
                   <p className="text-gray-300 text-center italic mb-4">"{review.reviewText}"</p>
                   <div className="text-sm text-gray-400 text-right">
-                    {new Date(review.createdAt).toLocaleDateString()}
+                    {formatDate(review.createdAt)}
                   </div>
                 </div>
               </div>

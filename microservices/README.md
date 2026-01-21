@@ -15,29 +15,32 @@ This is the microservices backend for the Real Estate Platform, built with NestJ
                     │                     API Gateway                          │
                     │                  http://localhost:3000/api               │
                     └─────────────────────────────────────────────────────────┘
-                         │              │              │              │
-            ┌────────────┘    ┌────────┘    ┌────────┘    ┌────────┘
-            ▼                 ▼             ▼             ▼
-    ┌───────────────┐ ┌───────────────┐ ┌───────────────┐ ┌───────────────┐
-    │ Auth Service  │ │Property Service│ │ Review Service│ │ Agent Service │
-    │   Port 3001   │ │   Port 3002   │ │   Port 3003   │ │   Port 3004   │
-    └───────────────┘ └───────────────┘ └───────────────┘ └───────────────┘
-            │                 │              │              │
-            ▼                 ▼              ▼              ▼
-    ┌───────────────────────────────────────────────────────────────────────┐
-    │                         MongoDB Databases                              │
-    └───────────────────────────────────────────────────────────────────────┘
+                         │              │              │              │              │              │              │
+            ┌────────────┘    ┌────────┘    ┌────────┘    ┌────────┘    ┌────────┘    ┌────────┘    ┌────────┘
+            ▼                 ▼             ▼             ▼             ▼             ▼             ▼
+    ┌───────────────┐ ┌───────────────┐ ┌───────────────┐ ┌───────────────┐ ┌───────────────┐ ┌───────────────┐ ┌───────────────┐
+    │ Auth Service  │ │Property Service│ │ Review Service│ │ Agent Service │ │ Admin Service │ │DevProp Service│ │ Email Service │
+    │   Port 3001   │ │   Port 3002   │ │   Port 3003   │ │   Port 3004   │ │   Port 3005   │ │   Port 3006   │ │   Port 3007   │
+    └───────────────┘ └───────────────┘ └───────────────┘ └───────────────┘ └───────────────┘ └───────────────┘ └───────────────┘
+            │                 │              │              │              │              │              │
+            ▼                 ▼              ▼              ▼              ▼              ▼              ▼
+    ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+    │                                            MongoDB Databases                                                                  │
+    └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ## Microservices
 
-| Service          | Port | Description                           |
-|------------------|------|---------------------------------------|
-| API Gateway      | 3000 | Routes requests to microservices      |
-| Auth Service     | 3001 | User authentication & authorization   |
-| Property Service | 3002 | Property CRUD operations              |
-| Review Service   | 3003 | Review CRUD operations                |
-| Agent Service    | 3004 | Agent CRUD operations                 |
+| Service                    | Port | Description                                    |
+|----------------------------|------|------------------------------------------------|
+| API Gateway                | 3000 | Routes requests to microservices               |
+| Auth Service               | 3001 | User authentication & authorization            |
+| Property Service           | 3002 | Property CRUD operations                       |
+| Review Service             | 3003 | Review CRUD operations                         |
+| Agent Service              | 3004 | Agent CRUD operations                          |
+| Admin Service              | 3005 | Admin panel operations & user management       |
+| Developer Properties Service| 3006 | Developer projects & properties management     |
+| Email Service              | 3007 | Email notifications & communication            |
 
 ## Prerequisites
 
@@ -70,6 +73,15 @@ cd review-service && npm install
 
 # Install Agent Service
 cd agent-service && npm install
+
+# Install Admin Service
+cd admin-service && npm install
+
+# Install Developer Properties Service
+cd developerproperties-service && npm install
+
+# Install Email Service
+cd email-service && npm install
 ```
 
 ## Running the Services
@@ -94,7 +106,16 @@ cd review-service && npm run start:dev
 # Terminal 4 - Agent Service
 cd agent-service && npm run start:dev
 
-# Terminal 5 - API Gateway (run this AFTER all services are running)
+# Terminal 5 - Admin Service
+cd admin-service && npm run start:dev
+
+# Terminal 6 - Developer Properties Service
+cd developerproperties-service && npm run start:dev
+
+# Terminal 7 - Email Service
+cd email-service && npm run start:dev
+
+# Terminal 8 - API Gateway (run this AFTER all services are running)
 cd api-gateway && npm run start:dev
 ```
 
@@ -144,6 +165,39 @@ All requests go through the API Gateway at `http://localhost:3000/api`
 - `PUT /api/agents/:id` - Update agent
 - `DELETE /api/agents/:id` - Delete agent
 
+### Admin Endpoints
+- `GET /api/admin/users` - Get all users (admin only)
+- `PUT /api/admin/users/:id` - Update user (admin only)
+- `DELETE /api/admin/users/:id` - Delete user (admin only)
+- `GET /api/admin/properties` - Get all properties (admin only)
+- `PUT /api/admin/properties/:id` - Update property (admin only)
+- `DELETE /api/admin/properties/:id` - Delete property (admin only)
+- `GET /api/admin/reviews` - Get all reviews (admin only)
+- `DELETE /api/admin/reviews/:id` - Delete review (admin only)
+- `GET /api/admin/filters` - Get filter options (admin only)
+- `POST /api/admin/filters` - Create filter option (admin only)
+- `PUT /api/admin/filters/:id` - Update filter option (admin only)
+- `DELETE /api/admin/filters/:id` - Delete filter option (admin only)
+
+### Developer Properties Endpoints
+- `GET /api/developer-properties` - Get all developer properties
+- `GET /api/developer-properties/:id` - Get developer property by ID
+- `GET /api/developer-properties/project/:projectId` - Get properties by project
+- `GET /api/developer-properties/developer/:developerId` - Get properties by developer
+- `POST /api/developer-properties` - Create developer property
+- `PUT /api/developer-properties/:id` - Update developer property
+- `DELETE /api/developer-properties/:id` - Delete developer property
+- `GET /api/projects` - Get all projects
+- `GET /api/projects/:id` - Get project by ID
+- `POST /api/projects` - Create project
+- `PUT /api/projects/:id` - Update project
+- `DELETE /api/projects/:id` - Delete project
+
+### Email Endpoints
+- `POST /api/email/send` - Send email notification
+- `POST /api/email/contact` - Send contact form email
+- `POST /api/email/property-inquiry` - Send property inquiry email
+
 ## Environment Variables
 
 Each service has its own `.env` file. Update these with your configuration:
@@ -159,6 +213,12 @@ REVIEW_SERVICE_HOST=127.0.0.1
 REVIEW_SERVICE_PORT=3003
 AGENT_SERVICE_HOST=127.0.0.1
 AGENT_SERVICE_PORT=3004
+ADMIN_SERVICE_HOST=127.0.0.1
+ADMIN_SERVICE_PORT=3005
+DEVELOPERPROPERTIES_SERVICE_HOST=127.0.0.1
+DEVELOPERPROPERTIES_SERVICE_PORT=3006
+EMAIL_SERVICE_HOST=127.0.0.1
+EMAIL_SERVICE_PORT=3007
 ```
 
 ### Auth Service (.env)
@@ -185,6 +245,30 @@ MONGODB_URI=mongodb://localhost:27017/real-estate-review
 ```
 PORT=3004
 MONGODB_URI=mongodb://localhost:27017/real-estate-agent
+```
+
+### Admin Service (.env)
+```
+PORT=3005
+MONGODB_URI=mongodb://localhost:27017/real-estate-admin
+JWT_SECRET=your-super-secret-jwt-key
+```
+
+### Developer Properties Service (.env)
+```
+PORT=3006
+MONGODB_URI=mongodb://localhost:27017/real-estate-developerproperties
+```
+
+### Email Service (.env)
+```
+PORT=3007
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-password
+FROM_EMAIL=your-email@gmail.com
+FROM_NAME=Real Estate Platform
 ```
 
 ## Frontend Integration

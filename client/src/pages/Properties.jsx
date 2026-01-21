@@ -145,7 +145,7 @@ function Properties() {
             </span>
           </h1>
           <div className="flex items-center justify-center mt-6">
-            <SearchBar onSearch={handleSearch} />
+            <SearchBar onSearch={handleSearch} value={searchTerm} />
             <button className="ml-2 bg-gradient-to-r from-[#703BF7] to-[#5f2cc6] px-8 py-4 rounded-full font-semibold text-white hover:from-[#5f2cc6] hover:to-[#703BF7] transition-all duration-300 transform hover:scale-105">
               Search
             </button>

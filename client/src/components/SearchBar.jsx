@@ -1,7 +1,7 @@
 import React from 'react';
 import { FiSearch } from 'react-icons/fi';
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, value = '' }) => {
   const handleSearch = (e) => {
     if (typeof onSearch === 'function') {
       onSearch(e.target.value);
@@ -14,6 +14,7 @@ const SearchBar = ({ onSearch }) => {
     <div className="relative w-full max-w-lg">
       <input
         type="text"
+        value={value}
         placeholder="Search by address, type, price, or any feature..."
         onChange={handleSearch}
         className="w-full px-5 py-4 pl-14 pr-4 rounded-full text-black bg-white/90 backdrop-blur-sm outline-none border-none focus:ring-2 focus:ring-[#703BF7] transition-all duration-300 hover:shadow-lg hover:shadow-[#703BF7]/30"
