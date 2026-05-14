@@ -20,6 +20,7 @@ import {
 } from 'react-icons/fa';
 import FeaturedProperties from '../components/FeaturedProperties';
 import * as notificationService from '../services/notificationService';
+import { formatDMY } from '../utils/dateUtils';
 
 const PropertyDetail = () => {
   const { id } = useParams();
@@ -303,7 +304,7 @@ const PropertyDetail = () => {
                 <div className="flex flex-col items-center bg-white/5 rounded-xl p-4">
                   <FaCalendarAlt className="text-[#B983FF] text-2xl mb-2" />
                   <span className="font-bold text-lg">
-                    {buildDate || 'N/A'}
+                    {formatDMY(buildDate)}
                   </span>
                   <span className="text-sm text-gray-400">Build Date</span>
                 </div>

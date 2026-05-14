@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { FaTrash, FaStar } from 'react-icons/fa';
 import { getAllReviews, deleteReview } from '../../services/adminService';
+import { formatDate } from '../../utils/dateUtils';
 
 function Reviews() {
   const [reviews, setReviews] = useState([]);
@@ -142,7 +143,7 @@ function Reviews() {
                     </td>
                     <td className="px-6 py-4">
                       <div className="text-sm text-gray-300">
-                        {new Date(review.date).toLocaleDateString()}
+                        {formatDate(review.date)}
                       </div>
                     </td>
                     <td className="px-6 py-4">

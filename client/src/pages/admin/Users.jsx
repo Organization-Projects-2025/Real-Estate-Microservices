@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { getAllUsers, deactivateUser, updateUser, reactivateUser } from '../../services/adminService';
 import { FaEdit, FaUserSlash, FaUser, FaPhone, FaWhatsapp, FaEnvelope, FaCalendarAlt, FaUserCheck } from 'react-icons/fa';
+import { formatDate } from '../../utils/dateUtils';
 
 function Users() {
   const [users, setUsers] = useState([]);
@@ -107,14 +108,6 @@ function Users() {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    });
   };
 
   if (loading) {

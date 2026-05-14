@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import { useAuth } from '../context/AuthContext';
 import * as notificationService from '../services/notificationService';
+import { formatRelativeTime } from '../utils/dateUtils';
 
 function Notifications() {
   const { user } = useAuth();
@@ -54,24 +55,10 @@ function Notifications() {
     }
   };
 
-  const formatTime = (timestamp) => {
-    const now = new Date();
-    const notifTime = new Date(timestamp);
-    const diff = now - notifTime;
-    const minutes = Math.floor(diff / 60000);
-    const hours = Math.floor(diff / 3600000);
-    const days = Math.floor(diff / 86400000);
-
-    if (minutes < 60) return `${minutes}m ago`;
-    if (hours < 24) return `${hours}h ago`;
-    if (days < 7) return `${days}d ago`;
-    return notifTime.toLocaleDateString();
-  };
-
   return (
     <div className="bg-[#121212] text-white min-h-screen">
       <Navbar />
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 pt-24 pb-8">
         <div className="max-w-2xl mx-auto">
           <h1 className="text-4xl font-bold mb-8">Notifications</h1>
 
@@ -118,7 +105,7 @@ function Notifications() {
                         </span>
                       </div>
                       <p className="text-gray-300 mb-2">{notification.message}</p>
-                      <p className="text-xs text-gray-500">{formatTime(notification.createdAt)}</p>
+                      <p className="text-xs text-gray-500">{formatRelativeTime(notification.createdAt)}</p>
                     </div>
                     <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                       {!notification.read && (
