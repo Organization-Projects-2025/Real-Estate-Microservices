@@ -31,7 +31,8 @@
     "build:email": "cd email-service && npm run build",
     "build:admin": "cd admin-service && npm run build",
     "build:gateway": "cd api-gateway && npm run build",
-    "seed:admin": "cd auth-service && npm run seed:admin",
+    "seed:users": "cd auth-service && npm run seed:users",
+    "seed:admin": "cd auth-service && npm run seed:users",
     "seed:filters": "cd admin-service && npm run seed",
     "seed:all": "node seed-all.js"
   },

@@ -5,8 +5,10 @@ import { FilterController } from './filter.controller';
 import { FilterService } from './filter.service';
 import { Filter, FilterSchema } from './filter.model';
 import * as dotenv from 'dotenv';
+import * as path from 'path';
 
 dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), '../../.env'), override: true });
 
 @Module({
   imports: [

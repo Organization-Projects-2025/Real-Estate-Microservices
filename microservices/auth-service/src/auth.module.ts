@@ -8,8 +8,10 @@ import { AuthService } from './auth.service';
 import { User, UserSchema } from './user.model';
 import { NotificationModule } from './notifications/notification.module';
 import * as dotenv from 'dotenv';
+import * as path from 'path';
 
 dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), '../../.env'), override: true });
 
 @Module({
   imports: [

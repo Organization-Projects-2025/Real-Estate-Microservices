@@ -1,8 +1,10 @@
 /* eslint-disable prettier/prettier */
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const path = require('path');
 
 dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), '../../.env'), override: true });
 
 const filterSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },

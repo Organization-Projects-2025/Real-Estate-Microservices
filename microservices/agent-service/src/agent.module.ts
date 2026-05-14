@@ -5,8 +5,10 @@ import { AgentController } from './agent.controller';
 import { AgentService } from './agent.service';
 import { Agent, AgentSchema } from './agent.model';
 import * as dotenv from 'dotenv';
+import * as path from 'path';
 
 dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), '../../.env'), override: true });
 
 @Module({
   imports: [

@@ -1,0 +1,48 @@
+Real Estate Microservices Seed Info
+
+Seed command:
+cd microservices
+npm run seed:all
+
+Seeded data:
+- 20 users
+- 5 agents
+- 14 filters
+- 10 standard properties
+- 2 developers
+- 5 projects
+- 5 developer properties
+- 10 reviews
+- 3 notifications
+- 20 local images embedded in MongoDB as data:image base64 strings
+
+All seeded accounts use this password:
+Password123!
+
+Admin:
+- admin@realestate.com / Password123!
+
+Developers:
+- developer1@realestate.com / Password123!
+- developer2@realestate.com / Password123!
+
+Agents:
+- agent1@realestate.com / Password123!
+- agent2@realestate.com / Password123!
+- agent3@realestate.com / Password123!
+- agent4@realestate.com / Password123!
+- agent5@realestate.com / Password123!
+
+Regular users:
+- user1@realestate.com / Password123!
+- user2@realestate.com / Password123!
+- user3@realestate.com / Password123!
+- user4@realestate.com / Password123!
+- user5@realestate.com / Password123!
+- user6@realestate.com / Password123!
+- user7@realestate.com / Password123!
+- user8@realestate.com / Password123!
+- user9@realestate.com / Password123!
+- user10@realestate.com / Password123!
+- user11@realestate.com / Password123!
+- user12@realestate.com / Password123!

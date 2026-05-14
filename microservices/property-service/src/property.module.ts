@@ -5,8 +5,10 @@ import { PropertyController } from './property.controller';
 import { PropertyService } from './property.service';
 import { Property, PropertySchema } from './property.model';
 import * as dotenv from 'dotenv';
+import * as path from 'path';
 
 dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), '../../.env'), override: true });
 
 @Module({
   imports: [

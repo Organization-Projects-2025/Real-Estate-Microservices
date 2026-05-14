@@ -1,0 +1,212 @@
+{
+  "info": {
+    "_postman_id": "91491cc7-7ea0-4d08-89da-a930c6024e67",
+    "name": "Real Estate Microservices - E2E API Tests",
+    "description": "End-to-end API tests for auth, agents, properties, reviews, filters, and negative scenarios.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "01 Auth - Register Test User",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Postman\",\n  \"lastName\": \"Tester\",\n  \"email\": \"{{test_email}}\",\n  \"password\": \"{{test_password}}\",\n  \"role\": \"user\",\n  \"phoneNumber\": \"+201099999001\",\n  \"whatsapp\": \"+201099999001\",\n  \"contactEmail\": \"{{test_email}}\"\n}"
+        },
+        "url": { "raw": "{{base_url}}/auth/register", "host": ["{{base_url}}"], "path": ["auth", "register"] }
+      },
+      "event": [
+        { "listen": "prerequest", "script": { "type": "text/javascript", "exec": [
+        "pm.environment.set('test_email', `postman.user.${Date.now()}@realestate.com`);"
+      ] } },
+        { "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('register returns 201', () => pm.response.to.have.status(201));",
+        "const json = pm.response.json();",
+        "pm.test('register success body', () => pm.expect(json.status).to.eql('success'));",
+        "pm.environment.set('token', json.data.token);",
+        "pm.environment.set('user_id', json.data.user._id);"
+      ] } }
+      ]
+    },
+    {
+      "name": "02 Auth - Login Test User",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"email\": \"{{test_email}}\",\n  \"password\": \"{{test_password}}\"\n}" },
+        "url": { "raw": "{{base_url}}/auth/login", "host": ["{{base_url}}"], "path": ["auth", "login"] }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('login returns 200', () => pm.response.to.have.status(200));",
+        "const json = pm.response.json();",
+        "pm.test('login success body', () => pm.expect(json.status).to.eql('success'));",
+        "pm.environment.set('token', json.data.token);",
+        "pm.environment.set('user_id', json.data.user._id);"
+      ] } }]
+    },
+    {
+      "name": "03 Auth - Get Current User",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": { "raw": "{{base_url}}/auth/me", "host": ["{{base_url}}"], "path": ["auth", "me"] }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('get me returns 200', () => pm.response.to.have.status(200));",
+        "const json = pm.response.json();",
+        "pm.test('current user email matches', () => pm.expect(json.data.user.email).to.eql(pm.environment.get('test_email')));"
+      ] } }]
+    },
+    {
+      "name": "04 Agents - List Seeded Agents",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/agents", "host": ["{{base_url}}"], "path": ["agents"] }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('agents returns 200', () => pm.response.to.have.status(200));",
+        "const json = pm.response.json();",
+        "pm.test('has seeded agents', () => pm.expect(json.data.agents.length).to.be.above(0));",
+        "pm.environment.set('agent_id', json.data.agents[0]._id);"
+      ] } }]
+    },
+    {
+      "name": "05 Properties - Create Property",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Postman Test Apartment in New Cairo\",\n  \"description\": \"API-created Egypt test listing for the software testing project.\",\n  \"listingType\": \"sale\",\n  \"propertyType\": \"residential\",\n  \"subType\": \"Apartment\",\n  \"address\": {\n    \"street\": \"North 90 Street\",\n    \"city\": \"New Cairo\",\n    \"state\": \"Cairo Governorate\",\n    \"country\": \"Egypt\"\n  },\n  \"area\": {\n    \"sqft\": 1500,\n    \"sqm\": 139\n  },\n  \"price\": 4500000,\n  \"media\": [\"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2w==\"],\n  \"buildDate\": \"2023-01-01\",\n  \"user\": \"{{user_id}}\",\n  \"status\": \"active\",\n  \"features\": {\n    \"bedrooms\": 3,\n    \"bathrooms\": 2,\n    \"garage\": 1,\n    \"pool\": true,\n    \"yard\": false,\n    \"pets\": true,\n    \"furnished\": \"partly\",\n    \"airConditioning\": true,\n    \"internet\": true,\n    \"electricity\": true,\n    \"water\": true,\n    \"gas\": true,\n    \"wifi\": true,\n    \"security\": true\n  }\n}"
+        },
+        "url": { "raw": "{{base_url}}/properties", "host": ["{{base_url}}"], "path": ["properties"] }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('create property returns 201', () => pm.response.to.have.status(201));",
+        "const json = pm.response.json();",
+        "pm.test('created property success', () => pm.expect(json.status).to.eql('success'));",
+        "pm.environment.set('property_id', json.data.property._id);"
+      ] } }]
+    },
+    {
+      "name": "06 Properties - Get Created Property",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/properties/{{property_id}}", "host": ["{{base_url}}"], "path": ["properties", "{{property_id}}"] }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('get property returns 200', () => pm.response.to.have.status(200));",
+        "const json = pm.response.json();",
+        "pm.test('property id matches', () => pm.expect(json.data.property._id).to.eql(pm.environment.get('property_id')));"
+      ] } }]
+    },
+    {
+      "name": "07 Properties - Update Created Property",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"price\": 4700000,\n  \"status\": \"active\"\n}" },
+        "url": { "raw": "{{base_url}}/properties/{{property_id}}", "host": ["{{base_url}}"], "path": ["properties", "{{property_id}}"] }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('update property returns 200', () => pm.response.to.have.status(200));",
+        "const json = pm.response.json();",
+        "pm.test('price updated', () => pm.expect(json.data.property.price).to.eql(4700000));"
+      ] } }]
+    },
+    {
+      "name": "08 Reviews - Create Review For Agent",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"agent\": \"{{agent_id}}\",\n  \"reviewerName\": \"Postman Tester\",\n  \"rating\": 5,\n  \"reviewText\": \"Helpful agent and fast follow-up.\",\n  \"status\": \"active\"\n}" },
+        "url": { "raw": "{{base_url}}/reviews", "host": ["{{base_url}}"], "path": ["reviews"] }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('create review returns 201', () => pm.response.to.have.status(201));",
+        "const json = pm.response.json();",
+        "pm.test('review success', () => pm.expect(json.status).to.eql('success'));",
+        "pm.environment.set('review_id', json.data.review._id);"
+      ] } }]
+    },
+    {
+      "name": "09 Reviews - Get Created Review",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/reviews/{{review_id}}", "host": ["{{base_url}}"], "path": ["reviews", "{{review_id}}"] }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('get created review returns 200', () => pm.response.to.have.status(200));",
+        "const json = pm.response.json();",
+        "pm.test('review id matches', () => pm.expect(json.data.review._id).to.eql(pm.environment.get('review_id')));",
+        "pm.test('review agent id matches', () => {",
+        "  const agent = json.data.review.agent;",
+        "  const actualAgentId = typeof agent === 'string' ? agent : agent._id;",
+        "  pm.expect(actualAgentId).to.eql(pm.environment.get('agent_id'));",
+        "});"
+      ] } }]
+    },
+    {
+      "name": "10 Filters - List Filters",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/filters", "host": ["{{base_url}}"], "path": ["filters"] }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('filters returns 200', () => pm.response.to.have.status(200));",
+        "const json = pm.response.json();",
+        "pm.test('has filters', () => pm.expect(json.length).to.be.above(0));"
+      ] } }]
+    },
+    {
+      "name": "11 Negative - Login Wrong Password",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"email\": \"{{admin_email}}\",\n  \"password\": \"WrongPassword123!\"\n}" },
+        "url": { "raw": "{{base_url}}/auth/login", "host": ["{{base_url}}"], "path": ["auth", "login"] }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('wrong login is rejected', () => pm.expect(pm.response.code).to.be.oneOf([400, 401]));",
+        "const json = pm.response.json();",
+        "pm.test('error body returned', () => pm.expect(json.status).to.eql('error'));"
+      ] } }]
+    },
+    {
+      "name": "12 Negative - Create Property Missing Required Fields",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"title\": \"Invalid Property\"\n}" },
+        "url": { "raw": "{{base_url}}/properties", "host": ["{{base_url}}"], "path": ["properties"] }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('invalid property is rejected', () => pm.expect(pm.response.code).to.be.oneOf([400, 500]));",
+        "const json = pm.response.json();",
+        "pm.test('error status returned', () => pm.expect(json.status).to.eql('error'));"
+      ] } }]
+    },
+    {
+      "name": "13 Cleanup - Delete Created Review",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "{{base_url}}/reviews/{{review_id}}", "host": ["{{base_url}}"], "path": ["reviews", "{{review_id}}"] }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('delete review returns 200', () => pm.response.to.have.status(200));"
+      ] } }]
+    },
+    {
+      "name": "14 Cleanup - Delete Created Property",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "{{base_url}}/properties/{{property_id}}", "host": ["{{base_url}}"], "path": ["properties", "{{property_id}}"] }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('delete property returns 200', () => pm.response.to.have.status(200));"
+      ] } }]
+    }
+  ]
+}

@@ -2,8 +2,10 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const dotenv = require('dotenv');
+const path = require('path');
 
 dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), '../../.env'), override: true });
 
 const userSchema = new mongoose.Schema({
   firstName: { type: String, required: true },

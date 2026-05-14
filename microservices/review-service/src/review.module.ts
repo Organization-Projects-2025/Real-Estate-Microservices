@@ -5,8 +5,10 @@ import { ReviewController } from './review.controller';
 import { ReviewService } from './review.service';
 import { Review, ReviewSchema } from './review.model';
 import * as dotenv from 'dotenv';
+import * as path from 'path';
 
 dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), '../../.env'), override: true });
 
 @Module({
   imports: [

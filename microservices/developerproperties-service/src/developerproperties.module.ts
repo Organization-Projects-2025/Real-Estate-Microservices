@@ -7,8 +7,10 @@ import { DeveloperProperty, DeveloperPropertySchema } from './developerproperty.
 import { Developer, DeveloperSchema } from './developer.model';
 import { Project, ProjectSchema } from './project.model';
 import * as dotenv from 'dotenv';
+import * as path from 'path';
 
 dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), '../../.env'), override: true });
 
 @Module({
   imports: [
