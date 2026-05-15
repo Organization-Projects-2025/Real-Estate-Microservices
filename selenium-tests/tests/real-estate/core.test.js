@@ -10,7 +10,7 @@ const EMAIL = process.env.SELENIUM_EMAIL || 'admin@realestate.com';
 const PASSWORD = process.env.SELENIUM_PASSWORD || 'Password123!';
 const HEADLESS = process.env.HEADLESS !== 'false';
 const screenshotsDir = path.join(__dirname, '..', 'screenshots');
-const LONG_WAIT = 60000;
+const LONG_WAIT = 10000;
 
 function buildDriver() {
   const options = new chrome.Options();

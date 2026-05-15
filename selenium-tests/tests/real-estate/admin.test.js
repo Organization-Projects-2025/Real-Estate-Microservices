@@ -42,9 +42,7 @@ async function login(driver) {
   await driver.wait(async () => {
     const url = await driver.getCurrentUrl();
     if (!url.includes('/login')) return true;
-    const userId = await driver.executeScript(() =>
-      localStorage.getItem('userId'),
-    );
+    const userId = await driver.executeScript(() => localStorage.getItem('userId'));
     return !!userId;
   }, LONG_WAIT);
 }
@@ -58,10 +56,7 @@ async function openUserMenu(driver) {
       const text = (await button.getText()).trim();
       if (!displayed || !enabled || !text) continue;
       if (/toggle menu/i.test(text) || /search/i.test(text)) continue;
-      await driver.executeScript(
-        'arguments[0].scrollIntoView({block: "center"});',
-        button,
-      );
+      await driver.executeScript('arguments[0].scrollIntoView({block: "center"});', button);
       await driver.executeScript('arguments[0].click();', button);
       return true;
     } catch (err) {

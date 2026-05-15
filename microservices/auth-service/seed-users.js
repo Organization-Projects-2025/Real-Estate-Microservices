@@ -35,9 +35,8 @@ const userSchema = new mongoose.Schema(
 
 const User = mongoose.model('User', userSchema);
 
-// All users use the same strong password (set here so tests and docs stay in sync)
-const COMMON_PASSWORD =
-  process.env.SEED_COMMON_PASSWORD || 'Str0ngP@ssw0rd!2026';
+// All users use the same password: Password123!
+const COMMON_PASSWORD = 'Password123!';
 
 const seedUsers = [
   // Admin User
@@ -253,7 +252,7 @@ async function seedDatabase() {
       });
     }
 
-    console.log(`\n🔑 All users have the same password: ${COMMON_PASSWORD}`);
+    console.log('\n🔑 All users have the same password: Password123!');
     console.log('\n✅ User seeding completed successfully!');
     process.exit(0);
   } catch (error) {

@@ -42,9 +42,7 @@ describe('Agent (converted)', function () {
 
   afterEach(async function () {
     if (this.currentTest.state === 'failed') {
-      const safeName = this.currentTest.title
-        .replace(/[^a-z0-9]+/gi, '-')
-        .toLowerCase();
+      const safeName = this.currentTest.title.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
       await takeScreenshot(driver, safeName);
     }
     await driver.quit();
@@ -63,9 +61,7 @@ describe('Agent (converted)', function () {
       return /Showing \d+ of \d+ agents/i.test(text);
     }, LONG_WAIT);
 
-    const search = await driver.findElement(
-      By.css('input[placeholder*="Search by name"]'),
-    );
+    const search = await driver.findElement(By.css('input[placeholder*="Search by name"]'));
     await search.clear();
     await search.sendKeys('NoSuchAgent123');
     await driver.findElement(By.css('button[type="submit"]')).click();
@@ -75,25 +71,17 @@ describe('Agent (converted)', function () {
       return /No agents found matching your criteria/i.test(text);
     }, LONG_WAIT);
 
-    await driver
-      .findElement(By.css('input[placeholder*="Search by name"]'))
-      .clear();
-    const showingTextBefore = await driver
-      .findElement(By.xpath("//p[contains(., 'Showing')]"))
-      .getText();
+    await driver.findElement(By.css('input[placeholder*="Search by name"]')).clear();
+    const showingTextBefore = await driver.findElement(By.xpath("//p[contains(., 'Showing')]")).getText();
     const match = showingTextBefore.match(/Showing\s+(\d+)\s+of\s+(\d+)/i);
     const total = match ? parseInt(match[2], 10) : null;
 
-    const select = await driver.findElement(
-      By.css('select[name="minExperience"]'),
-    );
+    const select = await driver.findElement(By.css('select[name="minExperience"]'));
     await select.sendKeys('5');
     await driver.findElement(By.css('button[type="submit"]')).click();
 
     await driver.wait(async () => {
-      const text = await driver
-        .findElement(By.xpath("//p[contains(., 'Showing')]"))
-        .getText();
+      const text = await driver.findElement(By.xpath("//p[contains(., 'Showing')]")).getText();
       const m = text.match(/Showing\s+(\d+)\s+of\s+(\d+)/i);
       if (!m) return false;
       const shownNow = parseInt(m[1], 10);
