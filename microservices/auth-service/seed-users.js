@@ -5,28 +5,39 @@ const dotenv = require('dotenv');
 const path = require('path');
 
 dotenv.config();
-dotenv.config({ path: path.resolve(process.cwd(), '../../.env'), override: true });
+dotenv.config({
+  path: path.resolve(process.cwd(), '../../.env'),
+  override: true,
+});
 
-const userSchema = new mongoose.Schema({
-  firstName: { type: String, required: true },
-  lastName: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-  authType: { type: String, default: 'local' },
-  profilePicture: { type: String, default: '' },
-  role: { type: String, enum: ['user', 'agent', 'admin', 'developer'], default: 'user' },
-  phoneNumber: String,
-  whatsapp: String,
-  contactEmail: String,
-  active: { type: Boolean, default: true },
-  savedProperties: { type: [String], default: [] },
-  isEmailVerified: { type: Boolean, default: true },
-}, { timestamps: true });
+const userSchema = new mongoose.Schema(
+  {
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+    authType: { type: String, default: 'local' },
+    profilePicture: { type: String, default: '' },
+    role: {
+      type: String,
+      enum: ['user', 'agent', 'admin', 'developer'],
+      default: 'user',
+    },
+    phoneNumber: String,
+    whatsapp: String,
+    contactEmail: String,
+    active: { type: Boolean, default: true },
+    savedProperties: { type: [String], default: [] },
+    isEmailVerified: { type: Boolean, default: true },
+  },
+  { timestamps: true },
+);
 
 const User = mongoose.model('User', userSchema);
 
-// All users use the same password: Password123!
-const COMMON_PASSWORD = 'Password123!';
+// All users use the same strong password (set here so tests and docs stay in sync)
+const COMMON_PASSWORD =
+  process.env.SEED_COMMON_PASSWORD || 'Str0ngP@ssw0rd!2026';
 
 const seedUsers = [
   // Admin User
@@ -38,7 +49,7 @@ const seedUsers = [
     phoneNumber: '+971501234567',
     active: true,
   },
-  
+
   // Developer Users
   {
     firstName: 'Developer',
@@ -56,7 +67,7 @@ const seedUsers = [
     phoneNumber: '+971503456789',
     active: true,
   },
-  
+
   // Agent Users
   {
     firstName: 'Agent',
@@ -98,7 +109,7 @@ const seedUsers = [
     phoneNumber: '+971508901234',
     active: true,
   },
-  
+
   // Regular Users (user1 through user12)
   {
     firstName: 'User',
@@ -200,8 +211,9 @@ const seedUsers = [
 
 async function seedDatabase() {
   try {
-    const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/real-estate-auth';
-    
+    const mongoUri =
+      process.env.MONGODB_URI || 'mongodb://localhost:27017/real-estate-auth';
+
     console.log(`Connecting to MongoDB at ${mongoUri}...`);
     await mongoose.connect(mongoUri);
     console.log('✓ Connected to MongoDB');
@@ -216,7 +228,7 @@ async function seedDatabase() {
     console.log(`✓ Cleared ${deletedCount.deletedCount} existing users`);
 
     // Add hashed password to all users
-    const usersWithPassword = seedUsers.map(user => ({
+    const usersWithPassword = seedUsers.map((user) => ({
       ...user,
       password: hashedPassword,
       authType: 'local',
@@ -232,7 +244,7 @@ async function seedDatabase() {
     // List inserted users by role
     console.log('\n📋 Users by Role:');
     const roles = ['admin', 'developer', 'agent', 'user'];
-    
+
     for (const role of roles) {
       const users = await User.find({ role }).sort({ email: 1 });
       console.log(`\n${role.toUpperCase()}S (${users.length}):`);
@@ -241,7 +253,7 @@ async function seedDatabase() {
       });
     }
 
-    console.log('\n🔑 All users have the same password: Password123!');
+    console.log(`\n🔑 All users have the same password: ${COMMON_PASSWORD}`);
     console.log('\n✅ User seeding completed successfully!');
     process.exit(0);
   } catch (error) {
