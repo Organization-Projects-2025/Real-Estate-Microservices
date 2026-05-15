@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../services/api_service.dart';
+import '../services/firebase_service.dart';
 
 const Color kPurple = Color(0xFF703BF7);
 const Color kBg = Color(0xFF121212);
@@ -51,29 +51,34 @@ class _SignupPageState extends State<SignupPage> {
     });
 
     try {
-      final result = await ApiService.register(
-        firstName: firstc.text.trim(),
-        lastName: lastc.text.trim(),
-        email: emailc.text.trim(),
-        password: passc.text,
-        role: role,
+      final result = await FirebaseService.signUp(
+        emailc.text.trim(),
+        passc.text,
       );
 
       if (!mounted) return;
 
-      if (result['status'] == 'success') {
+      if (result != null && result.user != null) {
+        // Save user data to Firestore
+        await FirebaseService.saveUser(
+          result.user!.uid,
+          email: emailc.text.trim(),
+          firstName: firstc.text.trim(),
+          lastName: lastc.text.trim(),
+        );
+        
         widget.onAuthChanged?.call();
         Navigator.pop(context); // back to HomePage
       } else {
         setState(() {
-          message = result['message'] as String? ?? 'Registration failed';
+          message = 'Registration failed';
           isSuccess = false;
         });
       }
     } catch (e) {
       if (mounted) {
         setState(() {
-          message = 'Could not connect to server. Is it running?';
+          message = 'Error: ${e.toString()}';
           isSuccess = false;
         });
       }

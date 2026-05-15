@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../services/api_service.dart';
+import '../services/firebase_service.dart';
 import 'signup_page.dart';
 
 const Color kPurple = Color(0xFF703BF7);
@@ -42,21 +42,21 @@ class _LoginPageState extends State<LoginPage> {
     });
 
     try {
-      final result = await ApiService.login(emailc.text.trim(), passc.text);
+      final result = await FirebaseService.signIn(emailc.text.trim(), passc.text);
 
       if (!mounted) return;
 
-      if (result['status'] == 'success') {
+      if (result != null) {
         widget.onAuthChanged?.call();
         Navigator.pop(context); // go back to HomePage
       } else {
         setState(() {
-          error = result['message'] as String? ?? 'Login failed';
+          error = 'Login failed. Please check your credentials.';
         });
       }
     } catch (e) {
       if (mounted) {
-        setState(() => error = 'Could not connect to server. Is it running?');
+        setState(() => error = 'Error: ${e.toString()}');
       }
     } finally {
       if (mounted) setState(() => loading = false);
