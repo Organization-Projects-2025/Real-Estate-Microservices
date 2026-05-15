@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../data/mock_data.dart';
+import '../services/firebase_service.dart';
 
 class AgentPage extends StatefulWidget {
   const AgentPage({super.key});
@@ -15,276 +15,333 @@ class _AgentPageState extends State<AgentPage> {
   static const Color kCard = Color(0xFF1A1A1A);
 
   int index = 0;
+  bool loading = true;
+  List<Map<String, dynamic>> agents = [];
 
-  AgentItem get agent => mockAgents[index];
+  @override
+  void initState() {
+    super.initState();
+    _load();
+  }
+
+  Future<void> _load() async {
+    setState(() => loading = true);
+    try {
+      final data = await FirebaseService.getAgents();
+      if (!mounted) return;
+      setState(() {
+        agents = data;
+        if (index >= agents.length) index = 0;
+        loading = false;
+      });
+    } catch (_) {
+      if (mounted) setState(() => loading = false);
+    }
+  }
+
+  Map<String, dynamic> get agent {
+    if (agents.isEmpty) return const {};
+    return agents[index % agents.length];
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBg,
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            // Agent profile header
-            Container(
-              padding: const EdgeInsets.fromLTRB(20, 28, 20, 24),
-              decoration: const BoxDecoration(color: Color(0xFF1A1A1A)),
-              child: Column(
-                children: [
-                  // Avatar
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(60),
-                    child: Image.network(
-                      agent.image,
-                      width: 100,
-                      height: 100,
-                      fit: BoxFit.cover,
-                      errorBuilder: (_, __, ___) => Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          color: kPurple.withValues(alpha: 0.3),
-                          borderRadius: BorderRadius.circular(60),
+      body: RefreshIndicator(
+        onRefresh: _load,
+        color: kPurple,
+        child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                padding: const EdgeInsets.fromLTRB(20, 28, 20, 24),
+                decoration: const BoxDecoration(color: Color(0xFF1A1A1A)),
+                child: loading
+                    ? const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 60),
+                        child: Center(
+                          child: CircularProgressIndicator(color: kPurple),
                         ),
-                        child: const Icon(
-                          Icons.person,
-                          color: Colors.white,
-                          size: 48,
+                      )
+                    : agents.isEmpty
+                    ? const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 60),
+                        child: Text(
+                          'No agents available yet.',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.white54),
                         ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 14),
-                  Text(
-                    agent.name,
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    agent.role,
-                    style: const TextStyle(color: Colors.white54, fontSize: 14),
-                  ),
-                  const SizedBox(height: 12),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Icon(
-                        Icons.star,
-                        color: Color(0xFFFFD700),
-                        size: 20,
-                      ),
-                      const SizedBox(width: 4),
-                      Text(
-                        agent.rating.toString(),
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(width: 16),
-                      const Icon(
-                        Icons.handshake_outlined,
-                        color: kPurple,
-                        size: 20,
-                      ),
-                      const SizedBox(width: 4),
-                      Text(
-                        '${agent.deals} deals',
-                        style: const TextStyle(color: Colors.white70),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 16),
-
-                  // Contact buttons
-                  Row(
-                    children: [
-                      Expanded(
-                        child: ElevatedButton.icon(
-                          onPressed: () {},
-                          icon: const Icon(Icons.phone, size: 18),
-                          label: const Text('Call'),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: kPurple,
-                            foregroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
+                      )
+                    : Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(60),
+                            child: Image.network(
+                              (agent['image'] ?? '').toString(),
+                              width: 100,
+                              height: 100,
+                              fit: BoxFit.cover,
+                              errorBuilder: (_, __, ___) => Container(
+                                width: 100,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                  color: kPurple.withValues(alpha: 0.3),
+                                  borderRadius: BorderRadius.circular(60),
+                                ),
+                                child: const Icon(
+                                  Icons.person,
+                                  color: Colors.white,
+                                  size: 48,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: OutlinedButton.icon(
-                          onPressed: () {},
-                          icon: const Icon(Icons.email_outlined, size: 18),
-                          label: const Text('Email'),
-                          style: OutlinedButton.styleFrom(
-                            foregroundColor: Colors.white,
-                            side: const BorderSide(color: kPurple),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
+                          const SizedBox(height: 14),
+                          Text(
+                            (agent['name'] ?? '').toString(),
+                            style: const TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
                             ),
                           ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-
-            // Stats row
-            Container(
-              color: kBg,
-              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-              child: Row(
-                children: [
-                  _StatBox(label: 'Rating', value: agent.rating.toString()),
-                  _StatBox(label: 'Deals', value: '${agent.deals}'),
-                  _StatBox(label: 'Experience', value: '5+ yrs'),
-                ],
-              ),
-            ),
-
-            // Navigation between agents
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Browse Agents',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      IconButton(
-                        onPressed: () => setState(() {
-                          index--;
-                          if (index < 0) index = mockAgents.length - 1;
-                        }),
-                        icon: const Icon(Icons.arrow_back_ios, size: 18),
-                        color: Colors.white70,
-                      ),
-                      Text(
-                        '${index + 1}/${mockAgents.length}',
-                        style: const TextStyle(color: Colors.white54),
-                      ),
-                      IconButton(
-                        onPressed: () => setState(() {
-                          index = (index + 1) % mockAgents.length;
-                        }),
-                        icon: const Icon(Icons.arrow_forward_ios, size: 18),
-                        color: Colors.white70,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-
-            // All agents list
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
-              child: Column(
-                children: mockAgents
-                    .asMap()
-                    .entries
-                    .map(
-                      (e) => GestureDetector(
-                        onTap: () => setState(() => index = e.key),
-                        child: Container(
-                          margin: const EdgeInsets.only(bottom: 10),
-                          padding: const EdgeInsets.all(14),
-                          decoration: BoxDecoration(
-                            color: e.key == index
-                                ? kPurple.withValues(alpha: 0.15)
-                                : kCard,
-                            borderRadius: BorderRadius.circular(14),
-                            border: Border.all(
-                              color: e.key == index
-                                  ? kPurple.withValues(alpha: 0.5)
-                                  : Colors.white10,
+                          const SizedBox(height: 4),
+                          Text(
+                            (agent['role'] ?? '').toString(),
+                            style: const TextStyle(
+                              color: Colors.white54,
+                              fontSize: 14,
                             ),
                           ),
-                          child: Row(
+                          const SizedBox(height: 12),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(30),
-                                child: Image.network(
-                                  e.value.image,
-                                  width: 52,
-                                  height: 52,
-                                  fit: BoxFit.cover,
-                                  errorBuilder: (_, __, ___) => Container(
-                                    width: 52,
-                                    height: 52,
-                                    color: kPurple.withValues(alpha: 0.3),
-                                    child: const Icon(
-                                      Icons.person,
-                                      color: Colors.white,
-                                    ),
-                                  ),
+                              const Icon(
+                                Icons.star,
+                                color: Color(0xFFFFD700),
+                                size: 20,
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                (agent['rating'] ?? 0).toString(),
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              const SizedBox(width: 14),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      e.value.name,
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      e.value.role,
-                                      style: const TextStyle(
-                                        color: Colors.white54,
-                                        fontSize: 12,
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                              const SizedBox(width: 16),
+                              const Icon(
+                                Icons.handshake_outlined,
+                                color: kPurple,
+                                size: 20,
                               ),
-                              Row(
-                                children: [
-                                  const Icon(
-                                    Icons.star,
-                                    color: Color(0xFFFFD700),
-                                    size: 16,
-                                  ),
-                                  const SizedBox(width: 4),
-                                  Text(
-                                    e.value.rating.toString(),
-                                    style: const TextStyle(
-                                      color: Colors.white70,
-                                      fontSize: 13,
-                                    ),
-                                  ),
-                                ],
+                              const SizedBox(width: 4),
+                              Text(
+                                '${agent['deals'] ?? 0} deals',
+                                style: const TextStyle(color: Colors.white70),
                               ),
                             ],
                           ),
+                          const SizedBox(height: 16),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: ElevatedButton.icon(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.phone, size: 18),
+                                  label: const Text('Call'),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: kPurple,
+                                    foregroundColor: Colors.white,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 10),
+                              Expanded(
+                                child: OutlinedButton.icon(
+                                  onPressed: () {},
+                                  icon: const Icon(
+                                    Icons.email_outlined,
+                                    size: 18,
+                                  ),
+                                  label: const Text('Email'),
+                                  style: OutlinedButton.styleFrom(
+                                    foregroundColor: Colors.white,
+                                    side: const BorderSide(color: kPurple),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+              ),
+              if (!loading && agents.isNotEmpty) ...[
+                Container(
+                  color: kBg,
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 16,
+                    horizontal: 20,
+                  ),
+                  child: Row(
+                    children: [
+                      _StatBox(
+                        label: 'Rating',
+                        value: (agent['rating'] ?? 0).toString(),
+                      ),
+                      _StatBox(label: 'Deals', value: '${agent['deals'] ?? 0}'),
+                      const _StatBox(label: 'Experience', value: '5+ yrs'),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 8,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Browse Agents',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
                         ),
                       ),
-                    )
-                    .toList(),
-              ),
-            ),
-          ],
+                      Row(
+                        children: [
+                          IconButton(
+                            onPressed: () => setState(() {
+                              index--;
+                              if (index < 0) index = agents.length - 1;
+                            }),
+                            icon: const Icon(Icons.arrow_back_ios, size: 18),
+                            color: Colors.white70,
+                          ),
+                          Text(
+                            '${index + 1}/${agents.length}',
+                            style: const TextStyle(color: Colors.white54),
+                          ),
+                          IconButton(
+                            onPressed: () => setState(() {
+                              index = (index + 1) % agents.length;
+                            }),
+                            icon: const Icon(Icons.arrow_forward_ios, size: 18),
+                            color: Colors.white70,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+                  child: Column(
+                    children: agents
+                        .asMap()
+                        .entries
+                        .map(
+                          (entry) => GestureDetector(
+                            onTap: () => setState(() => index = entry.key),
+                            child: Container(
+                              margin: const EdgeInsets.only(bottom: 10),
+                              padding: const EdgeInsets.all(14),
+                              decoration: BoxDecoration(
+                                color: entry.key == index
+                                    ? kPurple.withValues(alpha: 0.15)
+                                    : kCard,
+                                borderRadius: BorderRadius.circular(14),
+                                border: Border.all(
+                                  color: entry.key == index
+                                      ? kPurple.withValues(alpha: 0.5)
+                                      : Colors.white10,
+                                ),
+                              ),
+                              child: Row(
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(30),
+                                    child: Image.network(
+                                      (entry.value['image'] ?? '').toString(),
+                                      width: 52,
+                                      height: 52,
+                                      fit: BoxFit.cover,
+                                      errorBuilder: (_, __, ___) => Container(
+                                        width: 52,
+                                        height: 52,
+                                        color: kPurple.withValues(alpha: 0.3),
+                                        child: const Icon(
+                                          Icons.person,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 14),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          (entry.value['name'] ?? '')
+                                              .toString(),
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        Text(
+                                          (entry.value['role'] ?? '')
+                                              .toString(),
+                                          style: const TextStyle(
+                                            color: Colors.white54,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Row(
+                                    children: [
+                                      const Icon(
+                                        Icons.star,
+                                        color: Color(0xFFFFD700),
+                                        size: 16,
+                                      ),
+                                      const SizedBox(width: 4),
+                                      Text(
+                                        (entry.value['rating'] ?? 0).toString(),
+                                        style: const TextStyle(
+                                          color: Colors.white70,
+                                          fontSize: 13,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ),
+              ],
+            ],
+          ),
         ),
       ),
     );

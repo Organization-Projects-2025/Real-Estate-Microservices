@@ -1,17 +1,22 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+import 'package:flutter/foundation.dart';
 
-/// Central API service — all calls go through here.
-/// Base URL points at the running NestJS API gateway.
+import 'firebase_service.dart';
+
 class ApiService {
-  static const String baseUrl = 'http://localhost:3000/api';
-
-  // ── Auth token (set after login/register) ──────────────────────────────────
   static String? _token;
   static Map<String, dynamic>? _currentUser;
 
+  static final List<Map<String, dynamic>> _localCreatedProperties = [];
+
   static String? get token => _token;
   static Map<String, dynamic>? get currentUser => _currentUser;
+  static bool get isLoggedIn {
+    try {
+      return FirebaseService.getCurrentUser() != null || _token != null;
+    } catch (_) {
+      return _token != null;
+    }
+  }
 
   static void setAuth(String token, Map<String, dynamic> user) {
     _token = token;
@@ -23,33 +28,98 @@ class ApiService {
     _currentUser = null;
   }
 
-  static bool get isLoggedIn => _token != null;
+  static Map<String, dynamic> _asApiProperty(
+    Map<String, dynamic> source, {
+    String? fallbackListingType,
+  }) {
+    final address = source['address'] as Map? ?? {};
+    final features = source['features'] as Map? ?? {};
+    final area = source['area'] as Map? ?? {};
+    final media = source['media'] as List? ?? const [];
+    final location = (source['location'] ?? '').toString();
+    final listingType = (source['listingType'] ?? fallbackListingType ?? 'sale')
+        .toString();
 
-  // ── Shared headers ─────────────────────────────────────────────────────────
-  static Map<String, String> get _headers => {
-        'Content-Type': 'application/json',
-        if (_token != null) 'Authorization': 'Bearer $_token',
-      };
+    final city = address['city']?.toString().isNotEmpty == true
+        ? address['city'].toString()
+        : (location.contains(',') ? location.split(',').first : location);
+    final state = address['state']?.toString().isNotEmpty == true
+        ? address['state'].toString()
+        : (location.contains(',') ? location.split(',').last.trim() : '');
 
-  // ── Auth ───────────────────────────────────────────────────────────────────
-
-  /// POST /api/auth/login
-  static Future<Map<String, dynamic>> login(
-      String email, String password) async {
-    final res = await http.post(
-      Uri.parse('$baseUrl/auth/login'),
-      headers: _headers,
-      body: jsonEncode({'email': email, 'password': password}),
-    );
-    final body = jsonDecode(res.body) as Map<String, dynamic>;
-    if (res.statusCode == 200 && body['status'] == 'success') {
-      setAuth(body['data']['token'] as String,
-          body['data']['user'] as Map<String, dynamic>);
-    }
-    return body;
+    return {
+      'id': source['id'],
+      'title': source['title'] ?? '',
+      'subType': source['subType'] ?? source['type'] ?? '',
+      'listingType': listingType,
+      'price': source['price'] ?? 0,
+      'media': media.isNotEmpty
+          ? media.map((item) => item.toString()).toList()
+          : [source['image'] ?? '']
+                .where((item) => item.toString().isNotEmpty)
+                .map((item) => item.toString())
+                .toList(),
+      'address': {'city': city, 'state': state},
+      'features': {
+        'bedrooms':
+            features['bedrooms'] ?? source['beds'] ?? source['bedrooms'] ?? 0,
+        'bathrooms':
+            features['bathrooms'] ??
+            source['baths'] ??
+            source['bathrooms'] ??
+            0,
+      },
+      'area': {'sqft': area['sqft'] ?? source['sqft'] ?? 0},
+      'featured': source['featured'] ?? false,
+    };
   }
 
-  /// POST /api/auth/register
+  static String _normalizeListingType(String type) {
+    switch (type) {
+      case 'sale':
+      case 'buy':
+        return 'sale';
+      case 'rent':
+        return 'rent';
+      default:
+        return type;
+    }
+  }
+
+  static String _firstString(List? values) {
+    if (values == null || values.isEmpty) return '';
+    final first = values.first;
+    return first == null ? '' : first.toString();
+  }
+
+  // Auth
+  static Future<Map<String, dynamic>> login(
+    String email,
+    String password,
+  ) async {
+    final result = await FirebaseService.signIn(email, password);
+    if (result?.user == null) {
+      return {
+        'status': 'error',
+        'message':
+            'Login failed. Check your credentials or enable Email/Password auth in Firebase.',
+      };
+    }
+
+    final user = {
+      'uid': result!.user!.uid,
+      'email': result.user!.email ?? email,
+      'firstName': result.user!.displayName ?? '',
+      'lastName': '',
+      'role': 'user',
+    };
+    setAuth(result.user!.uid, user);
+    return {
+      'status': 'success',
+      'data': {'token': result.user!.uid, 'user': user},
+    };
+  }
+
   static Future<Map<String, dynamic>> register({
     required String firstName,
     required String lastName,
@@ -57,92 +127,139 @@ class ApiService {
     required String password,
     String role = 'user',
   }) async {
-    final res = await http.post(
-      Uri.parse('$baseUrl/auth/register'),
-      headers: _headers,
-      body: jsonEncode({
-        'firstName': firstName,
-        'lastName': lastName,
-        'email': email,
-        'password': password,
-        'role': role,
-      }),
-    );
-    final body = jsonDecode(res.body) as Map<String, dynamic>;
-    if ((res.statusCode == 200 || res.statusCode == 201) &&
-        body['status'] == 'success') {
-      setAuth(body['data']['token'] as String,
-          body['data']['user'] as Map<String, dynamic>);
+    final result = await FirebaseService.signUp(email, password);
+    if (result?.user == null) {
+      return {
+        'status': 'error',
+        'message': 'Registration failed. Check Firebase Auth settings.',
+      };
     }
-    return body;
+
+    final user = {
+      'uid': result!.user!.uid,
+      'email': email,
+      'firstName': firstName,
+      'lastName': lastName,
+      'role': role,
+    };
+
+    await FirebaseService.saveUser(
+      result.user!.uid,
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+    );
+    setAuth(result.user!.uid, user);
+    return {
+      'status': 'success',
+      'data': {'token': result.user!.uid, 'user': user},
+    };
   }
 
-  // ── Properties ─────────────────────────────────────────────────────────────
-
-  /// GET /api/properties
+  // Properties
   static Future<List<dynamic>> getProperties() async {
-    final res = await http.get(
-      Uri.parse('$baseUrl/properties'),
-      headers: _headers,
-    );
-    if (res.statusCode == 200) {
-      final body = jsonDecode(res.body) as Map<String, dynamic>;
-      return body['data']['properties'] as List<dynamic>? ?? [];
+    try {
+      final remote = await FirebaseService.getProperties();
+      final mapped = remote.map((doc) => _asApiProperty(doc)).toList();
+      return [..._localCreatedProperties, ...mapped];
+    } catch (e) {
+      debugPrint('Get properties via Firebase failed: $e');
+      return _localCreatedProperties;
     }
-    return [];
   }
 
-  /// GET /api/properties/type/:listingType
   static Future<List<dynamic>> getPropertiesByType(String type) async {
-    final res = await http.get(
-      Uri.parse('$baseUrl/properties/type/$type'),
-      headers: _headers,
-    );
-    if (res.statusCode == 200) {
-      final body = jsonDecode(res.body) as Map<String, dynamic>;
-      return body['data']['properties'] as List<dynamic>? ?? [];
+    final queryType = _normalizeListingType(type);
+    try {
+      final remote = await FirebaseService.getPropertiesByType(queryType);
+      final mapped = remote
+          .map((doc) => _asApiProperty(doc, fallbackListingType: queryType))
+          .toList();
+      return [
+        ..._localCreatedProperties.where(
+          (property) => property['listingType'] == queryType,
+        ),
+        ...mapped,
+      ];
+    } catch (e) {
+      debugPrint('Get properties by type via Firebase failed: $e');
+      return _localCreatedProperties
+          .where((property) => property['listingType'] == queryType)
+          .toList();
     }
-    return [];
   }
 
-  /// POST /api/properties
   static Future<Map<String, dynamic>> createProperty(
-      Map<String, dynamic> data) async {
-    final res = await http.post(
-      Uri.parse('$baseUrl/properties'),
-      headers: _headers,
-      body: jsonEncode(data),
-    );
-    return jsonDecode(res.body) as Map<String, dynamic>;
+    Map<String, dynamic> data,
+  ) async {
+    try {
+      final address = data['address'] as Map? ?? {};
+      final features = data['features'] as Map? ?? {};
+      final area = data['area'] as Map? ?? {};
+      final media = data['media'] as List? ?? const [];
+
+      final listingType = _normalizeListingType(
+        (data['listingType'] ?? 'sale').toString(),
+      );
+      final image = _firstString(media).isNotEmpty
+          ? _firstString(media)
+          : (data['image'] ?? '').toString();
+      final location =
+          [
+                address['street'],
+                address['city'],
+                address['state'],
+                address['country'],
+              ]
+              .where((part) => (part ?? '').toString().trim().isNotEmpty)
+              .map((part) => part.toString().trim())
+              .join(', ');
+
+      await FirebaseService.saveProperty(
+        title: (data['title'] ?? '').toString(),
+        location: location,
+        type: (data['type'] ?? data['subType'] ?? '').toString(),
+        listingType: listingType,
+        image: image,
+        price: data['price'] ?? 0,
+        beds: features['bedrooms'] ?? data['beds'],
+        baths: features['bathrooms'] ?? data['baths'],
+        sqft: area['sqft'] ?? data['sqft'],
+        featured: data['featured'] ?? false,
+        description: (data['description'] ?? '').toString(),
+        agentId: data['agentId']?.toString(),
+      );
+
+      final payload = _asApiProperty({
+        ...data,
+        'listingType': listingType,
+        'location': location,
+        'image': image,
+      });
+      _localCreatedProperties.insert(0, payload);
+      return {'status': 'success', 'data': payload};
+    } catch (e) {
+      return {'status': 'error', 'message': e.toString()};
+    }
   }
 
-  // ── Agents ─────────────────────────────────────────────────────────────────
-
-  /// GET /api/agents
+  // Agents
   static Future<List<dynamic>> getAgents() async {
-    final res = await http.get(
-      Uri.parse('$baseUrl/agents'),
-      headers: _headers,
-    );
-    if (res.statusCode == 200) {
-      final body = jsonDecode(res.body) as Map<String, dynamic>;
-      return body['data']['agents'] as List<dynamic>? ?? [];
+    try {
+      return await FirebaseService.getAgents();
+    } catch (e) {
+      debugPrint('Get agents via Firebase failed: $e');
+      return const [];
     }
-    return [];
   }
 
-  // ── Reviews ────────────────────────────────────────────────────────────────
-
-  /// GET /api/reviews
+  // Reviews
   static Future<List<dynamic>> getReviews() async {
-    final res = await http.get(
-      Uri.parse('$baseUrl/reviews'),
-      headers: _headers,
-    );
-    if (res.statusCode == 200) {
-      final body = jsonDecode(res.body) as Map<String, dynamic>;
-      return body['data']['reviews'] as List<dynamic>? ?? [];
+    try {
+      return await FirebaseService.getReviews();
+    } catch (e) {
+      debugPrint('Get reviews via Firebase failed: $e');
+      return const [];
     }
-    return [];
   }
 }

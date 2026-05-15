@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../data/mock_data.dart';
-
 class SectionTitle extends StatelessWidget {
   final String title;
   final String subtitle;
@@ -28,15 +26,15 @@ class SectionTitle extends StatelessWidget {
 }
 
 class PropertyCard extends StatelessWidget {
-  final PropertyItem item;
+  final Map<String, dynamic> item;
 
   const PropertyCard({super.key, required this.item});
 
   String get priceText {
-    if (item.listingType == 'rent') {
-      return '	\$${item.price.toString()} / mo';
+    if ((item['listingType'] ?? '') == 'rent') {
+      return '\$${item['price'] ?? 0} / mo';
     }
-    return '	\$${item.price.toString()}';
+    return '\$${item['price'] ?? 0}';
   }
 
   @override
@@ -53,7 +51,7 @@ class PropertyCard extends StatelessWidget {
           ClipRRect(
             borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
             child: Image.network(
-              item.image,
+              (item['image'] ?? '').toString(),
               height: 160,
               width: double.infinity,
               fit: BoxFit.cover,
@@ -65,7 +63,7 @@ class PropertyCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  item.title,
+                  (item['title'] ?? '').toString(),
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -74,7 +72,7 @@ class PropertyCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  item.location,
+                  (item['location'] ?? '').toString(),
                   style: const TextStyle(color: Colors.white60),
                 ),
                 const SizedBox(height: 8),
@@ -90,9 +88,9 @@ class PropertyCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    _InfoChip(text: '${item.beds} Beds'),
-                    _InfoChip(text: '${item.baths} Baths'),
-                    _InfoChip(text: '${item.sqft} sqft'),
+                    _InfoChip(text: '${item['beds'] ?? 0} Beds'),
+                    _InfoChip(text: '${item['baths'] ?? 0} Baths'),
+                    _InfoChip(text: '${item['sqft'] ?? 0} sqft'),
                   ],
                 ),
               ],
@@ -105,7 +103,7 @@ class PropertyCard extends StatelessWidget {
 }
 
 class AgentCard extends StatelessWidget {
-  final AgentItem item;
+  final Map<String, dynamic> item;
 
   const AgentCard({super.key, required this.item});
 
@@ -123,7 +121,7 @@ class AgentCard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(14),
             child: Image.network(
-              item.image,
+              (item['image'] ?? '').toString(),
               height: 64,
               width: 64,
               fit: BoxFit.cover,
@@ -135,7 +133,7 @@ class AgentCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  item.name,
+                  (item['name'] ?? '').toString(),
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -144,7 +142,7 @@ class AgentCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  item.role,
+                  (item['role'] ?? '').toString(),
                   style: const TextStyle(color: Colors.white70),
                 ),
                 const SizedBox(height: 6),
@@ -153,12 +151,12 @@ class AgentCard extends StatelessWidget {
                     const Icon(Icons.star, color: Color(0xFF703BF7), size: 18),
                     const SizedBox(width: 4),
                     Text(
-                      item.rating.toString(),
+                      (item['rating'] ?? 0).toString(),
                       style: const TextStyle(color: Colors.white70),
                     ),
                     const SizedBox(width: 10),
                     Text(
-                      '${item.deals} deals',
+                      '${item['deals'] ?? 0} deals',
                       style: const TextStyle(color: Colors.white54),
                     ),
                   ],
@@ -181,7 +179,7 @@ class AgentCard extends StatelessWidget {
 }
 
 class ReviewCard extends StatelessWidget {
-  final ReviewItem item;
+  final Map<String, dynamic> item;
 
   const ReviewCard({super.key, required this.item});
 
@@ -198,7 +196,7 @@ class ReviewCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            item.name,
+            (item['name'] ?? '').toString(),
             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 6),
@@ -208,7 +206,7 @@ class ReviewCard extends StatelessWidget {
               (index) => Icon(
                 Icons.star,
                 size: 18,
-                color: index < item.rating
+                color: index < (item['rating'] ?? 0)
                     ? const Color(0xFFFFD54F)
                     : Colors.white24,
               ),
@@ -216,12 +214,12 @@ class ReviewCard extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            '"${item.text}"',
+            '"${item['text'] ?? ''}"',
             style: const TextStyle(color: Colors.white70),
           ),
           const SizedBox(height: 8),
           Text(
-            item.date,
+            (item['date'] ?? '').toString(),
             style: const TextStyle(color: Colors.white38),
           ),
         ],
@@ -256,10 +254,7 @@ class StatTile extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 6),
-          Text(
-            label,
-            style: const TextStyle(color: Colors.white70),
-          ),
+          Text(label, style: const TextStyle(color: Colors.white70)),
         ],
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../services/firebase_service.dart';
+import '../services/api_service.dart';
 import 'signup_page.dart';
 
 const Color kPurple = Color(0xFF703BF7);
@@ -42,11 +43,24 @@ class _LoginPageState extends State<LoginPage> {
     });
 
     try {
-      final result = await FirebaseService.signIn(emailc.text.trim(), passc.text);
+      final result = await FirebaseService.signIn(
+        emailc.text.trim(),
+        passc.text,
+      );
 
       if (!mounted) return;
 
       if (result != null) {
+        // Populate ApiService current user so the shell reflects login state.
+        try {
+          ApiService.setAuth(result.user!.uid, {
+            'email': result.user?.email ?? '',
+            'firstName': result.user?.displayName ?? '',
+            'lastName': '',
+            'role': 'user',
+          });
+        } catch (_) {}
+
         widget.onAuthChanged?.call();
         Navigator.pop(context); // go back to HomePage
       } else {

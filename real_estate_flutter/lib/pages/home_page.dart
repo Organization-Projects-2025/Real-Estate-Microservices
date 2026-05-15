@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../services/api_service.dart';
+import '../services/firebase_service.dart';
 import 'about_us_page.dart';
 import 'agent_page.dart';
 import 'buy_page.dart';
@@ -106,7 +107,8 @@ class _HomePageState extends State<HomePage> {
     Navigator.pop(context); // close drawer
   }
 
-  void _logout() {
+  Future<void> _logout() async {
+    await FirebaseService.signOut();
     ApiService.clearAuth();
     setState(() {});
   }

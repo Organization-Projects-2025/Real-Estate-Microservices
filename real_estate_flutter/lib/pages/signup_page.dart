@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../services/firebase_service.dart';
+import '../services/api_service.dart';
 
 const Color kPurple = Color(0xFF703BF7);
 const Color kBg = Color(0xFF121212);
@@ -59,16 +60,26 @@ class _SignupPageState extends State<SignupPage> {
       if (!mounted) return;
 
       if (result != null && result.user != null) {
-        // Save user data to Firestore
+        // Save user data to Firestore (may fail due to rules)
         await FirebaseService.saveUser(
           result.user!.uid,
           email: emailc.text.trim(),
           firstName: firstc.text.trim(),
           lastName: lastc.text.trim(),
         );
-        
+
+        // Ensure the app shell knows we're logged in — use ApiService as the
+        // UI currently relies on it for showing logged-in state.
+        ApiService.setAuth(result.user!.uid, {
+          'firstName': firstc.text.trim(),
+          'lastName': lastc.text.trim(),
+          'email': emailc.text.trim(),
+          'role': role,
+        });
+
         widget.onAuthChanged?.call();
-        Navigator.pop(context); // back to HomePage
+        // Navigate to home and clear back stack so user lands on homepage
+        Navigator.pushNamedAndRemoveUntil(context, '/home', (r) => false);
       } else {
         setState(() {
           message = 'Registration failed';

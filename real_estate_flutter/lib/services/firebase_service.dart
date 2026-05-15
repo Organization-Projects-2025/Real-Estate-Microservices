@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -16,7 +17,7 @@ class FirebaseService {
         password: password,
       );
     } catch (e) {
-      print('Sign up error: $e');
+      debugPrint('Sign up error: $e');
       return null;
     }
   }
@@ -28,7 +29,7 @@ class FirebaseService {
         password: password,
       );
     } catch (e) {
-      print('Sign in error: $e');
+      debugPrint('Sign in error: $e');
       return null;
     }
   }
@@ -37,7 +38,7 @@ class FirebaseService {
     try {
       await _auth.signOut();
     } catch (e) {
-      print('Sign out error: $e');
+      debugPrint('Sign out error: $e');
     }
   }
 
@@ -50,7 +51,8 @@ class FirebaseService {
   }
 
   // ── Users ──────────────────────────────────────────────────────────────
-  static Future<void> saveUser(String uid, {
+  static Future<void> saveUser(
+    String uid, {
     required String email,
     String? firstName,
     String? lastName,
@@ -67,7 +69,7 @@ class FirebaseService {
         'createdAt': FieldValue.serverTimestamp(),
       }, SetOptions(merge: true));
     } catch (e) {
-      print('Save user error: $e');
+      debugPrint('Save user error: $e');
     }
   }
 
@@ -75,16 +77,19 @@ class FirebaseService {
     try {
       return await _firestore.collection('users').doc(uid).get();
     } catch (e) {
-      print('Get user data error: $e');
+      debugPrint('Get user data error: $e');
       rethrow;
     }
   }
 
-  static Future<void> updateUserData(String uid, Map<String, dynamic> data) async {
+  static Future<void> updateUserData(
+    String uid,
+    Map<String, dynamic> data,
+  ) async {
     try {
       await _firestore.collection('users').doc(uid).update(data);
     } catch (e) {
-      print('Update user data error: $e');
+      debugPrint('Update user data error: $e');
     }
   }
 
@@ -121,33 +126,31 @@ class FirebaseService {
         'updatedAt': FieldValue.serverTimestamp(),
       });
     } catch (e) {
-      print('Save property error: $e');
+      debugPrint('Save property error: $e');
     }
   }
 
   static Future<List<Map<String, dynamic>>> getProperties() async {
     try {
       final snapshot = await _firestore.collection('properties').get();
-      return snapshot.docs
-          .map((doc) => {...doc.data(), 'id': doc.id})
-          .toList();
+      return snapshot.docs.map((doc) => {...doc.data(), 'id': doc.id}).toList();
     } catch (e) {
-      print('Get properties error: $e');
+      debugPrint('Get properties error: $e');
       return [];
     }
   }
 
-  static Future<List<Map<String, dynamic>>> getPropertiesByType(String listingType) async {
+  static Future<List<Map<String, dynamic>>> getPropertiesByType(
+    String listingType,
+  ) async {
     try {
       final snapshot = await _firestore
           .collection('properties')
           .where('listingType', isEqualTo: listingType)
           .get();
-      return snapshot.docs
-          .map((doc) => {...doc.data(), 'id': doc.id})
-          .toList();
+      return snapshot.docs.map((doc) => {...doc.data(), 'id': doc.id}).toList();
     } catch (e) {
-      print('Get properties by type error: $e');
+      debugPrint('Get properties by type error: $e');
       return [];
     }
   }
@@ -156,14 +159,17 @@ class FirebaseService {
     return _firestore.collection('properties').snapshots();
   }
 
-  static Future<void> updateProperty(String propertyId, Map<String, dynamic> data) async {
+  static Future<void> updateProperty(
+    String propertyId,
+    Map<String, dynamic> data,
+  ) async {
     try {
       await _firestore.collection('properties').doc(propertyId).update({
         ...data,
         'updatedAt': FieldValue.serverTimestamp(),
       });
     } catch (e) {
-      print('Update property error: $e');
+      debugPrint('Update property error: $e');
     }
   }
 
@@ -171,7 +177,7 @@ class FirebaseService {
     try {
       await _firestore.collection('properties').doc(propertyId).delete();
     } catch (e) {
-      print('Delete property error: $e');
+      debugPrint('Delete property error: $e');
     }
   }
 
@@ -197,18 +203,16 @@ class FirebaseService {
         'createdAt': FieldValue.serverTimestamp(),
       });
     } catch (e) {
-      print('Save agent error: $e');
+      debugPrint('Save agent error: $e');
     }
   }
 
   static Future<List<Map<String, dynamic>>> getAgents() async {
     try {
       final snapshot = await _firestore.collection('agents').get();
-      return snapshot.docs
-          .map((doc) => {...doc.data(), 'id': doc.id})
-          .toList();
+      return snapshot.docs.map((doc) => {...doc.data(), 'id': doc.id}).toList();
     } catch (e) {
-      print('Get agents error: $e');
+      debugPrint('Get agents error: $e');
       return [];
     }
   }
@@ -237,39 +241,51 @@ class FirebaseService {
         'createdAt': FieldValue.serverTimestamp(),
       });
     } catch (e) {
-      print('Save review error: $e');
+      debugPrint('Save review error: $e');
     }
   }
 
   static Future<List<Map<String, dynamic>>> getReviews() async {
     try {
       final snapshot = await _firestore.collection('reviews').get();
-      return snapshot.docs
-          .map((doc) => {...doc.data(), 'id': doc.id})
-          .toList();
+      return snapshot.docs.map((doc) => {...doc.data(), 'id': doc.id}).toList();
     } catch (e) {
-      print('Get reviews error: $e');
+      debugPrint('Get reviews error: $e');
       return [];
     }
   }
 
-  static Future<List<Map<String, dynamic>>> getReviewsByAgent(String agentId) async {
+  static Future<List<Map<String, dynamic>>> getReviewsByAgent(
+    String agentId,
+  ) async {
     try {
       final snapshot = await _firestore
           .collection('reviews')
           .where('agentId', isEqualTo: agentId)
           .get();
-      return snapshot.docs
-          .map((doc) => {...doc.data(), 'id': doc.id})
-          .toList();
+      return snapshot.docs.map((doc) => {...doc.data(), 'id': doc.id}).toList();
     } catch (e) {
-      print('Get reviews by agent error: $e');
+      debugPrint('Get reviews by agent error: $e');
       return [];
     }
   }
 
   static Stream<QuerySnapshot> watchReviews() {
     return _firestore.collection('reviews').snapshots();
+  }
+
+  // ── Site Stats ────────────────────────────────────────────────────────
+  static Future<Map<String, dynamic>> getSiteStats() async {
+    try {
+      final doc = await _firestore
+          .collection('siteStats')
+          .doc('overview')
+          .get();
+      return doc.data() ?? {};
+    } catch (e) {
+      debugPrint('Get site stats error: $e');
+      return {};
+    }
   }
 
   // ── Storage ────────────────────────────────────────────────────────────
@@ -280,7 +296,7 @@ class FirebaseService {
       await ref.putFile(file);
       return await ref.getDownloadURL();
     } catch (e) {
-      print('Upload image error: $e');
+      debugPrint('Upload image error: $e');
       return null;
     }
   }
@@ -289,7 +305,7 @@ class FirebaseService {
     try {
       await _storage.refFromURL(imageUrl).delete();
     } catch (e) {
-      print('Delete image error: $e');
+      debugPrint('Delete image error: $e');
     }
   }
 }
