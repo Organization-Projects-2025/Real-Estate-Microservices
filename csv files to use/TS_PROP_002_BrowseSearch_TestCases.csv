@@ -1,0 +1,13 @@
+SCREEN NAME,Properties Page (Buy/Rent),,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_PROP_002,SCENARIO DESCRIPTION,Property Service - Browse & Search Properties,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_PROP_004,Verify Buy page displays property listings,Properties exist for sale,URL: /buy; Type Filter: 'Sale',Property cards displayed for sale listings,Properties rendered,Property cards displayed for sale listings,PASSED,,Positive test - Browse properties
+2,TC_PROP_005,Verify search functionality on properties page,Properties exist,Search Term: 'Downtown'; Search Field: Location,Properties matching search term displayed,Filtered results shown,Properties matching search term displayed,PASSED,,Positive test - Search
+3,TC_PROP_006,Verify no results message when search has no matches,Properties exist,Search Term: 'xyznonexistent123','No properties found' message displayed,Empty result handled gracefully,'No properties found' message displayed,PASSED,,Edge case - No results
+4,TC_PROP_011,Verify combining multiple filters works correctly,Properties exist with various attributes,Price Range: 200000-500000; Bedrooms: 3; Location: 'Miami',Properties matching ALL filters displayed,Combined filter results shown,Properties matching ALL filters displayed,PASSED,,Positive test - Multiple filters
+5,TC_PROP_012,Verify clearing all filters resets property list,Filters currently applied,Action: 'Clear All Filters' Button,All properties displayed; Filters reset,Default unfiltered view restored,All properties displayed - filters reset,PASSED,,UI test - Clear filters

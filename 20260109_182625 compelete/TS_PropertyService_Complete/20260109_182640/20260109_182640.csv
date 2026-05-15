@@ -1,0 +1,80 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_PropertyService_Complete,Chrome 143.0.7499.170,Complete test suite for Property Service UI testing,,09-01-2026 19:15:40,09-01-2026 19:18:49,3m - 8.694s,PASSED
+,,,,,,,
+Test Cases/PropertyService/SellPage/TC_PROP_001_Sell_Page_Requires_Login,Chrome 143.0.7499.170,Verify that Sell page requires user to be logged in,,09-01-2026 19:15:41,09-01-2026 19:15:49,7.196s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:15:42,09-01-2026 19:15:46,4.204s,PASSED
+sellHelper = new propertyservice.Sell_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:15:46,09-01-2026 19:15:46,0.065s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:15:46,09-01-2026 19:15:48,1.809s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:15:48,09-01-2026 19:15:49,0.303s,PASSED
+,,,,,,,
+Test Cases/PropertyService/SellPage/TC_PROP_002_Create_Property_Valid_Data,Chrome 143.0.7499.170,Verify that a logged-in user can create a property with valid data,,09-01-2026 19:15:49,09-01-2026 19:16:46,57.149s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:15:49,09-01-2026 19:15:50,1.602s,PASSED
+sellHelper = new propertyservice.Sell_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:15:50,09-01-2026 19:15:50,0.004s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:15:50,09-01-2026 19:15:51,0.026s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:15:51,09-01-2026 19:16:45,54.891s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:16:45,09-01-2026 19:16:46,0.336s,PASSED
+,,,,,,,
+Test Cases/PropertyService/SellPage/TC_PROP_003_Create_Property_Missing_Fields,Chrome 143.0.7499.170,Verify that creating property with missing required fields shows validation error,,09-01-2026 19:16:46,09-01-2026 19:17:12,26.571s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:16:46,09-01-2026 19:16:47,1.516s,PASSED
+sellHelper = new propertyservice.Sell_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:16:47,09-01-2026 19:16:47,0.003s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:16:47,09-01-2026 19:16:47,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:16:47,09-01-2026 19:17:12,24.732s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:17:12,09-01-2026 19:17:12,0.255s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertiesPage/TC_PROP_004_Browse_Properties,Chrome 143.0.7499.170,Verify that Buy page loads and displays property cards for sale,,09-01-2026 19:17:12,09-01-2026 19:17:18,5.669s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:17:12,09-01-2026 19:17:14,1.522s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:17:14,09-01-2026 19:17:14,0.023s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:17:14,09-01-2026 19:17:18,3.744s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:17:18,09-01-2026 19:17:18,0.262s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertiesPage/TC_PROP_005_Search_Properties,Chrome 143.0.7499.170,Verify that user can search properties on Buy page using the search bar,,09-01-2026 19:17:18,09-01-2026 19:17:28,10.001s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:17:18,09-01-2026 19:17:20,1.490s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:17:20,09-01-2026 19:17:20,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:17:20,09-01-2026 19:17:26,6.729s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:17:26,09-01-2026 19:17:28,1.730s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertiesPage/TC_PROP_006_Search_No_Results,Chrome 143.0.7499.170,Verify that searching with non-matching term shows no results message,,09-01-2026 19:17:28,09-01-2026 19:17:36,8.267s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:17:28,09-01-2026 19:17:29,1.392s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:17:29,09-01-2026 19:17:29,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:17:29,09-01-2026 19:17:36,6.561s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:17:36,09-01-2026 19:17:36,0.267s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertyDetailPage/TC_PROP_007_Property_Detail_Display,Chrome 143.0.7499.170,Verify that property detail page displays all property information,,09-01-2026 19:17:36,09-01-2026 19:17:44,8.023s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:17:36,09-01-2026 19:17:38,1.403s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:17:38,09-01-2026 19:17:38,0.003s,PASSED
+detailHelper = new propertyservice.PropertyDetail_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:17:38,09-01-2026 19:17:38,0.011s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:17:38,09-01-2026 19:17:44,6.210s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:17:44,09-01-2026 19:17:44,0.291s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertyDetailPage/TC_PROP_008_Contact_Agent_Button,Chrome 143.0.7499.170,Verify that Contact Agent button works on property detail page,,09-01-2026 19:17:44,09-01-2026 19:18:00,16.182s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:17:44,09-01-2026 19:17:46,1.371s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:17:46,09-01-2026 19:17:46,0.001s,PASSED
+detailHelper = new propertyservice.PropertyDetail_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:17:46,09-01-2026 19:17:46,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:17:46,09-01-2026 19:17:59,12.960s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:17:59,09-01-2026 19:18:00,1.793s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertyDetailPage/TC_PROP_009_Image_Gallery_Navigation,Chrome 143.0.7499.170,Verify that image gallery thumbnails work on property detail page,,09-01-2026 19:18:00,09-01-2026 19:18:10,9.543s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:18:01,09-01-2026 19:18:02,1.412s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:18:02,09-01-2026 19:18:02,0.002s,PASSED
+detailHelper = new propertyservice.PropertyDetail_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:18:02,09-01-2026 19:18:02,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:18:02,09-01-2026 19:18:08,6.327s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:18:08,09-01-2026 19:18:10,1.746s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertyDetailPage/TC_PROP_010_Back_Button_Navigation,Chrome 143.0.7499.170,Verify that Back button navigates back to properties list,,09-01-2026 19:18:10,09-01-2026 19:18:19,8.928s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:18:10,09-01-2026 19:18:12,1.439s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:18:12,09-01-2026 19:18:12,0.001s,PASSED
+detailHelper = new propertyservice.PropertyDetail_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:18:12,09-01-2026 19:18:12,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:18:12,09-01-2026 19:18:19,7.159s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:18:19,09-01-2026 19:18:19,0.274s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertiesPage/TC_PROP_011_Combined_Filters,Chrome 143.0.7499.170,Verify that combining multiple filters works correctly,,09-01-2026 19:18:19,09-01-2026 19:18:34,14.769s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:18:19,09-01-2026 19:18:20,1.438s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:18:20,09-01-2026 19:18:20,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:18:20,09-01-2026 19:18:33,13.033s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:18:33,09-01-2026 19:18:34,0.253s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertiesPage/TC_PROP_012_Clear_Filters,Chrome 143.0.7499.170,Verify that clearing all filters resets the property list,,09-01-2026 19:18:34,09-01-2026 19:18:49,15.279s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:18:34,09-01-2026 19:18:35,1.449s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:18:35,09-01-2026 19:18:35,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:18:35,09-01-2026 19:18:49,13.351s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:18:49,09-01-2026 19:18:49,0.429s,PASSED

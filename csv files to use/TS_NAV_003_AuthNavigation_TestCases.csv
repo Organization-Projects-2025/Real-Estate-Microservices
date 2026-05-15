@@ -1,0 +1,10 @@
+SCREEN NAME,Authentication Navigation,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_NAV_003,SCENARIO DESCRIPTION,Navigation - Authentication Navigation,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_NAV_010,Navigate to Login page when not authenticated,User not logged in,Link: 'Login'; Expected URL: /login,User navigated to Login page; URL contains /login,Login page displayed,User navigated to Login page - URL contains /login,PASSED,,Navigation test
+2,TC_NAV_011,Navigate to Register page when not authenticated,User not logged in,Link: 'Register'; Expected URL: /register,User navigated to Register page; URL contains /register,Register page displayed,User navigated to Register page - URL contains /register,PASSED,,Navigation test

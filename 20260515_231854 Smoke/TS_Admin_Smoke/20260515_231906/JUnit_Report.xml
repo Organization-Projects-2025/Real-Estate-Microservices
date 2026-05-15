@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="TS_Admin_Smoke" time="125.382" tests="6" failures="0" errors="0">
+   <testsuite name="TS_Admin_Smoke" tests="6" failures="0" errors="0" time="125.382" skipped="0" timestamp="2026-05-15T20:19:42.407Z" hostname="User - 192.168.1.4" id="Test Suites/TS_Admin_Smoke">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_Admin_Smoke\\20260515_231906"/>
+         <property name="logFiles" value="D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_Admin_Smoke\\20260515_231906\\console0.log, D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_Admin_Smoke\\20260515_231906\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="User - 192.168.1.4"/>
+         <property name="os" value="Windows 11 64bit"/>
+         <property name="katalonVersion" value="10.4.3.0"/>
+         <property name="browser" value="Edge Chromium 148.0.3967.54"/>
+         <property name="userFullName" value="Jakayaj756nctimecom"/>
+         <property name="hostAddress" value="192.168.1.4"/>
+         <property name="sessionId" value="06bb3a0eadaeb8ef06fca93bf0e77135"/>
+         <property name="projectName" value="Katalon"/>
+         <property name="seleniumVersion" value="4.34.0"/>
+         <property name="proxyInformation" value="ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList=&quot;&quot;, isApplyToDesiredCapabilities=true }"/>
+         <property name="platform" value="Windows 11"/>
+      </properties>
+      <testcase name="Test Cases/Admin/TC_ADM_AdminAccessRequired" time="28.536" classname="Test Cases/Admin/TC_ADM_AdminAccessRequired" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:19:44 - [TEST_CASE][PASSED] - Test Cases/Admin/TC_ADM_AdminAccessRequired: Test Cases/Admin/TC_ADM_AdminAccessRequired
+
+15-05-2026T23:19:47 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:19:48 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:19:48 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:19:51 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:19:51 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T23:19:51 - [TEST_STEP][PASSED] - userHelper = new admin.User_Keywords(): null
+
+15-05-2026T23:19:51 - [TEST_STEP][PASSED] - usersUrl = "http://localhost:5173/admin/users": null
+
+15-05-2026T23:19:51 - [TEST_STEP][PASSED] - loginUrl = "http://localhost:5173/login": null
+
+15-05-2026T23:19:51 - [TEST_STEP][PASSED] - homeUrl = "http://localhost:5173": null
+
+15-05-2026T23:19:51 - [TEST_STEP][PASSED] - try: ✅ TC_ADM_USER_011 PASSED: Non-admin user correctly denied access to Users page
+
+15-05-2026T23:19:51 - [TEST_STEP][PASSED] - navigateToUrl(usersUrl): Navigate to 'http://localhost:5173/admin/users' successfully
+
+15-05-2026T23:19:53 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/admin/users' successfully
+
+15-05-2026T23:19:53 - [TEST_STEP][PASSED] - waitForPageLoad(10): Wait for page load successfully
+
+15-05-2026T23:19:53 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:19:53 - [TEST_STEP][PASSED] - delay(3): Delayed 3 second(s)
+
+15-05-2026T23:19:56 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:19:56 - [TEST_STEP][PASSED] - currentUrl = getUrl(): Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T23:19:56 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T23:19:56 - [TEST_STEP][PASSED] - comment(Current URL after unauthenticated access: $currentUrl): Current URL after unauthenticated access: http://localhost:5173/login
+
+15-05-2026T23:19:56 - [MESSAGE][INFO] - Current URL after unauthenticated access: http://localhost:5173/login
+
+15-05-2026T23:19:56 - [TEST_STEP][PASSED] - assert currentUrl.contains("/login") || currentUrl == homeUrl || currentUrl == $homeUrl/: null
+
+15-05-2026T23:19:56 - [TEST_STEP][PASSED] - comment("Unauthenticated access correctly blocked"): Unauthenticated access correctly blocked
+
+15-05-2026T23:19:56 - [MESSAGE][INFO] - Unauthenticated access correctly blocked
+
+15-05-2026T23:19:56 - [TEST_STEP][PASSED] - loginHelper.loginAsUser(1): Delayed 2 second(s)
+
+15-05-2026T23:19:56 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T23:19:57 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T23:19:58 - [MESSAGE][PASSED] - Text 'user1@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:19:59 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T23:20:00 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:20:01 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:20:04 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:20:04 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:06 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:06 - [TEST_STEP][PASSED] - navigateToUrl(usersUrl): Navigate to 'http://localhost:5173/admin/users' successfully
+
+15-05-2026T23:20:07 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/admin/users' successfully
+
+15-05-2026T23:20:07 - [TEST_STEP][PASSED] - waitForPageLoad(10): Wait for page load successfully
+
+15-05-2026T23:20:07 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:07 - [TEST_STEP][PASSED] - delay(3): Delayed 3 second(s)
+
+15-05-2026T23:20:10 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:20:10 - [TEST_STEP][PASSED] - currentUrl = getUrl(): Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T23:20:10 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T23:20:10 - [TEST_STEP][PASSED] - comment(Current URL after regular user access: $currentUrl): Current URL after regular user access: http://localhost:5173/
+
+15-05-2026T23:20:10 - [MESSAGE][INFO] - Current URL after regular user access: http://localhost:5173/
+
+15-05-2026T23:20:10 - [TEST_STEP][PASSED] - accessDenied = !(currentUrl.contains("/admin")): null
+
+15-05-2026T23:20:10 - [TEST_STEP][PASSED] - assert accessDenied: null
+
+15-05-2026T23:20:10 - [TEST_STEP][PASSED] - comment("✅ TC_ADM_USER_011 PASSED: Non-admin user correctly denied access to Users page"): ✅ TC_ADM_USER_011 PASSED: Non-admin user correctly denied access to Users page
+
+15-05-2026T23:20:10 - [MESSAGE][INFO] - ✅ TC_ADM_USER_011 PASSED: Non-admin user correctly denied access to Users page
+
+15-05-2026T23:20:10 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:20:10 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:12 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Admin/UserManagement/TC_ADM_USER_001_ViewUsersPage" time="16.703" classname="Test Cases/Admin/UserManagement/TC_ADM_USER_001_ViewUsersPage" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:20:12 - [TEST_CASE][PASSED] - Test Cases/Admin/UserManagement/TC_ADM_USER_001_ViewUsersPage: Test Cases/Admin/UserManagement/TC_ADM_USER_001_ViewUsersPage
+
+15-05-2026T23:20:13 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:20:13 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:20:13 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:20:14 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:20:14 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T23:20:14 - [TEST_STEP][PASSED] - userHelper = new admin.User_Keywords(): null
+
+15-05-2026T23:20:14 - [TEST_STEP][PASSED] - try: ✅ TC_ADM_USER_001 PASSED: Users Management page loaded successfully
+
+15-05-2026T23:20:14 - [TEST_STEP][PASSED] - loginHelper.loginAsAdmin(): Delayed 2 second(s)
+
+15-05-2026T23:20:14 - [MESSAGE][PASSED] - Current window's url is: 'about:blank'
+
+15-05-2026T23:20:14 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:20:15 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:15 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:20:15 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:20:15 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T23:20:16 - [MESSAGE][PASSED] - Text 'admin@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:20:17 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T23:20:17 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:20:18 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:20:21 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:20:21 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:23 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:23 - [TEST_STEP][PASSED] - userHelper.navigateToUsers(): Object 'Object Repository/Admin/UsersPage/h1_UserManagement' is visible
+
+15-05-2026T23:20:23 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/admin/users' successfully
+
+15-05-2026T23:20:23 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:26 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/UsersPage/h1_UserManagement' is visible
+
+15-05-2026T23:20:26 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Object Repository/Admin/UsersPage/h1_UserManagement"), 10, STOP_ON_FAILURE): Object 'Object Repository/Admin/UsersPage/h1_UserManagement' is present
+
+15-05-2026T23:20:26 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/UsersPage/h1_UserManagement' is present
+
+15-05-2026T23:20:26 - [TEST_STEP][PASSED] - userHelper.waitForLoadingComplete(): Delayed 1 second(s)
+
+15-05-2026T23:20:27 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/Admin/UsersPage/div_LoadingSpinner' located by 'By.xpath: //div[contains(@class,'animate-spin')]' is not present after '15' second(s)
+
+15-05-2026T23:20:28 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - hasUsers = verifyElementPresent(findTestObject("Object Repository/Admin/UsersPage/table_Users"), 5, OPTIONAL): Object 'Object Repository/Admin/UsersPage/table_Users' is present
+
+15-05-2026T23:20:28 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/UsersPage/table_Users' is present
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - if (!(hasUsers)): null
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - else: Users table displayed with existing users
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - comment("Users table displayed with existing users"): Users table displayed with existing users
+
+15-05-2026T23:20:28 - [MESSAGE][INFO] - Users table displayed with existing users
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Object Repository/Admin/UsersPage/btn_ActiveTab"), 5, STOP_ON_FAILURE): Object 'Object Repository/Admin/UsersPage/btn_ActiveTab' is present
+
+15-05-2026T23:20:28 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/UsersPage/btn_ActiveTab' is present
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Object Repository/Admin/UsersPage/btn_InactiveTab"), 5, STOP_ON_FAILURE): Object 'Object Repository/Admin/UsersPage/btn_InactiveTab' is present
+
+15-05-2026T23:20:28 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/UsersPage/btn_InactiveTab' is present
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - comment("✅ TC_ADM_USER_001 PASSED: Users Management page loaded successfully"): ✅ TC_ADM_USER_001 PASSED: Users Management page loaded successfully
+
+15-05-2026T23:20:28 - [MESSAGE][INFO] - ✅ TC_ADM_USER_001 PASSED: Users Management page loaded successfully
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:29 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Admin/UserManagement/TC_ADM_USER_002_EditUserValid" time="35.016" classname="Test Cases/Admin/UserManagement/TC_ADM_USER_002_EditUserValid" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:20:29 - [TEST_CASE][PASSED] - Test Cases/Admin/UserManagement/TC_ADM_USER_002_EditUserValid: Test Cases/Admin/UserManagement/TC_ADM_USER_002_EditUserValid
+
+15-05-2026T23:20:29 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:20:29 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:20:29 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:20:30 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:20:30 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T23:20:30 - [TEST_STEP][PASSED] - userHelper = new admin.User_Keywords(): null
+
+15-05-2026T23:20:30 - [TEST_STEP][PASSED] - testUserEmail = userHelper.generateUniqueEmail("edituser"): null
+
+15-05-2026T23:20:30 - [TEST_STEP][PASSED] - testPassword = "Password123!": null
+
+15-05-2026T23:20:30 - [TEST_STEP][PASSED] - testUserId = null: null
+
+15-05-2026T23:20:30 - [TEST_STEP][PASSED] - try: ✅ TC_ADM_USER_002 PASSED
+
+15-05-2026T23:20:30 - [TEST_STEP][PASSED] - createResult = userHelper.createTestUserViaAPI("EditTest", "User", testUserEmail, testPassword, "user"): Test user created via API: edituser57524@gmail.com
+
+15-05-2026T23:20:35 - [MESSAGE][INFO] - HAR: D:\Uni\Semester 7\Service-Oriented Computing\Project\Real-Estate-Microservices\Katalon\Reports\20260515_231854\TS_Admin_Smoke\20260515_231906\requests\main\null_0.har
+
+15-05-2026T23:20:35 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request POST \
+  --data '{"firstName":"EditTest","lastName":"User","email":"edituser57524@gmail.com","password":"Password123!","role":"user"}' \
+  --header 'Content-Type: application/json' \
+  --header 'Accept: application/json' \
+  'http://localhost:3000/api/auth/register'
+
+15-05-2026T23:20:35 - [MESSAGE][PASSED] - Send request successfully
+
+15-05-2026T23:20:35 - [MESSAGE][INFO] - Test user created via API: edituser57524@gmail.com
+
+15-05-2026T23:20:35 - [TEST_STEP][PASSED] - testUserId = userId: null
+
+15-05-2026T23:20:35 - [TEST_STEP][PASSED] - comment(Test user created: $testUserEmail (ID: $testUserId)): Test user created: edituser57524@gmail.com (ID: 6a0780101406c9b4918ad1ee)
+
+15-05-2026T23:20:35 - [MESSAGE][INFO] - Test user created: edituser57524@gmail.com (ID: 6a0780101406c9b4918ad1ee)
+
+15-05-2026T23:20:35 - [TEST_STEP][PASSED] - loginHelper.loginAsAdmin(): Delayed 2 second(s)
+
+15-05-2026T23:20:35 - [MESSAGE][PASSED] - Current window's url is: 'about:blank'
+
+15-05-2026T23:20:36 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:20:36 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:36 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:20:37 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:20:37 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T23:20:38 - [MESSAGE][PASSED] - Text 'admin@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:20:38 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T23:20:39 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:20:40 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:20:43 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:20:43 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:45 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:45 - [TEST_STEP][PASSED] - userHelper.navigateToUsers(): Object 'Object Repository/Admin/UsersPage/h1_UserManagement' is visible
+
+15-05-2026T23:20:45 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/admin/users' successfully
+
+15-05-2026T23:20:45 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:46 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/UsersPage/h1_UserManagement' is visible
+
+15-05-2026T23:20:46 - [TEST_STEP][PASSED] - userHelper.waitForLoadingComplete(): Delayed 1 second(s)
+
+15-05-2026T23:20:47 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/Admin/UsersPage/div_LoadingSpinner' located by 'By.xpath: //div[contains(@class,'animate-spin')]' is not present after '15' second(s)
+
+15-05-2026T23:20:48 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:20:48 - [TEST_STEP][PASSED] - userHelper.verifyUserExistsInTable(testUserEmail): Object 'Object Repository/Admin/UsersPage/td_UserEmail' is present
+
+15-05-2026T23:20:48 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/UsersPage/td_UserEmail' is present
+
+15-05-2026T23:20:48 - [TEST_STEP][PASSED] - userHelper.clickEditUser(testUserEmail): Delayed 1 second(s)
+
+15-05-2026T23:20:49 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/UsersPage/btn_EditUser' is clicked on
+
+15-05-2026T23:20:50 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:20:50 - [TEST_STEP][PASSED] - userHelper.verifyUserModalDisplayed(): Object 'Object Repository/Admin/UsersPage/Modal/div_UserModal' is visible
+
+15-05-2026T23:20:50 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/UsersPage/Modal/div_UserModal' is visible
+
+15-05-2026T23:20:50 - [TEST_STEP][PASSED] - userHelper.fillUserForm("UpdatedFirst", "UpdatedLast", testUserEmail, "user", "+1234567890", "", ""): Text '+1234567890' is set on object 'Object Repository/Admin/UsersPage/Modal/input_PhoneNumber'
+
+15-05-2026T23:20:50 - [MESSAGE][PASSED] - Text of object 'Object Repository/Admin/UsersPage/Modal/input_FirstName' is cleared
+
+15-05-2026T23:20:52 - [MESSAGE][PASSED] - Text 'UpdatedFirst' is set on object 'Object Repository/Admin/UsersPage/Modal/input_FirstName'
+
+15-05-2026T23:20:52 - [MESSAGE][PASSED] - Text of object 'Object Repository/Admin/UsersPage/Modal/input_LastName' is cleared
+
+15-05-2026T23:20:54 - [MESSAGE][PASSED] - Text 'UpdatedLast' is set on object 'Object Repository/Admin/UsersPage/Modal/input_LastName'
+
+15-05-2026T23:20:54 - [MESSAGE][PASSED] - Text of object 'Object Repository/Admin/UsersPage/Modal/input_Email' is cleared
+
+15-05-2026T23:20:56 - [MESSAGE][PASSED] - Text 'edituser57524@gmail.com' is set on object 'Object Repository/Admin/UsersPage/Modal/input_Email'
+
+15-05-2026T23:20:57 - [MESSAGE][PASSED] - All options with value 'user' are selected in object 'Object Repository/Admin/UsersPage/Modal/select_Role' 
+
+15-05-2026T23:20:57 - [MESSAGE][PASSED] - Text of object 'Object Repository/Admin/UsersPage/Modal/input_PhoneNumber' is cleared
+
+15-05-2026T23:20:59 - [MESSAGE][PASSED] - Text '+1234567890' is set on object 'Object Repository/Admin/UsersPage/Modal/input_PhoneNumber'
+
+15-05-2026T23:20:59 - [TEST_STEP][PASSED] - userHelper.clickSaveUserButton(): Delayed 2 second(s)
+
+15-05-2026T23:20:59 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/UsersPage/Modal/btn_SaveChanges' is clicked on
+
+15-05-2026T23:21:01 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:01 - [TEST_STEP][PASSED] - userHelper.verifyModalClosed(): Web element with id: 'Object Repository/Admin/UsersPage/Modal/div_UserModal' located by 'By.xpath: //div[contains(@class,'fixed inset-0 bg-black/60')]' is not present after '10' second(s)
+
+15-05-2026T23:21:01 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/Admin/UsersPage/Modal/div_UserModal' located by 'By.xpath: //div[contains(@class,'fixed inset-0 bg-black/60')]' is not present after '10' second(s)
+
+15-05-2026T23:21:01 - [TEST_STEP][PASSED] - userHelper.waitForLoadingComplete(): Delayed 1 second(s)
+
+15-05-2026T23:21:02 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/Admin/UsersPage/div_LoadingSpinner' located by 'By.xpath: //div[contains(@class,'animate-spin')]' is not present after '15' second(s)
+
+15-05-2026T23:21:03 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:21:03 - [TEST_STEP][PASSED] - userHelper.verifySuccessToast("updated"): Object 'Object Repository/Admin/UsersPage/toast_Success' is visible
+
+15-05-2026T23:21:03 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/UsersPage/toast_Success' is visible
+
+15-05-2026T23:21:03 - [TEST_STEP][PASSED] - userHelper.verifyUserExistsInTable(testUserEmail): Object 'Object Repository/Admin/UsersPage/td_UserEmail' is present
+
+15-05-2026T23:21:03 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/UsersPage/td_UserEmail' is present
+
+15-05-2026T23:21:03 - [TEST_STEP][PASSED] - comment("✅ TC_ADM_USER_002 PASSED"): ✅ TC_ADM_USER_002 PASSED
+
+15-05-2026T23:21:03 - [MESSAGE][INFO] - ✅ TC_ADM_USER_002 PASSED
+
+15-05-2026T23:21:03 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:21:03 - [TEST_STEP][PASSED] - if (testUserId): User deleted via API: 6a0780101406c9b4918ad1ee, Status: 200
+
+15-05-2026T23:21:03 - [TEST_STEP][PASSED] - try: User deleted via API: 6a0780101406c9b4918ad1ee, Status: 200
+
+15-05-2026T23:21:03 - [TEST_STEP][PASSED] - userHelper.deleteUserViaAPI(testUserId): User deleted via API: 6a0780101406c9b4918ad1ee, Status: 200
+
+15-05-2026T23:21:03 - [MESSAGE][INFO] - HAR: D:\Uni\Semester 7\Service-Oriented Computing\Project\Real-Estate-Microservices\Katalon\Reports\20260515_231854\TS_Admin_Smoke\20260515_231906\requests\main\null_1.har
+
+15-05-2026T23:21:03 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request DELETE \
+  --header 'Content-Type: application/json' \
+  'http://localhost:3000/api/auth/users/6a0780101406c9b4918ad1ee'
+
+15-05-2026T23:21:03 - [MESSAGE][PASSED] - Send request successfully
+
+15-05-2026T23:21:03 - [MESSAGE][INFO] - User deleted via API: 6a0780101406c9b4918ad1ee, Status: 200
+
+15-05-2026T23:21:03 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:21:04 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Admin/PropertyManagement/TC_ADM_PROP_001_ViewPropertiesPage" time="13.649" classname="Test Cases/Admin/PropertyManagement/TC_ADM_PROP_001_ViewPropertiesPage" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:21:04 - [TEST_CASE][PASSED] - Test Cases/Admin/PropertyManagement/TC_ADM_PROP_001_ViewPropertiesPage: Test Cases/Admin/PropertyManagement/TC_ADM_PROP_001_ViewPropertiesPage
+
+15-05-2026T23:21:04 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:21:04 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:21:04 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:21:05 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:21:05 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T23:21:05 - [TEST_STEP][PASSED] - propertyHelper = new admin.Property_Keywords(): null
+
+15-05-2026T23:21:05 - [TEST_STEP][PASSED] - try: ✅ TC_ADM_PROP_001 PASSED: Properties Management page loaded successfully
+
+15-05-2026T23:21:05 - [TEST_STEP][PASSED] - loginHelper.loginAsAdmin(): Delayed 2 second(s)
+
+15-05-2026T23:21:05 - [MESSAGE][PASSED] - Current window's url is: 'about:blank'
+
+15-05-2026T23:21:06 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:21:06 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:06 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:21:06 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:21:07 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T23:21:07 - [MESSAGE][PASSED] - Text 'admin@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:21:08 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T23:21:08 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:21:09 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:21:12 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:21:12 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:14 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:14 - [TEST_STEP][PASSED] - propertyHelper.navigateToProperties(): Object 'Object Repository/Admin/PropertiesPage/h1_PropertyManagement' is visible
+
+15-05-2026T23:21:14 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/admin/properties' successfully
+
+15-05-2026T23:21:14 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:15 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/PropertiesPage/h1_PropertyManagement' is visible
+
+15-05-2026T23:21:15 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Object Repository/Admin/PropertiesPage/h1_PropertyManagement"), 10, STOP_ON_FAILURE): Object 'Object Repository/Admin/PropertiesPage/h1_PropertyManagement' is present
+
+15-05-2026T23:21:15 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/PropertiesPage/h1_PropertyManagement' is present
+
+15-05-2026T23:21:15 - [TEST_STEP][PASSED] - propertyHelper.waitForLoadingComplete(): Delayed 1 second(s)
+
+15-05-2026T23:21:16 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/Admin/PropertiesPage/div_LoadingSpinner' located by 'By.xpath: //div[contains(@class,'animate-spin')]' is not present after '15' second(s)
+
+15-05-2026T23:21:17 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:21:17 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Object Repository/Admin/PropertiesPage/table_Properties"), 10, STOP_ON_FAILURE): Object 'Object Repository/Admin/PropertiesPage/table_Properties' is present
+
+15-05-2026T23:21:17 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/PropertiesPage/table_Properties' is present
+
+15-05-2026T23:21:17 - [TEST_STEP][PASSED] - propertyCount = propertyHelper.getPropertyCount(): Found web elements by test object Object Repository/Admin/PropertiesPage/tr_PropertyRows
+
+15-05-2026T23:21:17 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Admin/PropertiesPage/tr_PropertyRows
+
+15-05-2026T23:21:17 - [TEST_STEP][PASSED] - comment(Properties found in table: $propertyCount): Properties found in table: 10
+
+15-05-2026T23:21:17 - [MESSAGE][INFO] - Properties found in table: 10
+
+15-05-2026T23:21:17 - [TEST_STEP][PASSED] - comment("✅ TC_ADM_PROP_001 PASSED: Properties Management page loaded successfully"): ✅ TC_ADM_PROP_001 PASSED: Properties Management page loaded successfully
+
+15-05-2026T23:21:17 - [MESSAGE][INFO] - ✅ TC_ADM_PROP_001 PASSED: Properties Management page loaded successfully
+
+15-05-2026T23:21:17 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:21:17 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:21:18 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Admin/ReviewManagement/TC_ADM_REV_001_ViewReviewsPage" time="15.335" classname="Test Cases/Admin/ReviewManagement/TC_ADM_REV_001_ViewReviewsPage" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:21:18 - [TEST_CASE][PASSED] - Test Cases/Admin/ReviewManagement/TC_ADM_REV_001_ViewReviewsPage: Test Cases/Admin/ReviewManagement/TC_ADM_REV_001_ViewReviewsPage
+
+15-05-2026T23:21:18 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:21:18 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:21:18 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:21:19 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:21:19 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T23:21:19 - [TEST_STEP][PASSED] - reviewHelper = new admin.Review_Keywords(): null
+
+15-05-2026T23:21:19 - [TEST_STEP][PASSED] - try: ✅ TC_ADM_REV_001 PASSED
+
+15-05-2026T23:21:19 - [TEST_STEP][PASSED] - loginHelper.loginAsAdmin(): Delayed 2 second(s)
+
+15-05-2026T23:21:19 - [MESSAGE][PASSED] - Current window's url is: 'about:blank'
+
+15-05-2026T23:21:20 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:21:20 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:20 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:21:20 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:21:21 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T23:21:22 - [MESSAGE][PASSED] - Text 'admin@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:21:22 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T23:21:23 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:21:23 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:21:26 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:21:26 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:28 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:28 - [TEST_STEP][PASSED] - reviewHelper.navigateToReviews(): Object 'Object Repository/Admin/ReviewsPage/h1_ReviewManagement' is visible
+
+15-05-2026T23:21:28 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/admin/reviews' successfully
+
+15-05-2026T23:21:29 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:30 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/ReviewsPage/h1_ReviewManagement' is visible
+
+15-05-2026T23:21:30 - [TEST_STEP][PASSED] - reviewHelper.waitForLoadingComplete(): Delayed 1 second(s)
+
+15-05-2026T23:21:30 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/Admin/ReviewsPage/div_LoadingSpinner' located by 'By.xpath: //div[contains(@class,'animate-spin')]' is not present after '15' second(s)
+
+15-05-2026T23:21:32 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:21:32 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Object Repository/Admin/ReviewsPage/h1_ReviewManagement"), 10, STOP_ON_FAILURE): Object 'Object Repository/Admin/ReviewsPage/h1_ReviewManagement' is present
+
+15-05-2026T23:21:32 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/ReviewsPage/h1_ReviewManagement' is present
+
+15-05-2026T23:21:32 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Object Repository/Admin/ReviewsPage/table_Reviews"), 10, STOP_ON_FAILURE): Object 'Object Repository/Admin/ReviewsPage/table_Reviews' is present
+
+15-05-2026T23:21:32 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/ReviewsPage/table_Reviews' is present
+
+15-05-2026T23:21:32 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Object Repository/Admin/ReviewsPage/input_Search"), 10, STOP_ON_FAILURE): Object 'Object Repository/Admin/ReviewsPage/input_Search' is present
+
+15-05-2026T23:21:32 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/ReviewsPage/input_Search' is present
+
+15-05-2026T23:21:32 - [TEST_STEP][PASSED] - reviewCount = reviewHelper.getReviewCount(): Found web elements by test object Object Repository/Admin/ReviewsPage/tr_ReviewRows
+
+15-05-2026T23:21:33 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Admin/ReviewsPage/tr_ReviewRows
+
+15-05-2026T23:21:33 - [TEST_STEP][PASSED] - comment(Reviews found in table: $reviewCount): Reviews found in table: 11
+
+15-05-2026T23:21:33 - [MESSAGE][INFO] - Reviews found in table: 11
+
+15-05-2026T23:21:33 - [TEST_STEP][PASSED] - comment("✅ TC_ADM_REV_001 PASSED"): ✅ TC_ADM_REV_001 PASSED
+
+15-05-2026T23:21:33 - [MESSAGE][INFO] - ✅ TC_ADM_REV_001 PASSED
+
+15-05-2026T23:21:33 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:21:33 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:21:33 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Admin/FilterManagement/TC_ADM_FILTER_001_ViewFiltersPage" time="14.326" classname="Test Cases/Admin/FilterManagement/TC_ADM_FILTER_001_ViewFiltersPage" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:21:33 - [TEST_CASE][PASSED] - Test Cases/Admin/FilterManagement/TC_ADM_FILTER_001_ViewFiltersPage: Test Cases/Admin/FilterManagement/TC_ADM_FILTER_001_ViewFiltersPage
+
+15-05-2026T23:21:33 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:21:33 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:21:33 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:21:34 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:21:34 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T23:21:34 - [TEST_STEP][PASSED] - filterHelper = new admin.Filter_Keywords(): null
+
+15-05-2026T23:21:34 - [TEST_STEP][PASSED] - try: ✅ TC_ADM_FILTER_001 PASSED: Filters Management page loaded successfully
+
+15-05-2026T23:21:34 - [TEST_STEP][PASSED] - loginHelper.loginAsAdmin(): Delayed 2 second(s)
+
+15-05-2026T23:21:34 - [MESSAGE][PASSED] - Current window's url is: 'about:blank'
+
+15-05-2026T23:21:35 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:21:35 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:36 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:21:36 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:21:36 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T23:21:37 - [MESSAGE][PASSED] - Text 'admin@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:21:37 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T23:21:38 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:21:38 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:21:41 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:21:41 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:43 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:43 - [TEST_STEP][PASSED] - filterHelper.navigateToFilters(): Object 'Object Repository/Admin/FiltersPage/h1_FiltersManagement' is visible
+
+15-05-2026T23:21:43 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/admin/filters' successfully
+
+15-05-2026T23:21:44 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:45 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/FiltersPage/h1_FiltersManagement' is visible
+
+15-05-2026T23:21:45 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Object Repository/Admin/FiltersPage/h1_FiltersManagement"), 10, STOP_ON_FAILURE): Object 'Object Repository/Admin/FiltersPage/h1_FiltersManagement' is present
+
+15-05-2026T23:21:45 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/FiltersPage/h1_FiltersManagement' is present
+
+15-05-2026T23:21:45 - [TEST_STEP][PASSED] - verifyElementClickable(findTestObject("Object Repository/Admin/FiltersPage/btn_AddFilter"), STOP_ON_FAILURE): Object 'Object Repository/Admin/FiltersPage/btn_AddFilter' is clickable
+
+15-05-2026T23:21:45 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/FiltersPage/btn_AddFilter' is clickable
+
+15-05-2026T23:21:45 - [TEST_STEP][PASSED] - filterHelper.waitForLoadingComplete(): Delayed 1 second(s)
+
+15-05-2026T23:21:46 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/Admin/FiltersPage/div_LoadingSpinner' located by 'By.xpath: //div[contains(@class,'animate-spin')]' is not present after '15' second(s)
+
+15-05-2026T23:21:47 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:21:47 - [TEST_STEP][PASSED] - hasFilters = verifyElementPresent(findTestObject("Object Repository/Admin/FiltersPage/table_Filters"), 5, OPTIONAL): Object 'Object Repository/Admin/FiltersPage/table_Filters' is present
+
+15-05-2026T23:21:47 - [MESSAGE][PASSED] - Object 'Object Repository/Admin/FiltersPage/table_Filters' is present
+
+15-05-2026T23:21:47 - [TEST_STEP][PASSED] - if (!(hasFilters)): null
+
+15-05-2026T23:21:47 - [TEST_STEP][PASSED] - else: Filters table displayed with existing filters
+
+15-05-2026T23:21:47 - [TEST_STEP][PASSED] - comment("Filters table displayed with existing filters"): Filters table displayed with existing filters
+
+15-05-2026T23:21:47 - [MESSAGE][INFO] - Filters table displayed with existing filters
+
+15-05-2026T23:21:47 - [TEST_STEP][PASSED] - comment("✅ TC_ADM_FILTER_001 PASSED: Filters Management page loaded successfully"): ✅ TC_ADM_FILTER_001 PASSED: Filters Management page loaded successfully
+
+15-05-2026T23:21:47 - [MESSAGE][INFO] - ✅ TC_ADM_FILTER_001 PASSED: Filters Management page loaded successfully
+
+15-05-2026T23:21:47 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:21:47 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:21:47 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[15-05-2026T23:19:42 - [TEST_SUITE][PASSED] - TS_Admin_Smoke: null]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

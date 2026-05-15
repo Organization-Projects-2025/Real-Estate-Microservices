@@ -1,0 +1,18 @@
+SCREEN NAME,Admin - Filter Management Page,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_ADMIN_004,SCENARIO DESCRIPTION,Admin - Filter Management Operations,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_ADM_FILTER_001,Verify admin can view filters page,Admin user logged in; System is accessible,URL: /admin/filters,Filters page displayed with existing filters listed,Filters displayed correctly,Filters page displayed with existing filters listed,PASSED,,Positive test - View filters
+2,TC_ADM_FILTER_002,Verify admin can create filter with valid data,Admin logged in,Name: 'Pool'; Type: 'Amenity'; Status: 'Active',Filter created successfully; Added to list,New filter saved in database,Filter created successfully and added to list,PASSED,,Positive test - Create filter
+3,TC_ADM_FILTER_003,Verify create filter fails with empty name,Admin logged in,Name: '' (empty); Type: 'Amenity',Error message indicating name is required,Filter not created,Error message indicating name is required,PASSED,,Negative test - validation
+4,TC_ADM_FILTER_004,Verify admin can edit existing filter,Admin logged in; Filter exists,Filter ID: filter_001; Name: 'Swimming Pool'; Type: 'Amenity',Filter updated successfully,Filter data updated in database,Filter edit modal throws error on save - unable to update filter configurations,ERROR,DEF-2026-004,Positive test - Edit filter
+5,TC_ADM_FILTER_005,Verify admin can delete filter,Admin logged in; Filter exists,Filter ID: filter_002; Confirm Delete: Yes,Filter deleted successfully; Removed from list,Filter removed from database,Filter deletion operation encounters error - filters not being removed from system,ERROR,DEF-2026-005,Positive test - Delete filter
+6,TC_ADM_FILTER_006,Verify cancel delete filter keeps filter,Admin logged in; Filter exists,Filter ID: filter_001; Confirm Delete: No (Cancel),Filter remains in list; No deletion,Filter unchanged,Cancel delete filter operation throws error - modal not closing properly,ERROR,DEF-2026-006,Negative path - Cancel delete
+7,TC_ADM_FILTER_007,Verify admin can create inactive filter,Admin logged in,Name: 'Garden'; Type: 'Feature'; Status: 'Inactive',Filter created with inactive status,Filter saved with inactive status,Filter created with inactive status successfully,PASSED,,Positive test - Inactive creation
+8,TC_ADM_FILTER_008,Verify admin can toggle filter status,Admin logged in; Filter exists,Filter ID: filter_001; Current Status: 'Active'; New Status: 'Inactive',Status toggled successfully,Filter status updated,Toggle filter status encounters error - active/inactive state not changing,ERROR,DEF-2026-007,Positive test - Status toggle
+9,TC_ADM_FILTER_009,Verify cancel add filter discards changes,Admin logged in; Add filter form open,Name: 'Test Filter'; Type: 'Amenity'; Save: No (Cancel),Form closes; Filter not created,No new filter added,Form closes and filter not created,PASSED,,Negative path - Cancel add
+10,TC_ADM_FILTER_010,Verify close filter modal with X button,Admin logged in; Filter modal open,Modal: Filter Edit; Close: X button,Modal closes without saving,No changes made,Modal closes without saving,PASSED,,UI functionality test

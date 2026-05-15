@@ -1,0 +1,238 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_Authentication_Complete,Chrome 143.0.7499.170,,,09-01-2026 18:45:48,09-01-2026 18:53:42,7m - 53.582s,FAILED
+,,,,,,,
+Test Cases/Authentication/ResetPassword/TC_AUTH_035_ResetPassword_Page_Elements,Chrome 143.0.7499.170,Verify all required Reset Password page elements are present with valid token,,09-01-2026 18:45:49,09-01-2026 18:46:01,11.248s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:45:50,09-01-2026 18:45:55,4.437s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:45:55,09-01-2026 18:45:55,0.054s,PASSED
+resetPasswordHelper = new authentication.ResetPassword_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:45:55,09-01-2026 18:45:55,0.025s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:45:55,09-01-2026 18:46:00,5.663s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:46:00,09-01-2026 18:46:01,0.256s,PASSED
+,,,,,,,
+Test Cases/Authentication/ResetPassword/TC_AUTH_034_ResetPassword_Invalid_Token,Chrome 143.0.7499.170,Verify password reset fails with invalid token,"negative,reset-password,authentication",09-01-2026 18:46:01,09-01-2026 18:46:15,14.792s,FAILED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:46:01,09-01-2026 18:46:02,1.638s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:46:02,09-01-2026 18:46:02,0.041s,PASSED
+resetPasswordHelper = new authentication.ResetPassword_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:46:02,09-01-2026 18:46:02,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:46:02,09-01-2026 18:46:15,12.763s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:46:15,09-01-2026 18:46:15,0.239s,FAILED
+,,,,,,,
+Test Cases/Authentication/ResetPassword/TC_AUTH_033_ResetPassword_Password_Mismatch,Chrome 143.0.7499.170,Verify password reset fails with mismatched passwords,"negative,reset-password,validation,authentication",09-01-2026 18:46:15,09-01-2026 18:46:27,11.251s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:46:16,09-01-2026 18:46:17,1.538s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:46:17,09-01-2026 18:46:17,0.073s,PASSED
+resetPasswordHelper = new authentication.ResetPassword_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:46:17,09-01-2026 18:46:17,0.004s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:46:17,09-01-2026 18:46:26,9.310s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:46:26,09-01-2026 18:46:27,0.255s,PASSED
+,,,,,,,
+Test Cases/Authentication/ResetPassword/TC_AUTH_032_ResetPassword_Valid_Token,Chrome 143.0.7499.170,Verify password reset with valid token and matching passwords,"positive,reset-password,authentication",09-01-2026 18:46:27,09-01-2026 18:46:48,20.999s,FAILED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:46:27,09-01-2026 18:46:28,1.494s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:46:28,09-01-2026 18:46:28,0.037s,PASSED
+resetPasswordHelper = new authentication.ResetPassword_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:46:28,09-01-2026 18:46:28,0.003s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:46:28,09-01-2026 18:46:28,0.014s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:46:28,09-01-2026 18:46:47,18.977s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:46:47,09-01-2026 18:46:48,0.285s,FAILED
+,,,,,,,
+Test Cases/Authentication/Register/TC_AUTH_027_Register_Role_Persistence,Chrome 143.0.7499.170,Verify that user role (Developer/Agent/User) persists correctly after logout and re-login,"workflow,role-based,authentication",09-01-2026 18:46:48,09-01-2026 18:47:17,29.572s,FAILED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:46:48,09-01-2026 18:46:49,1.492s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:46:49,09-01-2026 18:46:49,0.030s,PASSED
+registerHelper = new authentication.Register_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:46:49,09-01-2026 18:46:49,0.016s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:46:49,09-01-2026 18:46:49,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:46:49,09-01-2026 18:47:17,27.559s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:47:17,09-01-2026 18:47:17,0.306s,FAILED
+,,,,,,,
+Test Cases/Authentication/Register/TC_AUTH_026_Register_Auto_Login,Chrome 143.0.7499.170,Verify that successful registration automatically logs in the user,"workflow,authentication,register",09-01-2026 18:47:17,09-01-2026 18:47:33,16.178s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:47:17,09-01-2026 18:47:19,1.522s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:47:19,09-01-2026 18:47:19,0.023s,PASSED
+registerHelper = new authentication.Register_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:47:19,09-01-2026 18:47:19,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:47:19,09-01-2026 18:47:32,12.739s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:47:32,09-01-2026 18:47:33,1.829s,PASSED
+,,,,,,,
+Test Cases/Authentication/Register/TC_AUTH_025_Register_Password_Masking,Chrome 143.0.7499.170,"Verify register password field is masked (type=""password"")",,09-01-2026 18:47:33,09-01-2026 18:47:37,3.194s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:47:34,09-01-2026 18:47:35,1.418s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:47:35,09-01-2026 18:47:35,0.021s,PASSED
+registerHelper = new authentication.Register_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:47:35,09-01-2026 18:47:35,0.003s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:47:35,09-01-2026 18:47:36,1.470s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:47:36,09-01-2026 18:47:37,0.221s,PASSED
+,,,,,,,
+Test Cases/Authentication/Register/TC_AUTH_024_Register_Page_Elements,Chrome 143.0.7499.170,Verify that all required UI elements are present on the Register page,"ui-validation,authentication,register",09-01-2026 18:47:37,09-01-2026 18:47:42,5.666s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:47:37,09-01-2026 18:47:38,1.443s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:47:38,09-01-2026 18:47:38,0.020s,PASSED
+registerHelper = new authentication.Register_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:47:38,09-01-2026 18:47:38,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:47:38,09-01-2026 18:47:42,3.911s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:47:42,09-01-2026 18:47:42,0.230s,PASSED
+,,,,,,,
+Test Cases/Authentication/Register/TC_AUTH_023_Register_Maximum_Password_Length,Chrome 143.0.7499.170,Verify that password with 128 characters (maximum valid length) is handled correctly during registration,"boundary,input-validation,authentication,register",09-01-2026 18:47:42,09-01-2026 18:48:10,27.308s,FAILED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:47:42,09-01-2026 18:47:44,1.438s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:47:44,09-01-2026 18:47:44,0.019s,PASSED
+registerHelper = new authentication.Register_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:47:44,09-01-2026 18:47:44,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:47:44,09-01-2026 18:48:09,25.439s,FAILED
+catch (Exception e),Chrome 143.0.7499.170,,,09-01-2026 18:48:09,09-01-2026 18:48:09,0.070s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:48:09,09-01-2026 18:48:10,0.280s,PASSED
+,,,,,,,
+Test Cases/Authentication/Register/TC_AUTH_022_Register_Minimum_Password_Length,Chrome 143.0.7499.170,Verify that password with exactly 8 characters (minimum valid length) is accepted during registration,"boundary,input-validation,authentication,register",09-01-2026 18:48:10,09-01-2026 18:48:27,17.586s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:48:10,09-01-2026 18:48:11,1.409s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:48:11,09-01-2026 18:48:11,0.019s,PASSED
+registerHelper = new authentication.Register_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:48:11,09-01-2026 18:48:11,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:48:11,09-01-2026 18:48:27,15.773s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:48:27,09-01-2026 18:48:27,0.329s,PASSED
+,,,,,,,
+Test Cases/Authentication/Register/TC_AUTH_021_Register_Long_Input_Handling,Chrome 143.0.7499.170,Verify that extremely long email and password inputs are handled gracefully without crashes,"boundary,input-validation,login,authentication",09-01-2026 18:48:27,09-01-2026 18:48:38,10.778s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:48:27,09-01-2026 18:48:29,1.417s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:48:29,09-01-2026 18:48:29,0.023s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:48:29,09-01-2026 18:48:29,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:48:29,09-01-2026 18:48:38,9.015s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:48:38,09-01-2026 18:48:38,0.266s,PASSED
+,,,,,,,
+Test Cases/Authentication/Register/TC_AUTH_020_Register_Missing_Fields,Chrome 143.0.7499.170,Verify registration fails with missing required fields,"negative,validation,authentication,register",09-01-2026 18:48:38,09-01-2026 18:48:52,14.309s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:48:38,09-01-2026 18:48:39,1.420s,PASSED
+registerHelper = new authentication.Register_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:48:39,09-01-2026 18:48:39,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:48:39,09-01-2026 18:48:52,12.604s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:48:52,09-01-2026 18:48:52,0.229s,PASSED
+,,,,,,,
+Test Cases/Authentication/Register/TC_AUTH_019_Register_Weak_Password,Chrome 143.0.7499.170,Verify registration fails with weak password,"negative,validation,authentication,register",09-01-2026 18:48:52,09-01-2026 18:49:20,27.966s,FAILED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:48:52,09-01-2026 18:48:54,1.414s,PASSED
+registerHelper = new authentication.Register_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:48:54,09-01-2026 18:48:54,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:48:54,09-01-2026 18:49:20,26.230s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:49:20,09-01-2026 18:49:20,0.266s,FAILED
+,,,,,,,
+Test Cases/Authentication/Register/TC_AUTH_018_Register_Duplicate_Email,Chrome 143.0.7499.170,Verify registration fails with duplicate email,"negative,validation,authentication,register",09-01-2026 18:49:20,09-01-2026 18:49:51,30.338s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:49:20,09-01-2026 18:49:22,1.400s,PASSED
+registerHelper = new authentication.Register_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:49:22,09-01-2026 18:49:22,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:49:22,09-01-2026 18:49:50,28.631s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:49:50,09-01-2026 18:49:51,0.254s,PASSED
+,,,,,,,
+Test Cases/Authentication/Register/TC_AUTH_017_Register_Valid_Developer,Chrome 143.0.7499.170,Verify successful developer registration with valid data,"developer,positive,authentication,register",09-01-2026 18:49:51,09-01-2026 18:50:06,15.037s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:49:51,09-01-2026 18:49:52,1.477s,PASSED
+registerHelper = new authentication.Register_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:49:52,09-01-2026 18:49:52,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:49:52,09-01-2026 18:50:05,13.256s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:50:05,09-01-2026 18:50:06,0.256s,PASSED
+,,,,,,,
+Test Cases/Authentication/Register/TC_AUTH_016_Register_Valid_User,Chrome 143.0.7499.170,Verify successful user registration with valid data,"positive,authentication,register",09-01-2026 18:50:06,09-01-2026 18:50:23,17.495s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:50:06,09-01-2026 18:50:07,1.424s,PASSED
+registerHelper = new authentication.Register_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:50:07,09-01-2026 18:50:07,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:50:07,09-01-2026 18:50:23,15.719s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:50:23,09-01-2026 18:50:23,0.299s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_015_Login_Back_Button_After_Login,Chrome 143.0.7499.170,Verify that clicking browser back button after login does not log out user or expose security issues,"security,workflow,authentication",09-01-2026 18:50:23,09-01-2026 18:50:38,14.456s,FAILED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:50:23,09-01-2026 18:50:25,1.512s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:50:25,09-01-2026 18:50:25,0.019s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:50:25,09-01-2026 18:50:25,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:50:25,09-01-2026 18:50:37,12.594s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:50:37,09-01-2026 18:50:38,0.265s,FAILED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_014_Logout_Functionality,Chrome 143.0.7499.170,Verify logout functionality clears session and redirects to login page,,09-01-2026 18:50:38,09-01-2026 18:50:55,17.460s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:50:38,09-01-2026 18:50:39,1.422s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:50:39,09-01-2026 18:50:39,0.015s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:50:39,09-01-2026 18:50:39,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:50:39,09-01-2026 18:50:55,15.546s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:50:55,09-01-2026 18:50:55,0.417s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_013_Login_Session_Persistence,Chrome 143.0.7499.170,Verify that user session persists after page refresh and navigation (cookies/localStorage working),"security,session,authentication",09-01-2026 18:50:55,09-01-2026 18:51:12,16.462s,FAILED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:50:55,09-01-2026 18:50:56,1.378s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:50:56,09-01-2026 18:50:57,0.015s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:50:57,09-01-2026 18:50:57,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:50:57,09-01-2026 18:51:11,14.076s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:51:11,09-01-2026 18:51:12,0.943s,FAILED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_012_Login_Password_Not_In_URL,Chrome 143.0.7499.170,Verify that passwords are never exposed in URLs or browser history (POST vs GET),"security,critical,authentication",09-01-2026 18:51:12,09-01-2026 18:51:22,10.156s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:51:12,09-01-2026 18:51:13,1.455s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:51:13,09-01-2026 18:51:13,0.016s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:51:13,09-01-2026 18:51:13,0.000s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:51:13,09-01-2026 18:51:21,8.356s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:51:21,09-01-2026 18:51:22,0.274s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_011_Login_XSS_Prevention,Chrome 143.0.7499.170,Verify that XSS (Cross-Site Scripting) attacks are prevented in login input fields,"security,critical,authentication",09-01-2026 18:51:22,09-01-2026 18:51:33,11.350s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:51:22,09-01-2026 18:51:23,1.386s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:51:23,09-01-2026 18:51:23,0.018s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:51:23,09-01-2026 18:51:23,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:51:23,09-01-2026 18:51:33,9.669s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:51:33,09-01-2026 18:51:33,0.211s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_010_Login_Password_Masking,Chrome 143.0.7499.170,Verify that password input fields are masked (type=password) on Login and Register pages,"security,ui-validation,authentication",09-01-2026 18:51:33,09-01-2026 18:51:36,3.214s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:51:33,09-01-2026 18:51:35,1.465s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:51:35,09-01-2026 18:51:35,0.021s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:51:35,09-01-2026 18:51:35,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:51:35,09-01-2026 18:51:36,1.442s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:51:36,09-01-2026 18:51:36,0.231s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_009_Login_Page_Elements,Chrome 143.0.7499.170,Verify that all required UI elements are present on the Login page,"ui-validation,login,authentication",09-01-2026 18:51:36,09-01-2026 18:51:41,5.049s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:51:36,09-01-2026 18:51:38,1.401s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:51:38,09-01-2026 18:51:38,0.019s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:51:38,09-01-2026 18:51:38,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:51:38,09-01-2026 18:51:41,3.344s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:51:41,09-01-2026 18:51:41,0.236s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_008_Login_Email_Trimming,Chrome 143.0.7499.170,Verify that leading and trailing spaces are automatically trimmed from email input,"input-validation,login,authentication",09-01-2026 18:51:41,09-01-2026 18:51:54,12.585s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:51:41,09-01-2026 18:51:43,1.434s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:51:43,09-01-2026 18:51:43,0.014s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:51:43,09-01-2026 18:51:43,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:51:43,09-01-2026 18:51:52,9.363s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:51:52,09-01-2026 18:51:54,1.730s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_006_Login_Invalid_Email_Format,Chrome 143.0.7499.170,Verify that login rejects invalid email format (no @ symbol),"input-validation,login,authentication",09-01-2026 18:51:54,09-01-2026 18:52:03,8.853s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:51:54,09-01-2026 18:51:55,1.338s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:51:55,09-01-2026 18:51:55,0.014s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:51:55,09-01-2026 18:51:55,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:51:55,09-01-2026 18:52:03,7.223s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:52:03,09-01-2026 18:52:03,0.235s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_007_Login_Email_Special_Characters,Chrome 143.0.7499.170,Verify that email with special characters (+ symbol) is accepted as valid format,"input-validation,login,authentication",09-01-2026 18:52:03,09-01-2026 18:52:12,9.561s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:52:03,09-01-2026 18:52:04,1.447s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:52:04,09-01-2026 18:52:04,0.027s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:52:04,09-01-2026 18:52:04,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:52:04,09-01-2026 18:52:12,7.758s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:52:12,09-01-2026 18:52:12,0.283s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_005_ForgotPassword_Link,Chrome 143.0.7499.170,Verify forgot password link navigation,"navigation,login,authentication",09-01-2026 18:52:12,09-01-2026 18:52:16,3.440s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:52:12,09-01-2026 18:52:14,1.454s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:52:14,09-01-2026 18:52:14,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:52:14,09-01-2026 18:52:16,1.723s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:52:16,09-01-2026 18:52:16,0.211s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_004_Login_Empty_Fields,Chrome 143.0.7499.170,Verify login fails with empty fields,"negative,login,validation,authentication",09-01-2026 18:52:16,09-01-2026 18:52:30,13.792s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:52:16,09-01-2026 18:52:17,1.437s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:52:17,09-01-2026 18:52:17,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:52:17,09-01-2026 18:52:29,12.030s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:52:29,09-01-2026 18:52:30,0.228s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_003_Login_Incorrect_Password,Chrome 143.0.7499.170,Verify login fails with incorrect password,"negative,login,authentication",09-01-2026 18:52:30,09-01-2026 18:52:39,9.613s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:52:30,09-01-2026 18:52:31,1.467s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:52:31,09-01-2026 18:52:31,0.000s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:52:31,09-01-2026 18:52:39,7.837s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:52:39,09-01-2026 18:52:39,0.264s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_002_Login_Invalid_Email,Chrome 143.0.7499.170,Verify login fails with invalid email,"negative,login,authentication",09-01-2026 18:52:39,09-01-2026 18:52:49,9.624s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:52:39,09-01-2026 18:52:41,1.439s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:52:41,09-01-2026 18:52:41,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:52:41,09-01-2026 18:52:49,7.879s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:52:49,09-01-2026 18:52:49,0.265s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_001_Login_Valid_Credentials,Chrome 143.0.7499.170,Verify successful login with valid credentials,"positive,login,authentication",09-01-2026 18:52:49,09-01-2026 18:53:00,11.691s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:52:49,09-01-2026 18:52:50,1.470s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:52:50,09-01-2026 18:52:50,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:52:50,09-01-2026 18:53:00,9.249s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:53:00,09-01-2026 18:53:00,0.927s,PASSED
+,,,,,,,
+Test Cases/Authentication/ForgotPassword/TC_AUTH_031_ForgotPassword_Page_Elements,Chrome 143.0.7499.170,Verify all required Forgot Password page elements are present,,09-01-2026 18:53:00,09-01-2026 18:53:05,4.301s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:53:01,09-01-2026 18:53:02,1.476s,PASSED
+maximizeWindow(),Chrome 143.0.7499.170,,,09-01-2026 18:53:02,09-01-2026 18:53:02,0.015s,PASSED
+forgotPasswordHelper = new authentication.ForgotPassword_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:53:02,09-01-2026 18:53:02,0.012s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:53:02,09-01-2026 18:53:05,2.488s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:53:05,09-01-2026 18:53:05,0.204s,PASSED
+,,,,,,,
+Test Cases/Authentication/ForgotPassword/TC_AUTH_030_ForgotPassword_Empty_Email,Chrome 143.0.7499.170,Verify validation prevents submission with empty email,"negative,forgot-password,validation,authentication",09-01-2026 18:53:05,09-01-2026 18:53:12,7.496s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:53:05,09-01-2026 18:53:06,1.427s,PASSED
+forgotPasswordHelper = new authentication.ForgotPassword_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:53:06,09-01-2026 18:53:06,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:53:06,09-01-2026 18:53:12,5.807s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:53:12,09-01-2026 18:53:12,0.210s,PASSED
+,,,,,,,
+Test Cases/Authentication/ForgotPassword/TC_AUTH_029_ForgotPassword_Invalid_Email,Chrome 143.0.7499.170,Verify appropriate message for non-existent email,"negative,forgot-password,authentication",09-01-2026 18:53:12,09-01-2026 18:53:20,8.037s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:53:12,09-01-2026 18:53:14,1.433s,PASSED
+forgotPasswordHelper = new authentication.ForgotPassword_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:53:14,09-01-2026 18:53:14,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:53:14,09-01-2026 18:53:20,6.317s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:53:20,09-01-2026 18:53:20,0.229s,PASSED
+,,,,,,,
+Test Cases/Authentication/ForgotPassword/TC_AUTH_028_ForgotPassword_Valid_Email,Chrome 143.0.7499.170,Verify reset link sent for valid email,"positive,forgot-password,authentication",09-01-2026 18:53:20,09-01-2026 18:53:42,21.405s,FAILED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:53:20,09-01-2026 18:53:22,1.361s,PASSED
+forgotPasswordHelper = new authentication.ForgotPassword_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:53:22,09-01-2026 18:53:22,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:53:22,09-01-2026 18:53:41,19.729s,FAILED
+catch (Exception e),Chrome 143.0.7499.170,,,09-01-2026 18:53:41,09-01-2026 18:53:41,0.006s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:53:41,09-01-2026 18:53:42,0.263s,PASSED

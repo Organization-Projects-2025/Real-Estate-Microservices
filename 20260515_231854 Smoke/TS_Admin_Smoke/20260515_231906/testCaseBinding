@@ -1,0 +1,6 @@
+{"testCaseName":"Test Cases/Admin/TC_ADM_AdminAccessRequired","testCaseId":"Test Cases/Admin/TC_ADM_AdminAccessRequired","iterationVariableName":""}
+{"testCaseName":"Test Cases/Admin/UserManagement/TC_ADM_USER_001_ViewUsersPage","testCaseId":"Test Cases/Admin/UserManagement/TC_ADM_USER_001_ViewUsersPage","iterationVariableName":""}
+{"testCaseName":"Test Cases/Admin/UserManagement/TC_ADM_USER_002_EditUserValid","testCaseId":"Test Cases/Admin/UserManagement/TC_ADM_USER_002_EditUserValid","iterationVariableName":""}
+{"testCaseName":"Test Cases/Admin/PropertyManagement/TC_ADM_PROP_001_ViewPropertiesPage","testCaseId":"Test Cases/Admin/PropertyManagement/TC_ADM_PROP_001_ViewPropertiesPage","iterationVariableName":""}
+{"testCaseName":"Test Cases/Admin/ReviewManagement/TC_ADM_REV_001_ViewReviewsPage","testCaseId":"Test Cases/Admin/ReviewManagement/TC_ADM_REV_001_ViewReviewsPage","iterationVariableName":""}
+{"testCaseName":"Test Cases/Admin/FilterManagement/TC_ADM_FILTER_001_ViewFiltersPage","testCaseId":"Test Cases/Admin/FilterManagement/TC_ADM_FILTER_001_ViewFiltersPage","iterationVariableName":""}

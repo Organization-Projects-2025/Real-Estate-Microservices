@@ -1,0 +1,14 @@
+{
+  "id": "Test Suites/Smoke Collection",
+  "name": "Smoke Collection",
+  "reportFolder": "D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\Smoke Collection\\20260515_231854",
+  "startTime": 1778876376165,
+  "endTime": 1778876572070,
+  "totalPassedTestCases": "36",
+  "totalErrorTestCases": "0",
+  "totalFailedTestCases": "8",
+  "totalTestCases": "44",
+  "totalIncompleteTestCases": "0",
+  "totalSkippedTestCases": "0",
+  "description": ""
+}

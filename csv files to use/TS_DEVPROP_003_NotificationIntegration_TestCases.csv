@@ -1,0 +1,11 @@
+SCREEN NAME,Developer - Notification Integration,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_DEVPROP_003,SCENARIO DESCRIPTION,Developer Properties - Notification Integration,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_DEVPROP_008,Verify notification generated on project creation,Developer logged in; Notification service running,Project Name: 'Notification Test Project'; Description: 'Test project for notification',Notification created and visible in notifications page,Notification in database,Notification not triggered when creating new developer project,FAILED,DEF-2026-019,Integration test - Project notification
+2,TC_DEVPROP_009,Verify active project count updates after creation,Developer logged in; Initial count known,Initial Project Count: 5; New Project Name: 'Count Test Project',Project count increased by 1,Counter updated correctly,Active project count not updating correctly after project creation,FAILED,DEF-2026-020,Data integrity test
+3,TC_DEVPROP_010,Verify developer count updates after new developer signup,Initial developer count known,Initial Developer Count: 10; New Developer Email: 'newdev@test.com',Developer count increased by 1,Counter updated correctly,Developer count display not updating correctly after new developer signup,FAILED,DEF-2026-021,Data integrity test

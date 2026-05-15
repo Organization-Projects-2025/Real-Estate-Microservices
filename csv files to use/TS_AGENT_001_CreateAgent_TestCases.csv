@@ -1,0 +1,12 @@
+SCREEN NAME,Agent - Become Agent Page,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_AGENT_001,SCENARIO DESCRIPTION,Agent - Apply for Agent Role,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_AGENT_001,Verify agent creation with valid data,User logged in; Agent form accessible,Agency: 'Prime Realty'; Phone: '555-1234'; Bio: 'Experienced real estate agent with 10 years experience',Agent profile created successfully,New agent profile in database,Agent profile created successfully,PASSED,,Positive test - Create agent
+2,TC_AGENT_002,Verify agent creation fails with duplicate email,User logged in; Agent with same email exists,Email: 'existingagent@realestate.com' (already registered),Error message indicating email already registered as agent,No duplicate agent created,Error message indicating email already registered as agent,PASSED,,Negative test - Duplicate prevention
+3,TC_AGENT_003,Verify agent creation fails with missing required fields,User logged in; Agent form open,Agency: '' (empty); Phone: '' (empty),Error messages for required fields,Agent not created,Error messages for required fields,PASSED,,Validation test - Required fields
+4,TC_AGENT_004,Verify agent creation fails with invalid email format,User logged in; Agent form open,Email: 'invalidemail' (no @ symbol),Error message indicating invalid email format,Agent not created,Error message indicating invalid email format,PASSED,,Validation test - Email format

@@ -1,0 +1,14 @@
+{
+  "id": "Test Suites/Complete Collection",
+  "name": "Complete Collection",
+  "reportFolder": "D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_225237\\Complete Collection\\20260515_225237",
+  "startTime": 1778874799771,
+  "endTime": 1778875439396,
+  "totalPassedTestCases": "108",
+  "totalErrorTestCases": "4",
+  "totalFailedTestCases": "48",
+  "totalTestCases": "160",
+  "totalIncompleteTestCases": "0",
+  "totalSkippedTestCases": "0",
+  "description": ""
+}

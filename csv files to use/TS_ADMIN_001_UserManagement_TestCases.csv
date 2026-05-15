@@ -1,0 +1,18 @@
+SCREEN NAME,Admin - User Management Page,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_ADMIN_001,SCENARIO DESCRIPTION,Admin - User Management Operations,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_ADM_USER_001,Verify admin can view users page with all users listed,Admin user logged in; Users exist in system,URL: /admin/users,Users page displayed with list of all users in table format,Users displayed correctly,Users page displayed with list of all users in table format,PASSED,,Positive test - View users
+2,TC_ADM_USER_002,Verify admin can edit user with valid data,Admin logged in; User exists,User ID: user_001; Name: 'John Smith'; Email: 'john@test.com',User updated successfully; Success message shown,User data updated in database,User updated successfully with success message shown,PASSED,,Positive test - Edit user
+3,TC_ADM_USER_003,Verify edit user fails with empty name,Admin logged in; User selected for edit,User ID: user_001; Name: '' (empty),Error message indicating name is required,User data not changed,Error message indicating name is required,PASSED,,Negative test - validation
+4,TC_ADM_USER_004,Verify admin can change user role,Admin logged in; User exists,User ID: user_001; Current Role: 'User'; New Role: 'Developer',Role updated successfully; User now has Developer privileges,Role updated in database,Role updated successfully,PASSED,,Positive test - Role change
+5,TC_ADM_USER_005,Verify admin can deactivate user,Admin logged in; Active user exists,User ID: user_001; Current Status: 'Active'; New Status: 'Inactive'; Confirm: Yes,User deactivated successfully; Moved to Inactive tab,User status set to inactive,User deactivated successfully and moved to Inactive tab,PASSED,,Positive test - Deactivate
+6,TC_ADM_USER_006,Verify cancel deactivate keeps user active,Admin logged in; Active user exists,User ID: user_001; Current Status: 'Active'; Confirm: No (Cancel),User remains active; No status change,User status unchanged,User remains active - no status change,PASSED,,Negative path - Cancel action
+7,TC_ADM_USER_007,Verify admin can reactivate user,Admin logged in; Inactive user exists,User ID: user_002; Current Status: 'Inactive'; New Status: 'Active'; Confirm: Yes,User reactivated successfully; Moved to Active tab,User status set to active,User reactivated successfully and moved to Active tab,PASSED,,Positive test - Reactivate
+8,TC_ADM_USER_008,Verify switching between Active and Inactive tabs,Admin logged in; Both active and inactive users exist,Tab Selection: 'Active' | 'Inactive',Tables switch correctly showing respective users,Tab navigation works,Tables switch correctly showing respective users,PASSED,,UI functionality test
+9,TC_ADM_USER_009,Verify cancel edit user discards changes,Admin logged in; User edit modal open,User ID: user_001; Name: 'Changed Name'; Save: No (Cancel),Modal closes; Changes not saved,Original user data preserved,Modal closes and changes not saved,PASSED,,Negative path - Cancel edit
+10,TC_ADM_USER_010,Verify close modal with X button,Admin logged in; User edit modal open,Modal: User Edit; Close: X button,Modal closes without saving,No changes made,Modal closes without saving,PASSED,,UI functionality test

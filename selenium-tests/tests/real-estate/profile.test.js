@@ -9,7 +9,7 @@ const EMAIL = process.env.SELENIUM_EMAIL || 'admin@realestate.com';
 const PASSWORD = process.env.SELENIUM_PASSWORD || 'Password123!';
 const HEADLESS = process.env.HEADLESS !== 'false';
 const screenshotsDir = path.join(__dirname, '..', 'screenshots');
-const LONG_WAIT = 150000;
+const LONG_WAIT = 37500;
 
 function buildDriver() {
   const options = new chrome.Options();
@@ -43,7 +43,34 @@ async function login(driver, email = EMAIL, password = PASSWORD) {
   await driver.findElement(By.css('input[name="password"]')).clear();
   await driver.findElement(By.css('input[name="password"]')).sendKeys(password);
   await driver.findElement(By.css('button[type="submit"]')).click();
-  await driver.wait(until.urlIs(`${CLIENT_URL}/`), LONG_WAIT);
+  await driver.wait(async () => {
+    const url = await driver.getCurrentUrl();
+    if (!url.includes('/login')) return true;
+    const userId = await driver.executeScript(() =>
+      localStorage.getItem('userId'),
+    );
+    return !!userId;
+  }, LONG_WAIT);
+}
+
+async function openUserMenu(driver) {
+  const buttons = await driver.findElements(By.css('nav button'));
+  for (const button of buttons) {
+    try {
+      const displayed = await button.isDisplayed();
+      const enabled = await button.isEnabled();
+      const text = (await button.getText()).trim();
+      if (!displayed || !enabled || !text) continue;
+      if (/toggle menu/i.test(text) || /search/i.test(text)) continue;
+      await driver.executeScript(
+        'arguments[0].scrollIntoView({block: "center"});',
+        button,
+      );
+      await driver.executeScript('arguments[0].click();', button);
+      return;
+    } catch (err) {}
+  }
+  throw new Error('Could not locate authenticated user menu button');
 }
 
 describe('Profile (converted)', function () {
@@ -65,13 +92,7 @@ describe('Profile (converted)', function () {
 
   it('Profile page shows user info and can enter edit mode', async function () {
     await login(driver);
-    const menuBtn = await driver.wait(
-      until.elementLocated(
-        By.xpath("//button[.//span[normalize-space()='Admin']]"),
-      ),
-      LONG_WAIT,
-    );
-    await menuBtn.click();
+    await openUserMenu(driver);
     const profileLink = await driver.wait(
       until.elementLocated(By.xpath("//a[normalize-space()='My Profile']")),
       LONG_WAIT,

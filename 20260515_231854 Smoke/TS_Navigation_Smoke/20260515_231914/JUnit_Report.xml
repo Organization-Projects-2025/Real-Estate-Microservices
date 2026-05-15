@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="TS_Navigation_Smoke" time="75.875" tests="5" failures="0" errors="0">
+   <testsuite name="TS_Navigation_Smoke" tests="5" failures="0" errors="0" time="75.875" skipped="0" timestamp="2026-05-15T20:19:45.839Z" hostname="User - 192.168.1.4" id="Test Suites/TS_Navigation_Smoke">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_Navigation_Smoke\\20260515_231914"/>
+         <property name="logFiles" value="D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_Navigation_Smoke\\20260515_231914\\console0.log, D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_Navigation_Smoke\\20260515_231914\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="User - 192.168.1.4"/>
+         <property name="os" value="Windows 11 64bit"/>
+         <property name="katalonVersion" value="10.4.3.0"/>
+         <property name="browser" value="Edge Chromium 148.0.3967.54"/>
+         <property name="userFullName" value="Jakayaj756nctimecom"/>
+         <property name="hostAddress" value="192.168.1.4"/>
+         <property name="sessionId" value="f4e0a1f55d296a1bfeac02f58d50f631"/>
+         <property name="projectName" value="Katalon"/>
+         <property name="seleniumVersion" value="4.34.0"/>
+         <property name="proxyInformation" value="ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList=&quot;&quot;, isApplyToDesiredCapabilities=true }"/>
+         <property name="platform" value="Windows 11"/>
+      </properties>
+      <testcase name="Test Cases/Navigation/MainNav/TC_NAV_001_NavigateToBuy" time="20.704" classname="Test Cases/Navigation/MainNav/TC_NAV_001_NavigateToBuy" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:19:48 - [TEST_CASE][PASSED] - Test Cases/Navigation/MainNav/TC_NAV_001_NavigateToBuy: Test Cases/Navigation/MainNav/TC_NAV_001_NavigateToBuy
+
+15-05-2026T23:19:48 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+15-05-2026T23:19:48 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+15-05-2026T23:19:49 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:19:49 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:19:52 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:19:55 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+15-05-2026T23:19:55 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T23:19:55 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:19:57 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:19:57 - [TEST_STEP][PASSED] - navKW.clickMainNavLink("Buy"): Wait for page load successfully
+
+15-05-2026T23:19:59 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/MainNav/link_Buy' is clickable
+
+15-05-2026T23:19:59 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/MainNav/link_Buy' is clicked on
+
+15-05-2026T23:20:01 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:01 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:01 - [TEST_STEP][PASSED] - navKW.verifyCurrentUrl("/buy"): Actual text 'http://localhost:5173/buy' and expected text 'http://localhost:5173/buy' are matched 
+
+15-05-2026T23:20:01 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/buy'
+
+15-05-2026T23:20:01 - [MESSAGE][PASSED] - Actual text 'http://localhost:5173/buy' and expected text 'http://localhost:5173/buy' are matched 
+
+15-05-2026T23:20:01 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:08 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Navigation/MainNav/TC_NAV_006_NavigateToHome" time="10.4" classname="Test Cases/Navigation/MainNav/TC_NAV_006_NavigateToHome" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:20:08 - [TEST_CASE][PASSED] - Test Cases/Navigation/MainNav/TC_NAV_006_NavigateToHome: Test Cases/Navigation/MainNav/TC_NAV_006_NavigateToHome
+
+15-05-2026T23:20:09 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+15-05-2026T23:20:09 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+15-05-2026T23:20:09 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:20:09 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:20:10 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:20:11 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+15-05-2026T23:20:11 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T23:20:11 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:13 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:13 - [TEST_STEP][PASSED] - navKW.clickMainNavLink("Buy"): Wait for page load successfully
+
+15-05-2026T23:20:13 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/MainNav/link_Buy' is clickable
+
+15-05-2026T23:20:14 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/MainNav/link_Buy' is clicked on
+
+15-05-2026T23:20:16 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:16 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:16 - [TEST_STEP][PASSED] - navKW.clickLogo(): Wait for page load successfully
+
+15-05-2026T23:20:16 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/MainNav/link_Logo' is clickable
+
+15-05-2026T23:20:16 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/MainNav/link_Logo' is clicked on
+
+15-05-2026T23:20:18 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:18 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:18 - [TEST_STEP][PASSED] - navKW.verifyCurrentUrl("/"): Actual text 'http://localhost:5173/' and expected text 'http://localhost:5173/' are matched 
+
+15-05-2026T23:20:18 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T23:20:18 - [MESSAGE][PASSED] - Actual text 'http://localhost:5173/' and expected text 'http://localhost:5173/' are matched 
+
+15-05-2026T23:20:18 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:19 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Navigation/UserMenu/TC_NAV_008_NavigateToProfile" time="18.051" classname="Test Cases/Navigation/UserMenu/TC_NAV_008_NavigateToProfile" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:20:19 - [TEST_CASE][PASSED] - Test Cases/Navigation/UserMenu/TC_NAV_008_NavigateToProfile: Test Cases/Navigation/UserMenu/TC_NAV_008_NavigateToProfile
+
+15-05-2026T23:20:19 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+15-05-2026T23:20:19 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+15-05-2026T23:20:19 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:20:19 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:20:20 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:20:21 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+15-05-2026T23:20:21 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T23:20:21 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:23 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:23 - [TEST_STEP][PASSED] - navKW.loginAsTestUser(): Wait for page load successfully
+
+15-05-2026T23:20:23 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:20:25 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:26 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:20:27 - [MESSAGE][PASSED] - Text 'user1@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:20:27 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:20:28 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:20:31 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:20:31 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:31 - [TEST_STEP][PASSED] - navKW.clickUserMenuItem("My Profile"): Wait for page load successfully
+
+15-05-2026T23:20:31 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/UserMenu/button_UserDropdown' is clickable
+
+15-05-2026T23:20:31 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/UserMenu/button_UserDropdown' is clicked on
+
+15-05-2026T23:20:33 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:20:33 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/UserMenu/link_MyProfile' is clickable
+
+15-05-2026T23:20:33 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/UserMenu/link_MyProfile' is clicked on
+
+15-05-2026T23:20:35 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:35 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:35 - [TEST_STEP][PASSED] - navKW.verifyCurrentUrl("/profile"): Actual text 'http://localhost:5173/profile' and expected text 'http://localhost:5173/profile' are matched 
+
+15-05-2026T23:20:35 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/profile'
+
+15-05-2026T23:20:35 - [MESSAGE][PASSED] - Actual text 'http://localhost:5173/profile' and expected text 'http://localhost:5173/profile' are matched 
+
+15-05-2026T23:20:35 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:37 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Navigation/Auth/TC_NAV_010_NavigateToLogin" time="9.086" classname="Test Cases/Navigation/Auth/TC_NAV_010_NavigateToLogin" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:20:37 - [TEST_CASE][PASSED] - Test Cases/Navigation/Auth/TC_NAV_010_NavigateToLogin: Test Cases/Navigation/Auth/TC_NAV_010_NavigateToLogin
+
+15-05-2026T23:20:37 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+15-05-2026T23:20:37 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+15-05-2026T23:20:37 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:20:37 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:20:38 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:20:39 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+15-05-2026T23:20:39 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T23:20:39 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:41 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:41 - [TEST_STEP][PASSED] - navKW.clickSignIn(): Wait for page load successfully
+
+15-05-2026T23:20:41 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/Auth/link_SignIn' is clickable
+
+15-05-2026T23:20:42 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/Auth/link_SignIn' is clicked on
+
+15-05-2026T23:20:44 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:44 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:44 - [TEST_STEP][PASSED] - navKW.verifyCurrentUrl("/login"): Actual text 'http://localhost:5173/login' and expected text 'http://localhost:5173/login' are matched 
+
+15-05-2026T23:20:44 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T23:20:44 - [MESSAGE][PASSED] - Actual text 'http://localhost:5173/login' and expected text 'http://localhost:5173/login' are matched 
+
+15-05-2026T23:20:44 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:46 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Navigation/UserMenu/TC_NAV_012_NavigateToNotifications" time="15.189" classname="Test Cases/Navigation/UserMenu/TC_NAV_012_NavigateToNotifications" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:20:46 - [TEST_CASE][PASSED] - Test Cases/Navigation/UserMenu/TC_NAV_012_NavigateToNotifications: Test Cases/Navigation/UserMenu/TC_NAV_012_NavigateToNotifications
+
+15-05-2026T23:20:46 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+15-05-2026T23:20:46 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+15-05-2026T23:20:46 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:20:46 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:20:47 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:20:48 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+15-05-2026T23:20:48 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T23:20:48 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:50 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:50 - [TEST_STEP][PASSED] - navKW.loginAsTestUser(): Wait for page load successfully
+
+15-05-2026T23:20:50 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:20:52 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:52 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:20:53 - [MESSAGE][PASSED] - Text 'user1@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:20:54 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:20:55 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:20:58 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:20:58 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:58 - [TEST_STEP][PASSED] - waitForElementClickable(findTestObject("Object Repository/Notification/notificationBellIcon"), 10): Object 'Object Repository/Notification/notificationBellIcon' is clickable
+
+15-05-2026T23:20:58 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/notificationBellIcon' is clickable
+
+15-05-2026T23:20:58 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Notification/notificationBellIcon")): Object: 'Object Repository/Notification/notificationBellIcon' is clicked on
+
+15-05-2026T23:20:59 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/notificationBellIcon' is clicked on
+
+15-05-2026T23:20:59 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+15-05-2026T23:21:01 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:01 - [TEST_STEP][PASSED] - waitForPageLoad(10): Wait for page load successfully
+
+15-05-2026T23:21:01 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:01 - [TEST_STEP][PASSED] - navKW.verifyCurrentUrl("/notifications"): Actual text 'http://localhost:5173/notifications' and expected text 'http://localhost:5173/notifications' are matched 
+
+15-05-2026T23:21:01 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/notifications'
+
+15-05-2026T23:21:01 - [MESSAGE][PASSED] - Actual text 'http://localhost:5173/notifications' and expected text 'http://localhost:5173/notifications' are matched 
+
+15-05-2026T23:21:01 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:21:01 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[15-05-2026T23:19:45 - [TEST_SUITE][PASSED] - TS_Navigation_Smoke: null]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

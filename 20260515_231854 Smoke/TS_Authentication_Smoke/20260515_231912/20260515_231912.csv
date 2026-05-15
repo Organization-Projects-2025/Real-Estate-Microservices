@@ -1,0 +1,86 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_Authentication_Smoke,Edge Chromium 148.0.3967.54,Smoke Authentication Test Suite - Critical 13 Tests,,15-05-2026 23:19:45,15-05-2026 23:22:51,3m - 6.215s,FAILED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_001_Login_Valid_Credentials,Edge Chromium 148.0.3967.54,Verify successful login with valid credentials,"positive,login,authentication",15-05-2026 23:19:48,15-05-2026 23:20:09,21.062s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:48,15-05-2026 23:19:52,4.089s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:52,15-05-2026 23:19:52,0.069s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:52,15-05-2026 23:20:07,14.193s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:07,15-05-2026 23:20:09,2.038s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_002_Login_Invalid_Email,Edge Chromium 148.0.3967.54,Verify login fails with invalid email,"negative,login,authentication",15-05-2026 23:20:09,15-05-2026 23:20:19,10.103s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:09,15-05-2026 23:20:10,1.221s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:10,15-05-2026 23:20:10,0.002s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:10,15-05-2026 23:20:18,8.489s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:18,15-05-2026 23:20:19,0.330s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_003_Login_Incorrect_Password,Edge Chromium 148.0.3967.54,Verify login fails with incorrect password,"negative,login,authentication",15-05-2026 23:20:19,15-05-2026 23:20:29,10.057s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:19,15-05-2026 23:20:20,1.083s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:20,15-05-2026 23:20:20,0.002s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:20,15-05-2026 23:20:28,8.328s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:28,15-05-2026 23:20:29,0.558s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_004_Login_Empty_Fields,Edge Chromium 148.0.3967.54,Verify login fails with empty fields,"negative,login,validation,authentication",15-05-2026 23:20:29,15-05-2026 23:20:43,13.814s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:29,15-05-2026 23:20:30,1.002s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:30,15-05-2026 23:20:30,0.004s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:30,15-05-2026 23:20:42,11.974s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:42,15-05-2026 23:20:43,0.684s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_006_Login_Invalid_Email_Format,Edge Chromium 148.0.3967.54,Verify that login rejects invalid email format (no @ symbol),"input-validation,login,authentication",15-05-2026 23:20:43,15-05-2026 23:20:53,10.064s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:43,15-05-2026 23:20:44,0.852s,PASSED
+maximizeWindow(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:44,15-05-2026 23:20:44,0.064s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:44,15-05-2026 23:20:44,0.003s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:44,15-05-2026 23:20:51,7.721s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:51,15-05-2026 23:20:53,1.356s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_009_Login_Page_Elements,Edge Chromium 148.0.3967.54,Verify that all required UI elements are present on the Login page,"ui-validation,login,authentication",15-05-2026 23:20:53,15-05-2026 23:20:58,5.166s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:53,15-05-2026 23:20:54,0.886s,PASSED
+maximizeWindow(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:54,15-05-2026 23:20:54,0.058s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:54,15-05-2026 23:20:54,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:54,15-05-2026 23:20:57,3.737s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:57,15-05-2026 23:20:58,0.405s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_010_Login_Password_Masking,Edge Chromium 148.0.3967.54,Verify that password input fields are masked (type=password) on Login and Register pages,"security,ui-validation,authentication",15-05-2026 23:20:58,15-05-2026 23:21:01,3.101s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:58,15-05-2026 23:20:59,0.777s,PASSED
+maximizeWindow(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:59,15-05-2026 23:20:59,0.063s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:59,15-05-2026 23:20:59,0.017s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:59,15-05-2026 23:21:01,1.727s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:01,15-05-2026 23:21:01,0.237s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/TC_AUTH_014_Logout_Functionality,Edge Chromium 148.0.3967.54,Verify logout functionality clears session and redirects to login page,,15-05-2026 23:21:01,15-05-2026 23:21:18,16.563s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:01,15-05-2026 23:21:02,0.723s,PASSED
+maximizeWindow(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:02,15-05-2026 23:21:02,0.041s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:02,15-05-2026 23:21:02,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:02,15-05-2026 23:21:17,15.341s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:17,15-05-2026 23:21:18,0.414s,PASSED
+,,,,,,,
+Test Cases/Authentication/Register/TC_AUTH_016_Register_Valid_User,Edge Chromium 148.0.3967.54,Verify successful user registration with valid data,"positive,authentication,register",15-05-2026 23:21:18,15-05-2026 23:21:34,16.648s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:18,15-05-2026 23:21:19,1.169s,PASSED
+registerHelper = new authentication.Register_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:19,15-05-2026 23:21:19,0.017s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:19,15-05-2026 23:21:34,14.962s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:34,15-05-2026 23:21:34,0.403s,PASSED
+,,,,,,,
+Test Cases/Authentication/Register/TC_AUTH_017_Register_Valid_Developer,Edge Chromium 148.0.3967.54,Verify successful developer registration with valid data,"developer,positive,authentication,register",15-05-2026 23:21:34,15-05-2026 23:21:48,13.423s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:34,15-05-2026 23:21:35,0.784s,PASSED
+registerHelper = new authentication.Register_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:35,15-05-2026 23:21:35,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:35,15-05-2026 23:21:47,12.335s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:47,15-05-2026 23:21:48,0.256s,PASSED
+,,,,,,,
+Test Cases/Authentication/Register/TC_AUTH_018_Register_Duplicate_Email,Edge Chromium 148.0.3967.54,Verify registration fails with duplicate email,"negative,validation,authentication,register",15-05-2026 23:21:48,15-05-2026 23:22:16,28.696s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:48,15-05-2026 23:21:49,0.794s,PASSED
+registerHelper = new authentication.Register_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:49,15-05-2026 23:21:49,0.002s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:49,15-05-2026 23:22:16,27.422s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:22:16,15-05-2026 23:22:16,0.420s,PASSED
+,,,,,,,
+Test Cases/Authentication/ForgotPassword/TC_AUTH_028_ForgotPassword_Valid_Email,Edge Chromium 148.0.3967.54,Verify reset link sent for valid email,"positive,forgot-password,authentication",15-05-2026 23:22:16,15-05-2026 23:22:37,20.749s,FAILED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:22:16,15-05-2026 23:22:17,0.781s,PASSED
+forgotPasswordHelper = new authentication.ForgotPassword_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:22:17,15-05-2026 23:22:17,0.008s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:22:17,15-05-2026 23:22:37,19.614s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 23:22:37,15-05-2026 23:22:37,0.009s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:22:37,15-05-2026 23:22:37,0.271s,PASSED
+,,,,,,,
+Test Cases/Authentication/ResetPassword/TC_AUTH_034_ResetPassword_Invalid_Token,Edge Chromium 148.0.3967.54,Verify password reset fails with invalid token,"negative,reset-password,authentication",15-05-2026 23:22:37,15-05-2026 23:22:51,13.962s,FAILED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:22:37,15-05-2026 23:22:38,0.600s,PASSED
+maximizeWindow(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:22:38,15-05-2026 23:22:38,0.046s,PASSED
+resetPasswordHelper = new authentication.ResetPassword_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:22:38,15-05-2026 23:22:38,0.010s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:22:38,15-05-2026 23:22:51,13.075s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:22:51,15-05-2026 23:22:51,0.194s,FAILED

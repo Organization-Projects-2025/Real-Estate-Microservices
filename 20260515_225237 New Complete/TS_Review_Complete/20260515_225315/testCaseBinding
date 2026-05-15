@@ -1,0 +1,11 @@
+{"testCaseName":"Test Cases/Review/Create/TC_Review_CR1_1Star","testCaseId":"Test Cases/Review/Create/TC_Review_CR1_1Star","iterationVariableName":""}
+{"testCaseName":"Test Cases/Review/Create/TC_Review_CR2_2Star","testCaseId":"Test Cases/Review/Create/TC_Review_CR2_2Star","iterationVariableName":""}
+{"testCaseName":"Test Cases/Review/Create/TC_Review_CR3_3Star","testCaseId":"Test Cases/Review/Create/TC_Review_CR3_3Star","iterationVariableName":""}
+{"testCaseName":"Test Cases/Review/Create/TC_Review_CR4_4Star","testCaseId":"Test Cases/Review/Create/TC_Review_CR4_4Star","iterationVariableName":""}
+{"testCaseName":"Test Cases/Review/Create/TC_Review_CR5_5Star","testCaseId":"Test Cases/Review/Create/TC_Review_CR5_5Star","iterationVariableName":""}
+{"testCaseName":"Test Cases/Review/Delete/TC_Review_DEL1_DeleteLast","testCaseId":"Test Cases/Review/Delete/TC_Review_DEL1_DeleteLast","iterationVariableName":""}
+{"testCaseName":"Test Cases/Review/Validation/TC_Review_VAL1_EmptyReviewerName","testCaseId":"Test Cases/Review/Validation/TC_Review_VAL1_EmptyReviewerName","iterationVariableName":""}
+{"testCaseName":"Test Cases/Review/Validation/TC_Review_VAL2_MissingAgent","testCaseId":"Test Cases/Review/Validation/TC_Review_VAL2_MissingAgent","iterationVariableName":""}
+{"testCaseName":"Test Cases/Review/Validation/TC_Review_VAL3_MissingStarRating","testCaseId":"Test Cases/Review/Validation/TC_Review_VAL3_MissingStarRating","iterationVariableName":""}
+{"testCaseName":"Test Cases/Review/Validation/TC_Review_VAL4_EmptyReviewText","testCaseId":"Test Cases/Review/Validation/TC_Review_VAL4_EmptyReviewText","iterationVariableName":""}
+{"testCaseName":"Test Cases/Review/Validation/TC_Review_VAL5_AllFieldsEmpty","testCaseId":"Test Cases/Review/Validation/TC_Review_VAL5_AllFieldsEmpty","iterationVariableName":""}

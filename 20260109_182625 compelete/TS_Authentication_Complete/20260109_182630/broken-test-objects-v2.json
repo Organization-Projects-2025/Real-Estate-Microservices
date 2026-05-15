@@ -1,0 +1,14 @@
+{
+  "brokenTestObjects": [
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Authentication/RegisterPage/errorMessage",
+      "brokenLocator": "//p[contains(@class, \u0027text-red-500\u0027)]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": ".bg-red-500, .text-red-500, .error-message",
+      "proposedLocatorMethod": "CSS",
+      "recoveryMethod": "CSS",
+      "pathToScreenshot": "Reports/20260109_182625/TS_Authentication_Complete/20260109_182630/Object Repository/Authentication/RegisterPage/errorMessage_CSS.png"
+    }
+  ]
+}

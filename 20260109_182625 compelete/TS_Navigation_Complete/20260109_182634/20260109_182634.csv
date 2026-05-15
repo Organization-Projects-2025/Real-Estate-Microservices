@@ -1,0 +1,96 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_Navigation_Complete,Chrome 143.0.7499.170,Complete test suite for Navigation - All navigation test cases,,09-01-2026 19:03:18,09-01-2026 19:05:33,2m - 14.878s,PASSED
+,,,,,,,
+Test Cases/Navigation/MainNav/TC_NAV_001_NavigateToBuy,Chrome 143.0.7499.170,Navigate to Buy page from home using main navigation,"navigation,main-nav,positive",09-01-2026 19:03:19,09-01-2026 19:03:30,11.484s,PASSED
+navKW = new navigation.Navigation_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:03:19,09-01-2026 19:03:19,0.014s,PASSED
+navKW.openHomePage(),Chrome 143.0.7499.170,,,09-01-2026 19:03:19,09-01-2026 19:03:26,6.675s,PASSED
+"navKW.clickMainNavLink(""Buy"")",Chrome 143.0.7499.170,,,09-01-2026 19:03:26,09-01-2026 19:03:29,3.278s,PASSED
+"navKW.verifyCurrentUrl(""/buy"")",Chrome 143.0.7499.170,,,09-01-2026 19:03:29,09-01-2026 19:03:29,0.085s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:03:29,09-01-2026 19:03:30,0.826s,PASSED
+,,,,,,,
+Test Cases/Navigation/MainNav/TC_NAV_002_NavigateToRent,Chrome 143.0.7499.170,Navigate to Rent page from home using main navigation,"navigation,main-nav,positive",09-01-2026 19:03:30,09-01-2026 19:03:38,7.409s,PASSED
+navKW = new navigation.Navigation_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:03:30,09-01-2026 19:03:30,0.002s,PASSED
+navKW.openHomePage(),Chrome 143.0.7499.170,,,09-01-2026 19:03:30,09-01-2026 19:03:34,4.021s,PASSED
+"navKW.clickMainNavLink(""Rent"")",Chrome 143.0.7499.170,,,09-01-2026 19:03:34,09-01-2026 19:03:37,3.016s,PASSED
+"navKW.verifyCurrentUrl(""/rent"")",Chrome 143.0.7499.170,,,09-01-2026 19:03:37,09-01-2026 19:03:37,0.027s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:03:37,09-01-2026 19:03:38,0.294s,PASSED
+,,,,,,,
+Test Cases/Navigation/MainNav/TC_NAV_003_NavigateToSell,Chrome 143.0.7499.170,Navigate to Sell page from home using main navigation,"navigation,main-nav,positive",09-01-2026 19:03:38,09-01-2026 19:03:45,7.325s,PASSED
+navKW = new navigation.Navigation_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:03:38,09-01-2026 19:03:38,0.001s,PASSED
+navKW.openHomePage(),Chrome 143.0.7499.170,,,09-01-2026 19:03:38,09-01-2026 19:03:42,4.013s,PASSED
+"navKW.clickMainNavLink(""Sell"")",Chrome 143.0.7499.170,,,09-01-2026 19:03:42,09-01-2026 19:03:45,2.957s,PASSED
+"navKW.verifyCurrentUrl(""/sell"")",Chrome 143.0.7499.170,,,09-01-2026 19:03:45,09-01-2026 19:03:45,0.032s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:03:45,09-01-2026 19:03:45,0.277s,PASSED
+,,,,,,,
+Test Cases/Navigation/MainNav/TC_NAV_004_NavigateToAgents,Chrome 143.0.7499.170,Navigate to Agents page from home using main navigation,"navigation,main-nav,positive",09-01-2026 19:03:45,09-01-2026 19:03:53,7.616s,PASSED
+navKW = new navigation.Navigation_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:03:45,09-01-2026 19:03:45,0.002s,PASSED
+navKW.openHomePage(),Chrome 143.0.7499.170,,,09-01-2026 19:03:45,09-01-2026 19:03:49,4.033s,PASSED
+"navKW.clickMainNavLink(""Agents"")",Chrome 143.0.7499.170,,,09-01-2026 19:03:49,09-01-2026 19:03:52,2.956s,PASSED
+"navKW.verifyCurrentUrl(""/agent"")",Chrome 143.0.7499.170,,,09-01-2026 19:03:52,09-01-2026 19:03:52,0.039s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:03:52,09-01-2026 19:03:53,0.544s,PASSED
+,,,,,,,
+Test Cases/Navigation/MainNav/TC_NAV_005_NavigateToNewProjects,Chrome 143.0.7499.170,Navigate to New Projects (Developer Properties) page from home,"navigation,main-nav,positive",09-01-2026 19:03:53,09-01-2026 19:04:00,7.417s,PASSED
+navKW = new navigation.Navigation_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:03:53,09-01-2026 19:03:53,0.002s,PASSED
+navKW.openHomePage(),Chrome 143.0.7499.170,,,09-01-2026 19:03:53,09-01-2026 19:03:57,3.955s,PASSED
+"navKW.clickMainNavLink(""NewProjects"")",Chrome 143.0.7499.170,,,09-01-2026 19:03:57,09-01-2026 19:04:00,3.010s,PASSED
+"navKW.verifyCurrentUrl(""/developer-properties"")",Chrome 143.0.7499.170,,,09-01-2026 19:04:00,09-01-2026 19:04:00,0.024s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:04:00,09-01-2026 19:04:00,0.383s,PASSED
+,,,,,,,
+Test Cases/Navigation/MainNav/TC_NAV_006_NavigateToHome,Chrome 143.0.7499.170,Navigate back to Home page by clicking logo,"navigation,main-nav,positive",09-01-2026 19:04:00,09-01-2026 19:04:12,11.775s,PASSED
+navKW = new navigation.Navigation_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:04:00,09-01-2026 19:04:00,0.002s,PASSED
+navKW.openHomePage(),Chrome 143.0.7499.170,,,09-01-2026 19:04:00,09-01-2026 19:04:04,3.943s,PASSED
+"navKW.clickMainNavLink(""Buy"")",Chrome 143.0.7499.170,,,09-01-2026 19:04:04,09-01-2026 19:04:07,3.074s,PASSED
+navKW.clickLogo(),Chrome 143.0.7499.170,,,09-01-2026 19:04:07,09-01-2026 19:04:10,2.966s,PASSED
+"navKW.verifyCurrentUrl(""/"")",Chrome 143.0.7499.170,,,09-01-2026 19:04:10,09-01-2026 19:04:10,0.025s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:04:10,09-01-2026 19:04:12,1.722s,PASSED
+,,,,,,,
+Test Cases/Navigation/UserMenu/TC_NAV_007_OpenUserDropdown,Chrome 143.0.7499.170,Open user dropdown menu when logged in,"navigation,user-menu,positive",09-01-2026 19:04:12,09-01-2026 19:04:27,15.333s,PASSED
+navKW = new navigation.Navigation_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:04:12,09-01-2026 19:04:12,0.002s,PASSED
+navKW.openHomePage(),Chrome 143.0.7499.170,,,09-01-2026 19:04:12,09-01-2026 19:04:16,3.957s,PASSED
+navKW.loginAsTestUser(),Chrome 143.0.7499.170,,,09-01-2026 19:04:16,09-01-2026 19:04:24,8.501s,PASSED
+navKW.openUserDropdown(),Chrome 143.0.7499.170,,,09-01-2026 19:04:24,09-01-2026 19:04:26,1.845s,PASSED
+"waitForElementVisible(findTestObject(""Object Repository/Profile/a_My Profile""), 5)",Chrome 143.0.7499.170,,,09-01-2026 19:04:26,09-01-2026 19:04:27,0.382s,PASSED
+"isVisible = verifyElementVisible(findTestObject(""Object Repository/Profile/a_My Profile""))",Chrome 143.0.7499.170,,,09-01-2026 19:04:27,09-01-2026 19:04:27,0.322s,PASSED
+comment(User dropdown opened successfully: $isVisible),Chrome 143.0.7499.170,,,09-01-2026 19:04:27,09-01-2026 19:04:27,0.019s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:04:27,09-01-2026 19:04:27,0.257s,PASSED
+,,,,,,,
+Test Cases/Navigation/UserMenu/TC_NAV_008_NavigateToProfile,Chrome 143.0.7499.170,Navigate to Profile page from user dropdown menu,"navigation,user-menu,positive",09-01-2026 19:04:27,09-01-2026 19:04:45,18.259s,PASSED
+navKW = new navigation.Navigation_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:04:27,09-01-2026 19:04:27,0.003s,PASSED
+navKW.openHomePage(),Chrome 143.0.7499.170,,,09-01-2026 19:04:27,09-01-2026 19:04:31,3.920s,PASSED
+navKW.loginAsTestUser(),Chrome 143.0.7499.170,,,09-01-2026 19:04:31,09-01-2026 19:04:39,8.192s,PASSED
+"navKW.clickUserMenuItem(""My Profile"")",Chrome 143.0.7499.170,,,09-01-2026 19:04:39,09-01-2026 19:04:44,4.695s,PASSED
+"navKW.verifyCurrentUrl(""/profile"")",Chrome 143.0.7499.170,,,09-01-2026 19:04:44,09-01-2026 19:04:44,0.037s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:04:44,09-01-2026 19:04:45,1.371s,PASSED
+,,,,,,,
+Test Cases/Navigation/UserMenu/TC_NAV_009_NavigateToBecomeAgent,Chrome 143.0.7499.170,Navigate to Become Agent page from user dropdown (regular user),"navigation,user-menu,positive",09-01-2026 19:04:45,09-01-2026 19:05:03,17.339s,PASSED
+navKW = new navigation.Navigation_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:04:45,09-01-2026 19:04:45,0.002s,PASSED
+navKW.openHomePage(),Chrome 143.0.7499.170,,,09-01-2026 19:04:45,09-01-2026 19:04:49,4.041s,PASSED
+navKW.loginAsTestUser(),Chrome 143.0.7499.170,,,09-01-2026 19:04:49,09-01-2026 19:04:58,8.289s,PASSED
+"navKW.clickUserMenuItem(""Become an Agent"")",Chrome 143.0.7499.170,,,09-01-2026 19:04:58,09-01-2026 19:05:02,4.632s,PASSED
+"navKW.verifyCurrentUrl(""/become-agent"")",Chrome 143.0.7499.170,,,09-01-2026 19:05:02,09-01-2026 19:05:02,0.027s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:05:02,09-01-2026 19:05:03,0.310s,PASSED
+,,,,,,,
+Test Cases/Navigation/Auth/TC_NAV_010_NavigateToLogin,Chrome 143.0.7499.170,Navigate to Login page when not authenticated,"navigation,auth,positive",09-01-2026 19:05:03,09-01-2026 19:05:10,7.111s,PASSED
+navKW = new navigation.Navigation_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:05:03,09-01-2026 19:05:03,0.001s,PASSED
+navKW.openHomePage(),Chrome 143.0.7499.170,,,09-01-2026 19:05:03,09-01-2026 19:05:07,3.970s,PASSED
+navKW.clickSignIn(),Chrome 143.0.7499.170,,,09-01-2026 19:05:07,09-01-2026 19:05:10,2.828s,PASSED
+"navKW.verifyCurrentUrl(""/login"")",Chrome 143.0.7499.170,,,09-01-2026 19:05:10,09-01-2026 19:05:10,0.022s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:05:10,09-01-2026 19:05:10,0.250s,PASSED
+,,,,,,,
+Test Cases/Navigation/Auth/TC_NAV_011_NavigateToRegister,Chrome 143.0.7499.170,Navigate to Register page when not authenticated,"navigation,auth,positive",09-01-2026 19:05:10,09-01-2026 19:05:17,7.202s,PASSED
+navKW = new navigation.Navigation_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:05:10,09-01-2026 19:05:10,0.002s,PASSED
+navKW.openHomePage(),Chrome 143.0.7499.170,,,09-01-2026 19:05:10,09-01-2026 19:05:14,4.005s,PASSED
+navKW.clickGetStarted(),Chrome 143.0.7499.170,,,09-01-2026 19:05:14,09-01-2026 19:05:17,2.884s,PASSED
+"navKW.verifyCurrentUrl(""/register"")",Chrome 143.0.7499.170,,,09-01-2026 19:05:17,09-01-2026 19:05:17,0.019s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:05:17,09-01-2026 19:05:17,0.256s,PASSED
+,,,,,,,
+Test Cases/Navigation/UserMenu/TC_NAV_012_NavigateToNotifications,Chrome 143.0.7499.170,Navigate to Notifications page via bell icon,"navigation,notifications,positive",09-01-2026 19:05:17,09-01-2026 19:05:33,15.550s,PASSED
+navKW = new navigation.Navigation_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:05:17,09-01-2026 19:05:17,0.002s,PASSED
+navKW.openHomePage(),Chrome 143.0.7499.170,,,09-01-2026 19:05:17,09-01-2026 19:05:21,3.952s,PASSED
+navKW.loginAsTestUser(),Chrome 143.0.7499.170,,,09-01-2026 19:05:21,09-01-2026 19:05:29,8.303s,PASSED
+"waitForElementClickable(findTestObject(""Object Repository/Notification/notificationBellIcon""), 10)",Chrome 143.0.7499.170,,,09-01-2026 19:05:29,09-01-2026 19:05:30,0.322s,PASSED
+"click(findTestObject(""Object Repository/Notification/notificationBellIcon""))",Chrome 143.0.7499.170,,,09-01-2026 19:05:30,09-01-2026 19:05:30,0.529s,PASSED
+delay(2),Chrome 143.0.7499.170,,,09-01-2026 19:05:30,09-01-2026 19:05:32,2.020s,PASSED
+waitForPageLoad(10),Chrome 143.0.7499.170,,,09-01-2026 19:05:32,09-01-2026 19:05:32,0.015s,PASSED
+"navKW.verifyCurrentUrl(""/notifications"")",Chrome 143.0.7499.170,,,09-01-2026 19:05:32,09-01-2026 19:05:32,0.018s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:05:32,09-01-2026 19:05:33,0.342s,PASSED

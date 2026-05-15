@@ -10,7 +10,7 @@ const EMAIL = process.env.SELENIUM_EMAIL || 'admin@realestate.com';
 const PASSWORD = process.env.SELENIUM_PASSWORD || 'Password123!';
 const HEADLESS = process.env.HEADLESS !== 'false';
 const screenshotsDir = path.join(__dirname, '..', 'screenshots');
-const LONG_WAIT = 150000;
+const LONG_WAIT = 10000;
 
 function buildDriver() {
   const options = new chrome.Options();
@@ -57,23 +57,36 @@ async function login(driver, email = EMAIL, password = PASSWORD) {
 
 async function loginAndWaitHome(driver, email = EMAIL, password = PASSWORD) {
   await login(driver, email, password);
-  await driver.wait(until.urlIs(`${CLIENT_URL}/`), LONG_WAIT);
-  await driver.wait(
-    until.elementLocated(
-      By.xpath("//button[.//span[normalize-space()='Admin']]"),
-    ),
-    LONG_WAIT,
-  );
+  await driver.wait(async () => {
+    const url = await driver.getCurrentUrl();
+    if (!url.includes('/login')) return true;
+    const userId = await driver.executeScript(() =>
+      localStorage.getItem('userId'),
+    );
+    return !!userId;
+  }, LONG_WAIT);
 }
 
 async function openUserMenu(driver) {
-  const menuButton = await driver.wait(
-    until.elementLocated(
-      By.xpath("//button[.//span[normalize-space()='Admin']]"),
-    ),
-    LONG_WAIT,
-  );
-  await menuButton.click();
+  const buttons = await driver.findElements(By.css('nav button'));
+  for (const button of buttons) {
+    try {
+      const displayed = await button.isDisplayed();
+      const enabled = await button.isEnabled();
+      const text = (await button.getText()).trim();
+      if (!displayed || !enabled || !text) continue;
+      if (/toggle menu/i.test(text) || /search/i.test(text)) continue;
+      await driver.executeScript(
+        'arguments[0].scrollIntoView({block: "center"});',
+        button,
+      );
+      await driver.executeScript('arguments[0].click();', button);
+      return;
+    } catch (err) {
+      // try next button
+    }
+  }
+  throw new Error('Could not locate authenticated user menu button');
 }
 
 async function goToProfile(driver) {

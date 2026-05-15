@@ -1,0 +1,14 @@
+{
+  "brokenTestObjects": [
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Agent/AgentPage/agentCards",
+      "brokenLocator": "//div[contains(@class,\u0027rounded-xl\u0027) and .//h3]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": ".rounded-xl",
+      "proposedLocatorMethod": "CSS",
+      "recoveryMethod": "CSS",
+      "pathToScreenshot": "Reports/20260109_182625/TS_Agent_Complete/20260109_182628/Object Repository/Agent/AgentPage/agentCards_CSS.png"
+    }
+  ]
+}

@@ -9,7 +9,7 @@ const EMAIL = process.env.SELENIUM_EMAIL || 'admin@realestate.com';
 const PASSWORD = process.env.SELENIUM_PASSWORD || 'Password123!';
 const HEADLESS = process.env.HEADLESS !== 'false';
 const screenshotsDir = path.join(__dirname, '..', 'screenshots');
-const LONG_WAIT = 150000;
+const LONG_WAIT = 37500;
 
 function buildDriver() {
   const options = new chrome.Options();
@@ -39,7 +39,14 @@ async function login(driver) {
   await driver.findElement(By.css('input[name="password"]')).clear();
   await driver.findElement(By.css('input[name="password"]')).sendKeys(PASSWORD);
   await driver.findElement(By.css('button[type="submit"]')).click();
-  await driver.wait(until.urlIs(`${CLIENT_URL}/`), LONG_WAIT);
+  await driver.wait(async () => {
+    const url = await driver.getCurrentUrl();
+    if (!url.includes('/login')) return true;
+    const userId = await driver.executeScript(() =>
+      localStorage.getItem('userId'),
+    );
+    return !!userId;
+  }, LONG_WAIT);
 }
 
 describe('Notifications (converted)', function () {

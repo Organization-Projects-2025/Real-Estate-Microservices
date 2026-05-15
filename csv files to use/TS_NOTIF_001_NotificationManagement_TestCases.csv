@@ -1,0 +1,11 @@
+SCREEN NAME,Notifications Page,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_NOTIF_001,SCENARIO DESCRIPTION,Notifications - Notification Management,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_NOTIF_001,Verify user can view notifications page,User logged in; Notifications exist,URL: /notifications,Notifications page displayed with list of notifications,Notifications visible,Notifications page displayed with list of notifications,PASSED,,Positive test - View notifications
+2,TC_NOTIF_002,Verify user can mark notification as read,User logged in; Unread notification exists,Notification ID: notif_001; Current Status: 'Unread'; Action: 'Mark as Read',Notification marked as read; Visual indicator changes,Notification status updated,Notification marked as read - visual indicator changes,PASSED,,Positive test - Mark read
+3,TC_NOTIF_003,Verify user can delete notification,User logged in; Notification exists,Notification ID: notif_001; Confirm Delete: Yes,Notification removed from list,Notification deleted from database,Notification removed from list,PASSED,,Positive test - Delete notification

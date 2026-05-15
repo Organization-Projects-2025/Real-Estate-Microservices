@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="TS_PropertyService_Smoke" time="56.195" tests="4" failures="0" errors="0">
+   <testsuite name="TS_PropertyService_Smoke" tests="4" failures="0" errors="0" time="56.195" skipped="0" timestamp="2026-05-15T20:19:45.652Z" hostname="User - 192.168.1.4" id="Test Suites/TS_PropertyService_Smoke">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_PropertyService_Smoke\\20260515_231930"/>
+         <property name="logFiles" value="D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_PropertyService_Smoke\\20260515_231930\\console0.log, D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_PropertyService_Smoke\\20260515_231930\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="User - 192.168.1.4"/>
+         <property name="os" value="Windows 11 64bit"/>
+         <property name="katalonVersion" value="10.4.3.0"/>
+         <property name="browser" value="Edge Chromium 148.0.3967.54"/>
+         <property name="userFullName" value="Jakayaj756nctimecom"/>
+         <property name="hostAddress" value="192.168.1.4"/>
+         <property name="sessionId" value="839c4aedb99e064e34bd109909a441b1"/>
+         <property name="projectName" value="Katalon"/>
+         <property name="seleniumVersion" value="4.34.0"/>
+         <property name="proxyInformation" value="ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList=&quot;&quot;, isApplyToDesiredCapabilities=true }"/>
+         <property name="platform" value="Windows 11"/>
+      </properties>
+      <testcase name="Test Cases/PropertyService/BuyPage/TC_PROP_001_Browse_Buy_Page" time="20.796" classname="Test Cases/PropertyService/BuyPage/TC_PROP_001_Browse_Buy_Page" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:19:48 - [TEST_CASE][PASSED] - Test Cases/PropertyService/BuyPage/TC_PROP_001_Browse_Buy_Page: Test Cases/PropertyService/BuyPage/TC_PROP_001_Browse_Buy_Page
+
+15-05-2026T23:19:48 - [TEST_STEP][PASSED] - propsHelper = new propertyservice.Properties_Keywords(): null
+
+15-05-2026T23:19:48 - [TEST_STEP][PASSED] - try: ✅ TC_PROP_001 PASSED: Buy page loads and displays properties
+
+15-05-2026T23:19:48 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:19:49 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:19:49 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:19:53 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:19:53 - [TEST_STEP][PASSED] - propsHelper.navigateToBuyPage(): Wait for page load successfully
+
+15-05-2026T23:19:54 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/buy' successfully
+
+15-05-2026T23:19:56 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:19:56 - [TEST_STEP][PASSED] - propsHelper.waitForPropertiesToLoad(): Delayed 2 second(s)
+
+15-05-2026T23:19:58 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/PropertyService/BuyRentPage/loadingSpinner' located by 'By.xpath: //div[contains(@class, 'animate-pulse')]' is not present after '15' second(s)
+
+15-05-2026T23:20:00 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:00 - [TEST_STEP][PASSED] - propsHelper.verifyBuyPageLoaded(): Object 'Object Repository/PropertyService/BuyRentPage/browsePropertiesHeading' is present
+
+15-05-2026T23:20:01 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/BuyRentPage/browsePropertiesHeading' is present
+
+15-05-2026T23:20:01 - [TEST_STEP][PASSED] - propsHelper.verifyPropertyCardsDisplayed(): Object 'Object Repository/PropertyService/BuyRentPage/propertyCard' is present
+
+15-05-2026T23:20:01 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/BuyRentPage/propertyCard' is present
+
+15-05-2026T23:20:01 - [TEST_STEP][PASSED] - comment("✅ TC_PROP_001 PASSED: Buy page loads and displays properties"): ✅ TC_PROP_001 PASSED: Buy page loads and displays properties
+
+15-05-2026T23:20:01 - [MESSAGE][INFO] - ✅ TC_PROP_001 PASSED: Buy page loads and displays properties
+
+15-05-2026T23:20:01 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:20:01 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:08 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/PropertyService/RentPage/TC_PROP_011_Browse_Rent_Page" time="20.459" classname="Test Cases/PropertyService/RentPage/TC_PROP_011_Browse_Rent_Page" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:20:08 - [TEST_CASE][PASSED] - Test Cases/PropertyService/RentPage/TC_PROP_011_Browse_Rent_Page: Test Cases/PropertyService/RentPage/TC_PROP_011_Browse_Rent_Page
+
+15-05-2026T23:20:09 - [TEST_STEP][PASSED] - propsHelper = new propertyservice.Properties_Keywords(): null
+
+15-05-2026T23:20:09 - [TEST_STEP][PASSED] - try: ✅ TC_PROP_011 PASSED: Rent page loads and displays properties
+
+15-05-2026T23:20:09 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:20:09 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:20:09 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:20:10 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:20:10 - [TEST_STEP][PASSED] - propsHelper.navigateToRentPage(): Wait for page load successfully
+
+15-05-2026T23:20:11 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/rent' successfully
+
+15-05-2026T23:20:11 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:11 - [TEST_STEP][PASSED] - propsHelper.waitForPropertiesToLoad(): Delayed 2 second(s)
+
+15-05-2026T23:20:26 - [MESSAGE][WARNING] - Web element with id: 'Object Repository/PropertyService/BuyRentPage/loadingSpinner' located by 'By.xpath: //div[contains(@class, 'animate-pulse')]' is present after '15' second(s)
+
+15-05-2026T23:20:28 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - propsHelper.verifyRentPageLoaded(): Object 'Object Repository/PropertyService/BuyRentPage/browsePropertiesHeading' is present
+
+15-05-2026T23:20:28 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/BuyRentPage/browsePropertiesHeading' is present
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - propsHelper.verifyPropertyCardsDisplayed(): Object 'Object Repository/PropertyService/BuyRentPage/propertyCard' is present
+
+15-05-2026T23:20:28 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/BuyRentPage/propertyCard' is present
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - comment("✅ TC_PROP_011 PASSED: Rent page loads and displays properties"): ✅ TC_PROP_011 PASSED: Rent page loads and displays properties
+
+15-05-2026T23:20:28 - [MESSAGE][INFO] - ✅ TC_PROP_011 PASSED: Rent page loads and displays properties
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:29 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/PropertyService/SellPage/TC_PROP_016_Sell_Requires_Login" time="3.479" classname="Test Cases/PropertyService/SellPage/TC_PROP_016_Sell_Requires_Login" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:20:29 - [TEST_CASE][PASSED] - Test Cases/PropertyService/SellPage/TC_PROP_016_Sell_Requires_Login: Test Cases/PropertyService/SellPage/TC_PROP_016_Sell_Requires_Login
+
+15-05-2026T23:20:29 - [TEST_STEP][PASSED] - sellHelper = new propertyservice.Sell_Keywords(): null
+
+15-05-2026T23:20:29 - [TEST_STEP][PASSED] - try: ✅ TC_PROP_016 PASSED: Sell page requires login
+
+15-05-2026T23:20:29 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:20:29 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:20:29 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:20:30 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:20:30 - [TEST_STEP][PASSED] - sellHelper.navigateToSellPage(): Wait for page load successfully
+
+15-05-2026T23:20:31 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/sell' successfully
+
+15-05-2026T23:20:31 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:31 - [TEST_STEP][PASSED] - verifyTextPresent("Please Log In", false): Text 'Please Log In' is present on page 
+
+15-05-2026T23:20:32 - [MESSAGE][PASSED] - Text 'Please Log In' is present on page 
+
+15-05-2026T23:20:32 - [TEST_STEP][PASSED] - verifyTextPresent("You must be logged in to list a property", false): Text 'You must be logged in to list a property' is present on page 
+
+15-05-2026T23:20:32 - [MESSAGE][PASSED] - Text 'You must be logged in to list a property' is present on page 
+
+15-05-2026T23:20:32 - [TEST_STEP][PASSED] - comment("✅ TC_PROP_016 PASSED: Sell page requires login"): ✅ TC_PROP_016 PASSED: Sell page requires login
+
+15-05-2026T23:20:32 - [MESSAGE][INFO] - ✅ TC_PROP_016 PASSED: Sell page requires login
+
+15-05-2026T23:20:32 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:20:32 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:32 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/PropertyService/PropertyDetailPage/TC_PROP_024_Detail_Display" time="8.935" classname="Test Cases/PropertyService/PropertyDetailPage/TC_PROP_024_Detail_Display" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:20:32 - [TEST_CASE][PASSED] - Test Cases/PropertyService/PropertyDetailPage/TC_PROP_024_Detail_Display: Test Cases/PropertyService/PropertyDetailPage/TC_PROP_024_Detail_Display
+
+15-05-2026T23:20:33 - [TEST_STEP][PASSED] - propsHelper = new propertyservice.Properties_Keywords(): null
+
+15-05-2026T23:20:33 - [TEST_STEP][PASSED] - detailHelper = new propertyservice.PropertyDetail_Keywords(): null
+
+15-05-2026T23:20:33 - [TEST_STEP][PASSED] - try: ✅ TC_PROP_024 PASSED: Property detail displays correctly
+
+15-05-2026T23:20:33 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:20:33 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:20:33 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:20:33 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:20:33 - [TEST_STEP][PASSED] - propsHelper.navigateToBuyPage(): Wait for page load successfully
+
+15-05-2026T23:20:34 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/buy' successfully
+
+15-05-2026T23:20:34 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:34 - [TEST_STEP][PASSED] - propsHelper.waitForPropertiesToLoad(): Delayed 2 second(s)
+
+15-05-2026T23:20:35 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/PropertyService/BuyRentPage/loadingSpinner' located by 'By.xpath: //div[contains(@class, 'animate-pulse')]' is not present after '15' second(s)
+
+15-05-2026T23:20:37 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:37 - [TEST_STEP][PASSED] - propsHelper.clickFirstViewDetails(): Wait for page load successfully
+
+15-05-2026T23:20:38 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/BuyRentPage/viewDetailsButton' is clicked on
+
+15-05-2026T23:20:38 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:38 - [TEST_STEP][PASSED] - detailHelper.verifyPropertyDetailPageLoaded(): Object 'Object Repository/PropertyService/PropertyDetailPage/propertyTitle' is present
+
+15-05-2026T23:20:38 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/PropertyDetailPage/propertyTitle' is present
+
+15-05-2026T23:20:38 - [TEST_STEP][PASSED] - detailHelper.verifyMainImageDisplayed(): Object 'Object Repository/PropertyService/PropertyDetailPage/mainImage' is present
+
+15-05-2026T23:20:39 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/PropertyDetailPage/mainImage' is present
+
+15-05-2026T23:20:39 - [TEST_STEP][PASSED] - comment("✅ TC_PROP_024 PASSED: Property detail displays correctly"): ✅ TC_PROP_024 PASSED: Property detail displays correctly
+
+15-05-2026T23:20:39 - [MESSAGE][INFO] - ✅ TC_PROP_024 PASSED: Property detail displays correctly
+
+15-05-2026T23:20:39 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:20:39 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:41 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[15-05-2026T23:19:45 - [TEST_SUITE][PASSED] - TS_PropertyService_Smoke: null]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

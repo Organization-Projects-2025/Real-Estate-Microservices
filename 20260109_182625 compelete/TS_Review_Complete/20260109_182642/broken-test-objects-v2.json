@@ -1,0 +1,24 @@
+{
+  "brokenTestObjects": [
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Review/agentSelect",
+      "brokenLocator": "//select[@name\u003d\u0027agent\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//select",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260109_182625/TS_Review_Complete/20260109_182642/Object Repository/Review/agentSelect_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Review/reviewTextarea",
+      "brokenLocator": "//div[@id\u003d\u0027root\u0027]/div/div/form/div[5]/textarea",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Your Review\u0027])[1]/following::textarea[1]",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260109_182625/TS_Review_Complete/20260109_182642/Object Repository/Review/reviewTextarea_neighbor.png"
+    }
+  ]
+}

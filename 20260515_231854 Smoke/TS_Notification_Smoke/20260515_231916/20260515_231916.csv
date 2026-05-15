@@ -1,0 +1,24 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_Notification_Smoke,Edge Chromium 148.0.3967.54,Smoke test suite for Notifications - Critical notification tests,,15-05-2026 23:19:46,15-05-2026 23:20:57,1m - 11.213s,FAILED
+,,,,,,,
+Test Cases/Notification/TC_NOTIF_001_ViewNotifications,Edge Chromium 148.0.3967.54,View notifications page and verify notifications are displayed,"notification,view,positive",15-05-2026 23:19:48,15-05-2026 23:20:18,30.018s,FAILED
+notif = new notification.NotificationHelper(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:49,15-05-2026 23:19:49,0.024s,PASSED
+notif.loginAsReviewUser(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:49,15-05-2026 23:20:04,15.812s,PASSED
+notif.navigateToNotifications(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:04,15-05-2026 23:20:18,13.496s,FAILED
+,,,,,,,
+Test Cases/Navigation/UserMenu/TC_NAV_012_NavigateToNotifications,Edge Chromium 148.0.3967.54,Navigate to Notifications page via bell icon,"navigation,notifications,positive",15-05-2026 23:20:18,15-05-2026 23:20:34,16.229s,PASSED
+navKW = new navigation.Navigation_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:18,15-05-2026 23:20:18,0.011s,PASSED
+navKW.openHomePage(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:18,15-05-2026 23:20:22,4.404s,PASSED
+navKW.loginAsTestUser(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:22,15-05-2026 23:20:30,7.790s,PASSED
+"waitForElementClickable(findTestObject(""Object Repository/Notification/notificationBellIcon""), 10)",Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:30,15-05-2026 23:20:31,0.355s,PASSED
+"click(findTestObject(""Object Repository/Notification/notificationBellIcon""))",Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:31,15-05-2026 23:20:31,0.588s,PASSED
+delay(2),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:31,15-05-2026 23:20:33,2.019s,PASSED
+waitForPageLoad(10),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:33,15-05-2026 23:20:33,0.017s,PASSED
+"navKW.verifyCurrentUrl(""/notifications"")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:33,15-05-2026 23:20:33,0.139s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:33,15-05-2026 23:20:34,0.796s,PASSED
+,,,,,,,
+Test Cases/Notification/Triggers/TC_NOTIF_TRIG_001_ReviewPosted,Edge Chromium 148.0.3967.54,Verify notification is created when a review is posted,,15-05-2026 23:20:34,15-05-2026 23:20:57,22.795s,FAILED
+notif = new notification.NotificationHelper(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:34,15-05-2026 23:20:34,0.011s,PASSED
+reviewKW = new review.Review_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:34,15-05-2026 23:20:35,0.044s,PASSED
+notif.loginAsReviewUser(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:35,15-05-2026 23:20:44,9.027s,PASSED
+notif.navigateToNotifications(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:44,15-05-2026 23:20:57,13.427s,FAILED

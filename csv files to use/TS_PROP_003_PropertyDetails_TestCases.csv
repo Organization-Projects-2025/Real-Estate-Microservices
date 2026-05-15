@@ -1,0 +1,12 @@
+SCREEN NAME,Property Details Page,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_PROP_003,SCENARIO DESCRIPTION,Property Service - View Property Details,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_PROP_007,Verify property detail page displays all information,Property exists,Property ID: prop_001; URL: /property/prop_001,"Title, Price, Description, Location, Bedrooms, Images displayed",All property info visible,"Title, Price, Description, Location, Bedrooms, Images displayed",PASSED,,Positive test - Detail view
+2,TC_PROP_008,Verify Contact Agent button functionality,Property exists; Agent associated,Property ID: prop_001; Button: 'Contact Agent',Contact form/modal opens OR agent contact info displayed,User can contact agent,Contact form/modal opens with agent contact info,PASSED,,Positive test - Contact
+3,TC_PROP_009,Verify image gallery navigation,Property exists with multiple images,"Property ID: prop_001; Image Index: 1, 2, 3",Main image updates to selected thumbnail,Gallery navigation works,Main image updates to selected thumbnail,PASSED,,UI test - Image gallery
+4,TC_PROP_010,Verify Back button navigates to property list,User on property detail page,Navigation: Browser Back Button OR 'Back' Link,User navigated back to properties list page,Proper navigation,User navigated back to properties list page,PASSED,,Navigation test

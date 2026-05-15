@@ -1,0 +1,56 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_Review_Complete,Chrome 143.0.7499.170,Complete Review Test Suite - All Review Creation and Deletion Tests,,09-01-2026 19:18:55,09-01-2026 19:22:54,3m - 58.607s,PASSED
+,,,,,,,
+Test Cases/Review/Create/TC_Review_CR1_1Star,Chrome 143.0.7499.170,Create Review with 1 Star Rating,"review,create,1star",09-01-2026 19:18:56,09-01-2026 19:19:23,26.820s,PASSED
+reviewKW = new review.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:18:57,09-01-2026 19:18:57,0.065s,PASSED
+"reviewKW.createReview(""Test User 1Star"", 1, ""Review with 1 star rating"")",Chrome 143.0.7499.170,,,09-01-2026 19:18:57,09-01-2026 19:19:23,25.769s,PASSED
+,,,,,,,
+Test Cases/Review/Create/TC_Review_CR2_2Star,Chrome 143.0.7499.170,Create Review with 2 Star Rating,"2star,review,create",09-01-2026 19:19:23,09-01-2026 19:19:44,21.060s,PASSED
+reviewKW = new review.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:19:23,09-01-2026 19:19:23,0.003s,PASSED
+"reviewKW.createReview(""Test User 2Star"", 2, ""Review with 2 star rating"")",Chrome 143.0.7499.170,,,09-01-2026 19:19:23,09-01-2026 19:19:44,21.021s,PASSED
+,,,,,,,
+Test Cases/Review/Create/TC_Review_CR3_3Star,Chrome 143.0.7499.170,Create Review with 3 Star Rating,"3star,review,create",09-01-2026 19:19:44,09-01-2026 19:20:05,21.584s,PASSED
+reviewKW = new review.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:19:44,09-01-2026 19:19:44,0.003s,PASSED
+"reviewKW.createReview(""Test User 3Star"", 3, ""Review with 3 star rating"")",Chrome 143.0.7499.170,,,09-01-2026 19:19:44,09-01-2026 19:20:05,21.546s,PASSED
+,,,,,,,
+Test Cases/Review/Create/TC_Review_CR4_4Star,Chrome 143.0.7499.170,Create Review with 4 Star Rating,"4star,review,create",09-01-2026 19:20:05,09-01-2026 19:20:27,21.756s,PASSED
+reviewKW = new review.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:20:05,09-01-2026 19:20:05,0.003s,PASSED
+"reviewKW.createReview(""Test User 4Star"", 4, ""Review with 4 star rating"")",Chrome 143.0.7499.170,,,09-01-2026 19:20:05,09-01-2026 19:20:27,21.717s,PASSED
+,,,,,,,
+Test Cases/Review/Create/TC_Review_CR5_5Star,Chrome 143.0.7499.170,Create Review with 5 Star Rating,"review,5star,create",09-01-2026 19:20:27,09-01-2026 19:20:48,21.208s,PASSED
+reviewKW = new review.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:20:27,09-01-2026 19:20:27,0.002s,PASSED
+"reviewKW.createReview(""Test User 5Star"", 5, ""Review with 5 star rating"")",Chrome 143.0.7499.170,,,09-01-2026 19:20:27,09-01-2026 19:20:48,21.166s,PASSED
+,,,,,,,
+Test Cases/Review/Delete/TC_Review_DEL1_DeleteLast,Chrome 143.0.7499.170,Delete Last Review (Admin Only),"review,admin,delete",09-01-2026 19:20:48,09-01-2026 19:21:12,23.756s,PASSED
+reviewKW = new review.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:20:48,09-01-2026 19:20:48,0.002s,PASSED
+reviewKW.adminDeleteLastReview(),Chrome 143.0.7499.170,,,09-01-2026 19:20:48,09-01-2026 19:21:12,23.722s,PASSED
+,,,,,,,
+Test Cases/Review/Validation/TC_Review_VAL1_EmptyReviewerName,Chrome 143.0.7499.170,Validation Test - Submit review with empty reviewer name,"negative,review,validation",09-01-2026 19:21:12,09-01-2026 19:21:34,22.276s,PASSED
+reviewKW = new review.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:21:12,09-01-2026 19:21:12,0.002s,PASSED
+"reviewKW.submitReviewWithEmptyName(5, ""This review has no reviewer name"")",Chrome 143.0.7499.170,,,09-01-2026 19:21:12,09-01-2026 19:21:32,19.939s,PASSED
+delay(2),Chrome 143.0.7499.170,,,09-01-2026 19:21:32,09-01-2026 19:21:34,2.027s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:21:34,09-01-2026 19:21:34,0.261s,PASSED
+,,,,,,,
+Test Cases/Review/Validation/TC_Review_VAL2_MissingAgent,Chrome 143.0.7499.170,Validation Test - Submit review without selecting agent,"negative,review,validation",09-01-2026 19:21:34,09-01-2026 19:21:56,21.995s,PASSED
+reviewKW = new review.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:21:34,09-01-2026 19:21:34,0.002s,PASSED
+"reviewKW.submitReviewWithoutAgent(""Test Reviewer"", 4, ""Review without agent selection"")",Chrome 143.0.7499.170,,,09-01-2026 19:21:34,09-01-2026 19:21:54,19.671s,PASSED
+delay(2),Chrome 143.0.7499.170,,,09-01-2026 19:21:54,09-01-2026 19:21:56,2.024s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:21:56,09-01-2026 19:21:56,0.262s,PASSED
+,,,,,,,
+Test Cases/Review/Validation/TC_Review_VAL3_MissingStarRating,Chrome 143.0.7499.170,Validation Test - Submit review without star rating,"negative,review,validation",09-01-2026 19:21:56,09-01-2026 19:22:18,21.691s,PASSED
+reviewKW = new review.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:21:56,09-01-2026 19:21:56,0.002s,PASSED
+"reviewKW.submitReviewWithoutRating(""Test Reviewer"", ""Review without star rating"")",Chrome 143.0.7499.170,,,09-01-2026 19:21:56,09-01-2026 19:22:16,19.388s,PASSED
+delay(2),Chrome 143.0.7499.170,,,09-01-2026 19:22:16,09-01-2026 19:22:18,2.011s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:22:18,09-01-2026 19:22:18,0.248s,PASSED
+,,,,,,,
+Test Cases/Review/Validation/TC_Review_VAL4_EmptyReviewText,Chrome 143.0.7499.170,Validation Test - Submit review with empty review text,"negative,review,validation",09-01-2026 19:22:18,09-01-2026 19:22:39,20.424s,PASSED
+reviewKW = new review.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:22:18,09-01-2026 19:22:18,0.001s,PASSED
+"reviewKW.submitReviewWithEmptyText(""Test Reviewer"", 3)",Chrome 143.0.7499.170,,,09-01-2026 19:22:18,09-01-2026 19:22:36,18.094s,PASSED
+delay(2),Chrome 143.0.7499.170,,,09-01-2026 19:22:36,09-01-2026 19:22:38,2.021s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:22:38,09-01-2026 19:22:39,0.263s,PASSED
+,,,,,,,
+Test Cases/Review/Validation/TC_Review_VAL5_AllFieldsEmpty,Chrome 143.0.7499.170,Validation Test - Submit review with all fields empty,"negative,review,validation",09-01-2026 19:22:39,09-01-2026 19:22:54,15.089s,PASSED
+reviewKW = new review.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:22:39,09-01-2026 19:22:39,0.002s,PASSED
+reviewKW.submitReviewWithAllFieldsEmpty(),Chrome 143.0.7499.170,,,09-01-2026 19:22:39,09-01-2026 19:22:51,12.765s,PASSED
+delay(2),Chrome 143.0.7499.170,,,09-01-2026 19:22:51,09-01-2026 19:22:53,2.020s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:22:53,09-01-2026 19:22:54,0.265s,PASSED

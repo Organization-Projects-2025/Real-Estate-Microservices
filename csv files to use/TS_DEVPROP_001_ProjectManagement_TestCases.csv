@@ -1,0 +1,15 @@
+SCREEN NAME,Developer - My Projects Page,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_DEVPROP_001,SCENARIO DESCRIPTION,Developer Properties - Project Management,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_DEVPROP_001,Verify successful project creation with valid data,Developer logged in,"Name: 'Sunset Heights'; Description: 'Luxury apartment complex'; Location: 'Miami, FL'",Project created successfully; Visible in projects list,New project in database,Project created successfully and visible in projects list,PASSED,,Positive test - Create project
+2,TC_DEVPROP_002,Verify successful project update with valid data,Developer logged in; Project exists,Project ID: proj_001; Name: 'Sunset Heights Phase 2'; Description: 'Updated luxury apartments',Project updated successfully; Changes reflected,Project data updated,Project update fails - changes not being saved to database,FAILED,DEF-2026-018,Positive test - Update project
+3,TC_DEVPROP_003,Verify retrieval of all developer projects,Developer logged in; Projects exist,URL: /my-projects,All developer's projects displayed in list,Projects retrieved correctly,All developer's projects displayed in list,PASSED,,Positive test - Get all
+4,TC_DEVPROP_004,Verify retrieval of project by valid ID,Developer logged in; Project exists,Project ID: proj_001,Project details displayed correctly,Single project retrieved,Project details displayed correctly,PASSED,,Positive test - Get by ID
+5,TC_DEVPROP_005,Verify error handling for invalid project ID,Developer logged in,Project ID: 'invalid_id_xyz123',Error message displayed; 404 or not found,Error handled gracefully,Invalid project ID does not return proper error response - shows generic error,FAILED,DEF-2026-017,Negative test - Invalid ID
+6,TC_DEVPROP_006,Verify successful project deletion,Developer logged in; Project exists,Project ID: proj_002; Confirm Delete: Yes,Project deleted successfully; Removed from list,Project removed from database,Project deletion throws unexpected error - property may not be fully removed,ERROR,DEF-2026-022,Positive test - Delete project
+7,TC_DEVPROP_007,Verify project details page displays complete information,Developer logged in; Project exists,Project ID: proj_001,"Name, Description, Location, Properties count displayed",All project info visible,"Name, Description, Location, Properties count displayed",PASSED,,UI test - Details page

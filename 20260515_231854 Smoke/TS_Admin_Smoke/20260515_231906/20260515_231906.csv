@@ -1,0 +1,50 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_Admin_Smoke,Edge Chromium 148.0.3967.54,"Smoke Test Suite - Critical Admin Tests (Access, User Management, Property Management)",,15-05-2026 23:19:42,15-05-2026 23:21:47,2m - 5.423s,PASSED
+,,,,,,,
+Test Cases/Admin/TC_ADM_AdminAccessRequired,Edge Chromium 148.0.3967.54,Test Case: Admin Access Required - Verifies that only admin users can access the Users Management page,"security,access,admin,users",15-05-2026 23:19:44,15-05-2026 23:20:12,28.536s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:47,15-05-2026 23:19:51,4.256s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:51,15-05-2026 23:19:51,0.080s,PASSED
+userHelper = new admin.User_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:51,15-05-2026 23:19:51,0.015s,PASSED
+"usersUrl = ""http://localhost:5173/admin/users""",Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:51,15-05-2026 23:19:51,0.006s,PASSED
+"loginUrl = ""http://localhost:5173/login""",Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:51,15-05-2026 23:19:51,0.003s,PASSED
+"homeUrl = ""http://localhost:5173""",Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:51,15-05-2026 23:19:51,0.003s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:51,15-05-2026 23:20:10,18.898s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:10,15-05-2026 23:20:12,2.365s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_001_ViewUsersPage,Edge Chromium 148.0.3967.54,Test Case: View Users Management Page - Verifies that admin can access and view the Users Management page,"admin,users,view,positive",15-05-2026 23:20:12,15-05-2026 23:20:29,16.703s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:13,15-05-2026 23:20:14,1.009s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:14,15-05-2026 23:20:14,0.002s,PASSED
+userHelper = new admin.User_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:14,15-05-2026 23:20:14,0.003s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:14,15-05-2026 23:20:28,14.846s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:28,15-05-2026 23:20:29,0.521s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_002_EditUserValid,Edge Chromium 148.0.3967.54,Test Case: Edit User with Valid Data - Verifies that admin can edit an existing user with valid data,"edit,admin,positive,users",15-05-2026 23:20:29,15-05-2026 23:21:04,35.016s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:29,15-05-2026 23:20:30,1.116s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:30,15-05-2026 23:20:30,0.003s,PASSED
+userHelper = new admin.User_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:30,15-05-2026 23:20:30,0.002s,PASSED
+"testUserEmail = userHelper.generateUniqueEmail(""edituser"")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:30,15-05-2026 23:20:30,0.032s,PASSED
+"testPassword = ""Password123!""",Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:30,15-05-2026 23:20:30,0.007s,PASSED
+testUserId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:30,15-05-2026 23:20:30,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:30,15-05-2026 23:21:03,32.734s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:03,15-05-2026 23:21:04,0.860s,PASSED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_001_ViewPropertiesPage,Edge Chromium 148.0.3967.54,Test Case: View Properties Management Page - Verifies that admin can access and view the Properties Management page,"admin,properties,view,positive",15-05-2026 23:21:04,15-05-2026 23:21:18,13.649s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:04,15-05-2026 23:21:05,0.782s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:05,15-05-2026 23:21:05,0.001s,PASSED
+propertyHelper = new admin.Property_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:05,15-05-2026 23:21:05,0.007s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:05,15-05-2026 23:21:17,12.357s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:17,15-05-2026 23:21:18,0.421s,PASSED
+,,,,,,,
+Test Cases/Admin/ReviewManagement/TC_ADM_REV_001_ViewReviewsPage,Edge Chromium 148.0.3967.54,Verify that admin can access and view the Reviews Management page,,15-05-2026 23:21:18,15-05-2026 23:21:33,15.335s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:18,15-05-2026 23:21:19,1.154s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:19,15-05-2026 23:21:19,0.010s,PASSED
+reviewHelper = new admin.Review_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:19,15-05-2026 23:21:19,0.028s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:19,15-05-2026 23:21:33,13.643s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:33,15-05-2026 23:21:33,0.373s,PASSED
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_001_ViewFiltersPage,Edge Chromium 148.0.3967.54,Test Case: View Filters Management Page - Verifies that admin can access and view the Filters Management page with proper UI elements,"admin,filters,smoke,view",15-05-2026 23:21:33,15-05-2026 23:21:47,14.326s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:33,15-05-2026 23:21:34,0.919s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:34,15-05-2026 23:21:34,0.001s,PASSED
+filterHelper = new admin.Filter_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:34,15-05-2026 23:21:34,0.010s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:34,15-05-2026 23:21:47,12.798s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:47,15-05-2026 23:21:47,0.452s,PASSED

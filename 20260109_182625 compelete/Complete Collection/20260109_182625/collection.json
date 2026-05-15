@@ -1,0 +1,14 @@
+{
+  "id": "Test Suites/Complete Collection",
+  "name": "Complete Collection",
+  "reportFolder": "C:\\Projects\\Real-Estate-Microservices\\Katalon\\Reports\\20260109_182625\\Complete Collection\\20260109_182625",
+  "startTime": 1767976004508,
+  "endTime": 1767979374895,
+  "totalPassedTestCases": "120",
+  "totalErrorTestCases": "5",
+  "totalFailedTestCases": "17",
+  "totalTestCases": "142",
+  "totalIncompleteTestCases": "0",
+  "totalSkippedTestCases": "0",
+  "description": ""
+}

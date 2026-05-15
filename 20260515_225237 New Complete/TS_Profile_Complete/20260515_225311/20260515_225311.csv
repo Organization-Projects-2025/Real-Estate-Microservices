@@ -1,0 +1,76 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_Profile_Complete,Edge Chromium 148.0.3967.54,Complete Profile Test Suite - All Profile Edit and Validation Tests,,15-05-2026 22:53:29,15-05-2026 22:59:25,5m - 56.423s,PASSED
+,,,,,,,
+Test Cases/Profile/Edit/TC_PROF_001_UpdateAllFields,Edge Chromium 148.0.3967.54,Update all personal information fields with valid data,"edit,profile,positive",15-05-2026 22:53:32,15-05-2026 22:54:31,59.583s,PASSED
+profileKW = new profile.Profile_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:33,15-05-2026 22:53:33,0.120s,PASSED
+profileKW.loginAndNavigateToProfile(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:33,15-05-2026 22:54:02,28.893s,PASSED
+"profileKW.fillAllPersonalInfo(""UpdatedFirstName"", ""UpdatedLastName"", ""+971599584375"", ""+971501234567"", ""contact@example.com"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:02,15-05-2026 22:54:09,6.457s,PASSED
+profileKW.clickSaveChanges(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:09,15-05-2026 22:54:11,2.798s,PASSED
+profileKW.restoreOriginalProfile(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:11,15-05-2026 22:54:30,18.645s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:30,15-05-2026 22:54:31,1.397s,PASSED
+,,,,,,,
+Test Cases/Profile/Edit/TC_PROF_002_UpdateFirstName,Edge Chromium 148.0.3967.54,Update only first name field,"edit,profile,positive",15-05-2026 22:54:31,15-05-2026 22:55:17,45.935s,PASSED
+profileKW = new profile.Profile_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:32,15-05-2026 22:54:32,0.000s,PASSED
+profileKW.loginAndNavigateToProfile(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:32,15-05-2026 22:54:52,20.757s,PASSED
+"profileKW.fillFirstName(""NewFirstName"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:52,15-05-2026 22:54:54,1.215s,PASSED
+profileKW.clickSaveChanges(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:54,15-05-2026 22:54:56,2.396s,PASSED
+profileKW.restoreOriginalProfile(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:56,15-05-2026 22:55:15,18.861s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:15,15-05-2026 22:55:17,2.503s,PASSED
+,,,,,,,
+Test Cases/Profile/Edit/TC_PROF_003_UpdateLastName,Edge Chromium 148.0.3967.54,Update only last name field,"profile,edit,positive",15-05-2026 22:55:17,15-05-2026 22:56:00,42.720s,PASSED
+profileKW = new profile.Profile_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:17,15-05-2026 22:55:17,0.002s,PASSED
+profileKW.loginAndNavigateToProfile(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:17,15-05-2026 22:55:38,20.689s,PASSED
+"profileKW.fillLastName(""NewLastName"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:38,15-05-2026 22:55:40,1.457s,PASSED
+profileKW.clickSaveChanges(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:40,15-05-2026 22:55:42,2.481s,PASSED
+profileKW.restoreOriginalProfile(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:42,15-05-2026 22:55:59,17.435s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:59,15-05-2026 22:56:00,0.574s,PASSED
+,,,,,,,
+Test Cases/Profile/Edit/TC_PROF_004_UpdatePhoneNumber,Edge Chromium 148.0.3967.54,Update phone number with valid format,"profile,edit,positive",15-05-2026 22:56:00,15-05-2026 22:56:43,43.359s,PASSED
+profileKW = new profile.Profile_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:00,15-05-2026 22:56:00,0.004s,PASSED
+profileKW.loginAndNavigateToProfile(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:00,15-05-2026 22:56:22,21.628s,PASSED
+"profileKW.fillPhoneNumber(""+971509876543"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:22,15-05-2026 22:56:23,1.243s,PASSED
+profileKW.clickSaveChanges(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:23,15-05-2026 22:56:25,2.370s,PASSED
+profileKW.restoreOriginalProfile(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:25,15-05-2026 22:56:43,17.383s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:43,15-05-2026 22:56:43,0.618s,PASSED
+,,,,,,,
+Test Cases/Profile/Edit/TC_PROF_005_CancelEdit,Edge Chromium 148.0.3967.54,Cancel editing without saving changes,"profile,edit,positive",15-05-2026 22:56:43,15-05-2026 22:57:17,33.735s,PASSED
+profileKW = new profile.Profile_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:44,15-05-2026 22:56:44,0.010s,PASSED
+profileKW.loginAndNavigateToProfile(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:44,15-05-2026 22:57:04,20.145s,PASSED
+originalFirstName = profileKW.getFirstNameValue(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:04,15-05-2026 22:57:04,0.316s,PASSED
+originalLastName = profileKW.getLastNameValue(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:04,15-05-2026 22:57:04,0.286s,PASSED
+"profileKW.fillFirstName(""TempFirstName"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:04,15-05-2026 22:57:06,1.203s,PASSED
+"profileKW.fillLastName(""TempLastName"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:06,15-05-2026 22:57:07,1.046s,PASSED
+profileKW.clickCancel(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:07,15-05-2026 22:57:08,1.430s,PASSED
+profileKW.navigateToProfile(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:08,15-05-2026 22:57:16,7.927s,PASSED
+currentFirstName = profileKW.getFirstNameValue(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:16,15-05-2026 22:57:16,0.305s,PASSED
+currentLastName = profileKW.getLastNameValue(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:16,15-05-2026 22:57:17,0.290s,PASSED
+"verifyMatch(currentFirstName, originalFirstName, false)",Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:17,15-05-2026 22:57:17,0.034s,PASSED
+"verifyMatch(currentLastName, originalLastName, false)",Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:17,15-05-2026 22:57:17,0.007s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:17,15-05-2026 22:57:17,0.583s,PASSED
+,,,,,,,
+Test Cases/Profile/Validation/TC_PROF_VAL1_EmptyFirstName,Edge Chromium 148.0.3967.54,Validation: Attempt to save with empty first name,"profile,validation,negative",15-05-2026 22:57:17,15-05-2026 22:58:00,43.236s,PASSED
+profileKW = new profile.Profile_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:17,15-05-2026 22:57:17,0.001s,PASSED
+profileKW.loginAndNavigateToProfile(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:17,15-05-2026 22:57:38,20.971s,PASSED
+"profileKW.fillFirstName("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:38,15-05-2026 22:57:39,0.944s,PASSED
+profileKW.clickSaveChanges(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:39,15-05-2026 22:57:42,2.379s,PASSED
+delay(2),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:42,15-05-2026 22:57:44,2.014s,PASSED
+profileKW.restoreOriginalProfile(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:44,15-05-2026 22:58:00,16.488s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:00,15-05-2026 22:58:00,0.366s,PASSED
+,,,,,,,
+Test Cases/Profile/Validation/TC_PROF_VAL2_EmptyLastName,Edge Chromium 148.0.3967.54,Validation: Attempt to save with empty last name,"profile,validation,negative",15-05-2026 22:58:00,15-05-2026 22:58:43,42.982s,PASSED
+profileKW = new profile.Profile_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:00,15-05-2026 22:58:00,0.003s,PASSED
+profileKW.loginAndNavigateToProfile(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:00,15-05-2026 22:58:21,20.342s,PASSED
+"profileKW.fillLastName("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:21,15-05-2026 22:58:22,1.347s,PASSED
+profileKW.clickSaveChanges(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:22,15-05-2026 22:58:25,2.619s,PASSED
+delay(2),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:25,15-05-2026 22:58:27,2.009s,PASSED
+profileKW.restoreOriginalProfile(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:27,15-05-2026 22:58:43,16.169s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:43,15-05-2026 22:58:43,0.445s,PASSED
+,,,,,,,
+Test Cases/Profile/Validation/TC_PROF_VAL3_InvalidPhoneNumber,Edge Chromium 148.0.3967.54,Validation: Attempt to save with invalid phone number format,"profile,validation,negative",15-05-2026 22:58:43,15-05-2026 22:59:25,41.944s,PASSED
+profileKW = new profile.Profile_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:43,15-05-2026 22:58:43,0.002s,PASSED
+profileKW.loginAndNavigateToProfile(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:43,15-05-2026 22:59:03,19.310s,PASSED
+"profileKW.fillPhoneNumber(""123"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:03,15-05-2026 22:59:04,1.109s,PASSED
+profileKW.clickSaveChanges(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:04,15-05-2026 22:59:06,2.386s,PASSED
+delay(2),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:06,15-05-2026 22:59:08,2.017s,PASSED
+profileKW.restoreOriginalProfile(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:08,15-05-2026 22:59:25,16.700s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:25,15-05-2026 22:59:25,0.367s,PASSED
