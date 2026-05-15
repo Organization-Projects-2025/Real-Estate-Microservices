@@ -1,0 +1,2835 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="TS_Agent_Complete" time="462.547" tests="9" failures="2" errors="0">
+   <testsuite name="TS_Agent_Complete" tests="9" failures="2" errors="0" time="462.547" skipped="0" timestamp="2026-05-15T19:53:27.584Z" hostname="User - 192.168.1.4" id="Test Suites/TS_Agent_Complete">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_225237\\TS_Agent_Complete\\20260515_225251"/>
+         <property name="logFiles" value="D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_225237\\TS_Agent_Complete\\20260515_225251\\console0.log, D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_225237\\TS_Agent_Complete\\20260515_225251\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="User - 192.168.1.4"/>
+         <property name="os" value="Windows 11 64bit"/>
+         <property name="katalonVersion" value="10.4.3.0"/>
+         <property name="browser" value="Edge Chromium 148.0.3967.54"/>
+         <property name="userFullName" value="Jakayaj756nctimecom"/>
+         <property name="hostAddress" value="192.168.1.4"/>
+         <property name="sessionId" value="d2467b5c5be3db5130df1b890fd2c64d"/>
+         <property name="projectName" value="Katalon"/>
+         <property name="seleniumVersion" value="4.34.0"/>
+         <property name="proxyInformation" value="ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList=&quot;&quot;, isApplyToDesiredCapabilities=true }"/>
+         <property name="platform" value="Windows 11"/>
+      </properties>
+      <testcase name="Test Cases/Agent/Create/TC_AGENT_001_Create_Agent_Valid_Data" time="86.904" classname="Test Cases/Agent/Create/TC_AGENT_001_Create_Agent_Valid_Data" status="PASSED">
+         <system-out><![CDATA[15-05-2026T22:53:29 - [TEST_CASE][PASSED] - Test Cases/Agent/Create/TC_AGENT_001_Create_Agent_Valid_Data: Test Cases/Agent/Create/TC_AGENT_001_Create_Agent_Valid_Data
+
+15-05-2026T22:53:32 - [TEST_STEP][PASSED] - Browser_Keywords().openBrowserWithFallback(): Current window maximized
+
+15-05-2026T22:53:32 - [MESSAGE][INFO] - Attempting to open Edge Chromium browser...
+
+15-05-2026T22:53:32 - [MESSAGE][INFO] - Edge initialization failed, attempting fallback to default/Chrome...
+
+15-05-2026T22:53:33 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T22:53:33 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T22:53:40 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T22:53:40 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T22:53:40 - [TEST_STEP][PASSED] - agentHelper = new agent.Agent_Keywords(): null
+
+15-05-2026T22:53:40 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T22:53:40 - [TEST_STEP][PASSED] - try: ✅ TC_AGENT_001 PASSED: Agent 'TestAgent1778874862448 LastName' created successfully
+
+15-05-2026T22:53:40 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T22:53:40 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T22:53:41 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:53:42 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T22:53:43 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T22:53:43 - [TEST_STEP][PASSED] - loginHelper.loginAsAdmin(): Delayed 2 second(s)
+
+15-05-2026T22:53:43 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T22:53:43 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T22:53:45 - [MESSAGE][PASSED] - Text 'admin@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T22:53:45 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T22:53:46 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T22:53:47 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T22:53:50 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T22:53:50 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:53:52 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:53:52 - [TEST_STEP][PASSED] - loginHelper.verifyLoginSuccess(): Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T22:53:52 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:53:54 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:53:54 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T22:53:54 - [TEST_STEP][PASSED] - agentHelper.navigateToManageAgents(): Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is present
+
+15-05-2026T22:53:54 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/manage-agents' successfully
+
+15-05-2026T22:53:55 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:53:55 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T22:53:56 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:53:56 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is present
+
+15-05-2026T22:53:56 - [TEST_STEP][PASSED] - initialCount = agentHelper.getAgentsCount(): Found web elements by test object Object Repository/Agent/AgentPage/agentCards
+
+15-05-2026T22:54:07 - [MESSAGE][INFO] - Unable to find the element located by 'By.xpath: //div[contains(@class,'rounded-xl') and .//h3]'. Please recheck the objects properties to make sure the desired element is located. 
+
+15-05-2026T22:54:07 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Agent/AgentPage/agentCards
+
+15-05-2026T22:54:07 - [TEST_STEP][PASSED] - agentHelper.clickAddNewAgent(): Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:54:07 - [MESSAGE][PASSED] - Execute JavaScript '
+                // Close any open dropdowns/menus by clicking outside
+                var event = new MouseEvent('click', {
+                    view: window,
+                    bubbles: true,
+                    cancelable: true
+                });
+                document.body.dispatchEvent(event);
+                
+                // Also try pressing ESC
+                var escEvent = new KeyboardEvent('keydown', {
+                    key: 'Escape',
+                    code: 'Escape',
+                    keyCode: 27,
+                    which: 27,
+                    bubbles: true
+                });
+                document.dispatchEvent(escEvent);
+            ' successfully
+
+15-05-2026T22:54:08 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:54:08 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Find navbar buttons by checking if they're near the top of the page
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:54:08 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:54:19 - [MESSAGE][WARNING] - Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is not visible after 10 second(s)
+
+15-05-2026T22:54:19 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 200);' successfully
+
+15-05-2026T22:54:19 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:54:20 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' successfully
+
+15-05-2026T22:54:21 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:54:21 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/addNewAgentButton
+
+15-05-2026T22:54:21 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            el.style.zIndex = "9999";
+        ' successfully
+
+15-05-2026T22:54:21 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:54:21 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:54:21 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:54:22 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:54:22 - [TEST_STEP][PASSED] - timestamp = System.currentTimeMillis(): null
+
+15-05-2026T22:54:22 - [TEST_STEP][PASSED] - agentData = ["firstName":TestAgent$timestamp, "lastName":"LastName", "email":testagent$timestamp@test.com, "contactEmail":contact$timestamp@test.com, ... ]: null
+
+15-05-2026T22:54:22 - [TEST_STEP][PASSED] - agentHelper.fillAgentForm(agentData): Text 'Test agent created by automation' is set on object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea'
+
+15-05-2026T22:54:22 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/firstNameInput' is cleared
+
+15-05-2026T22:54:24 - [MESSAGE][PASSED] - Text 'TestAgent1778874862448' is set on object 'Object Repository/Agent/ManageAgentsPage/firstNameInput'
+
+15-05-2026T22:54:24 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/lastNameInput' is cleared
+
+15-05-2026T22:54:25 - [MESSAGE][PASSED] - Text 'LastName' is set on object 'Object Repository/Agent/ManageAgentsPage/lastNameInput'
+
+15-05-2026T22:54:26 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/emailInput' is cleared
+
+15-05-2026T22:54:27 - [MESSAGE][PASSED] - Text 'testagent1778874862448@test.com' is set on object 'Object Repository/Agent/ManageAgentsPage/emailInput'
+
+15-05-2026T22:54:27 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/contactEmailInput' is cleared
+
+15-05-2026T22:54:29 - [MESSAGE][PASSED] - Text 'contact1778874862448@test.com' is set on object 'Object Repository/Agent/ManageAgentsPage/contactEmailInput'
+
+15-05-2026T22:54:29 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/phoneNumberInput' is cleared
+
+15-05-2026T22:54:30 - [MESSAGE][PASSED] - Text '1234567890' is set on object 'Object Repository/Agent/ManageAgentsPage/phoneNumberInput'
+
+15-05-2026T22:54:30 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/ageInput' is cleared
+
+15-05-2026T22:54:31 - [MESSAGE][PASSED] - Text '30' is set on object 'Object Repository/Agent/ManageAgentsPage/ageInput'
+
+15-05-2026T22:54:31 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/yearsOfExperienceInput' is cleared
+
+15-05-2026T22:54:32 - [MESSAGE][PASSED] - Text '5' is set on object 'Object Repository/Agent/ManageAgentsPage/yearsOfExperienceInput'
+
+15-05-2026T22:54:33 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/totalSalesInput' is cleared
+
+15-05-2026T22:54:33 - [MESSAGE][PASSED] - Text '10' is set on object 'Object Repository/Agent/ManageAgentsPage/totalSalesInput'
+
+15-05-2026T22:54:34 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea' is cleared
+
+15-05-2026T22:54:35 - [MESSAGE][PASSED] - Text 'Test agent created by automation' is set on object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea'
+
+15-05-2026T22:54:35 - [TEST_STEP][PASSED] - agentHelper.submitAgentForm(): Wait for page load successfully
+
+15-05-2026T22:54:35 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/submitButton' is visible
+
+15-05-2026T22:54:35 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Hide navbar buttons that might intercept clicks
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top-right (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:54:36 - [MESSAGE][PASSED] - Delayed 0.3 second(s)
+
+15-05-2026T22:54:36 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 150);' successfully
+
+15-05-2026T22:54:36 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:54:37 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/submitButton' successfully
+
+15-05-2026T22:54:38 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:54:38 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/submitButton
+
+15-05-2026T22:54:38 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            // Scroll to center of viewport
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            // Bring to front
+            el.style.zIndex = "9999";
+            el.style.position = "relative";
+        ' successfully
+
+15-05-2026T22:54:38 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:54:38 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:54:38 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:54:40 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:54:40 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:54:40 - [TEST_STEP][PASSED] - waitForElementNotPresent(findTestObject("Object Repository/Agent/ManageAgentsPage/agentModal"), 10, STOP_ON_FAILURE): Web element with id: 'Object Repository/Agent/ManageAgentsPage/agentModal' located by 'By.xpath: //div[contains(@class,'fixed') and contains(@class,'inset-0')]//div[contains(@class,'rounded-xl')]' is not present after '10' second(s)
+
+15-05-2026T22:54:41 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/Agent/ManageAgentsPage/agentModal' located by 'By.xpath: //div[contains(@class,'fixed') and contains(@class,'inset-0')]//div[contains(@class,'rounded-xl')]' is not present after '10' second(s)
+
+15-05-2026T22:54:41 - [TEST_STEP][PASSED] - delay(3): Delayed 3 second(s)
+
+15-05-2026T22:54:44 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T22:54:44 - [TEST_STEP][PASSED] - finalCount = agentHelper.getAgentsCount(): Found web elements by test object Object Repository/Agent/AgentPage/agentCards
+
+15-05-2026T22:54:55 - [MESSAGE][INFO] - Unable to find the element located by 'By.xpath: //div[contains(@class,'rounded-xl') and .//h3]'. Please recheck the objects properties to make sure the desired element is located. 
+
+15-05-2026T22:54:55 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Agent/AgentPage/agentCards
+
+15-05-2026T22:54:55 - [TEST_STEP][PASSED] - assert finalCount >= initialCount: null
+
+15-05-2026T22:54:55 - [TEST_STEP][PASSED] - agentName = $agentData.firstName $agentData.lastName: null
+
+15-05-2026T22:54:55 - [TEST_STEP][PASSED] - maxRetries = 3: null
+
+15-05-2026T22:54:55 - [TEST_STEP][PASSED] - found = false: null
+
+15-05-2026T22:54:55 - [TEST_STEP][PASSED] - for ([i = 0, i < maxRetries, (i++)]): null
+
+15-05-2026T22:54:55 - [TEST_STEP][PASSED] - try: null
+
+15-05-2026T22:54:55 - [TEST_STEP][PASSED] - verifyTextPresent(firstName, false, OPTIONAL): Text 'TestAgent1778874862448' is present on page 
+
+15-05-2026T22:54:55 - [MESSAGE][PASSED] - Text 'TestAgent1778874862448' is present on page 
+
+15-05-2026T22:54:55 - [TEST_STEP][PASSED] - found = true: null
+
+15-05-2026T22:54:55 - [TEST_STEP][PASSED] - comment(Found agent '$agentData.firstName' on attempt $(i + 1)): Found agent 'TestAgent1778874862448' on attempt 1
+
+15-05-2026T22:54:55 - [MESSAGE][INFO] - Found agent 'TestAgent1778874862448' on attempt 1
+
+15-05-2026T22:54:55 - [TEST_STEP][PASSED] - break: null
+
+15-05-2026T22:54:55 - [TEST_STEP][PASSED] - if (!(found) && finalCount > initialCount): null
+
+15-05-2026T22:54:55 - [TEST_STEP][PASSED] - assert found || finalCount > initialCount: null
+
+15-05-2026T22:54:55 - [TEST_STEP][PASSED] - comment(✅ TC_AGENT_001 PASSED: Agent '$agentName' created successfully): ✅ TC_AGENT_001 PASSED: Agent 'TestAgent1778874862448 LastName' created successfully
+
+15-05-2026T22:54:55 - [MESSAGE][INFO] - ✅ TC_AGENT_001 PASSED: Agent 'TestAgent1778874862448 LastName' created successfully
+
+15-05-2026T22:54:55 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T22:54:55 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T22:54:56 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Agent/Create/TC_AGENT_002_Create_Agent_Duplicate_Email" time="98.09" classname="Test Cases/Agent/Create/TC_AGENT_002_Create_Agent_Duplicate_Email" status="PASSED">
+         <system-out><![CDATA[15-05-2026T22:54:56 - [TEST_CASE][PASSED] - Test Cases/Agent/Create/TC_AGENT_002_Create_Agent_Duplicate_Email: Test Cases/Agent/Create/TC_AGENT_002_Create_Agent_Duplicate_Email
+
+15-05-2026T22:54:56 - [TEST_STEP][PASSED] - Browser_Keywords().openBrowserWithFallback(): Current window maximized
+
+15-05-2026T22:54:56 - [MESSAGE][INFO] - Attempting to open Edge Chromium browser...
+
+15-05-2026T22:54:56 - [MESSAGE][INFO] - Edge initialization failed, attempting fallback to default/Chrome...
+
+15-05-2026T22:54:56 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T22:54:56 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T22:54:58 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T22:54:58 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T22:54:58 - [TEST_STEP][PASSED] - agentHelper = new agent.Agent_Keywords(): null
+
+15-05-2026T22:54:58 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T22:54:58 - [TEST_STEP][PASSED] - try: Delayed 2 second(s)
+
+15-05-2026T22:54:58 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T22:54:58 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T22:54:58 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:54:59 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T22:54:59 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T22:54:59 - [TEST_STEP][PASSED] - loginHelper.loginAsAdmin(): Delayed 2 second(s)
+
+15-05-2026T22:54:59 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T22:54:59 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T22:55:00 - [MESSAGE][PASSED] - Text 'admin@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T22:55:01 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T22:55:01 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T22:55:02 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T22:55:05 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T22:55:05 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:55:07 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:55:07 - [TEST_STEP][PASSED] - loginHelper.verifyLoginSuccess(): Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T22:55:07 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:55:09 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:55:09 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T22:55:09 - [TEST_STEP][PASSED] - agentHelper.navigateToManageAgents(): Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is present
+
+15-05-2026T22:55:09 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/manage-agents' successfully
+
+15-05-2026T22:55:09 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:55:09 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T22:55:10 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:55:12 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is present
+
+15-05-2026T22:55:12 - [TEST_STEP][PASSED] - timestamp = System.currentTimeMillis(): null
+
+15-05-2026T22:55:12 - [TEST_STEP][PASSED] - uniqueEmail = dup_test_$timestamp@test.com: null
+
+15-05-2026T22:55:12 - [TEST_STEP][PASSED] - agentData1 = ["firstName":"Original", "lastName":"Agent", "email":uniqueEmail, "contactEmail":dup_contact$timestamp@test.com, "phoneNumber":"1234567890", ... ]: null
+
+15-05-2026T22:55:12 - [TEST_STEP][PASSED] - agentHelper.clickAddNewAgent(): Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:55:13 - [MESSAGE][PASSED] - Execute JavaScript '
+                // Close any open dropdowns/menus by clicking outside
+                var event = new MouseEvent('click', {
+                    view: window,
+                    bubbles: true,
+                    cancelable: true
+                });
+                document.body.dispatchEvent(event);
+                
+                // Also try pressing ESC
+                var escEvent = new KeyboardEvent('keydown', {
+                    key: 'Escape',
+                    code: 'Escape',
+                    keyCode: 27,
+                    which: 27,
+                    bubbles: true
+                });
+                document.dispatchEvent(escEvent);
+            ' successfully
+
+15-05-2026T22:55:13 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:55:13 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Find navbar buttons by checking if they're near the top of the page
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:55:14 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:55:24 - [MESSAGE][WARNING] - Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is not visible after 10 second(s)
+
+15-05-2026T22:55:24 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 200);' successfully
+
+15-05-2026T22:55:25 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:55:25 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' successfully
+
+15-05-2026T22:55:26 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:55:26 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/addNewAgentButton
+
+15-05-2026T22:55:26 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            el.style.zIndex = "9999";
+        ' successfully
+
+15-05-2026T22:55:27 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:55:27 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:55:27 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:55:27 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:55:27 - [TEST_STEP][PASSED] - agentHelper.fillAgentForm(agentData1): Text 'Original agent for duplicate test' is set on object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea'
+
+15-05-2026T22:55:28 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/firstNameInput' is cleared
+
+15-05-2026T22:55:29 - [MESSAGE][PASSED] - Text 'Original' is set on object 'Object Repository/Agent/ManageAgentsPage/firstNameInput'
+
+15-05-2026T22:55:30 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/lastNameInput' is cleared
+
+15-05-2026T22:55:30 - [MESSAGE][PASSED] - Text 'Agent' is set on object 'Object Repository/Agent/ManageAgentsPage/lastNameInput'
+
+15-05-2026T22:55:31 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/emailInput' is cleared
+
+15-05-2026T22:55:32 - [MESSAGE][PASSED] - Text 'dup_test_1778874912967@test.com' is set on object 'Object Repository/Agent/ManageAgentsPage/emailInput'
+
+15-05-2026T22:55:32 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/contactEmailInput' is cleared
+
+15-05-2026T22:55:33 - [MESSAGE][PASSED] - Text 'dup_contact1778874912967@test.com' is set on object 'Object Repository/Agent/ManageAgentsPage/contactEmailInput'
+
+15-05-2026T22:55:34 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/phoneNumberInput' is cleared
+
+15-05-2026T22:55:34 - [MESSAGE][PASSED] - Text '1234567890' is set on object 'Object Repository/Agent/ManageAgentsPage/phoneNumberInput'
+
+15-05-2026T22:55:35 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/ageInput' is cleared
+
+15-05-2026T22:55:36 - [MESSAGE][PASSED] - Text '30' is set on object 'Object Repository/Agent/ManageAgentsPage/ageInput'
+
+15-05-2026T22:55:36 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/yearsOfExperienceInput' is cleared
+
+15-05-2026T22:55:37 - [MESSAGE][PASSED] - Text '5' is set on object 'Object Repository/Agent/ManageAgentsPage/yearsOfExperienceInput'
+
+15-05-2026T22:55:37 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/totalSalesInput' is cleared
+
+15-05-2026T22:55:38 - [MESSAGE][PASSED] - Text '10' is set on object 'Object Repository/Agent/ManageAgentsPage/totalSalesInput'
+
+15-05-2026T22:55:39 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea' is cleared
+
+15-05-2026T22:55:40 - [MESSAGE][PASSED] - Text 'Original agent for duplicate test' is set on object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea'
+
+15-05-2026T22:55:40 - [TEST_STEP][PASSED] - agentHelper.submitAgentForm(): Wait for page load successfully
+
+15-05-2026T22:55:40 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/submitButton' is visible
+
+15-05-2026T22:55:40 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Hide navbar buttons that might intercept clicks
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top-right (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:55:41 - [MESSAGE][PASSED] - Delayed 0.3 second(s)
+
+15-05-2026T22:55:41 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 150);' successfully
+
+15-05-2026T22:55:41 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:55:42 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/submitButton' successfully
+
+15-05-2026T22:55:43 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:55:43 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/submitButton
+
+15-05-2026T22:55:43 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            // Scroll to center of viewport
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            // Bring to front
+            el.style.zIndex = "9999";
+            el.style.position = "relative";
+        ' successfully
+
+15-05-2026T22:55:43 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:55:43 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:55:43 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:55:45 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:55:46 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:55:46 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+15-05-2026T22:55:48 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:55:48 - [TEST_STEP][PASSED] - agentFullName = $agentData1.firstName $agentData1.lastName: null
+
+15-05-2026T22:55:48 - [TEST_STEP][PASSED] - agentHelper.clickAddNewAgent(): Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:55:48 - [MESSAGE][PASSED] - Execute JavaScript '
+                // Close any open dropdowns/menus by clicking outside
+                var event = new MouseEvent('click', {
+                    view: window,
+                    bubbles: true,
+                    cancelable: true
+                });
+                document.body.dispatchEvent(event);
+                
+                // Also try pressing ESC
+                var escEvent = new KeyboardEvent('keydown', {
+                    key: 'Escape',
+                    code: 'Escape',
+                    keyCode: 27,
+                    which: 27,
+                    bubbles: true
+                });
+                document.dispatchEvent(escEvent);
+            ' successfully
+
+15-05-2026T22:55:48 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:55:48 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Find navbar buttons by checking if they're near the top of the page
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:55:49 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:55:59 - [MESSAGE][WARNING] - Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is not visible after 10 second(s)
+
+15-05-2026T22:55:59 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 200);' successfully
+
+15-05-2026T22:56:00 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:56:00 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' successfully
+
+15-05-2026T22:56:01 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:56:01 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/addNewAgentButton
+
+15-05-2026T22:56:01 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            el.style.zIndex = "9999";
+        ' successfully
+
+15-05-2026T22:56:02 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:56:02 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:56:02 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:56:02 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:56:02 - [TEST_STEP][PASSED] - agentDataDuplicate = ["firstName":"Duplicate", "lastName":"User", "email":uniqueEmail, "contactEmail":dup_attempt$timestamp@test.com, "phoneNumber":"0987654321", ... ]: null
+
+15-05-2026T22:56:02 - [TEST_STEP][PASSED] - agentHelper.fillAgentForm(agentDataDuplicate): Text 'Duplicate agent attempt' is set on object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea'
+
+15-05-2026T22:56:03 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/firstNameInput' is cleared
+
+15-05-2026T22:56:04 - [MESSAGE][PASSED] - Text 'Duplicate' is set on object 'Object Repository/Agent/ManageAgentsPage/firstNameInput'
+
+15-05-2026T22:56:04 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/lastNameInput' is cleared
+
+15-05-2026T22:56:05 - [MESSAGE][PASSED] - Text 'User' is set on object 'Object Repository/Agent/ManageAgentsPage/lastNameInput'
+
+15-05-2026T22:56:05 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/emailInput' is cleared
+
+15-05-2026T22:56:06 - [MESSAGE][PASSED] - Text 'dup_test_1778874912967@test.com' is set on object 'Object Repository/Agent/ManageAgentsPage/emailInput'
+
+15-05-2026T22:56:07 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/contactEmailInput' is cleared
+
+15-05-2026T22:56:09 - [MESSAGE][PASSED] - Text 'dup_attempt1778874912967@test.com' is set on object 'Object Repository/Agent/ManageAgentsPage/contactEmailInput'
+
+15-05-2026T22:56:09 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/phoneNumberInput' is cleared
+
+15-05-2026T22:56:10 - [MESSAGE][PASSED] - Text '0987654321' is set on object 'Object Repository/Agent/ManageAgentsPage/phoneNumberInput'
+
+15-05-2026T22:56:10 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/ageInput' is cleared
+
+15-05-2026T22:56:11 - [MESSAGE][PASSED] - Text '25' is set on object 'Object Repository/Agent/ManageAgentsPage/ageInput'
+
+15-05-2026T22:56:12 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/yearsOfExperienceInput' is cleared
+
+15-05-2026T22:56:12 - [MESSAGE][PASSED] - Text '3' is set on object 'Object Repository/Agent/ManageAgentsPage/yearsOfExperienceInput'
+
+15-05-2026T22:56:13 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/totalSalesInput' is cleared
+
+15-05-2026T22:56:14 - [MESSAGE][PASSED] - Text '5' is set on object 'Object Repository/Agent/ManageAgentsPage/totalSalesInput'
+
+15-05-2026T22:56:14 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea' is cleared
+
+15-05-2026T22:56:16 - [MESSAGE][PASSED] - Text 'Duplicate agent attempt' is set on object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea'
+
+15-05-2026T22:56:16 - [TEST_STEP][PASSED] - agentHelper.submitAgentForm(): Wait for page load successfully
+
+15-05-2026T22:56:16 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/submitButton' is visible
+
+15-05-2026T22:56:16 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Hide navbar buttons that might intercept clicks
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top-right (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:56:17 - [MESSAGE][PASSED] - Delayed 0.3 second(s)
+
+15-05-2026T22:56:17 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 150);' successfully
+
+15-05-2026T22:56:17 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:56:17 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/submitButton' successfully
+
+15-05-2026T22:56:18 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:56:19 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/submitButton
+
+15-05-2026T22:56:19 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            // Scroll to center of viewport
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            // Bring to front
+            el.style.zIndex = "9999";
+            el.style.position = "relative";
+        ' successfully
+
+15-05-2026T22:56:19 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:56:19 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:56:19 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:56:21 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:56:21 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:56:21 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+15-05-2026T22:56:22 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:56:22 - [TEST_STEP][PASSED] - try: Text of object 'Object Repository/Agent/ManageAgentsPage/errorMessage' is: 'Agent already exists with this email'
+
+15-05-2026T22:56:22 - [TEST_STEP][PASSED] - try: Text of object 'Object Repository/Agent/ManageAgentsPage/errorMessage' is: 'Agent already exists with this email'
+
+15-05-2026T22:56:22 - [TEST_STEP][PASSED] - agentHelper.verifyErrorMessage("already exists"): Text of object 'Object Repository/Agent/ManageAgentsPage/errorMessage' is: 'Agent already exists with this email'
+
+15-05-2026T22:56:23 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:56:23 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/errorMessage' is present
+
+15-05-2026T22:56:23 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/errorMessage' is: 'Agent already exists with this email'
+
+15-05-2026T22:56:23 - [TEST_STEP][PASSED] - comment("✅ TC_AGENT_002 PASSED: Duplicate email correctly prevented"): ✅ TC_AGENT_002 PASSED: Duplicate email correctly prevented
+
+15-05-2026T22:56:23 - [MESSAGE][INFO] - ✅ TC_AGENT_002 PASSED: Duplicate email correctly prevented
+
+15-05-2026T22:56:23 - [TEST_STEP][PASSED] - try: Delayed 1 second(s)
+
+15-05-2026T22:56:23 - [TEST_STEP][PASSED] - agentHelper.cancelAgentForm(): Delayed 1 second(s)
+
+15-05-2026T22:56:24 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/cancelButton' is visible
+
+15-05-2026T22:56:24 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Hide navbar buttons that might intercept clicks
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top-right (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:56:24 - [MESSAGE][PASSED] - Delayed 0.3 second(s)
+
+15-05-2026T22:56:24 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 150);' successfully
+
+15-05-2026T22:56:25 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:56:25 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/cancelButton' successfully
+
+15-05-2026T22:56:26 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:56:26 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/cancelButton
+
+15-05-2026T22:56:26 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            // Scroll to center of viewport
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            // Bring to front
+            el.style.zIndex = "9999";
+            el.style.position = "relative";
+        ' successfully
+
+15-05-2026T22:56:27 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:56:27 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:56:27 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:56:28 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:56:28 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+15-05-2026T22:56:29 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:56:29 - [TEST_STEP][PASSED] - try: Delayed 2 second(s)
+
+15-05-2026T22:56:29 - [TEST_STEP][PASSED] - agentHelper.clickDeleteAgent(agentFullName): Delayed 1 second(s)
+
+15-05-2026T22:56:29 - [MESSAGE][PASSED] - Object 'Delete agent button' is present
+
+15-05-2026T22:56:29 - [MESSAGE][PASSED] - Scroll to object 'Delete agent button' successfully
+
+15-05-2026T22:56:30 - [MESSAGE][PASSED] - Found web element by test object Delete agent button
+
+15-05-2026T22:56:30 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click()' successfully
+
+15-05-2026T22:56:31 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:56:31 - [TEST_STEP][PASSED] - agentHelper.confirmDeleteAgent(): Delayed 2 second(s)
+
+15-05-2026T22:56:31 - [MESSAGE][PASSED] - Alert is present after 3 second(s).
+
+15-05-2026T22:56:31 - [MESSAGE][PASSED] - Alert accepted
+
+15-05-2026T22:56:33 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:56:33 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T22:56:33 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T22:56:34 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Agent/Create/TC_AGENT_003_Create_Agent_Missing_Required_Fields" time="44.975" classname="Test Cases/Agent/Create/TC_AGENT_003_Create_Agent_Missing_Required_Fields" status="PASSED">
+         <system-out><![CDATA[15-05-2026T22:56:34 - [TEST_CASE][PASSED] - Test Cases/Agent/Create/TC_AGENT_003_Create_Agent_Missing_Required_Fields: Test Cases/Agent/Create/TC_AGENT_003_Create_Agent_Missing_Required_Fields
+
+15-05-2026T22:56:34 - [TEST_STEP][PASSED] - Browser_Keywords().openBrowserWithFallback(): Current window maximized
+
+15-05-2026T22:56:34 - [MESSAGE][INFO] - Attempting to open Edge Chromium browser...
+
+15-05-2026T22:56:34 - [MESSAGE][INFO] - Edge initialization failed, attempting fallback to default/Chrome...
+
+15-05-2026T22:56:34 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T22:56:34 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T22:56:35 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T22:56:35 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T22:56:35 - [TEST_STEP][PASSED] - agentHelper = new agent.Agent_Keywords(): null
+
+15-05-2026T22:56:35 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T22:56:35 - [TEST_STEP][PASSED] - try: ✅ TC_AGENT_003 PASSED: Missing required fields validation works correctly
+
+15-05-2026T22:56:35 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T22:56:36 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T22:56:36 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:56:36 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T22:56:37 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T22:56:37 - [TEST_STEP][PASSED] - loginHelper.loginAsAdmin(): Delayed 2 second(s)
+
+15-05-2026T22:56:37 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T22:56:37 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T22:56:38 - [MESSAGE][PASSED] - Text 'admin@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T22:56:38 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T22:56:39 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T22:56:40 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T22:56:43 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T22:56:43 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:56:45 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:56:45 - [TEST_STEP][PASSED] - loginHelper.verifyLoginSuccess(): Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T22:56:45 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:56:47 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:56:47 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T22:56:47 - [TEST_STEP][PASSED] - agentHelper.navigateToManageAgents(): Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is present
+
+15-05-2026T22:56:47 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/manage-agents' successfully
+
+15-05-2026T22:56:47 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:56:47 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T22:56:48 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:56:49 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is present
+
+15-05-2026T22:56:49 - [TEST_STEP][PASSED] - agentHelper.clickAddNewAgent(): Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:56:49 - [MESSAGE][PASSED] - Execute JavaScript '
+                // Close any open dropdowns/menus by clicking outside
+                var event = new MouseEvent('click', {
+                    view: window,
+                    bubbles: true,
+                    cancelable: true
+                });
+                document.body.dispatchEvent(event);
+                
+                // Also try pressing ESC
+                var escEvent = new KeyboardEvent('keydown', {
+                    key: 'Escape',
+                    code: 'Escape',
+                    keyCode: 27,
+                    which: 27,
+                    bubbles: true
+                });
+                document.dispatchEvent(escEvent);
+            ' successfully
+
+15-05-2026T22:56:49 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:56:49 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Find navbar buttons by checking if they're near the top of the page
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:56:50 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:57:01 - [MESSAGE][WARNING] - Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is not visible after 10 second(s)
+
+15-05-2026T22:57:01 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 200);' successfully
+
+15-05-2026T22:57:01 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:57:01 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' successfully
+
+15-05-2026T22:57:02 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:57:03 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/addNewAgentButton
+
+15-05-2026T22:57:03 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            el.style.zIndex = "9999";
+        ' successfully
+
+15-05-2026T22:57:03 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:57:03 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:57:03 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:57:04 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:57:04 - [TEST_STEP][PASSED] - agentData = ["firstName":"", "lastName":"Test", "email":"", "phoneNumber":"", "age":0, "yearsOfExperience":0]: null
+
+15-05-2026T22:57:04 - [TEST_STEP][PASSED] - agentHelper.fillAgentForm(agentData): Text '0' is set on object 'Object Repository/Agent/ManageAgentsPage/yearsOfExperienceInput'
+
+15-05-2026T22:57:04 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/lastNameInput' is cleared
+
+15-05-2026T22:57:05 - [MESSAGE][PASSED] - Text 'Test' is set on object 'Object Repository/Agent/ManageAgentsPage/lastNameInput'
+
+15-05-2026T22:57:05 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/ageInput' is cleared
+
+15-05-2026T22:57:06 - [MESSAGE][PASSED] - Text '0' is set on object 'Object Repository/Agent/ManageAgentsPage/ageInput'
+
+15-05-2026T22:57:06 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/yearsOfExperienceInput' is cleared
+
+15-05-2026T22:57:07 - [MESSAGE][PASSED] - Text '0' is set on object 'Object Repository/Agent/ManageAgentsPage/yearsOfExperienceInput'
+
+15-05-2026T22:57:07 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+15-05-2026T22:57:08 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:57:08 - [TEST_STEP][PASSED] - submitButton = findTestObject("Object Repository/Agent/ManageAgentsPage/submitButton"): null
+
+15-05-2026T22:57:08 - [TEST_STEP][PASSED] - agentHelper.submitAgentForm(): Wait for page load successfully
+
+15-05-2026T22:57:08 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/submitButton' is visible
+
+15-05-2026T22:57:08 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Hide navbar buttons that might intercept clicks
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top-right (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:57:09 - [MESSAGE][PASSED] - Delayed 0.3 second(s)
+
+15-05-2026T22:57:09 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 150);' successfully
+
+15-05-2026T22:57:09 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:57:09 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/submitButton' successfully
+
+15-05-2026T22:57:10 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:57:11 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/submitButton
+
+15-05-2026T22:57:11 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            // Scroll to center of viewport
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            // Bring to front
+            el.style.zIndex = "9999";
+            el.style.position = "relative";
+        ' successfully
+
+15-05-2026T22:57:11 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:57:11 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:57:11 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:57:13 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:57:13 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:57:13 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+15-05-2026T22:57:14 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:57:14 - [TEST_STEP][PASSED] - modalPresent = verifyElementPresent(findTestObject("Object Repository/Agent/ManageAgentsPage/agentModal"), 3, OPTIONAL): Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:57:14 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:57:14 - [TEST_STEP][PASSED] - if (modalPresent): Validation successful: Modal is still present after submitting invalid data
+
+15-05-2026T22:57:14 - [TEST_STEP][PASSED] - comment("Validation successful: Modal is still present after submitting invalid data"): Validation successful: Modal is still present after submitting invalid data
+
+15-05-2026T22:57:14 - [MESSAGE][INFO] - Validation successful: Modal is still present after submitting invalid data
+
+15-05-2026T22:57:14 - [TEST_STEP][PASSED] - executeJavaScript("
+        var inputs = document.querySelectorAll('input:required');
+        var invalidFound = false;
+        for(var i=0; i<inputs.length; i++) {
+            if(!inputs[i].checkValidity()) {
+                invalidFound = true;
+                break;
+            }
+        }
+        return invalidFound;
+    ", []): Execute JavaScript '
+        var inputs = document.querySelectorAll('input:required');
+        var invalidFound = false;
+        for(var i=0; i<inputs.length; i++) {
+            if(!inputs[i].checkValidity()) {
+                invalidFound = true;
+                break;
+            }
+        }
+        return invalidFound;
+    ' successfully
+
+15-05-2026T22:57:14 - [MESSAGE][PASSED] - Execute JavaScript '
+        var inputs = document.querySelectorAll('input:required');
+        var invalidFound = false;
+        for(var i=0; i<inputs.length; i++) {
+            if(!inputs[i].checkValidity()) {
+                invalidFound = true;
+                break;
+            }
+        }
+        return invalidFound;
+    ' successfully
+
+15-05-2026T22:57:14 - [TEST_STEP][PASSED] - comment("✅ TC_AGENT_003 PASSED: Missing required fields validation works correctly"): ✅ TC_AGENT_003 PASSED: Missing required fields validation works correctly
+
+15-05-2026T22:57:14 - [MESSAGE][INFO] - ✅ TC_AGENT_003 PASSED: Missing required fields validation works correctly
+
+15-05-2026T22:57:14 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T22:57:14 - [TEST_STEP][PASSED] - try: Delayed 1 second(s)
+
+15-05-2026T22:57:14 - [TEST_STEP][PASSED] - agentHelper.cancelAgentForm(): Delayed 1 second(s)
+
+15-05-2026T22:57:15 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/cancelButton' is visible
+
+15-05-2026T22:57:15 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Hide navbar buttons that might intercept clicks
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top-right (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:57:15 - [MESSAGE][PASSED] - Delayed 0.3 second(s)
+
+15-05-2026T22:57:15 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 150);' successfully
+
+15-05-2026T22:57:16 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:57:16 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/cancelButton' successfully
+
+15-05-2026T22:57:17 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:57:17 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/cancelButton
+
+15-05-2026T22:57:17 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            // Scroll to center of viewport
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            // Bring to front
+            el.style.zIndex = "9999";
+            el.style.position = "relative";
+        ' successfully
+
+15-05-2026T22:57:18 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:57:18 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:57:18 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:57:19 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:57:19 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T22:57:19 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Agent/Create/TC_AGENT_004_Create_Agent_Invalid_Email" time="49.043" classname="Test Cases/Agent/Create/TC_AGENT_004_Create_Agent_Invalid_Email" status="PASSED">
+         <system-out><![CDATA[15-05-2026T22:57:19 - [TEST_CASE][PASSED] - Test Cases/Agent/Create/TC_AGENT_004_Create_Agent_Invalid_Email: Test Cases/Agent/Create/TC_AGENT_004_Create_Agent_Invalid_Email
+
+15-05-2026T22:57:19 - [TEST_STEP][PASSED] - Browser_Keywords().openBrowserWithFallback(): Current window maximized
+
+15-05-2026T22:57:19 - [MESSAGE][INFO] - Attempting to open Edge Chromium browser...
+
+15-05-2026T22:57:19 - [MESSAGE][INFO] - Edge initialization failed, attempting fallback to default/Chrome...
+
+15-05-2026T22:57:19 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T22:57:19 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T22:57:20 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T22:57:20 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T22:57:20 - [TEST_STEP][PASSED] - agentHelper = new agent.Agent_Keywords(): null
+
+15-05-2026T22:57:21 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T22:57:21 - [TEST_STEP][PASSED] - try: ✅ TC_AGENT_004 PASSED: Invalid email validation works correctly
+
+15-05-2026T22:57:21 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T22:57:21 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T22:57:21 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:57:22 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T22:57:22 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T22:57:22 - [TEST_STEP][PASSED] - loginHelper.loginAsAdmin(): Delayed 2 second(s)
+
+15-05-2026T22:57:22 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T22:57:22 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T22:57:24 - [MESSAGE][PASSED] - Text 'admin@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T22:57:24 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T22:57:25 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T22:57:25 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T22:57:28 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T22:57:28 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:57:30 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:57:30 - [TEST_STEP][PASSED] - loginHelper.verifyLoginSuccess(): Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T22:57:30 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:57:32 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:57:32 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T22:57:32 - [TEST_STEP][PASSED] - agentHelper.navigateToManageAgents(): Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is present
+
+15-05-2026T22:57:32 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/manage-agents' successfully
+
+15-05-2026T22:57:32 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:57:32 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T22:57:33 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:57:33 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is present
+
+15-05-2026T22:57:33 - [TEST_STEP][PASSED] - agentHelper.clickAddNewAgent(): Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:57:34 - [MESSAGE][PASSED] - Execute JavaScript '
+                // Close any open dropdowns/menus by clicking outside
+                var event = new MouseEvent('click', {
+                    view: window,
+                    bubbles: true,
+                    cancelable: true
+                });
+                document.body.dispatchEvent(event);
+                
+                // Also try pressing ESC
+                var escEvent = new KeyboardEvent('keydown', {
+                    key: 'Escape',
+                    code: 'Escape',
+                    keyCode: 27,
+                    which: 27,
+                    bubbles: true
+                });
+                document.dispatchEvent(escEvent);
+            ' successfully
+
+15-05-2026T22:57:34 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:57:34 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Find navbar buttons by checking if they're near the top of the page
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:57:35 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:57:45 - [MESSAGE][WARNING] - Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is not visible after 10 second(s)
+
+15-05-2026T22:57:45 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 200);' successfully
+
+15-05-2026T22:57:46 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:57:46 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' successfully
+
+15-05-2026T22:57:47 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:57:47 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/addNewAgentButton
+
+15-05-2026T22:57:47 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            el.style.zIndex = "9999";
+        ' successfully
+
+15-05-2026T22:57:48 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:57:48 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:57:48 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:57:48 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:57:48 - [TEST_STEP][PASSED] - timestamp = System.currentTimeMillis(): null
+
+15-05-2026T22:57:48 - [TEST_STEP][PASSED] - agentData = ["firstName":"Invalid", "lastName":"Email", "email":"invalid-email-format", "phoneNumber":"1234567890", "age":30, "yearsOfExperience":5, ... ]: null
+
+15-05-2026T22:57:48 - [TEST_STEP][PASSED] - agentHelper.fillAgentForm(agentData): Text '10' is set on object 'Object Repository/Agent/ManageAgentsPage/totalSalesInput'
+
+15-05-2026T22:57:49 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/firstNameInput' is cleared
+
+15-05-2026T22:57:49 - [MESSAGE][PASSED] - Text 'Invalid' is set on object 'Object Repository/Agent/ManageAgentsPage/firstNameInput'
+
+15-05-2026T22:57:50 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/lastNameInput' is cleared
+
+15-05-2026T22:57:50 - [MESSAGE][PASSED] - Text 'Email' is set on object 'Object Repository/Agent/ManageAgentsPage/lastNameInput'
+
+15-05-2026T22:57:51 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/emailInput' is cleared
+
+15-05-2026T22:57:52 - [MESSAGE][PASSED] - Text 'invalid-email-format' is set on object 'Object Repository/Agent/ManageAgentsPage/emailInput'
+
+15-05-2026T22:57:52 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/phoneNumberInput' is cleared
+
+15-05-2026T22:57:53 - [MESSAGE][PASSED] - Text '1234567890' is set on object 'Object Repository/Agent/ManageAgentsPage/phoneNumberInput'
+
+15-05-2026T22:57:53 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/ageInput' is cleared
+
+15-05-2026T22:57:54 - [MESSAGE][PASSED] - Text '30' is set on object 'Object Repository/Agent/ManageAgentsPage/ageInput'
+
+15-05-2026T22:57:54 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/yearsOfExperienceInput' is cleared
+
+15-05-2026T22:57:55 - [MESSAGE][PASSED] - Text '5' is set on object 'Object Repository/Agent/ManageAgentsPage/yearsOfExperienceInput'
+
+15-05-2026T22:57:55 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/totalSalesInput' is cleared
+
+15-05-2026T22:57:56 - [MESSAGE][PASSED] - Text '10' is set on object 'Object Repository/Agent/ManageAgentsPage/totalSalesInput'
+
+15-05-2026T22:57:56 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+15-05-2026T22:57:57 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:57:57 - [TEST_STEP][PASSED] - agentHelper.submitAgentForm(): Wait for page load successfully
+
+15-05-2026T22:57:57 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/submitButton' is visible
+
+15-05-2026T22:57:57 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Hide navbar buttons that might intercept clicks
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top-right (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:57:58 - [MESSAGE][PASSED] - Delayed 0.3 second(s)
+
+15-05-2026T22:57:58 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 150);' successfully
+
+15-05-2026T22:57:58 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:57:58 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/submitButton' successfully
+
+15-05-2026T22:57:59 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:58:00 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/submitButton
+
+15-05-2026T22:58:00 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            // Scroll to center of viewport
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            // Bring to front
+            el.style.zIndex = "9999";
+            el.style.position = "relative";
+        ' successfully
+
+15-05-2026T22:58:00 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:58:00 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:58:00 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:58:02 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:58:02 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:58:02 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+15-05-2026T22:58:03 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:58:03 - [TEST_STEP][PASSED] - modalPresent = verifyElementPresent(findTestObject("Object Repository/Agent/ManageAgentsPage/agentModal"), 3, OPTIONAL): Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:58:03 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:58:03 - [TEST_STEP][PASSED] - if (modalPresent): Validation successful: Modal is still present after submitting invalid email
+
+15-05-2026T22:58:03 - [TEST_STEP][PASSED] - comment("Validation successful: Modal is still present after submitting invalid email"): Validation successful: Modal is still present after submitting invalid email
+
+15-05-2026T22:58:03 - [MESSAGE][INFO] - Validation successful: Modal is still present after submitting invalid email
+
+15-05-2026T22:58:03 - [TEST_STEP][PASSED] - isEmailInvalid = executeJavaScript("
+        var emailInput = document.querySelector('input[type="email"]');
+        return emailInput ? !emailInput.checkValidity() : false;
+    ", []): Execute JavaScript '
+        var emailInput = document.querySelector('input[type="email"]');
+        return emailInput ? !emailInput.checkValidity() : false;
+    ' successfully
+
+15-05-2026T22:58:03 - [MESSAGE][PASSED] - Execute JavaScript '
+        var emailInput = document.querySelector('input[type="email"]');
+        return emailInput ? !emailInput.checkValidity() : false;
+    ' successfully
+
+15-05-2026T22:58:04 - [TEST_STEP][PASSED] - if (isEmailInvalid): Confirmed email input is marked invalid by browser
+
+15-05-2026T22:58:04 - [TEST_STEP][PASSED] - comment("Confirmed email input is marked invalid by browser"): Confirmed email input is marked invalid by browser
+
+15-05-2026T22:58:04 - [MESSAGE][INFO] - Confirmed email input is marked invalid by browser
+
+15-05-2026T22:58:04 - [TEST_STEP][PASSED] - comment("✅ TC_AGENT_004 PASSED: Invalid email validation works correctly"): ✅ TC_AGENT_004 PASSED: Invalid email validation works correctly
+
+15-05-2026T22:58:04 - [MESSAGE][INFO] - ✅ TC_AGENT_004 PASSED: Invalid email validation works correctly
+
+15-05-2026T22:58:04 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T22:58:04 - [TEST_STEP][PASSED] - try: Delayed 1 second(s)
+
+15-05-2026T22:58:04 - [TEST_STEP][PASSED] - agentHelper.cancelAgentForm(): Delayed 1 second(s)
+
+15-05-2026T22:58:04 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/cancelButton' is visible
+
+15-05-2026T22:58:04 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Hide navbar buttons that might intercept clicks
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top-right (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:58:04 - [MESSAGE][PASSED] - Delayed 0.3 second(s)
+
+15-05-2026T22:58:04 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 150);' successfully
+
+15-05-2026T22:58:05 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:58:05 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/cancelButton' successfully
+
+15-05-2026T22:58:06 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:58:06 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/cancelButton
+
+15-05-2026T22:58:06 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            // Scroll to center of viewport
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            // Bring to front
+            el.style.zIndex = "9999";
+            el.style.position = "relative";
+        ' successfully
+
+15-05-2026T22:58:07 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:58:07 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:58:07 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:58:08 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:58:08 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T22:58:08 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Agent/Read/TC_AGENT_006_View_All_Agents" time="4.448" classname="Test Cases/Agent/Read/TC_AGENT_006_View_All_Agents" status="PASSED">
+         <system-out><![CDATA[15-05-2026T22:58:08 - [TEST_CASE][PASSED] - Test Cases/Agent/Read/TC_AGENT_006_View_All_Agents: Test Cases/Agent/Read/TC_AGENT_006_View_All_Agents
+
+15-05-2026T22:58:08 - [TEST_STEP][PASSED] - Browser_Keywords().openBrowserWithFallback(): Current window maximized
+
+15-05-2026T22:58:08 - [MESSAGE][INFO] - Attempting to open Edge Chromium browser...
+
+15-05-2026T22:58:08 - [MESSAGE][INFO] - Edge initialization failed, attempting fallback to default/Chrome...
+
+15-05-2026T22:58:08 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T22:58:08 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T22:58:09 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T22:58:09 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T22:58:09 - [TEST_STEP][PASSED] - agentHelper = new agent.Agent_Keywords(): null
+
+15-05-2026T22:58:09 - [TEST_STEP][PASSED] - try: ✅ TC_AGENT_006 PASSED: 6 agents displayed successfully
+
+15-05-2026T22:58:09 - [TEST_STEP][PASSED] - agentHelper.navigateToAgentPage(): Object 'Object Repository/Agent/AgentPage/findAgentsButton' is present
+
+15-05-2026T22:58:10 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/agent' successfully
+
+15-05-2026T22:58:10 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:58:11 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/AgentPage/searchInput' is present
+
+15-05-2026T22:58:11 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/AgentPage/findAgentsButton' is present
+
+15-05-2026T22:58:11 - [TEST_STEP][PASSED] - agentHelper.waitForAgentsList(): Object 'Object Repository/Agent/AgentPage/agentCards' is present
+
+15-05-2026T22:58:12 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/AgentPage/agentCards' is present
+
+15-05-2026T22:58:12 - [TEST_STEP][PASSED] - agentsCount = agentHelper.getAgentsCount(): Found web elements by test object Object Repository/Agent/AgentPage/agentCards
+
+15-05-2026T22:58:12 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Agent/AgentPage/agentCards
+
+15-05-2026T22:58:12 - [TEST_STEP][PASSED] - assert agentsCount > 0 : "At least one agent should be displayed": null
+
+15-05-2026T22:58:12 - [TEST_STEP][PASSED] - agentHelper.verifyResultsIndicator(): Object 'Results Indicator' is present
+
+15-05-2026T22:58:12 - [MESSAGE][PASSED] - Object 'Results Indicator' is present
+
+15-05-2026T22:58:12 - [TEST_STEP][PASSED] - comment(✅ TC_AGENT_006 PASSED: $agentsCount agents displayed successfully): ✅ TC_AGENT_006 PASSED: 6 agents displayed successfully
+
+15-05-2026T22:58:12 - [MESSAGE][INFO] - ✅ TC_AGENT_006 PASSED: 6 agents displayed successfully
+
+15-05-2026T22:58:12 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T22:58:12 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T22:58:13 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Agent/Read/TC_AGENT_007_View_Agent_Details" time="7.381" classname="Test Cases/Agent/Read/TC_AGENT_007_View_Agent_Details" status="FAILED">
+         <failure type="FAILED" message="Test Cases/Agent/Read/TC_AGENT_007_View_Agent_Details FAILED.&#xa;Reason:&#xa;java.lang.AssertionError: URL should change after clicking agent button. Expression: (urlBeforeClick != urlAfterClick). Values: urlBeforeClick = http://localhost:5173/agent, urlAfterClick = http://localhost:5173/agent&#xa;	at Script.run(Script.groovy:48)&#xa;	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xa;	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)&#xa;	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)&#xa;	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)&#xa;	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)&#xa;	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)&#xa;	at TempTestSuite1778874771780.run(TempTestSuite1778874771780.groovy:35)&#xa;	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#xa;	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)&#xa;	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#xa;"/>
+         <system-out><![CDATA[15-05-2026T22:58:13 - [TEST_CASE][FAILED] - Test Cases/Agent/Read/TC_AGENT_007_View_Agent_Details: Test Cases/Agent/Read/TC_AGENT_007_View_Agent_Details FAILED.
+Reason:
+java.lang.AssertionError: URL should change after clicking agent button. Expression: (urlBeforeClick != urlAfterClick). Values: urlBeforeClick = http://localhost:5173/agent, urlAfterClick = http://localhost:5173/agent
+	at Script.run(Script.groovy:48)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778874771780.run(TempTestSuite1778874771780.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+15-05-2026T22:58:13 - [TEST_STEP][PASSED] - Browser_Keywords().openBrowserWithFallback(): Current window maximized
+
+15-05-2026T22:58:13 - [MESSAGE][INFO] - Attempting to open Edge Chromium browser...
+
+15-05-2026T22:58:13 - [MESSAGE][INFO] - Edge initialization failed, attempting fallback to default/Chrome...
+
+15-05-2026T22:58:13 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T22:58:13 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T22:58:13 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T22:58:13 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T22:58:13 - [TEST_STEP][PASSED] - agentHelper = new agent.Agent_Keywords(): null
+
+15-05-2026T22:58:14 - [TEST_STEP][PASSED] - try: null
+
+15-05-2026T22:58:14 - [TEST_STEP][PASSED] - agentHelper.navigateToAgentPage(): Object 'Object Repository/Agent/AgentPage/findAgentsButton' is present
+
+15-05-2026T22:58:14 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/agent' successfully
+
+15-05-2026T22:58:14 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:58:15 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/AgentPage/searchInput' is present
+
+15-05-2026T22:58:16 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/AgentPage/findAgentsButton' is present
+
+15-05-2026T22:58:16 - [TEST_STEP][PASSED] - agentHelper.waitForAgentsList(): Object 'Object Repository/Agent/AgentPage/agentCards' is present
+
+15-05-2026T22:58:16 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/AgentPage/agentCards' is present
+
+15-05-2026T22:58:16 - [TEST_STEP][PASSED] - agentsCount = agentHelper.getAgentsCount(): Found web elements by test object Object Repository/Agent/AgentPage/agentCards
+
+15-05-2026T22:58:16 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Agent/AgentPage/agentCards
+
+15-05-2026T22:58:16 - [TEST_STEP][PASSED] - assert agentsCount > 0 : "At least one agent should be displayed": null
+
+15-05-2026T22:58:16 - [TEST_STEP][PASSED] - urlBeforeClick = getUrl(): Current window's url is: 'http://localhost:5173/agent'
+
+15-05-2026T22:58:16 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/agent'
+
+15-05-2026T22:58:16 - [TEST_STEP][PASSED] - comment(URL before click: $urlBeforeClick): URL before click: http://localhost:5173/agent
+
+15-05-2026T22:58:16 - [MESSAGE][INFO] - URL before click: http://localhost:5173/agent
+
+15-05-2026T22:58:16 - [TEST_STEP][PASSED] - waitForElementClickable(findTestObject("Object Repository/Agent/AgentPage/contactAgentButton"), 10): Object 'Object Repository/Agent/AgentPage/contactAgentButton' is clickable
+
+15-05-2026T22:58:17 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/AgentPage/contactAgentButton' is clickable
+
+15-05-2026T22:58:17 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Agent/AgentPage/contactAgentButton")): Object: 'Object Repository/Agent/AgentPage/contactAgentButton' is clicked on
+
+15-05-2026T22:58:17 - [MESSAGE][PASSED] - Object: 'Object Repository/Agent/AgentPage/contactAgentButton' is clicked on
+
+15-05-2026T22:58:17 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+15-05-2026T22:58:19 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:58:19 - [TEST_STEP][PASSED] - urlAfterClick = getUrl(): Current window's url is: 'http://localhost:5173/agent'
+
+15-05-2026T22:58:19 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/agent'
+
+15-05-2026T22:58:19 - [TEST_STEP][PASSED] - comment(URL after click: $urlAfterClick): URL after click: http://localhost:5173/agent
+
+15-05-2026T22:58:19 - [MESSAGE][INFO] - URL after click: http://localhost:5173/agent
+
+15-05-2026T22:58:19 - [TEST_STEP][PASSED] - assert urlBeforeClick != urlAfterClick : "URL should change after clicking agent button": null
+
+15-05-2026T22:58:19 - [TEST_STEP][FAILED] - Finally: Test Cases/Agent/Read/TC_AGENT_007_View_Agent_Details FAILED.
+Reason:
+java.lang.AssertionError: URL should change after clicking agent button. Expression: (urlBeforeClick != urlAfterClick). Values: urlBeforeClick = http://localhost:5173/agent, urlAfterClick = http://localhost:5173/agent
+	at Script.run(Script.groovy:48)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778874771780.run(TempTestSuite1778874771780.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+15-05-2026T22:58:19 - [TEST_STEP][FAILED] - closeBrowser(): Test Cases/Agent/Read/TC_AGENT_007_View_Agent_Details FAILED.
+Reason:
+java.lang.AssertionError: URL should change after clicking agent button. Expression: (urlBeforeClick != urlAfterClick). Values: urlBeforeClick = http://localhost:5173/agent, urlAfterClick = http://localhost:5173/agent
+	at Script.run(Script.groovy:48)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778874771780.run(TempTestSuite1778874771780.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+15-05-2026T22:58:20 - [MESSAGE][PASSED] - Browser is closed
+
+15-05-2026T22:58:20 - [MESSAGE][FAILED] - Test Cases/Agent/Read/TC_AGENT_007_View_Agent_Details FAILED.
+Reason:
+java.lang.AssertionError: URL should change after clicking agent button. Expression: (urlBeforeClick != urlAfterClick). Values: urlBeforeClick = http://localhost:5173/agent, urlAfterClick = http://localhost:5173/agent
+	at Script.run(Script.groovy:48)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778874771780.run(TempTestSuite1778874771780.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)]]></system-out>
+         <system-err><![CDATA[15-05-2026T22:58:13 - [TEST_CASE][FAILED] - Test Cases/Agent/Read/TC_AGENT_007_View_Agent_Details: Test Cases/Agent/Read/TC_AGENT_007_View_Agent_Details FAILED.
+Reason:
+java.lang.AssertionError: URL should change after clicking agent button. Expression: (urlBeforeClick != urlAfterClick). Values: urlBeforeClick = http://localhost:5173/agent, urlAfterClick = http://localhost:5173/agent
+	at Script.run(Script.groovy:48)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778874771780.run(TempTestSuite1778874771780.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Agent/Update/TC_AGENT_008_Update_Agent_Valid_Data" time="66.518" classname="Test Cases/Agent/Update/TC_AGENT_008_Update_Agent_Valid_Data" status="PASSED">
+         <system-out><![CDATA[15-05-2026T22:58:20 - [TEST_CASE][PASSED] - Test Cases/Agent/Update/TC_AGENT_008_Update_Agent_Valid_Data: Test Cases/Agent/Update/TC_AGENT_008_Update_Agent_Valid_Data
+
+15-05-2026T22:58:20 - [TEST_STEP][PASSED] - Browser_Keywords().openBrowserWithFallback(): Current window maximized
+
+15-05-2026T22:58:20 - [MESSAGE][INFO] - Attempting to open Edge Chromium browser...
+
+15-05-2026T22:58:20 - [MESSAGE][INFO] - Edge initialization failed, attempting fallback to default/Chrome...
+
+15-05-2026T22:58:20 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T22:58:20 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T22:58:21 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T22:58:21 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T22:58:21 - [TEST_STEP][PASSED] - agentHelper = new agent.Agent_Keywords(): null
+
+15-05-2026T22:58:21 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T22:58:21 - [TEST_STEP][PASSED] - try: Delayed 2 second(s)
+
+15-05-2026T22:58:21 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T22:58:22 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T22:58:22 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:58:22 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T22:58:23 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T22:58:23 - [TEST_STEP][PASSED] - loginHelper.loginAsAdmin(): Delayed 2 second(s)
+
+15-05-2026T22:58:23 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T22:58:23 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T22:58:24 - [MESSAGE][PASSED] - Text 'admin@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T22:58:25 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T22:58:25 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T22:58:26 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T22:58:29 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T22:58:29 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:58:31 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:58:31 - [TEST_STEP][PASSED] - loginHelper.verifyLoginSuccess(): Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T22:58:31 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:58:33 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:58:33 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T22:58:33 - [TEST_STEP][PASSED] - agentHelper.navigateToManageAgents(): Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is present
+
+15-05-2026T22:58:33 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/manage-agents' successfully
+
+15-05-2026T22:58:33 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:58:33 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T22:58:34 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:58:35 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is present
+
+15-05-2026T22:58:35 - [TEST_STEP][PASSED] - timestamp = System.currentTimeMillis(): null
+
+15-05-2026T22:58:35 - [TEST_STEP][PASSED] - uniqueName = UpdateTest$timestamp: null
+
+15-05-2026T22:58:35 - [TEST_STEP][PASSED] - agentData = ["firstName":uniqueName, "lastName":"Agent", "email":update$timestamp@test.com, "contactEmail":update_contact$timestamp@test.com, ... ]: null
+
+15-05-2026T22:58:35 - [TEST_STEP][PASSED] - agentHelper.clickAddNewAgent(): Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:58:35 - [MESSAGE][PASSED] - Execute JavaScript '
+                // Close any open dropdowns/menus by clicking outside
+                var event = new MouseEvent('click', {
+                    view: window,
+                    bubbles: true,
+                    cancelable: true
+                });
+                document.body.dispatchEvent(event);
+                
+                // Also try pressing ESC
+                var escEvent = new KeyboardEvent('keydown', {
+                    key: 'Escape',
+                    code: 'Escape',
+                    keyCode: 27,
+                    which: 27,
+                    bubbles: true
+                });
+                document.dispatchEvent(escEvent);
+            ' successfully
+
+15-05-2026T22:58:35 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:58:35 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Find navbar buttons by checking if they're near the top of the page
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:58:36 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:58:47 - [MESSAGE][WARNING] - Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is not visible after 10 second(s)
+
+15-05-2026T22:58:47 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 200);' successfully
+
+15-05-2026T22:58:47 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:58:48 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' successfully
+
+15-05-2026T22:58:49 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:58:49 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/addNewAgentButton
+
+15-05-2026T22:58:49 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            el.style.zIndex = "9999";
+        ' successfully
+
+15-05-2026T22:58:49 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:58:49 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:58:49 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:58:50 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:58:50 - [TEST_STEP][PASSED] - agentHelper.fillAgentForm(agentData): Text 'Original about text' is set on object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea'
+
+15-05-2026T22:58:50 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/firstNameInput' is cleared
+
+15-05-2026T22:58:51 - [MESSAGE][PASSED] - Text 'UpdateTest1778875115424' is set on object 'Object Repository/Agent/ManageAgentsPage/firstNameInput'
+
+15-05-2026T22:58:51 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/lastNameInput' is cleared
+
+15-05-2026T22:58:52 - [MESSAGE][PASSED] - Text 'Agent' is set on object 'Object Repository/Agent/ManageAgentsPage/lastNameInput'
+
+15-05-2026T22:58:52 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/emailInput' is cleared
+
+15-05-2026T22:58:54 - [MESSAGE][PASSED] - Text 'update1778875115424@test.com' is set on object 'Object Repository/Agent/ManageAgentsPage/emailInput'
+
+15-05-2026T22:58:54 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/contactEmailInput' is cleared
+
+15-05-2026T22:58:55 - [MESSAGE][PASSED] - Text 'update_contact1778875115424@test.com' is set on object 'Object Repository/Agent/ManageAgentsPage/contactEmailInput'
+
+15-05-2026T22:58:55 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/phoneNumberInput' is cleared
+
+15-05-2026T22:58:56 - [MESSAGE][PASSED] - Text '1234567890' is set on object 'Object Repository/Agent/ManageAgentsPage/phoneNumberInput'
+
+15-05-2026T22:58:56 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/ageInput' is cleared
+
+15-05-2026T22:58:57 - [MESSAGE][PASSED] - Text '30' is set on object 'Object Repository/Agent/ManageAgentsPage/ageInput'
+
+15-05-2026T22:58:57 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/yearsOfExperienceInput' is cleared
+
+15-05-2026T22:58:58 - [MESSAGE][PASSED] - Text '5' is set on object 'Object Repository/Agent/ManageAgentsPage/yearsOfExperienceInput'
+
+15-05-2026T22:58:58 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/totalSalesInput' is cleared
+
+15-05-2026T22:58:59 - [MESSAGE][PASSED] - Text '10' is set on object 'Object Repository/Agent/ManageAgentsPage/totalSalesInput'
+
+15-05-2026T22:58:59 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea' is cleared
+
+15-05-2026T22:59:00 - [MESSAGE][PASSED] - Text 'Original about text' is set on object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea'
+
+15-05-2026T22:59:00 - [TEST_STEP][PASSED] - agentHelper.submitAgentForm(): Wait for page load successfully
+
+15-05-2026T22:59:01 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/submitButton' is visible
+
+15-05-2026T22:59:01 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Hide navbar buttons that might intercept clicks
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top-right (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:59:01 - [MESSAGE][PASSED] - Delayed 0.3 second(s)
+
+15-05-2026T22:59:01 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 150);' successfully
+
+15-05-2026T22:59:02 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:59:02 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/submitButton' successfully
+
+15-05-2026T22:59:03 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:59:03 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/submitButton
+
+15-05-2026T22:59:03 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            // Scroll to center of viewport
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            // Bring to front
+            el.style.zIndex = "9999";
+            el.style.position = "relative";
+        ' successfully
+
+15-05-2026T22:59:04 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:59:04 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:59:04 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:59:06 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:59:06 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:59:06 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+15-05-2026T22:59:08 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:59:08 - [TEST_STEP][PASSED] - agentHelper.clickEditAgent($uniqueName Agent): Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:59:08 - [MESSAGE][PASSED] - Object 'Edit agent button' is present
+
+15-05-2026T22:59:08 - [MESSAGE][PASSED] - Scroll to object 'Edit agent button' successfully
+
+15-05-2026T22:59:09 - [MESSAGE][PASSED] - Object 'Edit agent button' is visible
+
+15-05-2026T22:59:09 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Hide navbar buttons that might intercept clicks
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top-right (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:59:09 - [MESSAGE][PASSED] - Delayed 0.3 second(s)
+
+15-05-2026T22:59:09 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 150);' successfully
+
+15-05-2026T22:59:09 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:59:10 - [MESSAGE][PASSED] - Scroll to object 'Edit agent button' successfully
+
+15-05-2026T22:59:11 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:59:11 - [MESSAGE][PASSED] - Found web element by test object Edit agent button
+
+15-05-2026T22:59:11 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            // Scroll to center of viewport
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            // Bring to front
+            el.style.zIndex = "9999";
+            el.style.position = "relative";
+        ' successfully
+
+15-05-2026T22:59:11 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:59:11 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:59:11 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:59:12 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:59:12 - [TEST_STEP][PASSED] - updatedAbout = Updated about section - $timestamp: null
+
+15-05-2026T22:59:12 - [TEST_STEP][PASSED] - updateData = ["about":updatedAbout, "totalSales":25]: null
+
+15-05-2026T22:59:12 - [TEST_STEP][PASSED] - agentHelper.fillAgentForm(updateData): Text 'Updated about section - 1778875115424' is set on object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea'
+
+15-05-2026T22:59:12 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/totalSalesInput' is cleared
+
+15-05-2026T22:59:13 - [MESSAGE][PASSED] - Text '25' is set on object 'Object Repository/Agent/ManageAgentsPage/totalSalesInput'
+
+15-05-2026T22:59:13 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea' is cleared
+
+15-05-2026T22:59:14 - [MESSAGE][PASSED] - Text 'Updated about section - 1778875115424' is set on object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea'
+
+15-05-2026T22:59:14 - [TEST_STEP][PASSED] - agentHelper.submitAgentForm(): Wait for page load successfully
+
+15-05-2026T22:59:15 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/submitButton' is visible
+
+15-05-2026T22:59:15 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Hide navbar buttons that might intercept clicks
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top-right (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:59:15 - [MESSAGE][PASSED] - Delayed 0.3 second(s)
+
+15-05-2026T22:59:15 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 150);' successfully
+
+15-05-2026T22:59:16 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:59:16 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/submitButton' successfully
+
+15-05-2026T22:59:17 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:59:17 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/submitButton
+
+15-05-2026T22:59:17 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            // Scroll to center of viewport
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            // Bring to front
+            el.style.zIndex = "9999";
+            el.style.position = "relative";
+        ' successfully
+
+15-05-2026T22:59:18 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:59:18 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:59:18 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:59:20 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:59:20 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:59:20 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+15-05-2026T22:59:22 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:59:22 - [TEST_STEP][PASSED] - textFound = false: null
+
+15-05-2026T22:59:22 - [TEST_STEP][PASSED] - for ([i = 0, i < 3, (i++)]): null
+
+15-05-2026T22:59:22 - [TEST_STEP][PASSED] - if (verifyTextPresent(updatedAbout, false, OPTIONAL)): null
+
+15-05-2026T22:59:22 - [MESSAGE][PASSED] - Text 'Updated about section - 1778875115424' is present on page 
+
+15-05-2026T22:59:22 - [TEST_STEP][PASSED] - textFound = true: null
+
+15-05-2026T22:59:22 - [TEST_STEP][PASSED] - break: null
+
+15-05-2026T22:59:22 - [TEST_STEP][PASSED] - assert textFound: null
+
+15-05-2026T22:59:22 - [TEST_STEP][PASSED] - comment("✅ TC_AGENT_008 PASSED: Agent updated successfully"): ✅ TC_AGENT_008 PASSED: Agent updated successfully
+
+15-05-2026T22:59:22 - [MESSAGE][INFO] - ✅ TC_AGENT_008 PASSED: Agent updated successfully
+
+15-05-2026T22:59:22 - [TEST_STEP][PASSED] - try: Delayed 2 second(s)
+
+15-05-2026T22:59:22 - [TEST_STEP][PASSED] - agentHelper.clickDeleteAgent($uniqueName Agent): Delayed 1 second(s)
+
+15-05-2026T22:59:23 - [MESSAGE][PASSED] - Object 'Delete agent button' is present
+
+15-05-2026T22:59:23 - [MESSAGE][PASSED] - Scroll to object 'Delete agent button' successfully
+
+15-05-2026T22:59:23 - [MESSAGE][PASSED] - Found web element by test object Delete agent button
+
+15-05-2026T22:59:23 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click()' successfully
+
+15-05-2026T22:59:24 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:59:24 - [TEST_STEP][PASSED] - agentHelper.confirmDeleteAgent(): Delayed 2 second(s)
+
+15-05-2026T22:59:24 - [MESSAGE][PASSED] - Alert is present after 3 second(s).
+
+15-05-2026T22:59:24 - [MESSAGE][PASSED] - Alert accepted
+
+15-05-2026T22:59:26 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:59:26 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T22:59:26 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T22:59:26 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Agent/Update/TC_AGENT_009_Update_Agent_Empty_Name" time="29.508" classname="Test Cases/Agent/Update/TC_AGENT_009_Update_Agent_Empty_Name" status="PASSED">
+         <system-out><![CDATA[15-05-2026T22:59:26 - [TEST_CASE][PASSED] - Test Cases/Agent/Update/TC_AGENT_009_Update_Agent_Empty_Name: Test Cases/Agent/Update/TC_AGENT_009_Update_Agent_Empty_Name
+
+15-05-2026T22:59:27 - [TEST_STEP][PASSED] - Browser_Keywords().openBrowserWithFallback(): Current window maximized
+
+15-05-2026T22:59:27 - [MESSAGE][INFO] - Attempting to open Edge Chromium browser...
+
+15-05-2026T22:59:27 - [MESSAGE][INFO] - Edge initialization failed, attempting fallback to default/Chrome...
+
+15-05-2026T22:59:27 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T22:59:27 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T22:59:27 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T22:59:27 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T22:59:27 - [TEST_STEP][PASSED] - agentHelper = new agent.Agent_Keywords(): null
+
+15-05-2026T22:59:27 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T22:59:27 - [TEST_STEP][PASSED] - try: ✅ TC_AGENT_009 PASSED: Empty name validation works correctly
+
+15-05-2026T22:59:27 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T22:59:28 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T22:59:28 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:59:29 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T22:59:29 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T22:59:29 - [TEST_STEP][PASSED] - loginHelper.loginAsAdmin(): Delayed 2 second(s)
+
+15-05-2026T22:59:29 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T22:59:29 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T22:59:30 - [MESSAGE][PASSED] - Text 'admin@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T22:59:30 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T22:59:31 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T22:59:32 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T22:59:35 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T22:59:35 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:59:37 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:59:37 - [TEST_STEP][PASSED] - loginHelper.verifyLoginSuccess(): Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T22:59:37 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:59:39 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:59:39 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T22:59:39 - [TEST_STEP][PASSED] - agentHelper.navigateToManageAgents(): Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is present
+
+15-05-2026T22:59:39 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/manage-agents' successfully
+
+15-05-2026T22:59:39 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:59:39 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T22:59:40 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:59:40 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is present
+
+15-05-2026T22:59:40 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+15-05-2026T22:59:42 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:59:42 - [TEST_STEP][PASSED] - try: Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:59:42 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Agent/ManageAgentsPage/editAgentButton")): Object: 'Object Repository/Agent/ManageAgentsPage/editAgentButton' is clicked on
+
+15-05-2026T22:59:43 - [MESSAGE][PASSED] - Object: 'Object Repository/Agent/ManageAgentsPage/editAgentButton' is clicked on
+
+15-05-2026T22:59:43 - [TEST_STEP][PASSED] - waitForElementPresent(findTestObject("Object Repository/Agent/ManageAgentsPage/agentModal"), 5, STOP_ON_FAILURE): Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:59:43 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:59:43 - [TEST_STEP][PASSED] - clearText(findTestObject("Object Repository/Agent/ManageAgentsPage/firstNameInput")): Text of object 'Object Repository/Agent/ManageAgentsPage/firstNameInput' is cleared
+
+15-05-2026T22:59:43 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/firstNameInput' is cleared
+
+15-05-2026T22:59:43 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+15-05-2026T22:59:44 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:59:44 - [TEST_STEP][PASSED] - agentHelper.submitAgentForm(): Wait for page load successfully
+
+15-05-2026T22:59:45 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/submitButton' is visible
+
+15-05-2026T22:59:45 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Hide navbar buttons that might intercept clicks
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top-right (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:59:45 - [MESSAGE][PASSED] - Delayed 0.3 second(s)
+
+15-05-2026T22:59:45 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 150);' successfully
+
+15-05-2026T22:59:46 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:59:46 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/submitButton' successfully
+
+15-05-2026T22:59:47 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:59:47 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/submitButton
+
+15-05-2026T22:59:47 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            // Scroll to center of viewport
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            // Bring to front
+            el.style.zIndex = "9999";
+            el.style.position = "relative";
+        ' successfully
+
+15-05-2026T22:59:48 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:59:48 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:59:48 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:59:50 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T22:59:50 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:59:50 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+15-05-2026T22:59:51 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:59:51 - [TEST_STEP][PASSED] - modalPresent = verifyElementPresent(findTestObject("Object Repository/Agent/ManageAgentsPage/agentModal"), 3, OPTIONAL): Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:59:51 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T22:59:51 - [TEST_STEP][PASSED] - if (modalPresent): Input validity check confirmed invalid state
+
+15-05-2026T22:59:51 - [TEST_STEP][PASSED] - comment("Validation successful: Modal is still present after submitting invalid data"): Validation successful: Modal is still present after submitting invalid data
+
+15-05-2026T22:59:51 - [MESSAGE][INFO] - Validation successful: Modal is still present after submitting invalid data
+
+15-05-2026T22:59:51 - [TEST_STEP][PASSED] - firstNameInput = findTestObject("Object Repository/Agent/ManageAgentsPage/firstNameInput"): null
+
+15-05-2026T22:59:51 - [TEST_STEP][PASSED] - element = findWebElement(firstNameInput, 5): Found web element by test object Object Repository/Agent/ManageAgentsPage/firstNameInput
+
+15-05-2026T22:59:51 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/firstNameInput
+
+15-05-2026T22:59:51 - [TEST_STEP][PASSED] - isInvalid = executeJavaScript("return !arguments[0].checkValidity()", Arrays.asList(element)): Execute JavaScript 'return !arguments[0].checkValidity()' successfully
+
+15-05-2026T22:59:51 - [MESSAGE][PASSED] - Execute JavaScript 'return !arguments[0].checkValidity()' successfully
+
+15-05-2026T22:59:51 - [TEST_STEP][PASSED] - if (isInvalid): Input validity check confirmed invalid state
+
+15-05-2026T22:59:51 - [TEST_STEP][PASSED] - comment("Input validity check confirmed invalid state"): Input validity check confirmed invalid state
+
+15-05-2026T22:59:51 - [MESSAGE][INFO] - Input validity check confirmed invalid state
+
+15-05-2026T22:59:51 - [TEST_STEP][PASSED] - comment("✅ TC_AGENT_009 PASSED: Empty name validation works correctly"): ✅ TC_AGENT_009 PASSED: Empty name validation works correctly
+
+15-05-2026T22:59:51 - [MESSAGE][INFO] - ✅ TC_AGENT_009 PASSED: Empty name validation works correctly
+
+15-05-2026T22:59:51 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T22:59:51 - [TEST_STEP][PASSED] - try: Delayed 1 second(s)
+
+15-05-2026T22:59:51 - [TEST_STEP][PASSED] - agentHelper.cancelAgentForm(): Delayed 1 second(s)
+
+15-05-2026T22:59:52 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/cancelButton' is visible
+
+15-05-2026T22:59:52 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Hide navbar buttons that might intercept clicks
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top-right (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T22:59:52 - [MESSAGE][PASSED] - Delayed 0.3 second(s)
+
+15-05-2026T22:59:52 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 150);' successfully
+
+15-05-2026T22:59:52 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:59:53 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/cancelButton' successfully
+
+15-05-2026T22:59:54 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:59:54 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/cancelButton
+
+15-05-2026T22:59:54 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            // Scroll to center of viewport
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            // Bring to front
+            el.style.zIndex = "9999";
+            el.style.position = "relative";
+        ' successfully
+
+15-05-2026T22:59:54 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T22:59:54 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T22:59:54 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T22:59:55 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T22:59:55 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T22:59:56 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Agent/Delete/TC_AGENT_011_Delete_Agent_Valid" time="73.642" classname="Test Cases/Agent/Delete/TC_AGENT_011_Delete_Agent_Valid" status="FAILED">
+         <failure type="FAILED" message="Test Cases/Agent/Delete/TC_AGENT_011_Delete_Agent_Valid FAILED.&#xa;Reason:&#xa;java.lang.AssertionError: Agent count should decrease by 1. Before: 0, After: 0. Expression: (countAfterDelete == (countBeforeDelete - 1)). Values: countAfterDelete = 0, countBeforeDelete = 0&#xa;	at Script.run(Script.groovy:61)&#xa;	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xa;	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)&#xa;	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)&#xa;	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)&#xa;	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)&#xa;	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)&#xa;	at TempTestSuite1778874771780.run(TempTestSuite1778874771780.groovy:35)&#xa;	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#xa;	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)&#xa;	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#xa;"/>
+         <system-out><![CDATA[15-05-2026T22:59:56 - [TEST_CASE][FAILED] - Test Cases/Agent/Delete/TC_AGENT_011_Delete_Agent_Valid: Test Cases/Agent/Delete/TC_AGENT_011_Delete_Agent_Valid FAILED.
+Reason:
+java.lang.AssertionError: Agent count should decrease by 1. Before: 0, After: 0. Expression: (countAfterDelete == (countBeforeDelete - 1)). Values: countAfterDelete = 0, countBeforeDelete = 0
+	at Script.run(Script.groovy:61)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778874771780.run(TempTestSuite1778874771780.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+15-05-2026T22:59:56 - [TEST_STEP][PASSED] - Browser_Keywords().openBrowserWithFallback(): Current window maximized
+
+15-05-2026T22:59:56 - [MESSAGE][INFO] - Attempting to open Edge Chromium browser...
+
+15-05-2026T22:59:56 - [MESSAGE][INFO] - Edge initialization failed, attempting fallback to default/Chrome...
+
+15-05-2026T22:59:56 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T22:59:56 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T22:59:57 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T22:59:57 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T22:59:57 - [TEST_STEP][PASSED] - agentHelper = new agent.Agent_Keywords(): null
+
+15-05-2026T22:59:57 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T22:59:57 - [TEST_STEP][PASSED] - try: null
+
+15-05-2026T22:59:57 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T22:59:58 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T22:59:58 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T22:59:58 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T22:59:58 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T22:59:58 - [TEST_STEP][PASSED] - loginHelper.loginAsAdmin(): Delayed 2 second(s)
+
+15-05-2026T22:59:58 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T22:59:59 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T22:59:59 - [MESSAGE][PASSED] - Text 'admin@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:00:00 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T23:00:00 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:00:01 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:00:04 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:00:04 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:00:06 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:00:06 - [TEST_STEP][PASSED] - loginHelper.verifyLoginSuccess(): Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T23:00:06 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:00:08 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:00:08 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T23:00:08 - [TEST_STEP][PASSED] - agentHelper.navigateToManageAgents(): Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is present
+
+15-05-2026T23:00:08 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/manage-agents' successfully
+
+15-05-2026T23:00:08 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:00:08 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T23:00:09 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:00:09 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is present
+
+15-05-2026T23:00:09 - [TEST_STEP][PASSED] - timestamp = System.currentTimeMillis(): null
+
+15-05-2026T23:00:09 - [TEST_STEP][PASSED] - uniqueName = DeleteTest$timestamp: null
+
+15-05-2026T23:00:09 - [TEST_STEP][PASSED] - agentData = ["firstName":uniqueName, "lastName":"Agent", "email":delete$timestamp@test.com, "contactEmail":delete_contact$timestamp@test.com, ... ]: null
+
+15-05-2026T23:00:09 - [TEST_STEP][PASSED] - agentHelper.clickAddNewAgent(): Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T23:00:09 - [MESSAGE][PASSED] - Execute JavaScript '
+                // Close any open dropdowns/menus by clicking outside
+                var event = new MouseEvent('click', {
+                    view: window,
+                    bubbles: true,
+                    cancelable: true
+                });
+                document.body.dispatchEvent(event);
+                
+                // Also try pressing ESC
+                var escEvent = new KeyboardEvent('keydown', {
+                    key: 'Escape',
+                    code: 'Escape',
+                    keyCode: 27,
+                    which: 27,
+                    bubbles: true
+                });
+                document.dispatchEvent(escEvent);
+            ' successfully
+
+15-05-2026T23:00:10 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T23:00:10 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Find navbar buttons by checking if they're near the top of the page
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T23:00:10 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T23:00:21 - [MESSAGE][WARNING] - Object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' is not visible after 10 second(s)
+
+15-05-2026T23:00:21 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 200);' successfully
+
+15-05-2026T23:00:22 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T23:00:22 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/addNewAgentButton' successfully
+
+15-05-2026T23:00:23 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:00:23 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/addNewAgentButton
+
+15-05-2026T23:00:23 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            el.style.zIndex = "9999";
+        ' successfully
+
+15-05-2026T23:00:24 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T23:00:24 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T23:00:24 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T23:00:24 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/agentModal' is present
+
+15-05-2026T23:00:24 - [TEST_STEP][PASSED] - agentHelper.fillAgentForm(agentData): Text 'Agent to be deleted' is set on object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea'
+
+15-05-2026T23:00:24 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/firstNameInput' is cleared
+
+15-05-2026T23:00:25 - [MESSAGE][PASSED] - Text 'DeleteTest1778875209806' is set on object 'Object Repository/Agent/ManageAgentsPage/firstNameInput'
+
+15-05-2026T23:00:26 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/lastNameInput' is cleared
+
+15-05-2026T23:00:26 - [MESSAGE][PASSED] - Text 'Agent' is set on object 'Object Repository/Agent/ManageAgentsPage/lastNameInput'
+
+15-05-2026T23:00:27 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/emailInput' is cleared
+
+15-05-2026T23:00:28 - [MESSAGE][PASSED] - Text 'delete1778875209806@test.com' is set on object 'Object Repository/Agent/ManageAgentsPage/emailInput'
+
+15-05-2026T23:00:28 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/contactEmailInput' is cleared
+
+15-05-2026T23:00:29 - [MESSAGE][PASSED] - Text 'delete_contact1778875209806@test.com' is set on object 'Object Repository/Agent/ManageAgentsPage/contactEmailInput'
+
+15-05-2026T23:00:29 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/phoneNumberInput' is cleared
+
+15-05-2026T23:00:30 - [MESSAGE][PASSED] - Text '1234567890' is set on object 'Object Repository/Agent/ManageAgentsPage/phoneNumberInput'
+
+15-05-2026T23:00:30 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/ageInput' is cleared
+
+15-05-2026T23:00:31 - [MESSAGE][PASSED] - Text '30' is set on object 'Object Repository/Agent/ManageAgentsPage/ageInput'
+
+15-05-2026T23:00:31 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/yearsOfExperienceInput' is cleared
+
+15-05-2026T23:00:32 - [MESSAGE][PASSED] - Text '5' is set on object 'Object Repository/Agent/ManageAgentsPage/yearsOfExperienceInput'
+
+15-05-2026T23:00:32 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/totalSalesInput' is cleared
+
+15-05-2026T23:00:33 - [MESSAGE][PASSED] - Text '10' is set on object 'Object Repository/Agent/ManageAgentsPage/totalSalesInput'
+
+15-05-2026T23:00:33 - [MESSAGE][PASSED] - Text of object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea' is cleared
+
+15-05-2026T23:00:34 - [MESSAGE][PASSED] - Text 'Agent to be deleted' is set on object 'Object Repository/Agent/ManageAgentsPage/aboutTextarea'
+
+15-05-2026T23:00:34 - [TEST_STEP][PASSED] - agentHelper.submitAgentForm(): Wait for page load successfully
+
+15-05-2026T23:00:34 - [MESSAGE][PASSED] - Object 'Object Repository/Agent/ManageAgentsPage/submitButton' is visible
+
+15-05-2026T23:00:34 - [MESSAGE][PASSED] - Execute JavaScript '
+            // Hide navbar buttons that might intercept clicks
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                var rect = btn.getBoundingClientRect();
+                // Hide buttons near top-right (navbar area) that might intercept
+                if (rect.top < 100 && rect.left > 800) {
+                    btn.style.pointerEvents = 'none';
+                    btn.style.opacity = '0';
+                }
+            }
+        ' successfully
+
+15-05-2026T23:00:35 - [MESSAGE][PASSED] - Delayed 0.3 second(s)
+
+15-05-2026T23:00:35 - [MESSAGE][PASSED] - Execute JavaScript 'window.scrollTo(0, 150);' successfully
+
+15-05-2026T23:00:35 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T23:00:35 - [MESSAGE][PASSED] - Scroll to object 'Object Repository/Agent/ManageAgentsPage/submitButton' successfully
+
+15-05-2026T23:00:36 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:00:37 - [MESSAGE][PASSED] - Found web element by test object Object Repository/Agent/ManageAgentsPage/submitButton
+
+15-05-2026T23:00:37 - [MESSAGE][PASSED] - Execute JavaScript '
+            var el = arguments[0];
+            // Scroll to center of viewport
+            el.scrollIntoView({behavior: "instant", block: "center", inline: "center"});
+            // Bring to front
+            el.style.zIndex = "9999";
+            el.style.position = "relative";
+        ' successfully
+
+15-05-2026T23:00:37 - [MESSAGE][PASSED] - Delayed 0.5 second(s)
+
+15-05-2026T23:00:37 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click();' successfully
+
+15-05-2026T23:00:37 - [MESSAGE][PASSED] - Execute JavaScript '
+            var buttons = document.querySelectorAll('button');
+            for (var i = 0; i < buttons.length; i++) {
+                var btn = buttons[i];
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+            }
+        ' successfully
+
+15-05-2026T23:00:39 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:00:39 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:00:39 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+15-05-2026T23:00:41 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:00:41 - [TEST_STEP][PASSED] - countBeforeDelete = agentHelper.getAgentsCount(): Found web elements by test object Object Repository/Agent/AgentPage/agentCards
+
+15-05-2026T23:00:52 - [MESSAGE][INFO] - Unable to find the element located by 'By.xpath: //div[contains(@class,'rounded-xl') and .//h3]'. Please recheck the objects properties to make sure the desired element is located. 
+
+15-05-2026T23:00:52 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Agent/AgentPage/agentCards
+
+15-05-2026T23:00:52 - [TEST_STEP][PASSED] - agentHelper.clickDeleteAgent($uniqueName Agent): Delayed 1 second(s)
+
+15-05-2026T23:00:53 - [MESSAGE][PASSED] - Object 'Delete agent button' is present
+
+15-05-2026T23:00:53 - [MESSAGE][PASSED] - Scroll to object 'Delete agent button' successfully
+
+15-05-2026T23:00:53 - [MESSAGE][PASSED] - Found web element by test object Delete agent button
+
+15-05-2026T23:00:53 - [MESSAGE][PASSED] - Execute JavaScript 'arguments[0].click()' successfully
+
+15-05-2026T23:00:54 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:00:54 - [TEST_STEP][PASSED] - agentHelper.confirmDeleteAgent(): Delayed 2 second(s)
+
+15-05-2026T23:00:54 - [MESSAGE][PASSED] - Alert is present after 3 second(s).
+
+15-05-2026T23:00:54 - [MESSAGE][PASSED] - Alert accepted
+
+15-05-2026T23:00:56 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:00:56 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+15-05-2026T23:00:58 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:00:58 - [TEST_STEP][PASSED] - countAfterDelete = agentHelper.getAgentsCount(): Found web elements by test object Object Repository/Agent/AgentPage/agentCards
+
+15-05-2026T23:01:09 - [MESSAGE][INFO] - Unable to find the element located by 'By.xpath: //div[contains(@class,'rounded-xl') and .//h3]'. Please recheck the objects properties to make sure the desired element is located. 
+
+15-05-2026T23:01:09 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Agent/AgentPage/agentCards
+
+15-05-2026T23:01:09 - [TEST_STEP][PASSED] - assert countAfterDelete == countBeforeDelete - 1: null
+
+15-05-2026T23:01:09 - [TEST_STEP][FAILED] - Finally: Test Cases/Agent/Delete/TC_AGENT_011_Delete_Agent_Valid FAILED.
+Reason:
+java.lang.AssertionError: Agent count should decrease by 1. Before: 0, After: 0. Expression: (countAfterDelete == (countBeforeDelete - 1)). Values: countAfterDelete = 0, countBeforeDelete = 0
+	at Script.run(Script.groovy:61)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778874771780.run(TempTestSuite1778874771780.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+15-05-2026T23:01:09 - [TEST_STEP][FAILED] - closeBrowser(): Test Cases/Agent/Delete/TC_AGENT_011_Delete_Agent_Valid FAILED.
+Reason:
+java.lang.AssertionError: Agent count should decrease by 1. Before: 0, After: 0. Expression: (countAfterDelete == (countBeforeDelete - 1)). Values: countAfterDelete = 0, countBeforeDelete = 0
+	at Script.run(Script.groovy:61)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778874771780.run(TempTestSuite1778874771780.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+15-05-2026T23:01:10 - [MESSAGE][PASSED] - Browser is closed
+
+15-05-2026T23:01:10 - [MESSAGE][FAILED] - Test Cases/Agent/Delete/TC_AGENT_011_Delete_Agent_Valid FAILED.
+Reason:
+java.lang.AssertionError: Agent count should decrease by 1. Before: 0, After: 0. Expression: (countAfterDelete == (countBeforeDelete - 1)). Values: countAfterDelete = 0, countBeforeDelete = 0
+	at Script.run(Script.groovy:61)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778874771780.run(TempTestSuite1778874771780.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)]]></system-out>
+         <system-err><![CDATA[15-05-2026T22:59:56 - [TEST_CASE][FAILED] - Test Cases/Agent/Delete/TC_AGENT_011_Delete_Agent_Valid: Test Cases/Agent/Delete/TC_AGENT_011_Delete_Agent_Valid FAILED.
+Reason:
+java.lang.AssertionError: Agent count should decrease by 1. Before: 0, After: 0. Expression: (countAfterDelete == (countBeforeDelete - 1)). Values: countAfterDelete = 0, countBeforeDelete = 0
+	at Script.run(Script.groovy:61)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778874771780.run(TempTestSuite1778874771780.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)]]></system-err>
+      </testcase>
+      <system-out><![CDATA[15-05-2026T22:53:27 - [TEST_SUITE][FAILED] - TS_Agent_Complete: null]]></system-out>
+      <system-err><![CDATA[15-05-2026T22:53:27 - [TEST_SUITE][FAILED] - TS_Agent_Complete: null]]></system-err>
+   </testsuite>
+</testsuites>

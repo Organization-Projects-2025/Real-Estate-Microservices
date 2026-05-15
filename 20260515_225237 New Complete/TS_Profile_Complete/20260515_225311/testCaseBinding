@@ -1,0 +1,8 @@
+{"testCaseName":"Test Cases/Profile/Edit/TC_PROF_001_UpdateAllFields","testCaseId":"Test Cases/Profile/Edit/TC_PROF_001_UpdateAllFields","iterationVariableName":""}
+{"testCaseName":"Test Cases/Profile/Edit/TC_PROF_002_UpdateFirstName","testCaseId":"Test Cases/Profile/Edit/TC_PROF_002_UpdateFirstName","iterationVariableName":""}
+{"testCaseName":"Test Cases/Profile/Edit/TC_PROF_003_UpdateLastName","testCaseId":"Test Cases/Profile/Edit/TC_PROF_003_UpdateLastName","iterationVariableName":""}
+{"testCaseName":"Test Cases/Profile/Edit/TC_PROF_004_UpdatePhoneNumber","testCaseId":"Test Cases/Profile/Edit/TC_PROF_004_UpdatePhoneNumber","iterationVariableName":""}
+{"testCaseName":"Test Cases/Profile/Edit/TC_PROF_005_CancelEdit","testCaseId":"Test Cases/Profile/Edit/TC_PROF_005_CancelEdit","iterationVariableName":""}
+{"testCaseName":"Test Cases/Profile/Validation/TC_PROF_VAL1_EmptyFirstName","testCaseId":"Test Cases/Profile/Validation/TC_PROF_VAL1_EmptyFirstName","iterationVariableName":""}
+{"testCaseName":"Test Cases/Profile/Validation/TC_PROF_VAL2_EmptyLastName","testCaseId":"Test Cases/Profile/Validation/TC_PROF_VAL2_EmptyLastName","iterationVariableName":""}
+{"testCaseName":"Test Cases/Profile/Validation/TC_PROF_VAL3_InvalidPhoneNumber","testCaseId":"Test Cases/Profile/Validation/TC_PROF_VAL3_InvalidPhoneNumber","iterationVariableName":""}

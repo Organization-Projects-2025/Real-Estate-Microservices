@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="TS_Profile_Smoke" time="141.644" tests="3" failures="0" errors="0">
+   <testsuite name="TS_Profile_Smoke" tests="3" failures="0" errors="0" time="141.644" skipped="0" timestamp="2026-05-15T20:19:45.571Z" hostname="User - 192.168.1.4" id="Test Suites/TS_Profile_Smoke">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_Profile_Smoke\\20260515_231928"/>
+         <property name="logFiles" value="D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_Profile_Smoke\\20260515_231928\\console0.log, D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_Profile_Smoke\\20260515_231928\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="User - 192.168.1.4"/>
+         <property name="os" value="Windows 11 64bit"/>
+         <property name="katalonVersion" value="10.4.3.0"/>
+         <property name="browser" value="Edge Chromium 148.0.3967.54"/>
+         <property name="userFullName" value="Jakayaj756nctimecom"/>
+         <property name="hostAddress" value="192.168.1.4"/>
+         <property name="sessionId" value="9251a09b2431e8aa5c3270fb40620a20"/>
+         <property name="projectName" value="Katalon"/>
+         <property name="seleniumVersion" value="4.34.0"/>
+         <property name="proxyInformation" value="ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList=&quot;&quot;, isApplyToDesiredCapabilities=true }"/>
+         <property name="platform" value="Windows 11"/>
+      </properties>
+      <testcase name="Test Cases/Profile/Edit/TC_PROF_001_UpdateAllFields" time="56.12" classname="Test Cases/Profile/Edit/TC_PROF_001_UpdateAllFields" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:19:48 - [TEST_CASE][PASSED] - Test Cases/Profile/Edit/TC_PROF_001_UpdateAllFields: Test Cases/Profile/Edit/TC_PROF_001_UpdateAllFields
+
+15-05-2026T23:19:48 - [TEST_STEP][PASSED] - profileKW = new profile.Profile_Keywords(): null
+
+15-05-2026T23:19:48 - [TEST_STEP][PASSED] - profileKW.loginAndNavigateToProfile(): Delayed 1 second(s)
+
+15-05-2026T23:19:49 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:19:49 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:19:53 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:19:53 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:19:55 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:19:56 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:19:56 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T23:19:58 - [MESSAGE][PASSED] - Text 'user1@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:19:58 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T23:20:00 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:20:01 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:20:06 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+15-05-2026T23:20:06 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:07 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/Authentication/LoginPage/loginButton' located by 'By.xpath: //button[contains(text(), 'Login') or contains(text(), 'Sign In')]' is not present after '5' second(s)
+
+15-05-2026T23:20:09 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:09 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/span_UpdatedFirst' is present
+
+15-05-2026T23:20:10 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/span_UpdatedFirst' is clicked on
+
+15-05-2026T23:20:11 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:20:11 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/a_My Profile' is clickable
+
+15-05-2026T23:20:12 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/a_My Profile' is clicked on
+
+15-05-2026T23:20:12 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:14 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:14 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/editButton' is present
+
+15-05-2026T23:20:15 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/editButton' is clicked on
+
+15-05-2026T23:20:16 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:20:16 - [TEST_STEP][PASSED] - profileKW.fillAllPersonalInfo("UpdatedFirstName", "UpdatedLastName", "+971599584375", "+971501234567", "contact@example.com"): Text 'contact@example.com' is set on object 'Object Repository/Profile/contactEmailInput'
+
+15-05-2026T23:20:16 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/firstNameInput' is cleared
+
+15-05-2026T23:20:17 - [MESSAGE][PASSED] - Text 'UpdatedFirstName' is set on object 'Object Repository/Profile/firstNameInput'
+
+15-05-2026T23:20:17 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/lastNameInput' is cleared
+
+15-05-2026T23:20:18 - [MESSAGE][PASSED] - Text 'UpdatedLastName' is set on object 'Object Repository/Profile/lastNameInput'
+
+15-05-2026T23:20:18 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/phoneNumberInput' is cleared
+
+15-05-2026T23:20:19 - [MESSAGE][PASSED] - Text '+971599584375' is set on object 'Object Repository/Profile/phoneNumberInput'
+
+15-05-2026T23:20:20 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/whatsappInput' is cleared
+
+15-05-2026T23:20:21 - [MESSAGE][PASSED] - Text '+971501234567' is set on object 'Object Repository/Profile/whatsappInput'
+
+15-05-2026T23:20:21 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/contactEmailInput' is cleared
+
+15-05-2026T23:20:22 - [MESSAGE][PASSED] - Text 'contact@example.com' is set on object 'Object Repository/Profile/contactEmailInput'
+
+15-05-2026T23:20:22 - [TEST_STEP][PASSED] - profileKW.clickSaveChanges(): Delayed 2 second(s)
+
+15-05-2026T23:20:23 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/saveChangesButton' is clicked on
+
+15-05-2026T23:20:25 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:25 - [TEST_STEP][PASSED] - profileKW.restoreOriginalProfile(): Delayed 2 second(s)
+
+15-05-2026T23:20:27 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:27 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/span_UpdatedFirst' is present
+
+15-05-2026T23:20:28 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/span_UpdatedFirst' is clicked on
+
+15-05-2026T23:20:29 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:20:29 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/a_My Profile' is clickable
+
+15-05-2026T23:20:30 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/a_My Profile' is clicked on
+
+15-05-2026T23:20:30 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:32 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:32 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/editButton' is present
+
+15-05-2026T23:20:32 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/editButton' is clicked on
+
+15-05-2026T23:20:33 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:20:34 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/firstNameInput' is cleared
+
+15-05-2026T23:20:35 - [MESSAGE][PASSED] - Text 'User' is set on object 'Object Repository/Profile/firstNameInput'
+
+15-05-2026T23:20:35 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/lastNameInput' is cleared
+
+15-05-2026T23:20:36 - [MESSAGE][PASSED] - Text 'One' is set on object 'Object Repository/Profile/lastNameInput'
+
+15-05-2026T23:20:36 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/phoneNumberInput' is cleared
+
+15-05-2026T23:20:37 - [MESSAGE][PASSED] - Text '+971501111111' is set on object 'Object Repository/Profile/phoneNumberInput'
+
+15-05-2026T23:20:38 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/whatsappInput' is cleared
+
+15-05-2026T23:20:38 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/contactEmailInput' is cleared
+
+15-05-2026T23:20:38 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/saveChangesButton' is clicked on
+
+15-05-2026T23:20:40 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:42 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:42 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:44 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/Edit/TC_PROF_002_UpdateFirstName" time="42.329" classname="Test Cases/Profile/Edit/TC_PROF_002_UpdateFirstName" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:20:44 - [TEST_CASE][PASSED] - Test Cases/Profile/Edit/TC_PROF_002_UpdateFirstName: Test Cases/Profile/Edit/TC_PROF_002_UpdateFirstName
+
+15-05-2026T23:20:44 - [TEST_STEP][PASSED] - profileKW = new profile.Profile_Keywords(): null
+
+15-05-2026T23:20:44 - [TEST_STEP][PASSED] - profileKW.loginAndNavigateToProfile(): Delayed 1 second(s)
+
+15-05-2026T23:20:44 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:20:44 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:20:45 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:20:46 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:20:48 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:48 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:20:48 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T23:20:49 - [MESSAGE][PASSED] - Text 'user1@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:20:50 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T23:20:51 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:20:51 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:20:56 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+15-05-2026T23:20:56 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:57 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/Authentication/LoginPage/loginButton' located by 'By.xpath: //button[contains(text(), 'Login') or contains(text(), 'Sign In')]' is not present after '5' second(s)
+
+15-05-2026T23:20:59 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:59 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/span_UpdatedFirst' is present
+
+15-05-2026T23:20:59 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/span_UpdatedFirst' is clicked on
+
+15-05-2026T23:21:00 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:21:01 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/a_My Profile' is clickable
+
+15-05-2026T23:21:01 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/a_My Profile' is clicked on
+
+15-05-2026T23:21:01 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:03 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:03 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/editButton' is present
+
+15-05-2026T23:21:04 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/editButton' is clicked on
+
+15-05-2026T23:21:05 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:21:05 - [TEST_STEP][PASSED] - profileKW.fillFirstName("NewFirstName"): Text 'NewFirstName' is set on object 'Object Repository/Profile/firstNameInput'
+
+15-05-2026T23:21:05 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/firstNameInput' is cleared
+
+15-05-2026T23:21:06 - [MESSAGE][PASSED] - Text 'NewFirstName' is set on object 'Object Repository/Profile/firstNameInput'
+
+15-05-2026T23:21:06 - [TEST_STEP][PASSED] - profileKW.clickSaveChanges(): Delayed 2 second(s)
+
+15-05-2026T23:21:06 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/saveChangesButton' is clicked on
+
+15-05-2026T23:21:08 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:08 - [TEST_STEP][PASSED] - profileKW.restoreOriginalProfile(): Delayed 2 second(s)
+
+15-05-2026T23:21:10 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:11 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/span_UpdatedFirst' is present
+
+15-05-2026T23:21:11 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/span_UpdatedFirst' is clicked on
+
+15-05-2026T23:21:12 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:21:12 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/a_My Profile' is clickable
+
+15-05-2026T23:21:13 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/a_My Profile' is clicked on
+
+15-05-2026T23:21:13 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:15 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:15 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/editButton' is present
+
+15-05-2026T23:21:16 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/editButton' is clicked on
+
+15-05-2026T23:21:17 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:21:17 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/firstNameInput' is cleared
+
+15-05-2026T23:21:18 - [MESSAGE][PASSED] - Text 'User' is set on object 'Object Repository/Profile/firstNameInput'
+
+15-05-2026T23:21:18 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/lastNameInput' is cleared
+
+15-05-2026T23:21:19 - [MESSAGE][PASSED] - Text 'One' is set on object 'Object Repository/Profile/lastNameInput'
+
+15-05-2026T23:21:19 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/phoneNumberInput' is cleared
+
+15-05-2026T23:21:21 - [MESSAGE][PASSED] - Text '+971501111111' is set on object 'Object Repository/Profile/phoneNumberInput'
+
+15-05-2026T23:21:21 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/whatsappInput' is cleared
+
+15-05-2026T23:21:21 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/contactEmailInput' is cleared
+
+15-05-2026T23:21:22 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/saveChangesButton' is clicked on
+
+15-05-2026T23:21:24 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:26 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:26 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:21:26 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/Edit/TC_PROF_004_UpdatePhoneNumber" time="40.622" classname="Test Cases/Profile/Edit/TC_PROF_004_UpdatePhoneNumber" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:21:26 - [TEST_CASE][PASSED] - Test Cases/Profile/Edit/TC_PROF_004_UpdatePhoneNumber: Test Cases/Profile/Edit/TC_PROF_004_UpdatePhoneNumber
+
+15-05-2026T23:21:26 - [TEST_STEP][PASSED] - profileKW = new profile.Profile_Keywords(): null
+
+15-05-2026T23:21:26 - [TEST_STEP][PASSED] - profileKW.loginAndNavigateToProfile(): Delayed 1 second(s)
+
+15-05-2026T23:21:26 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:21:26 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:21:27 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:21:28 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:21:30 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:30 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:21:30 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T23:21:31 - [MESSAGE][PASSED] - Text 'user1@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:21:31 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T23:21:32 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:21:33 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:21:38 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+15-05-2026T23:21:38 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:38 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/Authentication/LoginPage/loginButton' located by 'By.xpath: //button[contains(text(), 'Login') or contains(text(), 'Sign In')]' is not present after '5' second(s)
+
+15-05-2026T23:21:40 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:40 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/span_UpdatedFirst' is present
+
+15-05-2026T23:21:41 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/span_UpdatedFirst' is clicked on
+
+15-05-2026T23:21:42 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:21:42 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/a_My Profile' is clickable
+
+15-05-2026T23:21:42 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/a_My Profile' is clicked on
+
+15-05-2026T23:21:42 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:44 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:45 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/editButton' is present
+
+15-05-2026T23:21:45 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/editButton' is clicked on
+
+15-05-2026T23:21:46 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:21:46 - [TEST_STEP][PASSED] - profileKW.fillPhoneNumber("+971509876543"): Text '+971509876543' is set on object 'Object Repository/Profile/phoneNumberInput'
+
+15-05-2026T23:21:47 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/phoneNumberInput' is cleared
+
+15-05-2026T23:21:47 - [MESSAGE][PASSED] - Text '+971509876543' is set on object 'Object Repository/Profile/phoneNumberInput'
+
+15-05-2026T23:21:47 - [TEST_STEP][PASSED] - profileKW.clickSaveChanges(): Delayed 2 second(s)
+
+15-05-2026T23:21:48 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/saveChangesButton' is clicked on
+
+15-05-2026T23:21:50 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:50 - [TEST_STEP][PASSED] - profileKW.restoreOriginalProfile(): Delayed 2 second(s)
+
+15-05-2026T23:21:52 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:52 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/span_UpdatedFirst' is present
+
+15-05-2026T23:21:53 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/span_UpdatedFirst' is clicked on
+
+15-05-2026T23:21:54 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:21:54 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/a_My Profile' is clickable
+
+15-05-2026T23:21:54 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/a_My Profile' is clicked on
+
+15-05-2026T23:21:54 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:56 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:56 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/editButton' is present
+
+15-05-2026T23:21:57 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/editButton' is clicked on
+
+15-05-2026T23:21:58 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:21:58 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/firstNameInput' is cleared
+
+15-05-2026T23:21:59 - [MESSAGE][PASSED] - Text 'User' is set on object 'Object Repository/Profile/firstNameInput'
+
+15-05-2026T23:21:59 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/lastNameInput' is cleared
+
+15-05-2026T23:22:00 - [MESSAGE][PASSED] - Text 'One' is set on object 'Object Repository/Profile/lastNameInput'
+
+15-05-2026T23:22:00 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/phoneNumberInput' is cleared
+
+15-05-2026T23:22:01 - [MESSAGE][PASSED] - Text '+971501111111' is set on object 'Object Repository/Profile/phoneNumberInput'
+
+15-05-2026T23:22:02 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/whatsappInput' is cleared
+
+15-05-2026T23:22:02 - [MESSAGE][PASSED] - Text of object 'Object Repository/Profile/contactEmailInput' is cleared
+
+15-05-2026T23:22:02 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/saveChangesButton' is clicked on
+
+15-05-2026T23:22:04 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:22:06 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:22:06 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:22:07 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[15-05-2026T23:19:45 - [TEST_SUITE][PASSED] - TS_Profile_Smoke: null]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

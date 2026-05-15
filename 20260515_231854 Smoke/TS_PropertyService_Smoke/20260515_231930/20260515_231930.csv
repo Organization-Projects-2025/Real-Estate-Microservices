@@ -1,0 +1,23 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_PropertyService_Smoke,Edge Chromium 148.0.3967.54,Smoke test suite for Property Service - critical tests only,,15-05-2026 23:19:45,15-05-2026 23:20:41,56.248s,PASSED
+,,,,,,,
+Test Cases/PropertyService/BuyPage/TC_PROP_001_Browse_Buy_Page,Edge Chromium 148.0.3967.54,Verify user can browse properties on Buy page,,15-05-2026 23:19:48,15-05-2026 23:20:08,20.796s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:48,15-05-2026 23:19:48,0.064s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:48,15-05-2026 23:20:01,12.656s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:01,15-05-2026 23:20:08,7.380s,PASSED
+,,,,,,,
+Test Cases/PropertyService/RentPage/TC_PROP_011_Browse_Rent_Page,Edge Chromium 148.0.3967.54,Verify user can browse properties on Rent page,,15-05-2026 23:20:08,15-05-2026 23:20:29,20.459s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:09,15-05-2026 23:20:09,0.002s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:09,15-05-2026 23:20:28,19.915s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:28,15-05-2026 23:20:29,0.474s,PASSED
+,,,,,,,
+Test Cases/PropertyService/SellPage/TC_PROP_016_Sell_Requires_Login,Edge Chromium 148.0.3967.54,Verify Sell page requires user to be logged in,,15-05-2026 23:20:29,15-05-2026 23:20:32,3.479s,PASSED
+sellHelper = new propertyservice.Sell_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:29,15-05-2026 23:20:29,0.025s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:29,15-05-2026 23:20:32,2.860s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:32,15-05-2026 23:20:32,0.422s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertyDetailPage/TC_PROP_024_Detail_Display,Edge Chromium 148.0.3967.54,Verify property detail page displays correctly,,15-05-2026 23:20:32,15-05-2026 23:20:41,8.935s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:33,15-05-2026 23:20:33,0.003s,PASSED
+detailHelper = new propertyservice.PropertyDetail_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:33,15-05-2026 23:20:33,0.015s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:33,15-05-2026 23:20:39,6.231s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:39,15-05-2026 23:20:41,2.594s,PASSED

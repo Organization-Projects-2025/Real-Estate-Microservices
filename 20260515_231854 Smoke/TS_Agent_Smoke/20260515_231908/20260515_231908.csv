@@ -1,0 +1,28 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_Agent_Smoke,Edge Chromium 148.0.3967.54,"Smoke Test Suite - Critical Agent Tests (Create, View, Update)",,15-05-2026 23:19:44,15-05-2026 23:22:30,2m - 45.928s,FAILED
+,,,,,,,
+Test Cases/Agent/Create/TC_AGENT_001_Create_Agent_Valid_Data,Edge Chromium 148.0.3967.54,Verify that an agent can be created successfully with valid data,,15-05-2026 23:19:47,15-05-2026 23:21:13,1m - 26.210s,PASSED
+Browser_Keywords().openBrowserWithFallback(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:48,15-05-2026 23:19:53,4.363s,PASSED
+agentHelper = new agent.Agent_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:53,15-05-2026 23:19:53,0.052s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:53,15-05-2026 23:19:53,0.016s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:19:53,15-05-2026 23:21:13,1m - 20.031s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:13,15-05-2026 23:21:13,0.448s,PASSED
+,,,,,,,
+Test Cases/Agent/Read/TC_AGENT_006_View_All_Agents,Edge Chromium 148.0.3967.54,Verify that all agents are displayed on the Agent listing page,,15-05-2026 23:21:13,15-05-2026 23:21:17,4.091s,PASSED
+Browser_Keywords().openBrowserWithFallback(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:13,15-05-2026 23:21:14,0.851s,PASSED
+agentHelper = new agent.Agent_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:14,15-05-2026 23:21:14,0.002s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:14,15-05-2026 23:21:17,2.975s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:17,15-05-2026 23:21:17,0.196s,PASSED
+,,,,,,,
+Test Cases/Agent/Read/TC_AGENT_007_View_Agent_Details,Edge Chromium 148.0.3967.54,Verify that agent details are displayed correctly on agent cards,,15-05-2026 23:21:17,15-05-2026 23:21:24,7.204s,FAILED
+Browser_Keywords().openBrowserWithFallback(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:17,15-05-2026 23:21:19,1.200s,PASSED
+agentHelper = new agent.Agent_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:19,15-05-2026 23:21:19,0.010s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:19,15-05-2026 23:21:24,5.493s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:24,15-05-2026 23:21:24,0.373s,FAILED
+,,,,,,,
+Test Cases/Agent/Update/TC_AGENT_008_Update_Agent_Valid_Data,Edge Chromium 148.0.3967.54,Verify that an agent can be updated successfully with valid data,,15-05-2026 23:21:24,15-05-2026 23:22:30,1m - 5.410s,PASSED
+Browser_Keywords().openBrowserWithFallback(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:25,15-05-2026 23:21:25,0.831s,PASSED
+agentHelper = new agent.Agent_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:25,15-05-2026 23:21:25,0.002s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:25,15-05-2026 23:21:25,0.005s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:25,15-05-2026 23:22:29,1m - 4.059s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:22:29,15-05-2026 23:22:30,0.403s,PASSED

@@ -1,0 +1,9 @@
+{"testCaseName":"Test Cases/Agent/Create/TC_AGENT_001_Create_Agent_Valid_Data","testCaseId":"Test Cases/Agent/Create/TC_AGENT_001_Create_Agent_Valid_Data","iterationVariableName":""}
+{"testCaseName":"Test Cases/Agent/Create/TC_AGENT_002_Create_Agent_Duplicate_Email","testCaseId":"Test Cases/Agent/Create/TC_AGENT_002_Create_Agent_Duplicate_Email","iterationVariableName":""}
+{"testCaseName":"Test Cases/Agent/Create/TC_AGENT_003_Create_Agent_Missing_Required_Fields","testCaseId":"Test Cases/Agent/Create/TC_AGENT_003_Create_Agent_Missing_Required_Fields","iterationVariableName":""}
+{"testCaseName":"Test Cases/Agent/Create/TC_AGENT_004_Create_Agent_Invalid_Email","testCaseId":"Test Cases/Agent/Create/TC_AGENT_004_Create_Agent_Invalid_Email","iterationVariableName":""}
+{"testCaseName":"Test Cases/Agent/Read/TC_AGENT_006_View_All_Agents","testCaseId":"Test Cases/Agent/Read/TC_AGENT_006_View_All_Agents","iterationVariableName":""}
+{"testCaseName":"Test Cases/Agent/Read/TC_AGENT_007_View_Agent_Details","testCaseId":"Test Cases/Agent/Read/TC_AGENT_007_View_Agent_Details","iterationVariableName":""}
+{"testCaseName":"Test Cases/Agent/Update/TC_AGENT_008_Update_Agent_Valid_Data","testCaseId":"Test Cases/Agent/Update/TC_AGENT_008_Update_Agent_Valid_Data","iterationVariableName":""}
+{"testCaseName":"Test Cases/Agent/Update/TC_AGENT_009_Update_Agent_Empty_Name","testCaseId":"Test Cases/Agent/Update/TC_AGENT_009_Update_Agent_Empty_Name","iterationVariableName":""}
+{"testCaseName":"Test Cases/Agent/Delete/TC_AGENT_011_Delete_Agent_Valid","testCaseId":"Test Cases/Agent/Delete/TC_AGENT_011_Delete_Agent_Valid","iterationVariableName":""}

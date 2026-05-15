@@ -1,0 +1,281 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_Admin_Complete,Edge Chromium 148.0.3967.54,"Complete Admin Test Suite - All User, Property, Review, and Filter Management Tests",,15-05-2026 22:53:26,15-05-2026 23:03:58,10m - 32.506s,ERROR
+,,,,,,,
+Test Cases/Admin/TC_ADM_AdminAccessRequired,Edge Chromium 148.0.3967.54,Test Case: Admin Access Required - Verifies that only admin users can access the Users Management page,"security,access,admin,users",15-05-2026 22:53:28,15-05-2026 22:53:58,30.243s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:31,15-05-2026 22:53:37,6.430s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:37,15-05-2026 22:53:37,0.186s,PASSED
+userHelper = new admin.User_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:37,15-05-2026 22:53:38,0.082s,PASSED
+"usersUrl = ""http://localhost:5173/admin/users""",Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:38,15-05-2026 22:53:38,0.020s,PASSED
+"loginUrl = ""http://localhost:5173/login""",Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:38,15-05-2026 22:53:38,0.006s,PASSED
+"homeUrl = ""http://localhost:5173""",Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:38,15-05-2026 22:53:38,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:38,15-05-2026 22:53:55,17.351s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:55,15-05-2026 22:53:58,3.346s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_001_ViewUsersPage,Edge Chromium 148.0.3967.54,Test Case: View Users Management Page - Verifies that admin can access and view the Users Management page,"admin,users,view,positive",15-05-2026 22:53:58,15-05-2026 22:54:13,14.629s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:59,15-05-2026 22:54:00,1.102s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:00,15-05-2026 22:54:00,0.003s,PASSED
+userHelper = new admin.User_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:00,15-05-2026 22:54:00,0.002s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:00,15-05-2026 22:54:13,12.843s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:13,15-05-2026 22:54:13,0.429s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_002_EditUserValid,Edge Chromium 148.0.3967.54,Test Case: Edit User with Valid Data - Verifies that admin can edit an existing user with valid data,"edit,admin,positive,users",15-05-2026 22:54:13,15-05-2026 22:54:47,34.206s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:13,15-05-2026 22:54:14,0.889s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:14,15-05-2026 22:54:14,0.002s,PASSED
+userHelper = new admin.User_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:14,15-05-2026 22:54:14,0.002s,PASSED
+"testUserEmail = userHelper.generateUniqueEmail(""edituser"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:14,15-05-2026 22:54:14,0.021s,PASSED
+"testPassword = ""Password123!""",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:14,15-05-2026 22:54:14,0.004s,PASSED
+testUserId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:14,15-05-2026 22:54:14,0.002s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:14,15-05-2026 22:54:45,31.033s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:45,15-05-2026 22:54:47,2.142s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_003_EditUserEmptyName,Edge Chromium 148.0.3967.54,Test Case: Edit User with Empty Name - Verifies validation for empty user name,"negative,edit,admin,users,validation",15-05-2026 22:54:47,15-05-2026 22:55:11,23.619s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:47,15-05-2026 22:54:48,0.799s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:48,15-05-2026 22:54:48,0.004s,PASSED
+userHelper = new admin.User_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:48,15-05-2026 22:54:48,0.002s,PASSED
+"testUserEmail = userHelper.generateUniqueEmail(""emptyname"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:48,15-05-2026 22:54:48,0.000s,PASSED
+"testPassword = ""Password123!""",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:48,15-05-2026 22:54:48,0.003s,PASSED
+testUserId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:48,15-05-2026 22:54:48,0.003s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:48,15-05-2026 22:55:09,20.558s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:09,15-05-2026 22:55:11,2.012s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_004_ChangeUserRole,Edge Chromium 148.0.3967.54,Test Case: Change User Role - Verifies that admin can change a user's role,"role,edit,admin,users",15-05-2026 22:55:11,15-05-2026 22:55:35,24.140s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:11,15-05-2026 22:55:12,0.852s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:12,15-05-2026 22:55:12,0.006s,PASSED
+userHelper = new admin.User_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:12,15-05-2026 22:55:12,0.002s,PASSED
+"testUserEmail = userHelper.generateUniqueEmail(""rolechange"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:12,15-05-2026 22:55:12,0.002s,PASSED
+"testPassword = ""Password123!""",Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:12,15-05-2026 22:55:12,0.001s,PASSED
+testUserId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:12,15-05-2026 22:55:12,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:12,15-05-2026 22:55:34,21.786s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:34,15-05-2026 22:55:35,1.360s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_005_DeactivateUser,Edge Chromium 148.0.3967.54,Test Case: Deactivate User - Verifies that admin can deactivate a user with confirmation,"admin,users,deactivate",15-05-2026 22:55:35,15-05-2026 22:55:59,24.427s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:35,15-05-2026 22:55:36,0.962s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:36,15-05-2026 22:55:36,0.004s,PASSED
+userHelper = new admin.User_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:36,15-05-2026 22:55:36,0.004s,PASSED
+"testUserEmail = userHelper.generateUniqueEmail(""deactivate"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:36,15-05-2026 22:55:36,0.005s,PASSED
+"testPassword = ""Password123!""",Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:36,15-05-2026 22:55:36,0.003s,PASSED
+testUserId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:36,15-05-2026 22:55:36,0.003s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:36,15-05-2026 22:55:58,22.205s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:58,15-05-2026 22:55:59,1.045s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_006_CancelDeactivateUser,Edge Chromium 148.0.3967.54,Test Case: Cancel Deactivate User - Verifies that canceling deactivation keeps the user active,"admin,users,deactivate,cancel",15-05-2026 22:55:59,15-05-2026 22:56:21,21.908s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:00,15-05-2026 22:56:01,1.000s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:01,15-05-2026 22:56:01,0.003s,PASSED
+userHelper = new admin.User_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:01,15-05-2026 22:56:01,0.006s,PASSED
+"testUserEmail = userHelper.generateUniqueEmail(""canceldeact"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:01,15-05-2026 22:56:01,0.003s,PASSED
+"testPassword = ""Password123!""",Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:01,15-05-2026 22:56:01,0.001s,PASSED
+testUserId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:01,15-05-2026 22:56:01,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:01,15-05-2026 22:56:20,19.322s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:20,15-05-2026 22:56:21,1.398s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_007_ReactivateUser,Edge Chromium 148.0.3967.54,Test Case: Reactivate User - Verifies that admin can reactivate an inactive user,"admin,users,reactivate",15-05-2026 22:56:21,15-05-2026 22:56:53,31.906s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:21,15-05-2026 22:56:22,0.870s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:22,15-05-2026 22:56:22,0.001s,PASSED
+userHelper = new admin.User_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:22,15-05-2026 22:56:22,0.001s,PASSED
+"testUserEmail = userHelper.generateUniqueEmail(""reactivate"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:22,15-05-2026 22:56:22,0.002s,PASSED
+"testPassword = ""Password123!""",Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:22,15-05-2026 22:56:22,0.001s,PASSED
+testUserId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:22,15-05-2026 22:56:22,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:22,15-05-2026 22:56:52,30.066s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:52,15-05-2026 22:56:53,0.848s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_008_SwitchBetweenTabs,Edge Chromium 148.0.3967.54,Test Case: Switch Between Active and Inactive Tabs - Verifies tab switching functionality,"admin,users,tabs,ui",15-05-2026 22:56:53,15-05-2026 22:57:13,19.596s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:53,15-05-2026 22:56:54,0.900s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:54,15-05-2026 22:56:54,0.001s,PASSED
+userHelper = new admin.User_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:54,15-05-2026 22:56:54,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:54,15-05-2026 22:57:12,18.230s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:12,15-05-2026 22:57:13,0.357s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_009_CancelEditUser,Edge Chromium 148.0.3967.54,Test Case: Cancel Edit User - Verifies that canceling edit doesn't save changes,"admin,users,edit,cancel",15-05-2026 22:57:13,15-05-2026 22:57:35,21.924s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:13,15-05-2026 22:57:14,0.807s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:14,15-05-2026 22:57:14,0.000s,PASSED
+userHelper = new admin.User_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:14,15-05-2026 22:57:14,0.000s,PASSED
+"testUserEmail = userHelper.generateUniqueEmail(""canceledit"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:14,15-05-2026 22:57:14,0.000s,PASSED
+"testPassword = ""Password123!""",Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:14,15-05-2026 22:57:14,0.000s,PASSED
+testUserId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:14,15-05-2026 22:57:14,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:14,15-05-2026 22:57:34,19.920s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:34,15-05-2026 22:57:35,1.085s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_010_CloseModalWithXButton,Edge Chromium 148.0.3967.54,Test Case: Close Modal with X Button - Verifies that the X button closes the modal without saving,"ui,admin,users,modal",15-05-2026 22:57:35,15-05-2026 22:57:58,23.476s,FAILED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:35,15-05-2026 22:57:36,0.817s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:36,15-05-2026 22:57:36,0.000s,PASSED
+userHelper = new admin.User_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:36,15-05-2026 22:57:36,0.000s,PASSED
+"testUserEmail = ""testing@gmail.com""",Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:36,15-05-2026 22:57:36,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:36,15-05-2026 22:57:58,22.053s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:58,15-05-2026 22:57:58,0.033s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:58,15-05-2026 22:57:58,0.466s,PASSED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_001_ViewPropertiesPage,Edge Chromium 148.0.3967.54,Test Case: View Properties Management Page - Verifies that admin can access and view the Properties Management page,"admin,properties,view,positive",15-05-2026 22:57:58,15-05-2026 22:58:13,14.677s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:58,15-05-2026 22:57:59,0.762s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:59,15-05-2026 22:57:59,0.000s,PASSED
+propertyHelper = new admin.Property_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:59,15-05-2026 22:57:59,0.007s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:59,15-05-2026 22:58:12,13.250s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:12,15-05-2026 22:58:13,0.490s,PASSED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_002_EditPropertyValid,Edge Chromium 148.0.3967.54,Test Case: Edit Property with Valid Data - Verifies that admin can edit an existing property,"edit,admin,positive,properties",15-05-2026 22:58:13,15-05-2026 22:58:40,27.326s,FAILED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:13,15-05-2026 22:58:14,0.770s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:14,15-05-2026 22:58:14,0.001s,PASSED
+propertyHelper = new admin.Property_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:14,15-05-2026 22:58:14,0.001s,PASSED
+testPropertyId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:14,15-05-2026 22:58:14,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:14,15-05-2026 22:58:40,25.900s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:40,15-05-2026 22:58:40,0.583s,FAILED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_003_EditPropertyEmptyTitle,Edge Chromium 148.0.3967.54,Test Case: Edit Property with Empty Title - Verifies validation for empty property title,"negative,edit,admin,properties,validation",15-05-2026 22:58:40,15-05-2026 22:59:03,22.500s,FAILED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:40,15-05-2026 22:58:41,0.730s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:41,15-05-2026 22:58:41,0.002s,PASSED
+propertyHelper = new admin.Property_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:41,15-05-2026 22:58:41,0.000s,PASSED
+testPropertyId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:41,15-05-2026 22:58:41,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:41,15-05-2026 22:59:02,20.991s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:02,15-05-2026 22:59:03,0.637s,FAILED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_004_ChangePropertyStatus,Edge Chromium 148.0.3967.54,Test Case: Change Property Status - Verifies that admin can change a property's status,"admin,properties,status,edit",15-05-2026 22:59:03,15-05-2026 22:59:28,24.995s,FAILED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:03,15-05-2026 22:59:04,0.789s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:04,15-05-2026 22:59:04,0.002s,PASSED
+propertyHelper = new admin.Property_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:04,15-05-2026 22:59:04,0.001s,PASSED
+testPropertyId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:04,15-05-2026 22:59:04,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:04,15-05-2026 22:59:27,23.274s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:27,15-05-2026 22:59:28,0.849s,FAILED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_005_DeleteProperty,Edge Chromium 148.0.3967.54,Test Case: Delete Property - Verifies that admin can delete a property with confirmation,"admin,properties,delete",15-05-2026 22:59:28,15-05-2026 22:59:51,22.956s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:28,15-05-2026 22:59:29,0.775s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:29,15-05-2026 22:59:29,0.001s,PASSED
+propertyHelper = new admin.Property_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:29,15-05-2026 22:59:29,0.001s,PASSED
+testPropertyId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:29,15-05-2026 22:59:29,0.001s,PASSED
+deletedViaUI = false,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:29,15-05-2026 22:59:29,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:29,15-05-2026 22:59:50,21.574s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:50,15-05-2026 22:59:51,0.522s,PASSED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_006_CancelDeleteProperty,Edge Chromium 148.0.3967.54,Verify that admin can cancel property deletion when prompted,,15-05-2026 22:59:51,15-05-2026 23:00:14,23.255s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:51,15-05-2026 22:59:52,0.782s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:52,15-05-2026 22:59:52,0.000s,PASSED
+propertyHelper = new admin.Property_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:52,15-05-2026 22:59:52,0.000s,PASSED
+testPropertyId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:52,15-05-2026 22:59:52,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:52,15-05-2026 23:00:13,21.685s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:13,15-05-2026 23:00:14,0.687s,PASSED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_007_CancelEditProperty,Edge Chromium 148.0.3967.54,Verify that admin can cancel property edit using Cancel button,,15-05-2026 23:00:14,15-05-2026 23:00:39,25.476s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:14,15-05-2026 23:00:15,0.942s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:15,15-05-2026 23:00:15,0.000s,PASSED
+propertyHelper = new admin.Property_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:15,15-05-2026 23:00:15,0.002s,PASSED
+testPropertyId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:15,15-05-2026 23:00:15,0.003s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:15,15-05-2026 23:00:39,23.786s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:39,15-05-2026 23:00:39,0.635s,PASSED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_008_CloseModalWithXButton,Edge Chromium 148.0.3967.54,Verify that admin can close property edit modal using X button,,15-05-2026 23:00:39,15-05-2026 23:00:56,16.316s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:39,15-05-2026 23:00:40,0.740s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:40,15-05-2026 23:00:40,0.000s,PASSED
+propertyHelper = new admin.Property_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:40,15-05-2026 23:00:40,0.008s,PASSED
+testPropertyId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:40,15-05-2026 23:00:40,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:40,15-05-2026 23:00:55,14.872s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:55,15-05-2026 23:00:56,0.664s,PASSED
+,,,,,,,
+Test Cases/Admin/ReviewManagement/TC_ADM_REV_001_ViewReviewsPage,Edge Chromium 148.0.3967.54,Verify that admin can access and view the Reviews Management page,,15-05-2026 23:00:56,15-05-2026 23:01:11,15.324s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:56,15-05-2026 23:00:57,0.710s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:57,15-05-2026 23:00:57,0.001s,PASSED
+reviewHelper = new admin.Review_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:57,15-05-2026 23:00:57,0.007s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:57,15-05-2026 23:01:11,14.340s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:11,15-05-2026 23:01:11,0.176s,PASSED
+,,,,,,,
+Test Cases/Admin/ReviewManagement/TC_ADM_REV_002_DeleteReview,Edge Chromium 148.0.3967.54,Verify that admin can delete a review with confirmation,,15-05-2026 23:01:11,15-05-2026 23:01:35,23.839s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:11,15-05-2026 23:01:12,0.641s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:12,15-05-2026 23:01:12,0.000s,PASSED
+reviewHelper = new admin.Review_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:12,15-05-2026 23:01:12,0.000s,PASSED
+testReviewId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:12,15-05-2026 23:01:12,0.001s,PASSED
+deletedViaUI = false,Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:12,15-05-2026 23:01:12,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:12,15-05-2026 23:01:34,22.665s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:34,15-05-2026 23:01:35,0.483s,PASSED
+,,,,,,,
+Test Cases/Admin/ReviewManagement/TC_ADM_REV_003_CancelDeleteReview,Edge Chromium 148.0.3967.54,Verify that admin can cancel review deletion when prompted,,15-05-2026 23:01:35,15-05-2026 23:01:58,23.290s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:35,15-05-2026 23:01:36,0.649s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:36,15-05-2026 23:01:36,0.000s,PASSED
+reviewHelper = new admin.Review_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:36,15-05-2026 23:01:36,0.001s,PASSED
+testReviewId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:36,15-05-2026 23:01:36,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:36,15-05-2026 23:01:58,22.074s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:58,15-05-2026 23:01:58,0.540s,PASSED
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_001_ViewFiltersPage,Edge Chromium 148.0.3967.54,Test Case: View Filters Management Page - Verifies that admin can access and view the Filters Management page with proper UI elements,"admin,filters,smoke,view",15-05-2026 23:01:58,15-05-2026 23:02:11,12.974s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:58,15-05-2026 23:01:59,0.746s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:59,15-05-2026 23:01:59,0.000s,PASSED
+filterHelper = new admin.Filter_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:59,15-05-2026 23:01:59,0.004s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:59,15-05-2026 23:02:11,11.907s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:11,15-05-2026 23:02:11,0.275s,PASSED
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_002_CreateFilterValid,Edge Chromium 148.0.3967.54,Test Case: Create Filter with Valid Data - Verifies that admin can create a new filter with valid data,"admin,create,filters,positive",15-05-2026 23:02:11,15-05-2026 23:02:34,23.245s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:11,15-05-2026 23:02:12,0.663s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:12,15-05-2026 23:02:12,0.001s,PASSED
+filterHelper = new admin.Filter_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:12,15-05-2026 23:02:12,0.000s,PASSED
+"uniqueFilterName = filterHelper.generateUniqueFilterName(""ValidFilter"")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:12,15-05-2026 23:02:12,0.001s,PASSED
+createdFilterId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:12,15-05-2026 23:02:12,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:12,15-05-2026 23:02:34,22.250s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:34,15-05-2026 23:02:34,0.290s,PASSED
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_003_CreateFilterEmptyName,Edge Chromium 148.0.3967.54,Test Case: Create Filter with Empty Name (Negative) - Verifies that form validation prevents creating filter without name,"admin,filters,create,negative,validation",15-05-2026 23:02:34,15-05-2026 23:02:54,19.338s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:34,15-05-2026 23:02:35,0.624s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:35,15-05-2026 23:02:35,0.001s,PASSED
+filterHelper = new admin.Filter_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:35,15-05-2026 23:02:35,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:35,15-05-2026 23:02:54,18.465s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:54,15-05-2026 23:02:54,0.219s,PASSED
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_004_EditFilter,Edge Chromium 148.0.3967.54,Test Case: Edit Existing Filter - Verifies that admin can edit an existing filter and changes are saved,"admin,filters,edit,update",15-05-2026 23:02:54,15-05-2026 23:02:55,0.871s,ERROR
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:54,15-05-2026 23:02:54,0.645s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:54,15-05-2026 23:02:54,0.000s,PASSED
+filterHelper = new admin.Filter_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:54,15-05-2026 23:02:54,0.000s,PASSED
+testFilterId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:54,15-05-2026 23:02:54,0.000s,PASSED
+originalName = null,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:54,15-05-2026 23:02:54,0.001s,PASSED
+"updatedName = filterHelper.generateUniqueFilterName(""EditedFilter"")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:54,15-05-2026 23:02:54,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:54,15-05-2026 23:02:54,0.007s,PASSED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:54,15-05-2026 23:02:54,0.003s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:54,15-05-2026 23:02:55,0.189s,ERROR
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_005_DeleteFilter,Edge Chromium 148.0.3967.54,Test Case: Delete Filter - Verifies that admin can delete a filter with confirmation,"admin,filters,delete",15-05-2026 23:02:55,15-05-2026 23:02:55,0.846s,ERROR
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:55,15-05-2026 23:02:55,0.620s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:55,15-05-2026 23:02:55,0.000s,PASSED
+filterHelper = new admin.Filter_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:55,15-05-2026 23:02:55,0.001s,PASSED
+testFilterId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:55,15-05-2026 23:02:55,0.000s,PASSED
+filterName = null,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:55,15-05-2026 23:02:55,0.000s,PASSED
+deletedViaUI = false,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:55,15-05-2026 23:02:55,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:55,15-05-2026 23:02:55,0.021s,PASSED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:55,15-05-2026 23:02:55,0.003s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:55,15-05-2026 23:02:55,0.166s,ERROR
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_006_CancelDeleteFilter,Edge Chromium 148.0.3967.54,Test Case: Cancel Delete Filter - Verifies that canceling deletion keeps the filter,"admin,filters,delete,cancel",15-05-2026 23:02:55,15-05-2026 23:02:56,0.933s,ERROR
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:56,15-05-2026 23:02:56,0.681s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:56,15-05-2026 23:02:56,0.001s,PASSED
+filterHelper = new admin.Filter_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:56,15-05-2026 23:02:56,0.001s,PASSED
+testFilterId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:56,15-05-2026 23:02:56,0.000s,PASSED
+filterName = null,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:56,15-05-2026 23:02:56,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:56,15-05-2026 23:02:56,0.014s,PASSED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:56,15-05-2026 23:02:56,0.001s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:56,15-05-2026 23:02:56,0.203s,ERROR
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_007_CreateInactiveFilter,Edge Chromium 148.0.3967.54,Test Case: Create Inactive Filter - Verifies that a filter can be created with inactive status,"inactive,admin,create,filters",15-05-2026 23:02:56,15-05-2026 23:03:19,22.568s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:56,15-05-2026 23:02:57,0.585s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:57,15-05-2026 23:02:57,0.000s,PASSED
+filterHelper = new admin.Filter_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:57,15-05-2026 23:02:57,0.000s,PASSED
+"filterName = filterHelper.generateUniqueFilterName(""InactiveFilter"")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:57,15-05-2026 23:02:57,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:57,15-05-2026 23:03:19,21.736s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:19,15-05-2026 23:03:19,0.223s,PASSED
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_008_ToggleFilterStatus,Edge Chromium 148.0.3967.54,Test Case: Toggle Filter Status - Verifies that filter status can be toggled between Active and Inactive,"edit,admin,filters,status",15-05-2026 23:03:19,15-05-2026 23:03:20,0.819s,ERROR
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:19,15-05-2026 23:03:20,0.680s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:20,15-05-2026 23:03:20,0.002s,PASSED
+filterHelper = new admin.Filter_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:20,15-05-2026 23:03:20,0.001s,PASSED
+testFilterId = null,Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:20,15-05-2026 23:03:20,0.001s,PASSED
+filterName = null,Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:20,15-05-2026 23:03:20,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:20,15-05-2026 23:03:20,0.011s,PASSED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:20,15-05-2026 23:03:20,0.001s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:20,15-05-2026 23:03:20,0.082s,ERROR
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_009_CancelAddFilter,Edge Chromium 148.0.3967.54,Test Case: Cancel Add Filter Modal - Verifies that canceling the add modal doesn't create a filter,"cancel,admin,filters,modal",15-05-2026 23:03:20,15-05-2026 23:03:41,20.868s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:20,15-05-2026 23:03:20,0.641s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:20,15-05-2026 23:03:20,0.000s,PASSED
+filterHelper = new admin.Filter_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:20,15-05-2026 23:03:20,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:20,15-05-2026 23:03:40,19.883s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:40,15-05-2026 23:03:41,0.314s,PASSED
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_010_CloseModalWithXButton,Edge Chromium 148.0.3967.54,Test Case: Close Modal with X Button - Verifies that the X button closes the modal without creating a filter,"ui,admin,filters,modal",15-05-2026 23:03:41,15-05-2026 23:03:58,17.618s,FAILED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:41,15-05-2026 23:03:41,0.584s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:41,15-05-2026 23:03:41,0.000s,PASSED
+filterHelper = new admin.Filter_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:41,15-05-2026 23:03:41,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:41,15-05-2026 23:03:58,16.695s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:58,15-05-2026 23:03:58,0.001s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:58,15-05-2026 23:03:58,0.311s,PASSED

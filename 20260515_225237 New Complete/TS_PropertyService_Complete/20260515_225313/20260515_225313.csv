@@ -1,0 +1,172 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_PropertyService_Complete,Edge Chromium 148.0.3967.54,Complete test suite for Property Service - 30 tests (TC_PROP_001 to TC_PROP_030),,15-05-2026 22:53:30,15-05-2026 23:00:32,7m - 2.657s,FAILED
+,,,,,,,
+Test Cases/PropertyService/BuyPage/TC_PROP_001_Browse_Buy_Page,Edge Chromium 148.0.3967.54,Verify user can browse properties on Buy page,,15-05-2026 22:53:33,15-05-2026 22:53:53,20.943s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:34,15-05-2026 22:53:34,0.281s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:34,15-05-2026 22:53:47,12.808s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:47,15-05-2026 22:53:53,6.163s,PASSED
+,,,,,,,
+Test Cases/PropertyService/BuyPage/TC_PROP_002_Search_Buy_Page,Edge Chromium 148.0.3967.54,Verify user can search properties on Buy page,,15-05-2026 22:53:53,15-05-2026 22:54:16,22.307s,FAILED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:54,15-05-2026 22:53:54,0.006s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:54,15-05-2026 22:54:15,21.586s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:15,15-05-2026 22:54:15,0.046s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:15,15-05-2026 22:54:16,0.598s,PASSED
+,,,,,,,
+Test Cases/PropertyService/BuyPage/TC_PROP_003_Search_No_Results,Edge Chromium 148.0.3967.54,Verify no results message when search has no matches,,15-05-2026 22:54:16,15-05-2026 22:54:27,10.977s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:16,15-05-2026 22:54:16,0.003s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:16,15-05-2026 22:54:26,9.880s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:26,15-05-2026 22:54:27,1.004s,PASSED
+,,,,,,,
+Test Cases/PropertyService/BuyPage/TC_PROP_004_Combined_Filters,Edge Chromium 148.0.3967.54,Verify combined filters work on Buy page,,15-05-2026 22:54:27,15-05-2026 22:54:40,13.646s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:27,15-05-2026 22:54:27,0.003s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:27,15-05-2026 22:54:40,13.094s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:40,15-05-2026 22:54:40,0.387s,PASSED
+,,,,,,,
+Test Cases/PropertyService/BuyPage/TC_PROP_005_Clear_Filters,Edge Chromium 148.0.3967.54,Verify clear filters resets property list,,15-05-2026 22:54:40,15-05-2026 22:54:52,11.892s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:40,15-05-2026 22:54:40,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:40,15-05-2026 22:54:52,11.334s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:52,15-05-2026 22:54:52,0.485s,PASSED
+,,,,,,,
+Test Cases/PropertyService/BuyPage/TC_PROP_006_Buy_Pagination,Edge Chromium 148.0.3967.54,Verify pagination works on Buy page,,15-05-2026 22:54:52,15-05-2026 22:55:04,12.067s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:53,15-05-2026 22:54:53,0.009s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:53,15-05-2026 22:55:04,11.123s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:04,15-05-2026 22:55:04,0.717s,PASSED
+,,,,,,,
+Test Cases/PropertyService/BuyPage/TC_PROP_007_Property_Card_Display,Edge Chromium 148.0.3967.54,Verify property cards display correctly,,15-05-2026 22:55:04,15-05-2026 22:55:12,8.034s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:05,15-05-2026 22:55:05,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:05,15-05-2026 22:55:10,5.302s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:10,15-05-2026 22:55:12,2.601s,PASSED
+,,,,,,,
+Test Cases/PropertyService/BuyPage/TC_PROP_008_Search_By_City,Edge Chromium 148.0.3967.54,Verify search by city works,,15-05-2026 22:55:12,15-05-2026 22:55:23,10.870s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:13,15-05-2026 22:55:13,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:13,15-05-2026 22:55:22,9.651s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:22,15-05-2026 22:55:23,1.067s,PASSED
+,,,,,,,
+Test Cases/PropertyService/BuyPage/TC_PROP_009_View_Details_Navigation,Edge Chromium 148.0.3967.54,Verify clicking View Details navigates to property detail,,15-05-2026 22:55:23,15-05-2026 22:55:31,7.557s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:23,15-05-2026 22:55:23,0.000s,PASSED
+detailHelper = new propertyservice.PropertyDetail_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:23,15-05-2026 22:55:23,0.014s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:23,15-05-2026 22:55:30,6.930s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:30,15-05-2026 22:55:31,0.530s,PASSED
+,,,,,,,
+Test Cases/PropertyService/BuyPage/TC_PROP_010_Filter_By_Property_Type,Edge Chromium 148.0.3967.54,Verify filter by property type works,,15-05-2026 22:55:31,15-05-2026 22:55:42,11.060s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:31,15-05-2026 22:55:31,0.004s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:31,15-05-2026 22:55:41,9.960s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:41,15-05-2026 22:55:42,0.975s,PASSED
+,,,,,,,
+Test Cases/PropertyService/RentPage/TC_PROP_011_Browse_Rent_Page,Edge Chromium 148.0.3967.54,Verify user can browse properties on Rent page,,15-05-2026 22:55:42,15-05-2026 22:56:02,20.417s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:42,15-05-2026 22:55:42,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:42,15-05-2026 22:56:01,19.200s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:01,15-05-2026 22:56:02,1.182s,PASSED
+,,,,,,,
+Test Cases/PropertyService/RentPage/TC_PROP_012_Search_Rent_Page,Edge Chromium 148.0.3967.54,Verify user can search properties on Rent page,,15-05-2026 22:56:02,15-05-2026 22:56:27,24.599s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:02,15-05-2026 22:56:02,0.002s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:02,15-05-2026 22:56:26,24.017s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:26,15-05-2026 22:56:27,0.516s,PASSED
+,,,,,,,
+Test Cases/PropertyService/RentPage/TC_PROP_013_Rent_Filters,Edge Chromium 148.0.3967.54,Verify filters work on Rent page,,15-05-2026 22:56:27,15-05-2026 22:56:52,24.785s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:27,15-05-2026 22:56:27,0.003s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:27,15-05-2026 22:56:51,24.293s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:51,15-05-2026 22:56:52,0.406s,PASSED
+,,,,,,,
+Test Cases/PropertyService/RentPage/TC_PROP_014_Rent_Pagination,Edge Chromium 148.0.3967.54,Verify pagination works on Rent page,,15-05-2026 22:56:52,15-05-2026 22:57:17,25.212s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:52,15-05-2026 22:56:52,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:52,15-05-2026 22:57:16,24.523s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:16,15-05-2026 22:57:17,0.594s,PASSED
+,,,,,,,
+Test Cases/PropertyService/RentPage/TC_PROP_015_Rent_View_Details,Edge Chromium 148.0.3967.54,Verify clicking View Details from Rent page,,15-05-2026 22:57:17,15-05-2026 22:57:38,21.276s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:17,15-05-2026 22:57:17,0.003s,PASSED
+detailHelper = new propertyservice.PropertyDetail_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:17,15-05-2026 22:57:17,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:17,15-05-2026 22:57:38,20.781s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:38,15-05-2026 22:57:38,0.396s,PASSED
+,,,,,,,
+Test Cases/PropertyService/SellPage/TC_PROP_016_Sell_Requires_Login,Edge Chromium 148.0.3967.54,Verify Sell page requires user to be logged in,,15-05-2026 22:57:38,15-05-2026 22:57:41,2.765s,PASSED
+sellHelper = new propertyservice.Sell_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:38,15-05-2026 22:57:38,0.015s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:38,15-05-2026 22:57:41,2.447s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:41,15-05-2026 22:57:41,0.217s,PASSED
+,,,,,,,
+Test Cases/PropertyService/SellPage/TC_PROP_017_Create_Property_Valid,Edge Chromium 148.0.3967.54,Verify creating property with valid data,,15-05-2026 22:57:41,15-05-2026 22:58:01,19.508s,FAILED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:41,15-05-2026 22:57:41,0.010s,PASSED
+sellHelper = new propertyservice.Sell_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:41,15-05-2026 22:57:41,0.005s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:41,15-05-2026 22:58:00,18.885s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:00,15-05-2026 22:58:00,0.004s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:00,15-05-2026 22:58:01,0.490s,PASSED
+,,,,,,,
+Test Cases/PropertyService/SellPage/TC_PROP_018_Missing_Fields,Edge Chromium 148.0.3967.54,Verify error when creating property with missing fields,,15-05-2026 22:58:01,15-05-2026 22:58:17,15.960s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:01,15-05-2026 22:58:01,0.003s,PASSED
+sellHelper = new propertyservice.Sell_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:01,15-05-2026 22:58:01,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:01,15-05-2026 22:58:15,14.850s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:15,15-05-2026 22:58:17,1.030s,PASSED
+,,,,,,,
+Test Cases/PropertyService/SellPage/TC_PROP_019_Form_Navigation,Edge Chromium 148.0.3967.54,Verify form navigation (Next/Back buttons),,15-05-2026 22:58:17,15-05-2026 22:58:37,20.230s,FAILED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:17,15-05-2026 22:58:17,0.000s,PASSED
+sellHelper = new propertyservice.Sell_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:17,15-05-2026 22:58:17,0.007s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:17,15-05-2026 22:58:36,19.777s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:36,15-05-2026 22:58:36,0.006s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:36,15-05-2026 22:58:37,0.330s,PASSED
+,,,,,,,
+Test Cases/PropertyService/SellPage/TC_PROP_020_Listing_Type_Sale,Edge Chromium 148.0.3967.54,Verify selecting Sale listing type,,15-05-2026 22:58:37,15-05-2026 22:58:51,14.398s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:37,15-05-2026 22:58:37,0.000s,PASSED
+sellHelper = new propertyservice.Sell_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:37,15-05-2026 22:58:37,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:37,15-05-2026 22:58:51,13.869s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:51,15-05-2026 22:58:51,0.461s,PASSED
+,,,,,,,
+Test Cases/PropertyService/SellPage/TC_PROP_021_Listing_Type_Rent,Edge Chromium 148.0.3967.54,Verify selecting Rent listing type,,15-05-2026 22:58:51,15-05-2026 22:59:05,13.749s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:51,15-05-2026 22:58:51,0.001s,PASSED
+sellHelper = new propertyservice.Sell_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:51,15-05-2026 22:58:51,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:51,15-05-2026 22:59:05,13.380s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:05,15-05-2026 22:59:05,0.316s,PASSED
+,,,,,,,
+Test Cases/PropertyService/SellPage/TC_PROP_022_Property_Types,Edge Chromium 148.0.3967.54,Verify selecting different property types,,15-05-2026 22:59:05,15-05-2026 22:59:21,16.273s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:05,15-05-2026 22:59:05,0.000s,PASSED
+sellHelper = new propertyservice.Sell_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:05,15-05-2026 22:59:05,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:05,15-05-2026 22:59:21,15.862s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:21,15-05-2026 22:59:21,0.346s,PASSED
+,,,,,,,
+Test Cases/PropertyService/SellPage/TC_PROP_023_Invalid_Price,Edge Chromium 148.0.3967.54,Verify error when entering invalid price,,15-05-2026 22:59:21,15-05-2026 22:59:41,19.550s,FAILED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:21,15-05-2026 22:59:21,0.002s,PASSED
+sellHelper = new propertyservice.Sell_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:21,15-05-2026 22:59:21,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:21,15-05-2026 22:59:40,19.122s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:40,15-05-2026 22:59:40,0.000s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:40,15-05-2026 22:59:41,0.334s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertyDetailPage/TC_PROP_024_Detail_Display,Edge Chromium 148.0.3967.54,Verify property detail page displays correctly,,15-05-2026 22:59:41,15-05-2026 22:59:47,6.589s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:41,15-05-2026 22:59:41,0.001s,PASSED
+detailHelper = new propertyservice.PropertyDetail_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:41,15-05-2026 22:59:41,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:41,15-05-2026 22:59:47,6.163s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:47,15-05-2026 22:59:47,0.368s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertyDetailPage/TC_PROP_025_Contact_Agent,Edge Chromium 148.0.3967.54,Verify Contact Agent button works,,15-05-2026 22:59:47,15-05-2026 22:59:55,7.848s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:47,15-05-2026 22:59:47,0.009s,PASSED
+detailHelper = new propertyservice.PropertyDetail_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:47,15-05-2026 22:59:47,0.010s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:47,15-05-2026 22:59:55,7.430s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:55,15-05-2026 22:59:55,0.294s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertyDetailPage/TC_PROP_026_Image_Gallery,Edge Chromium 148.0.3967.54,Verify image gallery navigation,,15-05-2026 22:59:55,15-05-2026 23:00:07,11.693s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:55,15-05-2026 22:59:55,0.001s,PASSED
+detailHelper = new propertyservice.PropertyDetail_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:55,15-05-2026 22:59:55,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:55,15-05-2026 23:00:07,11.319s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:07,15-05-2026 23:00:07,0.316s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertyDetailPage/TC_PROP_027_Back_Button,Edge Chromium 148.0.3967.54,Verify back button navigation,,15-05-2026 23:00:07,15-05-2026 23:00:13,6.631s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:07,15-05-2026 23:00:07,0.000s,PASSED
+detailHelper = new propertyservice.PropertyDetail_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:07,15-05-2026 23:00:07,0.006s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:07,15-05-2026 23:00:13,6.234s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:13,15-05-2026 23:00:13,0.289s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertyDetailPage/TC_PROP_028_Features_Display,Edge Chromium 148.0.3967.54,Verify property features are displayed,,15-05-2026 23:00:13,15-05-2026 23:00:20,6.196s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:14,15-05-2026 23:00:14,0.000s,PASSED
+detailHelper = new propertyservice.PropertyDetail_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:14,15-05-2026 23:00:14,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:14,15-05-2026 23:00:19,5.730s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:19,15-05-2026 23:00:20,0.410s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertyDetailPage/TC_PROP_029_Address_Display,Edge Chromium 148.0.3967.54,Verify property address is displayed,,15-05-2026 23:00:20,15-05-2026 23:00:26,6.366s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:20,15-05-2026 23:00:20,0.001s,PASSED
+detailHelper = new propertyservice.PropertyDetail_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:20,15-05-2026 23:00:20,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:20,15-05-2026 23:00:26,5.921s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:26,15-05-2026 23:00:26,0.369s,PASSED
+,,,,,,,
+Test Cases/PropertyService/PropertyDetailPage/TC_PROP_030_Price_Display,Edge Chromium 148.0.3967.54,Verify property price is displayed,,15-05-2026 23:00:26,15-05-2026 23:00:32,6.316s,PASSED
+propsHelper = new propertyservice.Properties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:26,15-05-2026 23:00:26,0.000s,PASSED
+detailHelper = new propertyservice.PropertyDetail_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:26,15-05-2026 23:00:26,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:26,15-05-2026 23:00:32,5.826s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:32,15-05-2026 23:00:32,0.346s,PASSED

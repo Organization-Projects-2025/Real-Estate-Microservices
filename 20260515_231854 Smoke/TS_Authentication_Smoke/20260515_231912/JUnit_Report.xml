@@ -1,0 +1,1344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="TS_Authentication_Smoke" time="186.191" tests="13" failures="2" errors="0">
+   <testsuite name="TS_Authentication_Smoke" tests="13" failures="2" errors="0" time="186.191" skipped="0" timestamp="2026-05-15T20:19:45.393Z" hostname="User - 192.168.1.4" id="Test Suites/TS_Authentication_Smoke">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_Authentication_Smoke\\20260515_231912"/>
+         <property name="logFiles" value="D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_Authentication_Smoke\\20260515_231912\\console0.log, D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_Authentication_Smoke\\20260515_231912\\execution0.log"/>
+         <property name="attachments" value="D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_Authentication_Smoke\\20260515_231912\\1778876557208.png"/>
+         <property name="hostName" value="User - 192.168.1.4"/>
+         <property name="os" value="Windows 11 64bit"/>
+         <property name="katalonVersion" value="10.4.3.0"/>
+         <property name="browser" value="Edge Chromium 148.0.3967.54"/>
+         <property name="userFullName" value="Jakayaj756nctimecom"/>
+         <property name="hostAddress" value="192.168.1.4"/>
+         <property name="sessionId" value="10de99631e58f414648194ec951946a5"/>
+         <property name="projectName" value="Katalon"/>
+         <property name="seleniumVersion" value="4.34.0"/>
+         <property name="proxyInformation" value="ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList=&quot;&quot;, isApplyToDesiredCapabilities=true }"/>
+         <property name="platform" value="Windows 11"/>
+      </properties>
+      <testcase name="Test Cases/Authentication/Login/TC_AUTH_001_Login_Valid_Credentials" time="21.062" classname="Test Cases/Authentication/Login/TC_AUTH_001_Login_Valid_Credentials" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:19:48 - [TEST_CASE][PASSED] - Test Cases/Authentication/Login/TC_AUTH_001_Login_Valid_Credentials: Test Cases/Authentication/Login/TC_AUTH_001_Login_Valid_Credentials
+
+15-05-2026T23:19:48 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:19:49 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:19:49 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:19:52 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:19:52 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T23:19:52 - [TEST_STEP][PASSED] - try: ✅ TC_AUTH_001 PASSED: User successfully logged in with valid credentials
+
+15-05-2026T23:19:52 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:19:53 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:19:56 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:19:56 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:19:56 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:19:56 - [TEST_STEP][PASSED] - loginHelper.login("admin@realestate.com", "Password123!"): Wait for page load successfully
+
+15-05-2026T23:19:56 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T23:19:57 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T23:19:59 - [MESSAGE][PASSED] - Text 'admin@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:19:59 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T23:20:00 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:20:01 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:20:04 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:20:04 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:05 - [TEST_STEP][PASSED] - loginHelper.verifyLoginSuccess(): Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T23:20:05 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:07 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:20:07 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T23:20:07 - [TEST_STEP][PASSED] - comment("✅ TC_AUTH_001 PASSED: User successfully logged in with valid credentials"): ✅ TC_AUTH_001 PASSED: User successfully logged in with valid credentials
+
+15-05-2026T23:20:07 - [MESSAGE][INFO] - ✅ TC_AUTH_001 PASSED: User successfully logged in with valid credentials
+
+15-05-2026T23:20:07 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:20:07 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:09 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Login/TC_AUTH_002_Login_Invalid_Email" time="10.103" classname="Test Cases/Authentication/Login/TC_AUTH_002_Login_Invalid_Email" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:20:09 - [TEST_CASE][PASSED] - Test Cases/Authentication/Login/TC_AUTH_002_Login_Invalid_Email: Test Cases/Authentication/Login/TC_AUTH_002_Login_Invalid_Email
+
+15-05-2026T23:20:09 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:20:09 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:20:09 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:20:10 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:20:10 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T23:20:10 - [TEST_STEP][PASSED] - try: ✅ TC_AUTH_002 PASSED: Login correctly failed with invalid email
+
+15-05-2026T23:20:10 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:20:11 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:20:11 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:11 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:20:12 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:20:12 - [TEST_STEP][PASSED] - loginHelper.login("nonexistent@test.com", "Password123!"): Wait for page load successfully
+
+15-05-2026T23:20:12 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T23:20:12 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T23:20:13 - [MESSAGE][PASSED] - Text 'nonexistent@test.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:20:13 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T23:20:14 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:20:15 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:20:18 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:20:18 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:18 - [TEST_STEP][PASSED] - loginHelper.verifyLoginError("Invalid email or password"): Text of object 'Object Repository/Authentication/LoginPage/errorMessage' is: 'Invalid email or password'
+
+15-05-2026T23:20:18 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/errorMessage' is present
+
+15-05-2026T23:20:18 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/errorMessage' is: 'Invalid email or password'
+
+15-05-2026T23:20:18 - [TEST_STEP][PASSED] - comment("✅ TC_AUTH_002 PASSED: Login correctly failed with invalid email"): ✅ TC_AUTH_002 PASSED: Login correctly failed with invalid email
+
+15-05-2026T23:20:18 - [MESSAGE][INFO] - ✅ TC_AUTH_002 PASSED: Login correctly failed with invalid email
+
+15-05-2026T23:20:18 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:20:18 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:19 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Login/TC_AUTH_003_Login_Incorrect_Password" time="10.057" classname="Test Cases/Authentication/Login/TC_AUTH_003_Login_Incorrect_Password" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:20:19 - [TEST_CASE][PASSED] - Test Cases/Authentication/Login/TC_AUTH_003_Login_Incorrect_Password: Test Cases/Authentication/Login/TC_AUTH_003_Login_Incorrect_Password
+
+15-05-2026T23:20:19 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:20:19 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:20:19 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:20:20 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:20:20 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T23:20:20 - [TEST_STEP][PASSED] - try: ✅ TC_AUTH_003 PASSED: Login correctly failed with incorrect password
+
+15-05-2026T23:20:20 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:20:21 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:20:21 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:21 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:20:22 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:20:22 - [TEST_STEP][PASSED] - loginHelper.login("admin@realestate.com", "WrongPassword123!"): Wait for page load successfully
+
+15-05-2026T23:20:22 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T23:20:22 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T23:20:23 - [MESSAGE][PASSED] - Text 'admin@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:20:23 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T23:20:24 - [MESSAGE][PASSED] - Text 'WrongPassword123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:20:25 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:20:28 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:20:28 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - loginHelper.verifyLoginError("Invalid email or password"): Text of object 'Object Repository/Authentication/LoginPage/errorMessage' is: 'Invalid email or password'
+
+15-05-2026T23:20:28 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/errorMessage' is present
+
+15-05-2026T23:20:28 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/errorMessage' is: 'Invalid email or password'
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - comment("✅ TC_AUTH_003 PASSED: Login correctly failed with incorrect password"): ✅ TC_AUTH_003 PASSED: Login correctly failed with incorrect password
+
+15-05-2026T23:20:28 - [MESSAGE][INFO] - ✅ TC_AUTH_003 PASSED: Login correctly failed with incorrect password
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:20:28 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:29 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Login/TC_AUTH_004_Login_Empty_Fields" time="13.814" classname="Test Cases/Authentication/Login/TC_AUTH_004_Login_Empty_Fields" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:20:29 - [TEST_CASE][PASSED] - Test Cases/Authentication/Login/TC_AUTH_004_Login_Empty_Fields: Test Cases/Authentication/Login/TC_AUTH_004_Login_Empty_Fields
+
+15-05-2026T23:20:29 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:20:29 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:20:29 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:20:30 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:20:30 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T23:20:30 - [TEST_STEP][PASSED] - try: ✅ TC_AUTH_004 PASSED: Login correctly prevented with empty fields
+
+15-05-2026T23:20:30 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:20:31 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:20:31 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:31 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:20:31 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:20:31 - [TEST_STEP][PASSED] - loginHelper.login("", ""): Wait for page load successfully
+
+15-05-2026T23:20:31 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T23:20:32 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T23:20:32 - [MESSAGE][PASSED] - Text '' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:20:33 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T23:20:34 - [MESSAGE][PASSED] - Text '' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:20:34 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:20:37 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:20:37 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:37 - [TEST_STEP][WARNING] - errorDisplayed = verifyElementPresent(findTestObject("Object Repository/Authentication/LoginPage/errorMessage"), 5, OPTIONAL): com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/Authentication/LoginPage/errorMessage' located by 'By.xpath: //div[contains(@class, 'bg-red-500') or contains(@class, 'text-red') or contains(@class, 'error')]' not found (Root cause: com.kms.katalon.core.exception.StepFailedException: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/Authentication/LoginPage/errorMessage' located by 'By.xpath: //div[contains(@class, 'bg-red-500') or contains(@class, 'text-red') or contains(@class, 'error')]' not found
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.stepFailed(WebUIKeywordMain.groovy:177)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword$_verifyElementPresent_closure1.doCall(VerifyElementPresentKeyword.groovy:88)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword$_verifyElementPresent_closure1.call(VerifyElementPresentKeyword.groovy)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:41)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword.verifyElementPresent(VerifyElementPresentKeyword.groovy:95)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword.execute(VerifyElementPresentKeyword.groovy:68)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:90)
+	at com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.verifyElementPresent(WebUiBuiltInKeywords.groovy:1549)
+	at Script.run(Script.groovy:14)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778876352797.run(TempTestSuite1778876352797.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+)
+
+15-05-2026T23:20:42 - [MESSAGE][WARNING] - com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/Authentication/LoginPage/errorMessage' located by 'By.xpath: //div[contains(@class, 'bg-red-500') or contains(@class, 'text-red') or contains(@class, 'error')]' not found (Root cause: com.kms.katalon.core.exception.StepFailedException: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/Authentication/LoginPage/errorMessage' located by 'By.xpath: //div[contains(@class, 'bg-red-500') or contains(@class, 'text-red') or contains(@class, 'error')]' not found
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.stepFailed(WebUIKeywordMain.groovy:177)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword$_verifyElementPresent_closure1.doCall(VerifyElementPresentKeyword.groovy:88)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword$_verifyElementPresent_closure1.call(VerifyElementPresentKeyword.groovy)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:41)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword.verifyElementPresent(VerifyElementPresentKeyword.groovy:95)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword.execute(VerifyElementPresentKeyword.groovy:68)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:90)
+	at com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.verifyElementPresent(WebUiBuiltInKeywords.groovy:1549)
+	at Script.run(Script.groovy:14)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778876352797.run(TempTestSuite1778876352797.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+)
+
+15-05-2026T23:20:42 - [TEST_STEP][PASSED] - currentUrl = getUrl(): Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T23:20:42 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T23:20:42 - [TEST_STEP][PASSED] - assert currentUrl.contains("/login"): null
+
+15-05-2026T23:20:42 - [TEST_STEP][PASSED] - comment("✅ TC_AUTH_004 PASSED: Login correctly prevented with empty fields"): ✅ TC_AUTH_004 PASSED: Login correctly prevented with empty fields
+
+15-05-2026T23:20:42 - [MESSAGE][INFO] - ✅ TC_AUTH_004 PASSED: Login correctly prevented with empty fields
+
+15-05-2026T23:20:42 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:20:42 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:43 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Login/TC_AUTH_006_Login_Invalid_Email_Format" time="10.064" classname="Test Cases/Authentication/Login/TC_AUTH_006_Login_Invalid_Email_Format" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:20:43 - [TEST_CASE][PASSED] - Test Cases/Authentication/Login/TC_AUTH_006_Login_Invalid_Email_Format: Test Cases/Authentication/Login/TC_AUTH_006_Login_Invalid_Email_Format
+
+15-05-2026T23:20:43 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:20:43 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:20:43 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:20:44 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:20:44 - [TEST_STEP][PASSED] - maximizeWindow(): Current window maximized
+
+15-05-2026T23:20:44 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T23:20:44 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T23:20:44 - [TEST_STEP][PASSED] - try: null
+
+15-05-2026T23:20:44 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:20:45 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:20:45 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:45 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:20:45 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:20:45 - [TEST_STEP][PASSED] - loginHelper.login("notanemail", "Password123!"): Wait for page load successfully
+
+15-05-2026T23:20:45 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T23:20:46 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T23:20:46 - [MESSAGE][PASSED] - Text 'notanemail' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:20:47 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T23:20:48 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:20:48 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:20:51 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:20:51 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:51 - [TEST_STEP][PASSED] - loginHelper.verifyEmailValidationMessage("include an '@'"): Execute JavaScript 'return document.querySelector('input[type="email"]').validationMessage;' successfully
+
+15-05-2026T23:20:51 - [MESSAGE][PASSED] - Execute JavaScript 'return document.querySelector('input[type="email"]').validationMessage;' successfully
+
+15-05-2026T23:20:51 - [TEST_STEP][PASSED] - println("✓ TC_AUTH_006 PASSED: Invalid email format rejected by HTML5 validation"): null
+
+15-05-2026T23:20:51 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:20:51 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:53 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Login/TC_AUTH_009_Login_Page_Elements" time="5.166" classname="Test Cases/Authentication/Login/TC_AUTH_009_Login_Page_Elements" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:20:53 - [TEST_CASE][PASSED] - Test Cases/Authentication/Login/TC_AUTH_009_Login_Page_Elements: Test Cases/Authentication/Login/TC_AUTH_009_Login_Page_Elements
+
+15-05-2026T23:20:53 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:20:53 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:20:53 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:20:54 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:20:54 - [TEST_STEP][PASSED] - maximizeWindow(): Current window maximized
+
+15-05-2026T23:20:54 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T23:20:54 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T23:20:54 - [TEST_STEP][PASSED] - try: null
+
+15-05-2026T23:20:54 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:20:55 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:20:55 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:20:55 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:20:55 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:20:55 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Authentication/LoginPage/pageTitle"), 10): Object 'Object Repository/Authentication/LoginPage/pageTitle' is present
+
+15-05-2026T23:20:56 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/pageTitle' is present
+
+15-05-2026T23:20:56 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Authentication/LoginPage/emailLabel"), 10): Object 'Object Repository/Authentication/LoginPage/emailLabel' is present
+
+15-05-2026T23:20:56 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailLabel' is present
+
+15-05-2026T23:20:56 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Authentication/LoginPage/passwordLabel"), 10): Object 'Object Repository/Authentication/LoginPage/passwordLabel' is present
+
+15-05-2026T23:20:56 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordLabel' is present
+
+15-05-2026T23:20:56 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Authentication/LoginPage/emailInput"), 10): Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:20:56 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:20:56 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Authentication/LoginPage/passwordInput"), 10): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:20:57 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:20:57 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Authentication/LoginPage/loginButton"), 10): Object 'Object Repository/Authentication/LoginPage/loginButton' is present
+
+15-05-2026T23:20:57 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/loginButton' is present
+
+15-05-2026T23:20:57 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Authentication/LoginPage/forgotPasswordLink"), 10): Object 'Object Repository/Authentication/LoginPage/forgotPasswordLink' is present
+
+15-05-2026T23:20:57 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/forgotPasswordLink' is present
+
+15-05-2026T23:20:57 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Authentication/LoginPage/signUpLink"), 10): Object 'Object Repository/Authentication/LoginPage/signUpLink' is present
+
+15-05-2026T23:20:57 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/signUpLink' is present
+
+15-05-2026T23:20:57 - [TEST_STEP][PASSED] - println("✓ TC_AUTH_024 PASSED: All Login page elements present"): null
+
+15-05-2026T23:20:57 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:20:57 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:20:58 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Login/TC_AUTH_010_Login_Password_Masking" time="3.101" classname="Test Cases/Authentication/Login/TC_AUTH_010_Login_Password_Masking" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:20:58 - [TEST_CASE][PASSED] - Test Cases/Authentication/Login/TC_AUTH_010_Login_Password_Masking: Test Cases/Authentication/Login/TC_AUTH_010_Login_Password_Masking
+
+15-05-2026T23:20:58 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:20:58 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:20:58 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:20:59 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:20:59 - [TEST_STEP][PASSED] - maximizeWindow(): Current window maximized
+
+15-05-2026T23:20:59 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T23:20:59 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T23:20:59 - [TEST_STEP][PASSED] - try: null
+
+15-05-2026T23:20:59 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:21:00 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:21:00 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:00 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:21:01 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:21:01 - [TEST_STEP][PASSED] - passwordType = getAttribute(findTestObject("Authentication/LoginPage/passwordInput"), "type"): Attribute 'type' of object 'Object Repository/Authentication/LoginPage/passwordInput' is: 'password'
+
+15-05-2026T23:21:01 - [MESSAGE][PASSED] - Attribute 'type' of object 'Object Repository/Authentication/LoginPage/passwordInput' is: 'password'
+
+15-05-2026T23:21:01 - [TEST_STEP][PASSED] - assert passwordType == "password": null
+
+15-05-2026T23:21:01 - [TEST_STEP][PASSED] - println("✓ TC_AUTH_026 PASSED: Login password field is properly masked"): null
+
+15-05-2026T23:21:01 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:21:01 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:21:01 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Login/TC_AUTH_014_Logout_Functionality" time="16.563" classname="Test Cases/Authentication/Login/TC_AUTH_014_Logout_Functionality" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:21:01 - [TEST_CASE][PASSED] - Test Cases/Authentication/Login/TC_AUTH_014_Logout_Functionality: Test Cases/Authentication/Login/TC_AUTH_014_Logout_Functionality
+
+15-05-2026T23:21:01 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:21:01 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:21:01 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:21:02 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:21:02 - [TEST_STEP][PASSED] - maximizeWindow(): Current window maximized
+
+15-05-2026T23:21:02 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T23:21:02 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+15-05-2026T23:21:02 - [TEST_STEP][PASSED] - try: null
+
+15-05-2026T23:21:02 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:21:03 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+15-05-2026T23:21:03 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:03 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+15-05-2026T23:21:03 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+15-05-2026T23:21:03 - [TEST_STEP][PASSED] - loginHelper.login("user1@realestate.com", "Password123!"): Wait for page load successfully
+
+15-05-2026T23:21:03 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T23:21:04 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+15-05-2026T23:21:05 - [MESSAGE][PASSED] - Text 'user1@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+15-05-2026T23:21:05 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+15-05-2026T23:21:05 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+15-05-2026T23:21:06 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+15-05-2026T23:21:09 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:21:09 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:09 - [TEST_STEP][PASSED] - loginHelper.verifyLoginSuccess(): Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T23:21:09 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:11 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:11 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T23:21:11 - [TEST_STEP][PASSED] - println("✓ Login successful"): null
+
+15-05-2026T23:21:11 - [TEST_STEP][PASSED] - loginHelper.logout(): Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T23:21:11 - [MESSAGE][PASSED] - Object: 'Object Repository/Common/Navbar/userMenuButton' is clicked on
+
+15-05-2026T23:21:12 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+15-05-2026T23:21:13 - [MESSAGE][PASSED] - Object: 'Object Repository/Common/Navbar/signOutButton' is clicked on
+
+15-05-2026T23:21:15 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:15 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:15 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T23:21:15 - [TEST_STEP][PASSED] - println("✓ Logout successful - redirected to login page"): null
+
+15-05-2026T23:21:15 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:5173/profile"): Navigate to 'http://localhost:5173/profile' successfully
+
+15-05-2026T23:21:15 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/profile' successfully
+
+15-05-2026T23:21:15 - [TEST_STEP][PASSED] - waitForPageLoad(10): Wait for page load successfully
+
+15-05-2026T23:21:15 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:15 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+15-05-2026T23:21:17 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:21:17 - [TEST_STEP][PASSED] - currentUrl = getUrl(): Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T23:21:17 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+15-05-2026T23:21:17 - [TEST_STEP][PASSED] - assert currentUrl.contains("/login"): null
+
+15-05-2026T23:21:17 - [TEST_STEP][PASSED] - println("✓ TC_AUTH_035 PASSED: Logout cleared session successfully"): null
+
+15-05-2026T23:21:17 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:21:17 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:21:18 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Register/TC_AUTH_016_Register_Valid_User" time="16.648" classname="Test Cases/Authentication/Register/TC_AUTH_016_Register_Valid_User" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:21:18 - [TEST_CASE][PASSED] - Test Cases/Authentication/Register/TC_AUTH_016_Register_Valid_User: Test Cases/Authentication/Register/TC_AUTH_016_Register_Valid_User
+
+15-05-2026T23:21:18 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:21:18 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:21:18 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:21:19 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:21:19 - [TEST_STEP][PASSED] - registerHelper = new authentication.Register_Keywords(): null
+
+15-05-2026T23:21:19 - [TEST_STEP][PASSED] - try: ✅ TC_AUTH_006 PASSED: User registered successfully with email: newuser1778876479384@test.com
+
+15-05-2026T23:21:19 - [TEST_STEP][PASSED] - uniqueEmail = registerHelper.generateUniqueEmail("newuser"): null
+
+15-05-2026T23:21:19 - [TEST_STEP][PASSED] - registerHelper.registerAsUser("John", "Doe", uniqueEmail, "Password123!"): Wait for page load successfully
+
+15-05-2026T23:21:19 - [MESSAGE][PASSED] - Current window's url is: 'about:blank'
+
+15-05-2026T23:21:20 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/register' successfully
+
+15-05-2026T23:21:20 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:20 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/RegisterPage/firstNameInput' is present
+
+15-05-2026T23:21:20 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/RegisterPage/registerButton' is present
+
+15-05-2026T23:21:21 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/firstNameInput' is cleared
+
+15-05-2026T23:21:21 - [MESSAGE][PASSED] - Text 'John' is set on object 'Object Repository/Authentication/RegisterPage/firstNameInput'
+
+15-05-2026T23:21:22 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/lastNameInput' is cleared
+
+15-05-2026T23:21:22 - [MESSAGE][PASSED] - Text 'Doe' is set on object 'Object Repository/Authentication/RegisterPage/lastNameInput'
+
+15-05-2026T23:21:23 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/emailInput' is cleared
+
+15-05-2026T23:21:24 - [MESSAGE][PASSED] - Text 'newuser1778876479384@test.com' is set on object 'Object Repository/Authentication/RegisterPage/emailInput'
+
+15-05-2026T23:21:24 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/passwordInput' is cleared
+
+15-05-2026T23:21:25 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/RegisterPage/passwordInput'
+
+15-05-2026T23:21:25 - [MESSAGE][PASSED] - All options with value 'user' are selected in object 'Object Repository/Authentication/RegisterPage/roleSelect' 
+
+15-05-2026T23:21:26 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/RegisterPage/registerButton' is clicked on
+
+15-05-2026T23:21:31 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+15-05-2026T23:21:31 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:31 - [TEST_STEP][PASSED] - registerHelper.verifyRegistrationSuccess(): Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T23:21:31 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:34 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:21:34 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T23:21:34 - [TEST_STEP][PASSED] - comment(✅ TC_AUTH_006 PASSED: User registered successfully with email: $uniqueEmail): ✅ TC_AUTH_006 PASSED: User registered successfully with email: newuser1778876479384@test.com
+
+15-05-2026T23:21:34 - [MESSAGE][INFO] - ✅ TC_AUTH_006 PASSED: User registered successfully with email: newuser1778876479384@test.com
+
+15-05-2026T23:21:34 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:21:34 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:21:34 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Register/TC_AUTH_017_Register_Valid_Developer" time="13.423" classname="Test Cases/Authentication/Register/TC_AUTH_017_Register_Valid_Developer" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:21:34 - [TEST_CASE][PASSED] - Test Cases/Authentication/Register/TC_AUTH_017_Register_Valid_Developer: Test Cases/Authentication/Register/TC_AUTH_017_Register_Valid_Developer
+
+15-05-2026T23:21:34 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:21:34 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:21:34 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:21:35 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:21:35 - [TEST_STEP][PASSED] - registerHelper = new authentication.Register_Keywords(): null
+
+15-05-2026T23:21:35 - [TEST_STEP][PASSED] - try: ✅ TC_AUTH_008 PASSED: Registration correctly prevented duplicate email
+
+15-05-2026T23:21:35 - [TEST_STEP][PASSED] - registerHelper.register("Test", "User", "admin@realestate.com", "Password123!", "user"): Wait for page load successfully
+
+15-05-2026T23:21:35 - [MESSAGE][PASSED] - Current window's url is: 'about:blank'
+
+15-05-2026T23:21:36 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/register' successfully
+
+15-05-2026T23:21:36 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:36 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/RegisterPage/firstNameInput' is present
+
+15-05-2026T23:21:37 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/RegisterPage/registerButton' is present
+
+15-05-2026T23:21:37 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/firstNameInput' is cleared
+
+15-05-2026T23:21:38 - [MESSAGE][PASSED] - Text 'Test' is set on object 'Object Repository/Authentication/RegisterPage/firstNameInput'
+
+15-05-2026T23:21:38 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/lastNameInput' is cleared
+
+15-05-2026T23:21:39 - [MESSAGE][PASSED] - Text 'User' is set on object 'Object Repository/Authentication/RegisterPage/lastNameInput'
+
+15-05-2026T23:21:39 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/emailInput' is cleared
+
+15-05-2026T23:21:40 - [MESSAGE][PASSED] - Text 'admin@realestate.com' is set on object 'Object Repository/Authentication/RegisterPage/emailInput'
+
+15-05-2026T23:21:40 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/passwordInput' is cleared
+
+15-05-2026T23:21:41 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/RegisterPage/passwordInput'
+
+15-05-2026T23:21:41 - [MESSAGE][PASSED] - All options with value 'user' are selected in object 'Object Repository/Authentication/RegisterPage/roleSelect' 
+
+15-05-2026T23:21:42 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/RegisterPage/registerButton' is clicked on
+
+15-05-2026T23:21:47 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+15-05-2026T23:21:47 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:47 - [TEST_STEP][PASSED] - registerHelper.verifyRegistrationError("already exists"): Text of object 'Object Repository/Authentication/RegisterPage/errorMessage' is: 'User already exists with this email'
+
+15-05-2026T23:21:47 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/RegisterPage/errorMessage' is present
+
+15-05-2026T23:21:47 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/errorMessage' is: 'User already exists with this email'
+
+15-05-2026T23:21:47 - [TEST_STEP][PASSED] - comment("✅ TC_AUTH_008 PASSED: Registration correctly prevented duplicate email"): ✅ TC_AUTH_008 PASSED: Registration correctly prevented duplicate email
+
+15-05-2026T23:21:47 - [MESSAGE][INFO] - ✅ TC_AUTH_008 PASSED: Registration correctly prevented duplicate email
+
+15-05-2026T23:21:47 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:21:47 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:21:48 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Register/TC_AUTH_018_Register_Duplicate_Email" time="28.696" classname="Test Cases/Authentication/Register/TC_AUTH_018_Register_Duplicate_Email" status="PASSED">
+         <system-out><![CDATA[15-05-2026T23:21:48 - [TEST_CASE][PASSED] - Test Cases/Authentication/Register/TC_AUTH_018_Register_Duplicate_Email: Test Cases/Authentication/Register/TC_AUTH_018_Register_Duplicate_Email
+
+15-05-2026T23:21:48 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:21:48 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:21:48 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:21:49 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:21:49 - [TEST_STEP][PASSED] - registerHelper = new authentication.Register_Keywords(): null
+
+15-05-2026T23:21:49 - [TEST_STEP][PASSED] - try: ✅ TC_AUTH_018 PASSED: Duplicate email correctly prevented
+
+15-05-2026T23:21:49 - [TEST_STEP][PASSED] - uniqueEmail = registerHelper.generateUniqueEmail("duplicate"): null
+
+15-05-2026T23:21:49 - [TEST_STEP][PASSED] - registerHelper.registerAsUser("John", "Doe", uniqueEmail, "Password123!"): Wait for page load successfully
+
+15-05-2026T23:21:49 - [MESSAGE][PASSED] - Current window's url is: 'about:blank'
+
+15-05-2026T23:21:49 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/register' successfully
+
+15-05-2026T23:21:49 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:21:50 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/RegisterPage/firstNameInput' is present
+
+15-05-2026T23:21:50 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/RegisterPage/registerButton' is present
+
+15-05-2026T23:21:50 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/firstNameInput' is cleared
+
+15-05-2026T23:21:51 - [MESSAGE][PASSED] - Text 'John' is set on object 'Object Repository/Authentication/RegisterPage/firstNameInput'
+
+15-05-2026T23:21:51 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/lastNameInput' is cleared
+
+15-05-2026T23:21:52 - [MESSAGE][PASSED] - Text 'Doe' is set on object 'Object Repository/Authentication/RegisterPage/lastNameInput'
+
+15-05-2026T23:21:52 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/emailInput' is cleared
+
+15-05-2026T23:21:53 - [MESSAGE][PASSED] - Text 'duplicate1778876509018@test.com' is set on object 'Object Repository/Authentication/RegisterPage/emailInput'
+
+15-05-2026T23:21:53 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/passwordInput' is cleared
+
+15-05-2026T23:21:54 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/RegisterPage/passwordInput'
+
+15-05-2026T23:21:55 - [MESSAGE][PASSED] - All options with value 'user' are selected in object 'Object Repository/Authentication/RegisterPage/roleSelect' 
+
+15-05-2026T23:21:55 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/RegisterPage/registerButton' is clicked on
+
+15-05-2026T23:22:00 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+15-05-2026T23:22:00 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:22:00 - [TEST_STEP][PASSED] - registerHelper.verifyRegistrationSuccess(): Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T23:22:00 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:22:03 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:22:03 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/'
+
+15-05-2026T23:22:03 - [TEST_STEP][PASSED] - registerHelper.navigateToRegister(): Object 'Object Repository/Authentication/RegisterPage/registerButton' is present
+
+15-05-2026T23:22:03 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/register' successfully
+
+15-05-2026T23:22:04 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:22:04 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/RegisterPage/firstNameInput' is present
+
+15-05-2026T23:22:05 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/RegisterPage/registerButton' is present
+
+15-05-2026T23:22:05 - [TEST_STEP][PASSED] - registerHelper.registerAsUser("Jane", "Smith", uniqueEmail, "Password123!"): Wait for page load successfully
+
+15-05-2026T23:22:05 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/register'
+
+15-05-2026T23:22:05 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/firstNameInput' is cleared
+
+15-05-2026T23:22:06 - [MESSAGE][PASSED] - Text 'Jane' is set on object 'Object Repository/Authentication/RegisterPage/firstNameInput'
+
+15-05-2026T23:22:06 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/lastNameInput' is cleared
+
+15-05-2026T23:22:07 - [MESSAGE][PASSED] - Text 'Smith' is set on object 'Object Repository/Authentication/RegisterPage/lastNameInput'
+
+15-05-2026T23:22:07 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/emailInput' is cleared
+
+15-05-2026T23:22:08 - [MESSAGE][PASSED] - Text 'duplicate1778876509018@test.com' is set on object 'Object Repository/Authentication/RegisterPage/emailInput'
+
+15-05-2026T23:22:08 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/passwordInput' is cleared
+
+15-05-2026T23:22:09 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/RegisterPage/passwordInput'
+
+15-05-2026T23:22:10 - [MESSAGE][PASSED] - All options with value 'user' are selected in object 'Object Repository/Authentication/RegisterPage/roleSelect' 
+
+15-05-2026T23:22:10 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/RegisterPage/registerButton' is clicked on
+
+15-05-2026T23:22:15 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+15-05-2026T23:22:15 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:22:15 - [TEST_STEP][PASSED] - registerHelper.verifyRegistrationError("already exists"): Text of object 'Object Repository/Authentication/RegisterPage/errorMessage' is: 'User already exists with this email'
+
+15-05-2026T23:22:16 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/RegisterPage/errorMessage' is present
+
+15-05-2026T23:22:16 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/RegisterPage/errorMessage' is: 'User already exists with this email'
+
+15-05-2026T23:22:16 - [TEST_STEP][PASSED] - comment("✅ TC_AUTH_018 PASSED: Duplicate email correctly prevented"): ✅ TC_AUTH_018 PASSED: Duplicate email correctly prevented
+
+15-05-2026T23:22:16 - [MESSAGE][INFO] - ✅ TC_AUTH_018 PASSED: Duplicate email correctly prevented
+
+15-05-2026T23:22:16 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:22:16 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:22:16 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/ForgotPassword/TC_AUTH_028_ForgotPassword_Valid_Email" time="20.749" classname="Test Cases/Authentication/ForgotPassword/TC_AUTH_028_ForgotPassword_Valid_Email" status="FAILED">
+         <failure type="FAILED" message="Test Cases/Authentication/ForgotPassword/TC_AUTH_028_ForgotPassword_Valid_Email FAILED.&#xa;Reason:&#xa;com.kms.katalon.core.exception.StepFailedException: Unable to get text of object 'Object Repository/Authentication/ForgotPasswordPage/successMessage'&#xa;	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.stepFailed(WebUIKeywordMain.groovy:177)&#xa;	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:49)&#xa;	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeywordUntilTimeout(WebUIKeywordMain.groovy:133)&#xa;	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword.getText(GetTextKeyword.groovy:92)&#xa;	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword.execute(GetTextKeyword.groovy:67)&#xa;	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:90)&#xa;	at com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getText(WebUiBuiltInKeywords.groovy:1019)&#xa;	at authentication.ForgotPassword_Keywords.verifyResetLinkSent(ForgotPassword_Keywords.groovy:77)&#xa;	at Script.run(Script.groovy:16)&#xa;	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xa;	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)&#xa;	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)&#xa;	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)&#xa;	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)&#xa;	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)&#xa;	at TempTestSuite1778876352797.run(TempTestSuite1778876352797.groovy:35)&#xa;	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#xa;	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)&#xa;	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#xa;Caused by: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/Authentication/ForgotPasswordPage/successMessage' located by 'By.xpath: //div[contains(@class, 'bg-green-500') or contains(@class, 'text-green') or contains(@class, 'success')]' not found&#xa;	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementByNormalMethods(WebUiElementFinder.java:193)&#xa;	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:91)&#xa;	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:74)&#xa;	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:69)&#xa;	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElement(WebUiElementFinder.java:43)&#xa;	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.basicFindElement(WebUiElementFinderWithTimeout.java:50)&#xa;	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.lambda$0(WebUiElementFinderWithTimeout.java:29)&#xa;	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:96)&#xa;	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:83)&#xa;	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.findElement(WebUiElementFinderWithTimeout.java:28)&#xa;	at com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword.findWebElement(WebUIAbstractKeyword.groovy:96)&#xa;	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword$_getText_closure1.doCall(GetTextKeyword.groovy:82)&#xa;	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#xa;	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)&#xa;	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#xa;	at jdk.proxy2/jdk.proxy2.$Proxy50.execute(Unknown Source)&#xa;	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:96)&#xa;	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:83)&#xa;	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain$_runKeywordUntilTimeout_closure1.doCall(WebUIKeywordMain.groovy:135)&#xa;	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain$_runKeywordUntilTimeout_closure1.call(WebUIKeywordMain.groovy)&#xa;	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:41)&#xa;	... 22 more&#xa;"/>
+         <system-out><![CDATA[15-05-2026T23:22:16 - [TEST_CASE][FAILED] - Test Cases/Authentication/ForgotPassword/TC_AUTH_028_ForgotPassword_Valid_Email: Test Cases/Authentication/ForgotPassword/TC_AUTH_028_ForgotPassword_Valid_Email FAILED.
+Reason:
+com.kms.katalon.core.exception.StepFailedException: Unable to get text of object 'Object Repository/Authentication/ForgotPasswordPage/successMessage'
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.stepFailed(WebUIKeywordMain.groovy:177)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:49)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeywordUntilTimeout(WebUIKeywordMain.groovy:133)
+	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword.getText(GetTextKeyword.groovy:92)
+	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword.execute(GetTextKeyword.groovy:67)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:90)
+	at com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getText(WebUiBuiltInKeywords.groovy:1019)
+	at authentication.ForgotPassword_Keywords.verifyResetLinkSent(ForgotPassword_Keywords.groovy:77)
+	at Script.run(Script.groovy:16)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778876352797.run(TempTestSuite1778876352797.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+Caused by: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/Authentication/ForgotPasswordPage/successMessage' located by 'By.xpath: //div[contains(@class, 'bg-green-500') or contains(@class, 'text-green') or contains(@class, 'success')]' not found
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementByNormalMethods(WebUiElementFinder.java:193)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:91)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:74)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:69)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElement(WebUiElementFinder.java:43)
+	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.basicFindElement(WebUiElementFinderWithTimeout.java:50)
+	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.lambda$0(WebUiElementFinderWithTimeout.java:29)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:96)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:83)
+	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.findElement(WebUiElementFinderWithTimeout.java:28)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword.findWebElement(WebUIAbstractKeyword.groovy:96)
+	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword$_getText_closure1.doCall(GetTextKeyword.groovy:82)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at jdk.proxy2/jdk.proxy2.$Proxy50.execute(Unknown Source)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:96)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:83)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain$_runKeywordUntilTimeout_closure1.doCall(WebUIKeywordMain.groovy:135)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain$_runKeywordUntilTimeout_closure1.call(WebUIKeywordMain.groovy)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:41)
+	... 22 more
+
+
+15-05-2026T23:22:16 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:22:16 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:22:16 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:22:17 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:22:17 - [TEST_STEP][PASSED] - forgotPasswordHelper = new authentication.ForgotPassword_Keywords(): null
+
+15-05-2026T23:22:17 - [TEST_STEP][FAILED] - try: Unable to get text of object 'Object Repository/Authentication/ForgotPasswordPage/successMessage' (Root cause: com.kms.katalon.core.exception.StepFailedException: Unable to get text of object 'Object Repository/Authentication/ForgotPasswordPage/successMessage'
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.stepFailed(WebUIKeywordMain.groovy:177)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:49)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeywordUntilTimeout(WebUIKeywordMain.groovy:133)
+	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword.getText(GetTextKeyword.groovy:92)
+	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword.execute(GetTextKeyword.groovy:67)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:90)
+	at com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getText(WebUiBuiltInKeywords.groovy:1019)
+	at authentication.ForgotPassword_Keywords.verifyResetLinkSent(ForgotPassword_Keywords.groovy:77)
+	at Script.run(Script.groovy:16)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778876352797.run(TempTestSuite1778876352797.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+Caused by: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/Authentication/ForgotPasswordPage/successMessage' located by 'By.xpath: //div[contains(@class, 'bg-green-500') or contains(@class, 'text-green') or contains(@class, 'success')]' not found
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementByNormalMethods(WebUiElementFinder.java:193)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:91)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:74)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:69)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElement(WebUiElementFinder.java:43)
+	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.basicFindElement(WebUiElementFinderWithTimeout.java:50)
+	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.lambda$0(WebUiElementFinderWithTimeout.java:29)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:96)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:83)
+	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.findElement(WebUiElementFinderWithTimeout.java:28)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword.findWebElement(WebUIAbstractKeyword.groovy:96)
+	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword$_getText_closure1.doCall(GetTextKeyword.groovy:82)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at jdk.proxy2/jdk.proxy2.$Proxy50.execute(Unknown Source)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:96)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:83)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain$_runKeywordUntilTimeout_closure1.doCall(WebUIKeywordMain.groovy:135)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain$_runKeywordUntilTimeout_closure1.call(WebUIKeywordMain.groovy)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:41)
+	... 22 more
+)
+
+15-05-2026T23:22:17 - [TEST_STEP][PASSED] - forgotPasswordHelper.navigateToForgotPassword(): Object 'Object Repository/Authentication/ForgotPasswordPage/submitButton' is present
+
+15-05-2026T23:22:18 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/forget-password' successfully
+
+15-05-2026T23:22:18 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:22:18 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/ForgotPasswordPage/emailInput' is present
+
+15-05-2026T23:22:19 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/ForgotPasswordPage/submitButton' is present
+
+15-05-2026T23:22:19 - [TEST_STEP][PASSED] - forgotPasswordHelper.submitForgotPassword("admin@realestate.com"): Delayed 3 second(s)
+
+15-05-2026T23:22:19 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/forget-password'
+
+15-05-2026T23:22:19 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/ForgotPasswordPage/emailInput' is cleared
+
+15-05-2026T23:22:20 - [MESSAGE][PASSED] - Text 'admin@realestate.com' is set on object 'Object Repository/Authentication/ForgotPasswordPage/emailInput'
+
+15-05-2026T23:22:20 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/ForgotPasswordPage/submitButton' is clicked on
+
+15-05-2026T23:22:23 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+15-05-2026T23:22:23 - [TEST_STEP][FAILED] - forgotPasswordHelper.verifyResetLinkSent(): Unable to get text of object 'Object Repository/Authentication/ForgotPasswordPage/successMessage' (Root cause: com.kms.katalon.core.exception.StepFailedException: Unable to get text of object 'Object Repository/Authentication/ForgotPasswordPage/successMessage'
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.stepFailed(WebUIKeywordMain.groovy:177)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:49)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeywordUntilTimeout(WebUIKeywordMain.groovy:133)
+	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword.getText(GetTextKeyword.groovy:92)
+	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword.execute(GetTextKeyword.groovy:67)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:90)
+	at com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getText(WebUiBuiltInKeywords.groovy:1019)
+	at authentication.ForgotPassword_Keywords.verifyResetLinkSent(ForgotPassword_Keywords.groovy:77)
+	at Script.run(Script.groovy:16)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778876352797.run(TempTestSuite1778876352797.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+Caused by: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/Authentication/ForgotPasswordPage/successMessage' located by 'By.xpath: //div[contains(@class, 'bg-green-500') or contains(@class, 'text-green') or contains(@class, 'success')]' not found
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementByNormalMethods(WebUiElementFinder.java:193)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:91)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:74)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:69)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElement(WebUiElementFinder.java:43)
+	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.basicFindElement(WebUiElementFinderWithTimeout.java:50)
+	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.lambda$0(WebUiElementFinderWithTimeout.java:29)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:96)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:83)
+	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.findElement(WebUiElementFinderWithTimeout.java:28)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword.findWebElement(WebUIAbstractKeyword.groovy:96)
+	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword$_getText_closure1.doCall(GetTextKeyword.groovy:82)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at jdk.proxy2/jdk.proxy2.$Proxy50.execute(Unknown Source)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:96)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:83)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain$_runKeywordUntilTimeout_closure1.doCall(WebUIKeywordMain.groovy:135)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain$_runKeywordUntilTimeout_closure1.call(WebUIKeywordMain.groovy)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:41)
+	... 22 more
+)
+
+15-05-2026T23:22:33 - [MESSAGE][WARNING] - Object 'Object Repository/Authentication/ForgotPasswordPage/successMessage' is not present after 10 second(s)
+
+15-05-2026T23:22:37 - [MESSAGE][FAILED] - Unable to get text of object 'Object Repository/Authentication/ForgotPasswordPage/successMessage' (Root cause: com.kms.katalon.core.exception.StepFailedException: Unable to get text of object 'Object Repository/Authentication/ForgotPasswordPage/successMessage'
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.stepFailed(WebUIKeywordMain.groovy:177)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:49)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeywordUntilTimeout(WebUIKeywordMain.groovy:133)
+	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword.getText(GetTextKeyword.groovy:92)
+	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword.execute(GetTextKeyword.groovy:67)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:90)
+	at com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getText(WebUiBuiltInKeywords.groovy:1019)
+	at authentication.ForgotPassword_Keywords.verifyResetLinkSent(ForgotPassword_Keywords.groovy:77)
+	at Script.run(Script.groovy:16)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778876352797.run(TempTestSuite1778876352797.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+Caused by: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/Authentication/ForgotPasswordPage/successMessage' located by 'By.xpath: //div[contains(@class, 'bg-green-500') or contains(@class, 'text-green') or contains(@class, 'success')]' not found
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementByNormalMethods(WebUiElementFinder.java:193)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:91)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:74)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:69)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElement(WebUiElementFinder.java:43)
+	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.basicFindElement(WebUiElementFinderWithTimeout.java:50)
+	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.lambda$0(WebUiElementFinderWithTimeout.java:29)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:96)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:83)
+	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.findElement(WebUiElementFinderWithTimeout.java:28)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword.findWebElement(WebUIAbstractKeyword.groovy:96)
+	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword$_getText_closure1.doCall(GetTextKeyword.groovy:82)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at jdk.proxy2/jdk.proxy2.$Proxy50.execute(Unknown Source)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:96)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:83)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain$_runKeywordUntilTimeout_closure1.doCall(WebUIKeywordMain.groovy:135)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain$_runKeywordUntilTimeout_closure1.call(WebUIKeywordMain.groovy)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:41)
+	... 22 more
+)
+[[ATTACHMENT|D:\\Uni\\Semester 7\\Service-Oriented Computing\\Project\\Real-Estate-Microservices\\Katalon\\Reports\\20260515_231854\\TS_Authentication_Smoke\\20260515_231912\\1778876557208.png]]
+
+15-05-2026T23:22:37 - [TEST_STEP][PASSED] - catch (Exception e): null
+
+15-05-2026T23:22:37 - [TEST_STEP][PASSED] - comment("❌ TC_AUTH_011 FAILED: " + e.getMessage()): ❌ TC_AUTH_011 FAILED: Unable to get text of object 'Object Repository/Authentication/ForgotPasswordPage/successMessage'
+
+15-05-2026T23:22:37 - [MESSAGE][INFO] - ❌ TC_AUTH_011 FAILED: Unable to get text of object 'Object Repository/Authentication/ForgotPasswordPage/successMessage'
+
+15-05-2026T23:22:37 - [TEST_STEP][PASSED] - throw e: null
+
+15-05-2026T23:22:37 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+15-05-2026T23:22:37 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+15-05-2026T23:22:37 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[15-05-2026T23:22:16 - [TEST_CASE][FAILED] - Test Cases/Authentication/ForgotPassword/TC_AUTH_028_ForgotPassword_Valid_Email: Test Cases/Authentication/ForgotPassword/TC_AUTH_028_ForgotPassword_Valid_Email FAILED.
+Reason:
+com.kms.katalon.core.exception.StepFailedException: Unable to get text of object 'Object Repository/Authentication/ForgotPasswordPage/successMessage'
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.stepFailed(WebUIKeywordMain.groovy:177)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:49)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeywordUntilTimeout(WebUIKeywordMain.groovy:133)
+	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword.getText(GetTextKeyword.groovy:92)
+	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword.execute(GetTextKeyword.groovy:67)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:90)
+	at com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.getText(WebUiBuiltInKeywords.groovy:1019)
+	at authentication.ForgotPassword_Keywords.verifyResetLinkSent(ForgotPassword_Keywords.groovy:77)
+	at Script.run(Script.groovy:16)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778876352797.run(TempTestSuite1778876352797.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+Caused by: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/Authentication/ForgotPasswordPage/successMessage' located by 'By.xpath: //div[contains(@class, 'bg-green-500') or contains(@class, 'text-green') or contains(@class, 'success')]' not found
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementByNormalMethods(WebUiElementFinder.java:193)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:91)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:74)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElementsBySelectedMethod(WebUiElementFinder.java:69)
+	at com.kms.katalon.core.webui.model.WebUiElementFinder.findElement(WebUiElementFinder.java:43)
+	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.basicFindElement(WebUiElementFinderWithTimeout.java:50)
+	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.lambda$0(WebUiElementFinderWithTimeout.java:29)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:96)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:83)
+	at com.kms.katalon.core.webui.model.WebUiElementFinderWithTimeout.findElement(WebUiElementFinderWithTimeout.java:28)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword.findWebElement(WebUIAbstractKeyword.groovy:96)
+	at com.kms.katalon.core.webui.keyword.builtin.GetTextKeyword$_getText_closure1.doCall(GetTextKeyword.groovy:82)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at jdk.proxy2/jdk.proxy2.$Proxy50.execute(Unknown Source)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:96)
+	at com.kms.katalon.core.webui.model.SeleniumActionRetryController.performAction(SeleniumActionRetryController.java:83)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain$_runKeywordUntilTimeout_closure1.doCall(WebUIKeywordMain.groovy:135)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain$_runKeywordUntilTimeout_closure1.call(WebUIKeywordMain.groovy)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:41)
+	... 22 more]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/ResetPassword/TC_AUTH_034_ResetPassword_Invalid_Token" time="13.962" classname="Test Cases/Authentication/ResetPassword/TC_AUTH_034_ResetPassword_Invalid_Token" status="FAILED">
+         <failure type="FAILED" message="Test Cases/Authentication/ResetPassword/TC_AUTH_034_ResetPassword_Invalid_Token FAILED.&#xa;Reason:&#xa;java.lang.AssertionError: Error message should be visible for invalid token. Expression: errorPresent. Values: errorPresent = false&#xa;	at Script.run(Script.groovy:20)&#xa;	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)&#xa;	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)&#xa;	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)&#xa;	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)&#xa;	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)&#xa;	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)&#xa;	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)&#xa;	at TempTestSuite1778876352797.run(TempTestSuite1778876352797.groovy:35)&#xa;	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#xa;	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)&#xa;	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#xa;"/>
+         <system-out><![CDATA[15-05-2026T23:22:37 - [TEST_CASE][FAILED] - Test Cases/Authentication/ResetPassword/TC_AUTH_034_ResetPassword_Invalid_Token: Test Cases/Authentication/ResetPassword/TC_AUTH_034_ResetPassword_Invalid_Token FAILED.
+Reason:
+java.lang.AssertionError: Error message should be visible for invalid token. Expression: errorPresent. Values: errorPresent = false
+	at Script.run(Script.groovy:20)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778876352797.run(TempTestSuite1778876352797.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+15-05-2026T23:22:37 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+15-05-2026T23:22:37 - [MESSAGE][INFO] - Starting 'Edge Chromium' driver
+
+15-05-2026T23:22:37 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+15-05-2026T23:22:38 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+15-05-2026T23:22:38 - [TEST_STEP][PASSED] - maximizeWindow(): Current window maximized
+
+15-05-2026T23:22:38 - [MESSAGE][PASSED] - Current window maximized
+
+15-05-2026T23:22:38 - [TEST_STEP][PASSED] - resetPasswordHelper = new authentication.ResetPassword_Keywords(): null
+
+15-05-2026T23:22:38 - [TEST_STEP][PASSED] - try: null
+
+15-05-2026T23:22:38 - [TEST_STEP][PASSED] - invalidToken = "invalid-fake-token-123456": null
+
+15-05-2026T23:22:38 - [TEST_STEP][PASSED] - resetPasswordHelper.navigateToResetPassword(invalidToken): Wait for page load successfully
+
+15-05-2026T23:22:39 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/reset-password/invalid-fake-token-123456' successfully
+
+15-05-2026T23:22:39 - [MESSAGE][PASSED] - Wait for page load successfully
+
+15-05-2026T23:22:39 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+15-05-2026T23:22:41 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+15-05-2026T23:22:41 - [TEST_STEP][WARNING] - errorPresent = verifyElementPresent(findTestObject("Authentication/ResetPasswordPage/invalidTokenMessage"), 10, OPTIONAL): com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/Authentication/ResetPasswordPage/invalidTokenMessage' located by 'By.xpath: //p[contains(text(), 'Invalid or expired reset link')]' not found (Root cause: com.kms.katalon.core.exception.StepFailedException: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/Authentication/ResetPasswordPage/invalidTokenMessage' located by 'By.xpath: //p[contains(text(), 'Invalid or expired reset link')]' not found
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.stepFailed(WebUIKeywordMain.groovy:177)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword$_verifyElementPresent_closure1.doCall(VerifyElementPresentKeyword.groovy:88)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword$_verifyElementPresent_closure1.call(VerifyElementPresentKeyword.groovy)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:41)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword.verifyElementPresent(VerifyElementPresentKeyword.groovy:95)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword.execute(VerifyElementPresentKeyword.groovy:68)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:90)
+	at com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.verifyElementPresent(WebUiBuiltInKeywords.groovy:1549)
+	at Script.run(Script.groovy:15)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778876352797.run(TempTestSuite1778876352797.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+)
+
+15-05-2026T23:22:51 - [MESSAGE][WARNING] - com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/Authentication/ResetPasswordPage/invalidTokenMessage' located by 'By.xpath: //p[contains(text(), 'Invalid or expired reset link')]' not found (Root cause: com.kms.katalon.core.exception.StepFailedException: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/Authentication/ResetPasswordPage/invalidTokenMessage' located by 'By.xpath: //p[contains(text(), 'Invalid or expired reset link')]' not found
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.stepFailed(WebUIKeywordMain.groovy:177)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword$_verifyElementPresent_closure1.doCall(VerifyElementPresentKeyword.groovy:88)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword$_verifyElementPresent_closure1.call(VerifyElementPresentKeyword.groovy)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:41)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword.verifyElementPresent(VerifyElementPresentKeyword.groovy:95)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword.execute(VerifyElementPresentKeyword.groovy:68)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:90)
+	at com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.verifyElementPresent(WebUiBuiltInKeywords.groovy:1549)
+	at Script.run(Script.groovy:15)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778876352797.run(TempTestSuite1778876352797.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+)
+
+15-05-2026T23:22:51 - [TEST_STEP][PASSED] - assert errorPresent : "Error message should be visible for invalid token": null
+
+15-05-2026T23:22:51 - [TEST_STEP][FAILED] - Finally: Test Cases/Authentication/ResetPassword/TC_AUTH_034_ResetPassword_Invalid_Token FAILED.
+Reason:
+java.lang.AssertionError: Error message should be visible for invalid token. Expression: errorPresent. Values: errorPresent = false
+	at Script.run(Script.groovy:20)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778876352797.run(TempTestSuite1778876352797.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+15-05-2026T23:22:51 - [TEST_STEP][FAILED] - closeBrowser(): Test Cases/Authentication/ResetPassword/TC_AUTH_034_ResetPassword_Invalid_Token FAILED.
+Reason:
+java.lang.AssertionError: Error message should be visible for invalid token. Expression: errorPresent. Values: errorPresent = false
+	at Script.run(Script.groovy:20)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778876352797.run(TempTestSuite1778876352797.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+15-05-2026T23:22:51 - [MESSAGE][PASSED] - Browser is closed
+
+15-05-2026T23:22:51 - [MESSAGE][FAILED] - Test Cases/Authentication/ResetPassword/TC_AUTH_034_ResetPassword_Invalid_Token FAILED.
+Reason:
+java.lang.AssertionError: Error message should be visible for invalid token. Expression: errorPresent. Values: errorPresent = false
+	at Script.run(Script.groovy:20)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778876352797.run(TempTestSuite1778876352797.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)]]></system-out>
+         <system-err><![CDATA[15-05-2026T23:22:37 - [TEST_CASE][FAILED] - Test Cases/Authentication/ResetPassword/TC_AUTH_034_ResetPassword_Invalid_Token: Test Cases/Authentication/ResetPassword/TC_AUTH_034_ResetPassword_Invalid_Token FAILED.
+Reason:
+java.lang.AssertionError: Error message should be visible for invalid token. Expression: errorPresent. Values: errorPresent = false
+	at Script.run(Script.groovy:20)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1778876352797.run(TempTestSuite1778876352797.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)]]></system-err>
+      </testcase>
+      <system-out><![CDATA[15-05-2026T23:19:45 - [TEST_SUITE][FAILED] - TS_Authentication_Smoke: null]]></system-out>
+      <system-err><![CDATA[15-05-2026T23:19:45 - [TEST_SUITE][FAILED] - TS_Authentication_Smoke: null]]></system-err>
+   </testsuite>
+</testsuites>

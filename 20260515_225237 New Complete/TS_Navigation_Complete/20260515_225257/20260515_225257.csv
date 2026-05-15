@@ -1,0 +1,96 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_Navigation_Complete,Edge Chromium 148.0.3967.54,Complete test suite for Navigation - All navigation test cases,,15-05-2026 22:53:28,15-05-2026 22:56:10,2m - 41.235s,PASSED
+,,,,,,,
+Test Cases/Navigation/MainNav/TC_NAV_001_NavigateToBuy,Edge Chromium 148.0.3967.54,Navigate to Buy page from home using main navigation,"navigation,main-nav,positive",15-05-2026 22:53:31,15-05-2026 22:53:58,26.605s,PASSED
+navKW = new navigation.Navigation_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:33,15-05-2026 22:53:33,0.036s,PASSED
+navKW.openHomePage(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:33,15-05-2026 22:53:52,19.269s,PASSED
+"navKW.clickMainNavLink(""Buy"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:52,15-05-2026 22:53:55,3.095s,PASSED
+"navKW.verifyCurrentUrl(""/buy"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:55,15-05-2026 22:53:55,0.092s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:55,15-05-2026 22:53:58,2.573s,PASSED
+,,,,,,,
+Test Cases/Navigation/MainNav/TC_NAV_002_NavigateToRent,Edge Chromium 148.0.3967.54,Navigate to Rent page from home using main navigation,"navigation,main-nav,positive",15-05-2026 22:53:58,15-05-2026 22:54:05,7.085s,PASSED
+navKW = new navigation.Navigation_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:58,15-05-2026 22:53:58,0.006s,PASSED
+navKW.openHomePage(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:58,15-05-2026 22:54:01,3.802s,PASSED
+"navKW.clickMainNavLink(""Rent"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:01,15-05-2026 22:54:04,2.782s,PASSED
+"navKW.verifyCurrentUrl(""/rent"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:04,15-05-2026 22:54:04,0.025s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:04,15-05-2026 22:54:05,0.394s,PASSED
+,,,,,,,
+Test Cases/Navigation/MainNav/TC_NAV_003_NavigateToSell,Edge Chromium 148.0.3967.54,Navigate to Sell page from home using main navigation,"navigation,main-nav,positive",15-05-2026 22:54:05,15-05-2026 22:54:12,7.395s,PASSED
+navKW = new navigation.Navigation_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:05,15-05-2026 22:54:05,0.006s,PASSED
+navKW.openHomePage(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:05,15-05-2026 22:54:09,3.860s,PASSED
+"navKW.clickMainNavLink(""Sell"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:09,15-05-2026 22:54:12,3.124s,PASSED
+"navKW.verifyCurrentUrl(""/sell"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:12,15-05-2026 22:54:12,0.027s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:12,15-05-2026 22:54:12,0.332s,PASSED
+,,,,,,,
+Test Cases/Navigation/MainNav/TC_NAV_004_NavigateToAgents,Edge Chromium 148.0.3967.54,Navigate to Agents page from home using main navigation,"navigation,main-nav,positive",15-05-2026 22:54:12,15-05-2026 22:54:23,10.887s,PASSED
+navKW = new navigation.Navigation_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:12,15-05-2026 22:54:12,0.003s,PASSED
+navKW.openHomePage(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:12,15-05-2026 22:54:16,3.775s,PASSED
+"navKW.clickMainNavLink(""Agents"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:16,15-05-2026 22:54:19,2.964s,PASSED
+"navKW.verifyCurrentUrl(""/agent"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:19,15-05-2026 22:54:19,0.096s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:19,15-05-2026 22:54:23,3.999s,PASSED
+,,,,,,,
+Test Cases/Navigation/MainNav/TC_NAV_005_NavigateToNewProjects,Edge Chromium 148.0.3967.54,Navigate to New Projects (Developer Properties) page from home,"navigation,main-nav,positive",15-05-2026 22:54:23,15-05-2026 22:54:33,9.721s,PASSED
+navKW = new navigation.Navigation_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:23,15-05-2026 22:54:23,0.003s,PASSED
+navKW.openHomePage(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:23,15-05-2026 22:54:27,3.977s,PASSED
+"navKW.clickMainNavLink(""NewProjects"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:27,15-05-2026 22:54:31,3.656s,PASSED
+"navKW.verifyCurrentUrl(""/developer-properties"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:31,15-05-2026 22:54:31,0.020s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:31,15-05-2026 22:54:33,1.983s,PASSED
+,,,,,,,
+Test Cases/Navigation/MainNav/TC_NAV_006_NavigateToHome,Edge Chromium 148.0.3967.54,Navigate back to Home page by clicking logo,"navigation,main-nav,positive",15-05-2026 22:54:33,15-05-2026 22:54:43,10.509s,PASSED
+navKW = new navigation.Navigation_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:33,15-05-2026 22:54:33,0.002s,PASSED
+navKW.openHomePage(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:33,15-05-2026 22:54:37,4.255s,PASSED
+"navKW.clickMainNavLink(""Buy"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:37,15-05-2026 22:54:40,2.876s,PASSED
+navKW.clickLogo(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:40,15-05-2026 22:54:43,2.816s,PASSED
+"navKW.verifyCurrentUrl(""/"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:43,15-05-2026 22:54:43,0.013s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:43,15-05-2026 22:54:43,0.488s,PASSED
+,,,,,,,
+Test Cases/Navigation/UserMenu/TC_NAV_007_OpenUserDropdown,Edge Chromium 148.0.3967.54,Open user dropdown menu when logged in,"navigation,user-menu,positive",15-05-2026 22:54:43,15-05-2026 22:54:59,16.248s,PASSED
+navKW = new navigation.Navigation_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:43,15-05-2026 22:54:43,0.006s,PASSED
+navKW.openHomePage(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:43,15-05-2026 22:54:47,3.783s,PASSED
+navKW.loginAsTestUser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:47,15-05-2026 22:54:55,7.620s,PASSED
+navKW.openUserDropdown(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:55,15-05-2026 22:54:57,1.773s,PASSED
+"waitForElementVisible(findTestObject(""Object Repository/Profile/a_My Profile""), 5)",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:57,15-05-2026 22:54:57,0.454s,PASSED
+"isVisible = verifyElementVisible(findTestObject(""Object Repository/Profile/a_My Profile""))",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:57,15-05-2026 22:54:57,0.324s,PASSED
+comment(User dropdown opened successfully: $isVisible),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:57,15-05-2026 22:54:57,0.057s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:57,15-05-2026 22:54:59,2.125s,PASSED
+,,,,,,,
+Test Cases/Navigation/UserMenu/TC_NAV_008_NavigateToProfile,Edge Chromium 148.0.3967.54,Navigate to Profile page from user dropdown menu,"navigation,user-menu,positive",15-05-2026 22:55:00,15-05-2026 22:55:19,19.104s,PASSED
+navKW = new navigation.Navigation_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:00,15-05-2026 22:55:00,0.003s,PASSED
+navKW.openHomePage(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:00,15-05-2026 22:55:03,3.854s,PASSED
+navKW.loginAsTestUser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:03,15-05-2026 22:55:13,9.127s,PASSED
+"navKW.clickUserMenuItem(""My Profile"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:13,15-05-2026 22:55:18,5.122s,PASSED
+"navKW.verifyCurrentUrl(""/profile"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:18,15-05-2026 22:55:18,0.027s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:18,15-05-2026 22:55:19,0.883s,PASSED
+,,,,,,,
+Test Cases/Navigation/UserMenu/TC_NAV_009_NavigateToBecomeAgent,Edge Chromium 148.0.3967.54,Navigate to Become Agent page from user dropdown (regular user),"navigation,user-menu,positive",15-05-2026 22:55:19,15-05-2026 22:55:36,17.646s,PASSED
+navKW = new navigation.Navigation_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:19,15-05-2026 22:55:19,0.014s,PASSED
+navKW.openHomePage(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:19,15-05-2026 22:55:22,3.575s,PASSED
+navKW.loginAsTestUser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:22,15-05-2026 22:55:31,8.274s,PASSED
+"navKW.clickUserMenuItem(""Become an Agent"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:31,15-05-2026 22:55:35,4.739s,PASSED
+"navKW.verifyCurrentUrl(""/become-agent"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:35,15-05-2026 22:55:35,0.017s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:35,15-05-2026 22:55:36,0.966s,PASSED
+,,,,,,,
+Test Cases/Navigation/Auth/TC_NAV_010_NavigateToLogin,Edge Chromium 148.0.3967.54,Navigate to Login page when not authenticated,"navigation,auth,positive",15-05-2026 22:55:36,15-05-2026 22:55:44,7.261s,PASSED
+navKW = new navigation.Navigation_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:36,15-05-2026 22:55:36,0.002s,PASSED
+navKW.openHomePage(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:36,15-05-2026 22:55:40,3.814s,PASSED
+navKW.clickSignIn(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:40,15-05-2026 22:55:43,2.745s,PASSED
+"navKW.verifyCurrentUrl(""/login"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:43,15-05-2026 22:55:43,0.028s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:43,15-05-2026 22:55:44,0.595s,PASSED
+,,,,,,,
+Test Cases/Navigation/Auth/TC_NAV_011_NavigateToRegister,Edge Chromium 148.0.3967.54,Navigate to Register page when not authenticated,"navigation,auth,positive",15-05-2026 22:55:44,15-05-2026 22:55:52,8.440s,PASSED
+navKW = new navigation.Navigation_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:44,15-05-2026 22:55:44,0.002s,PASSED
+navKW.openHomePage(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:44,15-05-2026 22:55:48,4.108s,PASSED
+navKW.clickGetStarted(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:48,15-05-2026 22:55:51,3.015s,PASSED
+"navKW.verifyCurrentUrl(""/register"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:51,15-05-2026 22:55:51,0.036s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:51,15-05-2026 22:55:52,1.237s,PASSED
+,,,,,,,
+Test Cases/Navigation/UserMenu/TC_NAV_012_NavigateToNotifications,Edge Chromium 148.0.3967.54,Navigate to Notifications page via bell icon,"navigation,notifications,positive",15-05-2026 22:55:52,15-05-2026 22:56:10,17.647s,PASSED
+navKW = new navigation.Navigation_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:52,15-05-2026 22:55:52,0.001s,PASSED
+navKW.openHomePage(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:52,15-05-2026 22:55:56,3.828s,PASSED
+navKW.loginAsTestUser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:56,15-05-2026 22:56:03,7.495s,PASSED
+"waitForElementClickable(findTestObject(""Object Repository/Notification/notificationBellIcon""), 10)",Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:03,15-05-2026 22:56:04,0.310s,PASSED
+"click(findTestObject(""Object Repository/Notification/notificationBellIcon""))",Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:04,15-05-2026 22:56:04,0.446s,PASSED
+delay(2),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:04,15-05-2026 22:56:06,2.021s,PASSED
+waitForPageLoad(10),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:06,15-05-2026 22:56:06,0.016s,PASSED
+"navKW.verifyCurrentUrl(""/notifications"")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:06,15-05-2026 22:56:06,0.022s,PASSED
+closeBrowser(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:06,15-05-2026 22:56:10,3.450s,PASSED

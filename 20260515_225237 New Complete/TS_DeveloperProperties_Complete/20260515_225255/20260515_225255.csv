@@ -1,0 +1,138 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_DeveloperProperties_Complete,Edge Chromium 148.0.3967.54,Complete Developer Properties Test Suite - All Project and Property Management Tests,,15-05-2026 22:53:29,15-05-2026 23:03:04,9m - 34.773s,FAILED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_001_Create_Project_Valid_Data,Edge Chromium 148.0.3967.54,Verify successful creation of a project with valid data,"developer-properties,projects,positive",15-05-2026 22:53:32,15-05-2026 22:54:18,45.949s,FAILED
+"DATA BINDING - {""(Default) devel..."":""507f1f77bcf86cd799439011"",""(Default) proje..."":""New York, NY""}",,,,,,,
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:34,15-05-2026 22:53:41,7.860s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:41,15-05-2026 22:53:42,0.165s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:42,15-05-2026 22:53:42,0.054s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:53:42,15-05-2026 22:54:17,35.271s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:17,15-05-2026 22:54:17,0.031s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:17,15-05-2026 22:54:18,0.784s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_003_Get_All_Projects,Edge Chromium 148.0.3967.54,Verify retrieval of all projects,"developer-properties, projects, positive",15-05-2026 22:54:18,15-05-2026 22:55:05,47.534s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:18,15-05-2026 22:54:19,1.301s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:19,15-05-2026 22:54:19,0.017s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:19,15-05-2026 22:54:19,0.014s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:54:19,15-05-2026 22:55:05,45.285s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:05,15-05-2026 22:55:05,0.763s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_004_Get_Project_By_Valid_Id,Edge Chromium 148.0.3967.54,Verify retrieval of a project by valid ID,"developer-properties, projects, positive",15-05-2026 22:55:05,15-05-2026 22:55:38,32.495s,PASSED
+"DATA BINDING - {""(Default) proje..."":""507f1f77bcf86cd799439011""}",,,,,,,
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:05,15-05-2026 22:55:07,1.095s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:07,15-05-2026 22:55:07,0.003s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:07,15-05-2026 22:55:07,0.006s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:07,15-05-2026 22:55:37,29.987s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:37,15-05-2026 22:55:38,1.204s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_005_Get_Project_By_Invalid_Id,Edge Chromium 148.0.3967.54,Verify error handling when retrieving project by invalid ID,"developer-properties, projects, negative",15-05-2026 22:55:38,15-05-2026 22:55:55,16.741s,FAILED
+"DATA BINDING - {""(Default) proje..."":""invalid_project_id""}",,,,,,,
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:38,15-05-2026 22:55:39,1.019s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:39,15-05-2026 22:55:39,0.002s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:39,15-05-2026 22:55:54,14.532s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:54,15-05-2026 22:55:54,0.005s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:54,15-05-2026 22:55:55,0.916s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_007_Delete_Project_Valid_Id,Edge Chromium 148.0.3967.54,Verify successful deletion of a project with valid ID,"developer-properties,projects,positive",15-05-2026 22:55:55,15-05-2026 22:56:31,36.455s,FAILED
+"DATA BINDING - {""(Default) proje..."":""507f1f77bcf86cd799439011""}",,,,,,,
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:55,15-05-2026 22:55:56,0.848s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:56,15-05-2026 22:55:56,0.000s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:56,15-05-2026 22:55:56,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:55:56,15-05-2026 22:56:30,34.096s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:30,15-05-2026 22:56:30,0.011s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:30,15-05-2026 22:56:31,1.303s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_045_Signup_As_User_Cannot_Access_MyProjects,Edge Chromium 148.0.3967.54,Verify user signup (not developer) cannot access My Projects page - negative test,"myprojects,negative,signup,user,should-fail",15-05-2026 22:56:31,15-05-2026 22:57:09,38.014s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:31,15-05-2026 22:56:32,0.976s,PASSED
+registerHelper = new authentication.Register_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:32,15-05-2026 22:56:32,0.049s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:32,15-05-2026 22:56:32,0.002s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:56:32,15-05-2026 22:57:09,36.394s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:09,15-05-2026 22:57:09,0.398s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_038_Update_Project_Valid_Data,Edge Chromium 148.0.3967.54,Verify successful update of a project with valid data,"developer-properties,projects,positive",15-05-2026 22:57:09,15-05-2026 22:57:44,35.211s,FAILED
+"DATA BINDING - {""(Default) updat..."":""Updated project description with new information"",""(Default) proje..."":""507f1f77bcf86cd799439012""}",,,,,,,
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:09,15-05-2026 22:57:10,0.687s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:10,15-05-2026 22:57:10,0.002s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:10,15-05-2026 22:57:10,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:10,15-05-2026 22:57:44,33.782s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:44,15-05-2026 22:57:44,0.007s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:44,15-05-2026 22:57:44,0.600s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_039_Notification_On_Project_Creation,Edge Chromium 148.0.3967.54,Verify notification is received when developer adds a new project,"developer-properties,projects,positive,notifications",15-05-2026 22:57:44,15-05-2026 22:58:20,36.130s,FAILED
+"DATA BINDING - {""(Default) proje..."":""Notification Test Project""}",,,,,,,
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:44,15-05-2026 22:57:45,0.797s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:45,15-05-2026 22:57:45,0.002s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:45,15-05-2026 22:57:45,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:57:45,15-05-2026 22:58:20,34.502s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:20,15-05-2026 22:58:20,0.011s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:20,15-05-2026 22:58:20,0.700s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_040_Create_Project_Check_Active_Count,Edge Chromium 148.0.3967.54,Verify active project count after creating new project,"developer-properties,projects,positive",15-05-2026 22:58:20,15-05-2026 22:59:14,53.896s,FAILED
+"DATA BINDING - {""(Default) proje..."":""Active Count Test Project""}",,,,,,,
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:21,15-05-2026 22:58:22,0.933s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:22,15-05-2026 22:58:22,0.003s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:22,15-05-2026 22:58:22,0.002s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:58:22,15-05-2026 22:59:14,52.298s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:14,15-05-2026 22:59:14,0.007s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:14,15-05-2026 22:59:14,0.291s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_041_Check_Developer_Count_After_Signup,Edge Chromium 148.0.3967.54,Verify developer count after signup as new developer,"developer-properties,developers,positive",15-05-2026 22:59:14,15-05-2026 22:59:38,23.308s,FAILED
+"DATA BINDING - {""(Default) devel..."":""TestPassword123!""}",,,,,,,
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:14,15-05-2026 22:59:15,0.761s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:15,15-05-2026 22:59:15,0.002s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:15,15-05-2026 22:59:15,0.001s,PASSED
+registerHelper = new authentication.Register_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:15,15-05-2026 22:59:15,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:15,15-05-2026 22:59:37,22.032s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:37,15-05-2026 22:59:37,0.000s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:37,15-05-2026 22:59:38,0.354s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_042_List_Properties_For_Specific_Project,Edge Chromium 148.0.3967.54,Verify listing properties for a specific project,"developer-properties,positive,properties",15-05-2026 22:59:38,15-05-2026 23:00:13,35.190s,FAILED
+"DATA BINDING - {""(Default) proje..."":""507f1f77bcf86cd799439012""}",,,,,,,
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:38,15-05-2026 22:59:38,0.719s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:38,15-05-2026 22:59:38,0.001s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:38,15-05-2026 22:59:38,0.001s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 22:59:38,15-05-2026 23:00:12,33.966s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:12,15-05-2026 23:00:12,0.000s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:12,15-05-2026 23:00:13,0.360s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_043_View_Project_Details_Page,Edge Chromium 148.0.3967.54,Verify viewing project details page with complete information,"developer-properties,projects,positive",15-05-2026 23:00:13,15-05-2026 23:00:42,29.514s,FAILED
+"DATA BINDING - {""(Default) proje..."":""507f1f77bcf86cd799439012""}",,,,,,,
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:13,15-05-2026 23:00:14,0.688s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:14,15-05-2026 23:00:14,0.001s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:14,15-05-2026 23:00:14,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:14,15-05-2026 23:00:42,28.285s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:42,15-05-2026 23:00:42,0.000s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:42,15-05-2026 23:00:42,0.451s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_044_Signup_As_Developer_Access_MyProjects,Edge Chromium 148.0.3967.54,Verify new developer can signup and access My Projects page,"myprojects,developer,positive,signup",15-05-2026 23:00:42,15-05-2026 23:01:05,22.826s,PASSED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:42,15-05-2026 23:00:43,0.714s,PASSED
+registerHelper = new authentication.Register_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:43,15-05-2026 23:00:43,0.004s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:43,15-05-2026 23:00:43,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:00:43,15-05-2026 23:01:05,21.680s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:05,15-05-2026 23:01:05,0.366s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Properties/TC_DEVPROP_008_Create_Property_Valid_Data,Edge Chromium 148.0.3967.54,"Create Property with Valid Data - Login, open existing project, add property, verify visible","properties, create, positive",15-05-2026 23:01:05,15-05-2026 23:01:59,54.364s,FAILED
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:05,15-05-2026 23:01:06,0.740s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:06,15-05-2026 23:01:06,0.000s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:06,15-05-2026 23:01:06,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:06,15-05-2026 23:01:59,53.260s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:59,15-05-2026 23:01:59,0.002s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:01:59,15-05-2026 23:01:59,0.270s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Properties/TC_DEVPROP_012_Get_Properties_By_Project,Edge Chromium 148.0.3967.54,Verify retrieval of properties by project ID,"developer-properties,positive,properties",15-05-2026 23:01:59,15-05-2026 23:02:30,30.828s,FAILED
+"DATA BINDING - {""(Default) proje..."":""507f1f77bcf86cd799439012""}",,,,,,,
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:00,15-05-2026 23:02:00,0.733s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:00,15-05-2026 23:02:00,0.000s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:00,15-05-2026 23:02:00,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:00,15-05-2026 23:02:30,29.866s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:30,15-05-2026 23:02:30,0.002s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:30,15-05-2026 23:02:30,0.173s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Properties/TC_DEVPROP_037_Delete_DeveloperProperty_Valid_Id,Edge Chromium 148.0.3967.54,Verify successful deletion of a developer property,"developer-properties,positive,properties",15-05-2026 23:02:30,15-05-2026 23:03:04,33.716s,FAILED
+"DATA BINDING - {""(Default) prope..."":""507f1f77bcf86cd799439015"",""(Default) devel..."":""507f1f77bcf86cd799439011""}",,,,,,,
+"openBrowser("""")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:30,15-05-2026 23:02:31,0.697s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:31,15-05-2026 23:02:31,0.000s,PASSED
+loginHelper = new authentication.Login_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:31,15-05-2026 23:02:31,0.000s,PASSED
+try,Edge Chromium 148.0.3967.54,,,15-05-2026 23:02:31,15-05-2026 23:03:04,32.547s,FAILED
+catch (Exception e),Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:04,15-05-2026 23:03:04,0.003s,PASSED
+Finally,Edge Chromium 148.0.3967.54,,,15-05-2026 23:03:04,15-05-2026 23:03:04,0.432s,PASSED

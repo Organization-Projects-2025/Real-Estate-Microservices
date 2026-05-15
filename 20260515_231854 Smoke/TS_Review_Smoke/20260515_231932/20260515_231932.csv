@@ -1,0 +1,14 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_Review_Smoke,Edge Chromium 148.0.3967.54,Smoke Test Suite - Critical Review Tests (Create Review with different ratings),,15-05-2026 23:20:47,15-05-2026 23:21:37,49.728s,FAILED
+,,,,,,,
+Test Cases/Review/Create/TC_Review_CR3_3Star,Edge Chromium 148.0.3967.54,Create Review with 3 Star Rating,"3star,review,create",15-05-2026 23:20:48,15-05-2026 23:21:02,14.722s,FAILED
+reviewKW = new review.Review_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:48,15-05-2026 23:20:49,0.096s,PASSED
+"reviewKW.createReview(""Test User 3Star"", 3, ""Review with 3 star rating"")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:20:49,15-05-2026 23:21:02,13.815s,FAILED
+,,,,,,,
+Test Cases/Review/Create/TC_Review_CR5_5Star,Edge Chromium 148.0.3967.54,Create Review with 5 Star Rating,"review,5star,create",15-05-2026 23:21:02,15-05-2026 23:21:14,11.767s,FAILED
+reviewKW = new review.Review_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:02,15-05-2026 23:21:02,0.005s,PASSED
+"reviewKW.createReview(""Test User 5Star"", 5, ""Review with 5 star rating"")",Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:02,15-05-2026 23:21:14,11.722s,FAILED
+,,,,,,,
+Test Cases/Review/Delete/TC_Review_DEL1_DeleteLast,Edge Chromium 148.0.3967.54,Delete Last Review (Admin Only),"review,admin,delete",15-05-2026 23:21:14,15-05-2026 23:21:37,22.424s,PASSED
+reviewKW = new review.Review_Keywords(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:14,15-05-2026 23:21:14,0.008s,PASSED
+reviewKW.adminDeleteLastReview(),Edge Chromium 148.0.3967.54,,,15-05-2026 23:21:14,15-05-2026 23:21:37,22.363s,PASSED
