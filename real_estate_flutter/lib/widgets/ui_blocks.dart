@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'property_thumbnail.dart';
+
 class SectionTitle extends StatelessWidget {
   final String title;
   final String subtitle;
@@ -39,6 +41,7 @@ class PropertyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final image = (item['thumbnailPath'] ?? item['image'] ?? '').toString();
     return Container(
       decoration: BoxDecoration(
         color: const Color(0xFF1A1A1A),
@@ -50,11 +53,10 @@ class PropertyCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-            child: Image.network(
-              (item['image'] ?? '').toString(),
+            child: PropertyThumbnail(
+              path: image,
               height: 160,
-              width: double.infinity,
-              fit: BoxFit.cover,
+              borderRadius: BorderRadius.zero,
             ),
           ),
           Padding(

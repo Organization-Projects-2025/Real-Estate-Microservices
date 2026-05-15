@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../services/api_service.dart';
+import '../widgets/property_thumbnail.dart';
 
 class HomepagePage extends StatefulWidget {
   final VoidCallback? onAuthChanged;
@@ -99,7 +100,7 @@ class _HomepagePageState extends State<HomepagePage> {
                     child: Image.network(
                       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
                       fit: BoxFit.cover,
-                      errorBuilder: (_, __, ___) =>
+                      errorBuilder: (context, error, stackTrace) =>
                           Container(height: 320, color: kCard),
                     ),
                   ),
@@ -429,7 +430,9 @@ class _PropertyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final media = (property['media'] as List?)?.cast<String>() ?? [];
-    final image = media.isNotEmpty ? media[0] : '';
+    final image =
+        (property['thumbnailPath'] ?? (media.isNotEmpty ? media[0] : ''))
+            .toString();
     final address = property['address'] as Map? ?? {};
     final features = property['features'] as Map? ?? {};
     final area = property['area'] as Map? ?? {};
@@ -451,30 +454,11 @@ class _PropertyCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-            child: image.isNotEmpty
-                ? Image.network(
-                    image,
-                    height: 180,
-                    fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => Container(
-                      height: 180,
-                      color: const Color(0xFF252525),
-                      child: const Icon(
-                        Icons.home,
-                        color: Colors.white24,
-                        size: 40,
-                      ),
-                    ),
-                  )
-                : Container(
-                    height: 180,
-                    color: const Color(0xFF252525),
-                    child: const Icon(
-                      Icons.home,
-                      color: Colors.white24,
-                      size: 40,
-                    ),
-                  ),
+            child: PropertyThumbnail(
+              path: image,
+              height: 180,
+              borderRadius: BorderRadius.zero,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(14),

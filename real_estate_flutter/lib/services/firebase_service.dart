@@ -100,6 +100,7 @@ class FirebaseService {
     required String type,
     required String listingType,
     required String image,
+    String? thumbnailPath,
     required int price,
     int? beds,
     int? baths,
@@ -115,6 +116,10 @@ class FirebaseService {
         'type': type,
         'listingType': listingType,
         'image': image,
+        'thumbnailPath': thumbnailPath ?? image,
+        'media': thumbnailPath == null || thumbnailPath.isEmpty
+            ? [image]
+            : [thumbnailPath],
         'price': price,
         'beds': beds,
         'baths': baths,

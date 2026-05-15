@@ -6,8 +6,6 @@ class ApiService {
   static String? _token;
   static Map<String, dynamic>? _currentUser;
 
-  static final List<Map<String, dynamic>> _localCreatedProperties = [];
-
   static String? get token => _token;
   static Map<String, dynamic>? get currentUser => _currentUser;
   static bool get isLoggedIn {
@@ -37,6 +35,8 @@ class ApiService {
     final area = source['area'] as Map? ?? {};
     final media = source['media'] as List? ?? const [];
     final location = (source['location'] ?? '').toString();
+    final thumbnailPath = (source['thumbnailPath'] ?? source['image'] ?? '')
+        .toString();
     final listingType = (source['listingType'] ?? fallbackListingType ?? 'sale')
         .toString();
 
@@ -55,10 +55,11 @@ class ApiService {
       'price': source['price'] ?? 0,
       'media': media.isNotEmpty
           ? media.map((item) => item.toString()).toList()
-          : [source['image'] ?? '']
+          : [thumbnailPath]
                 .where((item) => item.toString().isNotEmpty)
                 .map((item) => item.toString())
                 .toList(),
+      'thumbnailPath': thumbnailPath,
       'address': {'city': city, 'state': state},
       'features': {
         'bedrooms':
@@ -160,11 +161,10 @@ class ApiService {
   static Future<List<dynamic>> getProperties() async {
     try {
       final remote = await FirebaseService.getProperties();
-      final mapped = remote.map((doc) => _asApiProperty(doc)).toList();
-      return [..._localCreatedProperties, ...mapped];
+      return remote.map((doc) => _asApiProperty(doc)).toList();
     } catch (e) {
       debugPrint('Get properties via Firebase failed: $e');
-      return _localCreatedProperties;
+      return const [];
     }
   }
 
@@ -172,20 +172,12 @@ class ApiService {
     final queryType = _normalizeListingType(type);
     try {
       final remote = await FirebaseService.getPropertiesByType(queryType);
-      final mapped = remote
+      return remote
           .map((doc) => _asApiProperty(doc, fallbackListingType: queryType))
           .toList();
-      return [
-        ..._localCreatedProperties.where(
-          (property) => property['listingType'] == queryType,
-        ),
-        ...mapped,
-      ];
     } catch (e) {
       debugPrint('Get properties by type via Firebase failed: $e');
-      return _localCreatedProperties
-          .where((property) => property['listingType'] == queryType)
-          .toList();
+      return const [];
     }
   }
 
@@ -221,6 +213,7 @@ class ApiService {
         type: (data['type'] ?? data['subType'] ?? '').toString(),
         listingType: listingType,
         image: image,
+        thumbnailPath: (data['thumbnailPath'] ?? image).toString(),
         price: data['price'] ?? 0,
         beds: features['bedrooms'] ?? data['beds'],
         baths: features['bathrooms'] ?? data['baths'],
@@ -236,7 +229,6 @@ class ApiService {
         'location': location,
         'image': image,
       });
-      _localCreatedProperties.insert(0, payload);
       return {'status': 'success', 'data': payload};
     } catch (e) {
       return {'status': 'error', 'message': e.toString()};

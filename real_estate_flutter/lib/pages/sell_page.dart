@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+
 import '../services/api_service.dart';
+import '../services/local_thumbnail_service.dart';
+import '../widgets/property_thumbnail.dart';
 
 class SellPage extends StatefulWidget {
   final VoidCallback? onAuthChanged;
@@ -50,6 +54,8 @@ class _SellPageState extends State<SellPage> {
   bool wifi = false, security = false, ac = false;
   bool internet = false, electricity = false, water = false, gas = false;
 
+  String thumbnailPath = '';
+
   bool submitting = false;
   bool submitted = false;
   String submitError = '';
@@ -73,6 +79,19 @@ class _SellPageState extends State<SellPage> {
       c.dispose();
     }
     super.dispose();
+  }
+
+  Future<void> _pickThumbnail() async {
+    final picker = ImagePicker();
+    final file = await picker.pickImage(
+      source: ImageSource.gallery,
+      imageQuality: 85,
+    );
+    if (file == null) return;
+
+    final savedPath = await savePickedThumbnail(file, filenameHint: file.name);
+    if (!mounted) return;
+    setState(() => thumbnailPath = savedPath);
   }
 
   InputDecoration _dec(String hint) => InputDecoration(
@@ -119,7 +138,8 @@ class _SellPageState extends State<SellPage> {
         'sqm': int.tryParse(sqmc.text) ?? 0,
       },
       'price': int.tryParse(pricec.text) ?? 0,
-      'media': <String>[], // image upload not available in web demo
+      'media': thumbnailPath.isNotEmpty ? [thumbnailPath] : <String>[],
+      'thumbnailPath': thumbnailPath,
       'status': status,
       'user': ApiService.currentUser?['_id'] ?? '',
       'features': {
@@ -156,11 +176,12 @@ class _SellPageState extends State<SellPage> {
         });
       }
     } catch (e) {
-      if (mounted)
+      if (mounted) {
         setState(() {
           submitError = 'Could not connect to server.';
           submitting = false;
         });
+      }
     }
   }
 
@@ -212,6 +233,63 @@ class _SellPageState extends State<SellPage> {
               },
               onChanged: (v) => setState(() => subType = v!),
             ),
+            const SizedBox(height: 14),
+            Text(
+              'Thumbnail',
+              style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.8),
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const SizedBox(height: 8),
+            GestureDetector(
+              onTap: _pickThumbnail,
+              child: Container(
+                height: 180,
+                decoration: BoxDecoration(
+                  color: kInput,
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: Colors.white10),
+                ),
+                child: thumbnailPath.isEmpty
+                    ? const Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.add_photo_alternate_outlined,
+                              color: Colors.white38,
+                              size: 34,
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              'Tap to upload a thumbnail',
+                              style: TextStyle(color: Colors.white54),
+                            ),
+                          ],
+                        ),
+                      )
+                    : ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
+                        child: PropertyThumbnail(
+                          path: thumbnailPath,
+                          height: 180,
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            TextButton.icon(
+              onPressed: _pickThumbnail,
+              icon: const Icon(Icons.upload_file),
+              label: const Text('Choose thumbnail'),
+            ),
+            if (thumbnailPath.isNotEmpty)
+              Text(
+                'Saved path: $thumbnailPath',
+                style: const TextStyle(color: Colors.white54, fontSize: 12),
+              ),
           ],
         );
 
@@ -658,9 +736,7 @@ class _SellPageState extends State<SellPage> {
                             ),
                           )
                         : Text(
-                            step < steps.length - 1
-                                ? 'Next'
-                                : 'Submit to MongoDB',
+                            step < steps.length - 1 ? 'Next' : 'Submit',
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                   ),

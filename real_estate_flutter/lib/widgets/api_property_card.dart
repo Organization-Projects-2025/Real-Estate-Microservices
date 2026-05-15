@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'property_thumbnail.dart';
+
 /// Property card that works with raw API JSON maps.
 class ApiPropertyCard extends StatelessWidget {
   final dynamic property;
@@ -11,7 +13,9 @@ class ApiPropertyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final media = (property['media'] as List?)?.cast<String>() ?? [];
-    final image = media.isNotEmpty ? media[0] : '';
+    final image =
+        (property['thumbnailPath'] ?? (media.isNotEmpty ? media[0] : ''))
+            .toString();
     final address = property['address'] as Map? ?? {};
     final features = property['features'] as Map? ?? {};
     final area = property['area'] as Map? ?? {};
@@ -30,14 +34,11 @@ class ApiPropertyCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-            child: image.isNotEmpty
-                ? Image.network(
-                    image,
-                    height: 180,
-                    fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => _placeholder(),
-                  )
-                : _placeholder(),
+            child: PropertyThumbnail(
+              path: image,
+              height: 180,
+              borderRadius: BorderRadius.zero,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(14),
@@ -107,12 +108,6 @@ class ApiPropertyCard extends StatelessWidget {
       ),
     );
   }
-
-  Widget _placeholder() => Container(
-    height: 180,
-    color: const Color(0xFF252525),
-    child: const Icon(Icons.home, color: Colors.white24, size: 40),
-  );
 
   Widget _chip(IconData icon, String text) => Row(
     mainAxisSize: MainAxisSize.min,

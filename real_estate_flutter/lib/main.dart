@@ -26,7 +26,6 @@ class App01 extends StatelessWidget {
         colorSchemeSeed: const Color(0xFF703BF7),
         useMaterial3: true,
       ),
-      // Start directly on the homepage — no forced login
       initialRoute: '/home',
       onGenerateRoute: (settings) {
         switch (settings.name) {
