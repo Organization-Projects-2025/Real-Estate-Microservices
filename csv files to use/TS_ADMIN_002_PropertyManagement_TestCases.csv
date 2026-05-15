@@ -1,0 +1,16 @@
+SCREEN NAME,Admin - Property Management Page,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_ADMIN_002,SCENARIO DESCRIPTION,Admin - Property Management Operations,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_ADM_PROP_001,Verify admin can view properties page with all properties,Admin user logged in; Properties exist in system,URL: /admin/properties,Properties page displayed with all properties listed,Properties displayed correctly,Properties page displayed with all properties listed,PASSED,,Positive test - View properties
+2,TC_ADM_PROP_002,Verify admin can edit property with valid data,Admin logged in; Property exists,Property ID: prop_001; Title: 'Luxury Villa'; Price: 750000; Location: 'Miami',Property updated successfully; Success message shown,Property data updated in database,Property update with valid data fails to save changes correctly,FAILED,DEF-2026-001,Positive test - Edit property
+3,TC_ADM_PROP_003,Verify edit property fails with empty title,Admin logged in; Property selected for edit,Property ID: prop_001; Title: '' (empty),Error message indicating title is required,Property data not changed,Empty title validation not working - allows saving property without title,FAILED,DEF-2026-002,Negative test - validation
+4,TC_ADM_PROP_004,Verify admin can change property status,Admin logged in; Property exists,Property ID: prop_001; Current Status: 'For Sale'; New Status: 'Sold',Status updated successfully,Property status updated in database,Property status change operation fails - status not updating in database,FAILED,DEF-2026-003,Positive test - Status change
+5,TC_ADM_PROP_005,Verify admin can delete property,Admin logged in; Property exists,Property ID: prop_002; Confirm Delete: Yes,Property deleted successfully; Removed from list,Property deleted successfully and removed from list,Property deleted successfully; Removed from list,PASSED,,Positive test - Delete
+6,TC_ADM_PROP_006,Verify cancel delete property keeps property,Admin logged in; Property exists,Property ID: prop_001; Confirm Delete: No (Cancel),Property remains in list; No deletion,Property remains in list - no deletion,Property remains in list; No deletion,PASSED,,Negative path - Cancel delete
+7,TC_ADM_PROP_007,Verify cancel edit property discards changes,Admin logged in; Property edit modal open,Property ID: prop_001; Title: 'Changed Title'; Save: No (Cancel),Modal closes; Changes not saved,Original property data preserved,Modal closes and changes not saved,PASSED,,Negative path - Cancel edit
+8,TC_ADM_PROP_008,Verify close property modal with X button,Admin logged in; Property modal open,Modal: Property Edit; Close: X button,Modal closes without saving,No changes made,Modal closes without saving,PASSED,,UI functionality test

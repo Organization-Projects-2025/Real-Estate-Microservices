@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="TS_Navigation_Complete" time="134.84" tests="12" failures="0" errors="0">
+   <testsuite name="TS_Navigation_Complete" tests="12" failures="0" errors="0" time="134.84" skipped="0" timestamp="2026-01-09T17:03:18.244Z" hostname="ASUS - 192.168.1.53" id="Test Suites/TS_Navigation_Complete">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="C:\\Projects\\Real-Estate-Microservices\\Katalon\\Reports\\20260109_182625\\TS_Navigation_Complete\\20260109_182634"/>
+         <property name="logFiles" value="C:\\Projects\\Real-Estate-Microservices\\Katalon\\Reports\\20260109_182625\\TS_Navigation_Complete\\20260109_182634\\console0.log, C:\\Projects\\Real-Estate-Microservices\\Katalon\\Reports\\20260109_182625\\TS_Navigation_Complete\\20260109_182634\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="ASUS - 192.168.1.53"/>
+         <property name="os" value="Windows 11 64bit"/>
+         <property name="katalonVersion" value="10.4.3.0"/>
+         <property name="browser" value="Chrome 143.0.7499.170"/>
+         <property name="userFullName" value="Youssef Mohamed Khalaf Hussain Hassan"/>
+         <property name="hostAddress" value="192.168.1.53"/>
+         <property name="sessionId" value="3c37eea8aad48d65dda6f318df43c558"/>
+         <property name="projectName" value="Katalon"/>
+         <property name="seleniumVersion" value="4.34.0"/>
+         <property name="proxyInformation" value="ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList=&quot;&quot;, isApplyToDesiredCapabilities=true }"/>
+         <property name="platform" value="Windows 11"/>
+      </properties>
+      <testcase name="Test Cases/Navigation/MainNav/TC_NAV_001_NavigateToBuy" time="11.484" classname="Test Cases/Navigation/MainNav/TC_NAV_001_NavigateToBuy" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:03:19 - [TEST_CASE][PASSED] - Test Cases/Navigation/MainNav/TC_NAV_001_NavigateToBuy: Test Cases/Navigation/MainNav/TC_NAV_001_NavigateToBuy
+
+09-01-2026T19:03:19 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+09-01-2026T19:03:19 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+09-01-2026T19:03:20 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:03:20 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:03:20 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:03:23 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:03:24 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+09-01-2026T19:03:24 - [MESSAGE][PASSED] - Current window maximized
+
+09-01-2026T19:03:24 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:03:26 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:03:26 - [TEST_STEP][PASSED] - navKW.clickMainNavLink("Buy"): Wait for page load successfully
+
+09-01-2026T19:03:27 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/MainNav/link_Buy' is clickable
+
+09-01-2026T19:03:27 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/MainNav/link_Buy' is clicked on
+
+09-01-2026T19:03:29 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:03:29 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:03:29 - [TEST_STEP][PASSED] - navKW.verifyCurrentUrl("/buy"): Actual text 'http://localhost:5173/buy' and expected text 'http://localhost:5173/buy' are matched 
+
+09-01-2026T19:03:29 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/buy'
+
+09-01-2026T19:03:29 - [MESSAGE][PASSED] - Actual text 'http://localhost:5173/buy' and expected text 'http://localhost:5173/buy' are matched 
+
+09-01-2026T19:03:29 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:03:30 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Navigation/MainNav/TC_NAV_002_NavigateToRent" time="7.409" classname="Test Cases/Navigation/MainNav/TC_NAV_002_NavigateToRent" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:03:30 - [TEST_CASE][PASSED] - Test Cases/Navigation/MainNav/TC_NAV_002_NavigateToRent: Test Cases/Navigation/MainNav/TC_NAV_002_NavigateToRent
+
+09-01-2026T19:03:30 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+09-01-2026T19:03:30 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+09-01-2026T19:03:30 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:03:30 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:03:30 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:03:32 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:03:32 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+09-01-2026T19:03:32 - [MESSAGE][PASSED] - Current window maximized
+
+09-01-2026T19:03:32 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:03:34 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:03:34 - [TEST_STEP][PASSED] - navKW.clickMainNavLink("Rent"): Wait for page load successfully
+
+09-01-2026T19:03:35 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/MainNav/link_Rent' is clickable
+
+09-01-2026T19:03:35 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/MainNav/link_Rent' is clicked on
+
+09-01-2026T19:03:37 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:03:37 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:03:37 - [TEST_STEP][PASSED] - navKW.verifyCurrentUrl("/rent"): Actual text 'http://localhost:5173/rent' and expected text 'http://localhost:5173/rent' are matched 
+
+09-01-2026T19:03:37 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/rent'
+
+09-01-2026T19:03:37 - [MESSAGE][PASSED] - Actual text 'http://localhost:5173/rent' and expected text 'http://localhost:5173/rent' are matched 
+
+09-01-2026T19:03:37 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:03:38 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Navigation/MainNav/TC_NAV_003_NavigateToSell" time="7.325" classname="Test Cases/Navigation/MainNav/TC_NAV_003_NavigateToSell" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:03:38 - [TEST_CASE][PASSED] - Test Cases/Navigation/MainNav/TC_NAV_003_NavigateToSell: Test Cases/Navigation/MainNav/TC_NAV_003_NavigateToSell
+
+09-01-2026T19:03:38 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+09-01-2026T19:03:38 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+09-01-2026T19:03:38 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:03:38 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:03:38 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:03:39 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:03:40 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+09-01-2026T19:03:40 - [MESSAGE][PASSED] - Current window maximized
+
+09-01-2026T19:03:40 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:03:42 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:03:42 - [TEST_STEP][PASSED] - navKW.clickMainNavLink("Sell"): Wait for page load successfully
+
+09-01-2026T19:03:42 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/MainNav/link_Sell' is clickable
+
+09-01-2026T19:03:43 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/MainNav/link_Sell' is clicked on
+
+09-01-2026T19:03:45 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:03:45 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:03:45 - [TEST_STEP][PASSED] - navKW.verifyCurrentUrl("/sell"): Actual text 'http://localhost:5173/sell' and expected text 'http://localhost:5173/sell' are matched 
+
+09-01-2026T19:03:45 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/sell'
+
+09-01-2026T19:03:45 - [MESSAGE][PASSED] - Actual text 'http://localhost:5173/sell' and expected text 'http://localhost:5173/sell' are matched 
+
+09-01-2026T19:03:45 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:03:45 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Navigation/MainNav/TC_NAV_004_NavigateToAgents" time="7.616" classname="Test Cases/Navigation/MainNav/TC_NAV_004_NavigateToAgents" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:03:45 - [TEST_CASE][PASSED] - Test Cases/Navigation/MainNav/TC_NAV_004_NavigateToAgents: Test Cases/Navigation/MainNav/TC_NAV_004_NavigateToAgents
+
+09-01-2026T19:03:45 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+09-01-2026T19:03:45 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+09-01-2026T19:03:45 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:03:45 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:03:45 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:03:46 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:03:47 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+09-01-2026T19:03:47 - [MESSAGE][PASSED] - Current window maximized
+
+09-01-2026T19:03:47 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:03:49 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:03:49 - [TEST_STEP][PASSED] - navKW.clickMainNavLink("Agents"): Wait for page load successfully
+
+09-01-2026T19:03:49 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/MainNav/link_Agents' is clickable
+
+09-01-2026T19:03:50 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/MainNav/link_Agents' is clicked on
+
+09-01-2026T19:03:52 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:03:52 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:03:52 - [TEST_STEP][PASSED] - navKW.verifyCurrentUrl("/agent"): Actual text 'http://localhost:5173/agent' and expected text 'http://localhost:5173/agent' are matched 
+
+09-01-2026T19:03:52 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/agent'
+
+09-01-2026T19:03:52 - [MESSAGE][PASSED] - Actual text 'http://localhost:5173/agent' and expected text 'http://localhost:5173/agent' are matched 
+
+09-01-2026T19:03:52 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:03:53 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Navigation/MainNav/TC_NAV_005_NavigateToNewProjects" time="7.417" classname="Test Cases/Navigation/MainNav/TC_NAV_005_NavigateToNewProjects" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:03:53 - [TEST_CASE][PASSED] - Test Cases/Navigation/MainNav/TC_NAV_005_NavigateToNewProjects: Test Cases/Navigation/MainNav/TC_NAV_005_NavigateToNewProjects
+
+09-01-2026T19:03:53 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+09-01-2026T19:03:53 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+09-01-2026T19:03:53 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:03:53 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:03:53 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:03:54 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:03:55 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+09-01-2026T19:03:55 - [MESSAGE][PASSED] - Current window maximized
+
+09-01-2026T19:03:55 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:03:57 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:03:57 - [TEST_STEP][PASSED] - navKW.clickMainNavLink("NewProjects"): Wait for page load successfully
+
+09-01-2026T19:03:57 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/MainNav/link_NewProjects' is clickable
+
+09-01-2026T19:03:58 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/MainNav/link_NewProjects' is clicked on
+
+09-01-2026T19:04:00 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:04:00 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:04:00 - [TEST_STEP][PASSED] - navKW.verifyCurrentUrl("/developer-properties"): Actual text 'http://localhost:5173/developer-properties' and expected text 'http://localhost:5173/developer-properties' are matched 
+
+09-01-2026T19:04:00 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/developer-properties'
+
+09-01-2026T19:04:00 - [MESSAGE][PASSED] - Actual text 'http://localhost:5173/developer-properties' and expected text 'http://localhost:5173/developer-properties' are matched 
+
+09-01-2026T19:04:00 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:04:00 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Navigation/MainNav/TC_NAV_006_NavigateToHome" time="11.775" classname="Test Cases/Navigation/MainNav/TC_NAV_006_NavigateToHome" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:04:00 - [TEST_CASE][PASSED] - Test Cases/Navigation/MainNav/TC_NAV_006_NavigateToHome: Test Cases/Navigation/MainNav/TC_NAV_006_NavigateToHome
+
+09-01-2026T19:04:00 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+09-01-2026T19:04:00 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+09-01-2026T19:04:00 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:04:00 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:04:00 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:04:01 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:04:02 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+09-01-2026T19:04:02 - [MESSAGE][PASSED] - Current window maximized
+
+09-01-2026T19:04:02 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:04:04 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:04:04 - [TEST_STEP][PASSED] - navKW.clickMainNavLink("Buy"): Wait for page load successfully
+
+09-01-2026T19:04:04 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/MainNav/link_Buy' is clickable
+
+09-01-2026T19:04:05 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/MainNav/link_Buy' is clicked on
+
+09-01-2026T19:04:07 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:04:07 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:04:07 - [TEST_STEP][PASSED] - navKW.clickLogo(): Wait for page load successfully
+
+09-01-2026T19:04:07 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/MainNav/link_Logo' is clickable
+
+09-01-2026T19:04:08 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/MainNav/link_Logo' is clicked on
+
+09-01-2026T19:04:10 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:04:10 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:04:10 - [TEST_STEP][PASSED] - navKW.verifyCurrentUrl("/"): Actual text 'http://localhost:5173/' and expected text 'http://localhost:5173/' are matched 
+
+09-01-2026T19:04:10 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/'
+
+09-01-2026T19:04:10 - [MESSAGE][PASSED] - Actual text 'http://localhost:5173/' and expected text 'http://localhost:5173/' are matched 
+
+09-01-2026T19:04:10 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:04:12 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Navigation/UserMenu/TC_NAV_007_OpenUserDropdown" time="15.333" classname="Test Cases/Navigation/UserMenu/TC_NAV_007_OpenUserDropdown" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:04:12 - [TEST_CASE][PASSED] - Test Cases/Navigation/UserMenu/TC_NAV_007_OpenUserDropdown: Test Cases/Navigation/UserMenu/TC_NAV_007_OpenUserDropdown
+
+09-01-2026T19:04:12 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+09-01-2026T19:04:12 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+09-01-2026T19:04:12 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:04:12 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:04:12 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:04:13 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:04:14 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+09-01-2026T19:04:14 - [MESSAGE][PASSED] - Current window maximized
+
+09-01-2026T19:04:14 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:04:16 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:04:16 - [TEST_STEP][PASSED] - navKW.loginAsTestUser(): Wait for page load successfully
+
+09-01-2026T19:04:16 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+09-01-2026T19:04:18 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:04:19 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+09-01-2026T19:04:20 - [MESSAGE][PASSED] - Text 'user1@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+09-01-2026T19:04:21 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+09-01-2026T19:04:21 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+09-01-2026T19:04:24 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:04:24 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:04:24 - [TEST_STEP][PASSED] - navKW.openUserDropdown(): Delayed 1 second(s)
+
+09-01-2026T19:04:25 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/UserMenu/button_UserDropdown' is clickable
+
+09-01-2026T19:04:25 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/UserMenu/button_UserDropdown' is clicked on
+
+09-01-2026T19:04:26 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:04:26 - [TEST_STEP][PASSED] - waitForElementVisible(findTestObject("Object Repository/Profile/a_My Profile"), 5): Object 'Object Repository/Profile/a_My Profile' is visible
+
+09-01-2026T19:04:27 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/a_My Profile' is visible
+
+09-01-2026T19:04:27 - [TEST_STEP][PASSED] - isVisible = verifyElementVisible(findTestObject("Object Repository/Profile/a_My Profile")): Object 'Object Repository/Profile/a_My Profile' is visible
+
+09-01-2026T19:04:27 - [MESSAGE][PASSED] - Object 'Object Repository/Profile/a_My Profile' is visible
+
+09-01-2026T19:04:27 - [TEST_STEP][PASSED] - comment(User dropdown opened successfully: $isVisible): User dropdown opened successfully: true
+
+09-01-2026T19:04:27 - [MESSAGE][INFO] - User dropdown opened successfully: true
+
+09-01-2026T19:04:27 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:04:27 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Navigation/UserMenu/TC_NAV_008_NavigateToProfile" time="18.259" classname="Test Cases/Navigation/UserMenu/TC_NAV_008_NavigateToProfile" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:04:27 - [TEST_CASE][PASSED] - Test Cases/Navigation/UserMenu/TC_NAV_008_NavigateToProfile: Test Cases/Navigation/UserMenu/TC_NAV_008_NavigateToProfile
+
+09-01-2026T19:04:27 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+09-01-2026T19:04:27 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+09-01-2026T19:04:27 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:04:27 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:04:27 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:04:29 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:04:29 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+09-01-2026T19:04:29 - [MESSAGE][PASSED] - Current window maximized
+
+09-01-2026T19:04:29 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:04:31 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:04:31 - [TEST_STEP][PASSED] - navKW.loginAsTestUser(): Wait for page load successfully
+
+09-01-2026T19:04:31 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+09-01-2026T19:04:33 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:04:34 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+09-01-2026T19:04:35 - [MESSAGE][PASSED] - Text 'user1@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+09-01-2026T19:04:36 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+09-01-2026T19:04:36 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+09-01-2026T19:04:39 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:04:39 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:04:39 - [TEST_STEP][PASSED] - navKW.clickUserMenuItem("My Profile"): Wait for page load successfully
+
+09-01-2026T19:04:40 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/UserMenu/button_UserDropdown' is clickable
+
+09-01-2026T19:04:40 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/UserMenu/button_UserDropdown' is clicked on
+
+09-01-2026T19:04:41 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:04:41 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/UserMenu/link_MyProfile' is clickable
+
+09-01-2026T19:04:42 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/UserMenu/link_MyProfile' is clicked on
+
+09-01-2026T19:04:44 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:04:44 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:04:44 - [TEST_STEP][PASSED] - navKW.verifyCurrentUrl("/profile"): Actual text 'http://localhost:5173/profile' and expected text 'http://localhost:5173/profile' are matched 
+
+09-01-2026T19:04:44 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/profile'
+
+09-01-2026T19:04:44 - [MESSAGE][PASSED] - Actual text 'http://localhost:5173/profile' and expected text 'http://localhost:5173/profile' are matched 
+
+09-01-2026T19:04:44 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:04:45 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Navigation/UserMenu/TC_NAV_009_NavigateToBecomeAgent" time="17.339" classname="Test Cases/Navigation/UserMenu/TC_NAV_009_NavigateToBecomeAgent" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:04:45 - [TEST_CASE][PASSED] - Test Cases/Navigation/UserMenu/TC_NAV_009_NavigateToBecomeAgent: Test Cases/Navigation/UserMenu/TC_NAV_009_NavigateToBecomeAgent
+
+09-01-2026T19:04:45 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+09-01-2026T19:04:45 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+09-01-2026T19:04:45 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:04:45 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:04:45 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:04:47 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:04:47 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+09-01-2026T19:04:47 - [MESSAGE][PASSED] - Current window maximized
+
+09-01-2026T19:04:47 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:04:49 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:04:49 - [TEST_STEP][PASSED] - navKW.loginAsTestUser(): Wait for page load successfully
+
+09-01-2026T19:04:50 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+09-01-2026T19:04:52 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:04:52 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+09-01-2026T19:04:53 - [MESSAGE][PASSED] - Text 'user1@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+09-01-2026T19:04:54 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+09-01-2026T19:04:55 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+09-01-2026T19:04:58 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:04:58 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:04:58 - [TEST_STEP][PASSED] - navKW.clickUserMenuItem("Become an Agent"): Wait for page load successfully
+
+09-01-2026T19:04:58 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/UserMenu/button_UserDropdown' is clickable
+
+09-01-2026T19:04:59 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/UserMenu/button_UserDropdown' is clicked on
+
+09-01-2026T19:05:00 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:05:00 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/UserMenu/link_BecomeanAgent' is clickable
+
+09-01-2026T19:05:00 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/UserMenu/link_BecomeanAgent' is clicked on
+
+09-01-2026T19:05:02 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:05:02 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:05:02 - [TEST_STEP][PASSED] - navKW.verifyCurrentUrl("/become-agent"): Actual text 'http://localhost:5173/become-agent' and expected text 'http://localhost:5173/become-agent' are matched 
+
+09-01-2026T19:05:02 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/become-agent'
+
+09-01-2026T19:05:02 - [MESSAGE][PASSED] - Actual text 'http://localhost:5173/become-agent' and expected text 'http://localhost:5173/become-agent' are matched 
+
+09-01-2026T19:05:02 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:05:03 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Navigation/Auth/TC_NAV_010_NavigateToLogin" time="7.111" classname="Test Cases/Navigation/Auth/TC_NAV_010_NavigateToLogin" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:05:03 - [TEST_CASE][PASSED] - Test Cases/Navigation/Auth/TC_NAV_010_NavigateToLogin: Test Cases/Navigation/Auth/TC_NAV_010_NavigateToLogin
+
+09-01-2026T19:05:03 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+09-01-2026T19:05:03 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+09-01-2026T19:05:03 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:05:03 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:05:03 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:05:04 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:05:05 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+09-01-2026T19:05:05 - [MESSAGE][PASSED] - Current window maximized
+
+09-01-2026T19:05:05 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:05:07 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:05:07 - [TEST_STEP][PASSED] - navKW.clickSignIn(): Wait for page load successfully
+
+09-01-2026T19:05:07 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/Auth/link_SignIn' is clickable
+
+09-01-2026T19:05:08 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/Auth/link_SignIn' is clicked on
+
+09-01-2026T19:05:10 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:05:10 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:05:10 - [TEST_STEP][PASSED] - navKW.verifyCurrentUrl("/login"): Actual text 'http://localhost:5173/login' and expected text 'http://localhost:5173/login' are matched 
+
+09-01-2026T19:05:10 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+09-01-2026T19:05:10 - [MESSAGE][PASSED] - Actual text 'http://localhost:5173/login' and expected text 'http://localhost:5173/login' are matched 
+
+09-01-2026T19:05:10 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:05:10 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Navigation/Auth/TC_NAV_011_NavigateToRegister" time="7.202" classname="Test Cases/Navigation/Auth/TC_NAV_011_NavigateToRegister" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:05:10 - [TEST_CASE][PASSED] - Test Cases/Navigation/Auth/TC_NAV_011_NavigateToRegister: Test Cases/Navigation/Auth/TC_NAV_011_NavigateToRegister
+
+09-01-2026T19:05:10 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+09-01-2026T19:05:10 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+09-01-2026T19:05:10 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:05:10 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:05:10 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:05:11 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:05:12 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+09-01-2026T19:05:12 - [MESSAGE][PASSED] - Current window maximized
+
+09-01-2026T19:05:12 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:05:14 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:05:14 - [TEST_STEP][PASSED] - navKW.clickGetStarted(): Wait for page load successfully
+
+09-01-2026T19:05:14 - [MESSAGE][PASSED] - Object 'Object Repository/Navigation/Auth/link_GetStarted' is clickable
+
+09-01-2026T19:05:15 - [MESSAGE][PASSED] - Object: 'Object Repository/Navigation/Auth/link_GetStarted' is clicked on
+
+09-01-2026T19:05:17 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:05:17 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:05:17 - [TEST_STEP][PASSED] - navKW.verifyCurrentUrl("/register"): Actual text 'http://localhost:5173/register' and expected text 'http://localhost:5173/register' are matched 
+
+09-01-2026T19:05:17 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/register'
+
+09-01-2026T19:05:17 - [MESSAGE][PASSED] - Actual text 'http://localhost:5173/register' and expected text 'http://localhost:5173/register' are matched 
+
+09-01-2026T19:05:17 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:05:17 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Navigation/UserMenu/TC_NAV_012_NavigateToNotifications" time="15.55" classname="Test Cases/Navigation/UserMenu/TC_NAV_012_NavigateToNotifications" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:05:17 - [TEST_CASE][PASSED] - Test Cases/Navigation/UserMenu/TC_NAV_012_NavigateToNotifications: Test Cases/Navigation/UserMenu/TC_NAV_012_NavigateToNotifications
+
+09-01-2026T19:05:17 - [TEST_STEP][PASSED] - navKW = new navigation.Navigation_Keywords(): null
+
+09-01-2026T19:05:17 - [TEST_STEP][PASSED] - navKW.openHomePage(): Delayed 2 second(s)
+
+09-01-2026T19:05:17 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:05:17 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:05:17 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:05:19 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:05:19 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+09-01-2026T19:05:19 - [MESSAGE][PASSED] - Current window maximized
+
+09-01-2026T19:05:19 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:05:21 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:05:21 - [TEST_STEP][PASSED] - navKW.loginAsTestUser(): Wait for page load successfully
+
+09-01-2026T19:05:21 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+09-01-2026T19:05:23 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:05:24 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+09-01-2026T19:05:25 - [MESSAGE][PASSED] - Text 'user1@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+09-01-2026T19:05:26 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+09-01-2026T19:05:26 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+09-01-2026T19:05:29 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:05:29 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:05:29 - [TEST_STEP][PASSED] - waitForElementClickable(findTestObject("Object Repository/Notification/notificationBellIcon"), 10): Object 'Object Repository/Notification/notificationBellIcon' is clickable
+
+09-01-2026T19:05:30 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/notificationBellIcon' is clickable
+
+09-01-2026T19:05:30 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Notification/notificationBellIcon")): Object: 'Object Repository/Notification/notificationBellIcon' is clicked on
+
+09-01-2026T19:05:30 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/notificationBellIcon' is clicked on
+
+09-01-2026T19:05:30 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+09-01-2026T19:05:32 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:05:32 - [TEST_STEP][PASSED] - waitForPageLoad(10): Wait for page load successfully
+
+09-01-2026T19:05:32 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:05:32 - [TEST_STEP][PASSED] - navKW.verifyCurrentUrl("/notifications"): Actual text 'http://localhost:5173/notifications' and expected text 'http://localhost:5173/notifications' are matched 
+
+09-01-2026T19:05:32 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/notifications'
+
+09-01-2026T19:05:32 - [MESSAGE][PASSED] - Actual text 'http://localhost:5173/notifications' and expected text 'http://localhost:5173/notifications' are matched 
+
+09-01-2026T19:05:32 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:05:33 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[09-01-2026T19:03:18 - [TEST_SUITE][PASSED] - TS_Navigation_Complete: null]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

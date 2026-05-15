@@ -1,0 +1,11 @@
+SCREEN NAME,Sell Property Page,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_PROP_001,SCENARIO DESCRIPTION,Property Service - Sell Property,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_PROP_001,Verify Sell page requires user to be logged in,User not logged in,URL: /sell; Auth Status: Not Logged In,User redirected to login page OR prompted to login,Access restricted to authenticated users,User redirected to login page,PASSED,,Security test - Auth required
+2,TC_PROP_002,Verify property creation with valid data,User logged in,"Title: 'Beautiful Beach House'; Price: 500000; Type: 'Sale'; Location: 'Miami, FL'; Bedrooms: 3; Bathrooms: 2",Property created successfully; Success message shown,New property listed in database,Property created successfully with success message shown,PASSED,,Positive test - Create property
+3,TC_PROP_003,Verify property creation fails with missing required fields,User logged in,Title: '' (empty); Price: '' (empty),Error messages for required fields displayed,Property not created,Error messages for required fields displayed,PASSED,,Negative test - Validation

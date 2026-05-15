@@ -1,0 +1,162 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_Notification_Complete,Chrome 143.0.7499.170,Complete test suite for Notifications - All notification test cases,,09-01-2026 19:05:38,09-01-2026 19:09:37,3m - 58.817s,PASSED
+,,,,,,,
+Test Cases/Notification/TC_NOTIF_001_ViewNotifications,Chrome 143.0.7499.170,View notifications page and verify notifications are displayed,"notification,view,positive",09-01-2026 19:05:39,09-01-2026 19:05:57,17.247s,PASSED
+notif = new notification.NotificationHelper(),Chrome 143.0.7499.170,,,09-01-2026 19:05:40,09-01-2026 19:05:40,0.016s,PASSED
+notif.loginAsReviewUser(),Chrome 143.0.7499.170,,,09-01-2026 19:05:40,09-01-2026 19:05:53,12.667s,PASSED
+notif.navigateToNotifications(),Chrome 143.0.7499.170,,,09-01-2026 19:05:53,09-01-2026 19:05:56,3.013s,PASSED
+"waitForElementPresent(findTestObject(""Object Repository/Notification/pageTitle""), 10)",Chrome 143.0.7499.170,,,09-01-2026 19:05:56,09-01-2026 19:05:56,0.292s,PASSED
+count = notif.getNotificationCount(),Chrome 143.0.7499.170,,,09-01-2026 19:05:56,09-01-2026 19:05:56,0.289s,PASSED
+comment(Total notifications: $count),Chrome 143.0.7499.170,,,09-01-2026 19:05:56,09-01-2026 19:05:56,0.017s,PASSED
+"verifyGreaterThan(count, 0)",Chrome 143.0.7499.170,,,09-01-2026 19:05:56,09-01-2026 19:05:56,0.023s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:05:56,09-01-2026 19:05:57,0.324s,PASSED
+,,,,,,,
+Test Cases/Notification/TC_NOTIF_002_MarkAsRead,Chrome 143.0.7499.170,Mark an unread notification as read,"notification,mark-read,positive",09-01-2026 19:05:57,09-01-2026 19:06:29,31.927s,PASSED
+notif = new notification.NotificationHelper(),Chrome 143.0.7499.170,,,09-01-2026 19:05:57,09-01-2026 19:05:57,0.002s,PASSED
+reviewKW = new review.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:05:57,09-01-2026 19:05:57,0.017s,PASSED
+reviewKW.loginAsUser(),Chrome 143.0.7499.170,,,09-01-2026 19:05:57,09-01-2026 19:06:05,8.055s,PASSED
+reviewKW.navigateToWriteReview(),Chrome 143.0.7499.170,,,09-01-2026 19:06:05,09-01-2026 19:06:09,3.548s,PASSED
+"reviewKW.fillReviewForm(""Test Reviewer Notif"", ""694b6474061ba8a480628253"", 1, ""Test review for notification"")",Chrome 143.0.7499.170,,,09-01-2026 19:06:09,09-01-2026 19:06:16,6.921s,PASSED
+reviewKW.submitReview(),Chrome 143.0.7499.170,,,09-01-2026 19:06:16,09-01-2026 19:06:18,2.741s,PASSED
+delay(2),Chrome 143.0.7499.170,,,09-01-2026 19:06:18,09-01-2026 19:06:20,2.018s,PASSED
+notif.navigateToNotifications(),Chrome 143.0.7499.170,,,09-01-2026 19:06:20,09-01-2026 19:06:23,2.926s,PASSED
+initialUnread = notif.getUnreadCount(),Chrome 143.0.7499.170,,,09-01-2026 19:06:23,09-01-2026 19:06:24,0.315s,PASSED
+comment(Initial unread: $initialUnread),Chrome 143.0.7499.170,,,09-01-2026 19:06:24,09-01-2026 19:06:24,0.006s,PASSED
+if (initialUnread > 0),Chrome 143.0.7499.170,,,09-01-2026 19:06:24,09-01-2026 19:06:28,4.715s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:06:28,09-01-2026 19:06:29,0.338s,PASSED
+,,,,,,,
+Test Cases/Notification/TC_NOTIF_003_DeleteNotification,Chrome 143.0.7499.170,Delete a notification from the list,"notification,positive,delete",09-01-2026 19:06:29,09-01-2026 19:07:02,32.849s,PASSED
+notif = new notification.NotificationHelper(),Chrome 143.0.7499.170,,,09-01-2026 19:06:29,09-01-2026 19:06:29,0.001s,PASSED
+reviewKW = new review.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:06:29,09-01-2026 19:06:29,0.001s,PASSED
+reviewKW.loginAsUser(),Chrome 143.0.7499.170,,,09-01-2026 19:06:29,09-01-2026 19:06:37,7.912s,PASSED
+reviewKW.navigateToWriteReview(),Chrome 143.0.7499.170,,,09-01-2026 19:06:37,09-01-2026 19:06:40,3.646s,PASSED
+"reviewKW.fillReviewForm(""Test Reviewer Notif Delete"", ""694b6474061ba8a480628253"", 1, ""Test review for delete notification"")",Chrome 143.0.7499.170,,,09-01-2026 19:06:40,09-01-2026 19:06:47,6.863s,PASSED
+reviewKW.submitReview(),Chrome 143.0.7499.170,,,09-01-2026 19:06:47,09-01-2026 19:06:50,2.772s,PASSED
+delay(2),Chrome 143.0.7499.170,,,09-01-2026 19:06:50,09-01-2026 19:06:52,2.017s,PASSED
+notif.navigateToNotifications(),Chrome 143.0.7499.170,,,09-01-2026 19:06:52,09-01-2026 19:06:55,2.895s,PASSED
+initialCount = notif.getNotificationCount(),Chrome 143.0.7499.170,,,09-01-2026 19:06:55,09-01-2026 19:06:55,0.283s,PASSED
+comment(Initial count: $initialCount),Chrome 143.0.7499.170,,,09-01-2026 19:06:55,09-01-2026 19:06:55,0.005s,PASSED
+if (initialCount > 0),Chrome 143.0.7499.170,,,09-01-2026 19:06:55,09-01-2026 19:07:00,4.558s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:07:00,09-01-2026 19:07:02,1.832s,PASSED
+,,,,,,,
+Test Cases/Notification/Triggers/TC_NOTIF_TRIG_001_ReviewPosted,Chrome 143.0.7499.170,Verify notification is created when a review is posted,,09-01-2026 19:07:02,09-01-2026 19:07:36,34.951s,PASSED
+notif = new notification.NotificationHelper(),Chrome 143.0.7499.170,,,09-01-2026 19:07:02,09-01-2026 19:07:02,0.001s,PASSED
+reviewKW = new review.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:07:02,09-01-2026 19:07:02,0.001s,PASSED
+notif.loginAsReviewUser(),Chrome 143.0.7499.170,,,09-01-2026 19:07:02,09-01-2026 19:07:11,9.288s,PASSED
+notif.navigateToNotifications(),Chrome 143.0.7499.170,,,09-01-2026 19:07:11,09-01-2026 19:07:14,2.904s,PASSED
+initialCount = notif.getNotificationCount(),Chrome 143.0.7499.170,,,09-01-2026 19:07:14,09-01-2026 19:07:14,0.292s,PASSED
+comment(Initial notification count: $initialCount),Chrome 143.0.7499.170,,,09-01-2026 19:07:14,09-01-2026 19:07:14,0.005s,PASSED
+"navigateToUrl(""http://localhost:5173/write-review"")",Chrome 143.0.7499.170,,,09-01-2026 19:07:14,09-01-2026 19:07:14,0.193s,PASSED
+delay(2),Chrome 143.0.7499.170,,,09-01-2026 19:07:14,09-01-2026 19:07:16,2.018s,PASSED
+"reviewKW.fillReviewForm(""Test Reviewer Trigger"", ""694b6474061ba8a480628253"", 5, ""Testing notification trigger on review post"")",Chrome 143.0.7499.170,,,09-01-2026 19:07:16,09-01-2026 19:07:23,6.672s,PASSED
+reviewKW.submitReview(),Chrome 143.0.7499.170,,,09-01-2026 19:07:23,09-01-2026 19:07:26,2.706s,PASSED
+delay(3),Chrome 143.0.7499.170,,,09-01-2026 19:07:26,09-01-2026 19:07:29,3.020s,PASSED
+notif.navigateToNotifications(),Chrome 143.0.7499.170,,,09-01-2026 19:07:29,09-01-2026 19:07:32,2.866s,PASSED
+newCount = notif.getNotificationCount(),Chrome 143.0.7499.170,,,09-01-2026 19:07:32,09-01-2026 19:07:32,0.331s,PASSED
+comment(After review post: $newCount),Chrome 143.0.7499.170,,,09-01-2026 19:07:32,09-01-2026 19:07:32,0.004s,PASSED
+"verifyEqual(newCount, initialCount + 1, STOP_ON_FAILURE)",Chrome 143.0.7499.170,,,09-01-2026 19:07:32,09-01-2026 19:07:32,0.010s,PASSED
+"comment(""Test PASSED: Notification created when review posted"")",Chrome 143.0.7499.170,,,09-01-2026 19:07:32,09-01-2026 19:07:32,0.003s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:07:32,09-01-2026 19:07:36,4.238s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:07:36,09-01-2026 19:07:36,0.289s,PASSED
+,,,,,,,
+Test Cases/Notification/Triggers/TC_NOTIF_TRIG_002_PropertySell,Chrome 143.0.7499.170,Verify notification is created when a property is listed for sale,,09-01-2026 19:07:36,09-01-2026 19:08:29,52.432s,PASSED
+notif = new notification.NotificationHelper(),Chrome 143.0.7499.170,,,09-01-2026 19:07:37,09-01-2026 19:07:37,0.002s,PASSED
+sellKW = new propertyservice.Sell_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:07:37,09-01-2026 19:07:37,0.010s,PASSED
+notif.loginAsReviewUser(),Chrome 143.0.7499.170,,,09-01-2026 19:07:37,09-01-2026 19:07:46,9.516s,PASSED
+notif.navigateToNotifications(),Chrome 143.0.7499.170,,,09-01-2026 19:07:46,09-01-2026 19:07:49,2.931s,PASSED
+initialCount = notif.getNotificationCount(),Chrome 143.0.7499.170,,,09-01-2026 19:07:49,09-01-2026 19:07:50,0.292s,PASSED
+comment(Initial notification count: $initialCount),Chrome 143.0.7499.170,,,09-01-2026 19:07:50,09-01-2026 19:07:50,0.006s,PASSED
+sellKW.navigateToSellPage(),Chrome 143.0.7499.170,,,09-01-2026 19:07:50,09-01-2026 19:07:50,0.208s,PASSED
+sellKW.verifySellPageLoaded(),Chrome 143.0.7499.170,,,09-01-2026 19:07:50,09-01-2026 19:07:50,0.496s,PASSED
+projectDir = getProjectDir(),Chrome 143.0.7499.170,,,09-01-2026 19:07:50,09-01-2026 19:07:50,0.002s,PASSED
+"imagePath = projectDir + ""/TestData/villa.jpg""",Chrome 143.0.7499.170,,,09-01-2026 19:07:50,09-01-2026 19:07:50,0.004s,PASSED
+comment(Project directory: $projectDir),Chrome 143.0.7499.170,,,09-01-2026 19:07:50,09-01-2026 19:07:50,0.005s,PASSED
+comment(Image path: $imagePath),Chrome 143.0.7499.170,,,09-01-2026 19:07:50,09-01-2026 19:07:50,0.005s,PASSED
+imageFile = new java.io.File(imagePath),Chrome 143.0.7499.170,,,09-01-2026 19:07:50,09-01-2026 19:07:50,0.002s,PASSED
+if (!(imageFile.exists())),Chrome 143.0.7499.170,,,09-01-2026 19:07:50,09-01-2026 19:07:50,0.011s,PASSED
+comment(✓ villa.jpg found! Size: $imageFile.length() bytes),Chrome 143.0.7499.170,,,09-01-2026 19:07:50,09-01-2026 19:07:50,0.019s,PASSED
+imagePath = imageFile.getAbsolutePath(),Chrome 143.0.7499.170,,,09-01-2026 19:07:50,09-01-2026 19:07:50,0.002s,PASSED
+comment(Using absolute path: $imagePath),Chrome 143.0.7499.170,,,09-01-2026 19:07:50,09-01-2026 19:07:50,0.005s,PASSED
+"sellKW.fillBasicInfo(""Test Property for Notification"", ""This is a test property to verify notification creation"", ""sale"", ""residential"", ""apartment"")",Chrome 143.0.7499.170,,,09-01-2026 19:07:50,09-01-2026 19:07:55,4.470s,PASSED
+sellKW.clickNextButton(),Chrome 143.0.7499.170,,,09-01-2026 19:07:55,09-01-2026 19:07:56,1.549s,PASSED
+"sellKW.fillAddressInfo(""123 Test Street"", ""Test City"", ""Test State"", ""Test Country"", ""1000"", ""93"")",Chrome 143.0.7499.170,,,09-01-2026 19:07:56,09-01-2026 19:08:02,5.878s,PASSED
+sellKW.clickNextButton(),Chrome 143.0.7499.170,,,09-01-2026 19:08:02,09-01-2026 19:08:04,1.442s,PASSED
+"comment(""=== STEP 3: Media & Price ==="")",Chrome 143.0.7499.170,,,09-01-2026 19:08:04,09-01-2026 19:08:04,0.003s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:08:04,09-01-2026 19:08:07,3.442s,PASSED
+"setText(findTestObject(""Object Repository/PropertyService/SellPage/priceInput""), ""250000"")",Chrome 143.0.7499.170,,,09-01-2026 19:08:07,09-01-2026 19:08:08,0.862s,PASSED
+"setText(findTestObject(""Object Repository/PropertyService/SellPage/buildDateInput""), ""2024-01-01"")",Chrome 143.0.7499.170,,,09-01-2026 19:08:08,09-01-2026 19:08:09,0.957s,PASSED
+"selectOptionByValue(findTestObject(""Object Repository/PropertyService/SellPage/statusSelect""), ""active"", false)",Chrome 143.0.7499.170,,,09-01-2026 19:08:09,09-01-2026 19:08:10,0.727s,PASSED
+sellKW.clickNextButton(),Chrome 143.0.7499.170,,,09-01-2026 19:08:10,09-01-2026 19:08:11,1.503s,PASSED
+"sellKW.fillAllFeatures(""2"", ""2"", ""1"", ""fully"", false, false, false)",Chrome 143.0.7499.170,,,09-01-2026 19:08:11,09-01-2026 19:08:15,3.495s,PASSED
+"comment(""Submitting property..."")",Chrome 143.0.7499.170,,,09-01-2026 19:08:15,09-01-2026 19:08:15,0.005s,PASSED
+sellKW.clickSubmitButton(),Chrome 143.0.7499.170,,,09-01-2026 19:08:15,09-01-2026 19:08:18,3.538s,PASSED
+delay(5),Chrome 143.0.7499.170,,,09-01-2026 19:08:18,09-01-2026 19:08:23,5.016s,PASSED
+"comment(""Navigating to home page..."")",Chrome 143.0.7499.170,,,09-01-2026 19:08:23,09-01-2026 19:08:23,0.005s,PASSED
+"navigateToUrl(""http://localhost:5173/"")",Chrome 143.0.7499.170,,,09-01-2026 19:08:23,09-01-2026 19:08:23,0.194s,PASSED
+delay(2),Chrome 143.0.7499.170,,,09-01-2026 19:08:23,09-01-2026 19:08:25,2.019s,PASSED
+"comment(""Opening notifications..."")",Chrome 143.0.7499.170,,,09-01-2026 19:08:25,09-01-2026 19:08:25,0.004s,PASSED
+notif.navigateToNotifications(),Chrome 143.0.7499.170,,,09-01-2026 19:08:25,09-01-2026 19:08:28,2.850s,PASSED
+newCount = notif.getNotificationCount(),Chrome 143.0.7499.170,,,09-01-2026 19:08:28,09-01-2026 19:08:29,0.284s,PASSED
+"comment(Initial count: $initialCount, New count: $newCount)",Chrome 143.0.7499.170,,,09-01-2026 19:08:29,09-01-2026 19:08:29,0.006s,PASSED
+if (newCount > initialCount),Chrome 143.0.7499.170,,,09-01-2026 19:08:29,09-01-2026 19:08:29,0.009s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:08:29,09-01-2026 19:08:29,0.377s,PASSED
+,,,,,,,
+Test Cases/Notification/Triggers/TC_NOTIF_TRIG_003_PropertyRent,Chrome 143.0.7499.170,Verify notification is created when user contacts seller about rental property,,09-01-2026 19:08:29,09-01-2026 19:09:03,33.888s,PASSED
+notif = new notification.NotificationHelper(),Chrome 143.0.7499.170,,,09-01-2026 19:08:29,09-01-2026 19:08:29,0.001s,PASSED
+notif.loginAsReviewUser(),Chrome 143.0.7499.170,,,09-01-2026 19:08:29,09-01-2026 19:08:38,9.393s,PASSED
+notif.navigateToNotifications(),Chrome 143.0.7499.170,,,09-01-2026 19:08:38,09-01-2026 19:08:41,2.883s,PASSED
+initialCount = notif.getNotificationCount(),Chrome 143.0.7499.170,,,09-01-2026 19:08:41,09-01-2026 19:08:42,0.283s,PASSED
+comment(Initial notification count: $initialCount),Chrome 143.0.7499.170,,,09-01-2026 19:08:42,09-01-2026 19:08:42,0.004s,PASSED
+"navigateToUrl(""http://localhost:5173/rent"")",Chrome 143.0.7499.170,,,09-01-2026 19:08:42,09-01-2026 19:08:42,0.209s,PASSED
+delay(3),Chrome 143.0.7499.170,,,09-01-2026 19:08:42,09-01-2026 19:08:45,3.016s,PASSED
+"waitForElementPresent(findTestObject(""Object Repository/Property/propertyCard""), 10)",Chrome 143.0.7499.170,,,09-01-2026 19:08:45,09-01-2026 19:08:45,0.269s,PASSED
+"if (!(verifyElementPresent(findTestObject(""Object Repository/Property/propertyCard""), 5, OPTIONAL)))",Chrome 143.0.7499.170,,,09-01-2026 19:08:45,09-01-2026 19:08:45,0.284s,PASSED
+"click(findTestObject(""Object Repository/Property/propertyCard""))",Chrome 143.0.7499.170,,,09-01-2026 19:08:45,09-01-2026 19:08:46,0.514s,PASSED
+delay(2),Chrome 143.0.7499.170,,,09-01-2026 19:08:46,09-01-2026 19:08:48,2.010s,PASSED
+"waitForElementClickable(findTestObject(""Object Repository/Property/contactAgentButton""), 10)",Chrome 143.0.7499.170,,,09-01-2026 19:08:48,09-01-2026 19:08:48,0.370s,PASSED
+"click(findTestObject(""Object Repository/Property/contactAgentButton""))",Chrome 143.0.7499.170,,,09-01-2026 19:08:48,09-01-2026 19:08:49,0.509s,PASSED
+delay(1),Chrome 143.0.7499.170,,,09-01-2026 19:08:49,09-01-2026 19:08:50,1.018s,PASSED
+"setText(findTestObject(""Object Repository/Property/contactNameInput""), ""Test User Rent"")",Chrome 143.0.7499.170,,,09-01-2026 19:08:50,09-01-2026 19:08:51,1.146s,PASSED
+"setText(findTestObject(""Object Repository/Property/contactEmailInput""), ""testrent@example.com"")",Chrome 143.0.7499.170,,,09-01-2026 19:08:51,09-01-2026 19:08:52,1.226s,PASSED
+"setText(findTestObject(""Object Repository/Property/contactMessageInput""), ""Interested in renting this property"")",Chrome 143.0.7499.170,,,09-01-2026 19:08:52,09-01-2026 19:08:53,1.326s,PASSED
+"click(findTestObject(""Object Repository/Property/sendMessageButton""))",Chrome 143.0.7499.170,,,09-01-2026 19:08:53,09-01-2026 19:08:54,0.694s,PASSED
+delay(3),Chrome 143.0.7499.170,,,09-01-2026 19:08:54,09-01-2026 19:08:57,3.006s,PASSED
+"comment(""Navigating to home page..."")",Chrome 143.0.7499.170,,,09-01-2026 19:08:57,09-01-2026 19:08:57,0.004s,PASSED
+"navigateToUrl(""http://localhost:5173/"")",Chrome 143.0.7499.170,,,09-01-2026 19:08:57,09-01-2026 19:08:57,0.154s,PASSED
+delay(2),Chrome 143.0.7499.170,,,09-01-2026 19:08:57,09-01-2026 19:08:59,2.013s,PASSED
+"comment(""Opening notifications..."")",Chrome 143.0.7499.170,,,09-01-2026 19:08:59,09-01-2026 19:08:59,0.005s,PASSED
+notif.navigateToNotifications(),Chrome 143.0.7499.170,,,09-01-2026 19:08:59,09-01-2026 19:09:02,2.857s,PASSED
+newCount = notif.getNotificationCount(),Chrome 143.0.7499.170,,,09-01-2026 19:09:02,09-01-2026 19:09:03,0.292s,PASSED
+"comment(Initial count: $initialCount, New count: $newCount)",Chrome 143.0.7499.170,,,09-01-2026 19:09:03,09-01-2026 19:09:03,0.005s,PASSED
+if (newCount > initialCount),Chrome 143.0.7499.170,,,09-01-2026 19:09:03,09-01-2026 19:09:03,0.008s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:09:03,09-01-2026 19:09:03,0.300s,PASSED
+,,,,,,,
+Test Cases/Notification/Triggers/TC_NOTIF_TRIG_004_PropertyBuy,Chrome 143.0.7499.170,Verify notification is created when user contacts seller about property for sale,,09-01-2026 19:09:03,09-01-2026 19:09:37,34.432s,PASSED
+notif = new notification.NotificationHelper(),Chrome 143.0.7499.170,,,09-01-2026 19:09:03,09-01-2026 19:09:03,0.002s,PASSED
+notif.loginAsReviewUser(),Chrome 143.0.7499.170,,,09-01-2026 19:09:03,09-01-2026 19:09:12,9.430s,PASSED
+notif.navigateToNotifications(),Chrome 143.0.7499.170,,,09-01-2026 19:09:12,09-01-2026 19:09:15,2.905s,PASSED
+initialCount = notif.getNotificationCount(),Chrome 143.0.7499.170,,,09-01-2026 19:09:15,09-01-2026 19:09:16,0.276s,PASSED
+comment(Initial notification count: $initialCount),Chrome 143.0.7499.170,,,09-01-2026 19:09:16,09-01-2026 19:09:16,0.004s,PASSED
+"navigateToUrl(""http://localhost:5173/buy"")",Chrome 143.0.7499.170,,,09-01-2026 19:09:16,09-01-2026 19:09:16,0.204s,PASSED
+delay(3),Chrome 143.0.7499.170,,,09-01-2026 19:09:16,09-01-2026 19:09:19,3.006s,PASSED
+"waitForElementPresent(findTestObject(""Object Repository/Property/propertyCard""), 10)",Chrome 143.0.7499.170,,,09-01-2026 19:09:19,09-01-2026 19:09:19,0.281s,PASSED
+"if (!(verifyElementPresent(findTestObject(""Object Repository/Property/propertyCard""), 5, OPTIONAL)))",Chrome 143.0.7499.170,,,09-01-2026 19:09:19,09-01-2026 19:09:19,0.294s,PASSED
+"click(findTestObject(""Object Repository/Property/propertyCard""))",Chrome 143.0.7499.170,,,09-01-2026 19:09:19,09-01-2026 19:09:20,0.489s,PASSED
+delay(2),Chrome 143.0.7499.170,,,09-01-2026 19:09:20,09-01-2026 19:09:22,2.020s,PASSED
+"waitForElementClickable(findTestObject(""Object Repository/Property/contactAgentButton""), 10)",Chrome 143.0.7499.170,,,09-01-2026 19:09:22,09-01-2026 19:09:22,0.341s,PASSED
+"click(findTestObject(""Object Repository/Property/contactAgentButton""))",Chrome 143.0.7499.170,,,09-01-2026 19:09:22,09-01-2026 19:09:23,0.497s,PASSED
+delay(1),Chrome 143.0.7499.170,,,09-01-2026 19:09:23,09-01-2026 19:09:24,1.011s,PASSED
+"setText(findTestObject(""Object Repository/Property/contactNameInput""), ""Test User Buy"")",Chrome 143.0.7499.170,,,09-01-2026 19:09:24,09-01-2026 19:09:25,1.197s,PASSED
+"setText(findTestObject(""Object Repository/Property/contactEmailInput""), ""testbuy@example.com"")",Chrome 143.0.7499.170,,,09-01-2026 19:09:25,09-01-2026 19:09:26,1.272s,PASSED
+"setText(findTestObject(""Object Repository/Property/contactMessageInput""), ""Interested in buying this property"")",Chrome 143.0.7499.170,,,09-01-2026 19:09:26,09-01-2026 19:09:28,1.364s,PASSED
+"click(findTestObject(""Object Repository/Property/sendMessageButton""))",Chrome 143.0.7499.170,,,09-01-2026 19:09:28,09-01-2026 19:09:28,0.748s,PASSED
+delay(3),Chrome 143.0.7499.170,,,09-01-2026 19:09:28,09-01-2026 19:09:31,3.012s,PASSED
+"comment(""Navigating to home page..."")",Chrome 143.0.7499.170,,,09-01-2026 19:09:31,09-01-2026 19:09:31,0.003s,PASSED
+"navigateToUrl(""http://localhost:5173/"")",Chrome 143.0.7499.170,,,09-01-2026 19:09:31,09-01-2026 19:09:31,0.159s,PASSED
+delay(2),Chrome 143.0.7499.170,,,09-01-2026 19:09:31,09-01-2026 19:09:33,2.012s,PASSED
+"comment(""Opening notifications..."")",Chrome 143.0.7499.170,,,09-01-2026 19:09:33,09-01-2026 19:09:33,0.004s,PASSED
+notif.navigateToNotifications(),Chrome 143.0.7499.170,,,09-01-2026 19:09:33,09-01-2026 19:09:36,2.847s,PASSED
+newCount = notif.getNotificationCount(),Chrome 143.0.7499.170,,,09-01-2026 19:09:36,09-01-2026 19:09:37,0.280s,PASSED
+"comment(Initial count: $initialCount, New count: $newCount)",Chrome 143.0.7499.170,,,09-01-2026 19:09:37,09-01-2026 19:09:37,0.004s,PASSED
+if (newCount > initialCount),Chrome 143.0.7499.170,,,09-01-2026 19:09:37,09-01-2026 19:09:37,0.009s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,09-01-2026 19:09:37,09-01-2026 19:09:37,0.656s,PASSED

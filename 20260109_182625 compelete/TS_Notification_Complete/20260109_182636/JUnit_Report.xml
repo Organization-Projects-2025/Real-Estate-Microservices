@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="TS_Notification_Complete" time="238.778" tests="7" failures="0" errors="0">
+   <testsuite name="TS_Notification_Complete" tests="7" failures="0" errors="0" time="238.778" skipped="0" timestamp="2026-01-09T17:05:38.973Z" hostname="ASUS - 192.168.1.53" id="Test Suites/TS_Notification_Complete">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="C:\\Projects\\Real-Estate-Microservices\\Katalon\\Reports\\20260109_182625\\TS_Notification_Complete\\20260109_182636"/>
+         <property name="logFiles" value="C:\\Projects\\Real-Estate-Microservices\\Katalon\\Reports\\20260109_182625\\TS_Notification_Complete\\20260109_182636\\console0.log, C:\\Projects\\Real-Estate-Microservices\\Katalon\\Reports\\20260109_182625\\TS_Notification_Complete\\20260109_182636\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="ASUS - 192.168.1.53"/>
+         <property name="os" value="Windows 11 64bit"/>
+         <property name="katalonVersion" value="10.4.3.0"/>
+         <property name="browser" value="Chrome 143.0.7499.170"/>
+         <property name="userFullName" value="Youssef Mohamed Khalaf Hussain Hassan"/>
+         <property name="hostAddress" value="192.168.1.53"/>
+         <property name="sessionId" value="3db4476add87035f322f2a5831535d72"/>
+         <property name="projectName" value="Katalon"/>
+         <property name="seleniumVersion" value="4.34.0"/>
+         <property name="proxyInformation" value="ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList=&quot;&quot;, isApplyToDesiredCapabilities=true }"/>
+         <property name="platform" value="Windows 11"/>
+      </properties>
+      <testcase name="Test Cases/Notification/TC_NOTIF_001_ViewNotifications" time="17.247" classname="Test Cases/Notification/TC_NOTIF_001_ViewNotifications" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:05:39 - [TEST_CASE][PASSED] - Test Cases/Notification/TC_NOTIF_001_ViewNotifications: Test Cases/Notification/TC_NOTIF_001_ViewNotifications
+
+09-01-2026T19:05:40 - [TEST_STEP][PASSED] - notif = new notification.NotificationHelper(): null
+
+09-01-2026T19:05:40 - [TEST_STEP][PASSED] - notif.loginAsReviewUser(): Wait for page load successfully
+
+09-01-2026T19:05:40 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:05:41 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:05:41 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:05:44 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:05:44 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+09-01-2026T19:05:46 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:05:47 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+09-01-2026T19:05:48 - [MESSAGE][PASSED] - Text 'a7med3li@gmail.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+09-01-2026T19:05:49 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+09-01-2026T19:05:50 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+09-01-2026T19:05:53 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:05:53 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:05:53 - [TEST_STEP][PASSED] - notif.navigateToNotifications(): Wait for page load successfully
+
+09-01-2026T19:05:53 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/notificationBellIcon' is clickable
+
+09-01-2026T19:05:54 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/notificationBellIcon' is clicked on
+
+09-01-2026T19:05:56 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:05:56 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:05:56 - [TEST_STEP][PASSED] - waitForElementPresent(findTestObject("Object Repository/Notification/pageTitle"), 10): Object 'Object Repository/Notification/pageTitle' is present
+
+09-01-2026T19:05:56 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/pageTitle' is present
+
+09-01-2026T19:05:56 - [TEST_STEP][PASSED] - count = notif.getNotificationCount(): Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:05:56 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:05:56 - [TEST_STEP][PASSED] - comment(Total notifications: $count): Total notifications: 18
+
+09-01-2026T19:05:56 - [MESSAGE][INFO] - Total notifications: 18
+
+09-01-2026T19:05:56 - [TEST_STEP][PASSED] - verifyGreaterThan(count, 0): Actual number '18' is greater than expected number '0'
+
+09-01-2026T19:05:56 - [MESSAGE][PASSED] - Actual number '18' is greater than expected number '0'
+
+09-01-2026T19:05:56 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:05:57 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Notification/TC_NOTIF_002_MarkAsRead" time="31.927" classname="Test Cases/Notification/TC_NOTIF_002_MarkAsRead" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:05:57 - [TEST_CASE][PASSED] - Test Cases/Notification/TC_NOTIF_002_MarkAsRead: Test Cases/Notification/TC_NOTIF_002_MarkAsRead
+
+09-01-2026T19:05:57 - [TEST_STEP][PASSED] - notif = new notification.NotificationHelper(): null
+
+09-01-2026T19:05:57 - [TEST_STEP][PASSED] - reviewKW = new review.Review_Keywords(): null
+
+09-01-2026T19:05:57 - [TEST_STEP][PASSED] - reviewKW.loginAsUser(): Delayed 2 second(s)
+
+09-01-2026T19:05:57 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:05:57 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:05:57 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:05:59 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:05:59 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+09-01-2026T19:06:00 - [MESSAGE][PASSED] - Object: 'Object Repository/Review/signInLink' is clicked on
+
+09-01-2026T19:06:02 - [MESSAGE][PASSED] - Text 'a7med3li@gmail.com' is set on object 'Object Repository/Review/emailInput'
+
+09-01-2026T19:06:02 - [MESSAGE][PASSED] - Object: 'Object Repository/Review/loginFormDiv' is clicked on
+
+09-01-2026T19:06:03 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Review/passwordInput'
+
+09-01-2026T19:06:03 - [MESSAGE][PASSED] - Keys 'ENTER + ' sent to object: 'Object Repository/Review/passwordInput'
+
+09-01-2026T19:06:05 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:06:05 - [TEST_STEP][PASSED] - reviewKW.navigateToWriteReview(): Delayed 1 second(s)
+
+09-01-2026T19:06:06 - [MESSAGE][PASSED] - Object: 'Object Repository/Review/viewAllReviewsLink' is clicked on
+
+09-01-2026T19:06:08 - [MESSAGE][PASSED] - Object: 'Object Repository/Review/writeReviewLink' is clicked on
+
+09-01-2026T19:06:09 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:06:09 - [TEST_STEP][PASSED] - reviewKW.fillReviewForm("Test Reviewer Notif", "694b6474061ba8a480628253", 1, "Test review for notification"): Keys 'Test review for notification' sent to object: 'Object Repository/Review/reviewTextarea'
+
+09-01-2026T19:06:09 - [MESSAGE][PASSED] - Object 'Object Repository/Review/reviewerNameInput' is present
+
+09-01-2026T19:06:09 - [MESSAGE][PASSED] - Text of object 'Object Repository/Review/reviewerNameInput' is cleared
+
+09-01-2026T19:06:10 - [MESSAGE][PASSED] - Keys 'Test Reviewer Notif' sent to object: 'Object Repository/Review/reviewerNameInput'
+
+09-01-2026T19:06:13 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Review/agentSelect'. Try using Self-healing.
+
+09-01-2026T19:06:14 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Review/agentSelect' was broken. Propose an alternative one: '//select'.
+
+09-01-2026T19:06:14 - [MESSAGE][WARNING] - Waiting for element timed out
+
+09-01-2026T19:06:14 - [MESSAGE][PASSED] - All options with value '694b6474061ba8a480628253' are selected in object 'Object Repository/Review/agentSelect' 
+
+09-01-2026T19:06:15 - [MESSAGE][PASSED] - Object: 'Object Repository/Review/star_1' is clicked on
+
+09-01-2026T19:06:16 - [MESSAGE][PASSED] - Keys 'Test review for notification' sent to object: 'Object Repository/Review/reviewTextarea'
+
+09-01-2026T19:06:16 - [TEST_STEP][PASSED] - reviewKW.submitReview(): Delayed 2 second(s)
+
+09-01-2026T19:06:16 - [MESSAGE][PASSED] - Object: 'Object Repository/Review/submitReviewButton' is clicked on
+
+09-01-2026T19:06:18 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:06:18 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+09-01-2026T19:06:20 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:06:20 - [TEST_STEP][PASSED] - notif.navigateToNotifications(): Wait for page load successfully
+
+09-01-2026T19:06:21 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/notificationBellIcon' is clickable
+
+09-01-2026T19:06:21 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/notificationBellIcon' is clicked on
+
+09-01-2026T19:06:23 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:06:23 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:06:23 - [TEST_STEP][PASSED] - initialUnread = notif.getUnreadCount(): Found web elements by test object Object Repository/Notification/unreadNotificationItem
+
+09-01-2026T19:06:24 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Notification/unreadNotificationItem
+
+09-01-2026T19:06:24 - [TEST_STEP][PASSED] - comment(Initial unread: $initialUnread): Initial unread: 18
+
+09-01-2026T19:06:24 - [MESSAGE][INFO] - Initial unread: 18
+
+09-01-2026T19:06:24 - [TEST_STEP][PASSED] - if (initialUnread > 0): Test PASSED
+
+09-01-2026T19:06:24 - [TEST_STEP][PASSED] - notif.markFirstAsRead(): Delayed 2 second(s)
+
+09-01-2026T19:06:24 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/firstUnreadNotification' is present
+
+09-01-2026T19:06:24 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/firstUnreadNotification' is hovered
+
+09-01-2026T19:06:25 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:06:26 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/markAsReadButton' is clicked on
+
+09-01-2026T19:06:28 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:06:28 - [TEST_STEP][PASSED] - newUnread = notif.getUnreadCount(): Found web elements by test object Object Repository/Notification/unreadNotificationItem
+
+09-01-2026T19:06:28 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Notification/unreadNotificationItem
+
+09-01-2026T19:06:28 - [TEST_STEP][PASSED] - comment(After marking as read: $newUnread): After marking as read: 17
+
+09-01-2026T19:06:28 - [MESSAGE][INFO] - After marking as read: 17
+
+09-01-2026T19:06:28 - [TEST_STEP][PASSED] - verifyEqual(newUnread, initialUnread - 1): Actual object '17' and expected object '17' are equal
+
+09-01-2026T19:06:28 - [MESSAGE][PASSED] - Actual object '17' and expected object '17' are equal
+
+09-01-2026T19:06:28 - [TEST_STEP][PASSED] - comment("Test PASSED"): Test PASSED
+
+09-01-2026T19:06:28 - [MESSAGE][INFO] - Test PASSED
+
+09-01-2026T19:06:28 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:06:29 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Notification/TC_NOTIF_003_DeleteNotification" time="32.849" classname="Test Cases/Notification/TC_NOTIF_003_DeleteNotification" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:06:29 - [TEST_CASE][PASSED] - Test Cases/Notification/TC_NOTIF_003_DeleteNotification: Test Cases/Notification/TC_NOTIF_003_DeleteNotification
+
+09-01-2026T19:06:29 - [TEST_STEP][PASSED] - notif = new notification.NotificationHelper(): null
+
+09-01-2026T19:06:29 - [TEST_STEP][PASSED] - reviewKW = new review.Review_Keywords(): null
+
+09-01-2026T19:06:29 - [TEST_STEP][PASSED] - reviewKW.loginAsUser(): Delayed 2 second(s)
+
+09-01-2026T19:06:29 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:06:29 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:06:29 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:06:30 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:06:31 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173' successfully
+
+09-01-2026T19:06:32 - [MESSAGE][PASSED] - Object: 'Object Repository/Review/signInLink' is clicked on
+
+09-01-2026T19:06:33 - [MESSAGE][PASSED] - Text 'a7med3li@gmail.com' is set on object 'Object Repository/Review/emailInput'
+
+09-01-2026T19:06:34 - [MESSAGE][PASSED] - Object: 'Object Repository/Review/loginFormDiv' is clicked on
+
+09-01-2026T19:06:34 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Review/passwordInput'
+
+09-01-2026T19:06:35 - [MESSAGE][PASSED] - Keys 'ENTER + ' sent to object: 'Object Repository/Review/passwordInput'
+
+09-01-2026T19:06:37 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:06:37 - [TEST_STEP][PASSED] - reviewKW.navigateToWriteReview(): Delayed 1 second(s)
+
+09-01-2026T19:06:37 - [MESSAGE][PASSED] - Object: 'Object Repository/Review/viewAllReviewsLink' is clicked on
+
+09-01-2026T19:06:39 - [MESSAGE][PASSED] - Object: 'Object Repository/Review/writeReviewLink' is clicked on
+
+09-01-2026T19:06:40 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:06:40 - [TEST_STEP][PASSED] - reviewKW.fillReviewForm("Test Reviewer Notif Delete", "694b6474061ba8a480628253", 1, "Test review for delete notification"): Keys 'Test review for delete notification' sent to object: 'Object Repository/Review/reviewTextarea'
+
+09-01-2026T19:06:41 - [MESSAGE][PASSED] - Object 'Object Repository/Review/reviewerNameInput' is present
+
+09-01-2026T19:06:41 - [MESSAGE][PASSED] - Text of object 'Object Repository/Review/reviewerNameInput' is cleared
+
+09-01-2026T19:06:42 - [MESSAGE][PASSED] - Keys 'Test Reviewer Notif Delete' sent to object: 'Object Repository/Review/reviewerNameInput'
+
+09-01-2026T19:06:45 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Review/agentSelect'. Try using Self-healing.
+
+09-01-2026T19:06:45 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Review/agentSelect' was broken. Propose an alternative one: '//select'.
+
+09-01-2026T19:06:45 - [MESSAGE][WARNING] - Waiting for element timed out
+
+09-01-2026T19:06:46 - [MESSAGE][PASSED] - All options with value '694b6474061ba8a480628253' are selected in object 'Object Repository/Review/agentSelect' 
+
+09-01-2026T19:06:46 - [MESSAGE][PASSED] - Object: 'Object Repository/Review/star_1' is clicked on
+
+09-01-2026T19:06:47 - [MESSAGE][PASSED] - Keys 'Test review for delete notification' sent to object: 'Object Repository/Review/reviewTextarea'
+
+09-01-2026T19:06:47 - [TEST_STEP][PASSED] - reviewKW.submitReview(): Delayed 2 second(s)
+
+09-01-2026T19:06:48 - [MESSAGE][PASSED] - Object: 'Object Repository/Review/submitReviewButton' is clicked on
+
+09-01-2026T19:06:50 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:06:50 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+09-01-2026T19:06:52 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:06:52 - [TEST_STEP][PASSED] - notif.navigateToNotifications(): Wait for page load successfully
+
+09-01-2026T19:06:52 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/notificationBellIcon' is clickable
+
+09-01-2026T19:06:53 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/notificationBellIcon' is clicked on
+
+09-01-2026T19:06:55 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:06:55 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:06:55 - [TEST_STEP][PASSED] - initialCount = notif.getNotificationCount(): Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:06:55 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:06:55 - [TEST_STEP][PASSED] - comment(Initial count: $initialCount): Initial count: 20
+
+09-01-2026T19:06:55 - [MESSAGE][INFO] - Initial count: 20
+
+09-01-2026T19:06:55 - [TEST_STEP][PASSED] - if (initialCount > 0): Test PASSED
+
+09-01-2026T19:06:55 - [TEST_STEP][PASSED] - notif.deleteFirst(): Delayed 2 second(s)
+
+09-01-2026T19:06:55 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/firstNotification' is present
+
+09-01-2026T19:06:56 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/firstNotification' is hovered
+
+09-01-2026T19:06:57 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:06:57 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/deleteButton' is clicked on
+
+09-01-2026T19:06:59 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:06:59 - [TEST_STEP][PASSED] - newCount = notif.getNotificationCount(): Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:07:00 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:07:00 - [TEST_STEP][PASSED] - comment(After deletion: $newCount): After deletion: 19
+
+09-01-2026T19:07:00 - [MESSAGE][INFO] - After deletion: 19
+
+09-01-2026T19:07:00 - [TEST_STEP][PASSED] - verifyEqual(newCount, initialCount - 1): Actual object '19' and expected object '19' are equal
+
+09-01-2026T19:07:00 - [MESSAGE][PASSED] - Actual object '19' and expected object '19' are equal
+
+09-01-2026T19:07:00 - [TEST_STEP][PASSED] - comment("Test PASSED"): Test PASSED
+
+09-01-2026T19:07:00 - [MESSAGE][INFO] - Test PASSED
+
+09-01-2026T19:07:00 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:07:02 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Notification/Triggers/TC_NOTIF_TRIG_001_ReviewPosted" time="34.951" classname="Test Cases/Notification/Triggers/TC_NOTIF_TRIG_001_ReviewPosted" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:07:02 - [TEST_CASE][PASSED] - Test Cases/Notification/Triggers/TC_NOTIF_TRIG_001_ReviewPosted: Test Cases/Notification/Triggers/TC_NOTIF_TRIG_001_ReviewPosted
+
+09-01-2026T19:07:02 - [TEST_STEP][PASSED] - notif = new notification.NotificationHelper(): null
+
+09-01-2026T19:07:02 - [TEST_STEP][PASSED] - reviewKW = new review.Review_Keywords(): null
+
+09-01-2026T19:07:02 - [TEST_STEP][PASSED] - notif.loginAsReviewUser(): Wait for page load successfully
+
+09-01-2026T19:07:02 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:07:02 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:07:02 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:07:03 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:07:03 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+09-01-2026T19:07:05 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:07:06 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+09-01-2026T19:07:07 - [MESSAGE][PASSED] - Text 'a7med3li@gmail.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+09-01-2026T19:07:07 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+09-01-2026T19:07:08 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+09-01-2026T19:07:11 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:07:11 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:07:11 - [TEST_STEP][PASSED] - notif.navigateToNotifications(): Wait for page load successfully
+
+09-01-2026T19:07:11 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/notificationBellIcon' is clickable
+
+09-01-2026T19:07:12 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/notificationBellIcon' is clicked on
+
+09-01-2026T19:07:14 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:07:14 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:07:14 - [TEST_STEP][PASSED] - initialCount = notif.getNotificationCount(): Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:07:14 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:07:14 - [TEST_STEP][PASSED] - comment(Initial notification count: $initialCount): Initial notification count: 19
+
+09-01-2026T19:07:14 - [MESSAGE][INFO] - Initial notification count: 19
+
+09-01-2026T19:07:14 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:5173/write-review"): Navigate to 'http://localhost:5173/write-review' successfully
+
+09-01-2026T19:07:14 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/write-review' successfully
+
+09-01-2026T19:07:14 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+09-01-2026T19:07:16 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:07:16 - [TEST_STEP][PASSED] - reviewKW.fillReviewForm("Test Reviewer Trigger", "694b6474061ba8a480628253", 5, "Testing notification trigger on review post"): Keys 'Testing notification trigger on review post' sent to object: 'Object Repository/Review/reviewTextarea'
+
+09-01-2026T19:07:17 - [MESSAGE][PASSED] - Object 'Object Repository/Review/reviewerNameInput' is present
+
+09-01-2026T19:07:17 - [MESSAGE][PASSED] - Text of object 'Object Repository/Review/reviewerNameInput' is cleared
+
+09-01-2026T19:07:18 - [MESSAGE][PASSED] - Keys 'Test Reviewer Trigger' sent to object: 'Object Repository/Review/reviewerNameInput'
+
+09-01-2026T19:07:21 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Review/agentSelect'. Try using Self-healing.
+
+09-01-2026T19:07:21 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Review/agentSelect' was broken. Propose an alternative one: '//select'.
+
+09-01-2026T19:07:21 - [MESSAGE][WARNING] - Waiting for element timed out
+
+09-01-2026T19:07:21 - [MESSAGE][PASSED] - All options with value '694b6474061ba8a480628253' are selected in object 'Object Repository/Review/agentSelect' 
+
+09-01-2026T19:07:22 - [MESSAGE][PASSED] - Object: 'Object Repository/Review/star_5' is clicked on
+
+09-01-2026T19:07:23 - [MESSAGE][PASSED] - Keys 'Testing notification trigger on review post' sent to object: 'Object Repository/Review/reviewTextarea'
+
+09-01-2026T19:07:23 - [TEST_STEP][PASSED] - reviewKW.submitReview(): Delayed 2 second(s)
+
+09-01-2026T19:07:24 - [MESSAGE][PASSED] - Object: 'Object Repository/Review/submitReviewButton' is clicked on
+
+09-01-2026T19:07:26 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:07:26 - [TEST_STEP][PASSED] - delay(3): Delayed 3 second(s)
+
+09-01-2026T19:07:29 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:07:29 - [TEST_STEP][PASSED] - notif.navigateToNotifications(): Wait for page load successfully
+
+09-01-2026T19:07:29 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/notificationBellIcon' is clickable
+
+09-01-2026T19:07:30 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/notificationBellIcon' is clicked on
+
+09-01-2026T19:07:32 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:07:32 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:07:32 - [TEST_STEP][PASSED] - newCount = notif.getNotificationCount(): Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:07:32 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:07:32 - [TEST_STEP][PASSED] - comment(After review post: $newCount): After review post: 20
+
+09-01-2026T19:07:32 - [MESSAGE][INFO] - After review post: 20
+
+09-01-2026T19:07:32 - [TEST_STEP][PASSED] - verifyEqual(newCount, initialCount + 1, STOP_ON_FAILURE): Actual object '20' and expected object '20' are equal
+
+09-01-2026T19:07:32 - [MESSAGE][PASSED] - Actual object '20' and expected object '20' are equal
+
+09-01-2026T19:07:32 - [TEST_STEP][PASSED] - comment("Test PASSED: Notification created when review posted"): Test PASSED: Notification created when review posted
+
+09-01-2026T19:07:32 - [MESSAGE][INFO] - Test PASSED: Notification created when review posted
+
+09-01-2026T19:07:32 - [TEST_STEP][PASSED] - try: Cleanup: Test notification deleted
+
+09-01-2026T19:07:32 - [TEST_STEP][PASSED] - if (newCount > initialCount): Cleanup: Test notification deleted
+
+09-01-2026T19:07:32 - [TEST_STEP][PASSED] - notif.deleteFirst(): Delayed 2 second(s)
+
+09-01-2026T19:07:32 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/firstNotification' is present
+
+09-01-2026T19:07:33 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/firstNotification' is hovered
+
+09-01-2026T19:07:34 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:07:34 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/deleteButton' is clicked on
+
+09-01-2026T19:07:36 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:07:36 - [TEST_STEP][PASSED] - comment("Cleanup: Test notification deleted"): Cleanup: Test notification deleted
+
+09-01-2026T19:07:36 - [MESSAGE][INFO] - Cleanup: Test notification deleted
+
+09-01-2026T19:07:36 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:07:36 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Notification/Triggers/TC_NOTIF_TRIG_002_PropertySell" time="52.432" classname="Test Cases/Notification/Triggers/TC_NOTIF_TRIG_002_PropertySell" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:07:36 - [TEST_CASE][PASSED] - Test Cases/Notification/Triggers/TC_NOTIF_TRIG_002_PropertySell: Test Cases/Notification/Triggers/TC_NOTIF_TRIG_002_PropertySell
+
+09-01-2026T19:07:37 - [TEST_STEP][PASSED] - notif = new notification.NotificationHelper(): null
+
+09-01-2026T19:07:37 - [TEST_STEP][PASSED] - sellKW = new propertyservice.Sell_Keywords(): null
+
+09-01-2026T19:07:37 - [TEST_STEP][PASSED] - notif.loginAsReviewUser(): Wait for page load successfully
+
+09-01-2026T19:07:37 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:07:37 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:07:37 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:07:38 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:07:39 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+09-01-2026T19:07:41 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:07:41 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+09-01-2026T19:07:42 - [MESSAGE][PASSED] - Text 'a7med3li@gmail.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+09-01-2026T19:07:43 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+09-01-2026T19:07:43 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+09-01-2026T19:07:46 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:07:46 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:07:46 - [TEST_STEP][PASSED] - notif.navigateToNotifications(): Wait for page load successfully
+
+09-01-2026T19:07:47 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/notificationBellIcon' is clickable
+
+09-01-2026T19:07:47 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/notificationBellIcon' is clicked on
+
+09-01-2026T19:07:49 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:07:49 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:07:49 - [TEST_STEP][PASSED] - initialCount = notif.getNotificationCount(): Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:07:50 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:07:50 - [TEST_STEP][PASSED] - comment(Initial notification count: $initialCount): Initial notification count: 19
+
+09-01-2026T19:07:50 - [MESSAGE][INFO] - Initial notification count: 19
+
+09-01-2026T19:07:50 - [TEST_STEP][PASSED] - sellKW.navigateToSellPage(): Wait for page load successfully
+
+09-01-2026T19:07:50 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/sell' successfully
+
+09-01-2026T19:07:50 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:07:50 - [TEST_STEP][PASSED] - sellKW.verifySellPageLoaded(): Object 'Object Repository/PropertyService/SellPage/titleInput' is present
+
+09-01-2026T19:07:50 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/SellPage/titleInput' is present
+
+09-01-2026T19:07:50 - [TEST_STEP][PASSED] - projectDir = getProjectDir(): null
+
+09-01-2026T19:07:50 - [TEST_STEP][PASSED] - imagePath = projectDir + "/TestData/villa.jpg": null
+
+09-01-2026T19:07:50 - [TEST_STEP][PASSED] - comment(Project directory: $projectDir): Project directory: C:/Projects/Real-Estate-Microservices/Katalon
+
+09-01-2026T19:07:50 - [MESSAGE][INFO] - Project directory: C:/Projects/Real-Estate-Microservices/Katalon
+
+09-01-2026T19:07:50 - [TEST_STEP][PASSED] - comment(Image path: $imagePath): Image path: C:/Projects/Real-Estate-Microservices/Katalon/TestData/villa.jpg
+
+09-01-2026T19:07:50 - [MESSAGE][INFO] - Image path: C:/Projects/Real-Estate-Microservices/Katalon/TestData/villa.jpg
+
+09-01-2026T19:07:50 - [TEST_STEP][PASSED] - imageFile = new java.io.File(imagePath): null
+
+09-01-2026T19:07:50 - [TEST_STEP][PASSED] - if (!(imageFile.exists())): null
+
+09-01-2026T19:07:50 - [TEST_STEP][PASSED] - comment(✓ villa.jpg found! Size: $imageFile.length() bytes): ✓ villa.jpg found! Size: 41144 bytes
+
+09-01-2026T19:07:50 - [MESSAGE][INFO] - ✓ villa.jpg found! Size: 41144 bytes
+
+09-01-2026T19:07:50 - [TEST_STEP][PASSED] - imagePath = imageFile.getAbsolutePath(): null
+
+09-01-2026T19:07:50 - [TEST_STEP][PASSED] - comment(Using absolute path: $imagePath): Using absolute path: C:\Projects\Real-Estate-Microservices\Katalon\TestData\villa.jpg
+
+09-01-2026T19:07:50 - [MESSAGE][INFO] - Using absolute path: C:\Projects\Real-Estate-Microservices\Katalon\TestData\villa.jpg
+
+09-01-2026T19:07:50 - [TEST_STEP][PASSED] - sellKW.fillBasicInfo("Test Property for Notification", "This is a test property to verify notification creation", "sale", "residential", "apartment"): All options with value 'apartment' are selected in object 'Object Repository/PropertyService/SellPage/subTypeSelect' 
+
+09-01-2026T19:07:51 - [MESSAGE][PASSED] - Text 'Test Property for Notification' is set on object 'Object Repository/PropertyService/SellPage/titleInput'
+
+09-01-2026T19:07:52 - [MESSAGE][PASSED] - Text 'This is a test property to verify notification creation' is set on object 'Object Repository/PropertyService/SellPage/descriptionInput'
+
+09-01-2026T19:07:53 - [MESSAGE][PASSED] - All options with value 'sale' are selected in object 'Object Repository/PropertyService/SellPage/listingTypeSelect' 
+
+09-01-2026T19:07:54 - [MESSAGE][PASSED] - All options with value 'residential' are selected in object 'Object Repository/PropertyService/SellPage/propertyTypeSelect' 
+
+09-01-2026T19:07:55 - [MESSAGE][PASSED] - All options with value 'apartment' are selected in object 'Object Repository/PropertyService/SellPage/subTypeSelect' 
+
+09-01-2026T19:07:55 - [TEST_STEP][PASSED] - sellKW.clickNextButton(): Delayed 1 second(s)
+
+09-01-2026T19:07:55 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/SellPage/nextButton' is clicked on
+
+09-01-2026T19:07:56 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:07:56 - [TEST_STEP][PASSED] - sellKW.fillAddressInfo("123 Test Street", "Test City", "Test State", "Test Country", "1000", "93"): Text '93' is set on object 'Object Repository/PropertyService/SellPage/areaSqmInput'
+
+09-01-2026T19:07:57 - [MESSAGE][PASSED] - Text '123 Test Street' is set on object 'Object Repository/PropertyService/SellPage/streetInput'
+
+09-01-2026T19:07:58 - [MESSAGE][PASSED] - Text 'Test City' is set on object 'Object Repository/PropertyService/SellPage/cityInput'
+
+09-01-2026T19:07:59 - [MESSAGE][PASSED] - Text 'Test State' is set on object 'Object Repository/PropertyService/SellPage/stateInput'
+
+09-01-2026T19:08:00 - [MESSAGE][PASSED] - Text 'Test Country' is set on object 'Object Repository/PropertyService/SellPage/countryInput'
+
+09-01-2026T19:08:01 - [MESSAGE][PASSED] - Text '1000' is set on object 'Object Repository/PropertyService/SellPage/areaSqftInput'
+
+09-01-2026T19:08:02 - [MESSAGE][PASSED] - Text '93' is set on object 'Object Repository/PropertyService/SellPage/areaSqmInput'
+
+09-01-2026T19:08:02 - [TEST_STEP][PASSED] - sellKW.clickNextButton(): Delayed 1 second(s)
+
+09-01-2026T19:08:03 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/SellPage/nextButton' is clicked on
+
+09-01-2026T19:08:04 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:08:04 - [TEST_STEP][PASSED] - comment("=== STEP 3: Media & Price ==="): === STEP 3: Media & Price ===
+
+09-01-2026T19:08:04 - [MESSAGE][INFO] - === STEP 3: Media & Price ===
+
+09-01-2026T19:08:04 - [TEST_STEP][PASSED] - try: ✓ File upload executed
+
+09-01-2026T19:08:04 - [TEST_STEP][PASSED] - uploadFile(findTestObject("Object Repository/PropertyService/SellPage/mediaFileInput"), imagePath): File 'C:\Projects\Real-Estate-Microservices\Katalon\TestData\villa.jpg' sent to object: 'Object Repository/PropertyService/SellPage/mediaFileInput'
+
+09-01-2026T19:08:04 - [MESSAGE][WARNING] - Cannot clear the existing file path in the input element. Continue to upload file.
+
+09-01-2026T19:08:04 - [MESSAGE][PASSED] - File 'C:\Projects\Real-Estate-Microservices\Katalon\TestData\villa.jpg' sent to object: 'Object Repository/PropertyService/SellPage/mediaFileInput'
+
+09-01-2026T19:08:04 - [TEST_STEP][PASSED] - delay(3): Delayed 3 second(s)
+
+09-01-2026T19:08:07 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:08:07 - [TEST_STEP][PASSED] - comment("✓ File upload executed"): ✓ File upload executed
+
+09-01-2026T19:08:07 - [MESSAGE][INFO] - ✓ File upload executed
+
+09-01-2026T19:08:07 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/PropertyService/SellPage/priceInput"), "250000"): Text '250000' is set on object 'Object Repository/PropertyService/SellPage/priceInput'
+
+09-01-2026T19:08:08 - [MESSAGE][PASSED] - Text '250000' is set on object 'Object Repository/PropertyService/SellPage/priceInput'
+
+09-01-2026T19:08:08 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/PropertyService/SellPage/buildDateInput"), "2024-01-01"): Text '2024-01-01' is set on object 'Object Repository/PropertyService/SellPage/buildDateInput'
+
+09-01-2026T19:08:09 - [MESSAGE][PASSED] - Text '2024-01-01' is set on object 'Object Repository/PropertyService/SellPage/buildDateInput'
+
+09-01-2026T19:08:09 - [TEST_STEP][PASSED] - selectOptionByValue(findTestObject("Object Repository/PropertyService/SellPage/statusSelect"), "active", false): All options with value 'active' are selected in object 'Object Repository/PropertyService/SellPage/statusSelect' 
+
+09-01-2026T19:08:10 - [MESSAGE][PASSED] - All options with value 'active' are selected in object 'Object Repository/PropertyService/SellPage/statusSelect' 
+
+09-01-2026T19:08:10 - [TEST_STEP][PASSED] - sellKW.clickNextButton(): Delayed 1 second(s)
+
+09-01-2026T19:08:10 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/SellPage/nextButton' is clicked on
+
+09-01-2026T19:08:11 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:08:11 - [TEST_STEP][PASSED] - sellKW.fillAllFeatures("2", "2", "1", "fully", false, false, false): All options with value 'fully' are selected in object 'Object Repository/PropertyService/SellPage/furnishedSelect' 
+
+09-01-2026T19:08:12 - [MESSAGE][PASSED] - Text '2' is set on object 'Object Repository/PropertyService/SellPage/bedroomsInput'
+
+09-01-2026T19:08:13 - [MESSAGE][PASSED] - Text '2' is set on object 'Object Repository/PropertyService/SellPage/bathroomsInput'
+
+09-01-2026T19:08:14 - [MESSAGE][PASSED] - Text '1' is set on object 'Object Repository/PropertyService/SellPage/garageInput'
+
+09-01-2026T19:08:15 - [MESSAGE][PASSED] - All options with value 'fully' are selected in object 'Object Repository/PropertyService/SellPage/furnishedSelect' 
+
+09-01-2026T19:08:15 - [TEST_STEP][PASSED] - comment("Submitting property..."): Submitting property...
+
+09-01-2026T19:08:15 - [MESSAGE][INFO] - Submitting property...
+
+09-01-2026T19:08:15 - [TEST_STEP][PASSED] - sellKW.clickSubmitButton(): Delayed 3 second(s)
+
+09-01-2026T19:08:15 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/SellPage/submitButton' is clicked on
+
+09-01-2026T19:08:18 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:08:18 - [TEST_STEP][PASSED] - delay(5): Delayed 5 second(s)
+
+09-01-2026T19:08:23 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+09-01-2026T19:08:23 - [TEST_STEP][PASSED] - comment("Navigating to home page..."): Navigating to home page...
+
+09-01-2026T19:08:23 - [MESSAGE][INFO] - Navigating to home page...
+
+09-01-2026T19:08:23 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:5173/"): Navigate to 'http://localhost:5173/' successfully
+
+09-01-2026T19:08:23 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/' successfully
+
+09-01-2026T19:08:23 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+09-01-2026T19:08:25 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:08:25 - [TEST_STEP][PASSED] - comment("Opening notifications..."): Opening notifications...
+
+09-01-2026T19:08:25 - [MESSAGE][INFO] - Opening notifications...
+
+09-01-2026T19:08:25 - [TEST_STEP][PASSED] - notif.navigateToNotifications(): Wait for page load successfully
+
+09-01-2026T19:08:26 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/notificationBellIcon' is clickable
+
+09-01-2026T19:08:26 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/notificationBellIcon' is clicked on
+
+09-01-2026T19:08:28 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:08:28 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:08:28 - [TEST_STEP][PASSED] - newCount = notif.getNotificationCount(): Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:08:29 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:08:29 - [TEST_STEP][PASSED] - comment(Initial count: $initialCount, New count: $newCount): Initial count: 19, New count: 20
+
+09-01-2026T19:08:29 - [MESSAGE][INFO] - Initial count: 19, New count: 20
+
+09-01-2026T19:08:29 - [TEST_STEP][PASSED] - if (newCount > initialCount): Actual object '20' and expected object '20' are equal
+
+09-01-2026T19:08:29 - [TEST_STEP][PASSED] - comment("✓ Test PASSED: Notification created when property listed for sale"): ✓ Test PASSED: Notification created when property listed for sale
+
+09-01-2026T19:08:29 - [MESSAGE][INFO] - ✓ Test PASSED: Notification created when property listed for sale
+
+09-01-2026T19:08:29 - [TEST_STEP][PASSED] - verifyEqual(newCount, initialCount + 1, CONTINUE_ON_FAILURE): Actual object '20' and expected object '20' are equal
+
+09-01-2026T19:08:29 - [MESSAGE][PASSED] - Actual object '20' and expected object '20' are equal
+
+09-01-2026T19:08:29 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:08:29 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Notification/Triggers/TC_NOTIF_TRIG_003_PropertyRent" time="33.888" classname="Test Cases/Notification/Triggers/TC_NOTIF_TRIG_003_PropertyRent" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:08:29 - [TEST_CASE][PASSED] - Test Cases/Notification/Triggers/TC_NOTIF_TRIG_003_PropertyRent: Test Cases/Notification/Triggers/TC_NOTIF_TRIG_003_PropertyRent
+
+09-01-2026T19:08:29 - [TEST_STEP][PASSED] - notif = new notification.NotificationHelper(): null
+
+09-01-2026T19:08:29 - [TEST_STEP][PASSED] - notif.loginAsReviewUser(): Wait for page load successfully
+
+09-01-2026T19:08:29 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:08:29 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:08:29 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:08:30 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:08:31 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+09-01-2026T19:08:33 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:08:33 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+09-01-2026T19:08:34 - [MESSAGE][PASSED] - Text 'a7med3li@gmail.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+09-01-2026T19:08:35 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+09-01-2026T19:08:35 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+09-01-2026T19:08:38 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:08:38 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:08:38 - [TEST_STEP][PASSED] - notif.navigateToNotifications(): Wait for page load successfully
+
+09-01-2026T19:08:39 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/notificationBellIcon' is clickable
+
+09-01-2026T19:08:39 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/notificationBellIcon' is clicked on
+
+09-01-2026T19:08:41 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:08:41 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:08:41 - [TEST_STEP][PASSED] - initialCount = notif.getNotificationCount(): Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:08:42 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:08:42 - [TEST_STEP][PASSED] - comment(Initial notification count: $initialCount): Initial notification count: 20
+
+09-01-2026T19:08:42 - [MESSAGE][INFO] - Initial notification count: 20
+
+09-01-2026T19:08:42 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:5173/rent"): Navigate to 'http://localhost:5173/rent' successfully
+
+09-01-2026T19:08:42 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/rent' successfully
+
+09-01-2026T19:08:42 - [TEST_STEP][PASSED] - delay(3): Delayed 3 second(s)
+
+09-01-2026T19:08:45 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:08:45 - [TEST_STEP][PASSED] - waitForElementPresent(findTestObject("Object Repository/Property/propertyCard"), 10): Object 'Object Repository/Property/propertyCard' is present
+
+09-01-2026T19:08:45 - [MESSAGE][PASSED] - Object 'Object Repository/Property/propertyCard' is present
+
+09-01-2026T19:08:45 - [TEST_STEP][PASSED] - if (!(verifyElementPresent(findTestObject("Object Repository/Property/propertyCard"), 5, OPTIONAL))): Object 'Object Repository/Property/propertyCard' is present
+
+09-01-2026T19:08:45 - [MESSAGE][PASSED] - Object 'Object Repository/Property/propertyCard' is present
+
+09-01-2026T19:08:45 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Property/propertyCard")): Object: 'Object Repository/Property/propertyCard' is clicked on
+
+09-01-2026T19:08:46 - [MESSAGE][PASSED] - Object: 'Object Repository/Property/propertyCard' is clicked on
+
+09-01-2026T19:08:46 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+09-01-2026T19:08:48 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:08:48 - [TEST_STEP][PASSED] - waitForElementClickable(findTestObject("Object Repository/Property/contactAgentButton"), 10): Object 'Object Repository/Property/contactAgentButton' is clickable
+
+09-01-2026T19:08:48 - [MESSAGE][PASSED] - Object 'Object Repository/Property/contactAgentButton' is clickable
+
+09-01-2026T19:08:48 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Property/contactAgentButton")): Object: 'Object Repository/Property/contactAgentButton' is clicked on
+
+09-01-2026T19:08:49 - [MESSAGE][PASSED] - Object: 'Object Repository/Property/contactAgentButton' is clicked on
+
+09-01-2026T19:08:49 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+09-01-2026T19:08:50 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:08:50 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Property/contactNameInput"), "Test User Rent"): Text 'Test User Rent' is set on object 'Object Repository/Property/contactNameInput'
+
+09-01-2026T19:08:51 - [MESSAGE][PASSED] - Text 'Test User Rent' is set on object 'Object Repository/Property/contactNameInput'
+
+09-01-2026T19:08:51 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Property/contactEmailInput"), "testrent@example.com"): Text 'testrent@example.com' is set on object 'Object Repository/Property/contactEmailInput'
+
+09-01-2026T19:08:52 - [MESSAGE][PASSED] - Text 'testrent@example.com' is set on object 'Object Repository/Property/contactEmailInput'
+
+09-01-2026T19:08:52 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Property/contactMessageInput"), "Interested in renting this property"): Text 'Interested in renting this property' is set on object 'Object Repository/Property/contactMessageInput'
+
+09-01-2026T19:08:53 - [MESSAGE][PASSED] - Text 'Interested in renting this property' is set on object 'Object Repository/Property/contactMessageInput'
+
+09-01-2026T19:08:53 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Property/sendMessageButton")): Object: 'Object Repository/Property/sendMessageButton' is clicked on
+
+09-01-2026T19:08:54 - [MESSAGE][PASSED] - Object: 'Object Repository/Property/sendMessageButton' is clicked on
+
+09-01-2026T19:08:54 - [TEST_STEP][PASSED] - delay(3): Delayed 3 second(s)
+
+09-01-2026T19:08:57 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:08:57 - [TEST_STEP][PASSED] - comment("Navigating to home page..."): Navigating to home page...
+
+09-01-2026T19:08:57 - [MESSAGE][INFO] - Navigating to home page...
+
+09-01-2026T19:08:57 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:5173/"): Navigate to 'http://localhost:5173/' successfully
+
+09-01-2026T19:08:57 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/' successfully
+
+09-01-2026T19:08:57 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+09-01-2026T19:08:59 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:08:59 - [TEST_STEP][PASSED] - comment("Opening notifications..."): Opening notifications...
+
+09-01-2026T19:08:59 - [MESSAGE][INFO] - Opening notifications...
+
+09-01-2026T19:08:59 - [TEST_STEP][PASSED] - notif.navigateToNotifications(): Wait for page load successfully
+
+09-01-2026T19:09:00 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/notificationBellIcon' is clickable
+
+09-01-2026T19:09:00 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/notificationBellIcon' is clicked on
+
+09-01-2026T19:09:02 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:09:02 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:09:02 - [TEST_STEP][PASSED] - newCount = notif.getNotificationCount(): Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:09:03 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:09:03 - [TEST_STEP][PASSED] - comment(Initial count: $initialCount, New count: $newCount): Initial count: 20, New count: 21
+
+09-01-2026T19:09:03 - [MESSAGE][INFO] - Initial count: 20, New count: 21
+
+09-01-2026T19:09:03 - [TEST_STEP][PASSED] - if (newCount > initialCount): Actual object '21' and expected object '21' are equal
+
+09-01-2026T19:09:03 - [TEST_STEP][PASSED] - comment("✓ Test PASSED: Notification created when contacting seller about rental property"): ✓ Test PASSED: Notification created when contacting seller about rental property
+
+09-01-2026T19:09:03 - [MESSAGE][INFO] - ✓ Test PASSED: Notification created when contacting seller about rental property
+
+09-01-2026T19:09:03 - [TEST_STEP][PASSED] - verifyEqual(newCount, initialCount + 1, CONTINUE_ON_FAILURE): Actual object '21' and expected object '21' are equal
+
+09-01-2026T19:09:03 - [MESSAGE][PASSED] - Actual object '21' and expected object '21' are equal
+
+09-01-2026T19:09:03 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:09:03 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Notification/Triggers/TC_NOTIF_TRIG_004_PropertyBuy" time="34.432" classname="Test Cases/Notification/Triggers/TC_NOTIF_TRIG_004_PropertyBuy" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:09:03 - [TEST_CASE][PASSED] - Test Cases/Notification/Triggers/TC_NOTIF_TRIG_004_PropertyBuy: Test Cases/Notification/Triggers/TC_NOTIF_TRIG_004_PropertyBuy
+
+09-01-2026T19:09:03 - [TEST_STEP][PASSED] - notif = new notification.NotificationHelper(): null
+
+09-01-2026T19:09:03 - [TEST_STEP][PASSED] - notif.loginAsReviewUser(): Wait for page load successfully
+
+09-01-2026T19:09:03 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:09:03 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:09:03 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:09:04 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:09:05 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+09-01-2026T19:09:07 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:09:07 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+09-01-2026T19:09:08 - [MESSAGE][PASSED] - Text 'a7med3li@gmail.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+09-01-2026T19:09:09 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+09-01-2026T19:09:09 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+09-01-2026T19:09:12 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:09:12 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:09:12 - [TEST_STEP][PASSED] - notif.navigateToNotifications(): Wait for page load successfully
+
+09-01-2026T19:09:13 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/notificationBellIcon' is clickable
+
+09-01-2026T19:09:13 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/notificationBellIcon' is clicked on
+
+09-01-2026T19:09:15 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:09:15 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:09:15 - [TEST_STEP][PASSED] - initialCount = notif.getNotificationCount(): Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:09:16 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:09:16 - [TEST_STEP][PASSED] - comment(Initial notification count: $initialCount): Initial notification count: 21
+
+09-01-2026T19:09:16 - [MESSAGE][INFO] - Initial notification count: 21
+
+09-01-2026T19:09:16 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:5173/buy"): Navigate to 'http://localhost:5173/buy' successfully
+
+09-01-2026T19:09:16 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/buy' successfully
+
+09-01-2026T19:09:16 - [TEST_STEP][PASSED] - delay(3): Delayed 3 second(s)
+
+09-01-2026T19:09:19 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:09:19 - [TEST_STEP][PASSED] - waitForElementPresent(findTestObject("Object Repository/Property/propertyCard"), 10): Object 'Object Repository/Property/propertyCard' is present
+
+09-01-2026T19:09:19 - [MESSAGE][PASSED] - Object 'Object Repository/Property/propertyCard' is present
+
+09-01-2026T19:09:19 - [TEST_STEP][PASSED] - if (!(verifyElementPresent(findTestObject("Object Repository/Property/propertyCard"), 5, OPTIONAL))): Object 'Object Repository/Property/propertyCard' is present
+
+09-01-2026T19:09:19 - [MESSAGE][PASSED] - Object 'Object Repository/Property/propertyCard' is present
+
+09-01-2026T19:09:19 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Property/propertyCard")): Object: 'Object Repository/Property/propertyCard' is clicked on
+
+09-01-2026T19:09:20 - [MESSAGE][PASSED] - Object: 'Object Repository/Property/propertyCard' is clicked on
+
+09-01-2026T19:09:20 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+09-01-2026T19:09:22 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:09:22 - [TEST_STEP][PASSED] - waitForElementClickable(findTestObject("Object Repository/Property/contactAgentButton"), 10): Object 'Object Repository/Property/contactAgentButton' is clickable
+
+09-01-2026T19:09:22 - [MESSAGE][PASSED] - Object 'Object Repository/Property/contactAgentButton' is clickable
+
+09-01-2026T19:09:22 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Property/contactAgentButton")): Object: 'Object Repository/Property/contactAgentButton' is clicked on
+
+09-01-2026T19:09:23 - [MESSAGE][PASSED] - Object: 'Object Repository/Property/contactAgentButton' is clicked on
+
+09-01-2026T19:09:23 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+09-01-2026T19:09:24 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:09:24 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Property/contactNameInput"), "Test User Buy"): Text 'Test User Buy' is set on object 'Object Repository/Property/contactNameInput'
+
+09-01-2026T19:09:25 - [MESSAGE][PASSED] - Text 'Test User Buy' is set on object 'Object Repository/Property/contactNameInput'
+
+09-01-2026T19:09:25 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Property/contactEmailInput"), "testbuy@example.com"): Text 'testbuy@example.com' is set on object 'Object Repository/Property/contactEmailInput'
+
+09-01-2026T19:09:26 - [MESSAGE][PASSED] - Text 'testbuy@example.com' is set on object 'Object Repository/Property/contactEmailInput'
+
+09-01-2026T19:09:26 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Property/contactMessageInput"), "Interested in buying this property"): Text 'Interested in buying this property' is set on object 'Object Repository/Property/contactMessageInput'
+
+09-01-2026T19:09:28 - [MESSAGE][PASSED] - Text 'Interested in buying this property' is set on object 'Object Repository/Property/contactMessageInput'
+
+09-01-2026T19:09:28 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Property/sendMessageButton")): Object: 'Object Repository/Property/sendMessageButton' is clicked on
+
+09-01-2026T19:09:28 - [MESSAGE][PASSED] - Object: 'Object Repository/Property/sendMessageButton' is clicked on
+
+09-01-2026T19:09:28 - [TEST_STEP][PASSED] - delay(3): Delayed 3 second(s)
+
+09-01-2026T19:09:31 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:09:31 - [TEST_STEP][PASSED] - comment("Navigating to home page..."): Navigating to home page...
+
+09-01-2026T19:09:31 - [MESSAGE][INFO] - Navigating to home page...
+
+09-01-2026T19:09:31 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:5173/"): Navigate to 'http://localhost:5173/' successfully
+
+09-01-2026T19:09:31 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/' successfully
+
+09-01-2026T19:09:31 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+09-01-2026T19:09:33 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:09:33 - [TEST_STEP][PASSED] - comment("Opening notifications..."): Opening notifications...
+
+09-01-2026T19:09:33 - [MESSAGE][INFO] - Opening notifications...
+
+09-01-2026T19:09:33 - [TEST_STEP][PASSED] - notif.navigateToNotifications(): Wait for page load successfully
+
+09-01-2026T19:09:34 - [MESSAGE][PASSED] - Object 'Object Repository/Notification/notificationBellIcon' is clickable
+
+09-01-2026T19:09:34 - [MESSAGE][PASSED] - Object: 'Object Repository/Notification/notificationBellIcon' is clicked on
+
+09-01-2026T19:09:36 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:09:36 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:09:36 - [TEST_STEP][PASSED] - newCount = notif.getNotificationCount(): Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:09:37 - [MESSAGE][PASSED] - Found web elements by test object Object Repository/Notification/notificationItem
+
+09-01-2026T19:09:37 - [TEST_STEP][PASSED] - comment(Initial count: $initialCount, New count: $newCount): Initial count: 21, New count: 22
+
+09-01-2026T19:09:37 - [MESSAGE][INFO] - Initial count: 21, New count: 22
+
+09-01-2026T19:09:37 - [TEST_STEP][PASSED] - if (newCount > initialCount): Actual object '22' and expected object '22' are equal
+
+09-01-2026T19:09:37 - [TEST_STEP][PASSED] - comment("✓ Test PASSED: Notification created when contacting seller about property for sale"): ✓ Test PASSED: Notification created when contacting seller about property for sale
+
+09-01-2026T19:09:37 - [MESSAGE][INFO] - ✓ Test PASSED: Notification created when contacting seller about property for sale
+
+09-01-2026T19:09:37 - [TEST_STEP][PASSED] - verifyEqual(newCount, initialCount + 1, CONTINUE_ON_FAILURE): Actual object '22' and expected object '22' are equal
+
+09-01-2026T19:09:37 - [MESSAGE][PASSED] - Actual object '22' and expected object '22' are equal
+
+09-01-2026T19:09:37 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:09:37 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[09-01-2026T19:05:38 - [TEST_SUITE][PASSED] - TS_Notification_Complete: null]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

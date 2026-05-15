@@ -1,0 +1,9 @@
+SCREEN NAME,Admin - Access Control Validation,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_ADMIN_005,SCENARIO DESCRIPTION,Admin - Access Control Validation,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_ADM_AdminAccessRequired,Verify non-admin users cannot access admin pages,Regular user logged in (not admin); Admin pages exist,User Role: 'User'; URL: /admin/users; URL: /admin/properties,Access denied; User redirected to home or shown unauthorized message,Non-admin cannot access admin functionality,Access denied - User redirected to home with unauthorized message,PASSED,,Security test - Access control

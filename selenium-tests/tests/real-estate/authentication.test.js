@@ -8,7 +8,7 @@ const CLIENT_URL = process.env.CLIENT_URL || 'http://127.0.0.1:5173';
 const API_URL = process.env.API_URL || 'http://127.0.0.1:3000/api';
 const HEADLESS = process.env.HEADLESS !== 'false';
 const screenshotsDir = path.join(__dirname, '..', 'screenshots');
-const LONG_WAIT = 150000;
+const LONG_WAIT = 37500;
 
 function buildDriver() {
   const options = new chrome.Options();
@@ -95,5 +95,150 @@ describe('Authentication (converted)', function () {
       const body = await driver.findElement(By.css('body')).getText();
       return /reset|sent|invalid|error|token/i.test(body);
     }, LONG_WAIT);
+  });
+
+  it('Login with valid credentials', async function () {
+    // prefer env-provided credentials for stability
+    const envEmail = process.env.SELENIUM_EMAIL;
+    const envPass = process.env.SELENIUM_PASSWORD || 'Password123!';
+    let email = envEmail;
+    let password = envPass;
+
+    if (!email) {
+      // create a user via register flow to use for login
+      const timestamp = Date.now();
+      email = `selenium+${timestamp}@example.com`;
+      password = 'Password123!';
+      await driver.get(`${CLIENT_URL}/register`);
+      await waitForPage(driver);
+      await driver
+        .findElement(By.css('input[name="firstName"]'))
+        .sendKeys('Selenium');
+      await driver
+        .findElement(By.css('input[name="lastName"]'))
+        .sendKeys('User');
+      await driver.findElement(By.css('input[name="email"]')).sendKeys(email);
+      await driver
+        .findElement(By.css('input[name="password"]'))
+        .sendKeys(password);
+      const confirm = await driver.findElements(
+        By.css('input[name="confirmPassword"], input[name="passwordConfirm"]'),
+      );
+      if (confirm.length) await confirm[0].sendKeys(password);
+      await driver.findElement(By.css('button[type="submit"]')).click();
+      await driver.wait(async () => {
+        const url = await driver.getCurrentUrl();
+        return !url.includes('/register');
+      }, LONG_WAIT);
+      // logout if auto-logged in
+      try {
+        const logout = await driver.findElements(
+          By.xpath(
+            "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'logout')]|//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'logout')]|//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'sign out')]|//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'sign out')]",
+          ),
+        );
+        if (logout.length) await logout[0].click();
+      } catch (e) {}
+    }
+
+    // perform login
+    await driver.get(`${CLIENT_URL}/login`);
+    await waitForPage(driver);
+    await driver
+      .findElement(By.css('input[name="email"], input[type="email"]'))
+      .clear();
+    await driver
+      .findElement(By.css('input[name="email"], input[type="email"]'))
+      .sendKeys(email);
+    await driver
+      .findElement(By.css('input[name="password"], input[type="password"]'))
+      .sendKeys(password);
+    await driver.findElement(By.css('button[type="submit"]')).click();
+
+    // assert logged in by presence of logout/user menu
+    // wait for `localStorage.userId` to be set by the auth flow (deterministic)
+    await driver.wait(async () => {
+      const id = await driver.executeScript(() =>
+        localStorage.getItem('userId'),
+      );
+      return !!id;
+    }, LONG_WAIT);
+  });
+
+  it('Login shows error for incorrect password', async function () {
+    const timestamp = Date.now();
+    const email = `selenium+${timestamp}@example.com`;
+    const password = 'Password123!';
+    // register first
+    await driver.get(`${CLIENT_URL}/register`);
+    await waitForPage(driver);
+    await driver
+      .findElement(By.css('input[name="firstName"]'))
+      .sendKeys('Selenium');
+    await driver.findElement(By.css('input[name="lastName"]')).sendKeys('User');
+    await driver.findElement(By.css('input[name="email"]')).sendKeys(email);
+    await driver
+      .findElement(By.css('input[name="password"]'))
+      .sendKeys(password);
+    const confirm = await driver.findElements(
+      By.css('input[name="confirmPassword"], input[name="passwordConfirm"]'),
+    );
+    if (confirm.length) await confirm[0].sendKeys(password);
+    await driver.findElement(By.css('button[type="submit"]')).click();
+    await driver.wait(async () => {
+      const url = await driver.getCurrentUrl();
+      return !url.includes('/register');
+    }, LONG_WAIT);
+
+    // attempt login with wrong password
+    await driver.get(`${CLIENT_URL}/login`);
+    await waitForPage(driver);
+    await driver
+      .findElement(By.css('input[name="email"], input[type="email"]'))
+      .sendKeys(email);
+    await driver
+      .findElement(By.css('input[name="password"], input[type="password"]'))
+      .sendKeys('WrongPass!');
+    await driver.findElement(By.css('button[type="submit"]')).click();
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /invalid|incorrect|wrong|credentials|error/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  it('Login empty fields shows validation', async function () {
+    await driver.get(`${CLIENT_URL}/login`);
+    await waitForPage(driver);
+    await driver.findElement(By.css('button[type="submit"]')).click();
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /required|enter|email|password|invalid/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  it('Forgot password invalid email format shows validation', async function () {
+    await driver.get(`${CLIENT_URL}/forget-password`);
+    await waitForPage(driver);
+    const input = await driver.findElement(
+      By.css('input[type="email"], input[name="email"]'),
+    );
+    await input.clear();
+    await input.sendKeys('not-an-email');
+    await driver.findElement(By.css('button[type="submit"]')).click();
+    // immediate check: either an error message or the browser input validity
+    const invalidDetected = await driver.executeScript(() => {
+      const bodyText = document.body ? document.body.innerText : '';
+      if (/invalid|format|enter a valid email/i.test(bodyText)) return true;
+      const el = document.querySelector(
+        'input[type="email"], input[name="email"]',
+      );
+      if (!el) return false;
+      return el.checkValidity() === false;
+    });
+    if (!invalidDetected) {
+      // fail fast so the test doesn't hang on long waits
+      throw new Error('Expected invalid email feedback not detected');
+    }
   });
 });

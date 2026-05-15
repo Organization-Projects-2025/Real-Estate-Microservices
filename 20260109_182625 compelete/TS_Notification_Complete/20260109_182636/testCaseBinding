@@ -1,0 +1,7 @@
+{"testCaseName":"Test Cases/Notification/TC_NOTIF_001_ViewNotifications","testCaseId":"Test Cases/Notification/TC_NOTIF_001_ViewNotifications","iterationVariableName":""}
+{"testCaseName":"Test Cases/Notification/TC_NOTIF_002_MarkAsRead","testCaseId":"Test Cases/Notification/TC_NOTIF_002_MarkAsRead","iterationVariableName":""}
+{"testCaseName":"Test Cases/Notification/TC_NOTIF_003_DeleteNotification","testCaseId":"Test Cases/Notification/TC_NOTIF_003_DeleteNotification","iterationVariableName":""}
+{"testCaseName":"Test Cases/Notification/Triggers/TC_NOTIF_TRIG_001_ReviewPosted","testCaseId":"Test Cases/Notification/Triggers/TC_NOTIF_TRIG_001_ReviewPosted","iterationVariableName":""}
+{"testCaseName":"Test Cases/Notification/Triggers/TC_NOTIF_TRIG_002_PropertySell","testCaseId":"Test Cases/Notification/Triggers/TC_NOTIF_TRIG_002_PropertySell","iterationVariableName":""}
+{"testCaseName":"Test Cases/Notification/Triggers/TC_NOTIF_TRIG_003_PropertyRent","testCaseId":"Test Cases/Notification/Triggers/TC_NOTIF_TRIG_003_PropertyRent","iterationVariableName":""}
+{"testCaseName":"Test Cases/Notification/Triggers/TC_NOTIF_TRIG_004_PropertyBuy","testCaseId":"Test Cases/Notification/Triggers/TC_NOTIF_TRIG_004_PropertyBuy","iterationVariableName":""}

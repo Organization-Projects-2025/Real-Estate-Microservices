@@ -1,0 +1,16 @@
+SCREEN NAME,User Profile Page,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_PROFILE_001,SCENARIO DESCRIPTION,User Profile - Profile Edit/Update,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_PROF_001,Verify updating all profile fields with valid data,User logged in; Profile page accessible,FirstName: 'John'; LastName: 'Smith'; Phone: '555-123-4567',All fields updated successfully; Success message,Profile updated in database,All fields updated successfully with success message,PASSED,,Positive test - Full update
+2,TC_PROF_002,Verify updating only first name field,User logged in; Profile page accessible,FirstName: 'Michael',First name updated successfully,First name changed in database,First name updated successfully,PASSED,,Positive test - Partial update
+3,TC_PROF_003,Verify updating only last name field,User logged in; Profile page accessible,LastName: 'Johnson',Last name updated successfully,Last name changed in database,Last name updated successfully,PASSED,,Positive test - Partial update
+4,TC_PROF_004,Verify updating phone number with valid format,User logged in; Profile page accessible,Phone: '555-987-6543',Phone number updated successfully,Phone updated in database,Phone number updated successfully,PASSED,,Positive test - Phone update
+5,TC_PROF_005,Verify cancel edit discards unsaved changes,User logged in; Profile edit mode active,FirstName: 'Changed'; LastName: 'Values'; Save: No (Cancel),Changes discarded; Original values restored,No changes saved to database,Changes discarded and original values restored,PASSED,,Negative path - Cancel action
+6,TC_PROF_VAL1,Verify save fails with empty first name,User logged in; Profile edit mode active,FirstName: '' (empty),Error message indicating first name required,Profile not saved,Error message indicating first name required,PASSED,,Negative test - Validation
+7,TC_PROF_VAL2,Verify save fails with empty last name,User logged in; Profile edit mode active,LastName: '' (empty),Error message indicating last name required,Profile not saved,Error message indicating last name required,PASSED,,Negative test - Validation
+8,TC_PROF_VAL3,Verify save fails with invalid phone number format,User logged in; Profile edit mode active,Phone: 'abc123' or '12',Error message indicating invalid phone format,Profile not saved,Error message indicating invalid phone format,PASSED,,Negative test - Validation

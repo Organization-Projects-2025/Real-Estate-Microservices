@@ -1,0 +1,13 @@
+SCREEN NAME,Agent - Profile Management,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_AGENT_002,SCENARIO DESCRIPTION,Agent - Agent Profile Management,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_AGENT_006,Verify all agents are displayed on agents page,Agents exist in system,URL: /agents,All agents displayed in cards/list format,Agents list rendered correctly,All agents displayed in cards/list format,PASSED,,Positive test - View all agents
+2,TC_AGENT_007,Verify agent details are displayed correctly,Agents exist in system,Agent ID: agent_001,"Agent name, agency, contact info, rating displayed",All agent details visible,Agent details view fails to display - page shows error or incomplete data,FAILED,DEF-2026-008,UI verification test
+3,TC_AGENT_008,Verify agent can update profile with valid data,User logged in as agent; Agent profile exists,Agency: 'New Agency Name'; Phone: '555-9999'; Bio: 'Updated bio text',Profile updated successfully; Success message shown,Agent profile updated in database,Profile updated successfully with success message shown,PASSED,,Positive test - Update agent
+4,TC_AGENT_009,Verify update agent fails with empty name,User logged in as agent; Edit profile open,Name: '' (empty),Error message indicating name is required,Profile not updated,Error message indicating name is required,PASSED,,Negative test - Validation
+5,TC_AGENT_011,Verify agent can delete their profile,User logged in as agent; Agent profile exists,Agent ID: agent_001; Confirm Delete: Yes,Agent profile deleted; User reverted to regular user role,Agent profile removed from database,Agent profile deleted and user reverted to regular user role,PASSED,,Positive test - Delete agent

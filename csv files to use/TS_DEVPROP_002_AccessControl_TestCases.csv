@@ -1,0 +1,10 @@
+SCREEN NAME,Developer - Access Control,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_DEVPROP_002,SCENARIO DESCRIPTION,Developer Properties - Role Based Access Control,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_DEVPROP_012,Verify developer signup grants access to My Projects,N/A (new registration),Role: 'Developer'; URL: /my-projects,Developer can access My Projects page; Page loads,Access granted to developer,Developer can access My Projects page - page loads successfully,PASSED,,Positive test - Developer access
+2,TC_DEVPROP_013,Verify regular user cannot access My Projects page,N/A (new registration),Role: 'User'; URL: /my-projects,Access denied; Redirected or unauthorized message,Access restricted for non-developers,Access denied - redirected with unauthorized message,PASSED,,Negative test - Security

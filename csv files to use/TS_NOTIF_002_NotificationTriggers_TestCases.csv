@@ -1,0 +1,12 @@
+SCREEN NAME,Notification Trigger Events,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_NOTIF_002,SCENARIO DESCRIPTION,Notifications - Trigger Events,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_NOTIF_TRIG_001,Verify notification created when review is posted,User logged in; Agent exists,Agent ID: agent_001; Rating: 4; Review Text: 'Great service',Notification created for agent about new review,New notification in agent's list,Notification created for agent about new review,PASSED,,Integration test - Review trigger
+2,TC_NOTIF_TRIG_002,Verify notification created when property listed for sale,User logged in,Property Title: 'Beach House'; Type: 'Sale'; Price: 500000,Notification created about property listing,Notification generated,Notification created about property listing,PASSED,,Integration test - Property sell trigger
+3,TC_NOTIF_TRIG_003,Verify notification created when contacting about rental property,User logged in; Rental property exists,Property ID: prop_001; Type: 'Rent'; Message: 'Interested in renting',Notification sent to property owner,Notification delivered to owner,Notification sent to property owner,PASSED,,Integration test - Rent inquiry trigger
+4,TC_NOTIF_TRIG_004,Verify notification created when contacting about property for sale,User logged in; Sale property exists,Property ID: prop_002; Type: 'Sale'; Message: 'Interested in buying',Notification sent to property owner,Notification delivered to owner,Notification sent to property owner,PASSED,,Integration test - Buy inquiry trigger

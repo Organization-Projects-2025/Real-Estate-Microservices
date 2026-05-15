@@ -1,0 +1,1169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="TS_PropertyService_Complete" time="188.656" tests="12" failures="0" errors="0">
+   <testsuite name="TS_PropertyService_Complete" tests="12" failures="0" errors="0" time="188.656" skipped="0" timestamp="2026-01-09T17:15:40.847Z" hostname="ASUS - 192.168.1.53" id="Test Suites/TS_PropertyService_Complete">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="C:\\Projects\\Real-Estate-Microservices\\Katalon\\Reports\\20260109_182625\\TS_PropertyService_Complete\\20260109_182640"/>
+         <property name="logFiles" value="C:\\Projects\\Real-Estate-Microservices\\Katalon\\Reports\\20260109_182625\\TS_PropertyService_Complete\\20260109_182640\\console0.log, C:\\Projects\\Real-Estate-Microservices\\Katalon\\Reports\\20260109_182625\\TS_PropertyService_Complete\\20260109_182640\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="ASUS - 192.168.1.53"/>
+         <property name="os" value="Windows 11 64bit"/>
+         <property name="katalonVersion" value="10.4.3.0"/>
+         <property name="browser" value="Chrome 143.0.7499.170"/>
+         <property name="userFullName" value="Youssef Mohamed Khalaf Hussain Hassan"/>
+         <property name="hostAddress" value="192.168.1.53"/>
+         <property name="sessionId" value="1f3ca8e473f6b36bb729a07d9f349d15"/>
+         <property name="projectName" value="Katalon"/>
+         <property name="seleniumVersion" value="4.34.0"/>
+         <property name="proxyInformation" value="ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList=&quot;&quot;, isApplyToDesiredCapabilities=true }"/>
+         <property name="platform" value="Windows 11"/>
+      </properties>
+      <testcase name="Test Cases/PropertyService/SellPage/TC_PROP_001_Sell_Page_Requires_Login" time="7.196" classname="Test Cases/PropertyService/SellPage/TC_PROP_001_Sell_Page_Requires_Login" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:15:41 - [TEST_CASE][PASSED] - Test Cases/PropertyService/SellPage/TC_PROP_001_Sell_Page_Requires_Login: Test Cases/PropertyService/SellPage/TC_PROP_001_Sell_Page_Requires_Login
+
+09-01-2026T19:15:42 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+09-01-2026T19:15:43 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:15:43 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:15:43 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:15:46 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:15:46 - [TEST_STEP][PASSED] - sellHelper = new propertyservice.Sell_Keywords(): null
+
+09-01-2026T19:15:46 - [TEST_STEP][PASSED] - try: ✅ TC_PROP_001 PASSED: Sell page correctly requires login
+
+09-01-2026T19:15:46 - [TEST_STEP][PASSED] - sellHelper.navigateToSellPage(): Wait for page load successfully
+
+09-01-2026T19:15:47 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/sell' successfully
+
+09-01-2026T19:15:47 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:15:47 - [TEST_STEP][PASSED] - sellHelper.verifyLoginRequired(): Object 'Object Repository/PropertyService/SellPage/loginRequiredMessage' is present
+
+09-01-2026T19:15:48 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/SellPage/loginRequiredMessage' is present
+
+09-01-2026T19:15:48 - [TEST_STEP][PASSED] - verifyElementPresent(findTestObject("Object Repository/PropertyService/SellPage/goToLoginButton"), 10): Object 'Object Repository/PropertyService/SellPage/goToLoginButton' is present
+
+09-01-2026T19:15:48 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/SellPage/goToLoginButton' is present
+
+09-01-2026T19:15:48 - [TEST_STEP][PASSED] - comment("✅ TC_PROP_001 PASSED: Sell page correctly requires login"): ✅ TC_PROP_001 PASSED: Sell page correctly requires login
+
+09-01-2026T19:15:48 - [MESSAGE][INFO] - ✅ TC_PROP_001 PASSED: Sell page correctly requires login
+
+09-01-2026T19:15:48 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+09-01-2026T19:15:48 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:15:49 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/PropertyService/SellPage/TC_PROP_002_Create_Property_Valid_Data" time="57.149" classname="Test Cases/PropertyService/SellPage/TC_PROP_002_Create_Property_Valid_Data" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:15:49 - [TEST_CASE][PASSED] - Test Cases/PropertyService/SellPage/TC_PROP_002_Create_Property_Valid_Data: Test Cases/PropertyService/SellPage/TC_PROP_002_Create_Property_Valid_Data
+
+09-01-2026T19:15:49 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+09-01-2026T19:15:49 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:15:49 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:15:49 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:15:50 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:15:50 - [TEST_STEP][PASSED] - sellHelper = new propertyservice.Sell_Keywords(): null
+
+09-01-2026T19:15:50 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+09-01-2026T19:15:51 - [TEST_STEP][PASSED] - try: ✅ TC_PROP_002 PASSED: All form fields filled successfully
+
+09-01-2026T19:15:51 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+09-01-2026T19:15:51 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+09-01-2026T19:15:51 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:15:52 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+09-01-2026T19:15:52 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+09-01-2026T19:15:52 - [TEST_STEP][PASSED] - loginHelper.loginAsUser(1): Delayed 2 second(s)
+
+09-01-2026T19:15:52 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+09-01-2026T19:15:52 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+09-01-2026T19:15:53 - [MESSAGE][PASSED] - Text 'user1@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+09-01-2026T19:15:54 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+09-01-2026T19:15:55 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+09-01-2026T19:15:55 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+09-01-2026T19:15:58 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:15:58 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:16:00 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:16:00 - [TEST_STEP][PASSED] - loginHelper.verifyLoginSuccess(): Current window's url is: 'http://localhost:5173/'
+
+09-01-2026T19:16:00 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:16:02 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:16:02 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/'
+
+09-01-2026T19:16:02 - [TEST_STEP][PASSED] - sellHelper.navigateToSellPage(): Wait for page load successfully
+
+09-01-2026T19:16:02 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/sell' successfully
+
+09-01-2026T19:16:02 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:16:02 - [TEST_STEP][PASSED] - sellHelper.verifySellPageLoaded(): Object 'Object Repository/PropertyService/SellPage/titleInput' is present
+
+09-01-2026T19:16:03 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/SellPage/titleInput' is present
+
+09-01-2026T19:16:03 - [TEST_STEP][PASSED] - projectDir = getProjectDir(): null
+
+09-01-2026T19:16:03 - [TEST_STEP][PASSED] - imagePath = projectDir + "/TestData/villa.jpg": null
+
+09-01-2026T19:16:03 - [TEST_STEP][PASSED] - imageFile = new java.io.File(imagePath): null
+
+09-01-2026T19:16:03 - [TEST_STEP][PASSED] - if (!(imageFile.exists())): null
+
+09-01-2026T19:16:03 - [TEST_STEP][PASSED] - if (imageFile.exists()): Using image: C:\Projects\Real-Estate-Microservices\Katalon\TestData\villa.jpg
+
+09-01-2026T19:16:03 - [TEST_STEP][PASSED] - imagePath = imageFile.getAbsolutePath(): null
+
+09-01-2026T19:16:03 - [TEST_STEP][PASSED] - comment(Using image: $imagePath): Using image: C:\Projects\Real-Estate-Microservices\Katalon\TestData\villa.jpg
+
+09-01-2026T19:16:03 - [MESSAGE][INFO] - Using image: C:\Projects\Real-Estate-Microservices\Katalon\TestData\villa.jpg
+
+09-01-2026T19:16:03 - [TEST_STEP][PASSED] - comment("Step 1: Filling Basic Info"): Step 1: Filling Basic Info
+
+09-01-2026T19:16:03 - [MESSAGE][INFO] - Step 1: Filling Basic Info
+
+09-01-2026T19:16:03 - [TEST_STEP][PASSED] - sellHelper.fillBasicInfo("Luxury 4BR Villa with Pool", "Stunning modern villa featuring 4 spacious bedrooms, 3 bathrooms, private pool.", "sale", "residential", "villa"): All options with value 'villa' are selected in object 'Object Repository/PropertyService/SellPage/subTypeSelect' 
+
+09-01-2026T19:16:04 - [MESSAGE][PASSED] - Text 'Luxury 4BR Villa with Pool' is set on object 'Object Repository/PropertyService/SellPage/titleInput'
+
+09-01-2026T19:16:05 - [MESSAGE][PASSED] - Text 'Stunning modern villa featuring 4 spacious bedrooms, 3 bathrooms, private pool.' is set on object 'Object Repository/PropertyService/SellPage/descriptionInput'
+
+09-01-2026T19:16:06 - [MESSAGE][PASSED] - All options with value 'sale' are selected in object 'Object Repository/PropertyService/SellPage/listingTypeSelect' 
+
+09-01-2026T19:16:07 - [MESSAGE][PASSED] - All options with value 'residential' are selected in object 'Object Repository/PropertyService/SellPage/propertyTypeSelect' 
+
+09-01-2026T19:16:08 - [MESSAGE][PASSED] - All options with value 'villa' are selected in object 'Object Repository/PropertyService/SellPage/subTypeSelect' 
+
+09-01-2026T19:16:08 - [TEST_STEP][PASSED] - sellHelper.clickNextButton(): Delayed 1 second(s)
+
+09-01-2026T19:16:08 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/SellPage/nextButton' is clicked on
+
+09-01-2026T19:16:09 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:16:09 - [TEST_STEP][PASSED] - comment("Step 1 completed - Basic Info filled"): Step 1 completed - Basic Info filled
+
+09-01-2026T19:16:09 - [MESSAGE][INFO] - Step 1 completed - Basic Info filled
+
+09-01-2026T19:16:09 - [TEST_STEP][PASSED] - comment("Step 2: Filling Address & Area"): Step 2: Filling Address & Area
+
+09-01-2026T19:16:09 - [MESSAGE][INFO] - Step 2: Filling Address & Area
+
+09-01-2026T19:16:09 - [TEST_STEP][PASSED] - sellHelper.fillAddressInfo("456 Palm Beach Boulevard", "Miami", "Florida", "USA", "3500", "325"): Text '325' is set on object 'Object Repository/PropertyService/SellPage/areaSqmInput'
+
+09-01-2026T19:16:10 - [MESSAGE][PASSED] - Text '456 Palm Beach Boulevard' is set on object 'Object Repository/PropertyService/SellPage/streetInput'
+
+09-01-2026T19:16:11 - [MESSAGE][PASSED] - Text 'Miami' is set on object 'Object Repository/PropertyService/SellPage/cityInput'
+
+09-01-2026T19:16:12 - [MESSAGE][PASSED] - Text 'Florida' is set on object 'Object Repository/PropertyService/SellPage/stateInput'
+
+09-01-2026T19:16:13 - [MESSAGE][PASSED] - Text 'USA' is set on object 'Object Repository/PropertyService/SellPage/countryInput'
+
+09-01-2026T19:16:14 - [MESSAGE][PASSED] - Text '3500' is set on object 'Object Repository/PropertyService/SellPage/areaSqftInput'
+
+09-01-2026T19:16:15 - [MESSAGE][PASSED] - Text '325' is set on object 'Object Repository/PropertyService/SellPage/areaSqmInput'
+
+09-01-2026T19:16:15 - [TEST_STEP][PASSED] - sellHelper.clickNextButton(): Delayed 1 second(s)
+
+09-01-2026T19:16:15 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/SellPage/nextButton' is clicked on
+
+09-01-2026T19:16:16 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:16:16 - [TEST_STEP][PASSED] - comment("Step 2 completed - Address & Area filled"): Step 2 completed - Address & Area filled
+
+09-01-2026T19:16:16 - [MESSAGE][INFO] - Step 2 completed - Address & Area filled
+
+09-01-2026T19:16:16 - [TEST_STEP][PASSED] - comment("Step 3: Uploading Media & Filling Price Info"): Step 3: Uploading Media & Filling Price Info
+
+09-01-2026T19:16:16 - [MESSAGE][INFO] - Step 3: Uploading Media & Filling Price Info
+
+09-01-2026T19:16:16 - [TEST_STEP][PASSED] - if (imagePath != null): Image uploaded successfully
+
+09-01-2026T19:16:16 - [TEST_STEP][PASSED] - try: Image uploaded successfully
+
+09-01-2026T19:16:16 - [TEST_STEP][PASSED] - uploadFile(findTestObject("Object Repository/PropertyService/SellPage/mediaFileInput"), imagePath): File 'C:\Projects\Real-Estate-Microservices\Katalon\TestData\villa.jpg' sent to object: 'Object Repository/PropertyService/SellPage/mediaFileInput'
+
+09-01-2026T19:16:16 - [MESSAGE][WARNING] - Cannot clear the existing file path in the input element. Continue to upload file.
+
+09-01-2026T19:16:16 - [MESSAGE][PASSED] - File 'C:\Projects\Real-Estate-Microservices\Katalon\TestData\villa.jpg' sent to object: 'Object Repository/PropertyService/SellPage/mediaFileInput'
+
+09-01-2026T19:16:16 - [TEST_STEP][PASSED] - delay(3): Delayed 3 second(s)
+
+09-01-2026T19:16:19 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:16:19 - [TEST_STEP][PASSED] - comment("Image uploaded successfully"): Image uploaded successfully
+
+09-01-2026T19:16:19 - [MESSAGE][INFO] - Image uploaded successfully
+
+09-01-2026T19:16:19 - [TEST_STEP][PASSED] - sellHelper.fillPriceInfo("1250000", "2022-06-15", "active"): All options with value 'active' are selected in object 'Object Repository/PropertyService/SellPage/statusSelect' 
+
+09-01-2026T19:16:20 - [MESSAGE][PASSED] - Text '1250000' is set on object 'Object Repository/PropertyService/SellPage/priceInput'
+
+09-01-2026T19:16:21 - [MESSAGE][PASSED] - Text '2022-06-15' is set on object 'Object Repository/PropertyService/SellPage/buildDateInput'
+
+09-01-2026T19:16:22 - [MESSAGE][PASSED] - All options with value 'active' are selected in object 'Object Repository/PropertyService/SellPage/statusSelect' 
+
+09-01-2026T19:16:22 - [TEST_STEP][PASSED] - sellHelper.clickNextButton(): Delayed 1 second(s)
+
+09-01-2026T19:16:22 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/SellPage/nextButton' is clicked on
+
+09-01-2026T19:16:23 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:16:23 - [TEST_STEP][PASSED] - comment("Step 3 completed - Media & Price filled"): Step 3 completed - Media & Price filled
+
+09-01-2026T19:16:23 - [MESSAGE][INFO] - Step 3 completed - Media & Price filled
+
+09-01-2026T19:16:23 - [TEST_STEP][PASSED] - comment("Step 4: Filling Features"): Step 4: Filling Features
+
+09-01-2026T19:16:23 - [MESSAGE][INFO] - Step 4: Filling Features
+
+09-01-2026T19:16:23 - [TEST_STEP][PASSED] - sellHelper.fillFeatures("4", "3", "2", "fully", true): Object 'Object Repository/PropertyService/SellPage/poolCheckbox' is checked
+
+09-01-2026T19:16:24 - [MESSAGE][PASSED] - Text '4' is set on object 'Object Repository/PropertyService/SellPage/bedroomsInput'
+
+09-01-2026T19:16:25 - [MESSAGE][PASSED] - Text '3' is set on object 'Object Repository/PropertyService/SellPage/bathroomsInput'
+
+09-01-2026T19:16:26 - [MESSAGE][PASSED] - Text '2' is set on object 'Object Repository/PropertyService/SellPage/garageInput'
+
+09-01-2026T19:16:26 - [MESSAGE][PASSED] - All options with value 'fully' are selected in object 'Object Repository/PropertyService/SellPage/furnishedSelect' 
+
+09-01-2026T19:16:27 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/SellPage/poolCheckbox' is checked
+
+09-01-2026T19:16:27 - [TEST_STEP][PASSED] - comment("Step 4 completed - Features filled"): Step 4 completed - Features filled
+
+09-01-2026T19:16:27 - [MESSAGE][INFO] - Step 4 completed - Features filled
+
+09-01-2026T19:16:27 - [TEST_STEP][PASSED] - comment("Attempting submit"): Attempting submit
+
+09-01-2026T19:16:27 - [MESSAGE][INFO] - Attempting submit
+
+09-01-2026T19:16:27 - [TEST_STEP][PASSED] - sellHelper.clickSubmitButton(): Delayed 3 second(s)
+
+09-01-2026T19:16:27 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/SellPage/submitButton' is clicked on
+
+09-01-2026T19:16:30 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:16:30 - [TEST_STEP][WARNING] - hasSuccessMessage = verifyElementPresent(findTestObject("Object Repository/PropertyService/SellPage/successMessage"), 10, OPTIONAL): com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/PropertyService/SellPage/successMessage' located by 'By.xpath: //div[contains(@class, 'bg-green-900')]//span[contains(text(), 'successfully')] | //span[contains(text(), 'Property successfully listed')]' not found (Root cause: com.kms.katalon.core.exception.StepFailedException: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/PropertyService/SellPage/successMessage' located by 'By.xpath: //div[contains(@class, 'bg-green-900')]//span[contains(text(), 'successfully')] | //span[contains(text(), 'Property successfully listed')]' not found
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.stepFailed(WebUIKeywordMain.groovy:177)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword$_verifyElementPresent_closure1.doCall(VerifyElementPresentKeyword.groovy:88)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword$_verifyElementPresent_closure1.call(VerifyElementPresentKeyword.groovy)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:41)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword.verifyElementPresent(VerifyElementPresentKeyword.groovy:95)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword.execute(VerifyElementPresentKeyword.groovy:68)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:90)
+	at com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.verifyElementPresent(WebUiBuiltInKeywords.groovy:1549)
+	at Script.run(Script.groovy:111)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1767976000688.run(TempTestSuite1767976000688.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+)
+
+09-01-2026T19:16:40 - [MESSAGE][WARNING] - com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/PropertyService/SellPage/successMessage' located by 'By.xpath: //div[contains(@class, 'bg-green-900')]//span[contains(text(), 'successfully')] | //span[contains(text(), 'Property successfully listed')]' not found (Root cause: com.kms.katalon.core.exception.StepFailedException: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/PropertyService/SellPage/successMessage' located by 'By.xpath: //div[contains(@class, 'bg-green-900')]//span[contains(text(), 'successfully')] | //span[contains(text(), 'Property successfully listed')]' not found
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.stepFailed(WebUIKeywordMain.groovy:177)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword$_verifyElementPresent_closure1.doCall(VerifyElementPresentKeyword.groovy:88)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword$_verifyElementPresent_closure1.call(VerifyElementPresentKeyword.groovy)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:41)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword.verifyElementPresent(VerifyElementPresentKeyword.groovy:95)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword.execute(VerifyElementPresentKeyword.groovy:68)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:90)
+	at com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.verifyElementPresent(WebUiBuiltInKeywords.groovy:1549)
+	at Script.run(Script.groovy:111)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1767976000688.run(TempTestSuite1767976000688.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+)
+
+09-01-2026T19:16:40 - [TEST_STEP][WARNING] - hasErrorMessage = verifyElementPresent(findTestObject("Object Repository/PropertyService/SellPage/errorMessage"), 5, OPTIONAL): com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/PropertyService/SellPage/errorMessage' located by 'By.xpath: //div[contains(@class, 'bg-red-900')]//span | //div[contains(@class, 'border-red-500')]//span' not found (Root cause: com.kms.katalon.core.exception.StepFailedException: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/PropertyService/SellPage/errorMessage' located by 'By.xpath: //div[contains(@class, 'bg-red-900')]//span | //div[contains(@class, 'border-red-500')]//span' not found
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.stepFailed(WebUIKeywordMain.groovy:177)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword$_verifyElementPresent_closure1.doCall(VerifyElementPresentKeyword.groovy:88)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword$_verifyElementPresent_closure1.call(VerifyElementPresentKeyword.groovy)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:41)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword.verifyElementPresent(VerifyElementPresentKeyword.groovy:95)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword.execute(VerifyElementPresentKeyword.groovy:68)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:90)
+	at com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.verifyElementPresent(WebUiBuiltInKeywords.groovy:1549)
+	at Script.run(Script.groovy:116)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1767976000688.run(TempTestSuite1767976000688.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+)
+
+09-01-2026T19:16:45 - [MESSAGE][WARNING] - com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/PropertyService/SellPage/errorMessage' located by 'By.xpath: //div[contains(@class, 'bg-red-900')]//span | //div[contains(@class, 'border-red-500')]//span' not found (Root cause: com.kms.katalon.core.exception.StepFailedException: com.kms.katalon.core.webui.exception.WebElementNotFoundException: Web element with id: 'Object Repository/PropertyService/SellPage/errorMessage' located by 'By.xpath: //div[contains(@class, 'bg-red-900')]//span | //div[contains(@class, 'border-red-500')]//span' not found
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.stepFailed(WebUIKeywordMain.groovy:177)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword$_verifyElementPresent_closure1.doCall(VerifyElementPresentKeyword.groovy:88)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword$_verifyElementPresent_closure1.call(VerifyElementPresentKeyword.groovy)
+	at com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain.runKeyword(WebUIKeywordMain.groovy:41)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword.verifyElementPresent(VerifyElementPresentKeyword.groovy:95)
+	at com.kms.katalon.core.webui.keyword.builtin.VerifyElementPresentKeyword.execute(VerifyElementPresentKeyword.groovy:68)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:90)
+	at com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords.verifyElementPresent(WebUiBuiltInKeywords.groovy:1549)
+	at Script.run(Script.groovy:116)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:194)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:119)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:490)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:481)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:460)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:452)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:322)
+	at com.kms.katalon.core.common.CommonExecutor.accessTestCaseMainPhase(CommonExecutor.java:71)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:153)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:110)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:205)
+	at TempTestSuite1767976000688.run(TempTestSuite1767976000688.groovy:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+)
+
+09-01-2026T19:16:45 - [TEST_STEP][PASSED] - if (hasSuccessMessage): null
+
+09-01-2026T19:16:45 - [TEST_STEP][PASSED] - else if (hasErrorMessage): null
+
+09-01-2026T19:16:45 - [TEST_STEP][PASSED] - else: ✅ TC_PROP_002 PASSED: All form fields filled successfully
+
+09-01-2026T19:16:45 - [TEST_STEP][PASSED] - comment("✅ TC_PROP_002 PASSED: All form fields filled successfully"): ✅ TC_PROP_002 PASSED: All form fields filled successfully
+
+09-01-2026T19:16:45 - [MESSAGE][INFO] - ✅ TC_PROP_002 PASSED: All form fields filled successfully
+
+09-01-2026T19:16:45 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+09-01-2026T19:16:45 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:16:46 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/PropertyService/SellPage/TC_PROP_003_Create_Property_Missing_Fields" time="26.571" classname="Test Cases/PropertyService/SellPage/TC_PROP_003_Create_Property_Missing_Fields" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:16:46 - [TEST_CASE][PASSED] - Test Cases/PropertyService/SellPage/TC_PROP_003_Create_Property_Missing_Fields: Test Cases/PropertyService/SellPage/TC_PROP_003_Create_Property_Missing_Fields
+
+09-01-2026T19:16:46 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+09-01-2026T19:16:46 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:16:46 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:16:46 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:16:47 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:16:47 - [TEST_STEP][PASSED] - sellHelper = new propertyservice.Sell_Keywords(): null
+
+09-01-2026T19:16:47 - [TEST_STEP][PASSED] - loginHelper = new authentication.Login_Keywords(): null
+
+09-01-2026T19:16:47 - [TEST_STEP][PASSED] - try: ✅ TC_PROP_003 PASSED: Validation error shown for missing fields
+
+09-01-2026T19:16:47 - [TEST_STEP][PASSED] - loginHelper.navigateToLogin(): Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+09-01-2026T19:16:48 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/login' successfully
+
+09-01-2026T19:16:48 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:16:48 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/emailInput' is present
+
+09-01-2026T19:16:49 - [MESSAGE][PASSED] - Object 'Object Repository/Authentication/LoginPage/passwordInput' is present
+
+09-01-2026T19:16:49 - [TEST_STEP][PASSED] - loginHelper.loginAsUser(1): Delayed 2 second(s)
+
+09-01-2026T19:16:49 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/login'
+
+09-01-2026T19:16:49 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/emailInput' is cleared
+
+09-01-2026T19:16:50 - [MESSAGE][PASSED] - Text 'user1@realestate.com' is set on object 'Object Repository/Authentication/LoginPage/emailInput'
+
+09-01-2026T19:16:50 - [MESSAGE][PASSED] - Text of object 'Object Repository/Authentication/LoginPage/passwordInput' is cleared
+
+09-01-2026T19:16:51 - [MESSAGE][PASSED] - Text 'Password123!' is set on object 'Object Repository/Authentication/LoginPage/passwordInput'
+
+09-01-2026T19:16:52 - [MESSAGE][PASSED] - Object: 'Object Repository/Authentication/LoginPage/loginButton' is clicked on
+
+09-01-2026T19:16:55 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:16:55 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:16:57 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:16:57 - [TEST_STEP][PASSED] - loginHelper.verifyLoginSuccess(): Current window's url is: 'http://localhost:5173/'
+
+09-01-2026T19:16:57 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:16:59 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:16:59 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/'
+
+09-01-2026T19:16:59 - [TEST_STEP][PASSED] - sellHelper.navigateToSellPage(): Wait for page load successfully
+
+09-01-2026T19:16:59 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/sell' successfully
+
+09-01-2026T19:16:59 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:16:59 - [TEST_STEP][PASSED] - sellHelper.verifySellPageLoaded(): Object 'Object Repository/PropertyService/SellPage/titleInput' is present
+
+09-01-2026T19:17:00 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/SellPage/titleInput' is present
+
+09-01-2026T19:17:00 - [TEST_STEP][PASSED] - sellHelper.fillBasicInfo("", "Description only", "sale", "residential", "house"): All options with value 'house' are selected in object 'Object Repository/PropertyService/SellPage/subTypeSelect' 
+
+09-01-2026T19:17:00 - [MESSAGE][PASSED] - Text '' is set on object 'Object Repository/PropertyService/SellPage/titleInput'
+
+09-01-2026T19:17:01 - [MESSAGE][PASSED] - Text 'Description only' is set on object 'Object Repository/PropertyService/SellPage/descriptionInput'
+
+09-01-2026T19:17:02 - [MESSAGE][PASSED] - All options with value 'sale' are selected in object 'Object Repository/PropertyService/SellPage/listingTypeSelect' 
+
+09-01-2026T19:17:03 - [MESSAGE][PASSED] - All options with value 'residential' are selected in object 'Object Repository/PropertyService/SellPage/propertyTypeSelect' 
+
+09-01-2026T19:17:04 - [MESSAGE][PASSED] - All options with value 'house' are selected in object 'Object Repository/PropertyService/SellPage/subTypeSelect' 
+
+09-01-2026T19:17:04 - [TEST_STEP][PASSED] - sellHelper.clickNextButton(): Delayed 1 second(s)
+
+09-01-2026T19:17:04 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/SellPage/nextButton' is clicked on
+
+09-01-2026T19:17:05 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:17:05 - [TEST_STEP][PASSED] - sellHelper.clickNextButton(): Delayed 1 second(s)
+
+09-01-2026T19:17:06 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/SellPage/nextButton' is clicked on
+
+09-01-2026T19:17:07 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:17:07 - [TEST_STEP][PASSED] - sellHelper.clickNextButton(): Delayed 1 second(s)
+
+09-01-2026T19:17:07 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/SellPage/nextButton' is clicked on
+
+09-01-2026T19:17:08 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:17:08 - [TEST_STEP][PASSED] - sellHelper.clickSubmitButton(): Delayed 3 second(s)
+
+09-01-2026T19:17:09 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/SellPage/submitButton' is clicked on
+
+09-01-2026T19:17:12 - [MESSAGE][PASSED] - Delayed 3 second(s)
+
+09-01-2026T19:17:12 - [TEST_STEP][PASSED] - sellHelper.verifyErrorMessage(): Object 'Object Repository/PropertyService/SellPage/errorMessage' is present
+
+09-01-2026T19:17:12 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/SellPage/errorMessage' is present
+
+09-01-2026T19:17:12 - [TEST_STEP][PASSED] - comment("✅ TC_PROP_003 PASSED: Validation error shown for missing fields"): ✅ TC_PROP_003 PASSED: Validation error shown for missing fields
+
+09-01-2026T19:17:12 - [MESSAGE][INFO] - ✅ TC_PROP_003 PASSED: Validation error shown for missing fields
+
+09-01-2026T19:17:12 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+09-01-2026T19:17:12 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:17:12 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/PropertyService/PropertiesPage/TC_PROP_004_Browse_Properties" time="5.669" classname="Test Cases/PropertyService/PropertiesPage/TC_PROP_004_Browse_Properties" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:17:12 - [TEST_CASE][PASSED] - Test Cases/PropertyService/PropertiesPage/TC_PROP_004_Browse_Properties: Test Cases/PropertyService/PropertiesPage/TC_PROP_004_Browse_Properties
+
+09-01-2026T19:17:12 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+09-01-2026T19:17:12 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:17:12 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:17:12 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:17:14 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:17:14 - [TEST_STEP][PASSED] - propsHelper = new propertyservice.Properties_Keywords(): null
+
+09-01-2026T19:17:14 - [TEST_STEP][PASSED] - try: ✅ TC_PROP_004 PASSED: Buy page loads and displays property cards
+
+09-01-2026T19:17:14 - [TEST_STEP][PASSED] - propsHelper.navigateToBuyPage(): Wait for page load successfully
+
+09-01-2026T19:17:14 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/buy' successfully
+
+09-01-2026T19:17:14 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:17:14 - [TEST_STEP][PASSED] - propsHelper.waitForPropertiesToLoad(): Delayed 2 second(s)
+
+09-01-2026T19:17:15 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/PropertyService/BuyRentPage/loadingSpinner' located by 'By.xpath: //div[contains(@class, 'animate-pulse')]' is not present after '15' second(s)
+
+09-01-2026T19:17:17 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:17:17 - [TEST_STEP][PASSED] - propsHelper.verifyBuyPageLoaded(): Object 'Object Repository/PropertyService/BuyRentPage/browsePropertiesHeading' is present
+
+09-01-2026T19:17:17 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/BuyRentPage/browsePropertiesHeading' is present
+
+09-01-2026T19:17:17 - [TEST_STEP][PASSED] - propsHelper.verifyPropertyCardsDisplayed(): Object 'Object Repository/PropertyService/BuyRentPage/propertyCard' is present
+
+09-01-2026T19:17:18 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/BuyRentPage/propertyCard' is present
+
+09-01-2026T19:17:18 - [TEST_STEP][PASSED] - comment("✅ TC_PROP_004 PASSED: Buy page loads and displays property cards"): ✅ TC_PROP_004 PASSED: Buy page loads and displays property cards
+
+09-01-2026T19:17:18 - [MESSAGE][INFO] - ✅ TC_PROP_004 PASSED: Buy page loads and displays property cards
+
+09-01-2026T19:17:18 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+09-01-2026T19:17:18 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:17:18 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/PropertyService/PropertiesPage/TC_PROP_005_Search_Properties" time="10.001" classname="Test Cases/PropertyService/PropertiesPage/TC_PROP_005_Search_Properties" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:17:18 - [TEST_CASE][PASSED] - Test Cases/PropertyService/PropertiesPage/TC_PROP_005_Search_Properties: Test Cases/PropertyService/PropertiesPage/TC_PROP_005_Search_Properties
+
+09-01-2026T19:17:18 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+09-01-2026T19:17:18 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:17:18 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:17:18 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:17:20 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:17:20 - [TEST_STEP][PASSED] - propsHelper = new propertyservice.Properties_Keywords(): null
+
+09-01-2026T19:17:20 - [TEST_STEP][PASSED] - try: ✅ TC_PROP_005 PASSED: Search functionality works
+
+09-01-2026T19:17:20 - [TEST_STEP][PASSED] - propsHelper.navigateToBuyPage(): Wait for page load successfully
+
+09-01-2026T19:17:20 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/buy' successfully
+
+09-01-2026T19:17:20 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:17:20 - [TEST_STEP][PASSED] - propsHelper.waitForPropertiesToLoad(): Delayed 2 second(s)
+
+09-01-2026T19:17:21 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/PropertyService/BuyRentPage/loadingSpinner' located by 'By.xpath: //div[contains(@class, 'animate-pulse')]' is not present after '15' second(s)
+
+09-01-2026T19:17:23 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:17:23 - [TEST_STEP][PASSED] - propsHelper.searchProperties("house"): Delayed 2 second(s)
+
+09-01-2026T19:17:24 - [MESSAGE][PASSED] - Text 'house' is set on object 'Object Repository/PropertyService/BuyRentPage/searchInput'
+
+09-01-2026T19:17:26 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:17:26 - [TEST_STEP][PASSED] - try: Search returned property results
+
+09-01-2026T19:17:26 - [TEST_STEP][PASSED] - propsHelper.verifyPropertyCardsDisplayed(): Object 'Object Repository/PropertyService/BuyRentPage/propertyCard' is present
+
+09-01-2026T19:17:26 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/BuyRentPage/propertyCard' is present
+
+09-01-2026T19:17:26 - [TEST_STEP][PASSED] - comment("Search returned property results"): Search returned property results
+
+09-01-2026T19:17:26 - [MESSAGE][INFO] - Search returned property results
+
+09-01-2026T19:17:26 - [TEST_STEP][PASSED] - comment("✅ TC_PROP_005 PASSED: Search functionality works"): ✅ TC_PROP_005 PASSED: Search functionality works
+
+09-01-2026T19:17:26 - [MESSAGE][INFO] - ✅ TC_PROP_005 PASSED: Search functionality works
+
+09-01-2026T19:17:26 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+09-01-2026T19:17:26 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:17:28 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/PropertyService/PropertiesPage/TC_PROP_006_Search_No_Results" time="8.267" classname="Test Cases/PropertyService/PropertiesPage/TC_PROP_006_Search_No_Results" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:17:28 - [TEST_CASE][PASSED] - Test Cases/PropertyService/PropertiesPage/TC_PROP_006_Search_No_Results: Test Cases/PropertyService/PropertiesPage/TC_PROP_006_Search_No_Results
+
+09-01-2026T19:17:28 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+09-01-2026T19:17:28 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:17:28 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:17:28 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:17:29 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:17:29 - [TEST_STEP][PASSED] - propsHelper = new propertyservice.Properties_Keywords(): null
+
+09-01-2026T19:17:29 - [TEST_STEP][PASSED] - try: ✅ TC_PROP_006 PASSED: No results message shown for non-matching search
+
+09-01-2026T19:17:29 - [TEST_STEP][PASSED] - propsHelper.navigateToBuyPage(): Wait for page load successfully
+
+09-01-2026T19:17:30 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/buy' successfully
+
+09-01-2026T19:17:30 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:17:30 - [TEST_STEP][PASSED] - propsHelper.waitForPropertiesToLoad(): Delayed 2 second(s)
+
+09-01-2026T19:17:31 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/PropertyService/BuyRentPage/loadingSpinner' located by 'By.xpath: //div[contains(@class, 'animate-pulse')]' is not present after '15' second(s)
+
+09-01-2026T19:17:33 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:17:33 - [TEST_STEP][PASSED] - propsHelper.searchProperties("xyznonexistent12345"): Delayed 2 second(s)
+
+09-01-2026T19:17:34 - [MESSAGE][PASSED] - Text 'xyznonexistent12345' is set on object 'Object Repository/PropertyService/BuyRentPage/searchInput'
+
+09-01-2026T19:17:36 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:17:36 - [TEST_STEP][PASSED] - propsHelper.verifyNoPropertiesMessage(): Object 'Object Repository/PropertyService/BuyRentPage/noPropertiesMessage' is present
+
+09-01-2026T19:17:36 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/BuyRentPage/noPropertiesMessage' is present
+
+09-01-2026T19:17:36 - [TEST_STEP][PASSED] - comment("✅ TC_PROP_006 PASSED: No results message shown for non-matching search"): ✅ TC_PROP_006 PASSED: No results message shown for non-matching search
+
+09-01-2026T19:17:36 - [MESSAGE][INFO] - ✅ TC_PROP_006 PASSED: No results message shown for non-matching search
+
+09-01-2026T19:17:36 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+09-01-2026T19:17:36 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:17:36 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/PropertyService/PropertyDetailPage/TC_PROP_007_Property_Detail_Display" time="8.023" classname="Test Cases/PropertyService/PropertyDetailPage/TC_PROP_007_Property_Detail_Display" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:17:36 - [TEST_CASE][PASSED] - Test Cases/PropertyService/PropertyDetailPage/TC_PROP_007_Property_Detail_Display: Test Cases/PropertyService/PropertyDetailPage/TC_PROP_007_Property_Detail_Display
+
+09-01-2026T19:17:36 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+09-01-2026T19:17:36 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:17:36 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:17:36 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:17:38 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:17:38 - [TEST_STEP][PASSED] - propsHelper = new propertyservice.Properties_Keywords(): null
+
+09-01-2026T19:17:38 - [TEST_STEP][PASSED] - detailHelper = new propertyservice.PropertyDetail_Keywords(): null
+
+09-01-2026T19:17:38 - [TEST_STEP][PASSED] - try: ✅ TC_PROP_007 PASSED: Property detail page displays all information
+
+09-01-2026T19:17:38 - [TEST_STEP][PASSED] - propsHelper.navigateToBuyPage(): Wait for page load successfully
+
+09-01-2026T19:17:38 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/buy' successfully
+
+09-01-2026T19:17:38 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:17:38 - [TEST_STEP][PASSED] - propsHelper.waitForPropertiesToLoad(): Delayed 2 second(s)
+
+09-01-2026T19:17:39 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/PropertyService/BuyRentPage/loadingSpinner' located by 'By.xpath: //div[contains(@class, 'animate-pulse')]' is not present after '15' second(s)
+
+09-01-2026T19:17:41 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:17:41 - [TEST_STEP][PASSED] - propsHelper.clickFirstViewDetails(): Wait for page load successfully
+
+09-01-2026T19:17:42 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/BuyRentPage/viewDetailsButton' is clicked on
+
+09-01-2026T19:17:42 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:17:42 - [TEST_STEP][PASSED] - detailHelper.verifyPropertyDetailPageLoaded(): Object 'Object Repository/PropertyService/PropertyDetailPage/propertyTitle' is present
+
+09-01-2026T19:17:43 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/PropertyDetailPage/propertyTitle' is present
+
+09-01-2026T19:17:43 - [TEST_STEP][PASSED] - detailHelper.verifyMainImageDisplayed(): Object 'Object Repository/PropertyService/PropertyDetailPage/mainImage' is present
+
+09-01-2026T19:17:43 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/PropertyDetailPage/mainImage' is present
+
+09-01-2026T19:17:43 - [TEST_STEP][PASSED] - detailHelper.verifyBedroomsDisplayed(): Object 'Object Repository/PropertyService/PropertyDetailPage/bedroomsCount' is present
+
+09-01-2026T19:17:43 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/PropertyDetailPage/bedroomsCount' is present
+
+09-01-2026T19:17:43 - [TEST_STEP][PASSED] - detailHelper.verifyBathroomsDisplayed(): Object 'Object Repository/PropertyService/PropertyDetailPage/bathroomsCount' is present
+
+09-01-2026T19:17:43 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/PropertyDetailPage/bathroomsCount' is present
+
+09-01-2026T19:17:43 - [TEST_STEP][PASSED] - title = detailHelper.getPropertyTitle(): Text of object 'Object Repository/PropertyService/PropertyDetailPage/propertyTitle' is: 'Apartment in Khalifa City, Abu Dhabi'
+
+09-01-2026T19:17:44 - [MESSAGE][PASSED] - Text of object 'Object Repository/PropertyService/PropertyDetailPage/propertyTitle' is: 'Apartment in Khalifa City, Abu Dhabi'
+
+09-01-2026T19:17:44 - [TEST_STEP][PASSED] - price = detailHelper.getPropertyPrice(): Text of object 'Object Repository/PropertyService/PropertyDetailPage/propertyPrice' is: '10,482,000$'
+
+09-01-2026T19:17:44 - [MESSAGE][PASSED] - Text of object 'Object Repository/PropertyService/PropertyDetailPage/propertyPrice' is: '10,482,000$'
+
+09-01-2026T19:17:44 - [TEST_STEP][PASSED] - comment(Property Title: $title): Property Title: Apartment in Khalifa City, Abu Dhabi
+
+09-01-2026T19:17:44 - [MESSAGE][INFO] - Property Title: Apartment in Khalifa City, Abu Dhabi
+
+09-01-2026T19:17:44 - [TEST_STEP][PASSED] - comment(Property Price: $price): Property Price: 10,482,000$
+
+09-01-2026T19:17:44 - [MESSAGE][INFO] - Property Price: 10,482,000$
+
+09-01-2026T19:17:44 - [TEST_STEP][PASSED] - comment("✅ TC_PROP_007 PASSED: Property detail page displays all information"): ✅ TC_PROP_007 PASSED: Property detail page displays all information
+
+09-01-2026T19:17:44 - [MESSAGE][INFO] - ✅ TC_PROP_007 PASSED: Property detail page displays all information
+
+09-01-2026T19:17:44 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+09-01-2026T19:17:44 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:17:44 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/PropertyService/PropertyDetailPage/TC_PROP_008_Contact_Agent_Button" time="16.182" classname="Test Cases/PropertyService/PropertyDetailPage/TC_PROP_008_Contact_Agent_Button" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:17:44 - [TEST_CASE][PASSED] - Test Cases/PropertyService/PropertyDetailPage/TC_PROP_008_Contact_Agent_Button: Test Cases/PropertyService/PropertyDetailPage/TC_PROP_008_Contact_Agent_Button
+
+09-01-2026T19:17:44 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+09-01-2026T19:17:44 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:17:44 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:17:44 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:17:46 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:17:46 - [TEST_STEP][PASSED] - propsHelper = new propertyservice.Properties_Keywords(): null
+
+09-01-2026T19:17:46 - [TEST_STEP][PASSED] - detailHelper = new propertyservice.PropertyDetail_Keywords(): null
+
+09-01-2026T19:17:46 - [TEST_STEP][PASSED] - try: ✅ TC_PROP_008 PASSED: Contact Agent form filled and submitted
+
+09-01-2026T19:17:46 - [TEST_STEP][PASSED] - propsHelper.navigateToBuyPage(): Wait for page load successfully
+
+09-01-2026T19:17:46 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/buy' successfully
+
+09-01-2026T19:17:46 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:17:46 - [TEST_STEP][PASSED] - propsHelper.waitForPropertiesToLoad(): Delayed 2 second(s)
+
+09-01-2026T19:17:47 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/PropertyService/BuyRentPage/loadingSpinner' located by 'By.xpath: //div[contains(@class, 'animate-pulse')]' is not present after '15' second(s)
+
+09-01-2026T19:17:49 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:17:49 - [TEST_STEP][PASSED] - propsHelper.clickFirstViewDetails(): Wait for page load successfully
+
+09-01-2026T19:17:49 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/BuyRentPage/viewDetailsButton' is clicked on
+
+09-01-2026T19:17:50 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:17:50 - [TEST_STEP][PASSED] - detailHelper.verifyPropertyDetailPageLoaded(): Object 'Object Repository/PropertyService/PropertyDetailPage/propertyTitle' is present
+
+09-01-2026T19:17:50 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/PropertyDetailPage/propertyTitle' is present
+
+09-01-2026T19:17:50 - [TEST_STEP][PASSED] - detailHelper.clickContactAgent(): Delayed 1 second(s)
+
+09-01-2026T19:17:51 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/PropertyDetailPage/contactAgentButton' is clicked on
+
+09-01-2026T19:17:52 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:17:52 - [TEST_STEP][PASSED] - detailHelper.verifyContactFormVisible(): Object 'Object Repository/PropertyService/PropertyDetailPage/contactNameInput' is present
+
+09-01-2026T19:17:52 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/PropertyDetailPage/contactNameInput' is present
+
+09-01-2026T19:17:52 - [TEST_STEP][PASSED] - detailHelper.fillContactForm("John Doe", "john.doe@example.com", "I am interested in this property. Please contact me."): Text 'I am interested in this property. Please contact me.' is set on object 'Object Repository/PropertyService/PropertyDetailPage/contactMessageInput'
+
+09-01-2026T19:17:53 - [MESSAGE][PASSED] - Text 'John Doe' is set on object 'Object Repository/PropertyService/PropertyDetailPage/contactNameInput'
+
+09-01-2026T19:17:55 - [MESSAGE][PASSED] - Text 'john.doe@example.com' is set on object 'Object Repository/PropertyService/PropertyDetailPage/contactEmailInput'
+
+09-01-2026T19:17:56 - [MESSAGE][PASSED] - Text 'I am interested in this property. Please contact me.' is set on object 'Object Repository/PropertyService/PropertyDetailPage/contactMessageInput'
+
+09-01-2026T19:17:56 - [TEST_STEP][PASSED] - detailHelper.clickSendMessage(): Delayed 2 second(s)
+
+09-01-2026T19:17:57 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/PropertyDetailPage/sendMessageButton' is clicked on
+
+09-01-2026T19:17:59 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:17:59 - [TEST_STEP][PASSED] - comment("✅ TC_PROP_008 PASSED: Contact Agent form filled and submitted"): ✅ TC_PROP_008 PASSED: Contact Agent form filled and submitted
+
+09-01-2026T19:17:59 - [MESSAGE][INFO] - ✅ TC_PROP_008 PASSED: Contact Agent form filled and submitted
+
+09-01-2026T19:17:59 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+09-01-2026T19:17:59 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:18:00 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/PropertyService/PropertyDetailPage/TC_PROP_009_Image_Gallery_Navigation" time="9.543" classname="Test Cases/PropertyService/PropertyDetailPage/TC_PROP_009_Image_Gallery_Navigation" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:18:00 - [TEST_CASE][PASSED] - Test Cases/PropertyService/PropertyDetailPage/TC_PROP_009_Image_Gallery_Navigation: Test Cases/PropertyService/PropertyDetailPage/TC_PROP_009_Image_Gallery_Navigation
+
+09-01-2026T19:18:01 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+09-01-2026T19:18:01 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:18:01 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:18:01 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:18:02 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:18:02 - [TEST_STEP][PASSED] - propsHelper = new propertyservice.Properties_Keywords(): null
+
+09-01-2026T19:18:02 - [TEST_STEP][PASSED] - detailHelper = new propertyservice.PropertyDetail_Keywords(): null
+
+09-01-2026T19:18:02 - [TEST_STEP][PASSED] - try: ✅ TC_PROP_009 PASSED: Image gallery navigation tested
+
+09-01-2026T19:18:02 - [TEST_STEP][PASSED] - propsHelper.navigateToBuyPage(): Wait for page load successfully
+
+09-01-2026T19:18:02 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/buy' successfully
+
+09-01-2026T19:18:02 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:18:02 - [TEST_STEP][PASSED] - propsHelper.waitForPropertiesToLoad(): Delayed 2 second(s)
+
+09-01-2026T19:18:03 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/PropertyService/BuyRentPage/loadingSpinner' located by 'By.xpath: //div[contains(@class, 'animate-pulse')]' is not present after '15' second(s)
+
+09-01-2026T19:18:05 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:18:05 - [TEST_STEP][PASSED] - propsHelper.clickFirstViewDetails(): Wait for page load successfully
+
+09-01-2026T19:18:06 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/BuyRentPage/viewDetailsButton' is clicked on
+
+09-01-2026T19:18:06 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:18:06 - [TEST_STEP][PASSED] - detailHelper.verifyPropertyDetailPageLoaded(): Object 'Object Repository/PropertyService/PropertyDetailPage/propertyTitle' is present
+
+09-01-2026T19:18:06 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/PropertyDetailPage/propertyTitle' is present
+
+09-01-2026T19:18:06 - [TEST_STEP][PASSED] - detailHelper.verifyMainImageDisplayed(): Object 'Object Repository/PropertyService/PropertyDetailPage/mainImage' is present
+
+09-01-2026T19:18:07 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/PropertyDetailPage/mainImage' is present
+
+09-01-2026T19:18:07 - [TEST_STEP][PASSED] - try: Image thumbnail clicked successfully
+
+09-01-2026T19:18:07 - [TEST_STEP][PASSED] - detailHelper.clickImageThumbnail(0): Delayed 1 second(s)
+
+09-01-2026T19:18:07 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/PropertyDetailPage/imageThumbnail' is clicked on
+
+09-01-2026T19:18:08 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:18:08 - [TEST_STEP][PASSED] - comment("Image thumbnail clicked successfully"): Image thumbnail clicked successfully
+
+09-01-2026T19:18:08 - [MESSAGE][INFO] - Image thumbnail clicked successfully
+
+09-01-2026T19:18:08 - [TEST_STEP][PASSED] - comment("✅ TC_PROP_009 PASSED: Image gallery navigation tested"): ✅ TC_PROP_009 PASSED: Image gallery navigation tested
+
+09-01-2026T19:18:08 - [MESSAGE][INFO] - ✅ TC_PROP_009 PASSED: Image gallery navigation tested
+
+09-01-2026T19:18:08 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+09-01-2026T19:18:08 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:18:10 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/PropertyService/PropertyDetailPage/TC_PROP_010_Back_Button_Navigation" time="8.928" classname="Test Cases/PropertyService/PropertyDetailPage/TC_PROP_010_Back_Button_Navigation" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:18:10 - [TEST_CASE][PASSED] - Test Cases/PropertyService/PropertyDetailPage/TC_PROP_010_Back_Button_Navigation: Test Cases/PropertyService/PropertyDetailPage/TC_PROP_010_Back_Button_Navigation
+
+09-01-2026T19:18:10 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+09-01-2026T19:18:10 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:18:10 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:18:10 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:18:12 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:18:12 - [TEST_STEP][PASSED] - propsHelper = new propertyservice.Properties_Keywords(): null
+
+09-01-2026T19:18:12 - [TEST_STEP][PASSED] - detailHelper = new propertyservice.PropertyDetail_Keywords(): null
+
+09-01-2026T19:18:12 - [TEST_STEP][PASSED] - try: ✅ TC_PROP_010 PASSED: Back button navigates correctly
+
+09-01-2026T19:18:12 - [TEST_STEP][PASSED] - propsHelper.navigateToBuyPage(): Wait for page load successfully
+
+09-01-2026T19:18:12 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/buy' successfully
+
+09-01-2026T19:18:12 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:18:12 - [TEST_STEP][PASSED] - propsHelper.waitForPropertiesToLoad(): Delayed 2 second(s)
+
+09-01-2026T19:18:13 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/PropertyService/BuyRentPage/loadingSpinner' located by 'By.xpath: //div[contains(@class, 'animate-pulse')]' is not present after '15' second(s)
+
+09-01-2026T19:18:15 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:18:15 - [TEST_STEP][PASSED] - propsHelper.clickFirstViewDetails(): Wait for page load successfully
+
+09-01-2026T19:18:15 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/BuyRentPage/viewDetailsButton' is clicked on
+
+09-01-2026T19:18:15 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:18:15 - [TEST_STEP][PASSED] - detailHelper.verifyPropertyDetailPageLoaded(): Object 'Object Repository/PropertyService/PropertyDetailPage/propertyTitle' is present
+
+09-01-2026T19:18:16 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/PropertyDetailPage/propertyTitle' is present
+
+09-01-2026T19:18:16 - [TEST_STEP][PASSED] - detailHelper.clickBackButton(): Wait for page load successfully
+
+09-01-2026T19:18:17 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/PropertyDetailPage/backButton' is clicked on
+
+09-01-2026T19:18:17 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:18:17 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+09-01-2026T19:18:19 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:18:19 - [TEST_STEP][PASSED] - currentUrl = getUrl(): Current window's url is: 'http://localhost:5173/buy'
+
+09-01-2026T19:18:19 - [MESSAGE][PASSED] - Current window's url is: 'http://localhost:5173/buy'
+
+09-01-2026T19:18:19 - [TEST_STEP][PASSED] - comment(Navigated to: $currentUrl): Navigated to: http://localhost:5173/buy
+
+09-01-2026T19:18:19 - [MESSAGE][INFO] - Navigated to: http://localhost:5173/buy
+
+09-01-2026T19:18:19 - [TEST_STEP][PASSED] - comment("✅ TC_PROP_010 PASSED: Back button navigates correctly"): ✅ TC_PROP_010 PASSED: Back button navigates correctly
+
+09-01-2026T19:18:19 - [MESSAGE][INFO] - ✅ TC_PROP_010 PASSED: Back button navigates correctly
+
+09-01-2026T19:18:19 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+09-01-2026T19:18:19 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:18:19 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/PropertyService/PropertiesPage/TC_PROP_011_Combined_Filters" time="14.769" classname="Test Cases/PropertyService/PropertiesPage/TC_PROP_011_Combined_Filters" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:18:19 - [TEST_CASE][PASSED] - Test Cases/PropertyService/PropertiesPage/TC_PROP_011_Combined_Filters: Test Cases/PropertyService/PropertiesPage/TC_PROP_011_Combined_Filters
+
+09-01-2026T19:18:19 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+09-01-2026T19:18:19 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:18:19 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:18:19 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:18:20 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:18:20 - [TEST_STEP][PASSED] - propsHelper = new propertyservice.Properties_Keywords(): null
+
+09-01-2026T19:18:20 - [TEST_STEP][PASSED] - try: ✅ TC_PROP_011 PASSED: Combined filters applied successfully
+
+09-01-2026T19:18:20 - [TEST_STEP][PASSED] - propsHelper.navigateToBuyPage(): Wait for page load successfully
+
+09-01-2026T19:18:21 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/buy' successfully
+
+09-01-2026T19:18:21 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:18:21 - [TEST_STEP][PASSED] - propsHelper.waitForPropertiesToLoad(): Delayed 2 second(s)
+
+09-01-2026T19:18:22 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/PropertyService/BuyRentPage/loadingSpinner' located by 'By.xpath: //div[contains(@class, 'animate-pulse')]' is not present after '15' second(s)
+
+09-01-2026T19:18:24 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:18:24 - [TEST_STEP][PASSED] - propsHelper.verifyPropertyCardsDisplayed(): Object 'Object Repository/PropertyService/BuyRentPage/propertyCard' is present
+
+09-01-2026T19:18:24 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/BuyRentPage/propertyCard' is present
+
+09-01-2026T19:18:24 - [TEST_STEP][PASSED] - comment("Initial properties loaded"): Initial properties loaded
+
+09-01-2026T19:18:24 - [MESSAGE][INFO] - Initial properties loaded
+
+09-01-2026T19:18:24 - [TEST_STEP][PASSED] - propsHelper.openFilterPanel(): Delayed 1 second(s)
+
+09-01-2026T19:18:25 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/BuyRentPage/filterButton' is clicked on
+
+09-01-2026T19:18:26 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:18:26 - [TEST_STEP][PASSED] - propsHelper.verifyFilterPanelOpen(): Object 'Object Repository/PropertyService/BuyRentPage/filterPanel' is present
+
+09-01-2026T19:18:26 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/BuyRentPage/filterPanel' is present
+
+09-01-2026T19:18:26 - [TEST_STEP][PASSED] - comment("Filter panel opened"): Filter panel opened
+
+09-01-2026T19:18:26 - [MESSAGE][INFO] - Filter panel opened
+
+09-01-2026T19:18:26 - [TEST_STEP][PASSED] - propsHelper.selectBedrooms("2+"): Delayed 1 second(s)
+
+09-01-2026T19:18:26 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/BuyRentPage/bedrooms2PlusButton' is clicked on
+
+09-01-2026T19:18:27 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:18:27 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+09-01-2026T19:18:28 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:18:28 - [TEST_STEP][PASSED] - comment("Applied 2+ bedrooms filter"): Applied 2+ bedrooms filter
+
+09-01-2026T19:18:28 - [MESSAGE][INFO] - Applied 2+ bedrooms filter
+
+09-01-2026T19:18:28 - [TEST_STEP][PASSED] - propsHelper.selectBathrooms("2+"): Delayed 1 second(s)
+
+09-01-2026T19:18:29 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/BuyRentPage/bathrooms2PlusButton' is clicked on
+
+09-01-2026T19:18:30 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:18:30 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+09-01-2026T19:18:31 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:18:31 - [TEST_STEP][PASSED] - comment("Applied 2+ bathrooms filter"): Applied 2+ bathrooms filter
+
+09-01-2026T19:18:31 - [MESSAGE][INFO] - Applied 2+ bathrooms filter
+
+09-01-2026T19:18:31 - [TEST_STEP][PASSED] - propsHelper.toggleParkingFilter(): Delayed 1 second(s)
+
+09-01-2026T19:18:31 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/BuyRentPage/parkingButton' is clicked on
+
+09-01-2026T19:18:32 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:18:32 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+09-01-2026T19:18:33 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:18:33 - [TEST_STEP][PASSED] - comment("Applied parking filter"): Applied parking filter
+
+09-01-2026T19:18:33 - [MESSAGE][INFO] - Applied parking filter
+
+09-01-2026T19:18:33 - [TEST_STEP][PASSED] - comment("✅ TC_PROP_011 PASSED: Combined filters applied successfully"): ✅ TC_PROP_011 PASSED: Combined filters applied successfully
+
+09-01-2026T19:18:33 - [MESSAGE][INFO] - ✅ TC_PROP_011 PASSED: Combined filters applied successfully
+
+09-01-2026T19:18:33 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+09-01-2026T19:18:33 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:18:34 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/PropertyService/PropertiesPage/TC_PROP_012_Clear_Filters" time="15.279" classname="Test Cases/PropertyService/PropertiesPage/TC_PROP_012_Clear_Filters" status="PASSED">
+         <system-out><![CDATA[09-01-2026T19:18:34 - [TEST_CASE][PASSED] - Test Cases/PropertyService/PropertiesPage/TC_PROP_012_Clear_Filters: Test Cases/PropertyService/PropertiesPage/TC_PROP_012_Clear_Filters
+
+09-01-2026T19:18:34 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+09-01-2026T19:18:34 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+09-01-2026T19:18:34 - [MESSAGE][INFO] - User set preference: ['args', '[--start-maximized]']
+
+09-01-2026T19:18:34 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+09-01-2026T19:18:35 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+09-01-2026T19:18:35 - [TEST_STEP][PASSED] - propsHelper = new propertyservice.Properties_Keywords(): null
+
+09-01-2026T19:18:35 - [TEST_STEP][PASSED] - try: ✅ TC_PROP_012 PASSED: Clear filters works correctly
+
+09-01-2026T19:18:35 - [TEST_STEP][PASSED] - propsHelper.navigateToBuyPage(): Wait for page load successfully
+
+09-01-2026T19:18:36 - [MESSAGE][PASSED] - Navigate to 'http://localhost:5173/buy' successfully
+
+09-01-2026T19:18:36 - [MESSAGE][PASSED] - Wait for page load successfully
+
+09-01-2026T19:18:36 - [TEST_STEP][PASSED] - propsHelper.waitForPropertiesToLoad(): Delayed 2 second(s)
+
+09-01-2026T19:18:37 - [MESSAGE][PASSED] - Web element with id: 'Object Repository/PropertyService/BuyRentPage/loadingSpinner' located by 'By.xpath: //div[contains(@class, 'animate-pulse')]' is not present after '15' second(s)
+
+09-01-2026T19:18:39 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+09-01-2026T19:18:39 - [TEST_STEP][PASSED] - propsHelper.verifyPropertyCardsDisplayed(): Object 'Object Repository/PropertyService/BuyRentPage/propertyCard' is present
+
+09-01-2026T19:18:39 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/BuyRentPage/propertyCard' is present
+
+09-01-2026T19:18:39 - [TEST_STEP][PASSED] - comment("Initial properties loaded"): Initial properties loaded
+
+09-01-2026T19:18:39 - [MESSAGE][INFO] - Initial properties loaded
+
+09-01-2026T19:18:39 - [TEST_STEP][PASSED] - propsHelper.openFilterPanel(): Delayed 1 second(s)
+
+09-01-2026T19:18:39 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/BuyRentPage/filterButton' is clicked on
+
+09-01-2026T19:18:40 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:18:40 - [TEST_STEP][PASSED] - propsHelper.verifyFilterPanelOpen(): Object 'Object Repository/PropertyService/BuyRentPage/filterPanel' is present
+
+09-01-2026T19:18:41 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/BuyRentPage/filterPanel' is present
+
+09-01-2026T19:18:41 - [TEST_STEP][PASSED] - propsHelper.selectBedrooms("3+"): Delayed 1 second(s)
+
+09-01-2026T19:18:41 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/BuyRentPage/bedrooms3PlusButton' is clicked on
+
+09-01-2026T19:18:42 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:18:42 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+09-01-2026T19:18:43 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:18:43 - [TEST_STEP][PASSED] - propsHelper.togglePoolFilter(): Delayed 1 second(s)
+
+09-01-2026T19:18:44 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/BuyRentPage/poolButton' is clicked on
+
+09-01-2026T19:18:45 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:18:45 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+09-01-2026T19:18:46 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:18:46 - [TEST_STEP][PASSED] - comment("Filters applied: 3+ bedrooms, Pool"): Filters applied: 3+ bedrooms, Pool
+
+09-01-2026T19:18:46 - [MESSAGE][INFO] - Filters applied: 3+ bedrooms, Pool
+
+09-01-2026T19:18:46 - [TEST_STEP][PASSED] - propsHelper.clearAllFilters(): Delayed 1 second(s)
+
+09-01-2026T19:18:46 - [MESSAGE][PASSED] - Object: 'Object Repository/PropertyService/BuyRentPage/clearFiltersButton' is clicked on
+
+09-01-2026T19:18:47 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:18:47 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+09-01-2026T19:18:48 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+09-01-2026T19:18:48 - [TEST_STEP][PASSED] - comment("Filters cleared"): Filters cleared
+
+09-01-2026T19:18:48 - [MESSAGE][INFO] - Filters cleared
+
+09-01-2026T19:18:48 - [TEST_STEP][PASSED] - propsHelper.verifyPropertyCardsDisplayed(): Object 'Object Repository/PropertyService/BuyRentPage/propertyCard' is present
+
+09-01-2026T19:18:49 - [MESSAGE][PASSED] - Object 'Object Repository/PropertyService/BuyRentPage/propertyCard' is present
+
+09-01-2026T19:18:49 - [TEST_STEP][PASSED] - comment("✅ TC_PROP_012 PASSED: Clear filters works correctly"): ✅ TC_PROP_012 PASSED: Clear filters works correctly
+
+09-01-2026T19:18:49 - [MESSAGE][INFO] - ✅ TC_PROP_012 PASSED: Clear filters works correctly
+
+09-01-2026T19:18:49 - [TEST_STEP][PASSED] - Finally: Browser is closed
+
+09-01-2026T19:18:49 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+09-01-2026T19:18:49 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[09-01-2026T19:15:40 - [TEST_SUITE][PASSED] - TS_PropertyService_Complete: null]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

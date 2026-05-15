@@ -1,0 +1,14 @@
+{
+  "brokenTestObjects": [
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Admin/FiltersPage/Modal/btn_CloseModal",
+      "brokenLocator": "//div[contains(@class,\u0027fixed\u0027)]//button[contains(@class,\u0027text-gray-400\u0027)]//svg",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "div.fixed button.text-gray-400",
+      "proposedLocatorMethod": "CSS",
+      "recoveryMethod": "CSS",
+      "pathToScreenshot": "Reports/20260109_182625/TS_Admin_Complete/20260109_182626/Object Repository/Admin/FiltersPage/Modal/btn_CloseModal_CSS.png"
+    }
+  ]
+}

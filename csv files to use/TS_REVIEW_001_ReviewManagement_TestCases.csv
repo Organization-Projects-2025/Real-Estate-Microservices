@@ -1,0 +1,19 @@
+SCREEN NAME,Review - Agent Review Page,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_REVIEW_001,SCENARIO DESCRIPTION,Review Management - Create Review,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_Review_CR1,Verify review creation with 1 star rating,User logged in; Agent exists,Agent ID: agent_001; Rating: 1; Review Text: 'Poor service',Review created with 1 star; Visible on agent profile,Review saved in database,Review created with 1 star and visible on agent profile,PASSED,,Positive test - 1 star
+2,TC_Review_CR2,Verify review creation with 2 star rating,User logged in; Agent exists,Agent ID: agent_001; Rating: 2; Review Text: 'Below average',Review created with 2 stars,Review saved in database,Review created with 2 stars,PASSED,,Positive test - 2 stars
+3,TC_Review_CR3,Verify review creation with 3 star rating,User logged in; Agent exists,Agent ID: agent_001; Rating: 3; Review Text: 'Average service',Review created with 3 stars,Review saved in database,Review created with 3 stars,PASSED,,Positive test - 3 stars
+4,TC_Review_CR4,Verify review creation with 4 star rating,User logged in; Agent exists,Agent ID: agent_001; Rating: 4; Review Text: 'Good experience',Review created with 4 stars,Review saved in database,Review created with 4 stars,PASSED,,Positive test - 4 stars
+5,TC_Review_CR5,Verify review creation with 5 star rating,User logged in; Agent exists,Agent ID: agent_001; Rating: 5; Review Text: 'Excellent service!',Review created with 5 stars,Review saved in database,Review created with 5 stars,PASSED,,Positive test - 5 stars
+6,TC_Review_DEL1,Verify admin can delete review,Admin logged in; Review exists,Review ID: rev_001; Confirm Delete: Yes,Review deleted successfully,Review removed from database,Review deleted successfully,PASSED,,Positive test - Delete (Admin)
+7,TC_Review_VAL1,Verify review fails with empty reviewer name,User logged in; Review form open,Reviewer Name: '' (empty),Error message for required field,Review not created,Error message for required field,PASSED,,Negative test - Validation
+8,TC_Review_VAL2,Verify review fails without selecting agent,User logged in; Review form open,Agent ID: null (not selected),Error message indicating agent required,Review not created,Error message indicating agent required,PASSED,,Negative test - Validation
+9,TC_Review_VAL3,Verify review fails without star rating,User logged in; Review form open,Rating: null (not selected),Error message indicating rating required,Review not created,Error message indicating rating required,PASSED,,Negative test - Validation
+10,TC_Review_VAL4,Verify review fails with empty review text,User logged in; Review form open,Review Text: '' (empty),Error message indicating text required,Review not created,Error message indicating text required,PASSED,,Negative test - Validation
+11,TC_Review_VAL5,Verify review fails with all fields empty,User logged in; Review form open,Agent ID: null; Rating: null; Review Text: '' (all empty),Multiple error messages displayed,Review not created,Multiple error messages displayed,PASSED,,Negative test - All empty

@@ -1,0 +1,12 @@
+SCREEN NAME,Developer - Project Properties Page,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_DEVPROP_004,SCENARIO DESCRIPTION,Developer Properties - Project Property Management,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_DEVPROP_014,Verify successful property creation within project,Developer logged in; Project exists,Project ID: proj_001; Title: 'Unit A1'; Price: 450000; Bedrooms: 3; Bathrooms: 2,Property created successfully under project,New property in project,Property created successfully under project,PASSED,,Positive test - Create property
+2,TC_DEVPROP_015,Verify retrieval of properties by project ID,Developer logged in; Project with properties exists,Project ID: proj_001,All properties for that project displayed,Properties filtered by project,All properties for that project displayed,PASSED,,Positive test - Get properties
+3,TC_DEVPROP_016,Verify successful property deletion from project,Developer logged in; Property exists in project,Project ID: proj_001; Property ID: prop_001; Confirm Delete: Yes,Property deleted successfully; Removed from project,Property removed from database,Property deleted successfully and removed from project,PASSED,,Positive test - Delete property
+4,TC_DEVPROP_011,Verify listing properties UI for specific project,Developer logged in; Project exists,Project ID: proj_001; URL: /project/proj_001/properties,Properties list displayed in project view,Properties listed in UI,Properties list displayed in project view,PASSED,,UI test - List properties

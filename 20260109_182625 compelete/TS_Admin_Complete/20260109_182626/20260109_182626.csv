@@ -1,0 +1,279 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_Admin_Complete,Chrome 143.0.7499.170,"Complete Admin Test Suite - All User, Property, Review, and Filter Management Tests",,09-01-2026 18:26:49,09-01-2026 18:37:57,11m - 7.689s,ERROR
+,,,,,,,
+Test Cases/Admin/TC_ADM_AdminAccessRequired,Chrome 143.0.7499.170,Test Case: Admin Access Required - Verifies that only admin users can access the Users Management page,"security,access,admin,users",09-01-2026 18:26:50,09-01-2026 18:27:12,21.788s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:26:51,09-01-2026 18:26:55,4.289s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:26:55,09-01-2026 18:26:55,0.073s,PASSED
+userHelper = new admin.User_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:26:55,09-01-2026 18:26:55,0.018s,PASSED
+"usersUrl = ""http://localhost:5173/admin/users""",Chrome 143.0.7499.170,,,09-01-2026 18:26:55,09-01-2026 18:26:55,0.003s,PASSED
+"loginUrl = ""http://localhost:5173/login""",Chrome 143.0.7499.170,,,09-01-2026 18:26:55,09-01-2026 18:26:55,0.003s,PASSED
+"homeUrl = ""http://localhost:5173""",Chrome 143.0.7499.170,,,09-01-2026 18:26:55,09-01-2026 18:26:55,0.003s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:26:55,09-01-2026 18:27:11,16.019s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:27:11,09-01-2026 18:27:12,0.284s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_001_ViewUsersPage,Chrome 143.0.7499.170,Test Case: View Users Management Page - Verifies that admin can access and view the Users Management page,"admin,users,view,positive",09-01-2026 18:27:12,09-01-2026 18:27:27,15.631s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:27:12,09-01-2026 18:27:13,1.641s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:27:13,09-01-2026 18:27:13,0.002s,PASSED
+userHelper = new admin.User_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:27:13,09-01-2026 18:27:13,0.006s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:27:13,09-01-2026 18:27:27,13.458s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:27:27,09-01-2026 18:27:27,0.427s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_002_EditUserValid,Chrome 143.0.7499.170,Test Case: Edit User with Valid Data - Verifies that admin can edit an existing user with valid data,"edit,admin,positive,users",09-01-2026 18:27:27,09-01-2026 18:28:02,35.192s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:27:27,09-01-2026 18:27:29,1.560s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:27:29,09-01-2026 18:27:29,0.007s,PASSED
+userHelper = new admin.User_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:27:29,09-01-2026 18:27:29,0.008s,PASSED
+"testUserEmail = userHelper.generateUniqueEmail(""edituser"")",Chrome 143.0.7499.170,,,09-01-2026 18:27:29,09-01-2026 18:27:29,0.023s,PASSED
+"testPassword = ""Password123!""",Chrome 143.0.7499.170,,,09-01-2026 18:27:29,09-01-2026 18:27:29,0.003s,PASSED
+testUserId = null,Chrome 143.0.7499.170,,,09-01-2026 18:27:29,09-01-2026 18:27:29,0.005s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:27:29,09-01-2026 18:28:02,33.117s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:28:02,09-01-2026 18:28:02,0.371s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_003_EditUserEmptyName,Chrome 143.0.7499.170,Test Case: Edit User with Empty Name - Verifies validation for empty user name,"negative,edit,admin,users,validation",09-01-2026 18:28:02,09-01-2026 18:28:24,21.564s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:28:02,09-01-2026 18:28:04,1.635s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:28:04,09-01-2026 18:28:04,0.003s,PASSED
+userHelper = new admin.User_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:28:04,09-01-2026 18:28:04,0.003s,PASSED
+"testUserEmail = userHelper.generateUniqueEmail(""emptyname"")",Chrome 143.0.7499.170,,,09-01-2026 18:28:04,09-01-2026 18:28:04,0.003s,PASSED
+"testPassword = ""Password123!""",Chrome 143.0.7499.170,,,09-01-2026 18:28:04,09-01-2026 18:28:04,0.002s,PASSED
+testUserId = null,Chrome 143.0.7499.170,,,09-01-2026 18:28:04,09-01-2026 18:28:04,0.003s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:28:04,09-01-2026 18:28:24,19.484s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:28:24,09-01-2026 18:28:24,0.331s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_004_ChangeUserRole,Chrome 143.0.7499.170,Test Case: Change User Role - Verifies that admin can change a user's role,"role,edit,admin,users",09-01-2026 18:28:24,09-01-2026 18:28:47,22.721s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:28:24,09-01-2026 18:28:26,1.525s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:28:26,09-01-2026 18:28:26,0.001s,PASSED
+userHelper = new admin.User_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:28:26,09-01-2026 18:28:26,0.001s,PASSED
+"testUserEmail = userHelper.generateUniqueEmail(""rolechange"")",Chrome 143.0.7499.170,,,09-01-2026 18:28:26,09-01-2026 18:28:26,0.002s,PASSED
+"testPassword = ""Password123!""",Chrome 143.0.7499.170,,,09-01-2026 18:28:26,09-01-2026 18:28:26,0.001s,PASSED
+testUserId = null,Chrome 143.0.7499.170,,,09-01-2026 18:28:26,09-01-2026 18:28:26,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:28:26,09-01-2026 18:28:46,20.713s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:28:46,09-01-2026 18:28:47,0.385s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_005_DeactivateUser,Chrome 143.0.7499.170,Test Case: Deactivate User - Verifies that admin can deactivate a user with confirmation,"admin,users,deactivate",09-01-2026 18:28:47,09-01-2026 18:29:11,24.083s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:28:47,09-01-2026 18:28:48,1.484s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:28:48,09-01-2026 18:28:48,0.001s,PASSED
+userHelper = new admin.User_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:28:48,09-01-2026 18:28:48,0.001s,PASSED
+"testUserEmail = userHelper.generateUniqueEmail(""deactivate"")",Chrome 143.0.7499.170,,,09-01-2026 18:28:48,09-01-2026 18:28:48,0.001s,PASSED
+"testPassword = ""Password123!""",Chrome 143.0.7499.170,,,09-01-2026 18:28:48,09-01-2026 18:28:48,0.001s,PASSED
+testUserId = null,Chrome 143.0.7499.170,,,09-01-2026 18:28:48,09-01-2026 18:28:48,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:28:48,09-01-2026 18:29:10,22.168s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:29:10,09-01-2026 18:29:11,0.345s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_006_CancelDeactivateUser,Chrome 143.0.7499.170,Test Case: Cancel Deactivate User - Verifies that canceling deactivation keeps the user active,"admin,users,deactivate,cancel",09-01-2026 18:29:11,09-01-2026 18:29:30,18.800s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:29:11,09-01-2026 18:29:12,1.593s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:29:12,09-01-2026 18:29:12,0.003s,PASSED
+userHelper = new admin.User_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:29:12,09-01-2026 18:29:12,0.002s,PASSED
+"testUserEmail = userHelper.generateUniqueEmail(""canceldeact"")",Chrome 143.0.7499.170,,,09-01-2026 18:29:12,09-01-2026 18:29:12,0.001s,PASSED
+"testPassword = ""Password123!""",Chrome 143.0.7499.170,,,09-01-2026 18:29:12,09-01-2026 18:29:12,0.001s,PASSED
+testUserId = null,Chrome 143.0.7499.170,,,09-01-2026 18:29:12,09-01-2026 18:29:12,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:29:12,09-01-2026 18:29:29,16.730s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:29:29,09-01-2026 18:29:30,0.389s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_007_ReactivateUser,Chrome 143.0.7499.170,Test Case: Reactivate User - Verifies that admin can reactivate an inactive user,"admin,users,reactivate",09-01-2026 18:29:30,09-01-2026 18:30:01,31.557s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:29:30,09-01-2026 18:29:31,1.477s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:29:31,09-01-2026 18:29:31,0.001s,PASSED
+userHelper = new admin.User_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:29:31,09-01-2026 18:29:31,0.003s,PASSED
+"testUserEmail = userHelper.generateUniqueEmail(""reactivate"")",Chrome 143.0.7499.170,,,09-01-2026 18:29:31,09-01-2026 18:29:31,0.001s,PASSED
+"testPassword = ""Password123!""",Chrome 143.0.7499.170,,,09-01-2026 18:29:31,09-01-2026 18:29:31,0.001s,PASSED
+testUserId = null,Chrome 143.0.7499.170,,,09-01-2026 18:29:31,09-01-2026 18:29:31,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:29:31,09-01-2026 18:30:01,29.636s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:30:01,09-01-2026 18:30:01,0.334s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_008_SwitchBetweenTabs,Chrome 143.0.7499.170,Test Case: Switch Between Active and Inactive Tabs - Verifies tab switching functionality,"admin,users,tabs,ui",09-01-2026 18:30:01,09-01-2026 18:30:22,20.581s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:30:01,09-01-2026 18:30:03,1.510s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:30:03,09-01-2026 18:30:03,0.001s,PASSED
+userHelper = new admin.User_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:30:03,09-01-2026 18:30:03,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:30:03,09-01-2026 18:30:21,18.702s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:30:21,09-01-2026 18:30:22,0.283s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_009_CancelEditUser,Chrome 143.0.7499.170,Test Case: Cancel Edit User - Verifies that canceling edit doesn't save changes,"admin,users,edit,cancel",09-01-2026 18:30:22,09-01-2026 18:30:45,22.942s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:30:22,09-01-2026 18:30:23,1.502s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:30:23,09-01-2026 18:30:23,0.002s,PASSED
+userHelper = new admin.User_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:30:23,09-01-2026 18:30:23,0.001s,PASSED
+"testUserEmail = userHelper.generateUniqueEmail(""canceledit"")",Chrome 143.0.7499.170,,,09-01-2026 18:30:23,09-01-2026 18:30:23,0.001s,PASSED
+"testPassword = ""Password123!""",Chrome 143.0.7499.170,,,09-01-2026 18:30:23,09-01-2026 18:30:23,0.001s,PASSED
+testUserId = null,Chrome 143.0.7499.170,,,09-01-2026 18:30:23,09-01-2026 18:30:23,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:30:23,09-01-2026 18:30:44,21.002s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:30:44,09-01-2026 18:30:45,0.362s,PASSED
+,,,,,,,
+Test Cases/Admin/UserManagement/TC_ADM_USER_010_CloseModalWithXButton,Chrome 143.0.7499.170,Test Case: Close Modal with X Button - Verifies that the X button closes the modal without saving,"ui,admin,users,modal",09-01-2026 18:30:45,09-01-2026 18:31:05,20.225s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:30:45,09-01-2026 18:30:46,1.489s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:30:46,09-01-2026 18:30:46,0.001s,PASSED
+userHelper = new admin.User_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:30:46,09-01-2026 18:30:46,0.002s,PASSED
+"testUserEmail = ""testing@gmail.com""",Chrome 143.0.7499.170,,,09-01-2026 18:30:46,09-01-2026 18:30:46,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:30:46,09-01-2026 18:31:05,18.363s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:31:05,09-01-2026 18:31:05,0.303s,PASSED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_001_ViewPropertiesPage,Chrome 143.0.7499.170,Test Case: View Properties Management Page - Verifies that admin can access and view the Properties Management page,"admin,properties,view,positive",09-01-2026 18:31:05,09-01-2026 18:31:19,14.418s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:31:05,09-01-2026 18:31:07,1.488s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:31:07,09-01-2026 18:31:07,0.001s,PASSED
+propertyHelper = new admin.Property_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:31:07,09-01-2026 18:31:07,0.012s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:31:07,09-01-2026 18:31:19,12.397s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:31:19,09-01-2026 18:31:19,0.268s,PASSED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_002_EditPropertyValid,Chrome 143.0.7499.170,Test Case: Edit Property with Valid Data - Verifies that admin can edit an existing property,"edit,admin,positive,properties",09-01-2026 18:31:19,09-01-2026 18:31:49,29.716s,FAILED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:31:19,09-01-2026 18:31:21,1.509s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:31:21,09-01-2026 18:31:21,0.001s,PASSED
+propertyHelper = new admin.Property_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:31:21,09-01-2026 18:31:21,0.003s,PASSED
+testPropertyId = null,Chrome 143.0.7499.170,,,09-01-2026 18:31:21,09-01-2026 18:31:21,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:31:21,09-01-2026 18:31:49,27.716s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:31:49,09-01-2026 18:31:49,0.394s,FAILED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_003_EditPropertyEmptyTitle,Chrome 143.0.7499.170,Test Case: Edit Property with Empty Title - Verifies validation for empty property title,"negative,edit,admin,properties,validation",09-01-2026 18:31:49,09-01-2026 18:32:18,28.614s,FAILED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:31:49,09-01-2026 18:31:51,1.483s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:31:51,09-01-2026 18:31:51,0.001s,PASSED
+propertyHelper = new admin.Property_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:31:51,09-01-2026 18:31:51,0.001s,PASSED
+testPropertyId = null,Chrome 143.0.7499.170,,,09-01-2026 18:31:51,09-01-2026 18:31:51,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:31:51,09-01-2026 18:32:17,26.702s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:32:17,09-01-2026 18:32:18,0.346s,FAILED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_004_ChangePropertyStatus,Chrome 143.0.7499.170,Test Case: Change Property Status - Verifies that admin can change a property's status,"admin,properties,status,edit",09-01-2026 18:32:18,09-01-2026 18:32:44,26.263s,FAILED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:32:18,09-01-2026 18:32:19,1.377s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:32:19,09-01-2026 18:32:19,0.001s,PASSED
+propertyHelper = new admin.Property_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:32:19,09-01-2026 18:32:19,0.001s,PASSED
+testPropertyId = null,Chrome 143.0.7499.170,,,09-01-2026 18:32:19,09-01-2026 18:32:19,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:32:19,09-01-2026 18:32:44,24.478s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:32:44,09-01-2026 18:32:44,0.331s,FAILED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_005_DeleteProperty,Chrome 143.0.7499.170,Test Case: Delete Property - Verifies that admin can delete a property with confirmation,"admin,properties,delete",09-01-2026 18:32:44,09-01-2026 18:33:08,24.159s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:32:44,09-01-2026 18:32:46,1.569s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:32:46,09-01-2026 18:32:46,0.002s,PASSED
+propertyHelper = new admin.Property_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:32:46,09-01-2026 18:32:46,0.003s,PASSED
+testPropertyId = null,Chrome 143.0.7499.170,,,09-01-2026 18:32:46,09-01-2026 18:32:46,0.002s,PASSED
+deletedViaUI = false,Chrome 143.0.7499.170,,,09-01-2026 18:32:46,09-01-2026 18:32:46,0.000s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:32:46,09-01-2026 18:33:08,22.200s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:33:08,09-01-2026 18:33:08,0.303s,PASSED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_006_CancelDeleteProperty,Chrome 143.0.7499.170,Verify that admin can cancel property deletion when prompted,,09-01-2026 18:33:08,09-01-2026 18:33:33,24.677s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:33:08,09-01-2026 18:33:10,1.483s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:33:10,09-01-2026 18:33:10,0.001s,PASSED
+propertyHelper = new admin.Property_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:33:10,09-01-2026 18:33:10,0.001s,PASSED
+testPropertyId = null,Chrome 143.0.7499.170,,,09-01-2026 18:33:10,09-01-2026 18:33:10,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:33:10,09-01-2026 18:33:32,22.804s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:33:32,09-01-2026 18:33:33,0.315s,PASSED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_007_CancelEditProperty,Chrome 143.0.7499.170,Verify that admin can cancel property edit using Cancel button,,09-01-2026 18:33:33,09-01-2026 18:34:02,28.976s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:33:33,09-01-2026 18:33:34,1.345s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:33:34,09-01-2026 18:33:34,0.001s,PASSED
+propertyHelper = new admin.Property_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:33:34,09-01-2026 18:33:34,0.001s,PASSED
+testPropertyId = null,Chrome 143.0.7499.170,,,09-01-2026 18:33:34,09-01-2026 18:33:34,0.000s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:33:34,09-01-2026 18:34:01,27.204s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:34:01,09-01-2026 18:34:02,0.342s,PASSED
+,,,,,,,
+Test Cases/Admin/PropertyManagement/TC_ADM_PROP_008_CloseModalWithXButton,Chrome 143.0.7499.170,Verify that admin can close property edit modal using X button,,09-01-2026 18:34:02,09-01-2026 18:34:20,18.232s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:34:02,09-01-2026 18:34:03,1.515s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:34:03,09-01-2026 18:34:03,0.002s,PASSED
+propertyHelper = new admin.Property_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:34:03,09-01-2026 18:34:03,0.001s,PASSED
+testPropertyId = null,Chrome 143.0.7499.170,,,09-01-2026 18:34:03,09-01-2026 18:34:03,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:34:03,09-01-2026 18:34:20,16.278s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:34:20,09-01-2026 18:34:20,0.360s,PASSED
+,,,,,,,
+Test Cases/Admin/ReviewManagement/TC_ADM_REV_001_ViewReviewsPage,Chrome 143.0.7499.170,Verify that admin can access and view the Reviews Management page,,09-01-2026 18:34:20,09-01-2026 18:34:36,15.714s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:34:20,09-01-2026 18:34:22,1.417s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:34:22,09-01-2026 18:34:22,0.001s,PASSED
+reviewHelper = new admin.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:34:22,09-01-2026 18:34:22,0.013s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:34:22,09-01-2026 18:34:35,13.817s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:34:35,09-01-2026 18:34:36,0.291s,PASSED
+,,,,,,,
+Test Cases/Admin/ReviewManagement/TC_ADM_REV_002_DeleteReview,Chrome 143.0.7499.170,Verify that admin can delete a review with confirmation,,09-01-2026 18:34:36,09-01-2026 18:35:00,24.630s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:34:36,09-01-2026 18:34:37,1.393s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:34:37,09-01-2026 18:34:37,0.001s,PASSED
+reviewHelper = new admin.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:34:37,09-01-2026 18:34:37,0.001s,PASSED
+testReviewId = null,Chrome 143.0.7499.170,,,09-01-2026 18:34:37,09-01-2026 18:34:37,0.001s,PASSED
+deletedViaUI = false,Chrome 143.0.7499.170,,,09-01-2026 18:34:37,09-01-2026 18:34:37,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:34:37,09-01-2026 18:35:00,22.761s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:35:00,09-01-2026 18:35:00,0.398s,PASSED
+,,,,,,,
+Test Cases/Admin/ReviewManagement/TC_ADM_REV_003_CancelDeleteReview,Chrome 143.0.7499.170,Verify that admin can cancel review deletion when prompted,,09-01-2026 18:35:00,09-01-2026 18:35:25,25.074s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:35:00,09-01-2026 18:35:02,1.453s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:35:02,09-01-2026 18:35:02,0.002s,PASSED
+reviewHelper = new admin.Review_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:35:02,09-01-2026 18:35:02,0.001s,PASSED
+testReviewId = null,Chrome 143.0.7499.170,,,09-01-2026 18:35:02,09-01-2026 18:35:02,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:35:02,09-01-2026 18:35:25,23.211s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:35:25,09-01-2026 18:35:25,0.333s,PASSED
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_001_ViewFiltersPage,Chrome 143.0.7499.170,Test Case: View Filters Management Page - Verifies that admin can access and view the Filters Management page with proper UI elements,"admin,filters,smoke,view",09-01-2026 18:35:25,09-01-2026 18:35:40,14.116s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:35:26,09-01-2026 18:35:27,1.401s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:35:27,09-01-2026 18:35:27,0.002s,PASSED
+filterHelper = new admin.Filter_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:35:27,09-01-2026 18:35:27,0.013s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:35:27,09-01-2026 18:35:39,12.178s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:35:39,09-01-2026 18:35:40,0.329s,PASSED
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_002_CreateFilterValid,Chrome 143.0.7499.170,Test Case: Create Filter with Valid Data - Verifies that admin can create a new filter with valid data,"admin,create,filters,positive",09-01-2026 18:35:40,09-01-2026 18:36:17,37.392s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:35:40,09-01-2026 18:35:41,1.462s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:35:41,09-01-2026 18:35:41,0.001s,PASSED
+filterHelper = new admin.Filter_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:35:41,09-01-2026 18:35:41,0.001s,PASSED
+"uniqueFilterName = filterHelper.generateUniqueFilterName(""ValidFilter"")",Chrome 143.0.7499.170,,,09-01-2026 18:35:41,09-01-2026 18:35:41,0.001s,PASSED
+createdFilterId = null,Chrome 143.0.7499.170,,,09-01-2026 18:35:41,09-01-2026 18:35:41,0.000s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:35:41,09-01-2026 18:36:17,35.583s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:36:17,09-01-2026 18:36:17,0.268s,PASSED
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_003_CreateFilterEmptyName,Chrome 143.0.7499.170,Test Case: Create Filter with Empty Name (Negative) - Verifies that form validation prevents creating filter without name,"admin,filters,create,negative,validation",09-01-2026 18:36:17,09-01-2026 18:36:38,21.336s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:36:17,09-01-2026 18:36:18,1.465s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:36:18,09-01-2026 18:36:18,0.001s,PASSED
+filterHelper = new admin.Filter_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:36:18,09-01-2026 18:36:18,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:36:18,09-01-2026 18:36:38,19.519s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:36:38,09-01-2026 18:36:38,0.278s,PASSED
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_004_EditFilter,Chrome 143.0.7499.170,Test Case: Edit Existing Filter - Verifies that admin can edit an existing filter and changes are saved,"admin,filters,edit,update",09-01-2026 18:36:38,09-01-2026 18:36:40,1.776s,ERROR
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:36:38,09-01-2026 18:36:40,1.493s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:36:40,09-01-2026 18:36:40,0.001s,PASSED
+filterHelper = new admin.Filter_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:36:40,09-01-2026 18:36:40,0.001s,PASSED
+testFilterId = null,Chrome 143.0.7499.170,,,09-01-2026 18:36:40,09-01-2026 18:36:40,0.001s,PASSED
+originalName = null,Chrome 143.0.7499.170,,,09-01-2026 18:36:40,09-01-2026 18:36:40,0.001s,PASSED
+"updatedName = filterHelper.generateUniqueFilterName(""EditedFilter"")",Chrome 143.0.7499.170,,,09-01-2026 18:36:40,09-01-2026 18:36:40,0.000s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:36:40,09-01-2026 18:36:40,0.020s,PASSED
+catch (Exception e),Chrome 143.0.7499.170,,,09-01-2026 18:36:40,09-01-2026 18:36:40,0.008s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:36:40,09-01-2026 18:36:40,0.187s,ERROR
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_005_DeleteFilter,Chrome 143.0.7499.170,Test Case: Delete Filter - Verifies that admin can delete a filter with confirmation,"admin,filters,delete",09-01-2026 18:36:40,09-01-2026 18:36:42,1.696s,ERROR
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:36:40,09-01-2026 18:36:42,1.388s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:36:42,09-01-2026 18:36:42,0.000s,PASSED
+filterHelper = new admin.Filter_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:36:42,09-01-2026 18:36:42,0.001s,PASSED
+testFilterId = null,Chrome 143.0.7499.170,,,09-01-2026 18:36:42,09-01-2026 18:36:42,0.000s,PASSED
+filterName = null,Chrome 143.0.7499.170,,,09-01-2026 18:36:42,09-01-2026 18:36:42,0.001s,PASSED
+deletedViaUI = false,Chrome 143.0.7499.170,,,09-01-2026 18:36:42,09-01-2026 18:36:42,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:36:42,09-01-2026 18:36:42,0.019s,PASSED
+catch (Exception e),Chrome 143.0.7499.170,,,09-01-2026 18:36:42,09-01-2026 18:36:42,0.004s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:36:42,09-01-2026 18:36:42,0.161s,ERROR
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_006_CancelDeleteFilter,Chrome 143.0.7499.170,Test Case: Cancel Delete Filter - Verifies that canceling deletion keeps the filter,"admin,filters,delete,cancel",09-01-2026 18:36:42,09-01-2026 18:36:43,1.728s,ERROR
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:36:42,09-01-2026 18:36:43,1.475s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:36:43,09-01-2026 18:36:43,0.001s,PASSED
+filterHelper = new admin.Filter_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:36:43,09-01-2026 18:36:43,0.002s,PASSED
+testFilterId = null,Chrome 143.0.7499.170,,,09-01-2026 18:36:43,09-01-2026 18:36:43,0.001s,PASSED
+filterName = null,Chrome 143.0.7499.170,,,09-01-2026 18:36:43,09-01-2026 18:36:43,0.000s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:36:43,09-01-2026 18:36:43,0.033s,PASSED
+catch (Exception e),Chrome 143.0.7499.170,,,09-01-2026 18:36:43,09-01-2026 18:36:43,0.005s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:36:43,09-01-2026 18:36:43,0.143s,ERROR
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_007_CreateInactiveFilter,Chrome 143.0.7499.170,Test Case: Create Inactive Filter - Verifies that a filter can be created with inactive status,"inactive,admin,create,filters",09-01-2026 18:36:43,09-01-2026 18:37:10,26.055s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:36:44,09-01-2026 18:36:45,1.448s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:36:45,09-01-2026 18:36:45,0.001s,PASSED
+filterHelper = new admin.Filter_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:36:45,09-01-2026 18:36:45,0.001s,PASSED
+"filterName = filterHelper.generateUniqueFilterName(""InactiveFilter"")",Chrome 143.0.7499.170,,,09-01-2026 18:36:45,09-01-2026 18:36:45,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:36:45,09-01-2026 18:37:09,24.275s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:37:09,09-01-2026 18:37:10,0.259s,PASSED
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_008_ToggleFilterStatus,Chrome 143.0.7499.170,Test Case: Toggle Filter Status - Verifies that filter status can be toggled between Active and Inactive,"edit,admin,filters,status",09-01-2026 18:37:10,09-01-2026 18:37:11,1.651s,ERROR
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:37:10,09-01-2026 18:37:11,1.370s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:37:11,09-01-2026 18:37:11,0.001s,PASSED
+filterHelper = new admin.Filter_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:37:11,09-01-2026 18:37:11,0.001s,PASSED
+testFilterId = null,Chrome 143.0.7499.170,,,09-01-2026 18:37:11,09-01-2026 18:37:11,0.001s,PASSED
+filterName = null,Chrome 143.0.7499.170,,,09-01-2026 18:37:11,09-01-2026 18:37:11,0.000s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:37:11,09-01-2026 18:37:11,0.015s,PASSED
+catch (Exception e),Chrome 143.0.7499.170,,,09-01-2026 18:37:11,09-01-2026 18:37:11,0.004s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:37:11,09-01-2026 18:37:11,0.192s,ERROR
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_009_CancelAddFilter,Chrome 143.0.7499.170,Test Case: Cancel Add Filter Modal - Verifies that canceling the add modal doesn't create a filter,"cancel,admin,filters,modal",09-01-2026 18:37:11,09-01-2026 18:37:35,23.983s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:37:11,09-01-2026 18:37:13,1.384s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:37:13,09-01-2026 18:37:13,0.002s,PASSED
+filterHelper = new admin.Filter_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:37:13,09-01-2026 18:37:13,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:37:13,09-01-2026 18:37:35,22.206s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:37:35,09-01-2026 18:37:35,0.321s,PASSED
+,,,,,,,
+Test Cases/Admin/FilterManagement/TC_ADM_FILTER_010_CloseModalWithXButton,Chrome 143.0.7499.170,Test Case: Close Modal with X Button - Verifies that the X button closes the modal without creating a filter,"ui,admin,filters,modal",09-01-2026 18:37:35,09-01-2026 18:37:56,21.316s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:37:35,09-01-2026 18:37:37,1.556s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:37:37,09-01-2026 18:37:37,0.001s,PASSED
+filterHelper = new admin.Filter_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:37:37,09-01-2026 18:37:37,0.000s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:37:37,09-01-2026 18:37:56,19.420s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:37:56,09-01-2026 18:37:56,0.281s,PASSED

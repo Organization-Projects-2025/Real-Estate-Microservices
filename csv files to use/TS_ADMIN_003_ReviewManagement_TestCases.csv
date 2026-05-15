@@ -1,0 +1,11 @@
+SCREEN NAME,Admin - Review Management Page,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_ADMIN_003,SCENARIO DESCRIPTION,Admin - Review Management Operations,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_ADM_REV_001,Verify admin can view reviews page with all reviews,Admin user logged in; Reviews exist in system,URL: /admin/reviews,"Reviews page displayed with all reviews (reviewer name, rating, text, agent)",Reviews displayed correctly,Reviews page displayed with all reviews correctly,PASSED,,Positive test - View reviews
+2,TC_ADM_REV_002,Verify admin can delete review,Admin logged in; Review exists,Review ID: rev_001; Confirm Delete: Yes,Review deleted successfully; Removed from list,Review removed from database,Review deleted successfully and removed from list,PASSED,,Positive test - Delete review
+3,TC_ADM_REV_003,Verify cancel delete review keeps review,Admin logged in; Review exists,Review ID: rev_001; Confirm Delete: No (Cancel),Review remains in list; No deletion,Review unchanged,Review remains in list - no deletion,PASSED,,Negative path - Cancel delete

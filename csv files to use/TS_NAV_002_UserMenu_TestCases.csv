@@ -1,0 +1,12 @@
+SCREEN NAME,User Menu Navigation,,,,,,,,,
+PREPARED BY,QA Team,,,,,,,,,
+DESIGNATION,Test Engineer,,,,,,,,,
+DATE,1/10/2026,,,,,,,,,
+,,,,,,,,,,
+SCENARIO ID,TS_NAV_002,SCENARIO DESCRIPTION,Navigation - User Menu Navigation,,,,,,,
+,,,,,,,,,,
+S.NO,TEST CASE ID,TEST CASE DESCRIPTION,PRECONDITION,TEST DATA,EXPECTED RESULT,POSTCONDITION,ACTUAL RESULT,STATUS,DEFECT ID,COMMENTS
+1,TC_NAV_007,Open user dropdown menu when logged in,User is logged in,Element: User Avatar/Name,Dropdown menu opens with profile and notification options,Dropdown displayed,Dropdown menu opens with profile and notification options,PASSED,,UI test - Dropdown
+2,TC_NAV_008,Navigate to Profile page from user dropdown,User logged in; Dropdown open,Menu Option: 'Profile'; Expected URL: /profile,User navigated to Profile page; URL contains /profile,Profile page displayed,User navigated to Profile page - URL contains /profile,PASSED,,Navigation test
+3,TC_NAV_009,Navigate to Become Agent page from user dropdown,Regular user logged in (not agent); Dropdown open,Menu Option: 'Become Agent'; Expected URL: /become-agent,User navigated to Become Agent page,Become Agent form displayed,User navigated to Become Agent page,PASSED,,Navigation test
+4,TC_NAV_012,Navigate to Notifications page via bell icon,User logged in,Element: Notification Bell Icon; Expected URL: /notifications,User navigated to Notifications page; URL contains /notifications,Notifications page displayed,User navigated to Notifications page - URL contains /notifications,PASSED,,Navigation test

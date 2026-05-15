@@ -1,0 +1,12 @@
+{"testCaseName":"Test Cases/PropertyService/SellPage/TC_PROP_001_Sell_Page_Requires_Login","testCaseId":"Test Cases/PropertyService/SellPage/TC_PROP_001_Sell_Page_Requires_Login","iterationVariableName":""}
+{"testCaseName":"Test Cases/PropertyService/SellPage/TC_PROP_002_Create_Property_Valid_Data","testCaseId":"Test Cases/PropertyService/SellPage/TC_PROP_002_Create_Property_Valid_Data","iterationVariableName":""}
+{"testCaseName":"Test Cases/PropertyService/SellPage/TC_PROP_003_Create_Property_Missing_Fields","testCaseId":"Test Cases/PropertyService/SellPage/TC_PROP_003_Create_Property_Missing_Fields","iterationVariableName":""}
+{"testCaseName":"Test Cases/PropertyService/PropertiesPage/TC_PROP_004_Browse_Properties","testCaseId":"Test Cases/PropertyService/PropertiesPage/TC_PROP_004_Browse_Properties","iterationVariableName":""}
+{"testCaseName":"Test Cases/PropertyService/PropertiesPage/TC_PROP_005_Search_Properties","testCaseId":"Test Cases/PropertyService/PropertiesPage/TC_PROP_005_Search_Properties","iterationVariableName":""}
+{"testCaseName":"Test Cases/PropertyService/PropertiesPage/TC_PROP_006_Search_No_Results","testCaseId":"Test Cases/PropertyService/PropertiesPage/TC_PROP_006_Search_No_Results","iterationVariableName":""}
+{"testCaseName":"Test Cases/PropertyService/PropertyDetailPage/TC_PROP_007_Property_Detail_Display","testCaseId":"Test Cases/PropertyService/PropertyDetailPage/TC_PROP_007_Property_Detail_Display","iterationVariableName":""}
+{"testCaseName":"Test Cases/PropertyService/PropertyDetailPage/TC_PROP_008_Contact_Agent_Button","testCaseId":"Test Cases/PropertyService/PropertyDetailPage/TC_PROP_008_Contact_Agent_Button","iterationVariableName":""}
+{"testCaseName":"Test Cases/PropertyService/PropertyDetailPage/TC_PROP_009_Image_Gallery_Navigation","testCaseId":"Test Cases/PropertyService/PropertyDetailPage/TC_PROP_009_Image_Gallery_Navigation","iterationVariableName":""}
+{"testCaseName":"Test Cases/PropertyService/PropertyDetailPage/TC_PROP_010_Back_Button_Navigation","testCaseId":"Test Cases/PropertyService/PropertyDetailPage/TC_PROP_010_Back_Button_Navigation","iterationVariableName":""}
+{"testCaseName":"Test Cases/PropertyService/PropertiesPage/TC_PROP_011_Combined_Filters","testCaseId":"Test Cases/PropertyService/PropertiesPage/TC_PROP_011_Combined_Filters","iterationVariableName":""}
+{"testCaseName":"Test Cases/PropertyService/PropertiesPage/TC_PROP_012_Clear_Filters","testCaseId":"Test Cases/PropertyService/PropertiesPage/TC_PROP_012_Clear_Filters","iterationVariableName":""}

@@ -1,0 +1,14 @@
+{
+  "brokenTestObjects": [
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Review/agentSelect",
+      "brokenLocator": "//select[@name\u003d\u0027agent\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//select",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260109_182625/TS_Notification_Complete/20260109_182636/Object Repository/Review/agentSelect_position.png"
+    }
+  ]
+}

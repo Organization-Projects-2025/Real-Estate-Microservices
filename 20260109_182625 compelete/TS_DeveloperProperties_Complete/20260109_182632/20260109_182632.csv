@@ -1,0 +1,131 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_DeveloperProperties_Complete,Chrome 143.0.7499.170,Complete Developer Properties Test Suite - All Project and Property Management Tests,,09-01-2026 18:53:49,09-01-2026 19:03:10,9m - 21.892s,ERROR
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_001_Create_Project_Valid_Data,Chrome 143.0.7499.170,Verify successful creation of a project with valid data,"developer-properties,projects,positive",09-01-2026 18:53:50,09-01-2026 18:54:25,35.002s,PASSED
+"DATA BINDING - {""(Default) devel..."":""507f1f77bcf86cd799439011"",""(Default) proje..."":""New York, NY""}",,,,,,,
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:53:51,09-01-2026 18:53:55,4.329s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:53:55,09-01-2026 18:53:55,0.061s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:53:55,09-01-2026 18:53:55,0.017s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:53:55,09-01-2026 18:54:24,29.057s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:54:24,09-01-2026 18:54:25,0.267s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_003_Get_All_Projects,Chrome 143.0.7499.170,Verify retrieval of all projects,"developer-properties, projects, positive",09-01-2026 18:54:25,09-01-2026 18:54:43,18.266s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:54:25,09-01-2026 18:54:26,1.592s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:54:26,09-01-2026 18:54:26,0.002s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:54:26,09-01-2026 18:54:26,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:54:26,09-01-2026 18:54:43,16.246s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:54:43,09-01-2026 18:54:43,0.358s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_004_Get_Project_By_Valid_Id,Chrome 143.0.7499.170,Verify retrieval of a project by valid ID,"developer-properties, projects, positive",09-01-2026 18:54:43,09-01-2026 18:55:02,19.039s,PASSED
+"DATA BINDING - {""(Default) proje..."":""507f1f77bcf86cd799439011""}",,,,,,,
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:54:43,09-01-2026 18:54:44,1.488s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:54:44,09-01-2026 18:54:44,0.004s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:54:44,09-01-2026 18:54:44,0.003s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:54:44,09-01-2026 18:55:01,16.254s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:55:01,09-01-2026 18:55:02,1.226s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_005_Get_Project_By_Invalid_Id,Chrome 143.0.7499.170,Verify error handling when retrieving project by invalid ID,"developer-properties, projects, negative",09-01-2026 18:55:02,09-01-2026 18:55:19,17.094s,FAILED
+"DATA BINDING - {""(Default) proje..."":""invalid_project_id""}",,,,,,,
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:55:02,09-01-2026 18:55:03,1.495s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:55:03,09-01-2026 18:55:03,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:55:03,09-01-2026 18:55:17,13.939s,FAILED
+catch (Exception e),Chrome 143.0.7499.170,,,09-01-2026 18:55:17,09-01-2026 18:55:17,0.031s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:55:17,09-01-2026 18:55:19,1.545s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_007_Delete_Project_Valid_Id,Chrome 143.0.7499.170,Verify successful deletion of a project with valid ID,"developer-properties,projects,positive",09-01-2026 18:55:19,09-01-2026 18:56:07,48.294s,PASSED
+"DATA BINDING - {""(Default) proje..."":""507f1f77bcf86cd799439011""}",,,,,,,
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:55:19,09-01-2026 18:55:20,1.377s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:55:20,09-01-2026 18:55:20,0.001s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:55:20,09-01-2026 18:55:20,0.003s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:55:20,09-01-2026 18:56:07,46.484s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:56:07,09-01-2026 18:56:07,0.357s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_045_Signup_As_User_Cannot_Access_MyProjects,Chrome 143.0.7499.170,Verify user signup (not developer) cannot access My Projects page - negative test,"myprojects,negative,signup,user,should-fail",09-01-2026 18:56:07,09-01-2026 18:56:45,38.140s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:56:07,09-01-2026 18:56:09,1.445s,PASSED
+registerHelper = new authentication.Register_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:56:09,09-01-2026 18:56:09,0.015s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:56:09,09-01-2026 18:56:09,0.003s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:56:09,09-01-2026 18:56:45,36.275s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:56:45,09-01-2026 18:56:45,0.278s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_038_Update_Project_Valid_Data,Chrome 143.0.7499.170,Verify successful update of a project with valid data,"developer-properties,projects,positive",09-01-2026 18:56:45,09-01-2026 18:57:54,1m - 8.757s,FAILED
+"DATA BINDING - {""(Default) updat..."":""Updated project description with new information"",""(Default) proje..."":""507f1f77bcf86cd799439012""}",,,,,,,
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:56:46,09-01-2026 18:56:47,1.441s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:56:47,09-01-2026 18:56:47,0.001s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:56:47,09-01-2026 18:56:47,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:56:47,09-01-2026 18:57:54,1m - 6.904s,FAILED
+catch (Exception e),Chrome 143.0.7499.170,,,09-01-2026 18:57:54,09-01-2026 18:57:54,0.009s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:57:54,09-01-2026 18:57:54,0.270s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_039_Notification_On_Project_Creation,Chrome 143.0.7499.170,Verify notification is received when developer adds a new project,"developer-properties,projects,positive,notifications",09-01-2026 18:57:54,09-01-2026 18:58:32,37.697s,FAILED
+"DATA BINDING - {""(Default) proje..."":""Notification Test Project""}",,,,,,,
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:57:54,09-01-2026 18:57:56,1.443s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:57:56,09-01-2026 18:57:56,0.002s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:57:56,09-01-2026 18:57:56,0.002s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:57:56,09-01-2026 18:58:32,35.918s,FAILED
+catch (Exception e),Chrome 143.0.7499.170,,,09-01-2026 18:58:32,09-01-2026 18:58:32,0.008s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:58:32,09-01-2026 18:58:32,0.238s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_040_Create_Project_Check_Active_Count,Chrome 143.0.7499.170,Verify active project count after creating new project,"developer-properties,projects,positive",09-01-2026 18:58:32,09-01-2026 18:59:33,1m - 1.345s,FAILED
+"DATA BINDING - {""(Default) proje..."":""Active Count Test Project""}",,,,,,,
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:58:32,09-01-2026 18:58:34,1.480s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:58:34,09-01-2026 18:58:34,0.002s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:58:34,09-01-2026 18:58:34,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:58:34,09-01-2026 18:59:33,59.448s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:59:33,09-01-2026 18:59:33,0.294s,FAILED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_041_Check_Developer_Count_After_Signup,Chrome 143.0.7499.170,Verify developer count after signup as new developer,"developer-properties,developers,positive",09-01-2026 18:59:33,09-01-2026 18:59:57,23.786s,FAILED
+"DATA BINDING - {""(Default) devel..."":""TestPassword123!""}",,,,,,,
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:59:33,09-01-2026 18:59:35,1.534s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:59:35,09-01-2026 18:59:35,0.001s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:59:35,09-01-2026 18:59:35,0.001s,PASSED
+registerHelper = new authentication.Register_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:59:35,09-01-2026 18:59:35,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:59:35,09-01-2026 18:59:57,21.857s,FAILED
+catch (Exception e),Chrome 143.0.7499.170,,,09-01-2026 18:59:57,09-01-2026 18:59:57,0.006s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 18:59:57,09-01-2026 18:59:57,0.276s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_042_List_Properties_For_Specific_Project,Chrome 143.0.7499.170,Verify listing properties for a specific project,"developer-properties,positive,properties",09-01-2026 18:59:57,09-01-2026 19:01:00,1m - 3.085s,PASSED
+"DATA BINDING - {""(Default) proje..."":""507f1f77bcf86cd799439012""}",,,,,,,
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 18:59:57,09-01-2026 18:59:59,1.464s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:59:59,09-01-2026 18:59:59,0.002s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 18:59:59,09-01-2026 18:59:59,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 18:59:59,09-01-2026 19:01:00,1m - 1.205s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:01:00,09-01-2026 19:01:00,0.307s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_043_View_Project_Details_Page,Chrome 143.0.7499.170,Verify viewing project details page with complete information,"developer-properties,projects,positive",09-01-2026 19:01:00,09-01-2026 19:01:17,16.943s,PASSED
+"DATA BINDING - {""(Default) proje..."":""507f1f77bcf86cd799439012""}",,,,,,,
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:01:00,09-01-2026 19:01:02,1.428s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:01:02,09-01-2026 19:01:02,0.003s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:01:02,09-01-2026 19:01:02,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:01:02,09-01-2026 19:01:17,15.068s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:01:17,09-01-2026 19:01:17,0.352s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Projects/TC_DEVPROP_044_Signup_As_Developer_Access_MyProjects,Chrome 143.0.7499.170,Verify new developer can signup and access My Projects page,"myprojects,developer,positive,signup",09-01-2026 19:01:17,09-01-2026 19:01:40,23.321s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:01:17,09-01-2026 19:01:19,1.465s,PASSED
+registerHelper = new authentication.Register_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:01:19,09-01-2026 19:01:19,0.003s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:01:19,09-01-2026 19:01:19,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:01:19,09-01-2026 19:01:40,21.532s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:01:40,09-01-2026 19:01:40,0.264s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Properties/TC_DEVPROP_008_Create_Property_Valid_Data,Chrome 143.0.7499.170,"Create Property with Valid Data - Login, open existing project, add property, verify visible","properties, create, positive",09-01-2026 19:01:40,09-01-2026 19:02:08,28.039s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:01:40,09-01-2026 19:01:42,1.415s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:01:42,09-01-2026 19:01:42,0.002s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:01:42,09-01-2026 19:01:42,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:01:42,09-01-2026 19:02:08,26.311s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:02:08,09-01-2026 19:02:08,0.251s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Properties/TC_DEVPROP_012_Get_Properties_By_Project,Chrome 143.0.7499.170,Verify retrieval of properties by project ID,"developer-properties,positive,properties",09-01-2026 19:02:08,09-01-2026 19:02:27,18.793s,PASSED
+"DATA BINDING - {""(Default) proje..."":""507f1f77bcf86cd799439012""}",,,,,,,
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:02:09,09-01-2026 19:02:10,1.440s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:02:10,09-01-2026 19:02:10,0.002s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:02:10,09-01-2026 19:02:10,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:02:10,09-01-2026 19:02:27,16.891s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:02:27,09-01-2026 19:02:27,0.376s,PASSED
+,,,,,,,
+Test Cases/DeveloperProperties/Properties/TC_DEVPROP_037_Delete_DeveloperProperty_Valid_Id,Chrome 143.0.7499.170,Verify successful deletion of a developer property,"developer-properties,positive,properties",09-01-2026 19:02:27,09-01-2026 19:03:10,43.135s,ERROR
+"DATA BINDING - {""(Default) prope..."":""507f1f77bcf86cd799439015"",""(Default) devel..."":""507f1f77bcf86cd799439011""}",,,,,,,
+"openBrowser("""")",Chrome 143.0.7499.170,,,09-01-2026 19:02:27,09-01-2026 19:02:29,1.430s,PASSED
+devPropHelper = new developerproperties.DeveloperProperties_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:02:29,09-01-2026 19:02:29,0.001s,PASSED
+loginHelper = new authentication.Login_Keywords(),Chrome 143.0.7499.170,,,09-01-2026 19:02:29,09-01-2026 19:02:29,0.001s,PASSED
+try,Chrome 143.0.7499.170,,,09-01-2026 19:02:29,09-01-2026 19:03:10,41.272s,PASSED
+catch (Exception e),Chrome 143.0.7499.170,,,09-01-2026 19:03:10,09-01-2026 19:03:10,0.004s,PASSED
+Finally,Chrome 143.0.7499.170,,,09-01-2026 19:03:10,09-01-2026 19:03:10,0.331s,ERROR
