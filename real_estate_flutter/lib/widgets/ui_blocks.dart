@@ -1,0 +1,288 @@
+import 'package:flutter/material.dart';
+
+import '../data/mock_data.dart';
+
+class SectionTitle extends StatelessWidget {
+  final String title;
+  final String subtitle;
+
+  const SectionTitle({super.key, required this.title, required this.subtitle});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 6),
+        Text(
+          subtitle,
+          style: const TextStyle(fontSize: 16, color: Colors.white70),
+        ),
+      ],
+    );
+  }
+}
+
+class PropertyCard extends StatelessWidget {
+  final PropertyItem item;
+
+  const PropertyCard({super.key, required this.item});
+
+  String get priceText {
+    if (item.listingType == 'rent') {
+      return '	\$${item.price.toString()} / mo';
+    }
+    return '	\$${item.price.toString()}';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFF1A1A1A),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: Colors.white10),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+            child: Image.network(
+              item.image,
+              height: 160,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  item.title,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  item.location,
+                  style: const TextStyle(color: Colors.white60),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  priceText,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF703BF7),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    _InfoChip(text: '${item.beds} Beds'),
+                    _InfoChip(text: '${item.baths} Baths'),
+                    _InfoChip(text: '${item.sqft} sqft'),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class AgentCard extends StatelessWidget {
+  final AgentItem item;
+
+  const AgentCard({super.key, required this.item});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: const Color(0xFF1A1A1A),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: Colors.white10),
+      ),
+      child: Row(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(14),
+            child: Image.network(
+              item.image,
+              height: 64,
+              width: 64,
+              fit: BoxFit.cover,
+            ),
+          ),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  item.name,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  item.role,
+                  style: const TextStyle(color: Colors.white70),
+                ),
+                const SizedBox(height: 6),
+                Row(
+                  children: [
+                    const Icon(Icons.star, color: Color(0xFF703BF7), size: 18),
+                    const SizedBox(width: 4),
+                    Text(
+                      item.rating.toString(),
+                      style: const TextStyle(color: Colors.white70),
+                    ),
+                    const SizedBox(width: 10),
+                    Text(
+                      '${item.deals} deals',
+                      style: const TextStyle(color: Colors.white54),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          OutlinedButton(
+            onPressed: () {},
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.white,
+              side: const BorderSide(color: Color(0xFF703BF7)),
+            ),
+            child: const Text('View'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ReviewCard extends StatelessWidget {
+  final ReviewItem item;
+
+  const ReviewCard({super.key, required this.item});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: const Color(0xFF1A1A1A),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: Colors.white10),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            item.name,
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 6),
+          Row(
+            children: List.generate(
+              5,
+              (index) => Icon(
+                Icons.star,
+                size: 18,
+                color: index < item.rating
+                    ? const Color(0xFFFFD54F)
+                    : Colors.white24,
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            '"${item.text}"',
+            style: const TextStyle(color: Colors.white70),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            item.date,
+            style: const TextStyle(color: Colors.white38),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class StatTile extends StatelessWidget {
+  final String label;
+  final String value;
+
+  const StatTile({super.key, required this.label, required this.value});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 16),
+      decoration: BoxDecoration(
+        color: const Color(0xFF1A1A1A),
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: Colors.white10),
+      ),
+      child: Column(
+        children: [
+          Text(
+            value,
+            style: const TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF703BF7),
+            ),
+          ),
+          const SizedBox(height: 6),
+          Text(
+            label,
+            style: const TextStyle(color: Colors.white70),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _InfoChip extends StatelessWidget {
+  final String text;
+
+  const _InfoChip({required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      decoration: BoxDecoration(
+        color: Colors.white10,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Text(
+        text,
+        style: const TextStyle(fontSize: 12, color: Colors.white70),
+      ),
+    );
+  }
+}
