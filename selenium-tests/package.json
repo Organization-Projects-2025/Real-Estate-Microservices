@@ -4,8 +4,9 @@
   "private": true,
   "description": "Standalone Selenium WebDriver tests for the Real Estate Microservices project.",
   "scripts": {
-    "test": "mocha \"tests/**/*.test.js\" --timeout 300000",
-    "test:headed": "HEADLESS=false mocha \"tests/**/*.test.js\" --timeout 300000"
+    "test": "mocha \"tests/real-estate/**/*.test.js\" --timeout 300000",
+    "test:headed": "HEADLESS=false mocha \"tests/real-estate/**/*.test.js\" --timeout 300000",
+    "run:real-estate": "node run-all.js"
   },
   "dependencies": {
     "mocha": "^10.8.2",
