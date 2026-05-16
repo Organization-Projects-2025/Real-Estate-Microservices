@@ -437,7 +437,7 @@ class _HomePageState extends State<HomePage> {
 
             Container(height: 1, color: Colors.white10),
 
-            // Logout or Sign In at bottom
+            // Logout at bottom
             if (loggedIn)
               ListTile(
                 leading: const Icon(Icons.logout, color: Colors.redAccent),
@@ -448,18 +448,6 @@ class _HomePageState extends State<HomePage> {
                 onTap: () {
                   Navigator.pop(context);
                   _logout();
-                },
-              )
-            else
-              ListTile(
-                leading: const Icon(Icons.login, color: kPurple),
-                title: const Text(
-                  'Sign In',
-                  style: TextStyle(color: kPurple, fontSize: 15),
-                ),
-                onTap: () {
-                  Navigator.pop(context);
-                  _goToLogin();
                 },
               ),
             const SizedBox(height: 8),

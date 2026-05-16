@@ -95,17 +95,17 @@ class _HomepagePageState extends State<HomepagePage> {
               Stack(
                 children: [
                   SizedBox(
-                    height: 320,
+                    height: 360,
                     width: double.infinity,
                     child: Image.network(
                       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
                       fit: BoxFit.cover,
                       errorBuilder: (context, error, stackTrace) =>
-                          Container(height: 320, color: kCard),
+                          Container(height: 360, color: kCard),
                     ),
                   ),
                   Container(
-                    height: 320,
+                    height: 360,
                     color: Colors.black.withValues(alpha: 0.55),
                   ),
                   Positioned(
