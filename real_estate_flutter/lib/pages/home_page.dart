@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
 
 import '../services/api_service.dart';
 import '../services/firebase_service.dart';
@@ -464,9 +465,16 @@ class _HomePageState extends State<HomePage> {
           color: kDrawerBg,
           border: Border(top: BorderSide(color: Colors.white10)),
         ),
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
+        child: ScrollConfiguration(
+          behavior: ScrollConfiguration.of(context).copyWith(
+            dragDevices: {
+              PointerDeviceKind.touch,
+              PointerDeviceKind.mouse,
+            },
+          ),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
             children: List.generate(_navItems.length, (i) {
               final item = _navItems[i];
               final isActive = _selectedIndex == i;
@@ -510,6 +518,7 @@ class _HomePageState extends State<HomePage> {
               );
             }),
           ),
+        ),
         ),
       ),
     );
