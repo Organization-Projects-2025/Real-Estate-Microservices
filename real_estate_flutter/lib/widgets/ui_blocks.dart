@@ -120,13 +120,17 @@ class AgentCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(14),
-            child: Image.network(
-              (item['image'] ?? '').toString(),
-              height: 64,
-              width: 64,
-              fit: BoxFit.cover,
+          Container(
+            height: 64,
+            width: 64,
+            decoration: BoxDecoration(
+              color: const Color(0xFF703BF7).withValues(alpha: 0.3),
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: const Icon(
+              Icons.real_estate_agent,
+              color: Colors.white,
+              size: 32,
             ),
           ),
           const SizedBox(width: 16),
@@ -141,11 +145,13 @@ class AgentCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
+                  overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 4),
                 Text(
                   (item['role'] ?? '').toString(),
                   style: const TextStyle(color: Colors.white70),
+                  overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 6),
                 Row(
@@ -157,9 +163,12 @@ class AgentCard extends StatelessWidget {
                       style: const TextStyle(color: Colors.white70),
                     ),
                     const SizedBox(width: 10),
-                    Text(
-                      '${item['deals'] ?? 0} deals',
-                      style: const TextStyle(color: Colors.white54),
+                    Expanded(
+                      child: Text(
+                        '${item['deals'] ?? 0} deals',
+                        style: const TextStyle(color: Colors.white54),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   ],
                 ),

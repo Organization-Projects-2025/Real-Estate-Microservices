@@ -53,11 +53,13 @@ class _LoginPageState extends State<LoginPage> {
       if (result != null) {
         // Populate ApiService current user so the shell reflects login state.
         try {
+          final userData = await FirebaseService.getUserData(result.user!.uid);
+          final data = userData.data() as Map<String, dynamic>? ?? {};
           ApiService.setAuth(result.user!.uid, {
             'email': result.user?.email ?? '',
-            'firstName': result.user?.displayName ?? '',
-            'lastName': '',
-            'role': 'user',
+            'firstName': data['firstName'] ?? result.user?.displayName ?? '',
+            'lastName': data['lastName'] ?? '',
+            'role': data['role'] ?? 'user',
           });
         } catch (_) {}
 

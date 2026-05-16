@@ -66,7 +66,18 @@ class _SignupPageState extends State<SignupPage> {
           email: emailc.text.trim(),
           firstName: firstc.text.trim(),
           lastName: lastc.text.trim(),
+          role: role,
         );
+
+        if (role == 'agent') {
+          await FirebaseService.saveAgent(
+            name: '${firstc.text.trim()} ${lastc.text.trim()}',
+            email: emailc.text.trim(),
+            role: 'Property Agent',
+            rating: 0.0,
+            deals: 0,
+          );
+        }
 
         // Ensure the app shell knows we're logged in — use ApiService as the
         // UI currently relies on it for showing logged-in state.
@@ -262,6 +273,10 @@ class _SignupPageState extends State<SignupPage> {
                               value: 'developer',
                               child: Text('Property Developer'),
                             ),
+                            DropdownMenuItem(
+                              value: 'agent',
+                              child: Text('Property Agent'),
+                            ),
                           ],
                           onChanged: (v) => setState(() => role = v ?? 'user'),
                         ),
@@ -271,7 +286,9 @@ class _SignupPageState extends State<SignupPage> {
                     Text(
                       role == 'developer'
                           ? 'As a developer, you can list and manage your own properties'
-                          : 'As a user, you can browse and inquire about properties',
+                          : role == 'agent'
+                              ? 'As an agent, you can represent properties and connect with clients'
+                              : 'As a user, you can browse and inquire about properties',
                       style: const TextStyle(
                         color: Colors.white38,
                         fontSize: 12,

@@ -58,16 +58,21 @@ class FirebaseService {
     String? lastName,
     String? phone,
     String? profileImage,
+    String? role,
   }) async {
     try {
-      await _firestore.collection('users').doc(uid).set({
+      final Map<String, dynamic> data = {
         'email': email,
         'firstName': firstName,
         'lastName': lastName,
         'phone': phone,
         'profileImage': profileImage,
         'createdAt': FieldValue.serverTimestamp(),
-      }, SetOptions(merge: true));
+      };
+      if (role != null) {
+        data['role'] = role;
+      }
+      await _firestore.collection('users').doc(uid).set(data, SetOptions(merge: true));
     } catch (e) {
       debugPrint('Save user error: $e');
     }

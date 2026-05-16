@@ -77,26 +77,17 @@ class _AgentPageState extends State<AgentPage> {
                       )
                     : Column(
                         children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(60),
-                            child: Image.network(
-                              (agent['image'] ?? '').toString(),
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.cover,
-                              errorBuilder: (_, __, ___) => Container(
-                                width: 100,
-                                height: 100,
-                                decoration: BoxDecoration(
-                                  color: kPurple.withValues(alpha: 0.3),
-                                  borderRadius: BorderRadius.circular(60),
-                                ),
-                                child: const Icon(
-                                  Icons.person,
-                                  color: Colors.white,
-                                  size: 48,
-                                ),
-                              ),
+                          Container(
+                            width: 100,
+                            height: 100,
+                            decoration: BoxDecoration(
+                              color: kPurple.withValues(alpha: 0.3),
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            child: const Icon(
+                              Icons.real_estate_agent,
+                              color: Colors.white,
+                              size: 48,
                             ),
                           ),
                           const SizedBox(height: 14),
@@ -271,22 +262,16 @@ class _AgentPageState extends State<AgentPage> {
                               ),
                               child: Row(
                                 children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(30),
-                                    child: Image.network(
-                                      (entry.value['image'] ?? '').toString(),
-                                      width: 52,
-                                      height: 52,
-                                      fit: BoxFit.cover,
-                                      errorBuilder: (_, __, ___) => Container(
-                                        width: 52,
-                                        height: 52,
-                                        color: kPurple.withValues(alpha: 0.3),
-                                        child: const Icon(
-                                          Icons.person,
-                                          color: Colors.white,
-                                        ),
-                                      ),
+                                  Container(
+                                    width: 52,
+                                    height: 52,
+                                    decoration: BoxDecoration(
+                                      color: kPurple.withValues(alpha: 0.3),
+                                      borderRadius: BorderRadius.circular(26),
+                                    ),
+                                    child: const Icon(
+                                      Icons.real_estate_agent,
+                                      color: Colors.white,
                                     ),
                                   ),
                                   const SizedBox(width: 14),
@@ -296,20 +281,20 @@ class _AgentPageState extends State<AgentPage> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          (entry.value['name'] ?? '')
-                                              .toString(),
+                                          (entry.value['name'] ?? '').toString(),
                                           style: const TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,
                                           ),
+                                          overflow: TextOverflow.ellipsis,
                                         ),
                                         Text(
-                                          (entry.value['role'] ?? '')
-                                              .toString(),
+                                          (entry.value['role'] ?? '').toString(),
                                           style: const TextStyle(
                                             color: Colors.white54,
                                             fontSize: 12,
                                           ),
+                                          overflow: TextOverflow.ellipsis,
                                         ),
                                       ],
                                     ),

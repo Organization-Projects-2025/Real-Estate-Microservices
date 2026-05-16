@@ -34,7 +34,7 @@ const List<_NavItem> _navItems = [
   _NavItem('Rent', Icons.key_outlined),
   _NavItem('Sell', Icons.add_home_outlined),
   _NavItem('Find Agent', Icons.search_outlined),
-  _NavItem('Agent Profile', Icons.person_outlined),
+  _NavItem('Agent', Icons.person_outlined),
   _NavItem('About Us', Icons.info_outlined),
   _NavItem('Reviews', Icons.star_outline),
   _NavItem('Contact', Icons.mail_outline),
@@ -474,7 +474,7 @@ class _HomePageState extends State<HomePage> {
                 onTap: () => setState(() => _selectedIndex = i),
                 child: Container(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 14,
+                    horizontal: 8,
                     vertical: 10,
                   ),
                   decoration: BoxDecoration(
