@@ -6,7 +6,10 @@ const chrome = require('selenium-webdriver/chrome');
 
 const CLIENT_URL = process.env.CLIENT_URL || 'http://127.0.0.1:5173';
 const EMAIL = process.env.SELENIUM_EMAIL || 'admin@realestate.com';
-const PASSWORD = process.env.SELENIUM_PASSWORD || 'Password123!';
+const PASSWORD =
+  process.env.SELENIUM_PASSWORD ||
+  process.env.SEED_COMMON_PASSWORD ||
+  'Str0ngP@ssw0rd!2026';
 const HEADLESS = process.env.HEADLESS !== 'false';
 const screenshotsDir = path.join(__dirname, '..', 'screenshots');
 const LONG_WAIT = 37500;
@@ -15,6 +18,22 @@ function buildDriver() {
   const options = new chrome.Options();
   options.addArguments('--window-size=1200,900');
   if (HEADLESS) options.addArguments('--headless=new');
+  options.addArguments(
+    '--disable-features=PasswordLeakDetection,PasswordManager,AutofillServerCommunication',
+  );
+  options.addArguments('--disable-dev-shm-usage');
+  options.addArguments('--no-sandbox');
+  options.addArguments('--disable-gpu');
+  options.addArguments('--disable-software-rasterizer');
+  options.addArguments('--disable-extensions');
+  options.addArguments('--disable-background-networking');
+  try {
+    options.setUserPreferences &&
+      options.setUserPreferences({
+        credentials_enable_service: false,
+        'profile.password_manager_enabled': false,
+      });
+  } catch (e) {}
   return new Builder().forBrowser('chrome').setChromeOptions(options).build();
 }
 
@@ -85,9 +104,17 @@ describe('Profile (converted)', function () {
       const safeName = this.currentTest.title
         .replace(/[^a-z0-9]+/gi, '-')
         .toLowerCase();
-      await takeScreenshot(driver, safeName);
+      try {
+        await takeScreenshot(driver, safeName);
+      } catch (err) {
+        console.warn('takeScreenshot failed:', err && err.message);
+      }
     }
-    await driver.quit();
+    try {
+      await driver.quit();
+    } catch (err) {
+      // ignore quit errors when session already closed
+    }
   });
 
   it('Profile page shows user info and can enter edit mode', async function () {

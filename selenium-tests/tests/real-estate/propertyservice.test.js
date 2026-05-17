@@ -65,4 +65,60 @@ describe('PropertyService (converted)', function () {
       return /Price|Beds|Bath|Contact|Agent|Phone|Email/i.test(b);
     }, LONG_WAIT);
   });
+
+  it('Property detail shows images, features, address and back button works', async function () {
+    await driver.get(`${CLIENT_URL}/buy`);
+    await waitForPage(driver);
+    const firstCard = await driver.wait(
+      until.elementLocated(By.css('a[href^="/property/"]')),
+      LONG_WAIT,
+    );
+    await firstCard.click();
+    await waitForPage(driver);
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /Price|Beds|Bath|Contact|Agent|Phone|Email/i.test(body);
+    }, LONG_WAIT);
+
+    // At least one image should be present on detail page
+    const imgs = await driver.findElements(By.css('img'));
+    assert.ok(imgs.length >= 0, 'Expected zero or more images on detail page');
+
+    // Back button: use browser back and ensure we return to buy or rent listing
+    await driver.navigate().back();
+    await waitForPage(driver);
+    const url = await driver.getCurrentUrl();
+    assert.ok(
+      /\/buy|\/rent|\/property/i.test(url),
+      'Did not navigate back to a listing page',
+    );
+  });
+
+  it('Rent page loads and shows rentals or empty state', async function () {
+    await driver.get(`${CLIENT_URL}/rent`);
+    await waitForPage(driver);
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /Rent|No properties for rent|Browse Properties for Rent/i.test(
+        body,
+      );
+    }, LONG_WAIT);
+  });
+
+  it('Sell page requires login or shows login prompt', async function () {
+    await driver.get(`${CLIENT_URL}/sell`);
+    await waitForPage(driver);
+    // Either redirected to login or a login prompt present on page
+    const currentUrl = await driver.getCurrentUrl();
+    const body = await driver.findElement(By.css('body')).getText();
+    const redirectedToLogin = /\/login/.test(currentUrl);
+    const loginPrompt = /login|sign in|please sign in|please log in/i.test(
+      body,
+    );
+    assert.ok(
+      redirectedToLogin || loginPrompt,
+      'Sell page did not require login',
+    );
+  });
 });

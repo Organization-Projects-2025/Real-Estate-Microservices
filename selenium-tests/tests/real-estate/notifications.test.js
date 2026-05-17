@@ -6,7 +6,10 @@ const chrome = require('selenium-webdriver/chrome');
 
 const CLIENT_URL = process.env.CLIENT_URL || 'http://127.0.0.1:5173';
 const EMAIL = process.env.SELENIUM_EMAIL || 'admin@realestate.com';
-const PASSWORD = process.env.SELENIUM_PASSWORD || 'Password123!';
+const PASSWORD =
+  process.env.SELENIUM_PASSWORD ||
+  process.env.SEED_COMMON_PASSWORD ||
+  'Str0ngP@ssw0rd!2026';
 const HEADLESS = process.env.HEADLESS !== 'false';
 const screenshotsDir = path.join(__dirname, '..', 'screenshots');
 const LONG_WAIT = 37500;

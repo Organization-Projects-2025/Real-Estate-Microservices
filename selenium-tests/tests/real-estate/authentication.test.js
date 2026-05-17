@@ -6,14 +6,37 @@ const chrome = require('selenium-webdriver/chrome');
 
 const CLIENT_URL = process.env.CLIENT_URL || 'http://127.0.0.1:5173';
 const API_URL = process.env.API_URL || 'http://127.0.0.1:3000/api';
+const COMMON_PASSWORD =
+  process.env.SEED_COMMON_PASSWORD ||
+  process.env.SELENIUM_PASSWORD ||
+  'Str0ngP@ssw0rd!2026';
 const HEADLESS = process.env.HEADLESS !== 'false';
 const screenshotsDir = path.join(__dirname, '..', 'screenshots');
 const LONG_WAIT = 37500;
+
 
 function buildDriver() {
   const options = new chrome.Options();
   options.addArguments('--window-size=1200,900');
   if (HEADLESS) options.addArguments('--headless=new');
+  // Disable password manager and leak detection UI to avoid popups
+  options.addArguments(
+    '--disable-features=PasswordLeakDetection,PasswordManager,AutofillServerCommunication',
+  );
+  // Stabilizing flags
+  options.addArguments('--disable-dev-shm-usage');
+  options.addArguments('--no-sandbox');
+  options.addArguments('--disable-gpu');
+  options.addArguments('--disable-software-rasterizer');
+  options.addArguments('--disable-extensions');
+  options.addArguments('--disable-background-networking');
+  try {
+    options.setUserPreferences &&
+      options.setUserPreferences({
+        credentials_enable_service: false,
+        'profile.password_manager_enabled': false,
+      });
+  } catch (e) {}
   return new Builder().forBrowser('chrome').setChromeOptions(options).build();
 }
 
@@ -62,12 +85,12 @@ describe('Authentication (converted)', function () {
     await driver.findElement(By.css('input[name="email"]')).sendKeys(email);
     await driver
       .findElement(By.css('input[name="password"]'))
-      .sendKeys('Password123!');
+      .sendKeys(COMMON_PASSWORD);
     const confirmElems = await driver.findElements(
       By.css('input[name="confirmPassword"], input[name="passwordConfirm"]'),
     );
     if (confirmElems.length) {
-      await confirmElems[0].sendKeys('Password123!');
+      await confirmElems[0].sendKeys(COMMON_PASSWORD);
     }
 
     await driver.findElement(By.css('button[type="submit"]')).click();
@@ -100,7 +123,7 @@ describe('Authentication (converted)', function () {
   it('Login with valid credentials', async function () {
     // prefer env-provided credentials for stability
     const envEmail = process.env.SELENIUM_EMAIL;
-    const envPass = process.env.SELENIUM_PASSWORD || 'Password123!';
+    const envPass = COMMON_PASSWORD;
     let email = envEmail;
     let password = envPass;
 
@@ -108,7 +131,7 @@ describe('Authentication (converted)', function () {
       // create a user via register flow to use for login
       const timestamp = Date.now();
       email = `selenium+${timestamp}@example.com`;
-      password = 'Password123!';
+      password = COMMON_PASSWORD;
       await driver.get(`${CLIENT_URL}/register`);
       await waitForPage(driver);
       await driver
@@ -168,7 +191,7 @@ describe('Authentication (converted)', function () {
   it('Login shows error for incorrect password', async function () {
     const timestamp = Date.now();
     const email = `selenium+${timestamp}@example.com`;
-    const password = 'Password123!';
+    const password = COMMON_PASSWORD;
     // register first
     await driver.get(`${CLIENT_URL}/register`);
     await waitForPage(driver);

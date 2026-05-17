@@ -13,6 +13,22 @@ function buildDriver() {
   const options = new chrome.Options();
   options.addArguments('--window-size=1200,900');
   if (HEADLESS) options.addArguments('--headless=new');
+  options.addArguments(
+    '--disable-features=PasswordLeakDetection,PasswordManager,AutofillServerCommunication',
+  );
+  options.addArguments('--disable-dev-shm-usage');
+  options.addArguments('--no-sandbox');
+  options.addArguments('--disable-gpu');
+  options.addArguments('--disable-software-rasterizer');
+  options.addArguments('--disable-extensions');
+  options.addArguments('--disable-background-networking');
+  try {
+    options.setUserPreferences &&
+      options.setUserPreferences({
+        credentials_enable_service: false,
+        'profile.password_manager_enabled': false,
+      });
+  } catch (e) {}
   return new Builder().forBrowser('chrome').setChromeOptions(options).build();
 }
 
@@ -42,10 +58,20 @@ describe('Agent (converted)', function () {
 
   afterEach(async function () {
     if (this.currentTest.state === 'failed') {
-      const safeName = this.currentTest.title.replace(/[^a-z0-9]+/gi, '-').toLowerCase();
-      await takeScreenshot(driver, safeName);
+      const safeName = this.currentTest.title
+        .replace(/[^a-z0-9]+/gi, '-')
+        .toLowerCase();
+      try {
+        await takeScreenshot(driver, safeName);
+      } catch (err) {
+        console.warn('takeScreenshot failed:', err && err.message);
+      }
     }
-    await driver.quit();
+    try {
+      await driver.quit();
+    } catch (err) {
+      // ignore session closed errors
+    }
   });
 
   it('Agent list shows results and filters work', async function () {
@@ -61,7 +87,9 @@ describe('Agent (converted)', function () {
       return /Showing \d+ of \d+ agents/i.test(text);
     }, LONG_WAIT);
 
-    const search = await driver.findElement(By.css('input[placeholder*="Search by name"]'));
+    const search = await driver.findElement(
+      By.css('input[placeholder*="Search by name"]'),
+    );
     await search.clear();
     await search.sendKeys('NoSuchAgent123');
     await driver.findElement(By.css('button[type="submit"]')).click();
@@ -71,21 +99,52 @@ describe('Agent (converted)', function () {
       return /No agents found matching your criteria/i.test(text);
     }, LONG_WAIT);
 
-    await driver.findElement(By.css('input[placeholder*="Search by name"]')).clear();
-    const showingTextBefore = await driver.findElement(By.xpath("//p[contains(., 'Showing')]")).getText();
+    await driver
+      .findElement(By.css('input[placeholder*="Search by name"]'))
+      .clear();
+    const showingTextBefore = await driver
+      .findElement(By.xpath("//p[contains(., 'Showing')]"))
+      .getText();
     const match = showingTextBefore.match(/Showing\s+(\d+)\s+of\s+(\d+)/i);
     const total = match ? parseInt(match[2], 10) : null;
 
-    const select = await driver.findElement(By.css('select[name="minExperience"]'));
+    const select = await driver.findElement(
+      By.css('select[name="minExperience"]'),
+    );
     await select.sendKeys('5');
     await driver.findElement(By.css('button[type="submit"]')).click();
 
     await driver.wait(async () => {
-      const text = await driver.findElement(By.xpath("//p[contains(., 'Showing')]")).getText();
+      const text = await driver
+        .findElement(By.xpath("//p[contains(., 'Showing')]"))
+        .getText();
       const m = text.match(/Showing\s+(\d+)\s+of\s+(\d+)/i);
       if (!m) return false;
       const shownNow = parseInt(m[1], 10);
       return total === null || shownNow <= total;
+    }, LONG_WAIT);
+  });
+
+  it('Agent details page displays contact info when selecting an agent', async function () {
+    await driver.get(`${CLIENT_URL}/agent`);
+    await waitForPage(driver);
+
+    const firstAgentLink = await driver.wait(
+      until.elementLocated(
+        By.css('a[href^="/agent/"] , a[href^="/agents/"] , a[href*="/agent/"]'),
+      ),
+      LONG_WAIT,
+    );
+    await driver.executeScript(
+      'arguments[0].scrollIntoView(true);',
+      firstAgentLink,
+    );
+    await firstAgentLink.click();
+    await waitForPage(driver);
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /Contact|Phone|Email|Agent Profile|Agent Details/i.test(body);
     }, LONG_WAIT);
   });
 });
