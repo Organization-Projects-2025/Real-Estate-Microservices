@@ -186,24 +186,12 @@ describe('Developer Properties (converted)', function () {
     await driver.get(`${CLIENT_URL}/developer-properties`);
     await waitForPage(driver);
     
-    // Check if we're on the developer properties page or redirected
-    const url = await driver.getCurrentUrl();
-    if (!url.includes('/developer-properties')) {
-      console.log('Developer properties page not accessible (redirected), skipping test');
-      this.skip();
-    }
-    
-    // Give page a moment to load content
-    await driver.sleep(1000);
+    // Wait for page content to load
+    await driver.sleep(2000);
     
     const body = await visibleText(driver);
     
-    // Check if the page has developer content or if we're on home page
-    if (!/Properties by Developers|Explore properties|developer|Authorized Developer/i.test(body)) {
-      console.log('Developer properties content not found, skipping test');
-      this.skip();
-    }
-    
+    // Check for the actual text on the page
     assert.match(
       body,
       /Properties by Developers|Explore properties from trusted real estate developers/i,
@@ -213,31 +201,13 @@ describe('Developer Properties (converted)', function () {
     await driver.get(`${CLIENT_URL}/developer-properties/${developerId}`);
     await waitForPage(driver);
     
-    // Check if we're on the developer detail page
-    const detailUrl = await driver.getCurrentUrl();
-    if (!detailUrl.includes('/developer-properties/')) {
-      console.log('Developer detail page not accessible, skipping test');
-      this.skip();
-    }
-    
-    // Give page a moment to load
-    await driver.sleep(1000);
+    // Wait for content to load
+    await driver.sleep(2000);
     
     const detailText = await visibleText(driver);
     
-    // Check if we have portfolio content or redirected to home
-    if (!/Projects Portfolio|portfolio|projects|Active Projects/i.test(detailText)) {
-      console.log('Developer portfolio content not found, skipping test');
-      this.skip();
-    }
-    
-    // More flexible assertions - check for portfolio/projects content
-    assert.match(detailText, /Projects Portfolio|portfolio|projects/i);
-    assert.match(detailText, /0 Active Projects|Active Projects|projects/i);
-    assert.match(
-      detailText,
-      /No projects are currently listed by this developer|No projects|currently listed/i,
-    );
+    // Check for actual content on developer detail page
+    assert.match(detailText, /Projects Portfolio|Active Projects/i);
   });
 
   it('Developer detail page back button returns to the directory', async function () {
@@ -245,37 +215,15 @@ describe('Developer Properties (converted)', function () {
     await driver.get(`${CLIENT_URL}/developer-properties/${developerId}`);
     await waitForPage(driver);
     
-    // Check if we're on the developer detail page or redirected
-    const url = await driver.getCurrentUrl();
-    if (!url.includes('/developer-properties/')) {
-      console.log('Developer detail page not accessible, skipping test');
-      this.skip();
-    }
-    
-    // Give page a moment to load
-    await driver.sleep(1000);
-    
-    const pageText = await visibleText(driver);
-    
-    // Check if we have developer detail content
-    if (!/Projects|portfolio|Active Projects|developer/i.test(pageText)) {
-      console.log('Developer detail content not found, skipping test');
-      this.skip();
-    }
+    // Wait for page to load
+    await driver.sleep(2000);
 
-    // Try to find back button
-    let backButton;
-    try {
-      backButton = await driver.wait(
-        until.elementLocated(
-          By.xpath('//button[contains(normalize-space(.), "Back to Developers")]'),
-        ),
-        5000,
-      );
-    } catch (err) {
-      console.log('Back button not found, skipping test');
-      this.skip();
-    }
+    const backButton = await driver.wait(
+      until.elementLocated(
+        By.xpath('//button[contains(normalize-space(.), "Back to Developers")]'),
+      ),
+      LONG_WAIT,
+    );
 
     // Use JavaScript click to avoid click intercepted errors
     await driver.executeScript('arguments[0].click();', backButton);
@@ -293,53 +241,28 @@ describe('Developer Properties (converted)', function () {
     await login(driver, DEVELOPER_EMAIL);
     await driver.get(`${CLIENT_URL}/my-projects`);
     await waitForPage(driver);
-
-    // Check if we're on the my-projects page or redirected
-    const url = await driver.getCurrentUrl();
-    if (!url.includes('/my-projects')) {
-      console.log('My Projects page not accessible, skipping test');
-      this.skip();
-    }
+    
+    // Wait for page to load
+    await driver.sleep(2000);
 
     const pageText = await visibleText(driver);
-    
-    // Check if the page has project management content
-    if (!/My Projects|Manage your development projects/i.test(pageText)) {
-      console.log('My Projects content not found, skipping test');
-      this.skip();
-    }
-    
     assert.match(
       pageText,
-      /My Projects|Manage your development projects and properties/i,
+      /My Projects|Manage your development projects/i,
     );
 
-    // Check if Add Project button exists, skip if not
-    let addProjectButton;
-    try {
-      addProjectButton = await driver.wait(
-        until.elementLocated(
-          By.xpath('//button[contains(normalize-space(.), "Add Project")]'),
-        ),
-        5000,
-      );
-    } catch (err) {
-      console.log('Add Project button not found, skipping test');
-      this.skip();
-    }
-
+    const addProjectButton = await driver.wait(
+      until.elementLocated(
+        By.xpath('//button[contains(normalize-space(.), "Add Project")]'),
+      ),
+      LONG_WAIT,
+    );
     await addProjectButton.click();
 
-    // Check if form elements exist
-    try {
-      await driver.wait(
-        until.elementLocated(By.css('input[placeholder="Project Name"]')),
-        5000,
-      );
-    } catch (err) {
-      console.log('Project form not found, skipping test');
-      this.skip();
-    }
+    await driver.wait(
+      until.elementLocated(By.css('input[placeholder="Project Name"]')),
+      LONG_WAIT,
+    );
 
     await driver
       .findElement(By.css('input[placeholder="Project Name"]'))
@@ -411,50 +334,25 @@ describe('Developer Properties (converted)', function () {
     await login(driver, DEVELOPER_EMAIL);
     await driver.get(`${CLIENT_URL}/my-developer-properties`);
     await waitForPage(driver);
-
-    // Check if we're on the my-developer-properties page or redirected
-    const url = await driver.getCurrentUrl();
-    if (!url.includes('/my-developer-properties')) {
-      console.log('My Developer Properties page not accessible, skipping test');
-      this.skip();
-    }
+    
+    // Wait for page to load
+    await driver.sleep(2000);
 
     const intro = await visibleText(driver);
-    
-    // Check if the page has property management content
-    if (!/My Properties|Manage your property listings/i.test(intro)) {
-      console.log('My Developer Properties content not found, skipping test');
-      this.skip();
-    }
-    
     assert.match(intro, /My Properties|Manage your property listings/i);
 
-    // Check if Add Property button exists, skip if not
-    let addPropertyButton;
-    try {
-      addPropertyButton = await driver.wait(
-        until.elementLocated(
-          By.xpath('//button[contains(normalize-space(.), "Add Property")]'),
-        ),
-        5000,
-      );
-    } catch (err) {
-      console.log('Add Property button not found, skipping test');
-      this.skip();
-    }
-
+    const addPropertyButton = await driver.wait(
+      until.elementLocated(
+        By.xpath('//button[contains(normalize-space(.), "Add Property")]'),
+      ),
+      LONG_WAIT,
+    );
     await addPropertyButton.click();
 
-    // Check if form elements exist
-    try {
-      await driver.wait(
-        until.elementLocated(By.css('input[placeholder="Property Title"]')),
-        5000,
-      );
-    } catch (err) {
-      console.log('Property form not found, skipping test');
-      this.skip();
-    }
+    await driver.wait(
+      until.elementLocated(By.css('input[placeholder="Property Title"]')),
+      LONG_WAIT,
+    );
 
     await driver
       .findElement(By.css('input[placeholder="Property Title"]'))
@@ -496,26 +394,12 @@ describe('Developer Properties (converted)', function () {
     await login(driver, USER_EMAIL);
     await driver.get(`${CLIENT_URL}/my-projects`);
     
-    // Wait for page to load and check if redirected or access denied
-    await waitForPage(driver);
-    
-    // Give it a moment to redirect if it's going to
+    // Wait for redirect
     await driver.sleep(2000);
     
     const url = await driver.getCurrentUrl();
-    const body = await visibleText(driver);
     
-    // Either redirected away from /my-projects OR shows access denied message
-    const isRedirected = !url.includes('/my-projects');
-    const hasAccessDenied = /access denied|unauthorized|not authorized|forbidden/i.test(body);
-    
-    assert.ok(
-      isRedirected || hasAccessDenied,
-      'User should be redirected or see access denied message',
-    );
-    
-    if (isRedirected) {
-      assert.match(body, /Tamalk|Buy|Rent|Sell|Home/i);
-    }
+    // Should be redirected away from /my-projects
+    assert.ok(!url.includes('/my-projects'), 'Non-developer user should be redirected away from My Projects');
   });
 });
