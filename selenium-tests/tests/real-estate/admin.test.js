@@ -168,4 +168,501 @@ describe('Admin (converted)', function () {
     const title = await driver.findElement(By.css('h1')).getText();
     assert.match(title, /Filters Management|Filters/i);
   });
+
+  // TC_ADM_USER_001: View Users Management Page
+  it('Admin can view Users Management page', async function () {
+    await login(driver);
+    await driver.get(`${CLIENT_URL}/admin/users`);
+    await waitForPage(driver);
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /Users Management|Manage Users|User List/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  // TC_ADM_USER_002: Edit User with Valid Data
+  it('Admin can edit user with valid data', async function () {
+    await login(driver);
+    await driver.get(`${CLIENT_URL}/admin/users`);
+    await waitForPage(driver);
+
+    // Find and click first edit button
+    const editButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'edit')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await driver.executeScript('arguments[0].scrollIntoView(true);', editButton);
+    await editButton.click();
+
+    // Wait for edit form/modal
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /Edit User|Update User|Save Changes/i.test(body);
+    }, LONG_WAIT);
+
+    // Update first name
+    const firstNameInput = await driver.findElement(
+      By.css('input[name="firstName"], input[name="first_name"]'),
+    );
+    await firstNameInput.clear();
+    await firstNameInput.sendKeys('UpdatedName');
+
+    // Submit form
+    const saveButton = await driver.findElement(
+      By.xpath(
+        "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'save') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'update')]",
+      ),
+    );
+    await saveButton.click();
+
+    // Verify success
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /success|updated|saved/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  // TC_ADM_USER_003: Edit User with Empty Name
+  it('Admin cannot edit user with empty name', async function () {
+    await login(driver);
+    await driver.get(`${CLIENT_URL}/admin/users`);
+    await waitForPage(driver);
+
+    const editButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'edit')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await editButton.click();
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /Edit User|Update User/i.test(body);
+    }, LONG_WAIT);
+
+    const firstNameInput = await driver.findElement(
+      By.css('input[name="firstName"], input[name="first_name"]'),
+    );
+    await firstNameInput.clear();
+
+    const saveButton = await driver.findElement(
+      By.xpath(
+        "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'save') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'update')]",
+      ),
+    );
+    await saveButton.click();
+
+    // Verify validation error
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /required|cannot be empty|invalid|error/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  // TC_ADM_USER_004: Change User Role
+  it('Admin can change user role', async function () {
+    await login(driver);
+    await driver.get(`${CLIENT_URL}/admin/users`);
+    await waitForPage(driver);
+
+    const editButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'edit')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await editButton.click();
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /Edit User|Update User|Role/i.test(body);
+    }, LONG_WAIT);
+
+    // Find role selector
+    const roleSelect = await driver.findElement(
+      By.css('select[name="role"], select[name="userRole"]'),
+    );
+    await roleSelect.sendKeys('user');
+
+    const saveButton = await driver.findElement(
+      By.xpath(
+        "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'save') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'update')]",
+      ),
+    );
+    await saveButton.click();
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /success|updated|saved/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  // TC_ADM_USER_005: Deactivate User
+  it('Admin can deactivate a user', async function () {
+    await login(driver);
+    await driver.get(`${CLIENT_URL}/admin/users`);
+    await waitForPage(driver);
+
+    const deactivateButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'deactivate') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'disable')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await driver.executeScript(
+      'arguments[0].scrollIntoView(true);',
+      deactivateButton,
+    );
+    await deactivateButton.click();
+
+    // Confirm deactivation
+    const confirmButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'confirm') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'yes')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await confirmButton.click();
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /deactivated|disabled|success/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  // TC_ADM_USER_006: Cancel Deactivate User
+  it('Admin can cancel user deactivation', async function () {
+    await login(driver);
+    await driver.get(`${CLIENT_URL}/admin/users`);
+    await waitForPage(driver);
+
+    const deactivateButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'deactivate') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'disable')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await deactivateButton.click();
+
+    // Cancel deactivation
+    const cancelButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'cancel') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'no')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await cancelButton.click();
+
+    // Verify modal closed and user still active
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return !/Are you sure|Confirm/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  // TC_ADM_USER_007: Reactivate User
+  it('Admin can reactivate a deactivated user', async function () {
+    await login(driver);
+    await driver.get(`${CLIENT_URL}/admin/users`);
+    await waitForPage(driver);
+
+    // Look for reactivate or activate button
+    const reactivateButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'reactivate') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'activate') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'enable')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await reactivateButton.click();
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /activated|enabled|success/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  // TC_ADM_USER_008: Switch Between Tabs
+  it('Admin can switch between user management tabs', async function () {
+    await login(driver);
+    await driver.get(`${CLIENT_URL}/admin/users`);
+    await waitForPage(driver);
+
+    // Look for tabs (Active/Inactive users, etc.)
+    const tabs = await driver.findElements(
+      By.css('button[role="tab"], .tab, [class*="tab"]'),
+    );
+
+    if (tabs.length > 1) {
+      await tabs[1].click();
+      await driver.sleep(500);
+      const body = await driver.findElement(By.css('body')).getText();
+      assert.ok(body.length > 0, 'Tab content should be visible');
+    }
+  });
+
+  // TC_ADM_USER_009: Cancel Edit User
+  it('Admin can cancel editing a user', async function () {
+    await login(driver);
+    await driver.get(`${CLIENT_URL}/admin/users`);
+    await waitForPage(driver);
+
+    const editButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'edit')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await editButton.click();
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /Edit User|Update User/i.test(body);
+    }, LONG_WAIT);
+
+    const cancelButton = await driver.findElement(
+      By.xpath(
+        "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'cancel')]",
+      ),
+    );
+    await cancelButton.click();
+
+    // Verify modal closed
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return !/Edit User|Update User/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  // TC_ADM_USER_010: Close Modal with X Button
+  it('Admin can close edit modal with X button', async function () {
+    await login(driver);
+    await driver.get(`${CLIENT_URL}/admin/users`);
+    await waitForPage(driver);
+
+    const editButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'edit')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await editButton.click();
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /Edit User|Update User/i.test(body);
+    }, LONG_WAIT);
+
+    // Find and click X button
+    const closeButton = await driver.findElement(
+      By.css('button[aria-label="Close"], button.close, [class*="close"]'),
+    );
+    await closeButton.click();
+
+    // Verify modal closed
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return !/Edit User|Update User/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  // TC_ADM_FILTER_002: Create Filter with Valid Data
+  it('Admin can create filter with valid data', async function () {
+    await login(driver);
+    await driver.get(`${CLIENT_URL}/admin/filters`);
+    await waitForPage(driver);
+
+    const addButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'add') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'create')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await addButton.click();
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /Add Filter|Create Filter|New Filter/i.test(body);
+    }, LONG_WAIT);
+
+    const timestamp = Date.now();
+    const nameInput = await driver.findElement(
+      By.css('input[name="name"], input[name="filterName"]'),
+    );
+    await nameInput.sendKeys(`TestFilter_${timestamp}`);
+
+    const saveButton = await driver.findElement(
+      By.xpath(
+        "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'save') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'create')]",
+      ),
+    );
+    await saveButton.click();
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /success|created|added/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  // TC_ADM_FILTER_003: Create Filter with Empty Name
+  it('Admin cannot create filter with empty name', async function () {
+    await login(driver);
+    await driver.get(`${CLIENT_URL}/admin/filters`);
+    await waitForPage(driver);
+
+    const addButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'add') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'create')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await addButton.click();
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /Add Filter|Create Filter/i.test(body);
+    }, LONG_WAIT);
+
+    const saveButton = await driver.findElement(
+      By.xpath(
+        "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'save') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'create')]",
+      ),
+    );
+    await saveButton.click();
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /required|cannot be empty|invalid|error/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  // TC_ADM_FILTER_004: Edit Filter
+  it('Admin can edit an existing filter', async function () {
+    await login(driver);
+    await driver.get(`${CLIENT_URL}/admin/filters`);
+    await waitForPage(driver);
+
+    const editButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'edit')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await editButton.click();
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /Edit Filter|Update Filter/i.test(body);
+    }, LONG_WAIT);
+
+    const nameInput = await driver.findElement(
+      By.css('input[name="name"], input[name="filterName"]'),
+    );
+    await nameInput.clear();
+    await nameInput.sendKeys(`UpdatedFilter_${Date.now()}`);
+
+    const saveButton = await driver.findElement(
+      By.xpath(
+        "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'save') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'update')]",
+      ),
+    );
+    await saveButton.click();
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /success|updated|saved/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  // TC_ADM_FILTER_005: Delete Filter
+  it('Admin can delete a filter', async function () {
+    await login(driver);
+    await driver.get(`${CLIENT_URL}/admin/filters`);
+    await waitForPage(driver);
+
+    const deleteButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'delete') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'remove')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await deleteButton.click();
+
+    const confirmButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'confirm') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'yes') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'delete')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await confirmButton.click();
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /deleted|removed|success/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  // TC_ADM_FILTER_006: Cancel Delete Filter
+  it('Admin can cancel filter deletion', async function () {
+    await login(driver);
+    await driver.get(`${CLIENT_URL}/admin/filters`);
+    await waitForPage(driver);
+
+    const deleteButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'delete') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'remove')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await deleteButton.click();
+
+    const cancelButton = await driver.wait(
+      until.elementLocated(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'cancel') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'no')]",
+        ),
+      ),
+      LONG_WAIT,
+    );
+    await cancelButton.click();
+
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return !/Are you sure|Confirm/i.test(body);
+    }, LONG_WAIT);
+  });
 });

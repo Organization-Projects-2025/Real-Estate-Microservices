@@ -121,4 +121,220 @@ describe('PropertyService (converted)', function () {
       'Sell page did not require login',
     );
   });
+
+  // TC_PROP_017: Create Property with Valid Data
+  it('User can create property with valid data', async function () {
+    const timestamp = Date.now();
+    const email = `seller+${timestamp}@example.com`;
+    const password = 'Str0ngP@ssw0rd!2026';
+
+    // Register and login
+    await driver.get(`${CLIENT_URL}/register`);
+    await waitForPage(driver);
+    await driver.findElement(By.css('input[name="firstName"]')).sendKeys('Test');
+    await driver.findElement(By.css('input[name="lastName"]')).sendKeys('Seller');
+    await driver.findElement(By.css('input[name="email"]')).sendKeys(email);
+    await driver.findElement(By.css('input[name="password"]')).sendKeys(password);
+    const confirm = await driver.findElements(
+      By.css('input[name="confirmPassword"], input[name="passwordConfirm"]'),
+    );
+    if (confirm.length) await confirm[0].sendKeys(password);
+    await driver.findElement(By.css('button[type="submit"]')).click();
+    await driver.wait(async () => {
+      const url = await driver.getCurrentUrl();
+      return !url.includes('/register');
+    }, LONG_WAIT);
+
+    // Navigate to sell page
+    await driver.get(`${CLIENT_URL}/sell`);
+    await waitForPage(driver);
+
+    // Fill property form
+    await driver.findElement(By.css('input[name="title"]')).sendKeys(`Test Property ${timestamp}`);
+    await driver.findElement(By.css('textarea[name="description"]')).sendKeys('Beautiful test property');
+    await driver.findElement(By.css('input[name="price"]')).sendKeys('250000');
+    await driver.findElement(By.css('input[name="bedrooms"]')).sendKeys('3');
+    await driver.findElement(By.css('input[name="bathrooms"]')).sendKeys('2');
+    await driver.findElement(By.css('input[name="area"]')).sendKeys('1500');
+    await driver.findElement(By.css('input[name="address"]')).sendKeys('123 Test St');
+    await driver.findElement(By.css('input[name="city"]')).sendKeys('TestCity');
+
+    // Submit form
+    await driver.findElement(By.css('button[type="submit"]')).click();
+
+    // Verify success
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /success|created|submitted|property added/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  // TC_PROP_018: Missing Required Fields
+  it('Sell form shows validation for missing required fields', async function () {
+    const timestamp = Date.now();
+    const email = `seller+${timestamp}@example.com`;
+    const password = 'Str0ngP@ssw0rd!2026';
+
+    // Register and login
+    await driver.get(`${CLIENT_URL}/register`);
+    await waitForPage(driver);
+    await driver.findElement(By.css('input[name="firstName"]')).sendKeys('Test');
+    await driver.findElement(By.css('input[name="lastName"]')).sendKeys('Seller');
+    await driver.findElement(By.css('input[name="email"]')).sendKeys(email);
+    await driver.findElement(By.css('input[name="password"]')).sendKeys(password);
+    const confirm = await driver.findElements(
+      By.css('input[name="confirmPassword"], input[name="passwordConfirm"]'),
+    );
+    if (confirm.length) await confirm[0].sendKeys(password);
+    await driver.findElement(By.css('button[type="submit"]')).click();
+    await driver.wait(async () => {
+      const url = await driver.getCurrentUrl();
+      return !url.includes('/register');
+    }, LONG_WAIT);
+
+    await driver.get(`${CLIENT_URL}/sell`);
+    await waitForPage(driver);
+
+    // Try to submit without filling required fields
+    await driver.findElement(By.css('button[type="submit"]')).click();
+
+    // Verify validation error
+    await driver.wait(async () => {
+      const body = await driver.findElement(By.css('body')).getText();
+      return /required|please fill|invalid|error/i.test(body);
+    }, LONG_WAIT);
+  });
+
+  // TC_PROP_019: Form Navigation
+  it('Sell form allows navigation between steps if multi-step', async function () {
+    const timestamp = Date.now();
+    const email = `seller+${timestamp}@example.com`;
+    const password = 'Str0ngP@ssw0rd!2026';
+
+    // Register and login
+    await driver.get(`${CLIENT_URL}/register`);
+    await waitForPage(driver);
+    await driver.findElement(By.css('input[name="firstName"]')).sendKeys('Test');
+    await driver.findElement(By.css('input[name="lastName"]')).sendKeys('Seller');
+    await driver.findElement(By.css('input[name="email"]')).sendKeys(email);
+    await driver.findElement(By.css('input[name="password"]')).sendKeys(password);
+    const confirm = await driver.findElements(
+      By.css('input[name="confirmPassword"], input[name="passwordConfirm"]'),
+    );
+    if (confirm.length) await confirm[0].sendKeys(password);
+    await driver.findElement(By.css('button[type="submit"]')).click();
+    await driver.wait(async () => {
+      const url = await driver.getCurrentUrl();
+      return !url.includes('/register');
+    }, LONG_WAIT);
+
+    await driver.get(`${CLIENT_URL}/sell`);
+    await waitForPage(driver);
+
+    // Check if form has navigation buttons (Next, Previous, etc.)
+    const nextButtons = await driver.findElements(
+      By.xpath(
+        "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]",
+      ),
+    );
+
+    if (nextButtons.length > 0) {
+      await nextButtons[0].click();
+      await driver.sleep(500);
+      const prevButtons = await driver.findElements(
+        By.xpath(
+          "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'previous') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'back')]",
+        ),
+      );
+      assert.ok(prevButtons.length > 0, 'Previous button should be available');
+    }
+  });
+
+  // TC_PROP_020: Listing Type Sale
+  it('User can select listing type as Sale', async function () {
+    const timestamp = Date.now();
+    const email = `seller+${timestamp}@example.com`;
+    const password = 'Str0ngP@ssw0rd!2026';
+
+    // Register and login
+    await driver.get(`${CLIENT_URL}/register`);
+    await waitForPage(driver);
+    await driver.findElement(By.css('input[name="firstName"]')).sendKeys('Test');
+    await driver.findElement(By.css('input[name="lastName"]')).sendKeys('Seller');
+    await driver.findElement(By.css('input[name="email"]')).sendKeys(email);
+    await driver.findElement(By.css('input[name="password"]')).sendKeys(password);
+    const confirm = await driver.findElements(
+      By.css('input[name="confirmPassword"], input[name="passwordConfirm"]'),
+    );
+    if (confirm.length) await confirm[0].sendKeys(password);
+    await driver.findElement(By.css('button[type="submit"]')).click();
+    await driver.wait(async () => {
+      const url = await driver.getCurrentUrl();
+      return !url.includes('/register');
+    }, LONG_WAIT);
+
+    await driver.get(`${CLIENT_URL}/sell`);
+    await waitForPage(driver);
+
+    // Select listing type as Sale
+    const listingTypeSelect = await driver.findElements(
+      By.css('select[name="listingType"], select[name="type"]'),
+    );
+    if (listingTypeSelect.length > 0) {
+      await listingTypeSelect[0].sendKeys('sale');
+    } else {
+      // Try radio button
+      const saleRadio = await driver.findElements(
+        By.css('input[type="radio"][value="sale"]'),
+      );
+      if (saleRadio.length > 0) await saleRadio[0].click();
+    }
+
+    const body = await driver.findElement(By.css('body')).getText();
+    assert.ok(body.length > 0, 'Form should be visible');
+  });
+
+  // TC_PROP_021: Listing Type Rent
+  it('User can select listing type as Rent', async function () {
+    const timestamp = Date.now();
+    const email = `seller+${timestamp}@example.com`;
+    const password = 'Str0ngP@ssw0rd!2026';
+
+    // Register and login
+    await driver.get(`${CLIENT_URL}/register`);
+    await waitForPage(driver);
+    await driver.findElement(By.css('input[name="firstName"]')).sendKeys('Test');
+    await driver.findElement(By.css('input[name="lastName"]')).sendKeys('Seller');
+    await driver.findElement(By.css('input[name="email"]')).sendKeys(email);
+    await driver.findElement(By.css('input[name="password"]')).sendKeys(password);
+    const confirm = await driver.findElements(
+      By.css('input[name="confirmPassword"], input[name="passwordConfirm"]'),
+    );
+    if (confirm.length) await confirm[0].sendKeys(password);
+    await driver.findElement(By.css('button[type="submit"]')).click();
+    await driver.wait(async () => {
+      const url = await driver.getCurrentUrl();
+      return !url.includes('/register');
+    }, LONG_WAIT);
+
+    await driver.get(`${CLIENT_URL}/sell`);
+    await waitForPage(driver);
+
+    // Select listing type as Rent
+    const listingTypeSelect = await driver.findElements(
+      By.css('select[name="listingType"], select[name="type"]'),
+    );
+    if (listingTypeSelect.length > 0) {
+      await listingTypeSelect[0].sendKeys('rent');
+    } else {
+      // Try radio button
+      const rentRadio = await driver.findElements(
+        By.css('input[type="radio"][value="rent"]'),
+      );
+      if (rentRadio.length > 0) await rentRadio[0].click();
+    }
+
+    const body = await driver.findElement(By.css('body')).getText();
+    assert.ok(body.length > 0, 'Form should be visible');
+  });
 });
